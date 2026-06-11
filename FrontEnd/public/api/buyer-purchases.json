@@ -1,0 +1,8003 @@
+
+[
+  {
+    "d": "18 Apr",
+    "s": "ITC Limited",
+    "i": "Makka",
+    "w": "98q",
+    "a": 257936,
+    "st": "Shipped"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Adani Wholesales",
+    "i": "Makka",
+    "w": "20q",
+    "a": 44800,
+    "st": "Shipped"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Reliance Agri",
+    "i": "Makka",
+    "w": "18q",
+    "a": 38880,
+    "st": "Shipped"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Garg Trading",
+    "i": "Mustard",
+    "w": "30q",
+    "a": 47670,
+    "st": "Shipped"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Green Organic",
+    "i": "Jowar",
+    "w": "47q",
+    "a": 139261,
+    "st": "Delivered"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Garg Trading",
+    "i": "Bajra",
+    "w": "14q",
+    "a": 27790,
+    "st": "Processing"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Kisan Traders",
+    "i": "Dhan",
+    "w": "29q",
+    "a": 54520,
+    "st": "Processing"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Haryana Agro",
+    "i": "Chana",
+    "w": "74q",
+    "a": 137418,
+    "st": "Delivered"
+  },
+  {
+    "d": "14 Apr",
+    "s": "ITC Limited",
+    "i": "Cotton",
+    "w": "38q",
+    "a": 74518,
+    "st": "Delivered"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Adani Wholesales",
+    "i": "Chana",
+    "w": "61q",
+    "a": 170678,
+    "st": "Shipped"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Kisan Traders",
+    "i": "Cotton",
+    "w": "78q",
+    "a": 156312,
+    "st": "Processing"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Green Organic",
+    "i": "Jowar",
+    "w": "20q",
+    "a": 53940,
+    "st": "Delivered"
+  },
+  {
+    "d": "4 Apr",
+    "s": "ITC Limited",
+    "i": "Soyabean",
+    "w": "81q",
+    "a": 212301,
+    "st": "Shipped"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Kisan Traders",
+    "i": "Dhan",
+    "w": "96q",
+    "a": 169632,
+    "st": "Shipped"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Adani Wholesales",
+    "i": "Gehu",
+    "w": "90q",
+    "a": 166140,
+    "st": "Processing"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Delhi Fresh",
+    "i": "Mustard",
+    "w": "15q",
+    "a": 39495,
+    "st": "Delivered"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Haryana Agro",
+    "i": "Makka",
+    "w": "94q",
+    "a": 240922,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Adani Wholesales",
+    "i": "Jowar",
+    "w": "34q",
+    "a": 88162,
+    "st": "Processing"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Garg Trading",
+    "i": "Gehu",
+    "w": "35q",
+    "a": 77350,
+    "st": "Delivered"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Haryana Agro",
+    "i": "Bajra",
+    "w": "66q",
+    "a": 150612,
+    "st": "Processing"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Kisan Traders",
+    "i": "Gehu",
+    "w": "31q",
+    "a": 89528,
+    "st": "Shipped"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Kisan Traders",
+    "i": "Soyabean",
+    "w": "33q",
+    "a": 74712,
+    "st": "Delivered"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Green Organic",
+    "i": "Jowar",
+    "w": "27q",
+    "a": 69066,
+    "st": "Processing"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Delhi Fresh",
+    "i": "Cotton",
+    "w": "10q",
+    "a": 24300,
+    "st": "Delivered"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Green Organic",
+    "i": "Dhan",
+    "w": "51q",
+    "a": 124338,
+    "st": "Shipped"
+  },
+  {
+    "d": "12 Apr",
+    "s": "AgriSafe",
+    "i": "Mustard",
+    "w": "16q",
+    "a": 39216,
+    "st": "Shipped"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Kisan Traders",
+    "i": "Gehu",
+    "w": "72q",
+    "a": 198864,
+    "st": "Delivered"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Green Organic",
+    "i": "Soyabean",
+    "w": "44q",
+    "a": 101640,
+    "st": "Processing"
+  },
+  {
+    "d": "3 Apr",
+    "s": "AgriSafe",
+    "i": "Soyabean",
+    "w": "99q",
+    "a": 237006,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Adani Wholesales",
+    "i": "Cotton",
+    "w": "43q",
+    "a": 113133,
+    "st": "Processing"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Haryana Agro",
+    "i": "Bajra",
+    "w": "30q",
+    "a": 60780,
+    "st": "Processing"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Punjab Mandi",
+    "i": "Gehu",
+    "w": "84q",
+    "a": 221760,
+    "st": "Processing"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Adani Wholesales",
+    "i": "Chana",
+    "w": "52q",
+    "a": 102440,
+    "st": "Shipped"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Adani Wholesales",
+    "i": "Sugarcane",
+    "w": "99q",
+    "a": 282348,
+    "st": "Processing"
+  },
+  {
+    "d": "16 Apr",
+    "s": "ITC Limited",
+    "i": "Dhan",
+    "w": "66q",
+    "a": 184668,
+    "st": "Processing"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Green Organic",
+    "i": "Soyabean",
+    "w": "49q",
+    "a": 139601,
+    "st": "Shipped"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Garg Trading",
+    "i": "Dhan",
+    "w": "29q",
+    "a": 49097,
+    "st": "Processing"
+  },
+  {
+    "d": "15 Apr",
+    "s": "ITC Limited",
+    "i": "Soyabean",
+    "w": "18q",
+    "a": 30078,
+    "st": "Shipped"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Green Organic",
+    "i": "Mustard",
+    "w": "59q",
+    "a": 105315,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Adani Wholesales",
+    "i": "Jowar",
+    "w": "26q",
+    "a": 63544,
+    "st": "Processing"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Adani Wholesales",
+    "i": "Jowar",
+    "w": "89q",
+    "a": 151923,
+    "st": "Delivered"
+  },
+  {
+    "d": "19 Apr",
+    "s": "ITC Limited",
+    "i": "Gehu",
+    "w": "97q",
+    "a": 195746,
+    "st": "Shipped"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Punjab Mandi",
+    "i": "Makka",
+    "w": "74q",
+    "a": 144152,
+    "st": "Delivered"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Punjab Mandi",
+    "i": "Makka",
+    "w": "47q",
+    "a": 110403,
+    "st": "Shipped"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Green Organic",
+    "i": "Chana",
+    "w": "75q",
+    "a": 167325,
+    "st": "Shipped"
+  },
+  {
+    "d": "11 Apr",
+    "s": "ITC Limited",
+    "i": "Sugarcane",
+    "w": "67q",
+    "a": 196913,
+    "st": "Shipped"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Reliance Agri",
+    "i": "Gehu",
+    "w": "79q",
+    "a": 156104,
+    "st": "Processing"
+  },
+  {
+    "d": "10 Apr",
+    "s": "Haryana Agro",
+    "i": "Cotton",
+    "w": "37q",
+    "a": 74370,
+    "st": "Processing"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Punjab Mandi",
+    "i": "Bajra",
+    "w": "86q",
+    "a": 234436,
+    "st": "Shipped"
+  },
+  {
+    "d": "18 Apr",
+    "s": "AgriSafe",
+    "i": "Cotton",
+    "w": "58q",
+    "a": 158804,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Reliance Agri",
+    "i": "Dhan",
+    "w": "89q",
+    "a": 233358,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Punjab Mandi",
+    "i": "Bajra",
+    "w": "70q",
+    "a": 156380,
+    "st": "Shipped"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Reliance Agri",
+    "i": "Mustard",
+    "w": "70q",
+    "a": 173460,
+    "st": "Delivered"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Adani Wholesales",
+    "i": "Soyabean",
+    "w": "39q",
+    "a": 105612,
+    "st": "Processing"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Haryana Agro",
+    "i": "Bajra",
+    "w": "52q",
+    "a": 120068,
+    "st": "Processing"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Garg Trading",
+    "i": "Jowar",
+    "w": "24q",
+    "a": 61032,
+    "st": "Delivered"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Delhi Fresh",
+    "i": "Makka",
+    "w": "23q",
+    "a": 55269,
+    "st": "Processing"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Punjab Mandi",
+    "i": "Chana",
+    "w": "35q",
+    "a": 56175,
+    "st": "Shipped"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Green Organic",
+    "i": "Makka",
+    "w": "32q",
+    "a": 95136,
+    "st": "Processing"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Garg Trading",
+    "i": "Cotton",
+    "w": "29q",
+    "a": 68759,
+    "st": "Delivered"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Reliance Agri",
+    "i": "Makka",
+    "w": "38q",
+    "a": 93100,
+    "st": "Processing"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Green Organic",
+    "i": "Gehu",
+    "w": "91q",
+    "a": 153426,
+    "st": "Delivered"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Kisan Traders",
+    "i": "Sugarcane",
+    "w": "25q",
+    "a": 74675,
+    "st": "Shipped"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Reliance Agri",
+    "i": "Makka",
+    "w": "95q",
+    "a": 192660,
+    "st": "Delivered"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Reliance Agri",
+    "i": "Sugarcane",
+    "w": "94q",
+    "a": 262918,
+    "st": "Processing"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Haryana Agro",
+    "i": "Gehu",
+    "w": "32q",
+    "a": 50176,
+    "st": "Shipped"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Green Organic",
+    "i": "Bajra",
+    "w": "97q",
+    "a": 220578,
+    "st": "Delivered"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Reliance Agri",
+    "i": "Dhan",
+    "w": "49q",
+    "a": 77126,
+    "st": "Shipped"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Kisan Traders",
+    "i": "Sugarcane",
+    "w": "40q",
+    "a": 107160,
+    "st": "Processing"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Delhi Fresh",
+    "i": "Jowar",
+    "w": "34q",
+    "a": 61642,
+    "st": "Delivered"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Reliance Agri",
+    "i": "Dhan",
+    "w": "84q",
+    "a": 172872,
+    "st": "Processing"
+  },
+  {
+    "d": "4 Apr",
+    "s": "ITC Limited",
+    "i": "Chana",
+    "w": "82q",
+    "a": 184418,
+    "st": "Processing"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Reliance Agri",
+    "i": "Cotton",
+    "w": "14q",
+    "a": 30184,
+    "st": "Delivered"
+  },
+  {
+    "d": "2 Apr",
+    "s": "ITC Limited",
+    "i": "Gehu",
+    "w": "91q",
+    "a": 219583,
+    "st": "Shipped"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Green Organic",
+    "i": "Jowar",
+    "w": "82q",
+    "a": 217300,
+    "st": "Delivered"
+  },
+  {
+    "d": "3 Apr",
+    "s": "ITC Limited",
+    "i": "Makka",
+    "w": "27q",
+    "a": 71496,
+    "st": "Delivered"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Kisan Traders",
+    "i": "Soyabean",
+    "w": "47q",
+    "a": 132446,
+    "st": "Processing"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Haryana Agro",
+    "i": "Dhan",
+    "w": "56q",
+    "a": 119448,
+    "st": "Shipped"
+  },
+  {
+    "d": "10 Apr",
+    "s": "Garg Trading",
+    "i": "Dhan",
+    "w": "97q",
+    "a": 290224,
+    "st": "Shipped"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Haryana Agro",
+    "i": "Chana",
+    "w": "56q",
+    "a": 111608,
+    "st": "Delivered"
+  },
+  {
+    "d": "3 Apr",
+    "s": "ITC Limited",
+    "i": "Makka",
+    "w": "23q",
+    "a": 65688,
+    "st": "Processing"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Reliance Agri",
+    "i": "Jowar",
+    "w": "10q",
+    "a": 23800,
+    "st": "Delivered"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Delhi Fresh",
+    "i": "Dhan",
+    "w": "75q",
+    "a": 142500,
+    "st": "Shipped"
+  },
+  {
+    "d": "22 Apr",
+    "s": "ITC Limited",
+    "i": "Chana",
+    "w": "100q",
+    "a": 231200,
+    "st": "Shipped"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Kisan Traders",
+    "i": "Soyabean",
+    "w": "35q",
+    "a": 69265,
+    "st": "Delivered"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Delhi Fresh",
+    "i": "Chana",
+    "w": "65q",
+    "a": 168870,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Garg Trading",
+    "i": "Gehu",
+    "w": "90q",
+    "a": 240390,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Reliance Agri",
+    "i": "Bajra",
+    "w": "100q",
+    "a": 269300,
+    "st": "Processing"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Delhi Fresh",
+    "i": "Dhan",
+    "w": "29q",
+    "a": 46023,
+    "st": "Processing"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Adani Wholesales",
+    "i": "Sugarcane",
+    "w": "29q",
+    "a": 69919,
+    "st": "Shipped"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Delhi Fresh",
+    "i": "Cotton",
+    "w": "94q",
+    "a": 242614,
+    "st": "Delivered"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Adani Wholesales",
+    "i": "Makka",
+    "w": "89q",
+    "a": 208349,
+    "st": "Delivered"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Kisan Traders",
+    "i": "Jowar",
+    "w": "74q",
+    "a": 125356,
+    "st": "Processing"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Haryana Agro",
+    "i": "Dhan",
+    "w": "82q",
+    "a": 197620,
+    "st": "Shipped"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Adani Wholesales",
+    "i": "Sugarcane",
+    "w": "43q",
+    "a": 122507,
+    "st": "Delivered"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Adani Wholesales",
+    "i": "Gehu",
+    "w": "54q",
+    "a": 100386,
+    "st": "Processing"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Adani Wholesales",
+    "i": "Soyabean",
+    "w": "15q",
+    "a": 29325,
+    "st": "Shipped"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Green Organic",
+    "i": "Jowar",
+    "w": "34q",
+    "a": 77656,
+    "st": "Shipped"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Delhi Fresh",
+    "i": "Gehu",
+    "w": "61q",
+    "a": 179218,
+    "st": "Processing"
+  },
+  {
+    "d": "25 Apr",
+    "s": "AgriSafe",
+    "i": "Cotton",
+    "w": "66q",
+    "a": 146322,
+    "st": "Delivered"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Green Organic",
+    "i": "Jowar",
+    "w": "70q",
+    "a": 130550,
+    "st": "Delivered"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Green Organic",
+    "i": "Dhan",
+    "w": "59q",
+    "a": 109622,
+    "st": "Shipped"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Green Organic",
+    "i": "Makka",
+    "w": "90q",
+    "a": 179010,
+    "st": "Delivered"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Reliance Agri",
+    "i": "Dhan",
+    "w": "89q",
+    "a": 233803,
+    "st": "Processing"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Garg Trading",
+    "i": "Soyabean",
+    "w": "78q",
+    "a": 159354,
+    "st": "Shipped"
+  },
+  {
+    "d": "9 Apr",
+    "s": "ITC Limited",
+    "i": "Bajra",
+    "w": "89q",
+    "a": 203988,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Garg Trading",
+    "i": "Makka",
+    "w": "67q",
+    "a": 106731,
+    "st": "Processing"
+  },
+  {
+    "d": "3 Apr",
+    "s": "AgriSafe",
+    "i": "Sugarcane",
+    "w": "16q",
+    "a": 40640,
+    "st": "Shipped"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Kisan Traders",
+    "i": "Sugarcane",
+    "w": "32q",
+    "a": 78944,
+    "st": "Processing"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Haryana Agro",
+    "i": "Soyabean",
+    "w": "78q",
+    "a": 167544,
+    "st": "Shipped"
+  },
+  {
+    "d": "15 Apr",
+    "s": "Delhi Fresh",
+    "i": "Jowar",
+    "w": "84q",
+    "a": 184296,
+    "st": "Delivered"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Delhi Fresh",
+    "i": "Chana",
+    "w": "86q",
+    "a": 159100,
+    "st": "Shipped"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Garg Trading",
+    "i": "Cotton",
+    "w": "45q",
+    "a": 73890,
+    "st": "Delivered"
+  },
+  {
+    "d": "10 Apr",
+    "s": "AgriSafe",
+    "i": "Bajra",
+    "w": "49q",
+    "a": 108927,
+    "st": "Shipped"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Adani Wholesales",
+    "i": "Chana",
+    "w": "17q",
+    "a": 40341,
+    "st": "Shipped"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Punjab Mandi",
+    "i": "Chana",
+    "w": "61q",
+    "a": 179950,
+    "st": "Processing"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Garg Trading",
+    "i": "Sugarcane",
+    "w": "10q",
+    "a": 20980,
+    "st": "Processing"
+  },
+  {
+    "d": "21 Apr",
+    "s": "AgriSafe",
+    "i": "Jowar",
+    "w": "45q",
+    "a": 127350,
+    "st": "Delivered"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Haryana Agro",
+    "i": "Soyabean",
+    "w": "18q",
+    "a": 44856,
+    "st": "Delivered"
+  },
+  {
+    "d": "18 Apr",
+    "s": "ITC Limited",
+    "i": "Chana",
+    "w": "11q",
+    "a": 25916,
+    "st": "Delivered"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Punjab Mandi",
+    "i": "Dhan",
+    "w": "37q",
+    "a": 72668,
+    "st": "Processing"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Haryana Agro",
+    "i": "Dhan",
+    "w": "20q",
+    "a": 34840,
+    "st": "Processing"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Adani Wholesales",
+    "i": "Mustard",
+    "w": "45q",
+    "a": 106695,
+    "st": "Processing"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Haryana Agro",
+    "i": "Dhan",
+    "w": "41q",
+    "a": 68839,
+    "st": "Shipped"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Delhi Fresh",
+    "i": "Mustard",
+    "w": "68q",
+    "a": 127024,
+    "st": "Shipped"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Kisan Traders",
+    "i": "Sugarcane",
+    "w": "66q",
+    "a": 108834,
+    "st": "Processing"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Reliance Agri",
+    "i": "Cotton",
+    "w": "77q",
+    "a": 183260,
+    "st": "Shipped"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Kisan Traders",
+    "i": "Bajra",
+    "w": "61q",
+    "a": 99979,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Adani Wholesales",
+    "i": "Soyabean",
+    "w": "24q",
+    "a": 63624,
+    "st": "Shipped"
+  },
+  {
+    "d": "23 Apr",
+    "s": "ITC Limited",
+    "i": "Dhan",
+    "w": "91q",
+    "a": 159159,
+    "st": "Shipped"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Punjab Mandi",
+    "i": "Makka",
+    "w": "74q",
+    "a": 212824,
+    "st": "Shipped"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Green Organic",
+    "i": "Jowar",
+    "w": "77q",
+    "a": 139139,
+    "st": "Shipped"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Punjab Mandi",
+    "i": "Sugarcane",
+    "w": "81q",
+    "a": 133812,
+    "st": "Delivered"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Reliance Agri",
+    "i": "Chana",
+    "w": "94q",
+    "a": 273258,
+    "st": "Processing"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Garg Trading",
+    "i": "Sugarcane",
+    "w": "10q",
+    "a": 22480,
+    "st": "Processing"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Reliance Agri",
+    "i": "Mustard",
+    "w": "35q",
+    "a": 68320,
+    "st": "Processing"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Delhi Fresh",
+    "i": "Makka",
+    "w": "46q",
+    "a": 85468,
+    "st": "Delivered"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Delhi Fresh",
+    "i": "Gehu",
+    "w": "88q",
+    "a": 184360,
+    "st": "Shipped"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Reliance Agri",
+    "i": "Dhan",
+    "w": "70q",
+    "a": 151760,
+    "st": "Shipped"
+  },
+  {
+    "d": "27 Apr",
+    "s": "ITC Limited",
+    "i": "Dhan",
+    "w": "53q",
+    "a": 156562,
+    "st": "Delivered"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Reliance Agri",
+    "i": "Makka",
+    "w": "37q",
+    "a": 75517,
+    "st": "Delivered"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Kisan Traders",
+    "i": "Soyabean",
+    "w": "42q",
+    "a": 100254,
+    "st": "Processing"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Green Organic",
+    "i": "Mustard",
+    "w": "54q",
+    "a": 81162,
+    "st": "Delivered"
+  },
+  {
+    "d": "2 Apr",
+    "s": "AgriSafe",
+    "i": "Jowar",
+    "w": "63q",
+    "a": 140427,
+    "st": "Processing"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Delhi Fresh",
+    "i": "Jowar",
+    "w": "92q",
+    "a": 184000,
+    "st": "Delivered"
+  },
+  {
+    "d": "1 Apr",
+    "s": "AgriSafe",
+    "i": "Jowar",
+    "w": "46q",
+    "a": 132710,
+    "st": "Shipped"
+  },
+  {
+    "d": "21 Apr",
+    "s": "ITC Limited",
+    "i": "Sugarcane",
+    "w": "46q",
+    "a": 69644,
+    "st": "Shipped"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Delhi Fresh",
+    "i": "Jowar",
+    "w": "77q",
+    "a": 174482,
+    "st": "Delivered"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Green Organic",
+    "i": "Bajra",
+    "w": "89q",
+    "a": 197669,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Delhi Fresh",
+    "i": "Jowar",
+    "w": "21q",
+    "a": 45045,
+    "st": "Delivered"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Punjab Mandi",
+    "i": "Soyabean",
+    "w": "56q",
+    "a": 132608,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Punjab Mandi",
+    "i": "Cotton",
+    "w": "68q",
+    "a": 159596,
+    "st": "Delivered"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Green Organic",
+    "i": "Bajra",
+    "w": "96q",
+    "a": 261216,
+    "st": "Delivered"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Reliance Agri",
+    "i": "Sugarcane",
+    "w": "11q",
+    "a": 25058,
+    "st": "Shipped"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Kisan Traders",
+    "i": "Cotton",
+    "w": "96q",
+    "a": 223104,
+    "st": "Processing"
+  },
+  {
+    "d": "10 Apr",
+    "s": "Garg Trading",
+    "i": "Soyabean",
+    "w": "90q",
+    "a": 199260,
+    "st": "Processing"
+  },
+  {
+    "d": "28 Apr",
+    "s": "AgriSafe",
+    "i": "Chana",
+    "w": "60q",
+    "a": 149460,
+    "st": "Shipped"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Delhi Fresh",
+    "i": "Chana",
+    "w": "74q",
+    "a": 119880,
+    "st": "Shipped"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Green Organic",
+    "i": "Dhan",
+    "w": "100q",
+    "a": 279300,
+    "st": "Delivered"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Reliance Agri",
+    "i": "Mustard",
+    "w": "19q",
+    "a": 34941,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Kisan Traders",
+    "i": "Cotton",
+    "w": "70q",
+    "a": 190400,
+    "st": "Delivered"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Adani Wholesales",
+    "i": "Gehu",
+    "w": "24q",
+    "a": 64296,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Punjab Mandi",
+    "i": "Chana",
+    "w": "55q",
+    "a": 101640,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Adani Wholesales",
+    "i": "Soyabean",
+    "w": "68q",
+    "a": 144092,
+    "st": "Processing"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Green Organic",
+    "i": "Mustard",
+    "w": "50q",
+    "a": 85750,
+    "st": "Delivered"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Delhi Fresh",
+    "i": "Makka",
+    "w": "62q",
+    "a": 100812,
+    "st": "Delivered"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Kisan Traders",
+    "i": "Gehu",
+    "w": "23q",
+    "a": 55476,
+    "st": "Processing"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Punjab Mandi",
+    "i": "Gehu",
+    "w": "82q",
+    "a": 127018,
+    "st": "Shipped"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Reliance Agri",
+    "i": "Jowar",
+    "w": "100q",
+    "a": 185600,
+    "st": "Shipped"
+  },
+  {
+    "d": "6 Apr",
+    "s": "ITC Limited",
+    "i": "Jowar",
+    "w": "53q",
+    "a": 146280,
+    "st": "Processing"
+  },
+  {
+    "d": "24 Apr",
+    "s": "ITC Limited",
+    "i": "Soyabean",
+    "w": "40q",
+    "a": 75880,
+    "st": "Processing"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Punjab Mandi",
+    "i": "Soyabean",
+    "w": "50q",
+    "a": 79550,
+    "st": "Shipped"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Reliance Agri",
+    "i": "Bajra",
+    "w": "44q",
+    "a": 99308,
+    "st": "Processing"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Punjab Mandi",
+    "i": "Mustard",
+    "w": "50q",
+    "a": 134250,
+    "st": "Processing"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Haryana Agro",
+    "i": "Sugarcane",
+    "w": "52q",
+    "a": 113620,
+    "st": "Shipped"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Haryana Agro",
+    "i": "Jowar",
+    "w": "95q",
+    "a": 280155,
+    "st": "Shipped"
+  },
+  {
+    "d": "15 Apr",
+    "s": "Reliance Agri",
+    "i": "Cotton",
+    "w": "64q",
+    "a": 177984,
+    "st": "Processing"
+  },
+  {
+    "d": "14 Apr",
+    "s": "AgriSafe",
+    "i": "Chana",
+    "w": "17q",
+    "a": 44965,
+    "st": "Processing"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Adani Wholesales",
+    "i": "Mustard",
+    "w": "76q",
+    "a": 219944,
+    "st": "Processing"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Green Organic",
+    "i": "Chana",
+    "w": "66q",
+    "a": 175560,
+    "st": "Processing"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Green Organic",
+    "i": "Bajra",
+    "w": "24q",
+    "a": 66936,
+    "st": "Processing"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Delhi Fresh",
+    "i": "Cotton",
+    "w": "35q",
+    "a": 94990,
+    "st": "Processing"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Garg Trading",
+    "i": "Sugarcane",
+    "w": "96q",
+    "a": 286368,
+    "st": "Processing"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Punjab Mandi",
+    "i": "Bajra",
+    "w": "86q",
+    "a": 160820,
+    "st": "Delivered"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Reliance Agri",
+    "i": "Soyabean",
+    "w": "31q",
+    "a": 89807,
+    "st": "Processing"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Kisan Traders",
+    "i": "Chana",
+    "w": "36q",
+    "a": 100260,
+    "st": "Delivered"
+  },
+  {
+    "d": "16 Apr",
+    "s": "AgriSafe",
+    "i": "Cotton",
+    "w": "19q",
+    "a": 33744,
+    "st": "Delivered"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Adani Wholesales",
+    "i": "Sugarcane",
+    "w": "42q",
+    "a": 67452,
+    "st": "Shipped"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Punjab Mandi",
+    "i": "Mustard",
+    "w": "64q",
+    "a": 148928,
+    "st": "Processing"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Delhi Fresh",
+    "i": "Cotton",
+    "w": "15q",
+    "a": 34500,
+    "st": "Processing"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Haryana Agro",
+    "i": "Cotton",
+    "w": "25q",
+    "a": 42475,
+    "st": "Delivered"
+  },
+  {
+    "d": "19 Apr",
+    "s": "AgriSafe",
+    "i": "Soyabean",
+    "w": "70q",
+    "a": 162470,
+    "st": "Delivered"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Punjab Mandi",
+    "i": "Soyabean",
+    "w": "57q",
+    "a": 113259,
+    "st": "Processing"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Punjab Mandi",
+    "i": "Cotton",
+    "w": "54q",
+    "a": 135378,
+    "st": "Processing"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Delhi Fresh",
+    "i": "Jowar",
+    "w": "87q",
+    "a": 176610,
+    "st": "Shipped"
+  },
+  {
+    "d": "5 Apr",
+    "s": "ITC Limited",
+    "i": "Mustard",
+    "w": "34q",
+    "a": 69904,
+    "st": "Shipped"
+  },
+  {
+    "d": "24 Apr",
+    "s": "AgriSafe",
+    "i": "Soyabean",
+    "w": "64q",
+    "a": 156416,
+    "st": "Delivered"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Haryana Agro",
+    "i": "Jowar",
+    "w": "61q",
+    "a": 182024,
+    "st": "Shipped"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Adani Wholesales",
+    "i": "Gehu",
+    "w": "95q",
+    "a": 225910,
+    "st": "Shipped"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Delhi Fresh",
+    "i": "Cotton",
+    "w": "36q",
+    "a": 59940,
+    "st": "Delivered"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Garg Trading",
+    "i": "Makka",
+    "w": "46q",
+    "a": 116150,
+    "st": "Shipped"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Haryana Agro",
+    "i": "Sugarcane",
+    "w": "33q",
+    "a": 97911,
+    "st": "Shipped"
+  },
+  {
+    "d": "12 Apr",
+    "s": "AgriSafe",
+    "i": "Bajra",
+    "w": "45q",
+    "a": 122085,
+    "st": "Delivered"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Reliance Agri",
+    "i": "Cotton",
+    "w": "88q",
+    "a": 230208,
+    "st": "Delivered"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Haryana Agro",
+    "i": "Bajra",
+    "w": "52q",
+    "a": 128544,
+    "st": "Delivered"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Reliance Agri",
+    "i": "Sugarcane",
+    "w": "23q",
+    "a": 49036,
+    "st": "Shipped"
+  },
+  {
+    "d": "4 Apr",
+    "s": "AgriSafe",
+    "i": "Jowar",
+    "w": "75q",
+    "a": 196800,
+    "st": "Processing"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Adani Wholesales",
+    "i": "Mustard",
+    "w": "88q",
+    "a": 150040,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Green Organic",
+    "i": "Makka",
+    "w": "74q",
+    "a": 205128,
+    "st": "Processing"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Kisan Traders",
+    "i": "Sugarcane",
+    "w": "92q",
+    "a": 259716,
+    "st": "Processing"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Adani Wholesales",
+    "i": "Makka",
+    "w": "67q",
+    "a": 136479,
+    "st": "Shipped"
+  },
+  {
+    "d": "15 Apr",
+    "s": "AgriSafe",
+    "i": "Gehu",
+    "w": "84q",
+    "a": 220248,
+    "st": "Delivered"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Adani Wholesales",
+    "i": "Cotton",
+    "w": "61q",
+    "a": 129198,
+    "st": "Processing"
+  },
+  {
+    "d": "21 Apr",
+    "s": "AgriSafe",
+    "i": "Sugarcane",
+    "w": "39q",
+    "a": 96720,
+    "st": "Shipped"
+  },
+  {
+    "d": "15 Apr",
+    "s": "Adani Wholesales",
+    "i": "Makka",
+    "w": "16q",
+    "a": 37008,
+    "st": "Delivered"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Punjab Mandi",
+    "i": "Makka",
+    "w": "18q",
+    "a": 32004,
+    "st": "Shipped"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Green Organic",
+    "i": "Dhan",
+    "w": "25q",
+    "a": 60375,
+    "st": "Shipped"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Green Organic",
+    "i": "Bajra",
+    "w": "74q",
+    "a": 133274,
+    "st": "Shipped"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Punjab Mandi",
+    "i": "Makka",
+    "w": "62q",
+    "a": 171554,
+    "st": "Shipped"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Kisan Traders",
+    "i": "Bajra",
+    "w": "48q",
+    "a": 86544,
+    "st": "Shipped"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Adani Wholesales",
+    "i": "Sugarcane",
+    "w": "64q",
+    "a": 150272,
+    "st": "Shipped"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Haryana Agro",
+    "i": "Dhan",
+    "w": "80q",
+    "a": 213840,
+    "st": "Processing"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Kisan Traders",
+    "i": "Jowar",
+    "w": "23q",
+    "a": 37329,
+    "st": "Processing"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Reliance Agri",
+    "i": "Chana",
+    "w": "50q",
+    "a": 136850,
+    "st": "Processing"
+  },
+  {
+    "d": "15 Apr",
+    "s": "AgriSafe",
+    "i": "Cotton",
+    "w": "68q",
+    "a": 117096,
+    "st": "Processing"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Adani Wholesales",
+    "i": "Mustard",
+    "w": "43q",
+    "a": 70262,
+    "st": "Delivered"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Green Organic",
+    "i": "Gehu",
+    "w": "35q",
+    "a": 90160,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "AgriSafe",
+    "i": "Bajra",
+    "w": "63q",
+    "a": 133245,
+    "st": "Delivered"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Punjab Mandi",
+    "i": "Makka",
+    "w": "75q",
+    "a": 115500,
+    "st": "Delivered"
+  },
+  {
+    "d": "22 Apr",
+    "s": "ITC Limited",
+    "i": "Jowar",
+    "w": "55q",
+    "a": 95755,
+    "st": "Delivered"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Haryana Agro",
+    "i": "Sugarcane",
+    "w": "60q",
+    "a": 178020,
+    "st": "Processing"
+  },
+  {
+    "d": "19 Apr",
+    "s": "ITC Limited",
+    "i": "Jowar",
+    "w": "88q",
+    "a": 259864,
+    "st": "Shipped"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Green Organic",
+    "i": "Bajra",
+    "w": "91q",
+    "a": 178451,
+    "st": "Delivered"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Garg Trading",
+    "i": "Bajra",
+    "w": "70q",
+    "a": 167930,
+    "st": "Delivered"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Kisan Traders",
+    "i": "Gehu",
+    "w": "84q",
+    "a": 154560,
+    "st": "Delivered"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Delhi Fresh",
+    "i": "Dhan",
+    "w": "11q",
+    "a": 17204,
+    "st": "Processing"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Reliance Agri",
+    "i": "Bajra",
+    "w": "74q",
+    "a": 164428,
+    "st": "Shipped"
+  },
+  {
+    "d": "11 Apr",
+    "s": "AgriSafe",
+    "i": "Jowar",
+    "w": "93q",
+    "a": 262539,
+    "st": "Delivered"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Garg Trading",
+    "i": "Gehu",
+    "w": "60q",
+    "a": 142380,
+    "st": "Shipped"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Reliance Agri",
+    "i": "Makka",
+    "w": "85q",
+    "a": 248200,
+    "st": "Shipped"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Garg Trading",
+    "i": "Jowar",
+    "w": "55q",
+    "a": 152845,
+    "st": "Shipped"
+  },
+  {
+    "d": "13 Apr",
+    "s": "AgriSafe",
+    "i": "Bajra",
+    "w": "98q",
+    "a": 164346,
+    "st": "Shipped"
+  },
+  {
+    "d": "10 Apr",
+    "s": "Green Organic",
+    "i": "Soyabean",
+    "w": "32q",
+    "a": 89568,
+    "st": "Shipped"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Green Organic",
+    "i": "Mustard",
+    "w": "44q",
+    "a": 127116,
+    "st": "Delivered"
+  },
+  {
+    "d": "25 Apr",
+    "s": "AgriSafe",
+    "i": "Makka",
+    "w": "45q",
+    "a": 97920,
+    "st": "Shipped"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Punjab Mandi",
+    "i": "Mustard",
+    "w": "96q",
+    "a": 147456,
+    "st": "Processing"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Green Organic",
+    "i": "Jowar",
+    "w": "69q",
+    "a": 145383,
+    "st": "Delivered"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Green Organic",
+    "i": "Gehu",
+    "w": "93q",
+    "a": 258819,
+    "st": "Delivered"
+  },
+  {
+    "d": "8 Apr",
+    "s": "ITC Limited",
+    "i": "Chana",
+    "w": "73q",
+    "a": 200896,
+    "st": "Shipped"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Reliance Agri",
+    "i": "Cotton",
+    "w": "95q",
+    "a": 227050,
+    "st": "Processing"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Reliance Agri",
+    "i": "Chana",
+    "w": "46q",
+    "a": 92874,
+    "st": "Delivered"
+  },
+  {
+    "d": "19 Apr",
+    "s": "AgriSafe",
+    "i": "Cotton",
+    "w": "66q",
+    "a": 146190,
+    "st": "Delivered"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Adani Wholesales",
+    "i": "Mustard",
+    "w": "91q",
+    "a": 211666,
+    "st": "Delivered"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Haryana Agro",
+    "i": "Gehu",
+    "w": "66q",
+    "a": 99066,
+    "st": "Shipped"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Garg Trading",
+    "i": "Gehu",
+    "w": "77q",
+    "a": 227381,
+    "st": "Processing"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Kisan Traders",
+    "i": "Bajra",
+    "w": "41q",
+    "a": 83886,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "ITC Limited",
+    "i": "Makka",
+    "w": "73q",
+    "a": 183814,
+    "st": "Delivered"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Reliance Agri",
+    "i": "Chana",
+    "w": "51q",
+    "a": 104295,
+    "st": "Processing"
+  },
+  {
+    "d": "13 Apr",
+    "s": "AgriSafe",
+    "i": "Chana",
+    "w": "53q",
+    "a": 139337,
+    "st": "Delivered"
+  },
+  {
+    "d": "10 Apr",
+    "s": "Haryana Agro",
+    "i": "Dhan",
+    "w": "16q",
+    "a": 33120,
+    "st": "Shipped"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Punjab Mandi",
+    "i": "Bajra",
+    "w": "83q",
+    "a": 190734,
+    "st": "Processing"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Green Organic",
+    "i": "Gehu",
+    "w": "32q",
+    "a": 93888,
+    "st": "Delivered"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Punjab Mandi",
+    "i": "Makka",
+    "w": "98q",
+    "a": 244118,
+    "st": "Delivered"
+  },
+  {
+    "d": "12 Apr",
+    "s": "AgriSafe",
+    "i": "Mustard",
+    "w": "82q",
+    "a": 158916,
+    "st": "Delivered"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Adani Wholesales",
+    "i": "Sugarcane",
+    "w": "35q",
+    "a": 100100,
+    "st": "Shipped"
+  },
+  {
+    "d": "1 Apr",
+    "s": "AgriSafe",
+    "i": "Dhan",
+    "w": "75q",
+    "a": 141975,
+    "st": "Shipped"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Garg Trading",
+    "i": "Jowar",
+    "w": "98q",
+    "a": 170226,
+    "st": "Processing"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Green Organic",
+    "i": "Dhan",
+    "w": "43q",
+    "a": 100190,
+    "st": "Processing"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Reliance Agri",
+    "i": "Chana",
+    "w": "32q",
+    "a": 79104,
+    "st": "Shipped"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Reliance Agri",
+    "i": "Bajra",
+    "w": "70q",
+    "a": 191030,
+    "st": "Delivered"
+  },
+  {
+    "d": "18 Apr",
+    "s": "ITC Limited",
+    "i": "Bajra",
+    "w": "82q",
+    "a": 213774,
+    "st": "Shipped"
+  },
+  {
+    "d": "4 Apr",
+    "s": "AgriSafe",
+    "i": "Sugarcane",
+    "w": "59q",
+    "a": 121245,
+    "st": "Shipped"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Reliance Agri",
+    "i": "Mustard",
+    "w": "62q",
+    "a": 95976,
+    "st": "Shipped"
+  },
+  {
+    "d": "27 Apr",
+    "s": "AgriSafe",
+    "i": "Mustard",
+    "w": "43q",
+    "a": 101566,
+    "st": "Processing"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Kisan Traders",
+    "i": "Chana",
+    "w": "17q",
+    "a": 38794,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "ITC Limited",
+    "i": "Soyabean",
+    "w": "86q",
+    "a": 237962,
+    "st": "Processing"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Delhi Fresh",
+    "i": "Makka",
+    "w": "54q",
+    "a": 157734,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Green Organic",
+    "i": "Jowar",
+    "w": "77q",
+    "a": 229383,
+    "st": "Shipped"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Green Organic",
+    "i": "Chana",
+    "w": "89q",
+    "a": 237452,
+    "st": "Delivered"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Adani Wholesales",
+    "i": "Dhan",
+    "w": "93q",
+    "a": 190278,
+    "st": "Shipped"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Punjab Mandi",
+    "i": "Bajra",
+    "w": "80q",
+    "a": 148880,
+    "st": "Shipped"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Punjab Mandi",
+    "i": "Soyabean",
+    "w": "36q",
+    "a": 67716,
+    "st": "Shipped"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Kisan Traders",
+    "i": "Dhan",
+    "w": "27q",
+    "a": 42768,
+    "st": "Delivered"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Garg Trading",
+    "i": "Chana",
+    "w": "73q",
+    "a": 134101,
+    "st": "Delivered"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Green Organic",
+    "i": "Sugarcane",
+    "w": "84q",
+    "a": 182616,
+    "st": "Shipped"
+  },
+  {
+    "d": "16 Apr",
+    "s": "ITC Limited",
+    "i": "Makka",
+    "w": "64q",
+    "a": 117888,
+    "st": "Processing"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Punjab Mandi",
+    "i": "Sugarcane",
+    "w": "66q",
+    "a": 187506,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "AgriSafe",
+    "i": "Sugarcane",
+    "w": "52q",
+    "a": 99944,
+    "st": "Delivered"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Adani Wholesales",
+    "i": "Soyabean",
+    "w": "72q",
+    "a": 192672,
+    "st": "Processing"
+  },
+  {
+    "d": "15 Apr",
+    "s": "Adani Wholesales",
+    "i": "Sugarcane",
+    "w": "68q",
+    "a": 112336,
+    "st": "Shipped"
+  },
+  {
+    "d": "21 Apr",
+    "s": "ITC Limited",
+    "i": "Mustard",
+    "w": "50q",
+    "a": 77500,
+    "st": "Delivered"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Delhi Fresh",
+    "i": "Mustard",
+    "w": "32q",
+    "a": 59296,
+    "st": "Shipped"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Punjab Mandi",
+    "i": "Jowar",
+    "w": "29q",
+    "a": 82128,
+    "st": "Delivered"
+  },
+  {
+    "d": "10 Apr",
+    "s": "Haryana Agro",
+    "i": "Bajra",
+    "w": "50q",
+    "a": 109750,
+    "st": "Processing"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Reliance Agri",
+    "i": "Bajra",
+    "w": "16q",
+    "a": 31472,
+    "st": "Processing"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Green Organic",
+    "i": "Mustard",
+    "w": "23q",
+    "a": 67206,
+    "st": "Delivered"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Punjab Mandi",
+    "i": "Cotton",
+    "w": "66q",
+    "a": 162096,
+    "st": "Shipped"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Adani Wholesales",
+    "i": "Cotton",
+    "w": "46q",
+    "a": 74198,
+    "st": "Delivered"
+  },
+  {
+    "d": "16 Apr",
+    "s": "AgriSafe",
+    "i": "Makka",
+    "w": "62q",
+    "a": 184202,
+    "st": "Delivered"
+  },
+  {
+    "d": "1 Apr",
+    "s": "ITC Limited",
+    "i": "Dhan",
+    "w": "33q",
+    "a": 72864,
+    "st": "Delivered"
+  },
+  {
+    "d": "4 Apr",
+    "s": "AgriSafe",
+    "i": "Dhan",
+    "w": "23q",
+    "a": 54464,
+    "st": "Processing"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Green Organic",
+    "i": "Makka",
+    "w": "95q",
+    "a": 250800,
+    "st": "Delivered"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Garg Trading",
+    "i": "Mustard",
+    "w": "11q",
+    "a": 30437,
+    "st": "Shipped"
+  },
+  {
+    "d": "10 Apr",
+    "s": "ITC Limited",
+    "i": "Gehu",
+    "w": "42q",
+    "a": 111006,
+    "st": "Shipped"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Haryana Agro",
+    "i": "Makka",
+    "w": "77q",
+    "a": 171941,
+    "st": "Delivered"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Haryana Agro",
+    "i": "Bajra",
+    "w": "33q",
+    "a": 53955,
+    "st": "Processing"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Garg Trading",
+    "i": "Mustard",
+    "w": "19q",
+    "a": 51300,
+    "st": "Shipped"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Kisan Traders",
+    "i": "Gehu",
+    "w": "43q",
+    "a": 111241,
+    "st": "Shipped"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Punjab Mandi",
+    "i": "Jowar",
+    "w": "46q",
+    "a": 93012,
+    "st": "Delivered"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Kisan Traders",
+    "i": "Mustard",
+    "w": "99q",
+    "a": 202257,
+    "st": "Shipped"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Reliance Agri",
+    "i": "Gehu",
+    "w": "69q",
+    "a": 127719,
+    "st": "Delivered"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Reliance Agri",
+    "i": "Jowar",
+    "w": "39q",
+    "a": 101556,
+    "st": "Processing"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Delhi Fresh",
+    "i": "Makka",
+    "w": "43q",
+    "a": 108059,
+    "st": "Delivered"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Delhi Fresh",
+    "i": "Mustard",
+    "w": "74q",
+    "a": 138010,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Haryana Agro",
+    "i": "Gehu",
+    "w": "37q",
+    "a": 98420,
+    "st": "Delivered"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Punjab Mandi",
+    "i": "Bajra",
+    "w": "54q",
+    "a": 97416,
+    "st": "Delivered"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Haryana Agro",
+    "i": "Dhan",
+    "w": "28q",
+    "a": 60256,
+    "st": "Delivered"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Garg Trading",
+    "i": "Mustard",
+    "w": "93q",
+    "a": 203670,
+    "st": "Delivered"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Punjab Mandi",
+    "i": "Bajra",
+    "w": "70q",
+    "a": 196350,
+    "st": "Delivered"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Haryana Agro",
+    "i": "Sugarcane",
+    "w": "25q",
+    "a": 60925,
+    "st": "Delivered"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Adani Wholesales",
+    "i": "Mustard",
+    "w": "71q",
+    "a": 107281,
+    "st": "Shipped"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Garg Trading",
+    "i": "Mustard",
+    "w": "41q",
+    "a": 85936,
+    "st": "Delivered"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Garg Trading",
+    "i": "Jowar",
+    "w": "80q",
+    "a": 214240,
+    "st": "Processing"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Delhi Fresh",
+    "i": "Gehu",
+    "w": "54q",
+    "a": 106974,
+    "st": "Shipped"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Garg Trading",
+    "i": "Jowar",
+    "w": "99q",
+    "a": 255222,
+    "st": "Shipped"
+  },
+  {
+    "d": "16 Apr",
+    "s": "AgriSafe",
+    "i": "Chana",
+    "w": "78q",
+    "a": 190242,
+    "st": "Processing"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Garg Trading",
+    "i": "Makka",
+    "w": "64q",
+    "a": 151680,
+    "st": "Shipped"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Green Organic",
+    "i": "Dhan",
+    "w": "58q",
+    "a": 103820,
+    "st": "Shipped"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Punjab Mandi",
+    "i": "Makka",
+    "w": "44q",
+    "a": 73172,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Garg Trading",
+    "i": "Dhan",
+    "w": "47q",
+    "a": 91509,
+    "st": "Delivered"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Haryana Agro",
+    "i": "Dhan",
+    "w": "69q",
+    "a": 117162,
+    "st": "Processing"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Delhi Fresh",
+    "i": "Dhan",
+    "w": "92q",
+    "a": 262292,
+    "st": "Shipped"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Punjab Mandi",
+    "i": "Chana",
+    "w": "29q",
+    "a": 66671,
+    "st": "Processing"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Delhi Fresh",
+    "i": "Dhan",
+    "w": "89q",
+    "a": 193308,
+    "st": "Delivered"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Haryana Agro",
+    "i": "Bajra",
+    "w": "33q",
+    "a": 94677,
+    "st": "Delivered"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Garg Trading",
+    "i": "Dhan",
+    "w": "46q",
+    "a": 78108,
+    "st": "Shipped"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Punjab Mandi",
+    "i": "Makka",
+    "w": "63q",
+    "a": 162792,
+    "st": "Shipped"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Punjab Mandi",
+    "i": "Sugarcane",
+    "w": "12q",
+    "a": 29424,
+    "st": "Delivered"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Kisan Traders",
+    "i": "Makka",
+    "w": "57q",
+    "a": 112005,
+    "st": "Shipped"
+  },
+  {
+    "d": "1 Apr",
+    "s": "AgriSafe",
+    "i": "Bajra",
+    "w": "46q",
+    "a": 101476,
+    "st": "Delivered"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Reliance Agri",
+    "i": "Cotton",
+    "w": "44q",
+    "a": 123596,
+    "st": "Delivered"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Haryana Agro",
+    "i": "Gehu",
+    "w": "86q",
+    "a": 241144,
+    "st": "Shipped"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Kisan Traders",
+    "i": "Bajra",
+    "w": "81q",
+    "a": 237573,
+    "st": "Shipped"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Punjab Mandi",
+    "i": "Sugarcane",
+    "w": "33q",
+    "a": 71016,
+    "st": "Processing"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Adani Wholesales",
+    "i": "Soyabean",
+    "w": "21q",
+    "a": 50043,
+    "st": "Processing"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Delhi Fresh",
+    "i": "Bajra",
+    "w": "60q",
+    "a": 172920,
+    "st": "Shipped"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Kisan Traders",
+    "i": "Soyabean",
+    "w": "94q",
+    "a": 212534,
+    "st": "Processing"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Adani Wholesales",
+    "i": "Sugarcane",
+    "w": "67q",
+    "a": 147534,
+    "st": "Delivered"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Haryana Agro",
+    "i": "Chana",
+    "w": "31q",
+    "a": 69843,
+    "st": "Shipped"
+  },
+  {
+    "d": "10 Apr",
+    "s": "Kisan Traders",
+    "i": "Gehu",
+    "w": "87q",
+    "a": 191226,
+    "st": "Processing"
+  },
+  {
+    "d": "10 Apr",
+    "s": "AgriSafe",
+    "i": "Dhan",
+    "w": "90q",
+    "a": 198720,
+    "st": "Shipped"
+  },
+  {
+    "d": "1 Apr",
+    "s": "AgriSafe",
+    "i": "Dhan",
+    "w": "58q",
+    "a": 119190,
+    "st": "Processing"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Delhi Fresh",
+    "i": "Chana",
+    "w": "82q",
+    "a": 204262,
+    "st": "Processing"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Reliance Agri",
+    "i": "Mustard",
+    "w": "96q",
+    "a": 254976,
+    "st": "Shipped"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Green Organic",
+    "i": "Gehu",
+    "w": "87q",
+    "a": 229593,
+    "st": "Delivered"
+  },
+  {
+    "d": "11 Apr",
+    "s": "ITC Limited",
+    "i": "Mustard",
+    "w": "55q",
+    "a": 100265,
+    "st": "Delivered"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Green Organic",
+    "i": "Mustard",
+    "w": "45q",
+    "a": 102195,
+    "st": "Delivered"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Haryana Agro",
+    "i": "Gehu",
+    "w": "36q",
+    "a": 100512,
+    "st": "Shipped"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Punjab Mandi",
+    "i": "Sugarcane",
+    "w": "39q",
+    "a": 92664,
+    "st": "Shipped"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Garg Trading",
+    "i": "Makka",
+    "w": "28q",
+    "a": 78708,
+    "st": "Shipped"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Haryana Agro",
+    "i": "Sugarcane",
+    "w": "12q",
+    "a": 23700,
+    "st": "Processing"
+  },
+  {
+    "d": "4 Apr",
+    "s": "AgriSafe",
+    "i": "Mustard",
+    "w": "48q",
+    "a": 105024,
+    "st": "Delivered"
+  },
+  {
+    "d": "14 Apr",
+    "s": "AgriSafe",
+    "i": "Makka",
+    "w": "50q",
+    "a": 130800,
+    "st": "Shipped"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Adani Wholesales",
+    "i": "Cotton",
+    "w": "87q",
+    "a": 178611,
+    "st": "Delivered"
+  },
+  {
+    "d": "14 Apr",
+    "s": "AgriSafe",
+    "i": "Gehu",
+    "w": "52q",
+    "a": 113568,
+    "st": "Shipped"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Garg Trading",
+    "i": "Cotton",
+    "w": "43q",
+    "a": 77744,
+    "st": "Processing"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Kisan Traders",
+    "i": "Jowar",
+    "w": "59q",
+    "a": 97881,
+    "st": "Processing"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Delhi Fresh",
+    "i": "Jowar",
+    "w": "43q",
+    "a": 99072,
+    "st": "Shipped"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Adani Wholesales",
+    "i": "Bajra",
+    "w": "10q",
+    "a": 28850,
+    "st": "Shipped"
+  },
+  {
+    "d": "14 Apr",
+    "s": "AgriSafe",
+    "i": "Sugarcane",
+    "w": "61q",
+    "a": 103212,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Kisan Traders",
+    "i": "Dhan",
+    "w": "25q",
+    "a": 39525,
+    "st": "Delivered"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Punjab Mandi",
+    "i": "Gehu",
+    "w": "82q",
+    "a": 226402,
+    "st": "Shipped"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Reliance Agri",
+    "i": "Sugarcane",
+    "w": "19q",
+    "a": 29070,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Haryana Agro",
+    "i": "Cotton",
+    "w": "57q",
+    "a": 135831,
+    "st": "Processing"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Reliance Agri",
+    "i": "Chana",
+    "w": "91q",
+    "a": 165620,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Garg Trading",
+    "i": "Dhan",
+    "w": "57q",
+    "a": 143070,
+    "st": "Processing"
+  },
+  {
+    "d": "5 Apr",
+    "s": "AgriSafe",
+    "i": "Bajra",
+    "w": "48q",
+    "a": 94080,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Kisan Traders",
+    "i": "Jowar",
+    "w": "66q",
+    "a": 150414,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Delhi Fresh",
+    "i": "Makka",
+    "w": "97q",
+    "a": 239202,
+    "st": "Shipped"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Haryana Agro",
+    "i": "Chana",
+    "w": "76q",
+    "a": 131936,
+    "st": "Processing"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Garg Trading",
+    "i": "Dhan",
+    "w": "48q",
+    "a": 100176,
+    "st": "Processing"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Reliance Agri",
+    "i": "Jowar",
+    "w": "87q",
+    "a": 195054,
+    "st": "Processing"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Green Organic",
+    "i": "Jowar",
+    "w": "48q",
+    "a": 134784,
+    "st": "Shipped"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Punjab Mandi",
+    "i": "Dhan",
+    "w": "66q",
+    "a": 148962,
+    "st": "Processing"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Kisan Traders",
+    "i": "Chana",
+    "w": "41q",
+    "a": 79130,
+    "st": "Shipped"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Kisan Traders",
+    "i": "Dhan",
+    "w": "26q",
+    "a": 58656,
+    "st": "Shipped"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Adani Wholesales",
+    "i": "Cotton",
+    "w": "83q",
+    "a": 161767,
+    "st": "Shipped"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Delhi Fresh",
+    "i": "Gehu",
+    "w": "32q",
+    "a": 72192,
+    "st": "Shipped"
+  },
+  {
+    "d": "15 Apr",
+    "s": "Punjab Mandi",
+    "i": "Sugarcane",
+    "w": "77q",
+    "a": 117040,
+    "st": "Processing"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Kisan Traders",
+    "i": "Sugarcane",
+    "w": "11q",
+    "a": 31031,
+    "st": "Delivered"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Adani Wholesales",
+    "i": "Mustard",
+    "w": "74q",
+    "a": 220224,
+    "st": "Processing"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Delhi Fresh",
+    "i": "Soyabean",
+    "w": "79q",
+    "a": 136828,
+    "st": "Shipped"
+  },
+  {
+    "d": "23 Apr",
+    "s": "ITC Limited",
+    "i": "Sugarcane",
+    "w": "64q",
+    "a": 96768,
+    "st": "Delivered"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Green Organic",
+    "i": "Soyabean",
+    "w": "14q",
+    "a": 33502,
+    "st": "Processing"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Kisan Traders",
+    "i": "Cotton",
+    "w": "52q",
+    "a": 152152,
+    "st": "Processing"
+  },
+  {
+    "d": "15 Apr",
+    "s": "Delhi Fresh",
+    "i": "Dhan",
+    "w": "55q",
+    "a": 141680,
+    "st": "Shipped"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Delhi Fresh",
+    "i": "Mustard",
+    "w": "15q",
+    "a": 40170,
+    "st": "Shipped"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Reliance Agri",
+    "i": "Sugarcane",
+    "w": "39q",
+    "a": 94497,
+    "st": "Delivered"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Delhi Fresh",
+    "i": "Makka",
+    "w": "20q",
+    "a": 31960,
+    "st": "Shipped"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Haryana Agro",
+    "i": "Mustard",
+    "w": "24q",
+    "a": 43704,
+    "st": "Shipped"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Haryana Agro",
+    "i": "Makka",
+    "w": "20q",
+    "a": 52900,
+    "st": "Delivered"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Kisan Traders",
+    "i": "Cotton",
+    "w": "21q",
+    "a": 43386,
+    "st": "Delivered"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Adani Wholesales",
+    "i": "Sugarcane",
+    "w": "24q",
+    "a": 62400,
+    "st": "Delivered"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Punjab Mandi",
+    "i": "Jowar",
+    "w": "91q",
+    "a": 196378,
+    "st": "Processing"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Haryana Agro",
+    "i": "Soyabean",
+    "w": "53q",
+    "a": 100647,
+    "st": "Delivered"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Garg Trading",
+    "i": "Soyabean",
+    "w": "52q",
+    "a": 125112,
+    "st": "Shipped"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Kisan Traders",
+    "i": "Gehu",
+    "w": "84q",
+    "a": 177996,
+    "st": "Shipped"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Punjab Mandi",
+    "i": "Makka",
+    "w": "64q",
+    "a": 126720,
+    "st": "Processing"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Reliance Agri",
+    "i": "Makka",
+    "w": "13q",
+    "a": 33800,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Adani Wholesales",
+    "i": "Bajra",
+    "w": "35q",
+    "a": 64505,
+    "st": "Processing"
+  },
+  {
+    "d": "15 Apr",
+    "s": "Green Organic",
+    "i": "Bajra",
+    "w": "62q",
+    "a": 151156,
+    "st": "Shipped"
+  },
+  {
+    "d": "28 Apr",
+    "s": "AgriSafe",
+    "i": "Mustard",
+    "w": "49q",
+    "a": 132006,
+    "st": "Shipped"
+  },
+  {
+    "d": "23 Apr",
+    "s": "AgriSafe",
+    "i": "Soyabean",
+    "w": "32q",
+    "a": 90080,
+    "st": "Shipped"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Garg Trading",
+    "i": "Gehu",
+    "w": "30q",
+    "a": 48390,
+    "st": "Delivered"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Haryana Agro",
+    "i": "Cotton",
+    "w": "74q",
+    "a": 215192,
+    "st": "Processing"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Green Organic",
+    "i": "Soyabean",
+    "w": "74q",
+    "a": 125578,
+    "st": "Shipped"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Delhi Fresh",
+    "i": "Bajra",
+    "w": "50q",
+    "a": 119500,
+    "st": "Delivered"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Punjab Mandi",
+    "i": "Dhan",
+    "w": "65q",
+    "a": 185900,
+    "st": "Processing"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Delhi Fresh",
+    "i": "Soyabean",
+    "w": "82q",
+    "a": 222548,
+    "st": "Processing"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Reliance Agri",
+    "i": "Dhan",
+    "w": "63q",
+    "a": 100170,
+    "st": "Delivered"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Haryana Agro",
+    "i": "Mustard",
+    "w": "31q",
+    "a": 82832,
+    "st": "Shipped"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Green Organic",
+    "i": "Sugarcane",
+    "w": "98q",
+    "a": 260876,
+    "st": "Shipped"
+  },
+  {
+    "d": "21 Apr",
+    "s": "ITC Limited",
+    "i": "Makka",
+    "w": "42q",
+    "a": 120078,
+    "st": "Delivered"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Kisan Traders",
+    "i": "Chana",
+    "w": "31q",
+    "a": 63860,
+    "st": "Shipped"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Reliance Agri",
+    "i": "Cotton",
+    "w": "85q",
+    "a": 252280,
+    "st": "Processing"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Haryana Agro",
+    "i": "Makka",
+    "w": "84q",
+    "a": 202692,
+    "st": "Processing"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Green Organic",
+    "i": "Bajra",
+    "w": "89q",
+    "a": 189659,
+    "st": "Delivered"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Kisan Traders",
+    "i": "Makka",
+    "w": "13q",
+    "a": 24518,
+    "st": "Processing"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Punjab Mandi",
+    "i": "Gehu",
+    "w": "28q",
+    "a": 74396,
+    "st": "Processing"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Reliance Agri",
+    "i": "Chana",
+    "w": "18q",
+    "a": 33426,
+    "st": "Delivered"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Reliance Agri",
+    "i": "Bajra",
+    "w": "59q",
+    "a": 133399,
+    "st": "Delivered"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Garg Trading",
+    "i": "Chana",
+    "w": "63q",
+    "a": 176652,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Garg Trading",
+    "i": "Sugarcane",
+    "w": "89q",
+    "a": 151389,
+    "st": "Delivered"
+  },
+  {
+    "d": "10 Apr",
+    "s": "Green Organic",
+    "i": "Jowar",
+    "w": "96q",
+    "a": 208608,
+    "st": "Shipped"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Adani Wholesales",
+    "i": "Dhan",
+    "w": "100q",
+    "a": 246400,
+    "st": "Shipped"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Punjab Mandi",
+    "i": "Sugarcane",
+    "w": "14q",
+    "a": 31500,
+    "st": "Delivered"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Reliance Agri",
+    "i": "Soyabean",
+    "w": "98q",
+    "a": 218540,
+    "st": "Delivered"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Adani Wholesales",
+    "i": "Soyabean",
+    "w": "95q",
+    "a": 161690,
+    "st": "Delivered"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Garg Trading",
+    "i": "Dhan",
+    "w": "30q",
+    "a": 58710,
+    "st": "Shipped"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Haryana Agro",
+    "i": "Jowar",
+    "w": "72q",
+    "a": 120600,
+    "st": "Delivered"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Green Organic",
+    "i": "Sugarcane",
+    "w": "62q",
+    "a": 118234,
+    "st": "Delivered"
+  },
+  {
+    "d": "14 Apr",
+    "s": "ITC Limited",
+    "i": "Jowar",
+    "w": "31q",
+    "a": 74834,
+    "st": "Delivered"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Reliance Agri",
+    "i": "Makka",
+    "w": "88q",
+    "a": 261976,
+    "st": "Processing"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Haryana Agro",
+    "i": "Chana",
+    "w": "64q",
+    "a": 156800,
+    "st": "Shipped"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Kisan Traders",
+    "i": "Jowar",
+    "w": "98q",
+    "a": 162386,
+    "st": "Processing"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Reliance Agri",
+    "i": "Soyabean",
+    "w": "67q",
+    "a": 117987,
+    "st": "Processing"
+  },
+  {
+    "d": "6 Apr",
+    "s": "ITC Limited",
+    "i": "Jowar",
+    "w": "20q",
+    "a": 48040,
+    "st": "Delivered"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Reliance Agri",
+    "i": "Makka",
+    "w": "85q",
+    "a": 215220,
+    "st": "Delivered"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Garg Trading",
+    "i": "Dhan",
+    "w": "66q",
+    "a": 159588,
+    "st": "Processing"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Adani Wholesales",
+    "i": "Jowar",
+    "w": "70q",
+    "a": 206150,
+    "st": "Delivered"
+  },
+  {
+    "d": "27 Apr",
+    "s": "ITC Limited",
+    "i": "Cotton",
+    "w": "21q",
+    "a": 39060,
+    "st": "Processing"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Green Organic",
+    "i": "Sugarcane",
+    "w": "37q",
+    "a": 77774,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Green Organic",
+    "i": "Soyabean",
+    "w": "89q",
+    "a": 225882,
+    "st": "Processing"
+  },
+  {
+    "d": "26 Apr",
+    "s": "AgriSafe",
+    "i": "Soyabean",
+    "w": "68q",
+    "a": 121516,
+    "st": "Processing"
+  },
+  {
+    "d": "9 Apr",
+    "s": "ITC Limited",
+    "i": "Makka",
+    "w": "89q",
+    "a": 226505,
+    "st": "Delivered"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Adani Wholesales",
+    "i": "Soyabean",
+    "w": "67q",
+    "a": 148539,
+    "st": "Shipped"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Garg Trading",
+    "i": "Soyabean",
+    "w": "31q",
+    "a": 53630,
+    "st": "Shipped"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Reliance Agri",
+    "i": "Cotton",
+    "w": "52q",
+    "a": 90688,
+    "st": "Delivered"
+  },
+  {
+    "d": "10 Apr",
+    "s": "Haryana Agro",
+    "i": "Mustard",
+    "w": "13q",
+    "a": 29848,
+    "st": "Delivered"
+  },
+  {
+    "d": "16 Apr",
+    "s": "ITC Limited",
+    "i": "Bajra",
+    "w": "61q",
+    "a": 179218,
+    "st": "Delivered"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Reliance Agri",
+    "i": "Dhan",
+    "w": "28q",
+    "a": 54740,
+    "st": "Processing"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Delhi Fresh",
+    "i": "Sugarcane",
+    "w": "21q",
+    "a": 53151,
+    "st": "Delivered"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Kisan Traders",
+    "i": "Cotton",
+    "w": "83q",
+    "a": 216215,
+    "st": "Shipped"
+  },
+  {
+    "d": "28 Apr",
+    "s": "ITC Limited",
+    "i": "Soyabean",
+    "w": "58q",
+    "a": 98542,
+    "st": "Delivered"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Green Organic",
+    "i": "Gehu",
+    "w": "63q",
+    "a": 188874,
+    "st": "Shipped"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Green Organic",
+    "i": "Cotton",
+    "w": "99q",
+    "a": 206217,
+    "st": "Processing"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Adani Wholesales",
+    "i": "Jowar",
+    "w": "72q",
+    "a": 119808,
+    "st": "Shipped"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Adani Wholesales",
+    "i": "Soyabean",
+    "w": "44q",
+    "a": 108856,
+    "st": "Shipped"
+  },
+  {
+    "d": "6 Apr",
+    "s": "AgriSafe",
+    "i": "Chana",
+    "w": "72q",
+    "a": 130680,
+    "st": "Shipped"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Punjab Mandi",
+    "i": "Dhan",
+    "w": "87q",
+    "a": 230724,
+    "st": "Delivered"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Haryana Agro",
+    "i": "Sugarcane",
+    "w": "31q",
+    "a": 59520,
+    "st": "Delivered"
+  },
+  {
+    "d": "18 Apr",
+    "s": "AgriSafe",
+    "i": "Gehu",
+    "w": "65q",
+    "a": 167180,
+    "st": "Processing"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Reliance Agri",
+    "i": "Jowar",
+    "w": "33q",
+    "a": 64086,
+    "st": "Delivered"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Garg Trading",
+    "i": "Dhan",
+    "w": "82q",
+    "a": 133906,
+    "st": "Delivered"
+  },
+  {
+    "d": "12 Apr",
+    "s": "ITC Limited",
+    "i": "Mustard",
+    "w": "84q",
+    "a": 179088,
+    "st": "Shipped"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Garg Trading",
+    "i": "Chana",
+    "w": "19q",
+    "a": 34561,
+    "st": "Processing"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Delhi Fresh",
+    "i": "Makka",
+    "w": "74q",
+    "a": 214674,
+    "st": "Processing"
+  },
+  {
+    "d": "16 Apr",
+    "s": "AgriSafe",
+    "i": "Mustard",
+    "w": "75q",
+    "a": 202800,
+    "st": "Shipped"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Adani Wholesales",
+    "i": "Cotton",
+    "w": "19q",
+    "a": 34542,
+    "st": "Shipped"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Kisan Traders",
+    "i": "Gehu",
+    "w": "53q",
+    "a": 123331,
+    "st": "Shipped"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Garg Trading",
+    "i": "Dhan",
+    "w": "98q",
+    "a": 212758,
+    "st": "Shipped"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Green Organic",
+    "i": "Soyabean",
+    "w": "17q",
+    "a": 50150,
+    "st": "Processing"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Adani Wholesales",
+    "i": "Sugarcane",
+    "w": "52q",
+    "a": 87880,
+    "st": "Delivered"
+  },
+  {
+    "d": "22 Apr",
+    "s": "AgriSafe",
+    "i": "Jowar",
+    "w": "23q",
+    "a": 35420,
+    "st": "Shipped"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Punjab Mandi",
+    "i": "Jowar",
+    "w": "99q",
+    "a": 172260,
+    "st": "Delivered"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Adani Wholesales",
+    "i": "Dhan",
+    "w": "100q",
+    "a": 281600,
+    "st": "Delivered"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Reliance Agri",
+    "i": "Makka",
+    "w": "67q",
+    "a": 143715,
+    "st": "Delivered"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Garg Trading",
+    "i": "Makka",
+    "w": "66q",
+    "a": 136224,
+    "st": "Processing"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Haryana Agro",
+    "i": "Sugarcane",
+    "w": "14q",
+    "a": 36428,
+    "st": "Delivered"
+  },
+  {
+    "d": "5 Apr",
+    "s": "AgriSafe",
+    "i": "Gehu",
+    "w": "47q",
+    "a": 114163,
+    "st": "Shipped"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Delhi Fresh",
+    "i": "Makka",
+    "w": "35q",
+    "a": 75460,
+    "st": "Shipped"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Haryana Agro",
+    "i": "Sugarcane",
+    "w": "86q",
+    "a": 209496,
+    "st": "Delivered"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Haryana Agro",
+    "i": "Jowar",
+    "w": "76q",
+    "a": 129200,
+    "st": "Delivered"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Reliance Agri",
+    "i": "Gehu",
+    "w": "89q",
+    "a": 241724,
+    "st": "Processing"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Kisan Traders",
+    "i": "Makka",
+    "w": "48q",
+    "a": 98832,
+    "st": "Shipped"
+  },
+  {
+    "d": "22 Apr",
+    "s": "AgriSafe",
+    "i": "Dhan",
+    "w": "71q",
+    "a": 156768,
+    "st": "Processing"
+  },
+  {
+    "d": "25 Apr",
+    "s": "ITC Limited",
+    "i": "Jowar",
+    "w": "67q",
+    "a": 124017,
+    "st": "Delivered"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Punjab Mandi",
+    "i": "Chana",
+    "w": "31q",
+    "a": 73935,
+    "st": "Shipped"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Delhi Fresh",
+    "i": "Dhan",
+    "w": "23q",
+    "a": 52624,
+    "st": "Shipped"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Green Organic",
+    "i": "Chana",
+    "w": "80q",
+    "a": 208880,
+    "st": "Processing"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Kisan Traders",
+    "i": "Bajra",
+    "w": "21q",
+    "a": 55629,
+    "st": "Processing"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Garg Trading",
+    "i": "Sugarcane",
+    "w": "69q",
+    "a": 158079,
+    "st": "Shipped"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Green Organic",
+    "i": "Jowar",
+    "w": "50q",
+    "a": 111150,
+    "st": "Delivered"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Adani Wholesales",
+    "i": "Cotton",
+    "w": "40q",
+    "a": 109680,
+    "st": "Shipped"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Punjab Mandi",
+    "i": "Gehu",
+    "w": "15q",
+    "a": 30540,
+    "st": "Processing"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Green Organic",
+    "i": "Bajra",
+    "w": "21q",
+    "a": 35343,
+    "st": "Shipped"
+  },
+  {
+    "d": "13 Apr",
+    "s": "AgriSafe",
+    "i": "Cotton",
+    "w": "56q",
+    "a": 162008,
+    "st": "Processing"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Delhi Fresh",
+    "i": "Gehu",
+    "w": "29q",
+    "a": 66410,
+    "st": "Shipped"
+  },
+  {
+    "d": "8 Apr",
+    "s": "ITC Limited",
+    "i": "Dhan",
+    "w": "49q",
+    "a": 94619,
+    "st": "Shipped"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Haryana Agro",
+    "i": "Gehu",
+    "w": "70q",
+    "a": 206710,
+    "st": "Delivered"
+  },
+  {
+    "d": "5 Apr",
+    "s": "AgriSafe",
+    "i": "Makka",
+    "w": "31q",
+    "a": 72416,
+    "st": "Delivered"
+  },
+  {
+    "d": "19 Apr",
+    "s": "ITC Limited",
+    "i": "Mustard",
+    "w": "45q",
+    "a": 86535,
+    "st": "Delivered"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Kisan Traders",
+    "i": "Gehu",
+    "w": "92q",
+    "a": 161920,
+    "st": "Shipped"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Adani Wholesales",
+    "i": "Bajra",
+    "w": "61q",
+    "a": 146827,
+    "st": "Shipped"
+  },
+  {
+    "d": "20 Apr",
+    "s": "ITC Limited",
+    "i": "Dhan",
+    "w": "28q",
+    "a": 68544,
+    "st": "Shipped"
+  },
+  {
+    "d": "10 Apr",
+    "s": "Adani Wholesales",
+    "i": "Gehu",
+    "w": "78q",
+    "a": 232362,
+    "st": "Delivered"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Punjab Mandi",
+    "i": "Cotton",
+    "w": "34q",
+    "a": 87108,
+    "st": "Processing"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Punjab Mandi",
+    "i": "Gehu",
+    "w": "13q",
+    "a": 20930,
+    "st": "Processing"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Reliance Agri",
+    "i": "Chana",
+    "w": "79q",
+    "a": 175064,
+    "st": "Shipped"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Green Organic",
+    "i": "Soyabean",
+    "w": "84q",
+    "a": 178920,
+    "st": "Delivered"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Garg Trading",
+    "i": "Chana",
+    "w": "36q",
+    "a": 69336,
+    "st": "Delivered"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Adani Wholesales",
+    "i": "Makka",
+    "w": "14q",
+    "a": 40292,
+    "st": "Processing"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Reliance Agri",
+    "i": "Bajra",
+    "w": "87q",
+    "a": 228114,
+    "st": "Shipped"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Kisan Traders",
+    "i": "Bajra",
+    "w": "32q",
+    "a": 88064,
+    "st": "Shipped"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Adani Wholesales",
+    "i": "Makka",
+    "w": "100q",
+    "a": 202100,
+    "st": "Shipped"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Adani Wholesales",
+    "i": "Gehu",
+    "w": "38q",
+    "a": 70338,
+    "st": "Delivered"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Reliance Agri",
+    "i": "Bajra",
+    "w": "37q",
+    "a": 67118,
+    "st": "Shipped"
+  },
+  {
+    "d": "3 Apr",
+    "s": "ITC Limited",
+    "i": "Mustard",
+    "w": "65q",
+    "a": 193375,
+    "st": "Shipped"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Haryana Agro",
+    "i": "Gehu",
+    "w": "18q",
+    "a": 51858,
+    "st": "Processing"
+  },
+  {
+    "d": "19 Apr",
+    "s": "ITC Limited",
+    "i": "Bajra",
+    "w": "20q",
+    "a": 47760,
+    "st": "Delivered"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Kisan Traders",
+    "i": "Gehu",
+    "w": "40q",
+    "a": 113440,
+    "st": "Delivered"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Kisan Traders",
+    "i": "Dhan",
+    "w": "14q",
+    "a": 32928,
+    "st": "Processing"
+  },
+  {
+    "d": "6 Apr",
+    "s": "ITC Limited",
+    "i": "Bajra",
+    "w": "33q",
+    "a": 85503,
+    "st": "Delivered"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Punjab Mandi",
+    "i": "Chana",
+    "w": "14q",
+    "a": 41762,
+    "st": "Shipped"
+  },
+  {
+    "d": "21 Apr",
+    "s": "AgriSafe",
+    "i": "Chana",
+    "w": "53q",
+    "a": 143789,
+    "st": "Processing"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Reliance Agri",
+    "i": "Bajra",
+    "w": "23q",
+    "a": 67321,
+    "st": "Delivered"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Green Organic",
+    "i": "Bajra",
+    "w": "94q",
+    "a": 264704,
+    "st": "Delivered"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Garg Trading",
+    "i": "Jowar",
+    "w": "37q",
+    "a": 97754,
+    "st": "Shipped"
+  },
+  {
+    "d": "18 Apr",
+    "s": "AgriSafe",
+    "i": "Dhan",
+    "w": "43q",
+    "a": 107715,
+    "st": "Processing"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Garg Trading",
+    "i": "Sugarcane",
+    "w": "69q",
+    "a": 166428,
+    "st": "Shipped"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Adani Wholesales",
+    "i": "Jowar",
+    "w": "75q",
+    "a": 184575,
+    "st": "Shipped"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Delhi Fresh",
+    "i": "Dhan",
+    "w": "84q",
+    "a": 151536,
+    "st": "Delivered"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Haryana Agro",
+    "i": "Sugarcane",
+    "w": "49q",
+    "a": 117649,
+    "st": "Shipped"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Kisan Traders",
+    "i": "Cotton",
+    "w": "99q",
+    "a": 231066,
+    "st": "Shipped"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Delhi Fresh",
+    "i": "Bajra",
+    "w": "99q",
+    "a": 216117,
+    "st": "Shipped"
+  },
+  {
+    "d": "12 Apr",
+    "s": "AgriSafe",
+    "i": "Chana",
+    "w": "40q",
+    "a": 107680,
+    "st": "Delivered"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Reliance Agri",
+    "i": "Soyabean",
+    "w": "12q",
+    "a": 23544,
+    "st": "Processing"
+  },
+  {
+    "d": "17 Apr",
+    "s": "AgriSafe",
+    "i": "Bajra",
+    "w": "35q",
+    "a": 75040,
+    "st": "Shipped"
+  },
+  {
+    "d": "2 Apr",
+    "s": "AgriSafe",
+    "i": "Makka",
+    "w": "69q",
+    "a": 125787,
+    "st": "Shipped"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Kisan Traders",
+    "i": "Jowar",
+    "w": "23q",
+    "a": 50646,
+    "st": "Delivered"
+  },
+  {
+    "d": "15 Apr",
+    "s": "Delhi Fresh",
+    "i": "Bajra",
+    "w": "21q",
+    "a": 58464,
+    "st": "Delivered"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Reliance Agri",
+    "i": "Cotton",
+    "w": "38q",
+    "a": 80484,
+    "st": "Processing"
+  },
+  {
+    "d": "19 Apr",
+    "s": "AgriSafe",
+    "i": "Soyabean",
+    "w": "25q",
+    "a": 53775,
+    "st": "Processing"
+  },
+  {
+    "d": "5 Apr",
+    "s": "AgriSafe",
+    "i": "Mustard",
+    "w": "45q",
+    "a": 106245,
+    "st": "Delivered"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Adani Wholesales",
+    "i": "Chana",
+    "w": "17q",
+    "a": 41208,
+    "st": "Shipped"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Haryana Agro",
+    "i": "Bajra",
+    "w": "65q",
+    "a": 171795,
+    "st": "Shipped"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Green Organic",
+    "i": "Cotton",
+    "w": "44q",
+    "a": 126764,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Adani Wholesales",
+    "i": "Gehu",
+    "w": "32q",
+    "a": 76832,
+    "st": "Delivered"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Adani Wholesales",
+    "i": "Makka",
+    "w": "32q",
+    "a": 78048,
+    "st": "Delivered"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Haryana Agro",
+    "i": "Gehu",
+    "w": "72q",
+    "a": 172944,
+    "st": "Delivered"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Garg Trading",
+    "i": "Sugarcane",
+    "w": "18q",
+    "a": 43794,
+    "st": "Delivered"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Reliance Agri",
+    "i": "Bajra",
+    "w": "89q",
+    "a": 239321,
+    "st": "Processing"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Punjab Mandi",
+    "i": "Jowar",
+    "w": "39q",
+    "a": 63336,
+    "st": "Delivered"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Delhi Fresh",
+    "i": "Makka",
+    "w": "72q",
+    "a": 188568,
+    "st": "Processing"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Adani Wholesales",
+    "i": "Bajra",
+    "w": "27q",
+    "a": 72873,
+    "st": "Processing"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Reliance Agri",
+    "i": "Cotton",
+    "w": "73q",
+    "a": 161914,
+    "st": "Delivered"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Green Organic",
+    "i": "Bajra",
+    "w": "100q",
+    "a": 155600,
+    "st": "Shipped"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Garg Trading",
+    "i": "Makka",
+    "w": "27q",
+    "a": 60102,
+    "st": "Processing"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Delhi Fresh",
+    "i": "Jowar",
+    "w": "50q",
+    "a": 81150,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Garg Trading",
+    "i": "Gehu",
+    "w": "51q",
+    "a": 93075,
+    "st": "Processing"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Adani Wholesales",
+    "i": "Sugarcane",
+    "w": "42q",
+    "a": 87108,
+    "st": "Processing"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Reliance Agri",
+    "i": "Mustard",
+    "w": "33q",
+    "a": 71577,
+    "st": "Processing"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Garg Trading",
+    "i": "Bajra",
+    "w": "48q",
+    "a": 128736,
+    "st": "Processing"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Green Organic",
+    "i": "Soyabean",
+    "w": "13q",
+    "a": 25792,
+    "st": "Shipped"
+  },
+  {
+    "d": "10 Apr",
+    "s": "Adani Wholesales",
+    "i": "Sugarcane",
+    "w": "60q",
+    "a": 160680,
+    "st": "Processing"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Green Organic",
+    "i": "Cotton",
+    "w": "76q",
+    "a": 161424,
+    "st": "Delivered"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Haryana Agro",
+    "i": "Gehu",
+    "w": "25q",
+    "a": 61275,
+    "st": "Delivered"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Haryana Agro",
+    "i": "Jowar",
+    "w": "72q",
+    "a": 185040,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Delhi Fresh",
+    "i": "Mustard",
+    "w": "61q",
+    "a": 93818,
+    "st": "Shipped"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Adani Wholesales",
+    "i": "Jowar",
+    "w": "38q",
+    "a": 109402,
+    "st": "Processing"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Green Organic",
+    "i": "Bajra",
+    "w": "22q",
+    "a": 53174,
+    "st": "Processing"
+  },
+  {
+    "d": "24 Apr",
+    "s": "ITC Limited",
+    "i": "Chana",
+    "w": "64q",
+    "a": 142656,
+    "st": "Shipped"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Haryana Agro",
+    "i": "Makka",
+    "w": "66q",
+    "a": 197538,
+    "st": "Shipped"
+  },
+  {
+    "d": "20 Apr",
+    "s": "ITC Limited",
+    "i": "Sugarcane",
+    "w": "36q",
+    "a": 61596,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Green Organic",
+    "i": "Chana",
+    "w": "62q",
+    "a": 124000,
+    "st": "Shipped"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Punjab Mandi",
+    "i": "Jowar",
+    "w": "45q",
+    "a": 111285,
+    "st": "Processing"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Haryana Agro",
+    "i": "Mustard",
+    "w": "74q",
+    "a": 138084,
+    "st": "Shipped"
+  },
+  {
+    "d": "15 Apr",
+    "s": "Garg Trading",
+    "i": "Makka",
+    "w": "65q",
+    "a": 116285,
+    "st": "Processing"
+  },
+  {
+    "d": "24 Apr",
+    "s": "ITC Limited",
+    "i": "Soyabean",
+    "w": "23q",
+    "a": 55637,
+    "st": "Delivered"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Green Organic",
+    "i": "Mustard",
+    "w": "92q",
+    "a": 139932,
+    "st": "Processing"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Kisan Traders",
+    "i": "Soyabean",
+    "w": "65q",
+    "a": 120900,
+    "st": "Processing"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Punjab Mandi",
+    "i": "Mustard",
+    "w": "34q",
+    "a": 87210,
+    "st": "Shipped"
+  },
+  {
+    "d": "21 Apr",
+    "s": "AgriSafe",
+    "i": "Chana",
+    "w": "32q",
+    "a": 81696,
+    "st": "Delivered"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Kisan Traders",
+    "i": "Mustard",
+    "w": "37q",
+    "a": 81955,
+    "st": "Shipped"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Garg Trading",
+    "i": "Mustard",
+    "w": "20q",
+    "a": 51760,
+    "st": "Shipped"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Reliance Agri",
+    "i": "Dhan",
+    "w": "89q",
+    "a": 218584,
+    "st": "Processing"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Reliance Agri",
+    "i": "Makka",
+    "w": "39q",
+    "a": 79521,
+    "st": "Shipped"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Green Organic",
+    "i": "Sugarcane",
+    "w": "67q",
+    "a": 180029,
+    "st": "Shipped"
+  },
+  {
+    "d": "9 Apr",
+    "s": "ITC Limited",
+    "i": "Gehu",
+    "w": "73q",
+    "a": 123297,
+    "st": "Delivered"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Adani Wholesales",
+    "i": "Sugarcane",
+    "w": "62q",
+    "a": 135346,
+    "st": "Delivered"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Kisan Traders",
+    "i": "Cotton",
+    "w": "79q",
+    "a": 128217,
+    "st": "Delivered"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Delhi Fresh",
+    "i": "Gehu",
+    "w": "57q",
+    "a": 142557,
+    "st": "Shipped"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Kisan Traders",
+    "i": "Mustard",
+    "w": "88q",
+    "a": 140008,
+    "st": "Delivered"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Adani Wholesales",
+    "i": "Mustard",
+    "w": "34q",
+    "a": 57936,
+    "st": "Shipped"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Green Organic",
+    "i": "Mustard",
+    "w": "36q",
+    "a": 75168,
+    "st": "Processing"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Kisan Traders",
+    "i": "Makka",
+    "w": "22q",
+    "a": 53416,
+    "st": "Shipped"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Haryana Agro",
+    "i": "Chana",
+    "w": "11q",
+    "a": 24915,
+    "st": "Delivered"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Adani Wholesales",
+    "i": "Makka",
+    "w": "76q",
+    "a": 201096,
+    "st": "Delivered"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Adani Wholesales",
+    "i": "Mustard",
+    "w": "62q",
+    "a": 167152,
+    "st": "Shipped"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Reliance Agri",
+    "i": "Soyabean",
+    "w": "89q",
+    "a": 186989,
+    "st": "Shipped"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Punjab Mandi",
+    "i": "Chana",
+    "w": "49q",
+    "a": 89866,
+    "st": "Processing"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Kisan Traders",
+    "i": "Cotton",
+    "w": "95q",
+    "a": 180690,
+    "st": "Delivered"
+  },
+  {
+    "d": "25 Apr",
+    "s": "ITC Limited",
+    "i": "Cotton",
+    "w": "50q",
+    "a": 128350,
+    "st": "Shipped"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Garg Trading",
+    "i": "Chana",
+    "w": "64q",
+    "a": 96832,
+    "st": "Processing"
+  },
+  {
+    "d": "10 Apr",
+    "s": "Punjab Mandi",
+    "i": "Gehu",
+    "w": "49q",
+    "a": 135142,
+    "st": "Delivered"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Delhi Fresh",
+    "i": "Jowar",
+    "w": "61q",
+    "a": 107543,
+    "st": "Processing"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Adani Wholesales",
+    "i": "Gehu",
+    "w": "55q",
+    "a": 154880,
+    "st": "Delivered"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Green Organic",
+    "i": "Chana",
+    "w": "30q",
+    "a": 86190,
+    "st": "Delivered"
+  },
+  {
+    "d": "25 Apr",
+    "s": "AgriSafe",
+    "i": "Chana",
+    "w": "58q",
+    "a": 98252,
+    "st": "Shipped"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Delhi Fresh",
+    "i": "Bajra",
+    "w": "22q",
+    "a": 43010,
+    "st": "Shipped"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Garg Trading",
+    "i": "Bajra",
+    "w": "24q",
+    "a": 47136,
+    "st": "Processing"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Adani Wholesales",
+    "i": "Sugarcane",
+    "w": "52q",
+    "a": 152100,
+    "st": "Delivered"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Punjab Mandi",
+    "i": "Sugarcane",
+    "w": "85q",
+    "a": 155975,
+    "st": "Shipped"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Adani Wholesales",
+    "i": "Chana",
+    "w": "65q",
+    "a": 171535,
+    "st": "Processing"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Haryana Agro",
+    "i": "Makka",
+    "w": "41q",
+    "a": 101229,
+    "st": "Delivered"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Adani Wholesales",
+    "i": "Bajra",
+    "w": "65q",
+    "a": 172900,
+    "st": "Processing"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Reliance Agri",
+    "i": "Bajra",
+    "w": "46q",
+    "a": 80776,
+    "st": "Shipped"
+  },
+  {
+    "d": "9 Apr",
+    "s": "ITC Limited",
+    "i": "Jowar",
+    "w": "54q",
+    "a": 135000,
+    "st": "Delivered"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Adani Wholesales",
+    "i": "Chana",
+    "w": "72q",
+    "a": 174096,
+    "st": "Delivered"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Haryana Agro",
+    "i": "Dhan",
+    "w": "21q",
+    "a": 61698,
+    "st": "Delivered"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Kisan Traders",
+    "i": "Soyabean",
+    "w": "21q",
+    "a": 51345,
+    "st": "Shipped"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Garg Trading",
+    "i": "Dhan",
+    "w": "94q",
+    "a": 220242,
+    "st": "Delivered"
+  },
+  {
+    "d": "15 Apr",
+    "s": "Reliance Agri",
+    "i": "Bajra",
+    "w": "70q",
+    "a": 186480,
+    "st": "Delivered"
+  },
+  {
+    "d": "19 Apr",
+    "s": "AgriSafe",
+    "i": "Makka",
+    "w": "62q",
+    "a": 163742,
+    "st": "Shipped"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Green Organic",
+    "i": "Mustard",
+    "w": "63q",
+    "a": 145215,
+    "st": "Processing"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Punjab Mandi",
+    "i": "Bajra",
+    "w": "80q",
+    "a": 120080,
+    "st": "Shipped"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Kisan Traders",
+    "i": "Mustard",
+    "w": "50q",
+    "a": 110900,
+    "st": "Processing"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Haryana Agro",
+    "i": "Gehu",
+    "w": "88q",
+    "a": 233376,
+    "st": "Processing"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Punjab Mandi",
+    "i": "Bajra",
+    "w": "25q",
+    "a": 58950,
+    "st": "Shipped"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Adani Wholesales",
+    "i": "Jowar",
+    "w": "21q",
+    "a": 33789,
+    "st": "Shipped"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Kisan Traders",
+    "i": "Chana",
+    "w": "87q",
+    "a": 178959,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "ITC Limited",
+    "i": "Chana",
+    "w": "97q",
+    "a": 220966,
+    "st": "Processing"
+  },
+  {
+    "d": "15 Apr",
+    "s": "AgriSafe",
+    "i": "Gehu",
+    "w": "24q",
+    "a": 59664,
+    "st": "Delivered"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Haryana Agro",
+    "i": "Chana",
+    "w": "79q",
+    "a": 146466,
+    "st": "Processing"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Garg Trading",
+    "i": "Soyabean",
+    "w": "63q",
+    "a": 155106,
+    "st": "Shipped"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Reliance Agri",
+    "i": "Soyabean",
+    "w": "40q",
+    "a": 115520,
+    "st": "Processing"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Green Organic",
+    "i": "Cotton",
+    "w": "76q",
+    "a": 131556,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Haryana Agro",
+    "i": "Jowar",
+    "w": "49q",
+    "a": 92561,
+    "st": "Processing"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Punjab Mandi",
+    "i": "Cotton",
+    "w": "18q",
+    "a": 31248,
+    "st": "Delivered"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Delhi Fresh",
+    "i": "Makka",
+    "w": "16q",
+    "a": 35936,
+    "st": "Shipped"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Green Organic",
+    "i": "Soyabean",
+    "w": "69q",
+    "a": 192648,
+    "st": "Delivered"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Green Organic",
+    "i": "Soyabean",
+    "w": "10q",
+    "a": 26980,
+    "st": "Processing"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Green Organic",
+    "i": "Cotton",
+    "w": "25q",
+    "a": 57800,
+    "st": "Shipped"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Haryana Agro",
+    "i": "Sugarcane",
+    "w": "79q",
+    "a": 155314,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Punjab Mandi",
+    "i": "Jowar",
+    "w": "44q",
+    "a": 130372,
+    "st": "Shipped"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Punjab Mandi",
+    "i": "Makka",
+    "w": "12q",
+    "a": 22752,
+    "st": "Delivered"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Green Organic",
+    "i": "Sugarcane",
+    "w": "32q",
+    "a": 64128,
+    "st": "Delivered"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Reliance Agri",
+    "i": "Bajra",
+    "w": "30q",
+    "a": 68850,
+    "st": "Shipped"
+  },
+  {
+    "d": "10 Apr",
+    "s": "Green Organic",
+    "i": "Jowar",
+    "w": "93q",
+    "a": 250635,
+    "st": "Delivered"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Adani Wholesales",
+    "i": "Chana",
+    "w": "32q",
+    "a": 76320,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Reliance Agri",
+    "i": "Bajra",
+    "w": "19q",
+    "a": 43225,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Delhi Fresh",
+    "i": "Cotton",
+    "w": "72q",
+    "a": 121752,
+    "st": "Shipped"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Delhi Fresh",
+    "i": "Gehu",
+    "w": "12q",
+    "a": 21432,
+    "st": "Delivered"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Punjab Mandi",
+    "i": "Chana",
+    "w": "17q",
+    "a": 40596,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Reliance Agri",
+    "i": "Chana",
+    "w": "79q",
+    "a": 142674,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Reliance Agri",
+    "i": "Cotton",
+    "w": "52q",
+    "a": 120588,
+    "st": "Delivered"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Reliance Agri",
+    "i": "Cotton",
+    "w": "19q",
+    "a": 51680,
+    "st": "Shipped"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Punjab Mandi",
+    "i": "Mustard",
+    "w": "75q",
+    "a": 192600,
+    "st": "Delivered"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Delhi Fresh",
+    "i": "Mustard",
+    "w": "41q",
+    "a": 88027,
+    "st": "Processing"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Garg Trading",
+    "i": "Chana",
+    "w": "52q",
+    "a": 120016,
+    "st": "Delivered"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Reliance Agri",
+    "i": "Dhan",
+    "w": "32q",
+    "a": 66560,
+    "st": "Delivered"
+  },
+  {
+    "d": "19 Apr",
+    "s": "ITC Limited",
+    "i": "Soyabean",
+    "w": "42q",
+    "a": 70014,
+    "st": "Shipped"
+  },
+  {
+    "d": "26 Apr",
+    "s": "AgriSafe",
+    "i": "Cotton",
+    "w": "84q",
+    "a": 145488,
+    "st": "Processing"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Punjab Mandi",
+    "i": "Cotton",
+    "w": "56q",
+    "a": 144424,
+    "st": "Shipped"
+  },
+  {
+    "d": "17 Apr",
+    "s": "ITC Limited",
+    "i": "Dhan",
+    "w": "88q",
+    "a": 152328,
+    "st": "Processing"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Punjab Mandi",
+    "i": "Dhan",
+    "w": "90q",
+    "a": 240840,
+    "st": "Processing"
+  },
+  {
+    "d": "25 Apr",
+    "s": "ITC Limited",
+    "i": "Gehu",
+    "w": "36q",
+    "a": 94644,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Punjab Mandi",
+    "i": "Sugarcane",
+    "w": "17q",
+    "a": 49334,
+    "st": "Delivered"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Punjab Mandi",
+    "i": "Cotton",
+    "w": "22q",
+    "a": 56342,
+    "st": "Shipped"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Delhi Fresh",
+    "i": "Gehu",
+    "w": "75q",
+    "a": 117525,
+    "st": "Delivered"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Kisan Traders",
+    "i": "Bajra",
+    "w": "13q",
+    "a": 25740,
+    "st": "Shipped"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Delhi Fresh",
+    "i": "Soyabean",
+    "w": "85q",
+    "a": 142205,
+    "st": "Processing"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Punjab Mandi",
+    "i": "Bajra",
+    "w": "29q",
+    "a": 58290,
+    "st": "Shipped"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Adani Wholesales",
+    "i": "Gehu",
+    "w": "54q",
+    "a": 92448,
+    "st": "Delivered"
+  },
+  {
+    "d": "25 Apr",
+    "s": "ITC Limited",
+    "i": "Soyabean",
+    "w": "80q",
+    "a": 160400,
+    "st": "Shipped"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Haryana Agro",
+    "i": "Mustard",
+    "w": "36q",
+    "a": 60228,
+    "st": "Delivered"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Reliance Agri",
+    "i": "Makka",
+    "w": "73q",
+    "a": 201553,
+    "st": "Processing"
+  },
+  {
+    "d": "16 Apr",
+    "s": "AgriSafe",
+    "i": "Makka",
+    "w": "89q",
+    "a": 181738,
+    "st": "Processing"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Haryana Agro",
+    "i": "Jowar",
+    "w": "98q",
+    "a": 234514,
+    "st": "Processing"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Kisan Traders",
+    "i": "Jowar",
+    "w": "62q",
+    "a": 139934,
+    "st": "Shipped"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Reliance Agri",
+    "i": "Bajra",
+    "w": "24q",
+    "a": 56472,
+    "st": "Delivered"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Kisan Traders",
+    "i": "Soyabean",
+    "w": "52q",
+    "a": 121784,
+    "st": "Shipped"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Punjab Mandi",
+    "i": "Makka",
+    "w": "68q",
+    "a": 200124,
+    "st": "Processing"
+  },
+  {
+    "d": "5 Apr",
+    "s": "AgriSafe",
+    "i": "Cotton",
+    "w": "77q",
+    "a": 211981,
+    "st": "Shipped"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Green Organic",
+    "i": "Cotton",
+    "w": "88q",
+    "a": 191136,
+    "st": "Shipped"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Adani Wholesales",
+    "i": "Chana",
+    "w": "14q",
+    "a": 36652,
+    "st": "Delivered"
+  },
+  {
+    "d": "24 Apr",
+    "s": "AgriSafe",
+    "i": "Soyabean",
+    "w": "87q",
+    "a": 177654,
+    "st": "Processing"
+  },
+  {
+    "d": "16 Apr",
+    "s": "ITC Limited",
+    "i": "Makka",
+    "w": "29q",
+    "a": 56289,
+    "st": "Shipped"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Punjab Mandi",
+    "i": "Makka",
+    "w": "25q",
+    "a": 57225,
+    "st": "Shipped"
+  },
+  {
+    "d": "12 Apr",
+    "s": "AgriSafe",
+    "i": "Makka",
+    "w": "50q",
+    "a": 95750,
+    "st": "Shipped"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Kisan Traders",
+    "i": "Bajra",
+    "w": "26q",
+    "a": 55250,
+    "st": "Processing"
+  },
+  {
+    "d": "15 Apr",
+    "s": "Haryana Agro",
+    "i": "Sugarcane",
+    "w": "14q",
+    "a": 40894,
+    "st": "Shipped"
+  },
+  {
+    "d": "14 Apr",
+    "s": "ITC Limited",
+    "i": "Makka",
+    "w": "12q",
+    "a": 21888,
+    "st": "Shipped"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Garg Trading",
+    "i": "Bajra",
+    "w": "22q",
+    "a": 57816,
+    "st": "Shipped"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Adani Wholesales",
+    "i": "Bajra",
+    "w": "76q",
+    "a": 158916,
+    "st": "Shipped"
+  },
+  {
+    "d": "14 Apr",
+    "s": "ITC Limited",
+    "i": "Sugarcane",
+    "w": "31q",
+    "a": 49755,
+    "st": "Shipped"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Adani Wholesales",
+    "i": "Bajra",
+    "w": "19q",
+    "a": 46037,
+    "st": "Delivered"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Reliance Agri",
+    "i": "Chana",
+    "w": "59q",
+    "a": 169979,
+    "st": "Shipped"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Punjab Mandi",
+    "i": "Gehu",
+    "w": "99q",
+    "a": 247797,
+    "st": "Shipped"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Delhi Fresh",
+    "i": "Chana",
+    "w": "22q",
+    "a": 56606,
+    "st": "Processing"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Garg Trading",
+    "i": "Sugarcane",
+    "w": "91q",
+    "a": 141960,
+    "st": "Processing"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Haryana Agro",
+    "i": "Dhan",
+    "w": "29q",
+    "a": 68614,
+    "st": "Processing"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Delhi Fresh",
+    "i": "Gehu",
+    "w": "92q",
+    "a": 180136,
+    "st": "Processing"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Delhi Fresh",
+    "i": "Sugarcane",
+    "w": "89q",
+    "a": 142400,
+    "st": "Shipped"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Haryana Agro",
+    "i": "Cotton",
+    "w": "12q",
+    "a": 28812,
+    "st": "Delivered"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Adani Wholesales",
+    "i": "Chana",
+    "w": "88q",
+    "a": 228360,
+    "st": "Processing"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Delhi Fresh",
+    "i": "Bajra",
+    "w": "78q",
+    "a": 146328,
+    "st": "Delivered"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Kisan Traders",
+    "i": "Sugarcane",
+    "w": "50q",
+    "a": 95000,
+    "st": "Processing"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Delhi Fresh",
+    "i": "Dhan",
+    "w": "96q",
+    "a": 175392,
+    "st": "Delivered"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Reliance Agri",
+    "i": "Gehu",
+    "w": "80q",
+    "a": 174240,
+    "st": "Delivered"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Green Organic",
+    "i": "Dhan",
+    "w": "100q",
+    "a": 206200,
+    "st": "Shipped"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Punjab Mandi",
+    "i": "Jowar",
+    "w": "79q",
+    "a": 158790,
+    "st": "Processing"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Garg Trading",
+    "i": "Soyabean",
+    "w": "22q",
+    "a": 41734,
+    "st": "Delivered"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Kisan Traders",
+    "i": "Sugarcane",
+    "w": "97q",
+    "a": 283628,
+    "st": "Delivered"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Kisan Traders",
+    "i": "Jowar",
+    "w": "66q",
+    "a": 119394,
+    "st": "Delivered"
+  },
+  {
+    "d": "26 Apr",
+    "s": "ITC Limited",
+    "i": "Chana",
+    "w": "24q",
+    "a": 58392,
+    "st": "Delivered"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Delhi Fresh",
+    "i": "Chana",
+    "w": "46q",
+    "a": 112102,
+    "st": "Delivered"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Reliance Agri",
+    "i": "Jowar",
+    "w": "71q",
+    "a": 161454,
+    "st": "Shipped"
+  },
+  {
+    "d": "11 Apr",
+    "s": "AgriSafe",
+    "i": "Gehu",
+    "w": "62q",
+    "a": 133610,
+    "st": "Processing"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Reliance Agri",
+    "i": "Cotton",
+    "w": "11q",
+    "a": 16885,
+    "st": "Processing"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Punjab Mandi",
+    "i": "Cotton",
+    "w": "84q",
+    "a": 251748,
+    "st": "Processing"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Haryana Agro",
+    "i": "Mustard",
+    "w": "49q",
+    "a": 107849,
+    "st": "Delivered"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Garg Trading",
+    "i": "Gehu",
+    "w": "71q",
+    "a": 211012,
+    "st": "Shipped"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Punjab Mandi",
+    "i": "Bajra",
+    "w": "18q",
+    "a": 47358,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Punjab Mandi",
+    "i": "Bajra",
+    "w": "73q",
+    "a": 121910,
+    "st": "Processing"
+  },
+  {
+    "d": "20 Apr",
+    "s": "AgriSafe",
+    "i": "Makka",
+    "w": "31q",
+    "a": 73935,
+    "st": "Processing"
+  },
+  {
+    "d": "22 Apr",
+    "s": "AgriSafe",
+    "i": "Makka",
+    "w": "23q",
+    "a": 58236,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Reliance Agri",
+    "i": "Dhan",
+    "w": "33q",
+    "a": 64812,
+    "st": "Processing"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Punjab Mandi",
+    "i": "Cotton",
+    "w": "17q",
+    "a": 46852,
+    "st": "Shipped"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Reliance Agri",
+    "i": "Soyabean",
+    "w": "79q",
+    "a": 204057,
+    "st": "Processing"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Delhi Fresh",
+    "i": "Cotton",
+    "w": "62q",
+    "a": 97650,
+    "st": "Delivered"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Delhi Fresh",
+    "i": "Chana",
+    "w": "94q",
+    "a": 173242,
+    "st": "Shipped"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Haryana Agro",
+    "i": "Gehu",
+    "w": "98q",
+    "a": 210112,
+    "st": "Delivered"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Haryana Agro",
+    "i": "Soyabean",
+    "w": "39q",
+    "a": 93522,
+    "st": "Shipped"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Delhi Fresh",
+    "i": "Bajra",
+    "w": "77q",
+    "a": 156541,
+    "st": "Shipped"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Adani Wholesales",
+    "i": "Cotton",
+    "w": "98q",
+    "a": 196000,
+    "st": "Delivered"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Reliance Agri",
+    "i": "Makka",
+    "w": "65q",
+    "a": 132665,
+    "st": "Delivered"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Punjab Mandi",
+    "i": "Bajra",
+    "w": "58q",
+    "a": 155266,
+    "st": "Shipped"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Kisan Traders",
+    "i": "Soyabean",
+    "w": "92q",
+    "a": 190532,
+    "st": "Delivered"
+  },
+  {
+    "d": "14 Apr",
+    "s": "ITC Limited",
+    "i": "Sugarcane",
+    "w": "86q",
+    "a": 233748,
+    "st": "Delivered"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Adani Wholesales",
+    "i": "Dhan",
+    "w": "42q",
+    "a": 65184,
+    "st": "Delivered"
+  },
+  {
+    "d": "13 Apr",
+    "s": "ITC Limited",
+    "i": "Dhan",
+    "w": "100q",
+    "a": 233800,
+    "st": "Processing"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Punjab Mandi",
+    "i": "Soyabean",
+    "w": "82q",
+    "a": 174824,
+    "st": "Delivered"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Kisan Traders",
+    "i": "Sugarcane",
+    "w": "10q",
+    "a": 28730,
+    "st": "Delivered"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Punjab Mandi",
+    "i": "Jowar",
+    "w": "92q",
+    "a": 272320,
+    "st": "Processing"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Haryana Agro",
+    "i": "Dhan",
+    "w": "70q",
+    "a": 121520,
+    "st": "Delivered"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Adani Wholesales",
+    "i": "Dhan",
+    "w": "54q",
+    "a": 132354,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "AgriSafe",
+    "i": "Gehu",
+    "w": "24q",
+    "a": 40488,
+    "st": "Shipped"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Punjab Mandi",
+    "i": "Makka",
+    "w": "34q",
+    "a": 65688,
+    "st": "Delivered"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Haryana Agro",
+    "i": "Sugarcane",
+    "w": "26q",
+    "a": 63570,
+    "st": "Delivered"
+  },
+  {
+    "d": "12 Apr",
+    "s": "AgriSafe",
+    "i": "Dhan",
+    "w": "34q",
+    "a": 94724,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Haryana Agro",
+    "i": "Dhan",
+    "w": "43q",
+    "a": 96148,
+    "st": "Shipped"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Delhi Fresh",
+    "i": "Soyabean",
+    "w": "36q",
+    "a": 105552,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Adani Wholesales",
+    "i": "Cotton",
+    "w": "17q",
+    "a": 50626,
+    "st": "Shipped"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Delhi Fresh",
+    "i": "Sugarcane",
+    "w": "12q",
+    "a": 26052,
+    "st": "Shipped"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Green Organic",
+    "i": "Jowar",
+    "w": "28q",
+    "a": 63420,
+    "st": "Shipped"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Reliance Agri",
+    "i": "Makka",
+    "w": "63q",
+    "a": 164682,
+    "st": "Shipped"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Green Organic",
+    "i": "Gehu",
+    "w": "48q",
+    "a": 130080,
+    "st": "Shipped"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Kisan Traders",
+    "i": "Makka",
+    "w": "56q",
+    "a": 167888,
+    "st": "Shipped"
+  },
+  {
+    "d": "3 Apr",
+    "s": "ITC Limited",
+    "i": "Jowar",
+    "w": "78q",
+    "a": 120042,
+    "st": "Processing"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Punjab Mandi",
+    "i": "Dhan",
+    "w": "34q",
+    "a": 99348,
+    "st": "Delivered"
+  },
+  {
+    "d": "26 Apr",
+    "s": "ITC Limited",
+    "i": "Chana",
+    "w": "34q",
+    "a": 93466,
+    "st": "Delivered"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Kisan Traders",
+    "i": "Mustard",
+    "w": "74q",
+    "a": 118696,
+    "st": "Delivered"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Garg Trading",
+    "i": "Jowar",
+    "w": "72q",
+    "a": 157320,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Kisan Traders",
+    "i": "Jowar",
+    "w": "28q",
+    "a": 72548,
+    "st": "Shipped"
+  },
+  {
+    "d": "5 Apr",
+    "s": "ITC Limited",
+    "i": "Cotton",
+    "w": "18q",
+    "a": 53694,
+    "st": "Delivered"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Garg Trading",
+    "i": "Jowar",
+    "w": "31q",
+    "a": 63085,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Delhi Fresh",
+    "i": "Bajra",
+    "w": "54q",
+    "a": 85266,
+    "st": "Processing"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Adani Wholesales",
+    "i": "Soyabean",
+    "w": "81q",
+    "a": 226071,
+    "st": "Processing"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Green Organic",
+    "i": "Gehu",
+    "w": "12q",
+    "a": 22680,
+    "st": "Processing"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Delhi Fresh",
+    "i": "Chana",
+    "w": "18q",
+    "a": 47502,
+    "st": "Shipped"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Delhi Fresh",
+    "i": "Sugarcane",
+    "w": "37q",
+    "a": 92315,
+    "st": "Shipped"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Adani Wholesales",
+    "i": "Soyabean",
+    "w": "89q",
+    "a": 226505,
+    "st": "Shipped"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Adani Wholesales",
+    "i": "Cotton",
+    "w": "70q",
+    "a": 126000,
+    "st": "Processing"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Punjab Mandi",
+    "i": "Sugarcane",
+    "w": "41q",
+    "a": 81139,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Delhi Fresh",
+    "i": "Dhan",
+    "w": "32q",
+    "a": 64416,
+    "st": "Processing"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Reliance Agri",
+    "i": "Dhan",
+    "w": "27q",
+    "a": 42471,
+    "st": "Processing"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Garg Trading",
+    "i": "Makka",
+    "w": "45q",
+    "a": 90450,
+    "st": "Processing"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Punjab Mandi",
+    "i": "Dhan",
+    "w": "92q",
+    "a": 243156,
+    "st": "Delivered"
+  },
+  {
+    "d": "27 Apr",
+    "s": "AgriSafe",
+    "i": "Bajra",
+    "w": "71q",
+    "a": 134971,
+    "st": "Delivered"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Punjab Mandi",
+    "i": "Makka",
+    "w": "32q",
+    "a": 50976,
+    "st": "Processing"
+  },
+  {
+    "d": "3 Apr",
+    "s": "ITC Limited",
+    "i": "Makka",
+    "w": "55q",
+    "a": 100540,
+    "st": "Processing"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Adani Wholesales",
+    "i": "Sugarcane",
+    "w": "22q",
+    "a": 43230,
+    "st": "Delivered"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Green Organic",
+    "i": "Bajra",
+    "w": "20q",
+    "a": 54200,
+    "st": "Delivered"
+  },
+  {
+    "d": "14 Apr",
+    "s": "ITC Limited",
+    "i": "Bajra",
+    "w": "51q",
+    "a": 144279,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Green Organic",
+    "i": "Gehu",
+    "w": "79q",
+    "a": 120080,
+    "st": "Shipped"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Adani Wholesales",
+    "i": "Mustard",
+    "w": "14q",
+    "a": 25844,
+    "st": "Delivered"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Delhi Fresh",
+    "i": "Mustard",
+    "w": "87q",
+    "a": 159993,
+    "st": "Processing"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Adani Wholesales",
+    "i": "Mustard",
+    "w": "40q",
+    "a": 66000,
+    "st": "Shipped"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Punjab Mandi",
+    "i": "Mustard",
+    "w": "65q",
+    "a": 175955,
+    "st": "Processing"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Reliance Agri",
+    "i": "Cotton",
+    "w": "54q",
+    "a": 84942,
+    "st": "Delivered"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Adani Wholesales",
+    "i": "Mustard",
+    "w": "32q",
+    "a": 48800,
+    "st": "Processing"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Punjab Mandi",
+    "i": "Makka",
+    "w": "76q",
+    "a": 202996,
+    "st": "Delivered"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Kisan Traders",
+    "i": "Soyabean",
+    "w": "80q",
+    "a": 157840,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Punjab Mandi",
+    "i": "Mustard",
+    "w": "42q",
+    "a": 97188,
+    "st": "Processing"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Garg Trading",
+    "i": "Chana",
+    "w": "92q",
+    "a": 257048,
+    "st": "Shipped"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Garg Trading",
+    "i": "Makka",
+    "w": "61q",
+    "a": 144204,
+    "st": "Processing"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Punjab Mandi",
+    "i": "Cotton",
+    "w": "55q",
+    "a": 117370,
+    "st": "Processing"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Reliance Agri",
+    "i": "Dhan",
+    "w": "100q",
+    "a": 232300,
+    "st": "Processing"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Haryana Agro",
+    "i": "Chana",
+    "w": "82q",
+    "a": 219596,
+    "st": "Processing"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Kisan Traders",
+    "i": "Soyabean",
+    "w": "89q",
+    "a": 236117,
+    "st": "Processing"
+  },
+  {
+    "d": "9 Apr",
+    "s": "AgriSafe",
+    "i": "Mustard",
+    "w": "38q",
+    "a": 111644,
+    "st": "Processing"
+  },
+  {
+    "d": "10 Apr",
+    "s": "Garg Trading",
+    "i": "Makka",
+    "w": "93q",
+    "a": 260865,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Green Organic",
+    "i": "Gehu",
+    "w": "11q",
+    "a": 22253,
+    "st": "Processing"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Kisan Traders",
+    "i": "Cotton",
+    "w": "65q",
+    "a": 105820,
+    "st": "Shipped"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Haryana Agro",
+    "i": "Mustard",
+    "w": "51q",
+    "a": 105621,
+    "st": "Delivered"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Adani Wholesales",
+    "i": "Jowar",
+    "w": "37q",
+    "a": 107448,
+    "st": "Delivered"
+  },
+  {
+    "d": "12 Apr",
+    "s": "AgriSafe",
+    "i": "Dhan",
+    "w": "65q",
+    "a": 114790,
+    "st": "Processing"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Reliance Agri",
+    "i": "Jowar",
+    "w": "61q",
+    "a": 154452,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Garg Trading",
+    "i": "Soyabean",
+    "w": "52q",
+    "a": 87100,
+    "st": "Processing"
+  },
+  {
+    "d": "15 Apr",
+    "s": "AgriSafe",
+    "i": "Chana",
+    "w": "85q",
+    "a": 160140,
+    "st": "Processing"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Green Organic",
+    "i": "Dhan",
+    "w": "81q",
+    "a": 156654,
+    "st": "Delivered"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Delhi Fresh",
+    "i": "Jowar",
+    "w": "20q",
+    "a": 30000,
+    "st": "Shipped"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Green Organic",
+    "i": "Cotton",
+    "w": "79q",
+    "a": 135880,
+    "st": "Delivered"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Green Organic",
+    "i": "Bajra",
+    "w": "53q",
+    "a": 105311,
+    "st": "Processing"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Kisan Traders",
+    "i": "Bajra",
+    "w": "51q",
+    "a": 101541,
+    "st": "Processing"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Kisan Traders",
+    "i": "Jowar",
+    "w": "19q",
+    "a": 32870,
+    "st": "Shipped"
+  },
+  {
+    "d": "10 Apr",
+    "s": "Haryana Agro",
+    "i": "Dhan",
+    "w": "100q",
+    "a": 298800,
+    "st": "Delivered"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Green Organic",
+    "i": "Soyabean",
+    "w": "69q",
+    "a": 110814,
+    "st": "Delivered"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Kisan Traders",
+    "i": "Bajra",
+    "w": "54q",
+    "a": 102438,
+    "st": "Processing"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Reliance Agri",
+    "i": "Makka",
+    "w": "15q",
+    "a": 34530,
+    "st": "Processing"
+  },
+  {
+    "d": "24 Apr",
+    "s": "AgriSafe",
+    "i": "Chana",
+    "w": "34q",
+    "a": 55692,
+    "st": "Processing"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Garg Trading",
+    "i": "Makka",
+    "w": "48q",
+    "a": 123696,
+    "st": "Delivered"
+  },
+  {
+    "d": "19 Apr",
+    "s": "AgriSafe",
+    "i": "Makka",
+    "w": "71q",
+    "a": 128510,
+    "st": "Shipped"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Adani Wholesales",
+    "i": "Sugarcane",
+    "w": "73q",
+    "a": 161841,
+    "st": "Shipped"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Adani Wholesales",
+    "i": "Dhan",
+    "w": "27q",
+    "a": 80595,
+    "st": "Processing"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Punjab Mandi",
+    "i": "Makka",
+    "w": "41q",
+    "a": 84296,
+    "st": "Delivered"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Garg Trading",
+    "i": "Mustard",
+    "w": "98q",
+    "a": 204918,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Haryana Agro",
+    "i": "Bajra",
+    "w": "22q",
+    "a": 36212,
+    "st": "Processing"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Delhi Fresh",
+    "i": "Cotton",
+    "w": "99q",
+    "a": 198594,
+    "st": "Delivered"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Adani Wholesales",
+    "i": "Jowar",
+    "w": "92q",
+    "a": 176916,
+    "st": "Delivered"
+  },
+  {
+    "d": "28 Apr",
+    "s": "ITC Limited",
+    "i": "Dhan",
+    "w": "67q",
+    "a": 192290,
+    "st": "Shipped"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Punjab Mandi",
+    "i": "Gehu",
+    "w": "82q",
+    "a": 152930,
+    "st": "Processing"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Punjab Mandi",
+    "i": "Bajra",
+    "w": "72q",
+    "a": 205344,
+    "st": "Delivered"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Delhi Fresh",
+    "i": "Gehu",
+    "w": "34q",
+    "a": 59568,
+    "st": "Processing"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Kisan Traders",
+    "i": "Cotton",
+    "w": "86q",
+    "a": 160132,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "AgriSafe",
+    "i": "Dhan",
+    "w": "73q",
+    "a": 171039,
+    "st": "Delivered"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Garg Trading",
+    "i": "Makka",
+    "w": "95q",
+    "a": 171000,
+    "st": "Processing"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Adani Wholesales",
+    "i": "Makka",
+    "w": "54q",
+    "a": 126198,
+    "st": "Shipped"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Green Organic",
+    "i": "Bajra",
+    "w": "89q",
+    "a": 177911,
+    "st": "Shipped"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Haryana Agro",
+    "i": "Cotton",
+    "w": "91q",
+    "a": 267540,
+    "st": "Delivered"
+  },
+  {
+    "d": "22 Apr",
+    "s": "AgriSafe",
+    "i": "Sugarcane",
+    "w": "80q",
+    "a": 157840,
+    "st": "Shipped"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Adani Wholesales",
+    "i": "Soyabean",
+    "w": "49q",
+    "a": 97118,
+    "st": "Delivered"
+  },
+  {
+    "d": "15 Apr",
+    "s": "AgriSafe",
+    "i": "Gehu",
+    "w": "30q",
+    "a": 53820,
+    "st": "Shipped"
+  },
+  {
+    "d": "15 Apr",
+    "s": "Kisan Traders",
+    "i": "Bajra",
+    "w": "33q",
+    "a": 52899,
+    "st": "Shipped"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Green Organic",
+    "i": "Soyabean",
+    "w": "27q",
+    "a": 70335,
+    "st": "Processing"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Adani Wholesales",
+    "i": "Makka",
+    "w": "25q",
+    "a": 55375,
+    "st": "Processing"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Garg Trading",
+    "i": "Mustard",
+    "w": "19q",
+    "a": 28899,
+    "st": "Delivered"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Reliance Agri",
+    "i": "Sugarcane",
+    "w": "48q",
+    "a": 131232,
+    "st": "Delivered"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Delhi Fresh",
+    "i": "Bajra",
+    "w": "100q",
+    "a": 158400,
+    "st": "Processing"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Delhi Fresh",
+    "i": "Gehu",
+    "w": "68q",
+    "a": 189788,
+    "st": "Processing"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Haryana Agro",
+    "i": "Mustard",
+    "w": "55q",
+    "a": 158400,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Reliance Agri",
+    "i": "Gehu",
+    "w": "47q",
+    "a": 84365,
+    "st": "Shipped"
+  },
+  {
+    "d": "20 Apr",
+    "s": "ITC Limited",
+    "i": "Dhan",
+    "w": "47q",
+    "a": 97478,
+    "st": "Delivered"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Kisan Traders",
+    "i": "Soyabean",
+    "w": "67q",
+    "a": 147199,
+    "st": "Processing"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Adani Wholesales",
+    "i": "Mustard",
+    "w": "17q",
+    "a": 30736,
+    "st": "Shipped"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Garg Trading",
+    "i": "Jowar",
+    "w": "71q",
+    "a": 133551,
+    "st": "Processing"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Green Organic",
+    "i": "Bajra",
+    "w": "30q",
+    "a": 45810,
+    "st": "Shipped"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Reliance Agri",
+    "i": "Dhan",
+    "w": "37q",
+    "a": 67821,
+    "st": "Processing"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Kisan Traders",
+    "i": "Gehu",
+    "w": "64q",
+    "a": 142848,
+    "st": "Delivered"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Haryana Agro",
+    "i": "Dhan",
+    "w": "71q",
+    "a": 201853,
+    "st": "Shipped"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Green Organic",
+    "i": "Sugarcane",
+    "w": "39q",
+    "a": 104871,
+    "st": "Processing"
+  },
+  {
+    "d": "28 Apr",
+    "s": "ITC Limited",
+    "i": "Soyabean",
+    "w": "97q",
+    "a": 219705,
+    "st": "Shipped"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Reliance Agri",
+    "i": "Makka",
+    "w": "25q",
+    "a": 50475,
+    "st": "Delivered"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Adani Wholesales",
+    "i": "Dhan",
+    "w": "49q",
+    "a": 85064,
+    "st": "Processing"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Garg Trading",
+    "i": "Dhan",
+    "w": "72q",
+    "a": 195624,
+    "st": "Shipped"
+  },
+  {
+    "d": "23 Apr",
+    "s": "AgriSafe",
+    "i": "Cotton",
+    "w": "25q",
+    "a": 55925,
+    "st": "Delivered"
+  },
+  {
+    "d": "24 Apr",
+    "s": "AgriSafe",
+    "i": "Jowar",
+    "w": "12q",
+    "a": 28260,
+    "st": "Shipped"
+  },
+  {
+    "d": "17 Apr",
+    "s": "Haryana Agro",
+    "i": "Mustard",
+    "w": "65q",
+    "a": 139815,
+    "st": "Processing"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Reliance Agri",
+    "i": "Sugarcane",
+    "w": "78q",
+    "a": 155532,
+    "st": "Shipped"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Reliance Agri",
+    "i": "Soyabean",
+    "w": "88q",
+    "a": 166496,
+    "st": "Shipped"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Garg Trading",
+    "i": "Soyabean",
+    "w": "77q",
+    "a": 208747,
+    "st": "Delivered"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Adani Wholesales",
+    "i": "Dhan",
+    "w": "89q",
+    "a": 228552,
+    "st": "Shipped"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Reliance Agri",
+    "i": "Soyabean",
+    "w": "34q",
+    "a": 78166,
+    "st": "Delivered"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Haryana Agro",
+    "i": "Sugarcane",
+    "w": "57q",
+    "a": 128820,
+    "st": "Processing"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Adani Wholesales",
+    "i": "Sugarcane",
+    "w": "32q",
+    "a": 60480,
+    "st": "Shipped"
+  },
+  {
+    "d": "2 Apr",
+    "s": "ITC Limited",
+    "i": "Chana",
+    "w": "67q",
+    "a": 161135,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Kisan Traders",
+    "i": "Dhan",
+    "w": "82q",
+    "a": 145714,
+    "st": "Delivered"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Punjab Mandi",
+    "i": "Mustard",
+    "w": "40q",
+    "a": 104320,
+    "st": "Shipped"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Delhi Fresh",
+    "i": "Cotton",
+    "w": "74q",
+    "a": 143634,
+    "st": "Processing"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Haryana Agro",
+    "i": "Jowar",
+    "w": "73q",
+    "a": 209072,
+    "st": "Delivered"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Adani Wholesales",
+    "i": "Cotton",
+    "w": "35q",
+    "a": 57610,
+    "st": "Processing"
+  },
+  {
+    "d": "10 Apr",
+    "s": "Garg Trading",
+    "i": "Gehu",
+    "w": "93q",
+    "a": 221805,
+    "st": "Delivered"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Reliance Agri",
+    "i": "Soyabean",
+    "w": "94q",
+    "a": 244212,
+    "st": "Processing"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Reliance Agri",
+    "i": "Dhan",
+    "w": "85q",
+    "a": 155125,
+    "st": "Processing"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Adani Wholesales",
+    "i": "Makka",
+    "w": "27q",
+    "a": 42309,
+    "st": "Delivered"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Adani Wholesales",
+    "i": "Mustard",
+    "w": "73q",
+    "a": 185712,
+    "st": "Shipped"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Punjab Mandi",
+    "i": "Cotton",
+    "w": "88q",
+    "a": 224136,
+    "st": "Delivered"
+  },
+  {
+    "d": "26 Apr",
+    "s": "Green Organic",
+    "i": "Cotton",
+    "w": "83q",
+    "a": 188991,
+    "st": "Shipped"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Kisan Traders",
+    "i": "Sugarcane",
+    "w": "47q",
+    "a": 110638,
+    "st": "Shipped"
+  },
+  {
+    "d": "15 Apr",
+    "s": "Garg Trading",
+    "i": "Sugarcane",
+    "w": "17q",
+    "a": 42517,
+    "st": "Delivered"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Delhi Fresh",
+    "i": "Dhan",
+    "w": "28q",
+    "a": 62356,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "AgriSafe",
+    "i": "Dhan",
+    "w": "13q",
+    "a": 30888,
+    "st": "Delivered"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Green Organic",
+    "i": "Gehu",
+    "w": "41q",
+    "a": 80360,
+    "st": "Processing"
+  },
+  {
+    "d": "10 Apr",
+    "s": "Adani Wholesales",
+    "i": "Chana",
+    "w": "10q",
+    "a": 19900,
+    "st": "Processing"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Haryana Agro",
+    "i": "Cotton",
+    "w": "50q",
+    "a": 136000,
+    "st": "Processing"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Adani Wholesales",
+    "i": "Chana",
+    "w": "25q",
+    "a": 69725,
+    "st": "Processing"
+  },
+  {
+    "d": "22 Apr",
+    "s": "AgriSafe",
+    "i": "Makka",
+    "w": "94q",
+    "a": 203322,
+    "st": "Delivered"
+  },
+  {
+    "d": "19 Apr",
+    "s": "AgriSafe",
+    "i": "Mustard",
+    "w": "22q",
+    "a": 39622,
+    "st": "Processing"
+  },
+  {
+    "d": "16 Apr",
+    "s": "AgriSafe",
+    "i": "Sugarcane",
+    "w": "42q",
+    "a": 115710,
+    "st": "Delivered"
+  },
+  {
+    "d": "6 Apr",
+    "s": "AgriSafe",
+    "i": "Gehu",
+    "w": "38q",
+    "a": 89186,
+    "st": "Processing"
+  },
+  {
+    "d": "15 Apr",
+    "s": "ITC Limited",
+    "i": "Mustard",
+    "w": "99q",
+    "a": 207405,
+    "st": "Delivered"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Adani Wholesales",
+    "i": "Sugarcane",
+    "w": "21q",
+    "a": 53466,
+    "st": "Processing"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Kisan Traders",
+    "i": "Soyabean",
+    "w": "98q",
+    "a": 180810,
+    "st": "Shipped"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Delhi Fresh",
+    "i": "Dhan",
+    "w": "19q",
+    "a": 53808,
+    "st": "Delivered"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Punjab Mandi",
+    "i": "Makka",
+    "w": "27q",
+    "a": 51489,
+    "st": "Delivered"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Adani Wholesales",
+    "i": "Gehu",
+    "w": "51q",
+    "a": 101388,
+    "st": "Delivered"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Haryana Agro",
+    "i": "Gehu",
+    "w": "43q",
+    "a": 65403,
+    "st": "Delivered"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Green Organic",
+    "i": "Soyabean",
+    "w": "32q",
+    "a": 67808,
+    "st": "Shipped"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Haryana Agro",
+    "i": "Bajra",
+    "w": "27q",
+    "a": 80325,
+    "st": "Processing"
+  },
+  {
+    "d": "19 Apr",
+    "s": "AgriSafe",
+    "i": "Soyabean",
+    "w": "78q",
+    "a": 140244,
+    "st": "Shipped"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Adani Wholesales",
+    "i": "Dhan",
+    "w": "18q",
+    "a": 32922,
+    "st": "Delivered"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Garg Trading",
+    "i": "Cotton",
+    "w": "49q",
+    "a": 95403,
+    "st": "Shipped"
+  },
+  {
+    "d": "27 Apr",
+    "s": "ITC Limited",
+    "i": "Dhan",
+    "w": "42q",
+    "a": 78960,
+    "st": "Delivered"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Green Organic",
+    "i": "Gehu",
+    "w": "48q",
+    "a": 74688,
+    "st": "Shipped"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Adani Wholesales",
+    "i": "Gehu",
+    "w": "27q",
+    "a": 72171,
+    "st": "Delivered"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Kisan Traders",
+    "i": "Bajra",
+    "w": "42q",
+    "a": 104958,
+    "st": "Shipped"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Garg Trading",
+    "i": "Bajra",
+    "w": "49q",
+    "a": 78547,
+    "st": "Shipped"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Garg Trading",
+    "i": "Gehu",
+    "w": "96q",
+    "a": 242112,
+    "st": "Shipped"
+  },
+  {
+    "d": "21 Apr",
+    "s": "ITC Limited",
+    "i": "Chana",
+    "w": "92q",
+    "a": 148764,
+    "st": "Processing"
+  },
+  {
+    "d": "22 Apr",
+    "s": "AgriSafe",
+    "i": "Dhan",
+    "w": "87q",
+    "a": 243426,
+    "st": "Delivered"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Green Organic",
+    "i": "Makka",
+    "w": "98q",
+    "a": 261366,
+    "st": "Shipped"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Delhi Fresh",
+    "i": "Soyabean",
+    "w": "44q",
+    "a": 95964,
+    "st": "Shipped"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Kisan Traders",
+    "i": "Dhan",
+    "w": "55q",
+    "a": 103620,
+    "st": "Processing"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Kisan Traders",
+    "i": "Sugarcane",
+    "w": "58q",
+    "a": 102312,
+    "st": "Shipped"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Green Organic",
+    "i": "Gehu",
+    "w": "75q",
+    "a": 149325,
+    "st": "Shipped"
+  },
+  {
+    "d": "10 Apr",
+    "s": "AgriSafe",
+    "i": "Bajra",
+    "w": "49q",
+    "a": 139601,
+    "st": "Shipped"
+  },
+  {
+    "d": "16 Apr",
+    "s": "Punjab Mandi",
+    "i": "Jowar",
+    "w": "82q",
+    "a": 123410,
+    "st": "Shipped"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Garg Trading",
+    "i": "Makka",
+    "w": "56q",
+    "a": 147168,
+    "st": "Processing"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Green Organic",
+    "i": "Chana",
+    "w": "64q",
+    "a": 112896,
+    "st": "Processing"
+  },
+  {
+    "d": "11 Apr",
+    "s": "ITC Limited",
+    "i": "Dhan",
+    "w": "50q",
+    "a": 119700,
+    "st": "Processing"
+  },
+  {
+    "d": "18 Apr",
+    "s": "Garg Trading",
+    "i": "Soyabean",
+    "w": "97q",
+    "a": 189150,
+    "st": "Delivered"
+  },
+  {
+    "d": "13 Apr",
+    "s": "Kisan Traders",
+    "i": "Dhan",
+    "w": "99q",
+    "a": 164043,
+    "st": "Processing"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Reliance Agri",
+    "i": "Bajra",
+    "w": "60q",
+    "a": 134460,
+    "st": "Delivered"
+  },
+  {
+    "d": "23 Apr",
+    "s": "Kisan Traders",
+    "i": "Mustard",
+    "w": "28q",
+    "a": 51604,
+    "st": "Shipped"
+  },
+  {
+    "d": "2 Apr",
+    "s": "Green Organic",
+    "i": "Makka",
+    "w": "74q",
+    "a": 130758,
+    "st": "Shipped"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Punjab Mandi",
+    "i": "Dhan",
+    "w": "46q",
+    "a": 137816,
+    "st": "Delivered"
+  },
+  {
+    "d": "16 Apr",
+    "s": "ITC Limited",
+    "i": "Sugarcane",
+    "w": "100q",
+    "a": 206700,
+    "st": "Processing"
+  },
+  {
+    "d": "10 Apr",
+    "s": "Adani Wholesales",
+    "i": "Sugarcane",
+    "w": "94q",
+    "a": 246468,
+    "st": "Shipped"
+  },
+  {
+    "d": "17 Apr",
+    "s": "ITC Limited",
+    "i": "Sugarcane",
+    "w": "24q",
+    "a": 55584,
+    "st": "Shipped"
+  },
+  {
+    "d": "14 Apr",
+    "s": "Delhi Fresh",
+    "i": "Gehu",
+    "w": "12q",
+    "a": 29556,
+    "st": "Shipped"
+  },
+  {
+    "d": "23 Apr",
+    "s": "AgriSafe",
+    "i": "Sugarcane",
+    "w": "81q",
+    "a": 167184,
+    "st": "Shipped"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Green Organic",
+    "i": "Mustard",
+    "w": "51q",
+    "a": 134130,
+    "st": "Processing"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Punjab Mandi",
+    "i": "Soyabean",
+    "w": "73q",
+    "a": 200166,
+    "st": "Processing"
+  },
+  {
+    "d": "20 Apr",
+    "s": "Reliance Agri",
+    "i": "Mustard",
+    "w": "57q",
+    "a": 154641,
+    "st": "Processing"
+  },
+  {
+    "d": "12 Apr",
+    "s": "Garg Trading",
+    "i": "Gehu",
+    "w": "87q",
+    "a": 140070,
+    "st": "Shipped"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Kisan Traders",
+    "i": "Cotton",
+    "w": "26q",
+    "a": 75608,
+    "st": "Shipped"
+  },
+  {
+    "d": "7 Apr",
+    "s": "Delhi Fresh",
+    "i": "Sugarcane",
+    "w": "27q",
+    "a": 44091,
+    "st": "Shipped"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Haryana Agro",
+    "i": "Sugarcane",
+    "w": "24q",
+    "a": 42024,
+    "st": "Processing"
+  },
+  {
+    "d": "15 Apr",
+    "s": "Punjab Mandi",
+    "i": "Bajra",
+    "w": "79q",
+    "a": 201845,
+    "st": "Processing"
+  },
+  {
+    "d": "28 Apr",
+    "s": "ITC Limited",
+    "i": "Mustard",
+    "w": "14q",
+    "a": 30968,
+    "st": "Shipped"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Haryana Agro",
+    "i": "Bajra",
+    "w": "37q",
+    "a": 90243,
+    "st": "Delivered"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Green Organic",
+    "i": "Sugarcane",
+    "w": "13q",
+    "a": 33423,
+    "st": "Shipped"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Reliance Agri",
+    "i": "Mustard",
+    "w": "22q",
+    "a": 35882,
+    "st": "Processing"
+  },
+  {
+    "d": "3 Apr",
+    "s": "Kisan Traders",
+    "i": "Dhan",
+    "w": "25q",
+    "a": 60425,
+    "st": "Processing"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Green Organic",
+    "i": "Jowar",
+    "w": "74q",
+    "a": 190254,
+    "st": "Delivered"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Haryana Agro",
+    "i": "Sugarcane",
+    "w": "100q",
+    "a": 261400,
+    "st": "Delivered"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Reliance Agri",
+    "i": "Cotton",
+    "w": "93q",
+    "a": 262818,
+    "st": "Processing"
+  },
+  {
+    "d": "12 Apr",
+    "s": "AgriSafe",
+    "i": "Chana",
+    "w": "62q",
+    "a": 101866,
+    "st": "Processing"
+  },
+  {
+    "d": "24 Apr",
+    "s": "Kisan Traders",
+    "i": "Cotton",
+    "w": "54q",
+    "a": 83862,
+    "st": "Shipped"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Punjab Mandi",
+    "i": "Soyabean",
+    "w": "15q",
+    "a": 30945,
+    "st": "Delivered"
+  },
+  {
+    "d": "22 Apr",
+    "s": "Kisan Traders",
+    "i": "Jowar",
+    "w": "48q",
+    "a": 95712,
+    "st": "Processing"
+  },
+  {
+    "d": "9 Apr",
+    "s": "AgriSafe",
+    "i": "Dhan",
+    "w": "41q",
+    "a": 72939,
+    "st": "Shipped"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Punjab Mandi",
+    "i": "Chana",
+    "w": "83q",
+    "a": 210405,
+    "st": "Processing"
+  },
+  {
+    "d": "9 Apr",
+    "s": "ITC Limited",
+    "i": "Gehu",
+    "w": "76q",
+    "a": 142424,
+    "st": "Shipped"
+  },
+  {
+    "d": "6 Apr",
+    "s": "Kisan Traders",
+    "i": "Bajra",
+    "w": "91q",
+    "a": 244153,
+    "st": "Processing"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Green Organic",
+    "i": "Mustard",
+    "w": "47q",
+    "a": 137804,
+    "st": "Shipped"
+  },
+  {
+    "d": "4 Apr",
+    "s": "Reliance Agri",
+    "i": "Gehu",
+    "w": "32q",
+    "a": 78496,
+    "st": "Delivered"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Garg Trading",
+    "i": "Sugarcane",
+    "w": "71q",
+    "a": 176080,
+    "st": "Shipped"
+  },
+  {
+    "d": "19 Apr",
+    "s": "Kisan Traders",
+    "i": "Soyabean",
+    "w": "49q",
+    "a": 120148,
+    "st": "Processing"
+  },
+  {
+    "d": "17 Apr",
+    "s": "ITC Limited",
+    "i": "Sugarcane",
+    "w": "41q",
+    "a": 106559,
+    "st": "Shipped"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Delhi Fresh",
+    "i": "Makka",
+    "w": "90q",
+    "a": 221220,
+    "st": "Delivered"
+  },
+  {
+    "d": "9 Apr",
+    "s": "Garg Trading",
+    "i": "Sugarcane",
+    "w": "37q",
+    "a": 62345,
+    "st": "Shipped"
+  },
+  {
+    "d": "12 Apr",
+    "s": "AgriSafe",
+    "i": "Dhan",
+    "w": "62q",
+    "a": 127348,
+    "st": "Shipped"
+  },
+  {
+    "d": "25 Apr",
+    "s": "Green Organic",
+    "i": "Sugarcane",
+    "w": "36q",
+    "a": 54180,
+    "st": "Processing"
+  },
+  {
+    "d": "1 Apr",
+    "s": "Adani Wholesales",
+    "i": "Mustard",
+    "w": "64q",
+    "a": 180480,
+    "st": "Processing"
+  },
+  {
+    "d": "11 Apr",
+    "s": "Adani Wholesales",
+    "i": "Soyabean",
+    "w": "52q",
+    "a": 106080,
+    "st": "Processing"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Punjab Mandi",
+    "i": "Bajra",
+    "w": "58q",
+    "a": 89668,
+    "st": "Shipped"
+  },
+  {
+    "d": "6 Apr",
+    "s": "ITC Limited",
+    "i": "Mustard",
+    "w": "22q",
+    "a": 44462,
+    "st": "Delivered"
+  },
+  {
+    "d": "21 Apr",
+    "s": "Haryana Agro",
+    "i": "Dhan",
+    "w": "52q",
+    "a": 149032,
+    "st": "Shipped"
+  },
+  {
+    "d": "16 Apr",
+    "s": "ITC Limited",
+    "i": "Gehu",
+    "w": "48q",
+    "a": 107616,
+    "st": "Processing"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Garg Trading",
+    "i": "Cotton",
+    "w": "72q",
+    "a": 141048,
+    "st": "Shipped"
+  },
+  {
+    "d": "23 Apr",
+    "s": "AgriSafe",
+    "i": "Chana",
+    "w": "81q",
+    "a": 230202,
+    "st": "Processing"
+  },
+  {
+    "d": "10 Apr",
+    "s": "Garg Trading",
+    "i": "Soyabean",
+    "w": "79q",
+    "a": 177671,
+    "st": "Delivered"
+  },
+  {
+    "d": "28 Apr",
+    "s": "Kisan Traders",
+    "i": "Bajra",
+    "w": "48q",
+    "a": 137520,
+    "st": "Delivered"
+  },
+  {
+    "d": "7 Apr",
+    "s": "ITC Limited",
+    "i": "Dhan",
+    "w": "64q",
+    "a": 179136,
+    "st": "Processing"
+  },
+  {
+    "d": "8 Apr",
+    "s": "Adani Wholesales",
+    "i": "Soyabean",
+    "w": "65q",
+    "a": 105950,
+    "st": "Shipped"
+  },
+  {
+    "d": "23 Apr",
+    "s": "ITC Limited",
+    "i": "Gehu",
+    "w": "78q",
+    "a": 157482,
+    "st": "Shipped"
+  },
+  {
+    "d": "5 Apr",
+    "s": "Punjab Mandi",
+    "i": "Bajra",
+    "w": "58q",
+    "a": 131486,
+    "st": "Delivered"
+  },
+  {
+    "d": "27 Apr",
+    "s": "Kisan Traders",
+    "i": "Jowar",
+    "w": "98q",
+    "a": 212464,
+    "st": "Shipped"
+  }
+]

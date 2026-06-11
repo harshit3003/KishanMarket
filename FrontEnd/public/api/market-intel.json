@@ -1,0 +1,6002 @@
+[
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹3095/q",
+    "mandi": "₹3192/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹1679/q",
+    "mandi": "₹1734/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹1765/q",
+    "mandi": "₹1914/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹2832/q",
+    "mandi": "₹3010/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹2211/q",
+    "mandi": "₹2135/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹2175/q",
+    "mandi": "₹2174/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹2488/q",
+    "mandi": "₹2595/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹2792/q",
+    "mandi": "₹2978/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹1528/q",
+    "mandi": "₹1364/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹3320/q",
+    "mandi": "₹3330/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 1",
+    "p": "₹1659/q",
+    "mandi": "₹1672/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 1",
+    "p": "₹2023/q",
+    "mandi": "₹1905/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹2866/q",
+    "mandi": "₹2690/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹1628/q",
+    "mandi": "₹1435/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹2595/q",
+    "mandi": "₹2502/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹1671/q",
+    "mandi": "₹1851/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹1761/q",
+    "mandi": "₹1721/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 2",
+    "p": "₹1849/q",
+    "mandi": "₹1925/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 2",
+    "p": "₹2502/q",
+    "mandi": "₹2557/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹2675/q",
+    "mandi": "₹2675/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹2665/q",
+    "mandi": "₹2687/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹2619/q",
+    "mandi": "₹2700/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹2913/q",
+    "mandi": "₹3089/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹2419/q",
+    "mandi": "₹2499/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 4",
+    "p": "₹1582/q",
+    "mandi": "₹1521/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 1",
+    "p": "₹1731/q",
+    "mandi": "₹1638/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 1",
+    "p": "₹2457/q",
+    "mandi": "₹2590/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 1",
+    "p": "₹2230/q",
+    "mandi": "₹2238/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹2584/q",
+    "mandi": "₹2550/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹1879/q",
+    "mandi": "₹1925/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 4",
+    "p": "₹2573/q",
+    "mandi": "₹2559/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 5",
+    "p": "₹2161/q",
+    "mandi": "₹2128/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 4",
+    "p": "₹2686/q",
+    "mandi": "₹2556/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 3",
+    "p": "₹2567/q",
+    "mandi": "₹2623/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹2225/q",
+    "mandi": "₹2197/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹2809/q",
+    "mandi": "₹2701/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹2988/q",
+    "mandi": "₹2956/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹2903/q",
+    "mandi": "₹2762/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 4",
+    "p": "₹3221/q",
+    "mandi": "₹3055/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹2839/q",
+    "mandi": "₹2814/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹3478/q",
+    "mandi": "₹3481/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹2396/q",
+    "mandi": "₹2395/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹2976/q",
+    "mandi": "₹3103/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 1",
+    "p": "₹3263/q",
+    "mandi": "₹3272/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹1604/q",
+    "mandi": "₹1598/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 2",
+    "p": "₹1782/q",
+    "mandi": "₹1856/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹3191/q",
+    "mandi": "₹3320/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹3418/q",
+    "mandi": "₹3468/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 4",
+    "p": "₹1557/q",
+    "mandi": "₹1449/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹2130/q",
+    "mandi": "₹2153/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹2961/q",
+    "mandi": "₹2776/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹2510/q",
+    "mandi": "₹2674/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹1626/q",
+    "mandi": "₹1441/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹2174/q",
+    "mandi": "₹2257/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹2206/q",
+    "mandi": "₹2394/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹3348/q",
+    "mandi": "₹3386/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 5",
+    "p": "₹3491/q",
+    "mandi": "₹3414/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹2681/q",
+    "mandi": "₹2794/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹3438/q",
+    "mandi": "₹3303/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹2152/q",
+    "mandi": "₹2048/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹2319/q",
+    "mandi": "₹2138/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹1923/q",
+    "mandi": "₹1869/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹2760/q",
+    "mandi": "₹2752/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 1",
+    "p": "₹3278/q",
+    "mandi": "₹3366/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 3",
+    "p": "₹3212/q",
+    "mandi": "₹3098/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹2531/q",
+    "mandi": "₹2387/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 1",
+    "p": "₹2059/q",
+    "mandi": "₹1947/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹2566/q",
+    "mandi": "₹2517/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹1611/q",
+    "mandi": "₹1539/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹1886/q",
+    "mandi": "₹1915/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹2336/q",
+    "mandi": "₹2303/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹2366/q",
+    "mandi": "₹2465/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹3118/q",
+    "mandi": "₹3159/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 5",
+    "p": "₹2628/q",
+    "mandi": "₹2565/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹2915/q",
+    "mandi": "₹2975/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹2087/q",
+    "mandi": "₹1908/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 4",
+    "p": "₹3481/q",
+    "mandi": "₹3670/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹2107/q",
+    "mandi": "₹2190/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 2",
+    "p": "₹3306/q",
+    "mandi": "₹3109/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹3231/q",
+    "mandi": "₹3233/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 3",
+    "p": "₹3366/q",
+    "mandi": "₹3214/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹1779/q",
+    "mandi": "₹1718/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹1588/q",
+    "mandi": "₹1392/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹3070/q",
+    "mandi": "₹2949/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹2133/q",
+    "mandi": "₹2303/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 4",
+    "p": "₹1941/q",
+    "mandi": "₹2050/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹2827/q",
+    "mandi": "₹2894/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹2113/q",
+    "mandi": "₹1929/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹2130/q",
+    "mandi": "₹1948/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 1",
+    "p": "₹3394/q",
+    "mandi": "₹3315/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 5",
+    "p": "₹2918/q",
+    "mandi": "₹3062/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹2928/q",
+    "mandi": "₹2792/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹3382/q",
+    "mandi": "₹3387/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹3373/q",
+    "mandi": "₹3365/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 5",
+    "p": "₹2650/q",
+    "mandi": "₹2772/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹2558/q",
+    "mandi": "₹2492/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹2456/q",
+    "mandi": "₹2502/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹3436/q",
+    "mandi": "₹3504/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹2311/q",
+    "mandi": "₹2402/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 5",
+    "p": "₹1810/q",
+    "mandi": "₹1885/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹3328/q",
+    "mandi": "₹3295/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 2",
+    "p": "₹1649/q",
+    "mandi": "₹1620/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 2",
+    "p": "₹3205/q",
+    "mandi": "₹3341/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 3",
+    "p": "₹2720/q",
+    "mandi": "₹2668/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹3068/q",
+    "mandi": "₹3023/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 5",
+    "p": "₹2607/q",
+    "mandi": "₹2665/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹3450/q",
+    "mandi": "₹3291/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹2525/q",
+    "mandi": "₹2702/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹1921/q",
+    "mandi": "₹1937/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 5",
+    "p": "₹3401/q",
+    "mandi": "₹3287/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹2054/q",
+    "mandi": "₹1988/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹2521/q",
+    "mandi": "₹2400/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹2502/q",
+    "mandi": "₹2529/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 3",
+    "p": "₹2796/q",
+    "mandi": "₹2921/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹1606/q",
+    "mandi": "₹1500/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 3",
+    "p": "₹2933/q",
+    "mandi": "₹2849/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹1538/q",
+    "mandi": "₹1464/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹3098/q",
+    "mandi": "₹2990/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹2042/q",
+    "mandi": "₹1845/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹2278/q",
+    "mandi": "₹2166/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹2087/q",
+    "mandi": "₹1991/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹2007/q",
+    "mandi": "₹2075/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹2169/q",
+    "mandi": "₹2227/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹3334/q",
+    "mandi": "₹3187/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 5",
+    "p": "₹2444/q",
+    "mandi": "₹2398/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹3428/q",
+    "mandi": "₹3393/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 1",
+    "p": "₹2041/q",
+    "mandi": "₹1910/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹1862/q",
+    "mandi": "₹2022/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹2543/q",
+    "mandi": "₹2495/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹2461/q",
+    "mandi": "₹2482/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹3299/q",
+    "mandi": "₹3346/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹1587/q",
+    "mandi": "₹1613/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹2957/q",
+    "mandi": "₹3056/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹2920/q",
+    "mandi": "₹2845/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 2",
+    "p": "₹2937/q",
+    "mandi": "₹2776/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 2",
+    "p": "₹3494/q",
+    "mandi": "₹3452/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 3",
+    "p": "₹3323/q",
+    "mandi": "₹3413/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹3073/q",
+    "mandi": "₹3260/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹2057/q",
+    "mandi": "₹2189/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹2855/q",
+    "mandi": "₹2996/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 1",
+    "p": "₹2300/q",
+    "mandi": "₹2224/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 1",
+    "p": "₹2741/q",
+    "mandi": "₹2813/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹1800/q",
+    "mandi": "₹1644/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹2884/q",
+    "mandi": "₹2772/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 2",
+    "p": "₹3434/q",
+    "mandi": "₹3341/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹2644/q",
+    "mandi": "₹2588/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹2354/q",
+    "mandi": "₹2552/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 3",
+    "p": "₹1795/q",
+    "mandi": "₹1959/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹3088/q",
+    "mandi": "₹2996/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 3",
+    "p": "₹3257/q",
+    "mandi": "₹3381/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹2401/q",
+    "mandi": "₹2467/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹2792/q",
+    "mandi": "₹2847/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 3",
+    "p": "₹2072/q",
+    "mandi": "₹1898/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹2196/q",
+    "mandi": "₹2117/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹3351/q",
+    "mandi": "₹3300/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹3415/q",
+    "mandi": "₹3573/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹2161/q",
+    "mandi": "₹2095/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 2",
+    "p": "₹3366/q",
+    "mandi": "₹3258/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹1786/q",
+    "mandi": "₹1812/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 1",
+    "p": "₹2737/q",
+    "mandi": "₹2685/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 2",
+    "p": "₹2689/q",
+    "mandi": "₹2735/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹2182/q",
+    "mandi": "₹2231/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹2128/q",
+    "mandi": "₹2231/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 3",
+    "p": "₹3253/q",
+    "mandi": "₹3250/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹2285/q",
+    "mandi": "₹2266/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹3125/q",
+    "mandi": "₹3131/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹2768/q",
+    "mandi": "₹2631/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 2",
+    "p": "₹2195/q",
+    "mandi": "₹2105/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹3389/q",
+    "mandi": "₹3204/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 5",
+    "p": "₹3342/q",
+    "mandi": "₹3247/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹3394/q",
+    "mandi": "₹3376/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹1519/q",
+    "mandi": "₹1409/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹3369/q",
+    "mandi": "₹3315/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 1",
+    "p": "₹2421/q",
+    "mandi": "₹2488/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 4",
+    "p": "₹1963/q",
+    "mandi": "₹1999/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹2903/q",
+    "mandi": "₹3102/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹1894/q",
+    "mandi": "₹1812/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹3436/q",
+    "mandi": "₹3520/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 4",
+    "p": "₹2115/q",
+    "mandi": "₹2138/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹2408/q",
+    "mandi": "₹2495/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹1550/q",
+    "mandi": "₹1596/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹1877/q",
+    "mandi": "₹1912/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 3",
+    "p": "₹1655/q",
+    "mandi": "₹1568/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹2259/q",
+    "mandi": "₹2381/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹2089/q",
+    "mandi": "₹2157/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹1937/q",
+    "mandi": "₹1963/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 4",
+    "p": "₹3359/q",
+    "mandi": "₹3345/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹2347/q",
+    "mandi": "₹2150/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 2",
+    "p": "₹3046/q",
+    "mandi": "₹3198/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹3358/q",
+    "mandi": "₹3386/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹1520/q",
+    "mandi": "₹1514/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 1",
+    "p": "₹2998/q",
+    "mandi": "₹2855/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 1",
+    "p": "₹2691/q",
+    "mandi": "₹2785/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹2288/q",
+    "mandi": "₹2259/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹1948/q",
+    "mandi": "₹1970/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 4",
+    "p": "₹2677/q",
+    "mandi": "₹2827/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 2",
+    "p": "₹1619/q",
+    "mandi": "₹1522/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹2632/q",
+    "mandi": "₹2710/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹2172/q",
+    "mandi": "₹2000/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 2",
+    "p": "₹2173/q",
+    "mandi": "₹2352/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹1540/q",
+    "mandi": "₹1403/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 2",
+    "p": "₹2745/q",
+    "mandi": "₹2657/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹2137/q",
+    "mandi": "₹2210/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹2710/q",
+    "mandi": "₹2762/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹3079/q",
+    "mandi": "₹3020/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹1811/q",
+    "mandi": "₹1959/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 4",
+    "p": "₹3084/q",
+    "mandi": "₹2945/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹3161/q",
+    "mandi": "₹3231/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹2240/q",
+    "mandi": "₹2264/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹1975/q",
+    "mandi": "₹2140/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹2865/q",
+    "mandi": "₹2785/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹2999/q",
+    "mandi": "₹2813/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹2834/q",
+    "mandi": "₹2635/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹1637/q",
+    "mandi": "₹1616/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 5",
+    "p": "₹1764/q",
+    "mandi": "₹1938/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹1811/q",
+    "mandi": "₹1742/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 5",
+    "p": "₹3050/q",
+    "mandi": "₹2922/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 3",
+    "p": "₹3463/q",
+    "mandi": "₹3371/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹1890/q",
+    "mandi": "₹1921/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹2250/q",
+    "mandi": "₹2072/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 3",
+    "p": "₹2748/q",
+    "mandi": "₹2769/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 4",
+    "p": "₹3380/q",
+    "mandi": "₹3212/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 5",
+    "p": "₹2754/q",
+    "mandi": "₹2739/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹2002/q",
+    "mandi": "₹2132/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 4",
+    "p": "₹3225/q",
+    "mandi": "₹3205/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹1985/q",
+    "mandi": "₹2166/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹1831/q",
+    "mandi": "₹1638/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 2",
+    "p": "₹2846/q",
+    "mandi": "₹2748/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹1877/q",
+    "mandi": "₹2063/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 2",
+    "p": "₹2761/q",
+    "mandi": "₹2708/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹2952/q",
+    "mandi": "₹3095/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 2",
+    "p": "₹2347/q",
+    "mandi": "₹2364/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹1888/q",
+    "mandi": "₹1815/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹2132/q",
+    "mandi": "₹2064/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 2",
+    "p": "₹2519/q",
+    "mandi": "₹2348/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹1516/q",
+    "mandi": "₹1396/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹2603/q",
+    "mandi": "₹2534/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 1",
+    "p": "₹2345/q",
+    "mandi": "₹2341/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹3066/q",
+    "mandi": "₹3144/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹2952/q",
+    "mandi": "₹2960/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹2322/q",
+    "mandi": "₹2515/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹2561/q",
+    "mandi": "₹2526/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹3210/q",
+    "mandi": "₹3305/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹3206/q",
+    "mandi": "₹3334/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹2582/q",
+    "mandi": "₹2708/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹3439/q",
+    "mandi": "₹3405/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹3160/q",
+    "mandi": "₹2985/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 2",
+    "p": "₹2893/q",
+    "mandi": "₹2850/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 1",
+    "p": "₹2561/q",
+    "mandi": "₹2424/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹3057/q",
+    "mandi": "₹2975/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹3330/q",
+    "mandi": "₹3492/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 2",
+    "p": "₹2012/q",
+    "mandi": "₹2066/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 2",
+    "p": "₹2216/q",
+    "mandi": "₹2282/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹3223/q",
+    "mandi": "₹3329/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹2776/q",
+    "mandi": "₹2845/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹3460/q",
+    "mandi": "₹3302/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 3",
+    "p": "₹3428/q",
+    "mandi": "₹3526/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹1651/q",
+    "mandi": "₹1670/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹2895/q",
+    "mandi": "₹2752/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹3407/q",
+    "mandi": "₹3444/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 3",
+    "p": "₹2077/q",
+    "mandi": "₹2225/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹1935/q",
+    "mandi": "₹1919/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹1568/q",
+    "mandi": "₹1449/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 5",
+    "p": "₹1735/q",
+    "mandi": "₹1796/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹2731/q",
+    "mandi": "₹2671/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹3213/q",
+    "mandi": "₹3130/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹2421/q",
+    "mandi": "₹2493/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹2015/q",
+    "mandi": "₹1860/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹2081/q",
+    "mandi": "₹1904/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹2403/q",
+    "mandi": "₹2586/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹2870/q",
+    "mandi": "₹2671/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹3495/q",
+    "mandi": "₹3446/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹1518/q",
+    "mandi": "₹1327/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹2556/q",
+    "mandi": "₹2449/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 1",
+    "p": "₹1944/q",
+    "mandi": "₹1895/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹3416/q",
+    "mandi": "₹3568/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 4",
+    "p": "₹3191/q",
+    "mandi": "₹3367/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹1904/q",
+    "mandi": "₹1921/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹3393/q",
+    "mandi": "₹3272/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 4",
+    "p": "₹3201/q",
+    "mandi": "₹3297/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 2",
+    "p": "₹2772/q",
+    "mandi": "₹2604/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹2379/q",
+    "mandi": "₹2229/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹1643/q",
+    "mandi": "₹1503/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹3172/q",
+    "mandi": "₹3083/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹2239/q",
+    "mandi": "₹2393/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹2488/q",
+    "mandi": "₹2307/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 2",
+    "p": "₹2430/q",
+    "mandi": "₹2243/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 1",
+    "p": "₹1567/q",
+    "mandi": "₹1442/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 2",
+    "p": "₹1592/q",
+    "mandi": "₹1728/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹2451/q",
+    "mandi": "₹2402/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹2809/q",
+    "mandi": "₹2883/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹2250/q",
+    "mandi": "₹2388/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹1741/q",
+    "mandi": "₹1764/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹3312/q",
+    "mandi": "₹3228/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 3",
+    "p": "₹3162/q",
+    "mandi": "₹2974/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹1534/q",
+    "mandi": "₹1715/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 4",
+    "p": "₹2134/q",
+    "mandi": "₹2251/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 2",
+    "p": "₹1547/q",
+    "mandi": "₹1388/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹3266/q",
+    "mandi": "₹3212/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹1596/q",
+    "mandi": "₹1580/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 2",
+    "p": "₹3143/q",
+    "mandi": "₹3253/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹2158/q",
+    "mandi": "₹2117/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹1774/q",
+    "mandi": "₹1801/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹2317/q",
+    "mandi": "₹2142/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹1733/q",
+    "mandi": "₹1741/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹3166/q",
+    "mandi": "₹3121/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹3088/q",
+    "mandi": "₹3264/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 3",
+    "p": "₹1586/q",
+    "mandi": "₹1676/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹3381/q",
+    "mandi": "₹3311/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹2613/q",
+    "mandi": "₹2601/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹3331/q",
+    "mandi": "₹3483/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹1547/q",
+    "mandi": "₹1724/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹2888/q",
+    "mandi": "₹2938/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 5",
+    "p": "₹3226/q",
+    "mandi": "₹3277/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 5",
+    "p": "₹3343/q",
+    "mandi": "₹3356/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹2260/q",
+    "mandi": "₹2438/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹2938/q",
+    "mandi": "₹2743/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹1825/q",
+    "mandi": "₹1693/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹2935/q",
+    "mandi": "₹3059/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹3160/q",
+    "mandi": "₹3006/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 5",
+    "p": "₹2147/q",
+    "mandi": "₹2263/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 5",
+    "p": "₹1610/q",
+    "mandi": "₹1796/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹1865/q",
+    "mandi": "₹1716/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹2331/q",
+    "mandi": "₹2381/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹2626/q",
+    "mandi": "₹2443/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹1768/q",
+    "mandi": "₹1946/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹2481/q",
+    "mandi": "₹2328/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 1",
+    "p": "₹1519/q",
+    "mandi": "₹1353/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹1582/q",
+    "mandi": "₹1540/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹2599/q",
+    "mandi": "₹2426/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹2863/q",
+    "mandi": "₹2746/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 5",
+    "p": "₹2915/q",
+    "mandi": "₹2755/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹2438/q",
+    "mandi": "₹2337/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹2616/q",
+    "mandi": "₹2538/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹3449/q",
+    "mandi": "₹3273/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹3443/q",
+    "mandi": "₹3507/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 4",
+    "p": "₹3038/q",
+    "mandi": "₹3141/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹1566/q",
+    "mandi": "₹1412/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹2412/q",
+    "mandi": "₹2461/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 4",
+    "p": "₹2430/q",
+    "mandi": "₹2529/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹2034/q",
+    "mandi": "₹1874/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹2284/q",
+    "mandi": "₹2471/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹2499/q",
+    "mandi": "₹2489/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹3012/q",
+    "mandi": "₹2916/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹2946/q",
+    "mandi": "₹3123/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹1584/q",
+    "mandi": "₹1656/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹1570/q",
+    "mandi": "₹1510/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹2815/q",
+    "mandi": "₹2754/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹2593/q",
+    "mandi": "₹2559/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹2869/q",
+    "mandi": "₹2843/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹1534/q",
+    "mandi": "₹1434/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 4",
+    "p": "₹3442/q",
+    "mandi": "₹3503/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹2851/q",
+    "mandi": "₹2862/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹3255/q",
+    "mandi": "₹3295/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹2987/q",
+    "mandi": "₹2892/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹2403/q",
+    "mandi": "₹2243/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹2333/q",
+    "mandi": "₹2209/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹3353/q",
+    "mandi": "₹3282/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹2607/q",
+    "mandi": "₹2597/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹2948/q",
+    "mandi": "₹2917/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹2436/q",
+    "mandi": "₹2530/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹3103/q",
+    "mandi": "₹2939/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 1",
+    "p": "₹2420/q",
+    "mandi": "₹2329/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 2",
+    "p": "₹2612/q",
+    "mandi": "₹2431/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹2372/q",
+    "mandi": "₹2446/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹3101/q",
+    "mandi": "₹3245/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 2",
+    "p": "₹1869/q",
+    "mandi": "₹1788/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 3",
+    "p": "₹3097/q",
+    "mandi": "₹2910/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 1",
+    "p": "₹1698/q",
+    "mandi": "₹1878/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹1596/q",
+    "mandi": "₹1693/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹2897/q",
+    "mandi": "₹2981/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 5",
+    "p": "₹2260/q",
+    "mandi": "₹2184/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹2673/q",
+    "mandi": "₹2621/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹2347/q",
+    "mandi": "₹2338/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹2520/q",
+    "mandi": "₹2475/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹1775/q",
+    "mandi": "₹1748/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 5",
+    "p": "₹3107/q",
+    "mandi": "₹3192/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 4",
+    "p": "₹2868/q",
+    "mandi": "₹2979/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹2979/q",
+    "mandi": "₹3023/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹2908/q",
+    "mandi": "₹2932/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 2",
+    "p": "₹3269/q",
+    "mandi": "₹3116/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 3",
+    "p": "₹2657/q",
+    "mandi": "₹2796/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹2349/q",
+    "mandi": "₹2474/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹1544/q",
+    "mandi": "₹1651/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹2051/q",
+    "mandi": "₹1922/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹2630/q",
+    "mandi": "₹2605/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹2170/q",
+    "mandi": "₹2148/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹3356/q",
+    "mandi": "₹3301/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹3343/q",
+    "mandi": "₹3202/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹2226/q",
+    "mandi": "₹2119/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹3456/q",
+    "mandi": "₹3656/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 3",
+    "p": "₹3300/q",
+    "mandi": "₹3311/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹2533/q",
+    "mandi": "₹2474/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 3",
+    "p": "₹3038/q",
+    "mandi": "₹3015/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹2303/q",
+    "mandi": "₹2191/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 3",
+    "p": "₹2367/q",
+    "mandi": "₹2475/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 4",
+    "p": "₹3335/q",
+    "mandi": "₹3148/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹2881/q",
+    "mandi": "₹2854/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹1935/q",
+    "mandi": "₹2051/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 2",
+    "p": "₹2885/q",
+    "mandi": "₹2850/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹2220/q",
+    "mandi": "₹2264/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹2852/q",
+    "mandi": "₹2718/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹3268/q",
+    "mandi": "₹3113/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹1654/q",
+    "mandi": "₹1665/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 5",
+    "p": "₹1584/q",
+    "mandi": "₹1701/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹2587/q",
+    "mandi": "₹2626/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 4",
+    "p": "₹2976/q",
+    "mandi": "₹3094/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹1719/q",
+    "mandi": "₹1854/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹1717/q",
+    "mandi": "₹1904/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹3028/q",
+    "mandi": "₹3193/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹2777/q",
+    "mandi": "₹2793/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹3166/q",
+    "mandi": "₹3284/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 2",
+    "p": "₹2733/q",
+    "mandi": "₹2682/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹2936/q",
+    "mandi": "₹2787/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 2",
+    "p": "₹2298/q",
+    "mandi": "₹2287/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹1809/q",
+    "mandi": "₹1838/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 2",
+    "p": "₹1982/q",
+    "mandi": "₹1986/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 3",
+    "p": "₹1898/q",
+    "mandi": "₹1955/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 5",
+    "p": "₹2015/q",
+    "mandi": "₹2030/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 2",
+    "p": "₹2225/q",
+    "mandi": "₹2178/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹2652/q",
+    "mandi": "₹2811/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹2285/q",
+    "mandi": "₹2429/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹1893/q",
+    "mandi": "₹1844/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 2",
+    "p": "₹2358/q",
+    "mandi": "₹2486/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹2582/q",
+    "mandi": "₹2760/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹2792/q",
+    "mandi": "₹2759/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹2003/q",
+    "mandi": "₹1861/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹1757/q",
+    "mandi": "₹1944/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 1",
+    "p": "₹2940/q",
+    "mandi": "₹2903/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 2",
+    "p": "₹2477/q",
+    "mandi": "₹2600/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 4",
+    "p": "₹3132/q",
+    "mandi": "₹3283/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹1689/q",
+    "mandi": "₹1601/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹2394/q",
+    "mandi": "₹2415/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹2555/q",
+    "mandi": "₹2752/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹2191/q",
+    "mandi": "₹2099/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 5",
+    "p": "₹2204/q",
+    "mandi": "₹2163/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 4",
+    "p": "₹2425/q",
+    "mandi": "₹2529/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 3",
+    "p": "₹2001/q",
+    "mandi": "₹2043/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹1502/q",
+    "mandi": "₹1617/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹2472/q",
+    "mandi": "₹2641/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹3416/q",
+    "mandi": "₹3526/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 2",
+    "p": "₹1996/q",
+    "mandi": "₹1897/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹2000/q",
+    "mandi": "₹1892/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹2576/q",
+    "mandi": "₹2730/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹2819/q",
+    "mandi": "₹2798/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 1",
+    "p": "₹1949/q",
+    "mandi": "₹1955/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 4",
+    "p": "₹2054/q",
+    "mandi": "₹1983/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 2",
+    "p": "₹2637/q",
+    "mandi": "₹2555/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹2710/q",
+    "mandi": "₹2567/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹1869/q",
+    "mandi": "₹1884/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹3461/q",
+    "mandi": "₹3545/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹2452/q",
+    "mandi": "₹2536/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹1979/q",
+    "mandi": "₹1973/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹2630/q",
+    "mandi": "₹2477/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹3035/q",
+    "mandi": "₹3211/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹3379/q",
+    "mandi": "₹3200/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹3350/q",
+    "mandi": "₹3254/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹2315/q",
+    "mandi": "₹2292/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 1",
+    "p": "₹2949/q",
+    "mandi": "₹2778/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 5",
+    "p": "₹3161/q",
+    "mandi": "₹3273/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹3139/q",
+    "mandi": "₹3335/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹3290/q",
+    "mandi": "₹3146/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹1963/q",
+    "mandi": "₹1906/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹3104/q",
+    "mandi": "₹3101/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹3352/q",
+    "mandi": "₹3249/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 2",
+    "p": "₹2741/q",
+    "mandi": "₹2840/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹1946/q",
+    "mandi": "₹1904/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 4",
+    "p": "₹1850/q",
+    "mandi": "₹1806/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹1500/q",
+    "mandi": "₹1372/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 4",
+    "p": "₹1503/q",
+    "mandi": "₹1465/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 3",
+    "p": "₹2546/q",
+    "mandi": "₹2389/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 2",
+    "p": "₹2316/q",
+    "mandi": "₹2223/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹3046/q",
+    "mandi": "₹2979/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹2559/q",
+    "mandi": "₹2379/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹2061/q",
+    "mandi": "₹2166/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹2354/q",
+    "mandi": "₹2441/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹2381/q",
+    "mandi": "₹2397/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 4",
+    "p": "₹1665/q",
+    "mandi": "₹1761/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹3410/q",
+    "mandi": "₹3402/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹2978/q",
+    "mandi": "₹3078/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹2026/q",
+    "mandi": "₹1929/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹3185/q",
+    "mandi": "₹3250/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 5",
+    "p": "₹1728/q",
+    "mandi": "₹1754/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹3400/q",
+    "mandi": "₹3429/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 2",
+    "p": "₹2422/q",
+    "mandi": "₹2609/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹2749/q",
+    "mandi": "₹2854/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 3",
+    "p": "₹2213/q",
+    "mandi": "₹2259/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹2056/q",
+    "mandi": "₹2228/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹2787/q",
+    "mandi": "₹2650/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 5",
+    "p": "₹1880/q",
+    "mandi": "₹1942/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹1594/q",
+    "mandi": "₹1632/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹2177/q",
+    "mandi": "₹2311/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 3",
+    "p": "₹2250/q",
+    "mandi": "₹2323/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹3430/q",
+    "mandi": "₹3542/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹1888/q",
+    "mandi": "₹1869/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 2",
+    "p": "₹3152/q",
+    "mandi": "₹3170/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹3427/q",
+    "mandi": "₹3385/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 5",
+    "p": "₹3200/q",
+    "mandi": "₹3011/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹3129/q",
+    "mandi": "₹2956/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 5",
+    "p": "₹2590/q",
+    "mandi": "₹2410/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹1851/q",
+    "mandi": "₹1697/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹2415/q",
+    "mandi": "₹2583/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 5",
+    "p": "₹3426/q",
+    "mandi": "₹3310/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹3141/q",
+    "mandi": "₹3056/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹3378/q",
+    "mandi": "₹3296/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹2960/q",
+    "mandi": "₹3137/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 5",
+    "p": "₹3123/q",
+    "mandi": "₹3245/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹3246/q",
+    "mandi": "₹3333/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹2005/q",
+    "mandi": "₹1911/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹1883/q",
+    "mandi": "₹1726/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹3349/q",
+    "mandi": "₹3543/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹2936/q",
+    "mandi": "₹3063/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹3014/q",
+    "mandi": "₹3033/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 2",
+    "p": "₹2891/q",
+    "mandi": "₹2936/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹2092/q",
+    "mandi": "₹2254/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 2",
+    "p": "₹2230/q",
+    "mandi": "₹2083/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹1530/q",
+    "mandi": "₹1655/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 3",
+    "p": "₹1994/q",
+    "mandi": "₹2108/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 1",
+    "p": "₹1697/q",
+    "mandi": "₹1886/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 4",
+    "p": "₹2289/q",
+    "mandi": "₹2302/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹2926/q",
+    "mandi": "₹2948/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 4",
+    "p": "₹1726/q",
+    "mandi": "₹1607/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 5",
+    "p": "₹1662/q",
+    "mandi": "₹1838/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 2",
+    "p": "₹3144/q",
+    "mandi": "₹3251/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹2484/q",
+    "mandi": "₹2539/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹1885/q",
+    "mandi": "₹2063/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹2300/q",
+    "mandi": "₹2287/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 2",
+    "p": "₹3239/q",
+    "mandi": "₹3145/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 4",
+    "p": "₹2323/q",
+    "mandi": "₹2320/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹2000/q",
+    "mandi": "₹2155/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹2059/q",
+    "mandi": "₹2104/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹2687/q",
+    "mandi": "₹2530/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹1764/q",
+    "mandi": "₹1670/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 4",
+    "p": "₹2704/q",
+    "mandi": "₹2807/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹2195/q",
+    "mandi": "₹2383/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹3273/q",
+    "mandi": "₹3083/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 1",
+    "p": "₹2263/q",
+    "mandi": "₹2435/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹3381/q",
+    "mandi": "₹3355/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹2101/q",
+    "mandi": "₹1979/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹2189/q",
+    "mandi": "₹2138/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹3463/q",
+    "mandi": "₹3473/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 4",
+    "p": "₹2722/q",
+    "mandi": "₹2782/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹2387/q",
+    "mandi": "₹2502/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹2737/q",
+    "mandi": "₹2558/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹3267/q",
+    "mandi": "₹3187/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹1804/q",
+    "mandi": "₹1698/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹2773/q",
+    "mandi": "₹2930/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹1765/q",
+    "mandi": "₹1784/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹2342/q",
+    "mandi": "₹2410/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 4",
+    "p": "₹1633/q",
+    "mandi": "₹1510/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 2",
+    "p": "₹3300/q",
+    "mandi": "₹3477/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹1673/q",
+    "mandi": "₹1855/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹3355/q",
+    "mandi": "₹3256/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹1611/q",
+    "mandi": "₹1733/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹3057/q",
+    "mandi": "₹2881/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹2581/q",
+    "mandi": "₹2625/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 4",
+    "p": "₹2760/q",
+    "mandi": "₹2594/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹2115/q",
+    "mandi": "₹2269/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 3",
+    "p": "₹3057/q",
+    "mandi": "₹2904/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹1869/q",
+    "mandi": "₹1818/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹2152/q",
+    "mandi": "₹2340/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹2731/q",
+    "mandi": "₹2883/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹3427/q",
+    "mandi": "₹3508/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹2058/q",
+    "mandi": "₹2025/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 2",
+    "p": "₹3264/q",
+    "mandi": "₹3360/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹1757/q",
+    "mandi": "₹1938/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 5",
+    "p": "₹2285/q",
+    "mandi": "₹2484/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹3177/q",
+    "mandi": "₹3303/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹1559/q",
+    "mandi": "₹1372/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹1973/q",
+    "mandi": "₹1924/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹2487/q",
+    "mandi": "₹2405/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹2340/q",
+    "mandi": "₹2151/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 2",
+    "p": "₹2689/q",
+    "mandi": "₹2669/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹1722/q",
+    "mandi": "₹1864/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 1",
+    "p": "₹2579/q",
+    "mandi": "₹2520/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹3486/q",
+    "mandi": "₹3546/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹1506/q",
+    "mandi": "₹1442/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹2458/q",
+    "mandi": "₹2495/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹2875/q",
+    "mandi": "₹2788/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹3249/q",
+    "mandi": "₹3106/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹2760/q",
+    "mandi": "₹2880/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 1",
+    "p": "₹1876/q",
+    "mandi": "₹1809/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹1942/q",
+    "mandi": "₹1772/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 5",
+    "p": "₹2634/q",
+    "mandi": "₹2475/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹1824/q",
+    "mandi": "₹1817/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹3069/q",
+    "mandi": "₹3138/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 2",
+    "p": "₹3210/q",
+    "mandi": "₹3213/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 1",
+    "p": "₹1662/q",
+    "mandi": "₹1767/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 2",
+    "p": "₹2402/q",
+    "mandi": "₹2572/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 5",
+    "p": "₹3304/q",
+    "mandi": "₹3410/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹3273/q",
+    "mandi": "₹3215/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹3201/q",
+    "mandi": "₹3183/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹3340/q",
+    "mandi": "₹3156/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 2",
+    "p": "₹2661/q",
+    "mandi": "₹2787/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 2",
+    "p": "₹2288/q",
+    "mandi": "₹2234/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹2765/q",
+    "mandi": "₹2845/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹3011/q",
+    "mandi": "₹2985/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹3034/q",
+    "mandi": "₹2994/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹3282/q",
+    "mandi": "₹3088/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 5",
+    "p": "₹3247/q",
+    "mandi": "₹3316/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹2078/q",
+    "mandi": "₹2022/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 1",
+    "p": "₹2031/q",
+    "mandi": "₹2109/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹2566/q",
+    "mandi": "₹2441/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹2479/q",
+    "mandi": "₹2669/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 2",
+    "p": "₹2529/q",
+    "mandi": "₹2634/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹2429/q",
+    "mandi": "₹2331/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹2718/q",
+    "mandi": "₹2899/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 5",
+    "p": "₹1863/q",
+    "mandi": "₹1970/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 5",
+    "p": "₹1748/q",
+    "mandi": "₹1695/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹2330/q",
+    "mandi": "₹2229/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹2382/q",
+    "mandi": "₹2529/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹1790/q",
+    "mandi": "₹1675/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹3409/q",
+    "mandi": "₹3316/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 2",
+    "p": "₹1937/q",
+    "mandi": "₹2081/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 2",
+    "p": "₹3047/q",
+    "mandi": "₹3131/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹2024/q",
+    "mandi": "₹2087/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹2844/q",
+    "mandi": "₹3001/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 4",
+    "p": "₹3385/q",
+    "mandi": "₹3248/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹2570/q",
+    "mandi": "₹2503/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹2104/q",
+    "mandi": "₹2085/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹1702/q",
+    "mandi": "₹1835/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 1",
+    "p": "₹2266/q",
+    "mandi": "₹2386/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹1775/q",
+    "mandi": "₹1824/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹3495/q",
+    "mandi": "₹3586/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹1799/q",
+    "mandi": "₹1937/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹3111/q",
+    "mandi": "₹3226/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 5",
+    "p": "₹3195/q",
+    "mandi": "₹3009/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 1",
+    "p": "₹2925/q",
+    "mandi": "₹2730/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹3453/q",
+    "mandi": "₹3559/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 2",
+    "p": "₹1817/q",
+    "mandi": "₹1868/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹3018/q",
+    "mandi": "₹3195/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹2115/q",
+    "mandi": "₹1928/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹2960/q",
+    "mandi": "₹2941/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹2810/q",
+    "mandi": "₹2821/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹2597/q",
+    "mandi": "₹2418/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹2316/q",
+    "mandi": "₹2497/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹1583/q",
+    "mandi": "₹1587/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹2920/q",
+    "mandi": "₹2992/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 2",
+    "p": "₹1789/q",
+    "mandi": "₹1972/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹2665/q",
+    "mandi": "₹2561/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 5",
+    "p": "₹2811/q",
+    "mandi": "₹2631/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹2508/q",
+    "mandi": "₹2409/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 2",
+    "p": "₹1574/q",
+    "mandi": "₹1553/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹2046/q",
+    "mandi": "₹2212/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹2303/q",
+    "mandi": "₹2152/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹2730/q",
+    "mandi": "₹2716/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹2198/q",
+    "mandi": "₹2242/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹2473/q",
+    "mandi": "₹2614/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹2295/q",
+    "mandi": "₹2154/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹2461/q",
+    "mandi": "₹2658/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 4",
+    "p": "₹2694/q",
+    "mandi": "₹2892/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 4",
+    "p": "₹2495/q",
+    "mandi": "₹2684/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹2573/q",
+    "mandi": "₹2730/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 1",
+    "p": "₹2150/q",
+    "mandi": "₹2238/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹2168/q",
+    "mandi": "₹2291/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹2189/q",
+    "mandi": "₹2361/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 2",
+    "p": "₹1896/q",
+    "mandi": "₹1971/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹3351/q",
+    "mandi": "₹3330/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹2292/q",
+    "mandi": "₹2103/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹1547/q",
+    "mandi": "₹1609/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹1818/q",
+    "mandi": "₹1787/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹2348/q",
+    "mandi": "₹2513/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹3007/q",
+    "mandi": "₹3121/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 2",
+    "p": "₹2052/q",
+    "mandi": "₹2014/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹3345/q",
+    "mandi": "₹3542/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹2459/q",
+    "mandi": "₹2374/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 2",
+    "p": "₹3177/q",
+    "mandi": "₹3106/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹2544/q",
+    "mandi": "₹2655/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹1518/q",
+    "mandi": "₹1402/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹2453/q",
+    "mandi": "₹2390/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹2294/q",
+    "mandi": "₹2220/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹3303/q",
+    "mandi": "₹3157/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹2699/q",
+    "mandi": "₹2515/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹2399/q",
+    "mandi": "₹2358/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹3151/q",
+    "mandi": "₹3084/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹2383/q",
+    "mandi": "₹2353/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 1",
+    "p": "₹3313/q",
+    "mandi": "₹3338/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹3425/q",
+    "mandi": "₹3516/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹2968/q",
+    "mandi": "₹2922/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 4",
+    "p": "₹3030/q",
+    "mandi": "₹3086/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹1627/q",
+    "mandi": "₹1665/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹2947/q",
+    "mandi": "₹2933/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹1969/q",
+    "mandi": "₹1904/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹2418/q",
+    "mandi": "₹2497/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹2256/q",
+    "mandi": "₹2389/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 4",
+    "p": "₹1618/q",
+    "mandi": "₹1448/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹2781/q",
+    "mandi": "₹2610/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹2191/q",
+    "mandi": "₹2259/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 2",
+    "p": "₹1715/q",
+    "mandi": "₹1531/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹3464/q",
+    "mandi": "₹3422/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 2",
+    "p": "₹2356/q",
+    "mandi": "₹2376/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹3338/q",
+    "mandi": "₹3436/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹1850/q",
+    "mandi": "₹1778/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹2726/q",
+    "mandi": "₹2642/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹2099/q",
+    "mandi": "₹2050/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹2362/q",
+    "mandi": "₹2431/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹2990/q",
+    "mandi": "₹2803/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 5",
+    "p": "₹2515/q",
+    "mandi": "₹2468/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹3264/q",
+    "mandi": "₹3353/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 2",
+    "p": "₹2246/q",
+    "mandi": "₹2162/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 1",
+    "p": "₹2716/q",
+    "mandi": "₹2713/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹3486/q",
+    "mandi": "₹3352/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 2",
+    "p": "₹3488/q",
+    "mandi": "₹3590/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹2046/q",
+    "mandi": "₹2120/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹2372/q",
+    "mandi": "₹2446/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 4",
+    "p": "₹1772/q",
+    "mandi": "₹1930/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹2777/q",
+    "mandi": "₹2922/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹2551/q",
+    "mandi": "₹2377/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹2749/q",
+    "mandi": "₹2704/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹2356/q",
+    "mandi": "₹2239/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 3",
+    "p": "₹2330/q",
+    "mandi": "₹2488/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹1547/q",
+    "mandi": "₹1535/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹2035/q",
+    "mandi": "₹2203/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹2741/q",
+    "mandi": "₹2696/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 1",
+    "p": "₹3065/q",
+    "mandi": "₹2882/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 1",
+    "p": "₹2229/q",
+    "mandi": "₹2328/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 2",
+    "p": "₹2475/q",
+    "mandi": "₹2596/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹3394/q",
+    "mandi": "₹3416/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 1",
+    "p": "₹2329/q",
+    "mandi": "₹2478/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 2",
+    "p": "₹2258/q",
+    "mandi": "₹2451/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹3274/q",
+    "mandi": "₹3167/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹1500/q",
+    "mandi": "₹1693/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 1",
+    "p": "₹2218/q",
+    "mandi": "₹2171/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 1",
+    "p": "₹3155/q",
+    "mandi": "₹3300/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹2057/q",
+    "mandi": "₹2191/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹2684/q",
+    "mandi": "₹2673/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹3007/q",
+    "mandi": "₹3061/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹3110/q",
+    "mandi": "₹3126/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 4",
+    "p": "₹1865/q",
+    "mandi": "₹1890/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 2",
+    "p": "₹1802/q",
+    "mandi": "₹1723/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹2756/q",
+    "mandi": "₹2922/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 2",
+    "p": "₹1790/q",
+    "mandi": "₹1673/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹2625/q",
+    "mandi": "₹2584/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 5",
+    "p": "₹1934/q",
+    "mandi": "₹1886/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 2",
+    "p": "₹1882/q",
+    "mandi": "₹1931/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹1882/q",
+    "mandi": "₹2053/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹3364/q",
+    "mandi": "₹3173/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹2329/q",
+    "mandi": "₹2348/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹2718/q",
+    "mandi": "₹2869/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 2",
+    "p": "₹1525/q",
+    "mandi": "₹1592/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹1616/q",
+    "mandi": "₹1616/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹2109/q",
+    "mandi": "₹2131/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹2598/q",
+    "mandi": "₹2567/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹3179/q",
+    "mandi": "₹3262/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹2420/q",
+    "mandi": "₹2263/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹1622/q",
+    "mandi": "₹1538/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹3101/q",
+    "mandi": "₹3297/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 2",
+    "p": "₹2720/q",
+    "mandi": "₹2654/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹2925/q",
+    "mandi": "₹2959/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 5",
+    "p": "₹2396/q",
+    "mandi": "₹2551/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 1",
+    "p": "₹2429/q",
+    "mandi": "₹2378/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹3192/q",
+    "mandi": "₹3166/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 4",
+    "p": "₹3142/q",
+    "mandi": "₹2972/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹1983/q",
+    "mandi": "₹2083/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹1918/q",
+    "mandi": "₹1730/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹2834/q",
+    "mandi": "₹3012/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 5",
+    "p": "₹1712/q",
+    "mandi": "₹1810/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 2",
+    "p": "₹2347/q",
+    "mandi": "₹2407/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹1637/q",
+    "mandi": "₹1551/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹2395/q",
+    "mandi": "₹2251/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 3",
+    "p": "₹3211/q",
+    "mandi": "₹3105/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹2823/q",
+    "mandi": "₹2856/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹2602/q",
+    "mandi": "₹2565/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹1542/q",
+    "mandi": "₹1385/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹2344/q",
+    "mandi": "₹2145/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 5",
+    "p": "₹3172/q",
+    "mandi": "₹3069/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹2412/q",
+    "mandi": "₹2275/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 5",
+    "p": "₹2519/q",
+    "mandi": "₹2623/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 2",
+    "p": "₹3243/q",
+    "mandi": "₹3135/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹2989/q",
+    "mandi": "₹2805/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 2",
+    "p": "₹1831/q",
+    "mandi": "₹1652/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹1819/q",
+    "mandi": "₹1790/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹2959/q",
+    "mandi": "₹2893/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹2909/q",
+    "mandi": "₹2753/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹3083/q",
+    "mandi": "₹2981/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹2049/q",
+    "mandi": "₹2088/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹3149/q",
+    "mandi": "₹3032/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹2245/q",
+    "mandi": "₹2257/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹3298/q",
+    "mandi": "₹3296/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹2439/q",
+    "mandi": "₹2270/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹1599/q",
+    "mandi": "₹1615/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹2257/q",
+    "mandi": "₹2409/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹3124/q",
+    "mandi": "₹3288/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 3",
+    "p": "₹3446/q",
+    "mandi": "₹3375/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 4",
+    "p": "₹1650/q",
+    "mandi": "₹1839/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹2446/q",
+    "mandi": "₹2590/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹3242/q",
+    "mandi": "₹3121/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 3",
+    "p": "₹2972/q",
+    "mandi": "₹3164/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 3",
+    "p": "₹2721/q",
+    "mandi": "₹2738/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹2160/q",
+    "mandi": "₹2218/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹1572/q",
+    "mandi": "₹1439/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹3216/q",
+    "mandi": "₹3161/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 2",
+    "p": "₹2828/q",
+    "mandi": "₹2670/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹2946/q",
+    "mandi": "₹2911/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹1770/q",
+    "mandi": "₹1579/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹2116/q",
+    "mandi": "₹2279/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹1533/q",
+    "mandi": "₹1412/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹3374/q",
+    "mandi": "₹3525/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 4",
+    "p": "₹2202/q",
+    "mandi": "₹2015/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 2",
+    "p": "₹2499/q",
+    "mandi": "₹2541/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹3302/q",
+    "mandi": "₹3209/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 2",
+    "p": "₹2342/q",
+    "mandi": "₹2229/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹1938/q",
+    "mandi": "₹1796/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 2",
+    "p": "₹2583/q",
+    "mandi": "₹2746/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹3175/q",
+    "mandi": "₹3086/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹3260/q",
+    "mandi": "₹3236/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹2610/q",
+    "mandi": "₹2583/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹1935/q",
+    "mandi": "₹1759/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 2",
+    "p": "₹1937/q",
+    "mandi": "₹1974/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹2564/q",
+    "mandi": "₹2585/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹1577/q",
+    "mandi": "₹1684/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹2859/q",
+    "mandi": "₹2851/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 4",
+    "p": "₹2320/q",
+    "mandi": "₹2410/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹2709/q",
+    "mandi": "₹2661/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹2345/q",
+    "mandi": "₹2407/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹2548/q",
+    "mandi": "₹2748/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹1648/q",
+    "mandi": "₹1765/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 4",
+    "p": "₹2839/q",
+    "mandi": "₹3020/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 5",
+    "p": "₹3042/q",
+    "mandi": "₹3040/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹1818/q",
+    "mandi": "₹1993/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹2982/q",
+    "mandi": "₹2874/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹2182/q",
+    "mandi": "₹2274/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹2936/q",
+    "mandi": "₹2764/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹1578/q",
+    "mandi": "₹1455/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹1666/q",
+    "mandi": "₹1855/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹2109/q",
+    "mandi": "₹2168/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 3",
+    "p": "₹3400/q",
+    "mandi": "₹3240/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 5",
+    "p": "₹3437/q",
+    "mandi": "₹3346/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 5",
+    "p": "₹2911/q",
+    "mandi": "₹2781/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹2803/q",
+    "mandi": "₹2796/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹2241/q",
+    "mandi": "₹2400/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹1553/q",
+    "mandi": "₹1428/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹1984/q",
+    "mandi": "₹2121/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 1",
+    "p": "₹3325/q",
+    "mandi": "₹3426/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 4",
+    "p": "₹1947/q",
+    "mandi": "₹1910/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹2143/q",
+    "mandi": "₹2129/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹2290/q",
+    "mandi": "₹2205/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 2",
+    "p": "₹1846/q",
+    "mandi": "₹1977/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹2990/q",
+    "mandi": "₹2813/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 2",
+    "p": "₹3305/q",
+    "mandi": "₹3394/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹2482/q",
+    "mandi": "₹2478/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 2",
+    "p": "₹1961/q",
+    "mandi": "₹2156/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 4",
+    "p": "₹2564/q",
+    "mandi": "₹2469/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 3",
+    "p": "₹2573/q",
+    "mandi": "₹2401/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹2253/q",
+    "mandi": "₹2407/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹2286/q",
+    "mandi": "₹2446/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 3",
+    "p": "₹2462/q",
+    "mandi": "₹2516/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹2893/q",
+    "mandi": "₹2714/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹3378/q",
+    "mandi": "₹3345/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹2531/q",
+    "mandi": "₹2475/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹1601/q",
+    "mandi": "₹1628/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 4",
+    "p": "₹2034/q",
+    "mandi": "₹1862/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 1",
+    "p": "₹3372/q",
+    "mandi": "₹3217/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹3495/q",
+    "mandi": "₹3411/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹3473/q",
+    "mandi": "₹3316/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹1959/q",
+    "mandi": "₹1765/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹2123/q",
+    "mandi": "₹2215/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹2482/q",
+    "mandi": "₹2668/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹2219/q",
+    "mandi": "₹2224/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹3112/q",
+    "mandi": "₹3131/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹2934/q",
+    "mandi": "₹2991/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹2318/q",
+    "mandi": "₹2150/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹2009/q",
+    "mandi": "₹2130/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 2",
+    "p": "₹3148/q",
+    "mandi": "₹3238/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹2272/q",
+    "mandi": "₹2342/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹3440/q",
+    "mandi": "₹3312/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹1582/q",
+    "mandi": "₹1542/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 2",
+    "p": "₹1988/q",
+    "mandi": "₹1919/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 1",
+    "p": "₹2592/q",
+    "mandi": "₹2519/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹2346/q",
+    "mandi": "₹2481/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹3344/q",
+    "mandi": "₹3230/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 2",
+    "p": "₹2865/q",
+    "mandi": "₹2874/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹3382/q",
+    "mandi": "₹3359/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹2188/q",
+    "mandi": "₹2165/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹2252/q",
+    "mandi": "₹2377/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹2147/q",
+    "mandi": "₹1948/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 5",
+    "p": "₹2924/q",
+    "mandi": "₹2773/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 4",
+    "p": "₹2666/q",
+    "mandi": "₹2482/q",
+    "tr": "up"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹2949/q",
+    "mandi": "₹2770/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 4",
+    "p": "₹2130/q",
+    "mandi": "₹2188/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 1",
+    "p": "₹2649/q",
+    "mandi": "₹2587/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹3118/q",
+    "mandi": "₹3108/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹2688/q",
+    "mandi": "₹2607/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹2100/q",
+    "mandi": "₹2250/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 4",
+    "p": "₹1875/q",
+    "mandi": "₹1855/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 2",
+    "p": "₹2046/q",
+    "mandi": "₹2213/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹2336/q",
+    "mandi": "₹2340/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹2892/q",
+    "mandi": "₹2889/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 5",
+    "p": "₹1809/q",
+    "mandi": "₹1949/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 1",
+    "p": "₹2205/q",
+    "mandi": "₹2335/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹2477/q",
+    "mandi": "₹2555/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹2083/q",
+    "mandi": "₹1918/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹2232/q",
+    "mandi": "₹2393/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹2146/q",
+    "mandi": "₹1982/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 2",
+    "p": "₹1828/q",
+    "mandi": "₹1986/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 5",
+    "p": "₹3342/q",
+    "mandi": "₹3166/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 3",
+    "p": "₹3230/q",
+    "mandi": "₹3155/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹2742/q",
+    "mandi": "₹2711/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 4",
+    "p": "₹2124/q",
+    "mandi": "₹2106/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹1692/q",
+    "mandi": "₹1533/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹2032/q",
+    "mandi": "₹1879/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 3",
+    "p": "₹3314/q",
+    "mandi": "₹3507/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 4",
+    "p": "₹2642/q",
+    "mandi": "₹2815/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹1795/q",
+    "mandi": "₹1931/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹2371/q",
+    "mandi": "₹2388/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 2",
+    "p": "₹2268/q",
+    "mandi": "₹2391/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 1",
+    "p": "₹2254/q",
+    "mandi": "₹2373/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 3",
+    "p": "₹2486/q",
+    "mandi": "₹2299/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹1984/q",
+    "mandi": "₹1843/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 4",
+    "p": "₹3347/q",
+    "mandi": "₹3157/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹2242/q",
+    "mandi": "₹2277/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹3254/q",
+    "mandi": "₹3261/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Jowar Grade 2",
+    "p": "₹1931/q",
+    "mandi": "₹1762/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 2",
+    "p": "₹1556/q",
+    "mandi": "₹1666/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹1956/q",
+    "mandi": "₹2134/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 3",
+    "p": "₹3132/q",
+    "mandi": "₹3095/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹2017/q",
+    "mandi": "₹2071/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹1979/q",
+    "mandi": "₹1909/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹2544/q",
+    "mandi": "₹2485/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 4",
+    "p": "₹1871/q",
+    "mandi": "₹1934/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹3074/q",
+    "mandi": "₹3079/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹2516/q",
+    "mandi": "₹2346/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹2953/q",
+    "mandi": "₹2896/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹3095/q",
+    "mandi": "₹3273/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 1",
+    "p": "₹3119/q",
+    "mandi": "₹3185/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 5",
+    "p": "₹1920/q",
+    "mandi": "₹2031/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 1",
+    "p": "₹2164/q",
+    "mandi": "₹1991/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹3353/q",
+    "mandi": "₹3243/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹2740/q",
+    "mandi": "₹2722/q",
+    "tr": "down"
+  },
+  {
+    "n": "Jowar Grade 1",
+    "p": "₹2391/q",
+    "mandi": "₹2410/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹1646/q",
+    "mandi": "₹1804/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 2",
+    "p": "₹2486/q",
+    "mandi": "₹2676/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹2329/q",
+    "mandi": "₹2476/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 1",
+    "p": "₹2008/q",
+    "mandi": "₹2126/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 1",
+    "p": "₹3346/q",
+    "mandi": "₹3437/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹3138/q",
+    "mandi": "₹3160/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹3133/q",
+    "mandi": "₹3250/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Makka Grade 5",
+    "p": "₹1741/q",
+    "mandi": "₹1847/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 3",
+    "p": "₹1716/q",
+    "mandi": "₹1555/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 5",
+    "p": "₹1581/q",
+    "mandi": "₹1396/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹2392/q",
+    "mandi": "₹2580/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹1934/q",
+    "mandi": "₹2133/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 3",
+    "p": "₹2216/q",
+    "mandi": "₹2346/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹2942/q",
+    "mandi": "₹2831/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹2357/q",
+    "mandi": "₹2192/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 5",
+    "p": "₹2652/q",
+    "mandi": "₹2535/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹2006/q",
+    "mandi": "₹2073/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹3415/q",
+    "mandi": "₹3432/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 5",
+    "p": "₹2550/q",
+    "mandi": "₹2411/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹3206/q",
+    "mandi": "₹3033/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹2592/q",
+    "mandi": "₹2685/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 5",
+    "p": "₹3322/q",
+    "mandi": "₹3195/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 5",
+    "p": "₹1879/q",
+    "mandi": "₹1742/q",
+    "tr": "down"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹2404/q",
+    "mandi": "₹2593/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹2245/q",
+    "mandi": "₹2123/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹2503/q",
+    "mandi": "₹2515/q",
+    "tr": "up"
+  },
+  {
+    "n": "Soyabean Grade 4",
+    "p": "₹2546/q",
+    "mandi": "₹2366/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹3042/q",
+    "mandi": "₹2996/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 3",
+    "p": "₹2506/q",
+    "mandi": "₹2532/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 3",
+    "p": "₹2291/q",
+    "mandi": "₹2345/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹1932/q",
+    "mandi": "₹1942/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹2261/q",
+    "mandi": "₹2215/q",
+    "tr": "down"
+  },
+  {
+    "n": "Bajra Grade 1",
+    "p": "₹3263/q",
+    "mandi": "₹3357/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹1947/q",
+    "mandi": "₹1850/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹1968/q",
+    "mandi": "₹1868/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 1",
+    "p": "₹2744/q",
+    "mandi": "₹2615/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 3",
+    "p": "₹2175/q",
+    "mandi": "₹2062/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 2",
+    "p": "₹2890/q",
+    "mandi": "₹2886/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹3124/q",
+    "mandi": "₹2969/q",
+    "tr": "down"
+  },
+  {
+    "n": "Makka Grade 3",
+    "p": "₹3040/q",
+    "mandi": "₹3062/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 4",
+    "p": "₹2412/q",
+    "mandi": "₹2322/q",
+    "tr": "down"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹2396/q",
+    "mandi": "₹2490/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹1940/q",
+    "mandi": "₹1944/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Cotton Grade 2",
+    "p": "₹3153/q",
+    "mandi": "₹3092/q",
+    "tr": "down"
+  },
+  {
+    "n": "Dhan Grade 1",
+    "p": "₹2818/q",
+    "mandi": "₹2938/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 2",
+    "p": "₹1940/q",
+    "mandi": "₹2121/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹2033/q",
+    "mandi": "₹1919/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 1",
+    "p": "₹1611/q",
+    "mandi": "₹1797/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹2492/q",
+    "mandi": "₹2508/q",
+    "tr": "up"
+  },
+  {
+    "n": "Jowar Grade 2",
+    "p": "₹1865/q",
+    "mandi": "₹1680/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 1",
+    "p": "₹2740/q",
+    "mandi": "₹2553/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 2",
+    "p": "₹3063/q",
+    "mandi": "₹3125/q",
+    "tr": "down"
+  },
+  {
+    "n": "Gehu Grade 1",
+    "p": "₹2677/q",
+    "mandi": "₹2641/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Sugarcane Grade 2",
+    "p": "₹2877/q",
+    "mandi": "₹2945/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Dhan Grade 4",
+    "p": "₹1577/q",
+    "mandi": "₹1635/q",
+    "tr": "up"
+  },
+  {
+    "n": "Dhan Grade 5",
+    "p": "₹2699/q",
+    "mandi": "₹2711/q",
+    "tr": "up"
+  },
+  {
+    "n": "Mustard Grade 5",
+    "p": "₹3208/q",
+    "mandi": "₹3122/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 5",
+    "p": "₹1911/q",
+    "mandi": "₹1928/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Mustard Grade 5",
+    "p": "₹2091/q",
+    "mandi": "₹2261/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 3",
+    "p": "₹2705/q",
+    "mandi": "₹2685/q",
+    "tr": "down"
+  },
+  {
+    "n": "Mustard Grade 4",
+    "p": "₹1631/q",
+    "mandi": "₹1509/q",
+    "tr": "up"
+  },
+  {
+    "n": "Makka Grade 4",
+    "p": "₹3028/q",
+    "mandi": "₹2908/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Gehu Grade 2",
+    "p": "₹2659/q",
+    "mandi": "₹2508/q",
+    "tr": "up"
+  },
+  {
+    "n": "Sugarcane Grade 2",
+    "p": "₹2357/q",
+    "mandi": "₹2188/q",
+    "tr": "down"
+  },
+  {
+    "n": "Cotton Grade 3",
+    "p": "₹2060/q",
+    "mandi": "₹1881/q",
+    "tr": "up"
+  },
+  {
+    "n": "Chana Grade 4",
+    "p": "₹1605/q",
+    "mandi": "₹1752/q",
+    "tr": "stable"
+  },
+  {
+    "n": "Soyabean Grade 2",
+    "p": "₹1710/q",
+    "mandi": "₹1788/q",
+    "tr": "up"
+  },
+  {
+    "n": "Gehu Grade 3",
+    "p": "₹2327/q",
+    "mandi": "₹2279/q",
+    "tr": "down"
+  },
+  {
+    "n": "Sugarcane Grade 4",
+    "p": "₹2576/q",
+    "mandi": "₹2418/q",
+    "tr": "up"
+  },
+  {
+    "n": "Bajra Grade 5",
+    "p": "₹2013/q",
+    "mandi": "₹1813/q",
+    "tr": "down"
+  }
+]

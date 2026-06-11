@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* =========================================
+   KISHANMARKET GLOBAL DESIGN SYSTEM
+   File: global.css
+   Theme: Mint & White (Clean & Minimal)
+========================================= */
+
+:root {
+    /* ----- Color Palette ----- */
+    --bg-mint: #C8E6C9;
+    /* Main background for all pages */
+    --primary-green: #4CAF50;
+    /* Primary accent, buttons, headers */
+    --secondary-grey: #EEEEEE;
+    /* Borders, dividers, subtle backgrounds */
+    --card-white: #FFFFFF;
+    /* Clean white panels */
+    --hover-green: #45a049;
+    /* Slightly darker green for hover states */
+
+    /* ----- Typography Colors ----- */
+    --text-dark: #2C3E50;
+    /* Headers and primary text */
+    --text-muted: #7F8C8D;
+    /* Labels, placeholders, secondary text */
+    --text-light: #FFFFFF;
+    /* Text on primary buttons/headers */
+
+    /* ----- Layout & Elevations ----- */
+    --radius-sm: 8px;
+    /* Inputs, small buttons */
+    --radius-md: 12px;
+    /* Standard buttons, small cards */
+    --radius-lg: 20px;
+    /* Main dashboard cards, panels */
+
+    --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.1);
+
+    /* ----- Motion & Transitions ----- */
+    --transition-speed: 0.25s ease;
+
+    /* ----- Dark Theme Variables (Earth & Sun) ----- */
+    --earth:     #1a1006;
+    --soil:      #2c1a07;
+    --amber:     #e8890c;
+    --gold:      #f5b731;
+    --cream:     #fdf6e3;
+    --sage:      #4a7c59;
+    --leaf:      #52b788;
+    --pale:      #f0f7f0;
+    --muted-dark:#8a7560;
+}
+
+/* =========================================
+   GLOBAL NAVBAR LOGO STYLES (Enforced globally)
+========================================= */
+.navbar-brand {
+    color: #ffffff !important;
+    font-weight: bold;
+    text-decoration: none !important;
+}
+.navbar-brand i {
+    color: #ffffff !important;
+}
+.navbar-brand span {
+    color: #f59e0b !important; /* Amber color matching image */
+}
+
+/* =========================================
+   DARK THEME BACKGROUND ANIMATIONS
+========================================= */
+.bg-layer {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: radial-gradient(ellipse at 20% 50%, #d3e4cd 0%, #adc2a9 60%, #99a799 100%); /* Soft, balanced sage green */
+}
+
+.grain {
+    position: absolute;
+    inset: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='100%25' height='100%25' opacity='0.02'/%3E%3C/svg%3E");
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+/* Decorative sun rings */
+.sun-ring {
+    position: absolute;
+    left: 25%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    animation: pulse-ring 8s ease-in-out infinite;
+}
+.ring-1 { width: 320px; height: 320px; animation-delay: 0s; }
+.ring-2 { width: 520px; height: 520px; animation-delay: 1.5s; border-color: rgba(255, 255, 255, 0.3); }
+.ring-3 { width: 720px; height: 720px; animation-delay: 3s; border-color: rgba(255, 255, 255, 0.15); }
+
+@keyframes pulse-ring {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    50% { transform: translate(-50%, -50%) scale(1.03); opacity: 0.6; }
+}
+
+/* Decorative icons */
+.wheat-left, .wheat-right {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.5);
+    z-index: -1;
+}
+.wheat-left { left: 30px; }
+.wheat-right { right: 30px; }
+.wheat-left i:nth-child(2), .wheat-right i:nth-child(2) { margin-left: 15px; font-size: 0.9rem; }
+
+/* Floating Particles */
+.floating-particle {
+    position: absolute;
+    bottom: -50px;
+    background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float-up linear infinite;
+    z-index: -1;
+}
+
+@keyframes float-up {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(50px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* =========================================
+   GLOBAL RESET & BASE STYLES
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    transition: all var(--transition-speed);
+}
+
+/* Unified Mint Background Applied Globally */
+body {
+    background-color: transparent;
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================
+   GLOBAL COMPONENT CLASSES
+========================================= */
+
+/* --- 1. Global Header --- */
+.km-global-header {
+    background-color: var(--bg-mint);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.km-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-green);
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* --- 2. Interactive Buttons (Login style) --- */
+.km-btn-primary {
+    background-color: var(--primary-green);
+    color: var(--text-light);
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.km-btn-primary:hover {
+    background-color: var(--hover-green);
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+    color: var(--text-light);
+}
+
+.km-btn-outline {
+    background-color: transparent;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+    padding: 10px 22px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.km-btn-outline:hover {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: var(--primary-green);
+}
+
+/* --- 3. Inputs & Forms --- */
+.km-input-group {
+    margin-bottom: 20px;
+}
+
+.km-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.km-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid var(--secondary-grey);
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    background-color: var(--card-white);
+    outline: none;
+}
+
+.km-input:focus {
+    border-color: var(--primary-green);
+}
+
+/* --- 4. Dashboard Structural Classes --- */
+
+/* Wrapper for the 2-column layout (Sidebar + Main Grid) */
+.km-dashboard-container {
+    display: flex;
+    gap: 30px;
+    padding: 20px 40px 60px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    flex: 1;
+}
+
+/* Sleek left-hand sidebar */
+.km-sidebar {
+    width: 280px;
+    background-color: var(--card-white);
+    border-radius: var(--radius-lg);
+    padding: 30px 20px;
+    box-shadow: var(--shadow-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    height: fit-content;
+}
+
+/* Main Content Area */
+.km-main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Standard clean white-paneled cards with minimal borders */
+.km-dashboard-card {
+    background-color: var(--card-white);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--secondary-grey);
+}
+
+.km-dashboard-card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-green);
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--secondary-grey);
+}
+
+/* Responsive Grid for Inner Cards (like products) */
+.km-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Smaller internal item cards */
+.km-item-card {
+    background-color: var(--card-white);
+    border: 1px solid var(--secondary-grey);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    text-align: center;
+}
+
+.km-item-card:hover {
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary-green);
+    transform: translateY(-5px);
+}
+
+/* --- INTERACTIVE BACKGROUND GLOW --- */
+.interactive-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* =========================================
+   PREMIUM 3D GLASSMORPHISM UTILITIES
+========================================= */
+
+.glass-card-premium {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: var(--radius-lg);
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.05),
+        inset 0 1px 2px rgba(255,255,255,0.9),
+        inset 0 -1px 2px rgba(0,0,0,0.02);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-card-premium:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(-2deg) scale(1.02);
+    box-shadow: 
+        0 20px 40px rgba(82, 183, 136, 0.15),
+        inset 0 1px 2px rgba(255,255,255,1);
+    border-color: rgba(82, 183, 136, 0.4);
+}
+
+.glass-card-premium::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 50%; height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    transition: all 0.7s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.glass-card-premium:hover::before {
+    left: 200%;
+}
+
+.btn-premium-hover {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-premium-hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.btn-premium-hover:hover::after {
+    transform: translateY(0);
+}
+
+.btn-premium-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.input-premium {
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(82, 183, 136, 0.2);
+    transition: all 0.3s ease;
+}
+
+.input-premium:focus {
+    background: #ffffff;
+    border-color: #52b788;
+    box-shadow: 0 0 15px rgba(82, 183, 136, 0.2);
+    transform: translateY(-2px);
+}

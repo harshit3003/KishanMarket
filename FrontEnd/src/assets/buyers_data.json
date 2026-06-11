@@ -1,0 +1,7002 @@
+[
+  {
+    "name": "ITC Limited",
+    "crops": "Gehu",
+    "rate": "1874",
+    "location": "Rajasthan",
+    "rating": "3.6"
+  },
+  {
+    "name": "Haryana Agro",
+    "crops": "Mustard",
+    "rate": "2974",
+    "location": "Gujarat",
+    "rating": "3.6"
+  },
+  {
+    "name": "Adani Wholesales",
+    "crops": "Dhan",
+    "rate": "2602",
+    "location": "Haryana",
+    "rating": "4.4"
+  },
+  {
+    "name": "Delhi Fresh",
+    "crops": "Cotton",
+    "rate": "1742",
+    "location": "Madhya Pradesh",
+    "rating": "3.7"
+  },
+  {
+    "name": "ITC Limited",
+    "crops": "Chana",
+    "rate": "2803",
+    "location": "Rajasthan",
+    "rating": "4.6"
+  },
+  {
+    "name": "AgriSafe",
+    "crops": "Gehu",
+    "rate": "2810",
+    "location": "Delhi",
+    "rating": "3.6"
+  },
+  {
+    "name": "AgriSafe",
+    "crops": "Jowar",
+    "rate": "2882",
+    "location": "Madhya Pradesh",
+    "rating": "4.1"
+  },
+  {
+    "name": "Green Organic",
+    "crops": "Mustard",
+    "rate": "2734",
+    "location": "Gujarat",
+    "rating": "3.8"
+  },
+  {
+    "name": "Adani Wholesales",
+    "crops": "Sugarcane",
+    "rate": "1765",
+    "location": "Uttar Pradesh",
+    "rating": "4.6"
+  },
+  {
+    "name": "ITC Limited",
+    "crops": "Sugarcane",
+    "rate": "2871",
+    "location": "Haryana",
+    "rating": "4.3"
+  },
+  {
+    "name": "Kisan Traders",
+    "crops": "Dhan",
+    "rate": "2566",
+    "location": "Punjab",
+    "rating": "5.0"
+  },
+  {
+    "name": "AgriSafe 11",
+    "crops": "Jowar",
+    "rate": "2177",
+    "location": "Uttar Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "Green Organic 12",
+    "crops": "Jowar",
+    "rate": "1660",
+    "location": "Punjab",
+    "rating": "4.5"
+  },
+  {
+    "name": "Punjab Mandi 13",
+    "crops": "Cotton",
+    "rate": "2367",
+    "location": "Rajasthan",
+    "rating": "3.6"
+  },
+  {
+    "name": "Haryana Agro 14",
+    "crops": "Bajra",
+    "rate": "2607",
+    "location": "Gujarat",
+    "rating": "4.9"
+  },
+  {
+    "name": "ITC Limited 15",
+    "crops": "Jowar",
+    "rate": "2644",
+    "location": "Gujarat",
+    "rating": "4.5"
+  },
+  {
+    "name": "Haryana Agro 16",
+    "crops": "Sugarcane",
+    "rate": "2175",
+    "location": "Gujarat",
+    "rating": "4.6"
+  },
+  {
+    "name": "Kisan Traders 17",
+    "crops": "Gehu",
+    "rate": "2985",
+    "location": "Haryana",
+    "rating": "4.8"
+  },
+  {
+    "name": "Garg Trading 18",
+    "crops": "Mustard",
+    "rate": "2269",
+    "location": "Uttar Pradesh",
+    "rating": "3.8"
+  },
+  {
+    "name": "Garg Trading 19",
+    "crops": "Chana",
+    "rate": "2921",
+    "location": "Punjab",
+    "rating": "4.5"
+  },
+  {
+    "name": "Adani Wholesales 20",
+    "crops": "Gehu",
+    "rate": "2778",
+    "location": "Madhya Pradesh",
+    "rating": "3.8"
+  },
+  {
+    "name": "Haryana Agro 21",
+    "crops": "Chana",
+    "rate": "2735",
+    "location": "Punjab",
+    "rating": "4.2"
+  },
+  {
+    "name": "ITC Limited 22",
+    "crops": "Cotton",
+    "rate": "2857",
+    "location": "Punjab",
+    "rating": "4.9"
+  },
+  {
+    "name": "Adani Wholesales 23",
+    "crops": "Dhan",
+    "rate": "2498",
+    "location": "Gujarat",
+    "rating": "4.7"
+  },
+  {
+    "name": "Kisan Traders 24",
+    "crops": "Sugarcane",
+    "rate": "1729",
+    "location": "Haryana",
+    "rating": "4.7"
+  },
+  {
+    "name": "Reliance Agri 25",
+    "crops": "Mustard",
+    "rate": "1836",
+    "location": "Delhi",
+    "rating": "4.5"
+  },
+  {
+    "name": "AgriSafe 26",
+    "crops": "Gehu",
+    "rate": "2514",
+    "location": "Gujarat",
+    "rating": "4.9"
+  },
+  {
+    "name": "Punjab Mandi 27",
+    "crops": "Mustard",
+    "rate": "2046",
+    "location": "Punjab",
+    "rating": "3.6"
+  },
+  {
+    "name": "Delhi Fresh 28",
+    "crops": "Soyabean",
+    "rate": "2906",
+    "location": "Uttar Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "ITC Limited 29",
+    "crops": "Gehu",
+    "rate": "2260",
+    "location": "Delhi",
+    "rating": "4.3"
+  },
+  {
+    "name": "Haryana Agro 30",
+    "crops": "Chana",
+    "rate": "1835",
+    "location": "Haryana",
+    "rating": "4.3"
+  },
+  {
+    "name": "AgriSafe 31",
+    "crops": "Soyabean",
+    "rate": "2885",
+    "location": "Gujarat",
+    "rating": "4.9"
+  },
+  {
+    "name": "Kisan Traders 32",
+    "crops": "Dhan",
+    "rate": "2523",
+    "location": "Rajasthan",
+    "rating": "4.1"
+  },
+  {
+    "name": "Adani Wholesales 33",
+    "crops": "Jowar",
+    "rate": "2675",
+    "location": "Gujarat",
+    "rating": "4.7"
+  },
+  {
+    "name": "Adani Wholesales 34",
+    "crops": "Bajra",
+    "rate": "1962",
+    "location": "Rajasthan",
+    "rating": "3.7"
+  },
+  {
+    "name": "Garg Trading 35",
+    "crops": "Sugarcane",
+    "rate": "2523",
+    "location": "Gujarat",
+    "rating": "4.4"
+  },
+  {
+    "name": "Punjab Mandi 36",
+    "crops": "Gehu",
+    "rate": "2758",
+    "location": "Punjab",
+    "rating": "3.7"
+  },
+  {
+    "name": "ITC Limited 37",
+    "crops": "Jowar",
+    "rate": "1740",
+    "location": "Delhi",
+    "rating": "4.6"
+  },
+  {
+    "name": "Kisan Traders 38",
+    "crops": "Gehu",
+    "rate": "2368",
+    "location": "Gujarat",
+    "rating": "3.7"
+  },
+  {
+    "name": "Kisan Traders 39",
+    "crops": "Soyabean",
+    "rate": "2680",
+    "location": "Uttar Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "Green Organic 40",
+    "crops": "Jowar",
+    "rate": "2206",
+    "location": "Rajasthan",
+    "rating": "4.0"
+  },
+  {
+    "name": "Delhi Fresh 41",
+    "crops": "Makka",
+    "rate": "1873",
+    "location": "Gujarat",
+    "rating": "4.1"
+  },
+  {
+    "name": "ITC Limited 42",
+    "crops": "Soyabean",
+    "rate": "2661",
+    "location": "Rajasthan",
+    "rating": "4.3"
+  },
+  {
+    "name": "Delhi Fresh 43",
+    "crops": "Mustard",
+    "rate": "2775",
+    "location": "Madhya Pradesh",
+    "rating": "4.1"
+  },
+  {
+    "name": "Punjab Mandi 44",
+    "crops": "Bajra",
+    "rate": "1845",
+    "location": "Madhya Pradesh",
+    "rating": "5.0"
+  },
+  {
+    "name": "Green Organic 45",
+    "crops": "Bajra",
+    "rate": "2499",
+    "location": "Haryana",
+    "rating": "3.6"
+  },
+  {
+    "name": "Green Organic 46",
+    "crops": "Jowar",
+    "rate": "2288",
+    "location": "Madhya Pradesh",
+    "rating": "4.7"
+  },
+  {
+    "name": "Adani Wholesales 47",
+    "crops": "Cotton",
+    "rate": "2594",
+    "location": "Gujarat",
+    "rating": "4.7"
+  },
+  {
+    "name": "ITC Limited 48",
+    "crops": "Dhan",
+    "rate": "2330",
+    "location": "Delhi",
+    "rating": "4.0"
+  },
+  {
+    "name": "AgriSafe 49",
+    "crops": "Gehu",
+    "rate": "2003",
+    "location": "Madhya Pradesh",
+    "rating": "5.0"
+  },
+  {
+    "name": "Green Organic 50",
+    "crops": "Mustard",
+    "rate": "1537",
+    "location": "Madhya Pradesh",
+    "rating": "4.6"
+  },
+  {
+    "name": "Kisan Traders 51",
+    "crops": "Bajra",
+    "rate": "1961",
+    "location": "Gujarat",
+    "rating": "3.9"
+  },
+  {
+    "name": "Adani Wholesales 52",
+    "crops": "Makka",
+    "rate": "2253",
+    "location": "Gujarat",
+    "rating": "4.1"
+  },
+  {
+    "name": "Green Organic 53",
+    "crops": "Gehu",
+    "rate": "2977",
+    "location": "Rajasthan",
+    "rating": "4.2"
+  },
+  {
+    "name": "Kisan Traders 54",
+    "crops": "Dhan",
+    "rate": "2234",
+    "location": "Delhi",
+    "rating": "4.3"
+  },
+  {
+    "name": "AgriSafe 55",
+    "crops": "Gehu",
+    "rate": "2536",
+    "location": "Haryana",
+    "rating": "3.6"
+  },
+  {
+    "name": "Kisan Traders 56",
+    "crops": "Chana",
+    "rate": "2375",
+    "location": "Madhya Pradesh",
+    "rating": "4.8"
+  },
+  {
+    "name": "Punjab Mandi 57",
+    "crops": "Bajra",
+    "rate": "1545",
+    "location": "Madhya Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Kisan Traders 58",
+    "crops": "Gehu",
+    "rate": "2821",
+    "location": "Uttar Pradesh",
+    "rating": "3.8"
+  },
+  {
+    "name": "ITC Limited 59",
+    "crops": "Makka",
+    "rate": "2720",
+    "location": "Uttar Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "Garg Trading 60",
+    "crops": "Jowar",
+    "rate": "2297",
+    "location": "Gujarat",
+    "rating": "4.4"
+  },
+  {
+    "name": "Reliance Agri 61",
+    "crops": "Jowar",
+    "rate": "2550",
+    "location": "Delhi",
+    "rating": "3.6"
+  },
+  {
+    "name": "AgriSafe 62",
+    "crops": "Chana",
+    "rate": "2974",
+    "location": "Madhya Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "AgriSafe 63",
+    "crops": "Soyabean",
+    "rate": "2464",
+    "location": "Uttar Pradesh",
+    "rating": "3.8"
+  },
+  {
+    "name": "Adani Wholesales 64",
+    "crops": "Mustard",
+    "rate": "2234",
+    "location": "Gujarat",
+    "rating": "4.5"
+  },
+  {
+    "name": "Reliance Agri 65",
+    "crops": "Mustard",
+    "rate": "2238",
+    "location": "Gujarat",
+    "rating": "4.4"
+  },
+  {
+    "name": "Haryana Agro 66",
+    "crops": "Mustard",
+    "rate": "1765",
+    "location": "Gujarat",
+    "rating": "3.9"
+  },
+  {
+    "name": "Green Organic 67",
+    "crops": "Makka",
+    "rate": "2437",
+    "location": "Gujarat",
+    "rating": "4.1"
+  },
+  {
+    "name": "AgriSafe 68",
+    "crops": "Cotton",
+    "rate": "2454",
+    "location": "Punjab",
+    "rating": "4.8"
+  },
+  {
+    "name": "ITC Limited 69",
+    "crops": "Mustard",
+    "rate": "2046",
+    "location": "Madhya Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "ITC Limited 70",
+    "crops": "Cotton",
+    "rate": "1776",
+    "location": "Madhya Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "Haryana Agro 71",
+    "crops": "Soyabean",
+    "rate": "1921",
+    "location": "Uttar Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Garg Trading 72",
+    "crops": "Mustard",
+    "rate": "2911",
+    "location": "Madhya Pradesh",
+    "rating": "3.5"
+  },
+  {
+    "name": "Reliance Agri 73",
+    "crops": "Soyabean",
+    "rate": "1646",
+    "location": "Punjab",
+    "rating": "4.0"
+  },
+  {
+    "name": "Adani Wholesales 74",
+    "crops": "Jowar",
+    "rate": "2041",
+    "location": "Gujarat",
+    "rating": "3.8"
+  },
+  {
+    "name": "Adani Wholesales 75",
+    "crops": "Bajra",
+    "rate": "1950",
+    "location": "Punjab",
+    "rating": "3.8"
+  },
+  {
+    "name": "Adani Wholesales 76",
+    "crops": "Makka",
+    "rate": "1587",
+    "location": "Gujarat",
+    "rating": "3.5"
+  },
+  {
+    "name": "ITC Limited 77",
+    "crops": "Bajra",
+    "rate": "2058",
+    "location": "Delhi",
+    "rating": "3.6"
+  },
+  {
+    "name": "Garg Trading 78",
+    "crops": "Jowar",
+    "rate": "2581",
+    "location": "Punjab",
+    "rating": "3.9"
+  },
+  {
+    "name": "ITC Limited 79",
+    "crops": "Dhan",
+    "rate": "1548",
+    "location": "Haryana",
+    "rating": "4.8"
+  },
+  {
+    "name": "ITC Limited 80",
+    "crops": "Gehu",
+    "rate": "2153",
+    "location": "Punjab",
+    "rating": "4.0"
+  },
+  {
+    "name": "ITC Limited 81",
+    "crops": "Dhan",
+    "rate": "1841",
+    "location": "Delhi",
+    "rating": "4.0"
+  },
+  {
+    "name": "Punjab Mandi 82",
+    "crops": "Cotton",
+    "rate": "2297",
+    "location": "Gujarat",
+    "rating": "4.7"
+  },
+  {
+    "name": "Adani Wholesales 83",
+    "crops": "Makka",
+    "rate": "1783",
+    "location": "Punjab",
+    "rating": "4.0"
+  },
+  {
+    "name": "Garg Trading 84",
+    "crops": "Chana",
+    "rate": "2315",
+    "location": "Punjab",
+    "rating": "4.6"
+  },
+  {
+    "name": "Punjab Mandi 85",
+    "crops": "Bajra",
+    "rate": "2204",
+    "location": "Uttar Pradesh",
+    "rating": "4.9"
+  },
+  {
+    "name": "Adani Wholesales 86",
+    "crops": "Mustard",
+    "rate": "2202",
+    "location": "Uttar Pradesh",
+    "rating": "4.6"
+  },
+  {
+    "name": "Delhi Fresh 87",
+    "crops": "Bajra",
+    "rate": "1513",
+    "location": "Punjab",
+    "rating": "4.2"
+  },
+  {
+    "name": "Reliance Agri 88",
+    "crops": "Cotton",
+    "rate": "2136",
+    "location": "Gujarat",
+    "rating": "4.6"
+  },
+  {
+    "name": "Delhi Fresh 89",
+    "crops": "Makka",
+    "rate": "2985",
+    "location": "Madhya Pradesh",
+    "rating": "4.1"
+  },
+  {
+    "name": "Green Organic 90",
+    "crops": "Mustard",
+    "rate": "2748",
+    "location": "Punjab",
+    "rating": "3.9"
+  },
+  {
+    "name": "Green Organic 91",
+    "crops": "Cotton",
+    "rate": "2555",
+    "location": "Rajasthan",
+    "rating": "4.0"
+  },
+  {
+    "name": "Haryana Agro 92",
+    "crops": "Gehu",
+    "rate": "2447",
+    "location": "Haryana",
+    "rating": "3.6"
+  },
+  {
+    "name": "AgriSafe 93",
+    "crops": "Chana",
+    "rate": "2686",
+    "location": "Haryana",
+    "rating": "4.2"
+  },
+  {
+    "name": "ITC Limited 94",
+    "crops": "Dhan",
+    "rate": "2959",
+    "location": "Punjab",
+    "rating": "4.7"
+  },
+  {
+    "name": "Garg Trading 95",
+    "crops": "Chana",
+    "rate": "2498",
+    "location": "Haryana",
+    "rating": "4.8"
+  },
+  {
+    "name": "Reliance Agri 96",
+    "crops": "Cotton",
+    "rate": "1823",
+    "location": "Delhi",
+    "rating": "4.8"
+  },
+  {
+    "name": "Punjab Mandi 97",
+    "crops": "Gehu",
+    "rate": "1860",
+    "location": "Gujarat",
+    "rating": "3.8"
+  },
+  {
+    "name": "Haryana Agro 98",
+    "crops": "Cotton",
+    "rate": "2025",
+    "location": "Rajasthan",
+    "rating": "4.1"
+  },
+  {
+    "name": "Green Organic 99",
+    "crops": "Jowar",
+    "rate": "2477",
+    "location": "Haryana",
+    "rating": "3.7"
+  },
+  {
+    "name": "AgriSafe 100",
+    "crops": "Dhan",
+    "rate": "1596",
+    "location": "Madhya Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "Haryana Agro 101",
+    "crops": "Sugarcane",
+    "rate": "1540",
+    "location": "Madhya Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Reliance Agri 102",
+    "crops": "Gehu",
+    "rate": "1504",
+    "location": "Punjab",
+    "rating": "3.6"
+  },
+  {
+    "name": "Reliance Agri 103",
+    "crops": "Gehu",
+    "rate": "2971",
+    "location": "Gujarat",
+    "rating": "4.8"
+  },
+  {
+    "name": "Punjab Mandi 104",
+    "crops": "Bajra",
+    "rate": "1627",
+    "location": "Delhi",
+    "rating": "5.0"
+  },
+  {
+    "name": "Adani Wholesales 105",
+    "crops": "Jowar",
+    "rate": "2108",
+    "location": "Delhi",
+    "rating": "4.9"
+  },
+  {
+    "name": "Punjab Mandi 106",
+    "crops": "Sugarcane",
+    "rate": "2326",
+    "location": "Haryana",
+    "rating": "3.7"
+  },
+  {
+    "name": "Delhi Fresh 107",
+    "crops": "Sugarcane",
+    "rate": "2886",
+    "location": "Uttar Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "ITC Limited 108",
+    "crops": "Soyabean",
+    "rate": "2858",
+    "location": "Madhya Pradesh",
+    "rating": "4.6"
+  },
+  {
+    "name": "Punjab Mandi 109",
+    "crops": "Bajra",
+    "rate": "1771",
+    "location": "Punjab",
+    "rating": "4.7"
+  },
+  {
+    "name": "Reliance Agri 110",
+    "crops": "Bajra",
+    "rate": "2370",
+    "location": "Uttar Pradesh",
+    "rating": "4.2"
+  },
+  {
+    "name": "Punjab Mandi 111",
+    "crops": "Makka",
+    "rate": "1813",
+    "location": "Madhya Pradesh",
+    "rating": "5.0"
+  },
+  {
+    "name": "AgriSafe 112",
+    "crops": "Jowar",
+    "rate": "2057",
+    "location": "Rajasthan",
+    "rating": "4.2"
+  },
+  {
+    "name": "Garg Trading 113",
+    "crops": "Jowar",
+    "rate": "2261",
+    "location": "Uttar Pradesh",
+    "rating": "4.6"
+  },
+  {
+    "name": "Adani Wholesales 114",
+    "crops": "Makka",
+    "rate": "2782",
+    "location": "Delhi",
+    "rating": "4.3"
+  },
+  {
+    "name": "ITC Limited 115",
+    "crops": "Chana",
+    "rate": "2255",
+    "location": "Delhi",
+    "rating": "4.8"
+  },
+  {
+    "name": "Garg Trading 116",
+    "crops": "Mustard",
+    "rate": "2182",
+    "location": "Haryana",
+    "rating": "3.7"
+  },
+  {
+    "name": "Kisan Traders 117",
+    "crops": "Chana",
+    "rate": "2041",
+    "location": "Delhi",
+    "rating": "4.5"
+  },
+  {
+    "name": "Punjab Mandi 118",
+    "crops": "Cotton",
+    "rate": "2763",
+    "location": "Delhi",
+    "rating": "4.3"
+  },
+  {
+    "name": "ITC Limited 119",
+    "crops": "Cotton",
+    "rate": "1712",
+    "location": "Punjab",
+    "rating": "4.4"
+  },
+  {
+    "name": "ITC Limited 120",
+    "crops": "Chana",
+    "rate": "1843",
+    "location": "Punjab",
+    "rating": "4.0"
+  },
+  {
+    "name": "AgriSafe 121",
+    "crops": "Gehu",
+    "rate": "1704",
+    "location": "Gujarat",
+    "rating": "3.9"
+  },
+  {
+    "name": "Garg Trading 122",
+    "crops": "Soyabean",
+    "rate": "1545",
+    "location": "Punjab",
+    "rating": "3.9"
+  },
+  {
+    "name": "ITC Limited 123",
+    "crops": "Bajra",
+    "rate": "2298",
+    "location": "Gujarat",
+    "rating": "4.4"
+  },
+  {
+    "name": "Haryana Agro 124",
+    "crops": "Chana",
+    "rate": "2106",
+    "location": "Gujarat",
+    "rating": "4.9"
+  },
+  {
+    "name": "Garg Trading 125",
+    "crops": "Dhan",
+    "rate": "2206",
+    "location": "Punjab",
+    "rating": "4.2"
+  },
+  {
+    "name": "Green Organic 126",
+    "crops": "Makka",
+    "rate": "2915",
+    "location": "Rajasthan",
+    "rating": "4.2"
+  },
+  {
+    "name": "AgriSafe 127",
+    "crops": "Makka",
+    "rate": "2932",
+    "location": "Delhi",
+    "rating": "3.9"
+  },
+  {
+    "name": "Reliance Agri 128",
+    "crops": "Jowar",
+    "rate": "2231",
+    "location": "Punjab",
+    "rating": "4.5"
+  },
+  {
+    "name": "Haryana Agro 129",
+    "crops": "Cotton",
+    "rate": "2577",
+    "location": "Madhya Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "AgriSafe 130",
+    "crops": "Dhan",
+    "rate": "2170",
+    "location": "Delhi",
+    "rating": "4.5"
+  },
+  {
+    "name": "Reliance Agri 131",
+    "crops": "Soyabean",
+    "rate": "2676",
+    "location": "Rajasthan",
+    "rating": "4.5"
+  },
+  {
+    "name": "Haryana Agro 132",
+    "crops": "Sugarcane",
+    "rate": "2494",
+    "location": "Gujarat",
+    "rating": "4.4"
+  },
+  {
+    "name": "Adani Wholesales 133",
+    "crops": "Makka",
+    "rate": "1572",
+    "location": "Haryana",
+    "rating": "4.5"
+  },
+  {
+    "name": "Garg Trading 134",
+    "crops": "Sugarcane",
+    "rate": "1709",
+    "location": "Punjab",
+    "rating": "3.8"
+  },
+  {
+    "name": "Delhi Fresh 135",
+    "crops": "Dhan",
+    "rate": "2295",
+    "location": "Madhya Pradesh",
+    "rating": "4.6"
+  },
+  {
+    "name": "Delhi Fresh 136",
+    "crops": "Sugarcane",
+    "rate": "1994",
+    "location": "Rajasthan",
+    "rating": "4.6"
+  },
+  {
+    "name": "ITC Limited 137",
+    "crops": "Chana",
+    "rate": "2715",
+    "location": "Rajasthan",
+    "rating": "4.6"
+  },
+  {
+    "name": "Adani Wholesales 138",
+    "crops": "Dhan",
+    "rate": "1572",
+    "location": "Rajasthan",
+    "rating": "4.3"
+  },
+  {
+    "name": "Reliance Agri 139",
+    "crops": "Chana",
+    "rate": "1568",
+    "location": "Madhya Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "Delhi Fresh 140",
+    "crops": "Jowar",
+    "rate": "1713",
+    "location": "Punjab",
+    "rating": "4.6"
+  },
+  {
+    "name": "ITC Limited 141",
+    "crops": "Mustard",
+    "rate": "2014",
+    "location": "Rajasthan",
+    "rating": "4.6"
+  },
+  {
+    "name": "Kisan Traders 142",
+    "crops": "Cotton",
+    "rate": "2704",
+    "location": "Madhya Pradesh",
+    "rating": "4.9"
+  },
+  {
+    "name": "AgriSafe 143",
+    "crops": "Makka",
+    "rate": "2150",
+    "location": "Rajasthan",
+    "rating": "3.5"
+  },
+  {
+    "name": "Haryana Agro 144",
+    "crops": "Chana",
+    "rate": "1845",
+    "location": "Gujarat",
+    "rating": "4.6"
+  },
+  {
+    "name": "Reliance Agri 145",
+    "crops": "Sugarcane",
+    "rate": "2088",
+    "location": "Haryana",
+    "rating": "4.9"
+  },
+  {
+    "name": "Green Organic 146",
+    "crops": "Soyabean",
+    "rate": "2999",
+    "location": "Delhi",
+    "rating": "4.2"
+  },
+  {
+    "name": "Haryana Agro 147",
+    "crops": "Jowar",
+    "rate": "2982",
+    "location": "Madhya Pradesh",
+    "rating": "4.6"
+  },
+  {
+    "name": "Garg Trading 148",
+    "crops": "Jowar",
+    "rate": "2827",
+    "location": "Haryana",
+    "rating": "3.7"
+  },
+  {
+    "name": "Haryana Agro 149",
+    "crops": "Makka",
+    "rate": "2044",
+    "location": "Gujarat",
+    "rating": "4.5"
+  },
+  {
+    "name": "Garg Trading 150",
+    "crops": "Cotton",
+    "rate": "1932",
+    "location": "Uttar Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Garg Trading 151",
+    "crops": "Makka",
+    "rate": "2602",
+    "location": "Punjab",
+    "rating": "4.8"
+  },
+  {
+    "name": "Kisan Traders 152",
+    "crops": "Cotton",
+    "rate": "2800",
+    "location": "Delhi",
+    "rating": "4.1"
+  },
+  {
+    "name": "Garg Trading 153",
+    "crops": "Bajra",
+    "rate": "2324",
+    "location": "Rajasthan",
+    "rating": "3.6"
+  },
+  {
+    "name": "Garg Trading 154",
+    "crops": "Soyabean",
+    "rate": "2358",
+    "location": "Rajasthan",
+    "rating": "4.1"
+  },
+  {
+    "name": "Haryana Agro 155",
+    "crops": "Soyabean",
+    "rate": "2018",
+    "location": "Gujarat",
+    "rating": "3.6"
+  },
+  {
+    "name": "Haryana Agro 156",
+    "crops": "Sugarcane",
+    "rate": "2146",
+    "location": "Haryana",
+    "rating": "3.7"
+  },
+  {
+    "name": "Adani Wholesales 157",
+    "crops": "Bajra",
+    "rate": "2435",
+    "location": "Rajasthan",
+    "rating": "3.8"
+  },
+  {
+    "name": "Green Organic 158",
+    "crops": "Bajra",
+    "rate": "1964",
+    "location": "Rajasthan",
+    "rating": "3.9"
+  },
+  {
+    "name": "Punjab Mandi 159",
+    "crops": "Jowar",
+    "rate": "1879",
+    "location": "Gujarat",
+    "rating": "4.0"
+  },
+  {
+    "name": "Delhi Fresh 160",
+    "crops": "Soyabean",
+    "rate": "2037",
+    "location": "Madhya Pradesh",
+    "rating": "4.9"
+  },
+  {
+    "name": "Garg Trading 161",
+    "crops": "Dhan",
+    "rate": "1782",
+    "location": "Madhya Pradesh",
+    "rating": "3.6"
+  },
+  {
+    "name": "Punjab Mandi 162",
+    "crops": "Makka",
+    "rate": "1553",
+    "location": "Gujarat",
+    "rating": "4.9"
+  },
+  {
+    "name": "Punjab Mandi 163",
+    "crops": "Jowar",
+    "rate": "2165",
+    "location": "Uttar Pradesh",
+    "rating": "4.8"
+  },
+  {
+    "name": "AgriSafe 164",
+    "crops": "Makka",
+    "rate": "2816",
+    "location": "Haryana",
+    "rating": "5.0"
+  },
+  {
+    "name": "AgriSafe 165",
+    "crops": "Gehu",
+    "rate": "2733",
+    "location": "Gujarat",
+    "rating": "4.2"
+  },
+  {
+    "name": "Punjab Mandi 166",
+    "crops": "Chana",
+    "rate": "1906",
+    "location": "Haryana",
+    "rating": "4.4"
+  },
+  {
+    "name": "Reliance Agri 167",
+    "crops": "Jowar",
+    "rate": "2294",
+    "location": "Delhi",
+    "rating": "4.8"
+  },
+  {
+    "name": "Green Organic 168",
+    "crops": "Gehu",
+    "rate": "2982",
+    "location": "Gujarat",
+    "rating": "5.0"
+  },
+  {
+    "name": "Reliance Agri 169",
+    "crops": "Jowar",
+    "rate": "1689",
+    "location": "Delhi",
+    "rating": "4.5"
+  },
+  {
+    "name": "Haryana Agro 170",
+    "crops": "Chana",
+    "rate": "2751",
+    "location": "Haryana",
+    "rating": "4.1"
+  },
+  {
+    "name": "Reliance Agri 171",
+    "crops": "Jowar",
+    "rate": "2485",
+    "location": "Uttar Pradesh",
+    "rating": "4.6"
+  },
+  {
+    "name": "Reliance Agri 172",
+    "crops": "Chana",
+    "rate": "1577",
+    "location": "Haryana",
+    "rating": "4.6"
+  },
+  {
+    "name": "Delhi Fresh 173",
+    "crops": "Chana",
+    "rate": "1947",
+    "location": "Madhya Pradesh",
+    "rating": "4.1"
+  },
+  {
+    "name": "Green Organic 174",
+    "crops": "Soyabean",
+    "rate": "2249",
+    "location": "Delhi",
+    "rating": "3.8"
+  },
+  {
+    "name": "Punjab Mandi 175",
+    "crops": "Chana",
+    "rate": "1627",
+    "location": "Punjab",
+    "rating": "3.6"
+  },
+  {
+    "name": "Haryana Agro 176",
+    "crops": "Cotton",
+    "rate": "2779",
+    "location": "Delhi",
+    "rating": "4.8"
+  },
+  {
+    "name": "ITC Limited 177",
+    "crops": "Dhan",
+    "rate": "1581",
+    "location": "Haryana",
+    "rating": "4.0"
+  },
+  {
+    "name": "Punjab Mandi 178",
+    "crops": "Chana",
+    "rate": "1564",
+    "location": "Delhi",
+    "rating": "3.9"
+  },
+  {
+    "name": "Adani Wholesales 179",
+    "crops": "Jowar",
+    "rate": "2601",
+    "location": "Madhya Pradesh",
+    "rating": "4.6"
+  },
+  {
+    "name": "Delhi Fresh 180",
+    "crops": "Jowar",
+    "rate": "2892",
+    "location": "Gujarat",
+    "rating": "4.9"
+  },
+  {
+    "name": "Punjab Mandi 181",
+    "crops": "Soyabean",
+    "rate": "2309",
+    "location": "Delhi",
+    "rating": "4.1"
+  },
+  {
+    "name": "ITC Limited 182",
+    "crops": "Soyabean",
+    "rate": "2302",
+    "location": "Uttar Pradesh",
+    "rating": "4.8"
+  },
+  {
+    "name": "Green Organic 183",
+    "crops": "Mustard",
+    "rate": "1968",
+    "location": "Madhya Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Garg Trading 184",
+    "crops": "Chana",
+    "rate": "2636",
+    "location": "Delhi",
+    "rating": "4.0"
+  },
+  {
+    "name": "Green Organic 185",
+    "crops": "Jowar",
+    "rate": "2231",
+    "location": "Delhi",
+    "rating": "4.2"
+  },
+  {
+    "name": "Kisan Traders 186",
+    "crops": "Sugarcane",
+    "rate": "2872",
+    "location": "Haryana",
+    "rating": "3.6"
+  },
+  {
+    "name": "Reliance Agri 187",
+    "crops": "Jowar",
+    "rate": "1876",
+    "location": "Madhya Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "Reliance Agri 188",
+    "crops": "Cotton",
+    "rate": "2382",
+    "location": "Rajasthan",
+    "rating": "4.0"
+  },
+  {
+    "name": "AgriSafe 189",
+    "crops": "Bajra",
+    "rate": "2247",
+    "location": "Haryana",
+    "rating": "3.7"
+  },
+  {
+    "name": "Haryana Agro 190",
+    "crops": "Bajra",
+    "rate": "2263",
+    "location": "Haryana",
+    "rating": "3.9"
+  },
+  {
+    "name": "ITC Limited 191",
+    "crops": "Bajra",
+    "rate": "1802",
+    "location": "Uttar Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "ITC Limited 192",
+    "crops": "Sugarcane",
+    "rate": "2023",
+    "location": "Gujarat",
+    "rating": "5.0"
+  },
+  {
+    "name": "Kisan Traders 193",
+    "crops": "Soyabean",
+    "rate": "2733",
+    "location": "Uttar Pradesh",
+    "rating": "4.6"
+  },
+  {
+    "name": "Adani Wholesales 194",
+    "crops": "Jowar",
+    "rate": "2553",
+    "location": "Haryana",
+    "rating": "4.1"
+  },
+  {
+    "name": "Punjab Mandi 195",
+    "crops": "Makka",
+    "rate": "2885",
+    "location": "Punjab",
+    "rating": "5.0"
+  },
+  {
+    "name": "AgriSafe 196",
+    "crops": "Gehu",
+    "rate": "2511",
+    "location": "Punjab",
+    "rating": "4.5"
+  },
+  {
+    "name": "Green Organic 197",
+    "crops": "Chana",
+    "rate": "2350",
+    "location": "Rajasthan",
+    "rating": "3.7"
+  },
+  {
+    "name": "Adani Wholesales 198",
+    "crops": "Cotton",
+    "rate": "2204",
+    "location": "Delhi",
+    "rating": "4.1"
+  },
+  {
+    "name": "Haryana Agro 199",
+    "crops": "Mustard",
+    "rate": "1898",
+    "location": "Rajasthan",
+    "rating": "3.6"
+  },
+  {
+    "name": "AgriSafe 200",
+    "crops": "Gehu",
+    "rate": "1683",
+    "location": "Rajasthan",
+    "rating": "3.9"
+  },
+  {
+    "name": "ITC Limited 201",
+    "crops": "Dhan",
+    "rate": "2948",
+    "location": "Madhya Pradesh",
+    "rating": "3.8"
+  },
+  {
+    "name": "Kisan Traders 202",
+    "crops": "Jowar",
+    "rate": "2445",
+    "location": "Gujarat",
+    "rating": "5.0"
+  },
+  {
+    "name": "ITC Limited 203",
+    "crops": "Cotton",
+    "rate": "2363",
+    "location": "Madhya Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "Garg Trading 204",
+    "crops": "Dhan",
+    "rate": "2521",
+    "location": "Gujarat",
+    "rating": "4.6"
+  },
+  {
+    "name": "ITC Limited 205",
+    "crops": "Gehu",
+    "rate": "2893",
+    "location": "Haryana",
+    "rating": "4.3"
+  },
+  {
+    "name": "Kisan Traders 206",
+    "crops": "Gehu",
+    "rate": "2254",
+    "location": "Rajasthan",
+    "rating": "5.0"
+  },
+  {
+    "name": "Garg Trading 207",
+    "crops": "Chana",
+    "rate": "1912",
+    "location": "Madhya Pradesh",
+    "rating": "4.8"
+  },
+  {
+    "name": "Delhi Fresh 208",
+    "crops": "Sugarcane",
+    "rate": "2150",
+    "location": "Rajasthan",
+    "rating": "4.2"
+  },
+  {
+    "name": "Punjab Mandi 209",
+    "crops": "Dhan",
+    "rate": "2004",
+    "location": "Rajasthan",
+    "rating": "4.3"
+  },
+  {
+    "name": "Delhi Fresh 210",
+    "crops": "Gehu",
+    "rate": "2995",
+    "location": "Madhya Pradesh",
+    "rating": "3.7"
+  },
+  {
+    "name": "Delhi Fresh 211",
+    "crops": "Dhan",
+    "rate": "1644",
+    "location": "Madhya Pradesh",
+    "rating": "3.7"
+  },
+  {
+    "name": "Adani Wholesales 212",
+    "crops": "Cotton",
+    "rate": "1554",
+    "location": "Haryana",
+    "rating": "4.0"
+  },
+  {
+    "name": "Green Organic 213",
+    "crops": "Bajra",
+    "rate": "2169",
+    "location": "Rajasthan",
+    "rating": "4.6"
+  },
+  {
+    "name": "Delhi Fresh 214",
+    "crops": "Chana",
+    "rate": "1917",
+    "location": "Madhya Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "Delhi Fresh 215",
+    "crops": "Makka",
+    "rate": "2718",
+    "location": "Madhya Pradesh",
+    "rating": "4.7"
+  },
+  {
+    "name": "AgriSafe 216",
+    "crops": "Jowar",
+    "rate": "2848",
+    "location": "Punjab",
+    "rating": "4.8"
+  },
+  {
+    "name": "Reliance Agri 217",
+    "crops": "Dhan",
+    "rate": "1804",
+    "location": "Madhya Pradesh",
+    "rating": "4.7"
+  },
+  {
+    "name": "Green Organic 218",
+    "crops": "Jowar",
+    "rate": "2498",
+    "location": "Madhya Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "AgriSafe 219",
+    "crops": "Soyabean",
+    "rate": "1832",
+    "location": "Punjab",
+    "rating": "3.6"
+  },
+  {
+    "name": "Haryana Agro 220",
+    "crops": "Bajra",
+    "rate": "2343",
+    "location": "Haryana",
+    "rating": "4.2"
+  },
+  {
+    "name": "Delhi Fresh 221",
+    "crops": "Jowar",
+    "rate": "1830",
+    "location": "Madhya Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "Punjab Mandi 222",
+    "crops": "Cotton",
+    "rate": "1611",
+    "location": "Punjab",
+    "rating": "4.5"
+  },
+  {
+    "name": "Punjab Mandi 223",
+    "crops": "Chana",
+    "rate": "1737",
+    "location": "Gujarat",
+    "rating": "3.6"
+  },
+  {
+    "name": "Punjab Mandi 224",
+    "crops": "Sugarcane",
+    "rate": "1845",
+    "location": "Rajasthan",
+    "rating": "4.3"
+  },
+  {
+    "name": "Kisan Traders 225",
+    "crops": "Mustard",
+    "rate": "2161",
+    "location": "Gujarat",
+    "rating": "4.6"
+  },
+  {
+    "name": "ITC Limited 226",
+    "crops": "Mustard",
+    "rate": "2269",
+    "location": "Rajasthan",
+    "rating": "4.0"
+  },
+  {
+    "name": "AgriSafe 227",
+    "crops": "Mustard",
+    "rate": "1802",
+    "location": "Rajasthan",
+    "rating": "4.1"
+  },
+  {
+    "name": "Green Organic 228",
+    "crops": "Bajra",
+    "rate": "2761",
+    "location": "Madhya Pradesh",
+    "rating": "3.5"
+  },
+  {
+    "name": "AgriSafe 229",
+    "crops": "Dhan",
+    "rate": "1681",
+    "location": "Haryana",
+    "rating": "4.3"
+  },
+  {
+    "name": "Adani Wholesales 230",
+    "crops": "Chana",
+    "rate": "1793",
+    "location": "Uttar Pradesh",
+    "rating": "4.8"
+  },
+  {
+    "name": "AgriSafe 231",
+    "crops": "Makka",
+    "rate": "1612",
+    "location": "Delhi",
+    "rating": "3.6"
+  },
+  {
+    "name": "Green Organic 232",
+    "crops": "Dhan",
+    "rate": "2644",
+    "location": "Punjab",
+    "rating": "3.7"
+  },
+  {
+    "name": "Adani Wholesales 233",
+    "crops": "Bajra",
+    "rate": "2418",
+    "location": "Rajasthan",
+    "rating": "3.8"
+  },
+  {
+    "name": "Green Organic 234",
+    "crops": "Mustard",
+    "rate": "1630",
+    "location": "Gujarat",
+    "rating": "4.9"
+  },
+  {
+    "name": "Kisan Traders 235",
+    "crops": "Dhan",
+    "rate": "2601",
+    "location": "Rajasthan",
+    "rating": "3.8"
+  },
+  {
+    "name": "Adani Wholesales 236",
+    "crops": "Sugarcane",
+    "rate": "2827",
+    "location": "Rajasthan",
+    "rating": "4.1"
+  },
+  {
+    "name": "Adani Wholesales 237",
+    "crops": "Chana",
+    "rate": "2336",
+    "location": "Punjab",
+    "rating": "3.5"
+  },
+  {
+    "name": "Haryana Agro 238",
+    "crops": "Bajra",
+    "rate": "1728",
+    "location": "Haryana",
+    "rating": "4.1"
+  },
+  {
+    "name": "ITC Limited 239",
+    "crops": "Dhan",
+    "rate": "1940",
+    "location": "Punjab",
+    "rating": "3.8"
+  },
+  {
+    "name": "Kisan Traders 240",
+    "crops": "Jowar",
+    "rate": "2170",
+    "location": "Haryana",
+    "rating": "3.6"
+  },
+  {
+    "name": "ITC Limited 241",
+    "crops": "Sugarcane",
+    "rate": "2670",
+    "location": "Gujarat",
+    "rating": "3.5"
+  },
+  {
+    "name": "Adani Wholesales 242",
+    "crops": "Soyabean",
+    "rate": "2504",
+    "location": "Delhi",
+    "rating": "4.1"
+  },
+  {
+    "name": "Adani Wholesales 243",
+    "crops": "Bajra",
+    "rate": "2719",
+    "location": "Punjab",
+    "rating": "4.3"
+  },
+  {
+    "name": "Haryana Agro 244",
+    "crops": "Mustard",
+    "rate": "2915",
+    "location": "Rajasthan",
+    "rating": "3.7"
+  },
+  {
+    "name": "Delhi Fresh 245",
+    "crops": "Gehu",
+    "rate": "1991",
+    "location": "Madhya Pradesh",
+    "rating": "3.5"
+  },
+  {
+    "name": "Reliance Agri 246",
+    "crops": "Makka",
+    "rate": "2474",
+    "location": "Madhya Pradesh",
+    "rating": "4.7"
+  },
+  {
+    "name": "Haryana Agro 247",
+    "crops": "Dhan",
+    "rate": "2220",
+    "location": "Punjab",
+    "rating": "3.7"
+  },
+  {
+    "name": "ITC Limited 248",
+    "crops": "Makka",
+    "rate": "2832",
+    "location": "Gujarat",
+    "rating": "4.0"
+  },
+  {
+    "name": "Green Organic 249",
+    "crops": "Soyabean",
+    "rate": "1517",
+    "location": "Uttar Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Delhi Fresh 250",
+    "crops": "Jowar",
+    "rate": "2008",
+    "location": "Rajasthan",
+    "rating": "3.9"
+  },
+  {
+    "name": "AgriSafe 251",
+    "crops": "Bajra",
+    "rate": "1979",
+    "location": "Madhya Pradesh",
+    "rating": "5.0"
+  },
+  {
+    "name": "Garg Trading 252",
+    "crops": "Cotton",
+    "rate": "2217",
+    "location": "Rajasthan",
+    "rating": "3.9"
+  },
+  {
+    "name": "Punjab Mandi 253",
+    "crops": "Makka",
+    "rate": "1835",
+    "location": "Gujarat",
+    "rating": "4.9"
+  },
+  {
+    "name": "Haryana Agro 254",
+    "crops": "Chana",
+    "rate": "1881",
+    "location": "Punjab",
+    "rating": "4.3"
+  },
+  {
+    "name": "Kisan Traders 255",
+    "crops": "Mustard",
+    "rate": "2851",
+    "location": "Uttar Pradesh",
+    "rating": "4.2"
+  },
+  {
+    "name": "ITC Limited 256",
+    "crops": "Gehu",
+    "rate": "1544",
+    "location": "Uttar Pradesh",
+    "rating": "4.6"
+  },
+  {
+    "name": "Delhi Fresh 257",
+    "crops": "Makka",
+    "rate": "2455",
+    "location": "Haryana",
+    "rating": "4.0"
+  },
+  {
+    "name": "Garg Trading 258",
+    "crops": "Mustard",
+    "rate": "1699",
+    "location": "Uttar Pradesh",
+    "rating": "4.2"
+  },
+  {
+    "name": "AgriSafe 259",
+    "crops": "Gehu",
+    "rate": "2595",
+    "location": "Madhya Pradesh",
+    "rating": "4.8"
+  },
+  {
+    "name": "Delhi Fresh 260",
+    "crops": "Soyabean",
+    "rate": "2771",
+    "location": "Gujarat",
+    "rating": "4.2"
+  },
+  {
+    "name": "Adani Wholesales 261",
+    "crops": "Bajra",
+    "rate": "1719",
+    "location": "Haryana",
+    "rating": "3.5"
+  },
+  {
+    "name": "Kisan Traders 262",
+    "crops": "Soyabean",
+    "rate": "1766",
+    "location": "Madhya Pradesh",
+    "rating": "3.7"
+  },
+  {
+    "name": "Adani Wholesales 263",
+    "crops": "Soyabean",
+    "rate": "1918",
+    "location": "Delhi",
+    "rating": "4.9"
+  },
+  {
+    "name": "Garg Trading 264",
+    "crops": "Gehu",
+    "rate": "1936",
+    "location": "Punjab",
+    "rating": "4.0"
+  },
+  {
+    "name": "Reliance Agri 265",
+    "crops": "Mustard",
+    "rate": "1692",
+    "location": "Madhya Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Reliance Agri 266",
+    "crops": "Sugarcane",
+    "rate": "1652",
+    "location": "Delhi",
+    "rating": "4.9"
+  },
+  {
+    "name": "ITC Limited 267",
+    "crops": "Mustard",
+    "rate": "2950",
+    "location": "Madhya Pradesh",
+    "rating": "3.7"
+  },
+  {
+    "name": "ITC Limited 268",
+    "crops": "Chana",
+    "rate": "1732",
+    "location": "Haryana",
+    "rating": "4.3"
+  },
+  {
+    "name": "ITC Limited 269",
+    "crops": "Bajra",
+    "rate": "1762",
+    "location": "Delhi",
+    "rating": "4.6"
+  },
+  {
+    "name": "Kisan Traders 270",
+    "crops": "Makka",
+    "rate": "1813",
+    "location": "Rajasthan",
+    "rating": "4.7"
+  },
+  {
+    "name": "Reliance Agri 271",
+    "crops": "Chana",
+    "rate": "2097",
+    "location": "Uttar Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "Garg Trading 272",
+    "crops": "Cotton",
+    "rate": "1828",
+    "location": "Gujarat",
+    "rating": "4.6"
+  },
+  {
+    "name": "AgriSafe 273",
+    "crops": "Sugarcane",
+    "rate": "2699",
+    "location": "Madhya Pradesh",
+    "rating": "4.7"
+  },
+  {
+    "name": "Haryana Agro 274",
+    "crops": "Mustard",
+    "rate": "1789",
+    "location": "Uttar Pradesh",
+    "rating": "4.9"
+  },
+  {
+    "name": "Green Organic 275",
+    "crops": "Chana",
+    "rate": "1721",
+    "location": "Haryana",
+    "rating": "4.0"
+  },
+  {
+    "name": "Reliance Agri 276",
+    "crops": "Mustard",
+    "rate": "2590",
+    "location": "Gujarat",
+    "rating": "4.8"
+  },
+  {
+    "name": "Reliance Agri 277",
+    "crops": "Dhan",
+    "rate": "2117",
+    "location": "Haryana",
+    "rating": "4.9"
+  },
+  {
+    "name": "Green Organic 278",
+    "crops": "Jowar",
+    "rate": "2267",
+    "location": "Gujarat",
+    "rating": "3.8"
+  },
+  {
+    "name": "Delhi Fresh 279",
+    "crops": "Sugarcane",
+    "rate": "2505",
+    "location": "Gujarat",
+    "rating": "3.6"
+  },
+  {
+    "name": "AgriSafe 280",
+    "crops": "Cotton",
+    "rate": "2678",
+    "location": "Delhi",
+    "rating": "3.8"
+  },
+  {
+    "name": "Haryana Agro 281",
+    "crops": "Jowar",
+    "rate": "2794",
+    "location": "Delhi",
+    "rating": "3.7"
+  },
+  {
+    "name": "Reliance Agri 282",
+    "crops": "Mustard",
+    "rate": "1936",
+    "location": "Rajasthan",
+    "rating": "4.7"
+  },
+  {
+    "name": "Punjab Mandi 283",
+    "crops": "Gehu",
+    "rate": "2961",
+    "location": "Madhya Pradesh",
+    "rating": "4.9"
+  },
+  {
+    "name": "Delhi Fresh 284",
+    "crops": "Jowar",
+    "rate": "2404",
+    "location": "Madhya Pradesh",
+    "rating": "4.6"
+  },
+  {
+    "name": "Kisan Traders 285",
+    "crops": "Soyabean",
+    "rate": "1940",
+    "location": "Punjab",
+    "rating": "4.8"
+  },
+  {
+    "name": "AgriSafe 286",
+    "crops": "Chana",
+    "rate": "2159",
+    "location": "Uttar Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "Delhi Fresh 287",
+    "crops": "Mustard",
+    "rate": "1617",
+    "location": "Gujarat",
+    "rating": "3.7"
+  },
+  {
+    "name": "Punjab Mandi 288",
+    "crops": "Makka",
+    "rate": "1511",
+    "location": "Haryana",
+    "rating": "3.8"
+  },
+  {
+    "name": "Adani Wholesales 289",
+    "crops": "Sugarcane",
+    "rate": "2024",
+    "location": "Punjab",
+    "rating": "4.7"
+  },
+  {
+    "name": "Garg Trading 290",
+    "crops": "Dhan",
+    "rate": "1553",
+    "location": "Madhya Pradesh",
+    "rating": "4.8"
+  },
+  {
+    "name": "AgriSafe 291",
+    "crops": "Mustard",
+    "rate": "1953",
+    "location": "Delhi",
+    "rating": "4.6"
+  },
+  {
+    "name": "AgriSafe 292",
+    "crops": "Dhan",
+    "rate": "1772",
+    "location": "Haryana",
+    "rating": "4.4"
+  },
+  {
+    "name": "Reliance Agri 293",
+    "crops": "Sugarcane",
+    "rate": "1899",
+    "location": "Gujarat",
+    "rating": "4.4"
+  },
+  {
+    "name": "Reliance Agri 294",
+    "crops": "Mustard",
+    "rate": "2229",
+    "location": "Uttar Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "ITC Limited 295",
+    "crops": "Jowar",
+    "rate": "2609",
+    "location": "Haryana",
+    "rating": "4.0"
+  },
+  {
+    "name": "Delhi Fresh 296",
+    "crops": "Bajra",
+    "rate": "2368",
+    "location": "Madhya Pradesh",
+    "rating": "4.8"
+  },
+  {
+    "name": "Delhi Fresh 297",
+    "crops": "Cotton",
+    "rate": "2173",
+    "location": "Haryana",
+    "rating": "4.9"
+  },
+  {
+    "name": "Haryana Agro 298",
+    "crops": "Jowar",
+    "rate": "2447",
+    "location": "Haryana",
+    "rating": "4.2"
+  },
+  {
+    "name": "Haryana Agro 299",
+    "crops": "Bajra",
+    "rate": "2043",
+    "location": "Gujarat",
+    "rating": "4.9"
+  },
+  {
+    "name": "ITC Limited 300",
+    "crops": "Bajra",
+    "rate": "2039",
+    "location": "Punjab",
+    "rating": "3.7"
+  },
+  {
+    "name": "AgriSafe 301",
+    "crops": "Jowar",
+    "rate": "2067",
+    "location": "Uttar Pradesh",
+    "rating": "3.6"
+  },
+  {
+    "name": "Kisan Traders 302",
+    "crops": "Dhan",
+    "rate": "2449",
+    "location": "Rajasthan",
+    "rating": "3.6"
+  },
+  {
+    "name": "ITC Limited 303",
+    "crops": "Sugarcane",
+    "rate": "1746",
+    "location": "Punjab",
+    "rating": "4.2"
+  },
+  {
+    "name": "Reliance Agri 304",
+    "crops": "Dhan",
+    "rate": "2390",
+    "location": "Punjab",
+    "rating": "4.8"
+  },
+  {
+    "name": "Adani Wholesales 305",
+    "crops": "Chana",
+    "rate": "2279",
+    "location": "Madhya Pradesh",
+    "rating": "3.5"
+  },
+  {
+    "name": "AgriSafe 306",
+    "crops": "Gehu",
+    "rate": "2195",
+    "location": "Rajasthan",
+    "rating": "5.0"
+  },
+  {
+    "name": "Kisan Traders 307",
+    "crops": "Makka",
+    "rate": "2865",
+    "location": "Uttar Pradesh",
+    "rating": "5.0"
+  },
+  {
+    "name": "Haryana Agro 308",
+    "crops": "Chana",
+    "rate": "1749",
+    "location": "Madhya Pradesh",
+    "rating": "3.5"
+  },
+  {
+    "name": "Garg Trading 309",
+    "crops": "Soyabean",
+    "rate": "2383",
+    "location": "Haryana",
+    "rating": "3.8"
+  },
+  {
+    "name": "AgriSafe 310",
+    "crops": "Dhan",
+    "rate": "1909",
+    "location": "Punjab",
+    "rating": "4.9"
+  },
+  {
+    "name": "Kisan Traders 311",
+    "crops": "Dhan",
+    "rate": "1904",
+    "location": "Rajasthan",
+    "rating": "4.5"
+  },
+  {
+    "name": "Garg Trading 312",
+    "crops": "Dhan",
+    "rate": "2375",
+    "location": "Punjab",
+    "rating": "4.7"
+  },
+  {
+    "name": "Punjab Mandi 313",
+    "crops": "Cotton",
+    "rate": "1786",
+    "location": "Uttar Pradesh",
+    "rating": "3.5"
+  },
+  {
+    "name": "ITC Limited 314",
+    "crops": "Sugarcane",
+    "rate": "2606",
+    "location": "Uttar Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "Delhi Fresh 315",
+    "crops": "Mustard",
+    "rate": "2338",
+    "location": "Delhi",
+    "rating": "3.6"
+  },
+  {
+    "name": "Green Organic 316",
+    "crops": "Jowar",
+    "rate": "2634",
+    "location": "Punjab",
+    "rating": "4.5"
+  },
+  {
+    "name": "Punjab Mandi 317",
+    "crops": "Jowar",
+    "rate": "1654",
+    "location": "Gujarat",
+    "rating": "3.6"
+  },
+  {
+    "name": "Haryana Agro 318",
+    "crops": "Dhan",
+    "rate": "2749",
+    "location": "Uttar Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "AgriSafe 319",
+    "crops": "Bajra",
+    "rate": "2084",
+    "location": "Uttar Pradesh",
+    "rating": "4.7"
+  },
+  {
+    "name": "Adani Wholesales 320",
+    "crops": "Cotton",
+    "rate": "2950",
+    "location": "Rajasthan",
+    "rating": "3.7"
+  },
+  {
+    "name": "ITC Limited 321",
+    "crops": "Mustard",
+    "rate": "1917",
+    "location": "Delhi",
+    "rating": "4.2"
+  },
+  {
+    "name": "Reliance Agri 322",
+    "crops": "Gehu",
+    "rate": "2814",
+    "location": "Uttar Pradesh",
+    "rating": "3.6"
+  },
+  {
+    "name": "Garg Trading 323",
+    "crops": "Sugarcane",
+    "rate": "2569",
+    "location": "Punjab",
+    "rating": "4.6"
+  },
+  {
+    "name": "Kisan Traders 324",
+    "crops": "Chana",
+    "rate": "2135",
+    "location": "Gujarat",
+    "rating": "4.7"
+  },
+  {
+    "name": "Punjab Mandi 325",
+    "crops": "Mustard",
+    "rate": "2509",
+    "location": "Uttar Pradesh",
+    "rating": "4.8"
+  },
+  {
+    "name": "Haryana Agro 326",
+    "crops": "Cotton",
+    "rate": "1531",
+    "location": "Rajasthan",
+    "rating": "4.5"
+  },
+  {
+    "name": "AgriSafe 327",
+    "crops": "Sugarcane",
+    "rate": "1990",
+    "location": "Rajasthan",
+    "rating": "4.6"
+  },
+  {
+    "name": "Delhi Fresh 328",
+    "crops": "Jowar",
+    "rate": "2140",
+    "location": "Madhya Pradesh",
+    "rating": "3.7"
+  },
+  {
+    "name": "ITC Limited 329",
+    "crops": "Dhan",
+    "rate": "1541",
+    "location": "Uttar Pradesh",
+    "rating": "3.7"
+  },
+  {
+    "name": "Haryana Agro 330",
+    "crops": "Bajra",
+    "rate": "2058",
+    "location": "Uttar Pradesh",
+    "rating": "4.2"
+  },
+  {
+    "name": "Green Organic 331",
+    "crops": "Gehu",
+    "rate": "2119",
+    "location": "Haryana",
+    "rating": "4.2"
+  },
+  {
+    "name": "ITC Limited 332",
+    "crops": "Cotton",
+    "rate": "1621",
+    "location": "Haryana",
+    "rating": "4.2"
+  },
+  {
+    "name": "Kisan Traders 333",
+    "crops": "Makka",
+    "rate": "1986",
+    "location": "Delhi",
+    "rating": "4.7"
+  },
+  {
+    "name": "Kisan Traders 334",
+    "crops": "Chana",
+    "rate": "2217",
+    "location": "Madhya Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "Kisan Traders 335",
+    "crops": "Bajra",
+    "rate": "1694",
+    "location": "Rajasthan",
+    "rating": "4.2"
+  },
+  {
+    "name": "Garg Trading 336",
+    "crops": "Sugarcane",
+    "rate": "1760",
+    "location": "Punjab",
+    "rating": "4.7"
+  },
+  {
+    "name": "Reliance Agri 337",
+    "crops": "Cotton",
+    "rate": "1759",
+    "location": "Delhi",
+    "rating": "4.7"
+  },
+  {
+    "name": "Kisan Traders 338",
+    "crops": "Soyabean",
+    "rate": "2319",
+    "location": "Madhya Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "Adani Wholesales 339",
+    "crops": "Mustard",
+    "rate": "2065",
+    "location": "Rajasthan",
+    "rating": "3.9"
+  },
+  {
+    "name": "Delhi Fresh 340",
+    "crops": "Jowar",
+    "rate": "2214",
+    "location": "Delhi",
+    "rating": "4.5"
+  },
+  {
+    "name": "Delhi Fresh 341",
+    "crops": "Gehu",
+    "rate": "2308",
+    "location": "Delhi",
+    "rating": "4.0"
+  },
+  {
+    "name": "Green Organic 342",
+    "crops": "Jowar",
+    "rate": "1617",
+    "location": "Delhi",
+    "rating": "3.8"
+  },
+  {
+    "name": "Adani Wholesales 343",
+    "crops": "Sugarcane",
+    "rate": "1672",
+    "location": "Madhya Pradesh",
+    "rating": "4.1"
+  },
+  {
+    "name": "Kisan Traders 344",
+    "crops": "Soyabean",
+    "rate": "1891",
+    "location": "Rajasthan",
+    "rating": "4.1"
+  },
+  {
+    "name": "Punjab Mandi 345",
+    "crops": "Soyabean",
+    "rate": "2089",
+    "location": "Uttar Pradesh",
+    "rating": "3.8"
+  },
+  {
+    "name": "Adani Wholesales 346",
+    "crops": "Chana",
+    "rate": "1732",
+    "location": "Uttar Pradesh",
+    "rating": "3.8"
+  },
+  {
+    "name": "AgriSafe 347",
+    "crops": "Makka",
+    "rate": "1778",
+    "location": "Delhi",
+    "rating": "3.6"
+  },
+  {
+    "name": "Delhi Fresh 348",
+    "crops": "Soyabean",
+    "rate": "1759",
+    "location": "Haryana",
+    "rating": "4.6"
+  },
+  {
+    "name": "Punjab Mandi 349",
+    "crops": "Cotton",
+    "rate": "2355",
+    "location": "Haryana",
+    "rating": "4.1"
+  },
+  {
+    "name": "Punjab Mandi 350",
+    "crops": "Soyabean",
+    "rate": "1970",
+    "location": "Uttar Pradesh",
+    "rating": "4.9"
+  },
+  {
+    "name": "Garg Trading 351",
+    "crops": "Chana",
+    "rate": "2262",
+    "location": "Haryana",
+    "rating": "3.9"
+  },
+  {
+    "name": "Kisan Traders 352",
+    "crops": "Soyabean",
+    "rate": "2813",
+    "location": "Haryana",
+    "rating": "4.9"
+  },
+  {
+    "name": "Garg Trading 353",
+    "crops": "Mustard",
+    "rate": "1806",
+    "location": "Gujarat",
+    "rating": "4.0"
+  },
+  {
+    "name": "Punjab Mandi 354",
+    "crops": "Chana",
+    "rate": "1912",
+    "location": "Madhya Pradesh",
+    "rating": "4.6"
+  },
+  {
+    "name": "AgriSafe 355",
+    "crops": "Jowar",
+    "rate": "2251",
+    "location": "Madhya Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "Haryana Agro 356",
+    "crops": "Bajra",
+    "rate": "1927",
+    "location": "Haryana",
+    "rating": "3.8"
+  },
+  {
+    "name": "AgriSafe 357",
+    "crops": "Bajra",
+    "rate": "2317",
+    "location": "Gujarat",
+    "rating": "3.9"
+  },
+  {
+    "name": "Kisan Traders 358",
+    "crops": "Dhan",
+    "rate": "2329",
+    "location": "Delhi",
+    "rating": "4.8"
+  },
+  {
+    "name": "Green Organic 359",
+    "crops": "Mustard",
+    "rate": "1708",
+    "location": "Delhi",
+    "rating": "4.6"
+  },
+  {
+    "name": "Delhi Fresh 360",
+    "crops": "Sugarcane",
+    "rate": "2804",
+    "location": "Uttar Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "Haryana Agro 361",
+    "crops": "Jowar",
+    "rate": "1900",
+    "location": "Gujarat",
+    "rating": "4.5"
+  },
+  {
+    "name": "Garg Trading 362",
+    "crops": "Gehu",
+    "rate": "1773",
+    "location": "Madhya Pradesh",
+    "rating": "4.9"
+  },
+  {
+    "name": "AgriSafe 363",
+    "crops": "Mustard",
+    "rate": "2496",
+    "location": "Rajasthan",
+    "rating": "4.8"
+  },
+  {
+    "name": "Garg Trading 364",
+    "crops": "Cotton",
+    "rate": "2126",
+    "location": "Uttar Pradesh",
+    "rating": "4.7"
+  },
+  {
+    "name": "Green Organic 365",
+    "crops": "Soyabean",
+    "rate": "2944",
+    "location": "Rajasthan",
+    "rating": "3.8"
+  },
+  {
+    "name": "Haryana Agro 366",
+    "crops": "Dhan",
+    "rate": "2977",
+    "location": "Madhya Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "Garg Trading 367",
+    "crops": "Cotton",
+    "rate": "2699",
+    "location": "Rajasthan",
+    "rating": "4.7"
+  },
+  {
+    "name": "AgriSafe 368",
+    "crops": "Sugarcane",
+    "rate": "2965",
+    "location": "Madhya Pradesh",
+    "rating": "4.2"
+  },
+  {
+    "name": "Kisan Traders 369",
+    "crops": "Mustard",
+    "rate": "2438",
+    "location": "Haryana",
+    "rating": "4.7"
+  },
+  {
+    "name": "Haryana Agro 370",
+    "crops": "Mustard",
+    "rate": "2771",
+    "location": "Uttar Pradesh",
+    "rating": "3.7"
+  },
+  {
+    "name": "Kisan Traders 371",
+    "crops": "Gehu",
+    "rate": "1841",
+    "location": "Uttar Pradesh",
+    "rating": "3.6"
+  },
+  {
+    "name": "Kisan Traders 372",
+    "crops": "Bajra",
+    "rate": "1700",
+    "location": "Punjab",
+    "rating": "4.6"
+  },
+  {
+    "name": "AgriSafe 373",
+    "crops": "Mustard",
+    "rate": "2865",
+    "location": "Madhya Pradesh",
+    "rating": "4.6"
+  },
+  {
+    "name": "Garg Trading 374",
+    "crops": "Mustard",
+    "rate": "2505",
+    "location": "Punjab",
+    "rating": "4.4"
+  },
+  {
+    "name": "Adani Wholesales 375",
+    "crops": "Mustard",
+    "rate": "2758",
+    "location": "Punjab",
+    "rating": "5.0"
+  },
+  {
+    "name": "Reliance Agri 376",
+    "crops": "Mustard",
+    "rate": "2044",
+    "location": "Madhya Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "Reliance Agri 377",
+    "crops": "Mustard",
+    "rate": "2599",
+    "location": "Madhya Pradesh",
+    "rating": "4.6"
+  },
+  {
+    "name": "ITC Limited 378",
+    "crops": "Mustard",
+    "rate": "2749",
+    "location": "Delhi",
+    "rating": "4.6"
+  },
+  {
+    "name": "Kisan Traders 379",
+    "crops": "Cotton",
+    "rate": "2032",
+    "location": "Gujarat",
+    "rating": "4.9"
+  },
+  {
+    "name": "Adani Wholesales 380",
+    "crops": "Bajra",
+    "rate": "2948",
+    "location": "Uttar Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Delhi Fresh 381",
+    "crops": "Dhan",
+    "rate": "2529",
+    "location": "Punjab",
+    "rating": "3.8"
+  },
+  {
+    "name": "AgriSafe 382",
+    "crops": "Chana",
+    "rate": "2906",
+    "location": "Punjab",
+    "rating": "4.1"
+  },
+  {
+    "name": "Adani Wholesales 383",
+    "crops": "Gehu",
+    "rate": "2891",
+    "location": "Haryana",
+    "rating": "4.1"
+  },
+  {
+    "name": "AgriSafe 384",
+    "crops": "Mustard",
+    "rate": "2506",
+    "location": "Punjab",
+    "rating": "4.4"
+  },
+  {
+    "name": "Reliance Agri 385",
+    "crops": "Cotton",
+    "rate": "2129",
+    "location": "Gujarat",
+    "rating": "4.4"
+  },
+  {
+    "name": "Adani Wholesales 386",
+    "crops": "Bajra",
+    "rate": "1939",
+    "location": "Gujarat",
+    "rating": "3.9"
+  },
+  {
+    "name": "Reliance Agri 387",
+    "crops": "Cotton",
+    "rate": "2599",
+    "location": "Rajasthan",
+    "rating": "3.7"
+  },
+  {
+    "name": "Adani Wholesales 388",
+    "crops": "Bajra",
+    "rate": "2843",
+    "location": "Delhi",
+    "rating": "4.4"
+  },
+  {
+    "name": "AgriSafe 389",
+    "crops": "Dhan",
+    "rate": "1917",
+    "location": "Rajasthan",
+    "rating": "4.4"
+  },
+  {
+    "name": "Green Organic 390",
+    "crops": "Cotton",
+    "rate": "2503",
+    "location": "Uttar Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Punjab Mandi 391",
+    "crops": "Sugarcane",
+    "rate": "1818",
+    "location": "Delhi",
+    "rating": "3.8"
+  },
+  {
+    "name": "ITC Limited 392",
+    "crops": "Chana",
+    "rate": "1769",
+    "location": "Haryana",
+    "rating": "4.5"
+  },
+  {
+    "name": "AgriSafe 393",
+    "crops": "Jowar",
+    "rate": "2140",
+    "location": "Haryana",
+    "rating": "3.9"
+  },
+  {
+    "name": "Reliance Agri 394",
+    "crops": "Chana",
+    "rate": "2443",
+    "location": "Haryana",
+    "rating": "3.6"
+  },
+  {
+    "name": "Kisan Traders 395",
+    "crops": "Soyabean",
+    "rate": "2861",
+    "location": "Punjab",
+    "rating": "4.9"
+  },
+  {
+    "name": "Garg Trading 396",
+    "crops": "Gehu",
+    "rate": "2767",
+    "location": "Uttar Pradesh",
+    "rating": "4.8"
+  },
+  {
+    "name": "Delhi Fresh 397",
+    "crops": "Cotton",
+    "rate": "2642",
+    "location": "Haryana",
+    "rating": "4.2"
+  },
+  {
+    "name": "ITC Limited 398",
+    "crops": "Gehu",
+    "rate": "2940",
+    "location": "Uttar Pradesh",
+    "rating": "3.8"
+  },
+  {
+    "name": "Garg Trading 399",
+    "crops": "Chana",
+    "rate": "1520",
+    "location": "Gujarat",
+    "rating": "3.7"
+  },
+  {
+    "name": "ITC Limited 400",
+    "crops": "Dhan",
+    "rate": "2015",
+    "location": "Delhi",
+    "rating": "3.9"
+  },
+  {
+    "name": "Delhi Fresh 401",
+    "crops": "Dhan",
+    "rate": "2981",
+    "location": "Haryana",
+    "rating": "4.6"
+  },
+  {
+    "name": "Haryana Agro 402",
+    "crops": "Mustard",
+    "rate": "2992",
+    "location": "Rajasthan",
+    "rating": "4.6"
+  },
+  {
+    "name": "Adani Wholesales 403",
+    "crops": "Mustard",
+    "rate": "2775",
+    "location": "Delhi",
+    "rating": "5.0"
+  },
+  {
+    "name": "Haryana Agro 404",
+    "crops": "Soyabean",
+    "rate": "3000",
+    "location": "Uttar Pradesh",
+    "rating": "3.8"
+  },
+  {
+    "name": "Green Organic 405",
+    "crops": "Bajra",
+    "rate": "2442",
+    "location": "Delhi",
+    "rating": "3.7"
+  },
+  {
+    "name": "Green Organic 406",
+    "crops": "Makka",
+    "rate": "2937",
+    "location": "Punjab",
+    "rating": "4.1"
+  },
+  {
+    "name": "Haryana Agro 407",
+    "crops": "Chana",
+    "rate": "2290",
+    "location": "Madhya Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Adani Wholesales 408",
+    "crops": "Sugarcane",
+    "rate": "2835",
+    "location": "Punjab",
+    "rating": "3.8"
+  },
+  {
+    "name": "Haryana Agro 409",
+    "crops": "Chana",
+    "rate": "2974",
+    "location": "Gujarat",
+    "rating": "5.0"
+  },
+  {
+    "name": "Adani Wholesales 410",
+    "crops": "Gehu",
+    "rate": "1798",
+    "location": "Haryana",
+    "rating": "4.2"
+  },
+  {
+    "name": "Garg Trading 411",
+    "crops": "Mustard",
+    "rate": "1625",
+    "location": "Delhi",
+    "rating": "3.9"
+  },
+  {
+    "name": "Garg Trading 412",
+    "crops": "Dhan",
+    "rate": "2419",
+    "location": "Uttar Pradesh",
+    "rating": "4.8"
+  },
+  {
+    "name": "Haryana Agro 413",
+    "crops": "Jowar",
+    "rate": "2251",
+    "location": "Madhya Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Haryana Agro 414",
+    "crops": "Soyabean",
+    "rate": "2780",
+    "location": "Rajasthan",
+    "rating": "4.1"
+  },
+  {
+    "name": "Kisan Traders 415",
+    "crops": "Sugarcane",
+    "rate": "1974",
+    "location": "Punjab",
+    "rating": "4.5"
+  },
+  {
+    "name": "Haryana Agro 416",
+    "crops": "Jowar",
+    "rate": "1886",
+    "location": "Rajasthan",
+    "rating": "3.8"
+  },
+  {
+    "name": "Delhi Fresh 417",
+    "crops": "Makka",
+    "rate": "2611",
+    "location": "Uttar Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "Green Organic 418",
+    "crops": "Dhan",
+    "rate": "2274",
+    "location": "Delhi",
+    "rating": "3.9"
+  },
+  {
+    "name": "Haryana Agro 419",
+    "crops": "Makka",
+    "rate": "1575",
+    "location": "Delhi",
+    "rating": "3.7"
+  },
+  {
+    "name": "Green Organic 420",
+    "crops": "Cotton",
+    "rate": "1835",
+    "location": "Rajasthan",
+    "rating": "3.6"
+  },
+  {
+    "name": "Garg Trading 421",
+    "crops": "Sugarcane",
+    "rate": "2732",
+    "location": "Rajasthan",
+    "rating": "4.1"
+  },
+  {
+    "name": "Punjab Mandi 422",
+    "crops": "Soyabean",
+    "rate": "2556",
+    "location": "Gujarat",
+    "rating": "4.2"
+  },
+  {
+    "name": "Delhi Fresh 423",
+    "crops": "Bajra",
+    "rate": "2749",
+    "location": "Rajasthan",
+    "rating": "4.8"
+  },
+  {
+    "name": "Kisan Traders 424",
+    "crops": "Cotton",
+    "rate": "2067",
+    "location": "Gujarat",
+    "rating": "4.1"
+  },
+  {
+    "name": "Garg Trading 425",
+    "crops": "Soyabean",
+    "rate": "2443",
+    "location": "Madhya Pradesh",
+    "rating": "4.2"
+  },
+  {
+    "name": "Punjab Mandi 426",
+    "crops": "Bajra",
+    "rate": "2142",
+    "location": "Rajasthan",
+    "rating": "4.0"
+  },
+  {
+    "name": "ITC Limited 427",
+    "crops": "Soyabean",
+    "rate": "1934",
+    "location": "Rajasthan",
+    "rating": "4.4"
+  },
+  {
+    "name": "Adani Wholesales 428",
+    "crops": "Jowar",
+    "rate": "2998",
+    "location": "Haryana",
+    "rating": "4.5"
+  },
+  {
+    "name": "Green Organic 429",
+    "crops": "Chana",
+    "rate": "2220",
+    "location": "Madhya Pradesh",
+    "rating": "3.8"
+  },
+  {
+    "name": "AgriSafe 430",
+    "crops": "Bajra",
+    "rate": "2493",
+    "location": "Punjab",
+    "rating": "4.2"
+  },
+  {
+    "name": "AgriSafe 431",
+    "crops": "Cotton",
+    "rate": "1506",
+    "location": "Delhi",
+    "rating": "3.5"
+  },
+  {
+    "name": "AgriSafe 432",
+    "crops": "Chana",
+    "rate": "2338",
+    "location": "Delhi",
+    "rating": "3.8"
+  },
+  {
+    "name": "Haryana Agro 433",
+    "crops": "Chana",
+    "rate": "1546",
+    "location": "Gujarat",
+    "rating": "4.3"
+  },
+  {
+    "name": "Reliance Agri 434",
+    "crops": "Jowar",
+    "rate": "2879",
+    "location": "Madhya Pradesh",
+    "rating": "4.8"
+  },
+  {
+    "name": "Reliance Agri 435",
+    "crops": "Sugarcane",
+    "rate": "2123",
+    "location": "Uttar Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Adani Wholesales 436",
+    "crops": "Soyabean",
+    "rate": "2116",
+    "location": "Gujarat",
+    "rating": "4.8"
+  },
+  {
+    "name": "Delhi Fresh 437",
+    "crops": "Jowar",
+    "rate": "2826",
+    "location": "Punjab",
+    "rating": "4.8"
+  },
+  {
+    "name": "Punjab Mandi 438",
+    "crops": "Sugarcane",
+    "rate": "1992",
+    "location": "Rajasthan",
+    "rating": "4.9"
+  },
+  {
+    "name": "Garg Trading 439",
+    "crops": "Bajra",
+    "rate": "2075",
+    "location": "Punjab",
+    "rating": "4.1"
+  },
+  {
+    "name": "Kisan Traders 440",
+    "crops": "Mustard",
+    "rate": "2091",
+    "location": "Delhi",
+    "rating": "4.1"
+  },
+  {
+    "name": "Green Organic 441",
+    "crops": "Cotton",
+    "rate": "2130",
+    "location": "Punjab",
+    "rating": "4.5"
+  },
+  {
+    "name": "Haryana Agro 442",
+    "crops": "Dhan",
+    "rate": "2946",
+    "location": "Uttar Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "Adani Wholesales 443",
+    "crops": "Bajra",
+    "rate": "2622",
+    "location": "Haryana",
+    "rating": "4.0"
+  },
+  {
+    "name": "ITC Limited 444",
+    "crops": "Mustard",
+    "rate": "2502",
+    "location": "Haryana",
+    "rating": "4.4"
+  },
+  {
+    "name": "AgriSafe 445",
+    "crops": "Dhan",
+    "rate": "2332",
+    "location": "Punjab",
+    "rating": "3.9"
+  },
+  {
+    "name": "AgriSafe 446",
+    "crops": "Dhan",
+    "rate": "2358",
+    "location": "Rajasthan",
+    "rating": "3.6"
+  },
+  {
+    "name": "Delhi Fresh 447",
+    "crops": "Bajra",
+    "rate": "2055",
+    "location": "Delhi",
+    "rating": "4.8"
+  },
+  {
+    "name": "Garg Trading 448",
+    "crops": "Sugarcane",
+    "rate": "2808",
+    "location": "Punjab",
+    "rating": "4.0"
+  },
+  {
+    "name": "Delhi Fresh 449",
+    "crops": "Jowar",
+    "rate": "1667",
+    "location": "Madhya Pradesh",
+    "rating": "4.9"
+  },
+  {
+    "name": "Delhi Fresh 450",
+    "crops": "Jowar",
+    "rate": "2870",
+    "location": "Madhya Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "Kisan Traders 451",
+    "crops": "Cotton",
+    "rate": "2056",
+    "location": "Madhya Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Reliance Agri 452",
+    "crops": "Dhan",
+    "rate": "2625",
+    "location": "Madhya Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Haryana Agro 453",
+    "crops": "Gehu",
+    "rate": "2183",
+    "location": "Delhi",
+    "rating": "4.3"
+  },
+  {
+    "name": "Haryana Agro 454",
+    "crops": "Chana",
+    "rate": "1592",
+    "location": "Delhi",
+    "rating": "4.8"
+  },
+  {
+    "name": "AgriSafe 455",
+    "crops": "Makka",
+    "rate": "2062",
+    "location": "Rajasthan",
+    "rating": "4.8"
+  },
+  {
+    "name": "Delhi Fresh 456",
+    "crops": "Mustard",
+    "rate": "1964",
+    "location": "Delhi",
+    "rating": "3.6"
+  },
+  {
+    "name": "Adani Wholesales 457",
+    "crops": "Gehu",
+    "rate": "1753",
+    "location": "Uttar Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "Haryana Agro 458",
+    "crops": "Cotton",
+    "rate": "2401",
+    "location": "Punjab",
+    "rating": "3.9"
+  },
+  {
+    "name": "ITC Limited 459",
+    "crops": "Cotton",
+    "rate": "1717",
+    "location": "Haryana",
+    "rating": "3.8"
+  },
+  {
+    "name": "Delhi Fresh 460",
+    "crops": "Makka",
+    "rate": "1942",
+    "location": "Haryana",
+    "rating": "4.0"
+  },
+  {
+    "name": "Kisan Traders 461",
+    "crops": "Dhan",
+    "rate": "1797",
+    "location": "Gujarat",
+    "rating": "5.0"
+  },
+  {
+    "name": "ITC Limited 462",
+    "crops": "Soyabean",
+    "rate": "1579",
+    "location": "Rajasthan",
+    "rating": "4.5"
+  },
+  {
+    "name": "Haryana Agro 463",
+    "crops": "Jowar",
+    "rate": "2792",
+    "location": "Haryana",
+    "rating": "4.8"
+  },
+  {
+    "name": "AgriSafe 464",
+    "crops": "Mustard",
+    "rate": "2866",
+    "location": "Gujarat",
+    "rating": "4.3"
+  },
+  {
+    "name": "Kisan Traders 465",
+    "crops": "Makka",
+    "rate": "2700",
+    "location": "Gujarat",
+    "rating": "4.7"
+  },
+  {
+    "name": "Garg Trading 466",
+    "crops": "Chana",
+    "rate": "2430",
+    "location": "Madhya Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "Punjab Mandi 467",
+    "crops": "Bajra",
+    "rate": "2278",
+    "location": "Uttar Pradesh",
+    "rating": "3.6"
+  },
+  {
+    "name": "Kisan Traders 468",
+    "crops": "Makka",
+    "rate": "2473",
+    "location": "Haryana",
+    "rating": "4.9"
+  },
+  {
+    "name": "ITC Limited 469",
+    "crops": "Makka",
+    "rate": "1564",
+    "location": "Uttar Pradesh",
+    "rating": "4.9"
+  },
+  {
+    "name": "Punjab Mandi 470",
+    "crops": "Chana",
+    "rate": "2511",
+    "location": "Madhya Pradesh",
+    "rating": "3.5"
+  },
+  {
+    "name": "Delhi Fresh 471",
+    "crops": "Sugarcane",
+    "rate": "2171",
+    "location": "Uttar Pradesh",
+    "rating": "3.7"
+  },
+  {
+    "name": "Haryana Agro 472",
+    "crops": "Makka",
+    "rate": "2535",
+    "location": "Rajasthan",
+    "rating": "5.0"
+  },
+  {
+    "name": "Delhi Fresh 473",
+    "crops": "Dhan",
+    "rate": "2190",
+    "location": "Rajasthan",
+    "rating": "4.2"
+  },
+  {
+    "name": "ITC Limited 474",
+    "crops": "Jowar",
+    "rate": "2989",
+    "location": "Uttar Pradesh",
+    "rating": "3.6"
+  },
+  {
+    "name": "ITC Limited 475",
+    "crops": "Cotton",
+    "rate": "2328",
+    "location": "Delhi",
+    "rating": "4.9"
+  },
+  {
+    "name": "Green Organic 476",
+    "crops": "Sugarcane",
+    "rate": "1765",
+    "location": "Uttar Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "Punjab Mandi 477",
+    "crops": "Cotton",
+    "rate": "2879",
+    "location": "Gujarat",
+    "rating": "4.2"
+  },
+  {
+    "name": "Punjab Mandi 478",
+    "crops": "Makka",
+    "rate": "1975",
+    "location": "Delhi",
+    "rating": "3.6"
+  },
+  {
+    "name": "Punjab Mandi 479",
+    "crops": "Cotton",
+    "rate": "2404",
+    "location": "Punjab",
+    "rating": "3.7"
+  },
+  {
+    "name": "Haryana Agro 480",
+    "crops": "Dhan",
+    "rate": "2797",
+    "location": "Haryana",
+    "rating": "3.8"
+  },
+  {
+    "name": "AgriSafe 481",
+    "crops": "Sugarcane",
+    "rate": "2568",
+    "location": "Punjab",
+    "rating": "4.9"
+  },
+  {
+    "name": "Green Organic 482",
+    "crops": "Soyabean",
+    "rate": "1517",
+    "location": "Uttar Pradesh",
+    "rating": "4.9"
+  },
+  {
+    "name": "Haryana Agro 483",
+    "crops": "Gehu",
+    "rate": "2717",
+    "location": "Haryana",
+    "rating": "5.0"
+  },
+  {
+    "name": "Kisan Traders 484",
+    "crops": "Bajra",
+    "rate": "2457",
+    "location": "Rajasthan",
+    "rating": "4.9"
+  },
+  {
+    "name": "Delhi Fresh 485",
+    "crops": "Cotton",
+    "rate": "2004",
+    "location": "Madhya Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Punjab Mandi 486",
+    "crops": "Sugarcane",
+    "rate": "2243",
+    "location": "Madhya Pradesh",
+    "rating": "3.8"
+  },
+  {
+    "name": "Green Organic 487",
+    "crops": "Sugarcane",
+    "rate": "2719",
+    "location": "Uttar Pradesh",
+    "rating": "4.2"
+  },
+  {
+    "name": "Haryana Agro 488",
+    "crops": "Makka",
+    "rate": "2712",
+    "location": "Gujarat",
+    "rating": "4.9"
+  },
+  {
+    "name": "Punjab Mandi 489",
+    "crops": "Sugarcane",
+    "rate": "1974",
+    "location": "Punjab",
+    "rating": "4.5"
+  },
+  {
+    "name": "AgriSafe 490",
+    "crops": "Cotton",
+    "rate": "1740",
+    "location": "Gujarat",
+    "rating": "3.9"
+  },
+  {
+    "name": "Adani Wholesales 491",
+    "crops": "Chana",
+    "rate": "2876",
+    "location": "Delhi",
+    "rating": "4.5"
+  },
+  {
+    "name": "Adani Wholesales 492",
+    "crops": "Soyabean",
+    "rate": "1734",
+    "location": "Madhya Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Delhi Fresh 493",
+    "crops": "Jowar",
+    "rate": "2956",
+    "location": "Rajasthan",
+    "rating": "3.5"
+  },
+  {
+    "name": "Garg Trading 494",
+    "crops": "Bajra",
+    "rate": "1935",
+    "location": "Rajasthan",
+    "rating": "4.6"
+  },
+  {
+    "name": "Green Organic 495",
+    "crops": "Chana",
+    "rate": "2583",
+    "location": "Madhya Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "Reliance Agri 496",
+    "crops": "Gehu",
+    "rate": "1529",
+    "location": "Punjab",
+    "rating": "4.8"
+  },
+  {
+    "name": "Haryana Agro 497",
+    "crops": "Cotton",
+    "rate": "2979",
+    "location": "Rajasthan",
+    "rating": "4.5"
+  },
+  {
+    "name": "Haryana Agro 498",
+    "crops": "Gehu",
+    "rate": "2624",
+    "location": "Rajasthan",
+    "rating": "3.5"
+  },
+  {
+    "name": "Punjab Mandi 499",
+    "crops": "Makka",
+    "rate": "1999",
+    "location": "Punjab",
+    "rating": "3.9"
+  },
+  {
+    "name": "ITC Limited 500",
+    "crops": "Dhan",
+    "rate": "2418",
+    "location": "Gujarat",
+    "rating": "4.3"
+  },
+  {
+    "name": "Punjab Mandi 501",
+    "crops": "Dhan",
+    "rate": "1988",
+    "location": "Haryana",
+    "rating": "4.9"
+  },
+  {
+    "name": "Garg Trading 502",
+    "crops": "Dhan",
+    "rate": "2186",
+    "location": "Uttar Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Delhi Fresh 503",
+    "crops": "Bajra",
+    "rate": "2842",
+    "location": "Madhya Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Punjab Mandi 504",
+    "crops": "Sugarcane",
+    "rate": "1800",
+    "location": "Gujarat",
+    "rating": "4.9"
+  },
+  {
+    "name": "Kisan Traders 505",
+    "crops": "Chana",
+    "rate": "2829",
+    "location": "Gujarat",
+    "rating": "4.0"
+  },
+  {
+    "name": "Reliance Agri 506",
+    "crops": "Jowar",
+    "rate": "2557",
+    "location": "Madhya Pradesh",
+    "rating": "3.8"
+  },
+  {
+    "name": "AgriSafe 507",
+    "crops": "Soyabean",
+    "rate": "2890",
+    "location": "Madhya Pradesh",
+    "rating": "4.9"
+  },
+  {
+    "name": "Garg Trading 508",
+    "crops": "Dhan",
+    "rate": "2427",
+    "location": "Punjab",
+    "rating": "4.0"
+  },
+  {
+    "name": "Delhi Fresh 509",
+    "crops": "Gehu",
+    "rate": "2297",
+    "location": "Delhi",
+    "rating": "4.9"
+  },
+  {
+    "name": "AgriSafe 510",
+    "crops": "Soyabean",
+    "rate": "1591",
+    "location": "Uttar Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "Reliance Agri 511",
+    "crops": "Chana",
+    "rate": "1547",
+    "location": "Gujarat",
+    "rating": "4.4"
+  },
+  {
+    "name": "Reliance Agri 512",
+    "crops": "Gehu",
+    "rate": "1919",
+    "location": "Gujarat",
+    "rating": "4.0"
+  },
+  {
+    "name": "ITC Limited 513",
+    "crops": "Gehu",
+    "rate": "2321",
+    "location": "Gujarat",
+    "rating": "3.7"
+  },
+  {
+    "name": "Haryana Agro 514",
+    "crops": "Sugarcane",
+    "rate": "1757",
+    "location": "Uttar Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "AgriSafe 515",
+    "crops": "Mustard",
+    "rate": "2958",
+    "location": "Rajasthan",
+    "rating": "4.9"
+  },
+  {
+    "name": "AgriSafe 516",
+    "crops": "Chana",
+    "rate": "1906",
+    "location": "Rajasthan",
+    "rating": "3.8"
+  },
+  {
+    "name": "Delhi Fresh 517",
+    "crops": "Gehu",
+    "rate": "2732",
+    "location": "Delhi",
+    "rating": "4.2"
+  },
+  {
+    "name": "Haryana Agro 518",
+    "crops": "Gehu",
+    "rate": "2583",
+    "location": "Rajasthan",
+    "rating": "4.1"
+  },
+  {
+    "name": "Haryana Agro 519",
+    "crops": "Dhan",
+    "rate": "2434",
+    "location": "Rajasthan",
+    "rating": "4.7"
+  },
+  {
+    "name": "Kisan Traders 520",
+    "crops": "Gehu",
+    "rate": "2478",
+    "location": "Rajasthan",
+    "rating": "4.7"
+  },
+  {
+    "name": "Haryana Agro 521",
+    "crops": "Chana",
+    "rate": "1762",
+    "location": "Haryana",
+    "rating": "4.5"
+  },
+  {
+    "name": "ITC Limited 522",
+    "crops": "Sugarcane",
+    "rate": "1732",
+    "location": "Haryana",
+    "rating": "4.1"
+  },
+  {
+    "name": "Green Organic 523",
+    "crops": "Jowar",
+    "rate": "1609",
+    "location": "Madhya Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "Garg Trading 524",
+    "crops": "Chana",
+    "rate": "2217",
+    "location": "Madhya Pradesh",
+    "rating": "4.8"
+  },
+  {
+    "name": "Garg Trading 525",
+    "crops": "Chana",
+    "rate": "2100",
+    "location": "Gujarat",
+    "rating": "4.9"
+  },
+  {
+    "name": "AgriSafe 526",
+    "crops": "Makka",
+    "rate": "2099",
+    "location": "Madhya Pradesh",
+    "rating": "4.6"
+  },
+  {
+    "name": "Kisan Traders 527",
+    "crops": "Bajra",
+    "rate": "2161",
+    "location": "Haryana",
+    "rating": "4.1"
+  },
+  {
+    "name": "Garg Trading 528",
+    "crops": "Makka",
+    "rate": "2341",
+    "location": "Gujarat",
+    "rating": "4.1"
+  },
+  {
+    "name": "Reliance Agri 529",
+    "crops": "Makka",
+    "rate": "2867",
+    "location": "Rajasthan",
+    "rating": "4.0"
+  },
+  {
+    "name": "ITC Limited 530",
+    "crops": "Cotton",
+    "rate": "1594",
+    "location": "Rajasthan",
+    "rating": "4.8"
+  },
+  {
+    "name": "Adani Wholesales 531",
+    "crops": "Bajra",
+    "rate": "1835",
+    "location": "Haryana",
+    "rating": "3.9"
+  },
+  {
+    "name": "Reliance Agri 532",
+    "crops": "Cotton",
+    "rate": "2861",
+    "location": "Haryana",
+    "rating": "3.6"
+  },
+  {
+    "name": "Green Organic 533",
+    "crops": "Dhan",
+    "rate": "2668",
+    "location": "Madhya Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Reliance Agri 534",
+    "crops": "Soyabean",
+    "rate": "2316",
+    "location": "Gujarat",
+    "rating": "4.2"
+  },
+  {
+    "name": "Punjab Mandi 535",
+    "crops": "Sugarcane",
+    "rate": "1518",
+    "location": "Haryana",
+    "rating": "4.9"
+  },
+  {
+    "name": "ITC Limited 536",
+    "crops": "Sugarcane",
+    "rate": "1777",
+    "location": "Uttar Pradesh",
+    "rating": "5.0"
+  },
+  {
+    "name": "Garg Trading 537",
+    "crops": "Soyabean",
+    "rate": "2205",
+    "location": "Punjab",
+    "rating": "4.7"
+  },
+  {
+    "name": "ITC Limited 538",
+    "crops": "Bajra",
+    "rate": "2378",
+    "location": "Gujarat",
+    "rating": "4.6"
+  },
+  {
+    "name": "Adani Wholesales 539",
+    "crops": "Mustard",
+    "rate": "2458",
+    "location": "Delhi",
+    "rating": "3.8"
+  },
+  {
+    "name": "AgriSafe 540",
+    "crops": "Sugarcane",
+    "rate": "2901",
+    "location": "Madhya Pradesh",
+    "rating": "4.2"
+  },
+  {
+    "name": "ITC Limited 541",
+    "crops": "Bajra",
+    "rate": "1885",
+    "location": "Uttar Pradesh",
+    "rating": "4.1"
+  },
+  {
+    "name": "ITC Limited 542",
+    "crops": "Makka",
+    "rate": "2069",
+    "location": "Rajasthan",
+    "rating": "3.9"
+  },
+  {
+    "name": "Reliance Agri 543",
+    "crops": "Gehu",
+    "rate": "1936",
+    "location": "Rajasthan",
+    "rating": "4.7"
+  },
+  {
+    "name": "AgriSafe 544",
+    "crops": "Mustard",
+    "rate": "2450",
+    "location": "Haryana",
+    "rating": "3.6"
+  },
+  {
+    "name": "Haryana Agro 545",
+    "crops": "Makka",
+    "rate": "1512",
+    "location": "Haryana",
+    "rating": "3.6"
+  },
+  {
+    "name": "Kisan Traders 546",
+    "crops": "Cotton",
+    "rate": "2426",
+    "location": "Rajasthan",
+    "rating": "4.1"
+  },
+  {
+    "name": "AgriSafe 547",
+    "crops": "Soyabean",
+    "rate": "1781",
+    "location": "Gujarat",
+    "rating": "4.6"
+  },
+  {
+    "name": "Punjab Mandi 548",
+    "crops": "Gehu",
+    "rate": "2667",
+    "location": "Uttar Pradesh",
+    "rating": "4.8"
+  },
+  {
+    "name": "AgriSafe 549",
+    "crops": "Sugarcane",
+    "rate": "2887",
+    "location": "Rajasthan",
+    "rating": "5.0"
+  },
+  {
+    "name": "Punjab Mandi 550",
+    "crops": "Dhan",
+    "rate": "1568",
+    "location": "Uttar Pradesh",
+    "rating": "4.8"
+  },
+  {
+    "name": "Haryana Agro 551",
+    "crops": "Cotton",
+    "rate": "2896",
+    "location": "Rajasthan",
+    "rating": "4.1"
+  },
+  {
+    "name": "Delhi Fresh 552",
+    "crops": "Soyabean",
+    "rate": "2313",
+    "location": "Rajasthan",
+    "rating": "4.1"
+  },
+  {
+    "name": "AgriSafe 553",
+    "crops": "Dhan",
+    "rate": "2436",
+    "location": "Uttar Pradesh",
+    "rating": "4.1"
+  },
+  {
+    "name": "Garg Trading 554",
+    "crops": "Soyabean",
+    "rate": "2578",
+    "location": "Punjab",
+    "rating": "4.4"
+  },
+  {
+    "name": "AgriSafe 555",
+    "crops": "Jowar",
+    "rate": "1525",
+    "location": "Haryana",
+    "rating": "4.1"
+  },
+  {
+    "name": "Reliance Agri 556",
+    "crops": "Sugarcane",
+    "rate": "1818",
+    "location": "Delhi",
+    "rating": "4.0"
+  },
+  {
+    "name": "Haryana Agro 557",
+    "crops": "Cotton",
+    "rate": "2699",
+    "location": "Madhya Pradesh",
+    "rating": "4.2"
+  },
+  {
+    "name": "AgriSafe 558",
+    "crops": "Mustard",
+    "rate": "1649",
+    "location": "Madhya Pradesh",
+    "rating": "4.7"
+  },
+  {
+    "name": "AgriSafe 559",
+    "crops": "Bajra",
+    "rate": "1997",
+    "location": "Uttar Pradesh",
+    "rating": "4.7"
+  },
+  {
+    "name": "Kisan Traders 560",
+    "crops": "Dhan",
+    "rate": "2361",
+    "location": "Uttar Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "Green Organic 561",
+    "crops": "Soyabean",
+    "rate": "2024",
+    "location": "Rajasthan",
+    "rating": "4.6"
+  },
+  {
+    "name": "ITC Limited 562",
+    "crops": "Bajra",
+    "rate": "1948",
+    "location": "Rajasthan",
+    "rating": "3.7"
+  },
+  {
+    "name": "Adani Wholesales 563",
+    "crops": "Cotton",
+    "rate": "2022",
+    "location": "Gujarat",
+    "rating": "4.3"
+  },
+  {
+    "name": "Reliance Agri 564",
+    "crops": "Soyabean",
+    "rate": "1859",
+    "location": "Uttar Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Punjab Mandi 565",
+    "crops": "Makka",
+    "rate": "2437",
+    "location": "Punjab",
+    "rating": "3.6"
+  },
+  {
+    "name": "Haryana Agro 566",
+    "crops": "Soyabean",
+    "rate": "2904",
+    "location": "Haryana",
+    "rating": "4.0"
+  },
+  {
+    "name": "Garg Trading 567",
+    "crops": "Jowar",
+    "rate": "1766",
+    "location": "Delhi",
+    "rating": "3.7"
+  },
+  {
+    "name": "Punjab Mandi 568",
+    "crops": "Gehu",
+    "rate": "1734",
+    "location": "Haryana",
+    "rating": "3.9"
+  },
+  {
+    "name": "Kisan Traders 569",
+    "crops": "Jowar",
+    "rate": "2518",
+    "location": "Punjab",
+    "rating": "4.8"
+  },
+  {
+    "name": "Kisan Traders 570",
+    "crops": "Soyabean",
+    "rate": "2079",
+    "location": "Gujarat",
+    "rating": "4.7"
+  },
+  {
+    "name": "AgriSafe 571",
+    "crops": "Jowar",
+    "rate": "1927",
+    "location": "Delhi",
+    "rating": "4.0"
+  },
+  {
+    "name": "Kisan Traders 572",
+    "crops": "Sugarcane",
+    "rate": "2329",
+    "location": "Delhi",
+    "rating": "3.9"
+  },
+  {
+    "name": "Reliance Agri 573",
+    "crops": "Gehu",
+    "rate": "1771",
+    "location": "Rajasthan",
+    "rating": "3.6"
+  },
+  {
+    "name": "AgriSafe 574",
+    "crops": "Cotton",
+    "rate": "2590",
+    "location": "Rajasthan",
+    "rating": "4.6"
+  },
+  {
+    "name": "Reliance Agri 575",
+    "crops": "Cotton",
+    "rate": "2845",
+    "location": "Gujarat",
+    "rating": "4.5"
+  },
+  {
+    "name": "Green Organic 576",
+    "crops": "Dhan",
+    "rate": "1568",
+    "location": "Gujarat",
+    "rating": "4.0"
+  },
+  {
+    "name": "Reliance Agri 577",
+    "crops": "Jowar",
+    "rate": "2352",
+    "location": "Uttar Pradesh",
+    "rating": "3.6"
+  },
+  {
+    "name": "Garg Trading 578",
+    "crops": "Soyabean",
+    "rate": "2108",
+    "location": "Rajasthan",
+    "rating": "4.8"
+  },
+  {
+    "name": "Haryana Agro 579",
+    "crops": "Bajra",
+    "rate": "2914",
+    "location": "Punjab",
+    "rating": "3.7"
+  },
+  {
+    "name": "Haryana Agro 580",
+    "crops": "Soyabean",
+    "rate": "1558",
+    "location": "Haryana",
+    "rating": "4.1"
+  },
+  {
+    "name": "Garg Trading 581",
+    "crops": "Soyabean",
+    "rate": "1552",
+    "location": "Delhi",
+    "rating": "4.4"
+  },
+  {
+    "name": "Reliance Agri 582",
+    "crops": "Soyabean",
+    "rate": "2405",
+    "location": "Delhi",
+    "rating": "3.6"
+  },
+  {
+    "name": "Kisan Traders 583",
+    "crops": "Soyabean",
+    "rate": "2710",
+    "location": "Rajasthan",
+    "rating": "4.3"
+  },
+  {
+    "name": "ITC Limited 584",
+    "crops": "Mustard",
+    "rate": "1919",
+    "location": "Haryana",
+    "rating": "4.2"
+  },
+  {
+    "name": "AgriSafe 585",
+    "crops": "Cotton",
+    "rate": "2324",
+    "location": "Madhya Pradesh",
+    "rating": "3.6"
+  },
+  {
+    "name": "Reliance Agri 586",
+    "crops": "Chana",
+    "rate": "2789",
+    "location": "Delhi",
+    "rating": "4.5"
+  },
+  {
+    "name": "AgriSafe 587",
+    "crops": "Jowar",
+    "rate": "1680",
+    "location": "Uttar Pradesh",
+    "rating": "3.7"
+  },
+  {
+    "name": "Garg Trading 588",
+    "crops": "Sugarcane",
+    "rate": "2625",
+    "location": "Rajasthan",
+    "rating": "4.1"
+  },
+  {
+    "name": "Adani Wholesales 589",
+    "crops": "Soyabean",
+    "rate": "2437",
+    "location": "Madhya Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Garg Trading 590",
+    "crops": "Mustard",
+    "rate": "2407",
+    "location": "Gujarat",
+    "rating": "4.8"
+  },
+  {
+    "name": "Reliance Agri 591",
+    "crops": "Mustard",
+    "rate": "2495",
+    "location": "Uttar Pradesh",
+    "rating": "3.8"
+  },
+  {
+    "name": "Delhi Fresh 592",
+    "crops": "Bajra",
+    "rate": "2764",
+    "location": "Delhi",
+    "rating": "3.9"
+  },
+  {
+    "name": "Delhi Fresh 593",
+    "crops": "Bajra",
+    "rate": "1590",
+    "location": "Haryana",
+    "rating": "4.0"
+  },
+  {
+    "name": "AgriSafe 594",
+    "crops": "Gehu",
+    "rate": "2291",
+    "location": "Uttar Pradesh",
+    "rating": "4.2"
+  },
+  {
+    "name": "AgriSafe 595",
+    "crops": "Dhan",
+    "rate": "2756",
+    "location": "Uttar Pradesh",
+    "rating": "3.6"
+  },
+  {
+    "name": "Adani Wholesales 596",
+    "crops": "Sugarcane",
+    "rate": "2885",
+    "location": "Gujarat",
+    "rating": "3.7"
+  },
+  {
+    "name": "Adani Wholesales 597",
+    "crops": "Sugarcane",
+    "rate": "2075",
+    "location": "Haryana",
+    "rating": "3.8"
+  },
+  {
+    "name": "Delhi Fresh 598",
+    "crops": "Mustard",
+    "rate": "2915",
+    "location": "Madhya Pradesh",
+    "rating": "4.2"
+  },
+  {
+    "name": "Adani Wholesales 599",
+    "crops": "Chana",
+    "rate": "1554",
+    "location": "Uttar Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Adani Wholesales 600",
+    "crops": "Sugarcane",
+    "rate": "1959",
+    "location": "Haryana",
+    "rating": "4.4"
+  },
+  {
+    "name": "Haryana Agro 601",
+    "crops": "Cotton",
+    "rate": "2985",
+    "location": "Rajasthan",
+    "rating": "4.3"
+  },
+  {
+    "name": "Garg Trading 602",
+    "crops": "Sugarcane",
+    "rate": "2105",
+    "location": "Punjab",
+    "rating": "3.9"
+  },
+  {
+    "name": "Adani Wholesales 603",
+    "crops": "Jowar",
+    "rate": "2360",
+    "location": "Haryana",
+    "rating": "4.2"
+  },
+  {
+    "name": "Kisan Traders 604",
+    "crops": "Makka",
+    "rate": "2090",
+    "location": "Madhya Pradesh",
+    "rating": "3.8"
+  },
+  {
+    "name": "Punjab Mandi 605",
+    "crops": "Cotton",
+    "rate": "1607",
+    "location": "Delhi",
+    "rating": "4.2"
+  },
+  {
+    "name": "Haryana Agro 606",
+    "crops": "Dhan",
+    "rate": "1764",
+    "location": "Rajasthan",
+    "rating": "4.1"
+  },
+  {
+    "name": "Kisan Traders 607",
+    "crops": "Sugarcane",
+    "rate": "2548",
+    "location": "Madhya Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Garg Trading 608",
+    "crops": "Jowar",
+    "rate": "2499",
+    "location": "Uttar Pradesh",
+    "rating": "4.9"
+  },
+  {
+    "name": "Reliance Agri 609",
+    "crops": "Gehu",
+    "rate": "2827",
+    "location": "Uttar Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Delhi Fresh 610",
+    "crops": "Cotton",
+    "rate": "1656",
+    "location": "Delhi",
+    "rating": "4.7"
+  },
+  {
+    "name": "Garg Trading 611",
+    "crops": "Dhan",
+    "rate": "2763",
+    "location": "Haryana",
+    "rating": "3.6"
+  },
+  {
+    "name": "Kisan Traders 612",
+    "crops": "Dhan",
+    "rate": "1986",
+    "location": "Punjab",
+    "rating": "4.5"
+  },
+  {
+    "name": "Green Organic 613",
+    "crops": "Gehu",
+    "rate": "2620",
+    "location": "Delhi",
+    "rating": "4.6"
+  },
+  {
+    "name": "Adani Wholesales 614",
+    "crops": "Gehu",
+    "rate": "1518",
+    "location": "Uttar Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Green Organic 615",
+    "crops": "Soyabean",
+    "rate": "1628",
+    "location": "Punjab",
+    "rating": "4.5"
+  },
+  {
+    "name": "Garg Trading 616",
+    "crops": "Jowar",
+    "rate": "1554",
+    "location": "Madhya Pradesh",
+    "rating": "4.1"
+  },
+  {
+    "name": "AgriSafe 617",
+    "crops": "Bajra",
+    "rate": "2331",
+    "location": "Delhi",
+    "rating": "3.7"
+  },
+  {
+    "name": "Kisan Traders 618",
+    "crops": "Bajra",
+    "rate": "2830",
+    "location": "Haryana",
+    "rating": "4.6"
+  },
+  {
+    "name": "Delhi Fresh 619",
+    "crops": "Dhan",
+    "rate": "2199",
+    "location": "Haryana",
+    "rating": "4.6"
+  },
+  {
+    "name": "Punjab Mandi 620",
+    "crops": "Soyabean",
+    "rate": "2236",
+    "location": "Uttar Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "ITC Limited 621",
+    "crops": "Sugarcane",
+    "rate": "1665",
+    "location": "Haryana",
+    "rating": "4.4"
+  },
+  {
+    "name": "Delhi Fresh 622",
+    "crops": "Dhan",
+    "rate": "1860",
+    "location": "Punjab",
+    "rating": "5.0"
+  },
+  {
+    "name": "ITC Limited 623",
+    "crops": "Soyabean",
+    "rate": "1834",
+    "location": "Gujarat",
+    "rating": "3.8"
+  },
+  {
+    "name": "Kisan Traders 624",
+    "crops": "Chana",
+    "rate": "1736",
+    "location": "Rajasthan",
+    "rating": "5.0"
+  },
+  {
+    "name": "Green Organic 625",
+    "crops": "Soyabean",
+    "rate": "2492",
+    "location": "Gujarat",
+    "rating": "4.1"
+  },
+  {
+    "name": "Kisan Traders 626",
+    "crops": "Sugarcane",
+    "rate": "2864",
+    "location": "Rajasthan",
+    "rating": "4.2"
+  },
+  {
+    "name": "Adani Wholesales 627",
+    "crops": "Gehu",
+    "rate": "1690",
+    "location": "Uttar Pradesh",
+    "rating": "3.6"
+  },
+  {
+    "name": "Adani Wholesales 628",
+    "crops": "Dhan",
+    "rate": "2981",
+    "location": "Uttar Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "AgriSafe 629",
+    "crops": "Gehu",
+    "rate": "2953",
+    "location": "Haryana",
+    "rating": "3.6"
+  },
+  {
+    "name": "Delhi Fresh 630",
+    "crops": "Mustard",
+    "rate": "2395",
+    "location": "Uttar Pradesh",
+    "rating": "4.7"
+  },
+  {
+    "name": "AgriSafe 631",
+    "crops": "Mustard",
+    "rate": "1949",
+    "location": "Gujarat",
+    "rating": "4.6"
+  },
+  {
+    "name": "Garg Trading 632",
+    "crops": "Mustard",
+    "rate": "2679",
+    "location": "Madhya Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Reliance Agri 633",
+    "crops": "Mustard",
+    "rate": "2962",
+    "location": "Punjab",
+    "rating": "4.5"
+  },
+  {
+    "name": "Adani Wholesales 634",
+    "crops": "Dhan",
+    "rate": "2123",
+    "location": "Madhya Pradesh",
+    "rating": "4.1"
+  },
+  {
+    "name": "Adani Wholesales 635",
+    "crops": "Bajra",
+    "rate": "1923",
+    "location": "Gujarat",
+    "rating": "3.8"
+  },
+  {
+    "name": "ITC Limited 636",
+    "crops": "Cotton",
+    "rate": "1535",
+    "location": "Haryana",
+    "rating": "4.2"
+  },
+  {
+    "name": "Kisan Traders 637",
+    "crops": "Soyabean",
+    "rate": "1939",
+    "location": "Uttar Pradesh",
+    "rating": "4.9"
+  },
+  {
+    "name": "Green Organic 638",
+    "crops": "Bajra",
+    "rate": "1844",
+    "location": "Punjab",
+    "rating": "4.2"
+  },
+  {
+    "name": "Kisan Traders 639",
+    "crops": "Mustard",
+    "rate": "2344",
+    "location": "Rajasthan",
+    "rating": "3.6"
+  },
+  {
+    "name": "Punjab Mandi 640",
+    "crops": "Gehu",
+    "rate": "2779",
+    "location": "Haryana",
+    "rating": "4.8"
+  },
+  {
+    "name": "ITC Limited 641",
+    "crops": "Makka",
+    "rate": "2921",
+    "location": "Uttar Pradesh",
+    "rating": "4.6"
+  },
+  {
+    "name": "Green Organic 642",
+    "crops": "Chana",
+    "rate": "1769",
+    "location": "Rajasthan",
+    "rating": "4.5"
+  },
+  {
+    "name": "Haryana Agro 643",
+    "crops": "Gehu",
+    "rate": "2086",
+    "location": "Rajasthan",
+    "rating": "3.6"
+  },
+  {
+    "name": "Green Organic 644",
+    "crops": "Jowar",
+    "rate": "1911",
+    "location": "Delhi",
+    "rating": "3.9"
+  },
+  {
+    "name": "Reliance Agri 645",
+    "crops": "Cotton",
+    "rate": "1886",
+    "location": "Gujarat",
+    "rating": "4.2"
+  },
+  {
+    "name": "Kisan Traders 646",
+    "crops": "Soyabean",
+    "rate": "1689",
+    "location": "Haryana",
+    "rating": "4.8"
+  },
+  {
+    "name": "ITC Limited 647",
+    "crops": "Bajra",
+    "rate": "1894",
+    "location": "Rajasthan",
+    "rating": "3.5"
+  },
+  {
+    "name": "Garg Trading 648",
+    "crops": "Soyabean",
+    "rate": "2198",
+    "location": "Punjab",
+    "rating": "4.6"
+  },
+  {
+    "name": "Kisan Traders 649",
+    "crops": "Gehu",
+    "rate": "2918",
+    "location": "Haryana",
+    "rating": "4.0"
+  },
+  {
+    "name": "Green Organic 650",
+    "crops": "Mustard",
+    "rate": "2598",
+    "location": "Punjab",
+    "rating": "4.0"
+  },
+  {
+    "name": "Garg Trading 651",
+    "crops": "Soyabean",
+    "rate": "1946",
+    "location": "Haryana",
+    "rating": "4.8"
+  },
+  {
+    "name": "Punjab Mandi 652",
+    "crops": "Chana",
+    "rate": "1981",
+    "location": "Rajasthan",
+    "rating": "4.0"
+  },
+  {
+    "name": "ITC Limited 653",
+    "crops": "Jowar",
+    "rate": "2044",
+    "location": "Gujarat",
+    "rating": "3.7"
+  },
+  {
+    "name": "Green Organic 654",
+    "crops": "Gehu",
+    "rate": "2622",
+    "location": "Rajasthan",
+    "rating": "3.5"
+  },
+  {
+    "name": "Kisan Traders 655",
+    "crops": "Cotton",
+    "rate": "1883",
+    "location": "Delhi",
+    "rating": "4.6"
+  },
+  {
+    "name": "Garg Trading 656",
+    "crops": "Gehu",
+    "rate": "2770",
+    "location": "Punjab",
+    "rating": "4.6"
+  },
+  {
+    "name": "Delhi Fresh 657",
+    "crops": "Cotton",
+    "rate": "2387",
+    "location": "Delhi",
+    "rating": "3.6"
+  },
+  {
+    "name": "Green Organic 658",
+    "crops": "Gehu",
+    "rate": "2528",
+    "location": "Madhya Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "Kisan Traders 659",
+    "crops": "Mustard",
+    "rate": "1844",
+    "location": "Gujarat",
+    "rating": "4.5"
+  },
+  {
+    "name": "AgriSafe 660",
+    "crops": "Bajra",
+    "rate": "1669",
+    "location": "Gujarat",
+    "rating": "3.9"
+  },
+  {
+    "name": "Kisan Traders 661",
+    "crops": "Sugarcane",
+    "rate": "1588",
+    "location": "Madhya Pradesh",
+    "rating": "4.8"
+  },
+  {
+    "name": "AgriSafe 662",
+    "crops": "Mustard",
+    "rate": "2025",
+    "location": "Delhi",
+    "rating": "3.8"
+  },
+  {
+    "name": "Adani Wholesales 663",
+    "crops": "Mustard",
+    "rate": "2633",
+    "location": "Rajasthan",
+    "rating": "3.6"
+  },
+  {
+    "name": "Reliance Agri 664",
+    "crops": "Chana",
+    "rate": "2448",
+    "location": "Haryana",
+    "rating": "4.5"
+  },
+  {
+    "name": "Haryana Agro 665",
+    "crops": "Soyabean",
+    "rate": "2573",
+    "location": "Madhya Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Punjab Mandi 666",
+    "crops": "Mustard",
+    "rate": "2822",
+    "location": "Madhya Pradesh",
+    "rating": "3.8"
+  },
+  {
+    "name": "AgriSafe 667",
+    "crops": "Cotton",
+    "rate": "1619",
+    "location": "Punjab",
+    "rating": "3.8"
+  },
+  {
+    "name": "Adani Wholesales 668",
+    "crops": "Gehu",
+    "rate": "2965",
+    "location": "Delhi",
+    "rating": "3.9"
+  },
+  {
+    "name": "Punjab Mandi 669",
+    "crops": "Makka",
+    "rate": "2665",
+    "location": "Delhi",
+    "rating": "4.1"
+  },
+  {
+    "name": "Adani Wholesales 670",
+    "crops": "Sugarcane",
+    "rate": "2484",
+    "location": "Gujarat",
+    "rating": "3.7"
+  },
+  {
+    "name": "Adani Wholesales 671",
+    "crops": "Chana",
+    "rate": "2281",
+    "location": "Rajasthan",
+    "rating": "4.0"
+  },
+  {
+    "name": "Kisan Traders 672",
+    "crops": "Cotton",
+    "rate": "2873",
+    "location": "Punjab",
+    "rating": "4.4"
+  },
+  {
+    "name": "Punjab Mandi 673",
+    "crops": "Chana",
+    "rate": "2997",
+    "location": "Rajasthan",
+    "rating": "3.9"
+  },
+  {
+    "name": "Kisan Traders 674",
+    "crops": "Gehu",
+    "rate": "2014",
+    "location": "Rajasthan",
+    "rating": "3.9"
+  },
+  {
+    "name": "Green Organic 675",
+    "crops": "Makka",
+    "rate": "2786",
+    "location": "Haryana",
+    "rating": "5.0"
+  },
+  {
+    "name": "Garg Trading 676",
+    "crops": "Soyabean",
+    "rate": "2179",
+    "location": "Gujarat",
+    "rating": "4.4"
+  },
+  {
+    "name": "Garg Trading 677",
+    "crops": "Gehu",
+    "rate": "1980",
+    "location": "Punjab",
+    "rating": "3.6"
+  },
+  {
+    "name": "AgriSafe 678",
+    "crops": "Makka",
+    "rate": "2779",
+    "location": "Delhi",
+    "rating": "3.6"
+  },
+  {
+    "name": "Haryana Agro 679",
+    "crops": "Gehu",
+    "rate": "2015",
+    "location": "Madhya Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "ITC Limited 680",
+    "crops": "Sugarcane",
+    "rate": "2693",
+    "location": "Rajasthan",
+    "rating": "5.0"
+  },
+  {
+    "name": "Delhi Fresh 681",
+    "crops": "Dhan",
+    "rate": "2852",
+    "location": "Haryana",
+    "rating": "4.4"
+  },
+  {
+    "name": "ITC Limited 682",
+    "crops": "Soyabean",
+    "rate": "1977",
+    "location": "Uttar Pradesh",
+    "rating": "3.7"
+  },
+  {
+    "name": "AgriSafe 683",
+    "crops": "Soyabean",
+    "rate": "2244",
+    "location": "Punjab",
+    "rating": "4.7"
+  },
+  {
+    "name": "AgriSafe 684",
+    "crops": "Soyabean",
+    "rate": "2117",
+    "location": "Punjab",
+    "rating": "4.3"
+  },
+  {
+    "name": "Kisan Traders 685",
+    "crops": "Chana",
+    "rate": "1644",
+    "location": "Punjab",
+    "rating": "4.3"
+  },
+  {
+    "name": "AgriSafe 686",
+    "crops": "Cotton",
+    "rate": "1878",
+    "location": "Haryana",
+    "rating": "4.3"
+  },
+  {
+    "name": "Garg Trading 687",
+    "crops": "Bajra",
+    "rate": "2544",
+    "location": "Punjab",
+    "rating": "3.9"
+  },
+  {
+    "name": "Reliance Agri 688",
+    "crops": "Jowar",
+    "rate": "2609",
+    "location": "Gujarat",
+    "rating": "3.8"
+  },
+  {
+    "name": "Garg Trading 689",
+    "crops": "Mustard",
+    "rate": "1625",
+    "location": "Punjab",
+    "rating": "4.0"
+  },
+  {
+    "name": "Green Organic 690",
+    "crops": "Gehu",
+    "rate": "1689",
+    "location": "Madhya Pradesh",
+    "rating": "3.7"
+  },
+  {
+    "name": "Reliance Agri 691",
+    "crops": "Makka",
+    "rate": "2090",
+    "location": "Gujarat",
+    "rating": "4.4"
+  },
+  {
+    "name": "Green Organic 692",
+    "crops": "Dhan",
+    "rate": "1674",
+    "location": "Haryana",
+    "rating": "4.9"
+  },
+  {
+    "name": "Punjab Mandi 693",
+    "crops": "Jowar",
+    "rate": "1900",
+    "location": "Madhya Pradesh",
+    "rating": "4.9"
+  },
+  {
+    "name": "Delhi Fresh 694",
+    "crops": "Gehu",
+    "rate": "2295",
+    "location": "Uttar Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "Garg Trading 695",
+    "crops": "Mustard",
+    "rate": "2751",
+    "location": "Uttar Pradesh",
+    "rating": "4.9"
+  },
+  {
+    "name": "Garg Trading 696",
+    "crops": "Chana",
+    "rate": "2339",
+    "location": "Uttar Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "Haryana Agro 697",
+    "crops": "Dhan",
+    "rate": "2298",
+    "location": "Madhya Pradesh",
+    "rating": "4.1"
+  },
+  {
+    "name": "AgriSafe 698",
+    "crops": "Sugarcane",
+    "rate": "2975",
+    "location": "Gujarat",
+    "rating": "4.6"
+  },
+  {
+    "name": "Haryana Agro 699",
+    "crops": "Jowar",
+    "rate": "1911",
+    "location": "Uttar Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Adani Wholesales 700",
+    "crops": "Jowar",
+    "rate": "2926",
+    "location": "Madhya Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "Reliance Agri 701",
+    "crops": "Jowar",
+    "rate": "2701",
+    "location": "Rajasthan",
+    "rating": "4.8"
+  },
+  {
+    "name": "Haryana Agro 702",
+    "crops": "Dhan",
+    "rate": "2290",
+    "location": "Punjab",
+    "rating": "3.8"
+  },
+  {
+    "name": "Haryana Agro 703",
+    "crops": "Cotton",
+    "rate": "1741",
+    "location": "Madhya Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "Kisan Traders 704",
+    "crops": "Bajra",
+    "rate": "2507",
+    "location": "Rajasthan",
+    "rating": "3.9"
+  },
+  {
+    "name": "Haryana Agro 705",
+    "crops": "Dhan",
+    "rate": "2440",
+    "location": "Uttar Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Green Organic 706",
+    "crops": "Chana",
+    "rate": "2641",
+    "location": "Madhya Pradesh",
+    "rating": "3.5"
+  },
+  {
+    "name": "Green Organic 707",
+    "crops": "Gehu",
+    "rate": "2121",
+    "location": "Haryana",
+    "rating": "3.6"
+  },
+  {
+    "name": "Reliance Agri 708",
+    "crops": "Jowar",
+    "rate": "1917",
+    "location": "Gujarat",
+    "rating": "4.1"
+  },
+  {
+    "name": "Green Organic 709",
+    "crops": "Jowar",
+    "rate": "1877",
+    "location": "Punjab",
+    "rating": "4.4"
+  },
+  {
+    "name": "ITC Limited 710",
+    "crops": "Soyabean",
+    "rate": "2682",
+    "location": "Punjab",
+    "rating": "4.7"
+  },
+  {
+    "name": "Adani Wholesales 711",
+    "crops": "Mustard",
+    "rate": "2021",
+    "location": "Uttar Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Green Organic 712",
+    "crops": "Chana",
+    "rate": "2842",
+    "location": "Punjab",
+    "rating": "3.8"
+  },
+  {
+    "name": "Punjab Mandi 713",
+    "crops": "Jowar",
+    "rate": "2425",
+    "location": "Uttar Pradesh",
+    "rating": "3.8"
+  },
+  {
+    "name": "Reliance Agri 714",
+    "crops": "Chana",
+    "rate": "1538",
+    "location": "Punjab",
+    "rating": "3.7"
+  },
+  {
+    "name": "Garg Trading 715",
+    "crops": "Gehu",
+    "rate": "2724",
+    "location": "Haryana",
+    "rating": "4.8"
+  },
+  {
+    "name": "Adani Wholesales 716",
+    "crops": "Bajra",
+    "rate": "2795",
+    "location": "Haryana",
+    "rating": "4.8"
+  },
+  {
+    "name": "ITC Limited 717",
+    "crops": "Jowar",
+    "rate": "1847",
+    "location": "Delhi",
+    "rating": "4.1"
+  },
+  {
+    "name": "Reliance Agri 718",
+    "crops": "Jowar",
+    "rate": "1539",
+    "location": "Haryana",
+    "rating": "3.9"
+  },
+  {
+    "name": "Punjab Mandi 719",
+    "crops": "Soyabean",
+    "rate": "2100",
+    "location": "Uttar Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "Garg Trading 720",
+    "crops": "Bajra",
+    "rate": "1862",
+    "location": "Delhi",
+    "rating": "3.9"
+  },
+  {
+    "name": "ITC Limited 721",
+    "crops": "Makka",
+    "rate": "2121",
+    "location": "Madhya Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "Punjab Mandi 722",
+    "crops": "Sugarcane",
+    "rate": "1765",
+    "location": "Delhi",
+    "rating": "4.1"
+  },
+  {
+    "name": "Kisan Traders 723",
+    "crops": "Dhan",
+    "rate": "2066",
+    "location": "Uttar Pradesh",
+    "rating": "3.6"
+  },
+  {
+    "name": "Reliance Agri 724",
+    "crops": "Bajra",
+    "rate": "2477",
+    "location": "Delhi",
+    "rating": "4.6"
+  },
+  {
+    "name": "Punjab Mandi 725",
+    "crops": "Sugarcane",
+    "rate": "2493",
+    "location": "Uttar Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "ITC Limited 726",
+    "crops": "Jowar",
+    "rate": "2444",
+    "location": "Madhya Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Delhi Fresh 727",
+    "crops": "Jowar",
+    "rate": "1637",
+    "location": "Gujarat",
+    "rating": "3.6"
+  },
+  {
+    "name": "Green Organic 728",
+    "crops": "Sugarcane",
+    "rate": "2284",
+    "location": "Delhi",
+    "rating": "3.7"
+  },
+  {
+    "name": "ITC Limited 729",
+    "crops": "Bajra",
+    "rate": "2777",
+    "location": "Gujarat",
+    "rating": "4.0"
+  },
+  {
+    "name": "ITC Limited 730",
+    "crops": "Makka",
+    "rate": "2657",
+    "location": "Delhi",
+    "rating": "4.4"
+  },
+  {
+    "name": "AgriSafe 731",
+    "crops": "Chana",
+    "rate": "2328",
+    "location": "Haryana",
+    "rating": "4.0"
+  },
+  {
+    "name": "Green Organic 732",
+    "crops": "Jowar",
+    "rate": "1731",
+    "location": "Rajasthan",
+    "rating": "4.3"
+  },
+  {
+    "name": "Garg Trading 733",
+    "crops": "Bajra",
+    "rate": "2782",
+    "location": "Uttar Pradesh",
+    "rating": "3.6"
+  },
+  {
+    "name": "Delhi Fresh 734",
+    "crops": "Makka",
+    "rate": "2592",
+    "location": "Gujarat",
+    "rating": "3.7"
+  },
+  {
+    "name": "Reliance Agri 735",
+    "crops": "Jowar",
+    "rate": "2101",
+    "location": "Rajasthan",
+    "rating": "4.2"
+  },
+  {
+    "name": "Garg Trading 736",
+    "crops": "Dhan",
+    "rate": "2173",
+    "location": "Haryana",
+    "rating": "3.8"
+  },
+  {
+    "name": "Kisan Traders 737",
+    "crops": "Cotton",
+    "rate": "2485",
+    "location": "Gujarat",
+    "rating": "5.0"
+  },
+  {
+    "name": "Kisan Traders 738",
+    "crops": "Jowar",
+    "rate": "2079",
+    "location": "Gujarat",
+    "rating": "3.7"
+  },
+  {
+    "name": "Punjab Mandi 739",
+    "crops": "Jowar",
+    "rate": "2291",
+    "location": "Uttar Pradesh",
+    "rating": "3.6"
+  },
+  {
+    "name": "ITC Limited 740",
+    "crops": "Soyabean",
+    "rate": "1638",
+    "location": "Punjab",
+    "rating": "3.9"
+  },
+  {
+    "name": "ITC Limited 741",
+    "crops": "Cotton",
+    "rate": "2921",
+    "location": "Haryana",
+    "rating": "4.9"
+  },
+  {
+    "name": "AgriSafe 742",
+    "crops": "Bajra",
+    "rate": "2620",
+    "location": "Madhya Pradesh",
+    "rating": "4.1"
+  },
+  {
+    "name": "Delhi Fresh 743",
+    "crops": "Dhan",
+    "rate": "1678",
+    "location": "Punjab",
+    "rating": "4.7"
+  },
+  {
+    "name": "Delhi Fresh 744",
+    "crops": "Gehu",
+    "rate": "1879",
+    "location": "Madhya Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Punjab Mandi 745",
+    "crops": "Makka",
+    "rate": "2219",
+    "location": "Haryana",
+    "rating": "4.4"
+  },
+  {
+    "name": "Green Organic 746",
+    "crops": "Soyabean",
+    "rate": "1887",
+    "location": "Punjab",
+    "rating": "4.8"
+  },
+  {
+    "name": "Kisan Traders 747",
+    "crops": "Mustard",
+    "rate": "2925",
+    "location": "Delhi",
+    "rating": "4.5"
+  },
+  {
+    "name": "AgriSafe 748",
+    "crops": "Soyabean",
+    "rate": "1966",
+    "location": "Gujarat",
+    "rating": "4.9"
+  },
+  {
+    "name": "Delhi Fresh 749",
+    "crops": "Soyabean",
+    "rate": "2906",
+    "location": "Haryana",
+    "rating": "3.6"
+  },
+  {
+    "name": "Haryana Agro 750",
+    "crops": "Chana",
+    "rate": "2785",
+    "location": "Punjab",
+    "rating": "3.7"
+  },
+  {
+    "name": "ITC Limited 751",
+    "crops": "Dhan",
+    "rate": "1786",
+    "location": "Madhya Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Punjab Mandi 752",
+    "crops": "Bajra",
+    "rate": "2083",
+    "location": "Punjab",
+    "rating": "4.7"
+  },
+  {
+    "name": "Haryana Agro 753",
+    "crops": "Bajra",
+    "rate": "1868",
+    "location": "Punjab",
+    "rating": "4.3"
+  },
+  {
+    "name": "Punjab Mandi 754",
+    "crops": "Jowar",
+    "rate": "2392",
+    "location": "Punjab",
+    "rating": "4.1"
+  },
+  {
+    "name": "Garg Trading 755",
+    "crops": "Dhan",
+    "rate": "1662",
+    "location": "Rajasthan",
+    "rating": "4.7"
+  },
+  {
+    "name": "Garg Trading 756",
+    "crops": "Chana",
+    "rate": "1625",
+    "location": "Gujarat",
+    "rating": "4.0"
+  },
+  {
+    "name": "Green Organic 757",
+    "crops": "Soyabean",
+    "rate": "2756",
+    "location": "Uttar Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "Punjab Mandi 758",
+    "crops": "Sugarcane",
+    "rate": "1647",
+    "location": "Punjab",
+    "rating": "4.0"
+  },
+  {
+    "name": "Green Organic 759",
+    "crops": "Dhan",
+    "rate": "2692",
+    "location": "Uttar Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "Garg Trading 760",
+    "crops": "Mustard",
+    "rate": "1614",
+    "location": "Haryana",
+    "rating": "4.1"
+  },
+  {
+    "name": "Delhi Fresh 761",
+    "crops": "Soyabean",
+    "rate": "1985",
+    "location": "Haryana",
+    "rating": "4.7"
+  },
+  {
+    "name": "Punjab Mandi 762",
+    "crops": "Makka",
+    "rate": "2247",
+    "location": "Uttar Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Punjab Mandi 763",
+    "crops": "Sugarcane",
+    "rate": "2024",
+    "location": "Punjab",
+    "rating": "4.4"
+  },
+  {
+    "name": "Kisan Traders 764",
+    "crops": "Sugarcane",
+    "rate": "2699",
+    "location": "Delhi",
+    "rating": "4.0"
+  },
+  {
+    "name": "Reliance Agri 765",
+    "crops": "Bajra",
+    "rate": "2576",
+    "location": "Uttar Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "Punjab Mandi 766",
+    "crops": "Mustard",
+    "rate": "2399",
+    "location": "Madhya Pradesh",
+    "rating": "3.8"
+  },
+  {
+    "name": "Reliance Agri 767",
+    "crops": "Dhan",
+    "rate": "2652",
+    "location": "Delhi",
+    "rating": "3.7"
+  },
+  {
+    "name": "Green Organic 768",
+    "crops": "Bajra",
+    "rate": "2826",
+    "location": "Haryana",
+    "rating": "3.6"
+  },
+  {
+    "name": "Garg Trading 769",
+    "crops": "Soyabean",
+    "rate": "1720",
+    "location": "Punjab",
+    "rating": "4.5"
+  },
+  {
+    "name": "Reliance Agri 770",
+    "crops": "Gehu",
+    "rate": "2488",
+    "location": "Gujarat",
+    "rating": "3.6"
+  },
+  {
+    "name": "ITC Limited 771",
+    "crops": "Soyabean",
+    "rate": "2174",
+    "location": "Uttar Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Kisan Traders 772",
+    "crops": "Gehu",
+    "rate": "2393",
+    "location": "Uttar Pradesh",
+    "rating": "4.9"
+  },
+  {
+    "name": "Green Organic 773",
+    "crops": "Makka",
+    "rate": "2752",
+    "location": "Gujarat",
+    "rating": "3.5"
+  },
+  {
+    "name": "Haryana Agro 774",
+    "crops": "Mustard",
+    "rate": "1853",
+    "location": "Madhya Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Adani Wholesales 775",
+    "crops": "Mustard",
+    "rate": "1712",
+    "location": "Uttar Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "Punjab Mandi 776",
+    "crops": "Cotton",
+    "rate": "2659",
+    "location": "Delhi",
+    "rating": "4.7"
+  },
+  {
+    "name": "Delhi Fresh 777",
+    "crops": "Jowar",
+    "rate": "1730",
+    "location": "Punjab",
+    "rating": "3.7"
+  },
+  {
+    "name": "Adani Wholesales 778",
+    "crops": "Cotton",
+    "rate": "2686",
+    "location": "Delhi",
+    "rating": "4.7"
+  },
+  {
+    "name": "Reliance Agri 779",
+    "crops": "Soyabean",
+    "rate": "1888",
+    "location": "Gujarat",
+    "rating": "4.1"
+  },
+  {
+    "name": "ITC Limited 780",
+    "crops": "Cotton",
+    "rate": "2815",
+    "location": "Madhya Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "Delhi Fresh 781",
+    "crops": "Dhan",
+    "rate": "2064",
+    "location": "Haryana",
+    "rating": "3.8"
+  },
+  {
+    "name": "Garg Trading 782",
+    "crops": "Cotton",
+    "rate": "2236",
+    "location": "Rajasthan",
+    "rating": "3.8"
+  },
+  {
+    "name": "Green Organic 783",
+    "crops": "Dhan",
+    "rate": "2808",
+    "location": "Rajasthan",
+    "rating": "3.8"
+  },
+  {
+    "name": "Reliance Agri 784",
+    "crops": "Bajra",
+    "rate": "2546",
+    "location": "Punjab",
+    "rating": "4.5"
+  },
+  {
+    "name": "Kisan Traders 785",
+    "crops": "Jowar",
+    "rate": "2216",
+    "location": "Gujarat",
+    "rating": "4.4"
+  },
+  {
+    "name": "Reliance Agri 786",
+    "crops": "Chana",
+    "rate": "2727",
+    "location": "Gujarat",
+    "rating": "4.7"
+  },
+  {
+    "name": "Reliance Agri 787",
+    "crops": "Makka",
+    "rate": "2683",
+    "location": "Haryana",
+    "rating": "3.8"
+  },
+  {
+    "name": "Punjab Mandi 788",
+    "crops": "Soyabean",
+    "rate": "2133",
+    "location": "Punjab",
+    "rating": "4.5"
+  },
+  {
+    "name": "Punjab Mandi 789",
+    "crops": "Chana",
+    "rate": "2619",
+    "location": "Haryana",
+    "rating": "4.1"
+  },
+  {
+    "name": "Garg Trading 790",
+    "crops": "Dhan",
+    "rate": "2102",
+    "location": "Gujarat",
+    "rating": "4.3"
+  },
+  {
+    "name": "Green Organic 791",
+    "crops": "Makka",
+    "rate": "1632",
+    "location": "Madhya Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "Haryana Agro 792",
+    "crops": "Jowar",
+    "rate": "1513",
+    "location": "Haryana",
+    "rating": "4.4"
+  },
+  {
+    "name": "Punjab Mandi 793",
+    "crops": "Cotton",
+    "rate": "2478",
+    "location": "Madhya Pradesh",
+    "rating": "4.2"
+  },
+  {
+    "name": "Green Organic 794",
+    "crops": "Chana",
+    "rate": "1798",
+    "location": "Delhi",
+    "rating": "4.6"
+  },
+  {
+    "name": "ITC Limited 795",
+    "crops": "Gehu",
+    "rate": "1904",
+    "location": "Haryana",
+    "rating": "3.7"
+  },
+  {
+    "name": "Reliance Agri 796",
+    "crops": "Sugarcane",
+    "rate": "2180",
+    "location": "Gujarat",
+    "rating": "4.9"
+  },
+  {
+    "name": "Delhi Fresh 797",
+    "crops": "Bajra",
+    "rate": "1893",
+    "location": "Uttar Pradesh",
+    "rating": "4.2"
+  },
+  {
+    "name": "Punjab Mandi 798",
+    "crops": "Chana",
+    "rate": "1997",
+    "location": "Haryana",
+    "rating": "4.0"
+  },
+  {
+    "name": "AgriSafe 799",
+    "crops": "Dhan",
+    "rate": "1784",
+    "location": "Haryana",
+    "rating": "3.5"
+  },
+  {
+    "name": "Haryana Agro 800",
+    "crops": "Jowar",
+    "rate": "1692",
+    "location": "Haryana",
+    "rating": "3.6"
+  },
+  {
+    "name": "Green Organic 801",
+    "crops": "Mustard",
+    "rate": "1967",
+    "location": "Rajasthan",
+    "rating": "4.6"
+  },
+  {
+    "name": "Adani Wholesales 802",
+    "crops": "Gehu",
+    "rate": "2195",
+    "location": "Uttar Pradesh",
+    "rating": "4.2"
+  },
+  {
+    "name": "Green Organic 803",
+    "crops": "Chana",
+    "rate": "2794",
+    "location": "Rajasthan",
+    "rating": "4.3"
+  },
+  {
+    "name": "Garg Trading 804",
+    "crops": "Cotton",
+    "rate": "2935",
+    "location": "Delhi",
+    "rating": "4.6"
+  },
+  {
+    "name": "Adani Wholesales 805",
+    "crops": "Dhan",
+    "rate": "2523",
+    "location": "Haryana",
+    "rating": "4.6"
+  },
+  {
+    "name": "Haryana Agro 806",
+    "crops": "Jowar",
+    "rate": "1558",
+    "location": "Madhya Pradesh",
+    "rating": "3.7"
+  },
+  {
+    "name": "Green Organic 807",
+    "crops": "Dhan",
+    "rate": "2352",
+    "location": "Punjab",
+    "rating": "4.7"
+  },
+  {
+    "name": "Reliance Agri 808",
+    "crops": "Dhan",
+    "rate": "1779",
+    "location": "Delhi",
+    "rating": "4.1"
+  },
+  {
+    "name": "Reliance Agri 809",
+    "crops": "Soyabean",
+    "rate": "2193",
+    "location": "Uttar Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Green Organic 810",
+    "crops": "Cotton",
+    "rate": "2457",
+    "location": "Delhi",
+    "rating": "4.2"
+  },
+  {
+    "name": "Green Organic 811",
+    "crops": "Bajra",
+    "rate": "2642",
+    "location": "Haryana",
+    "rating": "3.7"
+  },
+  {
+    "name": "Adani Wholesales 812",
+    "crops": "Cotton",
+    "rate": "2559",
+    "location": "Punjab",
+    "rating": "3.9"
+  },
+  {
+    "name": "Reliance Agri 813",
+    "crops": "Cotton",
+    "rate": "2766",
+    "location": "Haryana",
+    "rating": "3.8"
+  },
+  {
+    "name": "Adani Wholesales 814",
+    "crops": "Cotton",
+    "rate": "2636",
+    "location": "Delhi",
+    "rating": "4.1"
+  },
+  {
+    "name": "ITC Limited 815",
+    "crops": "Mustard",
+    "rate": "1928",
+    "location": "Gujarat",
+    "rating": "3.8"
+  },
+  {
+    "name": "Garg Trading 816",
+    "crops": "Dhan",
+    "rate": "2735",
+    "location": "Delhi",
+    "rating": "3.7"
+  },
+  {
+    "name": "AgriSafe 817",
+    "crops": "Gehu",
+    "rate": "2861",
+    "location": "Punjab",
+    "rating": "4.7"
+  },
+  {
+    "name": "Kisan Traders 818",
+    "crops": "Cotton",
+    "rate": "2163",
+    "location": "Rajasthan",
+    "rating": "4.3"
+  },
+  {
+    "name": "Delhi Fresh 819",
+    "crops": "Mustard",
+    "rate": "2842",
+    "location": "Madhya Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "Garg Trading 820",
+    "crops": "Soyabean",
+    "rate": "2251",
+    "location": "Gujarat",
+    "rating": "4.0"
+  },
+  {
+    "name": "Reliance Agri 821",
+    "crops": "Jowar",
+    "rate": "2341",
+    "location": "Delhi",
+    "rating": "4.7"
+  },
+  {
+    "name": "AgriSafe 822",
+    "crops": "Gehu",
+    "rate": "2282",
+    "location": "Haryana",
+    "rating": "3.6"
+  },
+  {
+    "name": "Adani Wholesales 823",
+    "crops": "Bajra",
+    "rate": "1516",
+    "location": "Gujarat",
+    "rating": "4.7"
+  },
+  {
+    "name": "Green Organic 824",
+    "crops": "Bajra",
+    "rate": "2180",
+    "location": "Uttar Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "ITC Limited 825",
+    "crops": "Cotton",
+    "rate": "2766",
+    "location": "Punjab",
+    "rating": "4.9"
+  },
+  {
+    "name": "Delhi Fresh 826",
+    "crops": "Mustard",
+    "rate": "2247",
+    "location": "Haryana",
+    "rating": "4.9"
+  },
+  {
+    "name": "Reliance Agri 827",
+    "crops": "Bajra",
+    "rate": "2204",
+    "location": "Delhi",
+    "rating": "4.2"
+  },
+  {
+    "name": "Punjab Mandi 828",
+    "crops": "Makka",
+    "rate": "1810",
+    "location": "Delhi",
+    "rating": "5.0"
+  },
+  {
+    "name": "Green Organic 829",
+    "crops": "Gehu",
+    "rate": "2924",
+    "location": "Madhya Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "ITC Limited 830",
+    "crops": "Sugarcane",
+    "rate": "2893",
+    "location": "Uttar Pradesh",
+    "rating": "4.2"
+  },
+  {
+    "name": "Kisan Traders 831",
+    "crops": "Bajra",
+    "rate": "2084",
+    "location": "Punjab",
+    "rating": "4.7"
+  },
+  {
+    "name": "Delhi Fresh 832",
+    "crops": "Mustard",
+    "rate": "1862",
+    "location": "Gujarat",
+    "rating": "4.5"
+  },
+  {
+    "name": "Delhi Fresh 833",
+    "crops": "Dhan",
+    "rate": "2249",
+    "location": "Delhi",
+    "rating": "3.6"
+  },
+  {
+    "name": "Kisan Traders 834",
+    "crops": "Dhan",
+    "rate": "2517",
+    "location": "Uttar Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "Haryana Agro 835",
+    "crops": "Jowar",
+    "rate": "1986",
+    "location": "Uttar Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "Delhi Fresh 836",
+    "crops": "Soyabean",
+    "rate": "2897",
+    "location": "Rajasthan",
+    "rating": "4.6"
+  },
+  {
+    "name": "Haryana Agro 837",
+    "crops": "Sugarcane",
+    "rate": "2155",
+    "location": "Gujarat",
+    "rating": "4.0"
+  },
+  {
+    "name": "Kisan Traders 838",
+    "crops": "Sugarcane",
+    "rate": "2484",
+    "location": "Rajasthan",
+    "rating": "4.4"
+  },
+  {
+    "name": "Green Organic 839",
+    "crops": "Dhan",
+    "rate": "2264",
+    "location": "Gujarat",
+    "rating": "4.5"
+  },
+  {
+    "name": "Reliance Agri 840",
+    "crops": "Sugarcane",
+    "rate": "2107",
+    "location": "Rajasthan",
+    "rating": "4.5"
+  },
+  {
+    "name": "Punjab Mandi 841",
+    "crops": "Dhan",
+    "rate": "1758",
+    "location": "Delhi",
+    "rating": "4.4"
+  },
+  {
+    "name": "Kisan Traders 842",
+    "crops": "Jowar",
+    "rate": "2732",
+    "location": "Gujarat",
+    "rating": "3.6"
+  },
+  {
+    "name": "Reliance Agri 843",
+    "crops": "Dhan",
+    "rate": "2921",
+    "location": "Punjab",
+    "rating": "4.5"
+  },
+  {
+    "name": "Kisan Traders 844",
+    "crops": "Cotton",
+    "rate": "2158",
+    "location": "Punjab",
+    "rating": "3.8"
+  },
+  {
+    "name": "Punjab Mandi 845",
+    "crops": "Soyabean",
+    "rate": "1711",
+    "location": "Uttar Pradesh",
+    "rating": "4.9"
+  },
+  {
+    "name": "Adani Wholesales 846",
+    "crops": "Bajra",
+    "rate": "1987",
+    "location": "Gujarat",
+    "rating": "4.6"
+  },
+  {
+    "name": "Haryana Agro 847",
+    "crops": "Cotton",
+    "rate": "1587",
+    "location": "Madhya Pradesh",
+    "rating": "4.6"
+  },
+  {
+    "name": "ITC Limited 848",
+    "crops": "Makka",
+    "rate": "1995",
+    "location": "Delhi",
+    "rating": "4.9"
+  },
+  {
+    "name": "Delhi Fresh 849",
+    "crops": "Sugarcane",
+    "rate": "2621",
+    "location": "Uttar Pradesh",
+    "rating": "4.8"
+  },
+  {
+    "name": "ITC Limited 850",
+    "crops": "Soyabean",
+    "rate": "2517",
+    "location": "Gujarat",
+    "rating": "3.7"
+  },
+  {
+    "name": "ITC Limited 851",
+    "crops": "Cotton",
+    "rate": "1592",
+    "location": "Rajasthan",
+    "rating": "3.6"
+  },
+  {
+    "name": "Adani Wholesales 852",
+    "crops": "Mustard",
+    "rate": "1594",
+    "location": "Punjab",
+    "rating": "3.6"
+  },
+  {
+    "name": "Kisan Traders 853",
+    "crops": "Sugarcane",
+    "rate": "1521",
+    "location": "Rajasthan",
+    "rating": "4.0"
+  },
+  {
+    "name": "Green Organic 854",
+    "crops": "Jowar",
+    "rate": "2955",
+    "location": "Haryana",
+    "rating": "3.8"
+  },
+  {
+    "name": "Garg Trading 855",
+    "crops": "Dhan",
+    "rate": "2730",
+    "location": "Punjab",
+    "rating": "4.5"
+  },
+  {
+    "name": "Kisan Traders 856",
+    "crops": "Makka",
+    "rate": "2678",
+    "location": "Uttar Pradesh",
+    "rating": "3.6"
+  },
+  {
+    "name": "Adani Wholesales 857",
+    "crops": "Gehu",
+    "rate": "2645",
+    "location": "Madhya Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Punjab Mandi 858",
+    "crops": "Mustard",
+    "rate": "2927",
+    "location": "Madhya Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "AgriSafe 859",
+    "crops": "Gehu",
+    "rate": "2438",
+    "location": "Punjab",
+    "rating": "3.8"
+  },
+  {
+    "name": "Adani Wholesales 860",
+    "crops": "Dhan",
+    "rate": "2152",
+    "location": "Gujarat",
+    "rating": "3.7"
+  },
+  {
+    "name": "Delhi Fresh 861",
+    "crops": "Bajra",
+    "rate": "1847",
+    "location": "Rajasthan",
+    "rating": "3.8"
+  },
+  {
+    "name": "Adani Wholesales 862",
+    "crops": "Sugarcane",
+    "rate": "2852",
+    "location": "Rajasthan",
+    "rating": "4.3"
+  },
+  {
+    "name": "ITC Limited 863",
+    "crops": "Bajra",
+    "rate": "2805",
+    "location": "Rajasthan",
+    "rating": "4.5"
+  },
+  {
+    "name": "Reliance Agri 864",
+    "crops": "Gehu",
+    "rate": "2000",
+    "location": "Madhya Pradesh",
+    "rating": "3.8"
+  },
+  {
+    "name": "Delhi Fresh 865",
+    "crops": "Makka",
+    "rate": "1738",
+    "location": "Rajasthan",
+    "rating": "3.6"
+  },
+  {
+    "name": "Kisan Traders 866",
+    "crops": "Gehu",
+    "rate": "1740",
+    "location": "Haryana",
+    "rating": "4.0"
+  },
+  {
+    "name": "AgriSafe 867",
+    "crops": "Chana",
+    "rate": "2351",
+    "location": "Gujarat",
+    "rating": "4.8"
+  },
+  {
+    "name": "Reliance Agri 868",
+    "crops": "Chana",
+    "rate": "2661",
+    "location": "Haryana",
+    "rating": "4.0"
+  },
+  {
+    "name": "ITC Limited 869",
+    "crops": "Sugarcane",
+    "rate": "2765",
+    "location": "Uttar Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "Haryana Agro 870",
+    "crops": "Dhan",
+    "rate": "1618",
+    "location": "Gujarat",
+    "rating": "4.5"
+  },
+  {
+    "name": "AgriSafe 871",
+    "crops": "Gehu",
+    "rate": "2050",
+    "location": "Haryana",
+    "rating": "4.3"
+  },
+  {
+    "name": "Haryana Agro 872",
+    "crops": "Makka",
+    "rate": "1695",
+    "location": "Rajasthan",
+    "rating": "4.1"
+  },
+  {
+    "name": "Delhi Fresh 873",
+    "crops": "Cotton",
+    "rate": "1804",
+    "location": "Haryana",
+    "rating": "4.0"
+  },
+  {
+    "name": "AgriSafe 874",
+    "crops": "Sugarcane",
+    "rate": "2575",
+    "location": "Punjab",
+    "rating": "4.3"
+  },
+  {
+    "name": "Adani Wholesales 875",
+    "crops": "Soyabean",
+    "rate": "1933",
+    "location": "Uttar Pradesh",
+    "rating": "3.6"
+  },
+  {
+    "name": "Garg Trading 876",
+    "crops": "Mustard",
+    "rate": "2504",
+    "location": "Madhya Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "ITC Limited 877",
+    "crops": "Soyabean",
+    "rate": "1933",
+    "location": "Gujarat",
+    "rating": "4.8"
+  },
+  {
+    "name": "ITC Limited 878",
+    "crops": "Gehu",
+    "rate": "1940",
+    "location": "Gujarat",
+    "rating": "3.7"
+  },
+  {
+    "name": "Reliance Agri 879",
+    "crops": "Jowar",
+    "rate": "2613",
+    "location": "Gujarat",
+    "rating": "3.6"
+  },
+  {
+    "name": "ITC Limited 880",
+    "crops": "Makka",
+    "rate": "2133",
+    "location": "Uttar Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "Haryana Agro 881",
+    "crops": "Chana",
+    "rate": "2042",
+    "location": "Gujarat",
+    "rating": "3.7"
+  },
+  {
+    "name": "Haryana Agro 882",
+    "crops": "Gehu",
+    "rate": "1501",
+    "location": "Delhi",
+    "rating": "4.8"
+  },
+  {
+    "name": "AgriSafe 883",
+    "crops": "Jowar",
+    "rate": "2765",
+    "location": "Punjab",
+    "rating": "4.1"
+  },
+  {
+    "name": "Delhi Fresh 884",
+    "crops": "Sugarcane",
+    "rate": "2941",
+    "location": "Haryana",
+    "rating": "3.7"
+  },
+  {
+    "name": "Green Organic 885",
+    "crops": "Dhan",
+    "rate": "2241",
+    "location": "Rajasthan",
+    "rating": "4.8"
+  },
+  {
+    "name": "ITC Limited 886",
+    "crops": "Makka",
+    "rate": "2896",
+    "location": "Delhi",
+    "rating": "4.3"
+  },
+  {
+    "name": "Kisan Traders 887",
+    "crops": "Soyabean",
+    "rate": "2269",
+    "location": "Punjab",
+    "rating": "3.8"
+  },
+  {
+    "name": "ITC Limited 888",
+    "crops": "Jowar",
+    "rate": "1886",
+    "location": "Gujarat",
+    "rating": "4.5"
+  },
+  {
+    "name": "Green Organic 889",
+    "crops": "Makka",
+    "rate": "2620",
+    "location": "Rajasthan",
+    "rating": "4.1"
+  },
+  {
+    "name": "Green Organic 890",
+    "crops": "Soyabean",
+    "rate": "2896",
+    "location": "Uttar Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "AgriSafe 891",
+    "crops": "Mustard",
+    "rate": "1853",
+    "location": "Uttar Pradesh",
+    "rating": "4.1"
+  },
+  {
+    "name": "ITC Limited 892",
+    "crops": "Makka",
+    "rate": "2417",
+    "location": "Punjab",
+    "rating": "3.8"
+  },
+  {
+    "name": "Kisan Traders 893",
+    "crops": "Chana",
+    "rate": "1683",
+    "location": "Punjab",
+    "rating": "3.8"
+  },
+  {
+    "name": "Delhi Fresh 894",
+    "crops": "Mustard",
+    "rate": "2182",
+    "location": "Delhi",
+    "rating": "4.4"
+  },
+  {
+    "name": "Punjab Mandi 895",
+    "crops": "Makka",
+    "rate": "1644",
+    "location": "Gujarat",
+    "rating": "4.8"
+  },
+  {
+    "name": "Delhi Fresh 896",
+    "crops": "Chana",
+    "rate": "2719",
+    "location": "Uttar Pradesh",
+    "rating": "4.0"
+  },
+  {
+    "name": "Delhi Fresh 897",
+    "crops": "Jowar",
+    "rate": "2784",
+    "location": "Madhya Pradesh",
+    "rating": "4.2"
+  },
+  {
+    "name": "Garg Trading 898",
+    "crops": "Jowar",
+    "rate": "1658",
+    "location": "Punjab",
+    "rating": "4.7"
+  },
+  {
+    "name": "Kisan Traders 899",
+    "crops": "Chana",
+    "rate": "1953",
+    "location": "Punjab",
+    "rating": "4.3"
+  },
+  {
+    "name": "Punjab Mandi 900",
+    "crops": "Gehu",
+    "rate": "2736",
+    "location": "Punjab",
+    "rating": "4.2"
+  },
+  {
+    "name": "Garg Trading 901",
+    "crops": "Makka",
+    "rate": "1926",
+    "location": "Gujarat",
+    "rating": "4.8"
+  },
+  {
+    "name": "Delhi Fresh 902",
+    "crops": "Bajra",
+    "rate": "2899",
+    "location": "Rajasthan",
+    "rating": "4.8"
+  },
+  {
+    "name": "Kisan Traders 903",
+    "crops": "Chana",
+    "rate": "2520",
+    "location": "Gujarat",
+    "rating": "4.4"
+  },
+  {
+    "name": "Delhi Fresh 904",
+    "crops": "Mustard",
+    "rate": "1590",
+    "location": "Rajasthan",
+    "rating": "4.2"
+  },
+  {
+    "name": "Garg Trading 905",
+    "crops": "Soyabean",
+    "rate": "1998",
+    "location": "Gujarat",
+    "rating": "3.7"
+  },
+  {
+    "name": "Delhi Fresh 906",
+    "crops": "Jowar",
+    "rate": "2134",
+    "location": "Delhi",
+    "rating": "4.8"
+  },
+  {
+    "name": "Reliance Agri 907",
+    "crops": "Sugarcane",
+    "rate": "2209",
+    "location": "Uttar Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "AgriSafe 908",
+    "crops": "Soyabean",
+    "rate": "1652",
+    "location": "Uttar Pradesh",
+    "rating": "4.9"
+  },
+  {
+    "name": "Green Organic 909",
+    "crops": "Soyabean",
+    "rate": "2136",
+    "location": "Delhi",
+    "rating": "3.6"
+  },
+  {
+    "name": "Delhi Fresh 910",
+    "crops": "Cotton",
+    "rate": "2155",
+    "location": "Gujarat",
+    "rating": "3.5"
+  },
+  {
+    "name": "Punjab Mandi 911",
+    "crops": "Dhan",
+    "rate": "2514",
+    "location": "Rajasthan",
+    "rating": "3.9"
+  },
+  {
+    "name": "Haryana Agro 912",
+    "crops": "Chana",
+    "rate": "2845",
+    "location": "Haryana",
+    "rating": "3.5"
+  },
+  {
+    "name": "Green Organic 913",
+    "crops": "Dhan",
+    "rate": "2547",
+    "location": "Delhi",
+    "rating": "4.2"
+  },
+  {
+    "name": "Punjab Mandi 914",
+    "crops": "Makka",
+    "rate": "2261",
+    "location": "Haryana",
+    "rating": "4.0"
+  },
+  {
+    "name": "Kisan Traders 915",
+    "crops": "Makka",
+    "rate": "2430",
+    "location": "Uttar Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "ITC Limited 916",
+    "crops": "Gehu",
+    "rate": "2478",
+    "location": "Delhi",
+    "rating": "5.0"
+  },
+  {
+    "name": "Haryana Agro 917",
+    "crops": "Makka",
+    "rate": "1696",
+    "location": "Madhya Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "Reliance Agri 918",
+    "crops": "Dhan",
+    "rate": "2066",
+    "location": "Uttar Pradesh",
+    "rating": "4.3"
+  },
+  {
+    "name": "AgriSafe 919",
+    "crops": "Chana",
+    "rate": "2010",
+    "location": "Haryana",
+    "rating": "4.3"
+  },
+  {
+    "name": "Reliance Agri 920",
+    "crops": "Chana",
+    "rate": "1984",
+    "location": "Madhya Pradesh",
+    "rating": "4.1"
+  },
+  {
+    "name": "Adani Wholesales 921",
+    "crops": "Soyabean",
+    "rate": "2588",
+    "location": "Uttar Pradesh",
+    "rating": "4.5"
+  },
+  {
+    "name": "Garg Trading 922",
+    "crops": "Dhan",
+    "rate": "2214",
+    "location": "Gujarat",
+    "rating": "4.4"
+  },
+  {
+    "name": "Delhi Fresh 923",
+    "crops": "Makka",
+    "rate": "2290",
+    "location": "Rajasthan",
+    "rating": "3.6"
+  },
+  {
+    "name": "AgriSafe 924",
+    "crops": "Jowar",
+    "rate": "2163",
+    "location": "Rajasthan",
+    "rating": "4.7"
+  },
+  {
+    "name": "ITC Limited 925",
+    "crops": "Makka",
+    "rate": "2175",
+    "location": "Haryana",
+    "rating": "4.5"
+  },
+  {
+    "name": "Green Organic 926",
+    "crops": "Cotton",
+    "rate": "2886",
+    "location": "Haryana",
+    "rating": "4.2"
+  },
+  {
+    "name": "Kisan Traders 927",
+    "crops": "Sugarcane",
+    "rate": "2554",
+    "location": "Gujarat",
+    "rating": "4.7"
+  },
+  {
+    "name": "AgriSafe 928",
+    "crops": "Cotton",
+    "rate": "2540",
+    "location": "Haryana",
+    "rating": "3.9"
+  },
+  {
+    "name": "Garg Trading 929",
+    "crops": "Cotton",
+    "rate": "2369",
+    "location": "Gujarat",
+    "rating": "3.7"
+  },
+  {
+    "name": "Delhi Fresh 930",
+    "crops": "Dhan",
+    "rate": "2799",
+    "location": "Rajasthan",
+    "rating": "3.8"
+  },
+  {
+    "name": "Adani Wholesales 931",
+    "crops": "Mustard",
+    "rate": "2614",
+    "location": "Rajasthan",
+    "rating": "3.9"
+  },
+  {
+    "name": "Garg Trading 932",
+    "crops": "Chana",
+    "rate": "2460",
+    "location": "Uttar Pradesh",
+    "rating": "3.6"
+  },
+  {
+    "name": "Delhi Fresh 933",
+    "crops": "Gehu",
+    "rate": "2752",
+    "location": "Haryana",
+    "rating": "4.0"
+  },
+  {
+    "name": "Punjab Mandi 934",
+    "crops": "Jowar",
+    "rate": "2186",
+    "location": "Delhi",
+    "rating": "4.7"
+  },
+  {
+    "name": "AgriSafe 935",
+    "crops": "Cotton",
+    "rate": "2519",
+    "location": "Delhi",
+    "rating": "3.9"
+  },
+  {
+    "name": "Kisan Traders 936",
+    "crops": "Dhan",
+    "rate": "2571",
+    "location": "Haryana",
+    "rating": "4.9"
+  },
+  {
+    "name": "Kisan Traders 937",
+    "crops": "Jowar",
+    "rate": "2829",
+    "location": "Rajasthan",
+    "rating": "4.5"
+  },
+  {
+    "name": "Garg Trading 938",
+    "crops": "Bajra",
+    "rate": "2199",
+    "location": "Uttar Pradesh",
+    "rating": "4.6"
+  },
+  {
+    "name": "Reliance Agri 939",
+    "crops": "Dhan",
+    "rate": "2551",
+    "location": "Uttar Pradesh",
+    "rating": "4.7"
+  },
+  {
+    "name": "ITC Limited 940",
+    "crops": "Gehu",
+    "rate": "2479",
+    "location": "Delhi",
+    "rating": "3.5"
+  },
+  {
+    "name": "Reliance Agri 941",
+    "crops": "Bajra",
+    "rate": "2345",
+    "location": "Rajasthan",
+    "rating": "3.5"
+  },
+  {
+    "name": "ITC Limited 942",
+    "crops": "Jowar",
+    "rate": "1872",
+    "location": "Uttar Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "Garg Trading 943",
+    "crops": "Jowar",
+    "rate": "2548",
+    "location": "Rajasthan",
+    "rating": "4.2"
+  },
+  {
+    "name": "Haryana Agro 944",
+    "crops": "Dhan",
+    "rate": "2081",
+    "location": "Gujarat",
+    "rating": "4.1"
+  },
+  {
+    "name": "Haryana Agro 945",
+    "crops": "Soyabean",
+    "rate": "1512",
+    "location": "Gujarat",
+    "rating": "4.8"
+  },
+  {
+    "name": "Haryana Agro 946",
+    "crops": "Sugarcane",
+    "rate": "2487",
+    "location": "Rajasthan",
+    "rating": "3.9"
+  },
+  {
+    "name": "Punjab Mandi 947",
+    "crops": "Cotton",
+    "rate": "1501",
+    "location": "Madhya Pradesh",
+    "rating": "4.1"
+  },
+  {
+    "name": "Kisan Traders 948",
+    "crops": "Makka",
+    "rate": "2415",
+    "location": "Punjab",
+    "rating": "4.6"
+  },
+  {
+    "name": "Reliance Agri 949",
+    "crops": "Cotton",
+    "rate": "1702",
+    "location": "Haryana",
+    "rating": "4.9"
+  },
+  {
+    "name": "Green Organic 950",
+    "crops": "Chana",
+    "rate": "2898",
+    "location": "Haryana",
+    "rating": "4.9"
+  },
+  {
+    "name": "Green Organic 951",
+    "crops": "Makka",
+    "rate": "2288",
+    "location": "Punjab",
+    "rating": "5.0"
+  },
+  {
+    "name": "Green Organic 952",
+    "crops": "Dhan",
+    "rate": "2259",
+    "location": "Madhya Pradesh",
+    "rating": "3.7"
+  },
+  {
+    "name": "Kisan Traders 953",
+    "crops": "Soyabean",
+    "rate": "2290",
+    "location": "Gujarat",
+    "rating": "4.3"
+  },
+  {
+    "name": "Delhi Fresh 954",
+    "crops": "Dhan",
+    "rate": "2131",
+    "location": "Rajasthan",
+    "rating": "3.7"
+  },
+  {
+    "name": "Delhi Fresh 955",
+    "crops": "Makka",
+    "rate": "1664",
+    "location": "Gujarat",
+    "rating": "4.4"
+  },
+  {
+    "name": "Garg Trading 956",
+    "crops": "Jowar",
+    "rate": "2301",
+    "location": "Uttar Pradesh",
+    "rating": "4.2"
+  },
+  {
+    "name": "Garg Trading 957",
+    "crops": "Bajra",
+    "rate": "2854",
+    "location": "Delhi",
+    "rating": "3.7"
+  },
+  {
+    "name": "Green Organic 958",
+    "crops": "Bajra",
+    "rate": "2543",
+    "location": "Rajasthan",
+    "rating": "3.5"
+  },
+  {
+    "name": "ITC Limited 959",
+    "crops": "Sugarcane",
+    "rate": "2616",
+    "location": "Gujarat",
+    "rating": "4.1"
+  },
+  {
+    "name": "ITC Limited 960",
+    "crops": "Makka",
+    "rate": "1592",
+    "location": "Uttar Pradesh",
+    "rating": "4.7"
+  },
+  {
+    "name": "ITC Limited 961",
+    "crops": "Bajra",
+    "rate": "2559",
+    "location": "Uttar Pradesh",
+    "rating": "3.6"
+  },
+  {
+    "name": "Reliance Agri 962",
+    "crops": "Sugarcane",
+    "rate": "2583",
+    "location": "Haryana",
+    "rating": "3.8"
+  },
+  {
+    "name": "Delhi Fresh 963",
+    "crops": "Dhan",
+    "rate": "1957",
+    "location": "Uttar Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "Kisan Traders 964",
+    "crops": "Cotton",
+    "rate": "2744",
+    "location": "Uttar Pradesh",
+    "rating": "5.0"
+  },
+  {
+    "name": "Adani Wholesales 965",
+    "crops": "Sugarcane",
+    "rate": "2170",
+    "location": "Punjab",
+    "rating": "4.4"
+  },
+  {
+    "name": "ITC Limited 966",
+    "crops": "Gehu",
+    "rate": "2943",
+    "location": "Haryana",
+    "rating": "5.0"
+  },
+  {
+    "name": "ITC Limited 967",
+    "crops": "Chana",
+    "rate": "2895",
+    "location": "Uttar Pradesh",
+    "rating": "3.8"
+  },
+  {
+    "name": "Haryana Agro 968",
+    "crops": "Chana",
+    "rate": "2473",
+    "location": "Punjab",
+    "rating": "4.2"
+  },
+  {
+    "name": "Delhi Fresh 969",
+    "crops": "Sugarcane",
+    "rate": "2490",
+    "location": "Madhya Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "Green Organic 970",
+    "crops": "Jowar",
+    "rate": "1768",
+    "location": "Punjab",
+    "rating": "4.3"
+  },
+  {
+    "name": "Kisan Traders 971",
+    "crops": "Cotton",
+    "rate": "2324",
+    "location": "Rajasthan",
+    "rating": "4.7"
+  },
+  {
+    "name": "Haryana Agro 972",
+    "crops": "Chana",
+    "rate": "2882",
+    "location": "Uttar Pradesh",
+    "rating": "4.7"
+  },
+  {
+    "name": "Green Organic 973",
+    "crops": "Chana",
+    "rate": "2167",
+    "location": "Rajasthan",
+    "rating": "4.6"
+  },
+  {
+    "name": "Delhi Fresh 974",
+    "crops": "Chana",
+    "rate": "2898",
+    "location": "Punjab",
+    "rating": "4.4"
+  },
+  {
+    "name": "Adani Wholesales 975",
+    "crops": "Gehu",
+    "rate": "2085",
+    "location": "Punjab",
+    "rating": "4.9"
+  },
+  {
+    "name": "Haryana Agro 976",
+    "crops": "Cotton",
+    "rate": "2533",
+    "location": "Haryana",
+    "rating": "4.2"
+  },
+  {
+    "name": "Kisan Traders 977",
+    "crops": "Soyabean",
+    "rate": "2611",
+    "location": "Punjab",
+    "rating": "4.5"
+  },
+  {
+    "name": "Punjab Mandi 978",
+    "crops": "Soyabean",
+    "rate": "2830",
+    "location": "Punjab",
+    "rating": "3.7"
+  },
+  {
+    "name": "Adani Wholesales 979",
+    "crops": "Soyabean",
+    "rate": "2649",
+    "location": "Punjab",
+    "rating": "4.8"
+  },
+  {
+    "name": "Punjab Mandi 980",
+    "crops": "Cotton",
+    "rate": "1576",
+    "location": "Madhya Pradesh",
+    "rating": "3.9"
+  },
+  {
+    "name": "Delhi Fresh 981",
+    "crops": "Chana",
+    "rate": "2815",
+    "location": "Gujarat",
+    "rating": "4.9"
+  },
+  {
+    "name": "Punjab Mandi 982",
+    "crops": "Dhan",
+    "rate": "1978",
+    "location": "Delhi",
+    "rating": "3.5"
+  },
+  {
+    "name": "ITC Limited 983",
+    "crops": "Gehu",
+    "rate": "1759",
+    "location": "Haryana",
+    "rating": "4.4"
+  },
+  {
+    "name": "Garg Trading 984",
+    "crops": "Sugarcane",
+    "rate": "2008",
+    "location": "Delhi",
+    "rating": "4.4"
+  },
+  {
+    "name": "Adani Wholesales 985",
+    "crops": "Cotton",
+    "rate": "2748",
+    "location": "Delhi",
+    "rating": "3.6"
+  },
+  {
+    "name": "ITC Limited 986",
+    "crops": "Soyabean",
+    "rate": "2237",
+    "location": "Punjab",
+    "rating": "4.5"
+  },
+  {
+    "name": "Reliance Agri 987",
+    "crops": "Gehu",
+    "rate": "2419",
+    "location": "Punjab",
+    "rating": "3.7"
+  },
+  {
+    "name": "Haryana Agro 988",
+    "crops": "Makka",
+    "rate": "1863",
+    "location": "Delhi",
+    "rating": "4.9"
+  },
+  {
+    "name": "Kisan Traders 989",
+    "crops": "Jowar",
+    "rate": "2484",
+    "location": "Rajasthan",
+    "rating": "4.6"
+  },
+  {
+    "name": "Garg Trading 990",
+    "crops": "Sugarcane",
+    "rate": "1502",
+    "location": "Uttar Pradesh",
+    "rating": "4.4"
+  },
+  {
+    "name": "ITC Limited 991",
+    "crops": "Soyabean",
+    "rate": "2000",
+    "location": "Madhya Pradesh",
+    "rating": "4.2"
+  },
+  {
+    "name": "AgriSafe 992",
+    "crops": "Bajra",
+    "rate": "1663",
+    "location": "Uttar Pradesh",
+    "rating": "4.8"
+  },
+  {
+    "name": "Reliance Agri 993",
+    "crops": "Soyabean",
+    "rate": "2219",
+    "location": "Punjab",
+    "rating": "3.7"
+  },
+  {
+    "name": "AgriSafe 994",
+    "crops": "Mustard",
+    "rate": "2960",
+    "location": "Rajasthan",
+    "rating": "4.7"
+  },
+  {
+    "name": "AgriSafe 995",
+    "crops": "Dhan",
+    "rate": "2840",
+    "location": "Delhi",
+    "rating": "5.0"
+  },
+  {
+    "name": "AgriSafe 996",
+    "crops": "Soyabean",
+    "rate": "2961",
+    "location": "Gujarat",
+    "rating": "4.4"
+  },
+  {
+    "name": "Adani Wholesales 997",
+    "crops": "Mustard",
+    "rate": "1763",
+    "location": "Gujarat",
+    "rating": "4.8"
+  },
+  {
+    "name": "Adani Wholesales 998",
+    "crops": "Soyabean",
+    "rate": "2929",
+    "location": "Madhya Pradesh",
+    "rating": "3.6"
+  },
+  {
+    "name": "Punjab Mandi 999",
+    "crops": "Dhan",
+    "rate": "2742",
+    "location": "Delhi",
+    "rating": "4.0"
+  }
+]
