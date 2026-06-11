@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import BackgroundLayer from '../components/BackgroundLayer';
 import '../assets/global.css';
 import '../assets/dynamic-features.css';
 
@@ -9,8 +8,7 @@ const LandingPage = () => {
 
   return (
     <>
-      <BackgroundLayer />
-      
+            
       {/* Premium Navbar */}
       <nav className="navbar" style={{ position: 'fixed', top: 0, width: '100%', zIndex: 1000, background: 'rgba(27, 67, 50, 0.8)', backdropFilter: 'blur(15px)' }}>
         <div className="container d-flex justify-content-between align-items-center">

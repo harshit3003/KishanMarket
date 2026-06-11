@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import BackgroundLayer from '../components/BackgroundLayer';
 import '../assets/global.css';
 import '../assets/dynamic-features.css';
 import '../assets/myorder-style.css';
@@ -40,8 +39,7 @@ const MyOrder = () => {
 
   return (
     <>
-      <BackgroundLayer />
-
+      
       <nav className="navbar navbar-dark shadow-sm mb-4" style={{ zIndex: 1000, position: 'relative' }}>
         <div className="container d-flex justify-content-between align-items-center">
           <a className="navbar-brand fw-bold" href="#"><i className="fas fa-seedling me-2"></i>Kishan<span style={{ color: '#f59e0b' }}>Market</span></a>

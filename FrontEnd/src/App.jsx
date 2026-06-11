@@ -10,6 +10,7 @@ import SellerPage from './pages/SellerPage';
 import BuyyersProfile from './pages/BuyyersProfile';
 import SellersProfile from './pages/SellersProfile';
 import MyOrder from './pages/MyOrder';
+import BackgroundLayer from './components/BackgroundLayer';
 
 // A simple wrapper to protect dashboard routes
 const ProtectedRoute = ({ children }) => {
@@ -33,6 +34,7 @@ const AuthRoute = ({ children }) => {
 function App() {
   return (
     <>
+      <BackgroundLayer />
       <Toaster position="top-right" toastOptions={{ className: 'glass-card-premium fw-bold text-dark' }} />
       <BrowserRouter>
         <Routes>

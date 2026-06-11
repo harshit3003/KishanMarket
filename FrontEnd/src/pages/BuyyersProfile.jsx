@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Chart from 'chart.js/auto';
 import toast from 'react-hot-toast';
-import BackgroundLayer from '../components/BackgroundLayer';
 import '../assets/global.css';
 import '../assets/dynamic-features.css';
 import '../assets/buyer-profile-style.css';
@@ -40,18 +39,18 @@ const BuyyersProfile = () => {
       setIsLoading(true);
       try {
         const [purchasesRes, marketRes] = await Promise.all([
-          fetch('/api/buyer-purchases.json'),
-          fetch('/api/market-intel.json')
+          fetch('/api/buyer-purchases?limit=5'),
+          fetch('/api/market-intel?limit=5')
         ]);
         
         if (purchasesRes.ok) {
           const pData = await purchasesRes.json();
-          setPurchases(pData.slice(0, 5));
+          setPurchases(pData);
         }
         
         if (marketRes.ok) {
           const mData = await marketRes.json();
-          setMarketData(mData.slice(0, 5));
+          setMarketData(mData);
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -81,7 +80,7 @@ const BuyyersProfile = () => {
             labels: ['Jan', 'Feb', 'Mar', 'Apr'],
             datasets: [{
               label: 'Total Paid (₹)',
-              data: [35000, 80000, 45000, 170750],
+              data: chartData,
               borderColor: '#f59e0b',
               backgroundColor: 'rgba(245, 158, 11, 0.05)',
               fill: true, tension: 0.4
@@ -106,7 +105,7 @@ const BuyyersProfile = () => {
         });
       }
     }
-  }, [activeTab]);
+  }, [activeTab, isLoading]);
 
   const handleExportCSV = () => {
     let csv = [];
@@ -143,8 +142,7 @@ const BuyyersProfile = () => {
 
   return (
     <>
-      <BackgroundLayer />
-
+      
       <div id="app-wrapper">
         <aside id="sidebar" className={isSidebarOpen ? 'active' : ''}>
           <div className="sidebar-brand">

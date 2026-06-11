@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import BackgroundLayer from '../components/BackgroundLayer';
 import '../assets/global.css';
 import '../assets/dynamic-features.css';
 import '../assets/registration-style.css';
@@ -26,7 +25,7 @@ const RegistrationPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, role, location, mobile, password, confirmPassword, termsAccepted } = formData;
 
@@ -52,33 +51,40 @@ const RegistrationPage = () => {
       return;
     }
 
-    // Database (Local Storage) update
-    let users = JSON.parse(localStorage.getItem('kishanUsers')) || [];
-    const userExists = users.find(u => u.mobile === mobile);
+    try {
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, mobile, location, role, password })
+      });
+      
+      const data = await response.json();
+      
+      if (!response.ok) {
+        toast.error(data.error || "Registration failed");
+        return;
+      }
 
-    if (!userExists) {
-      const newUser = { name, mobile, location, role, password };
-      users.push(newUser);
-      localStorage.setItem('kishanUsers', JSON.stringify(users));
-    }
+      // Login logic: Seedha dashboard pe bhejne ke liye (Keep active session in local storage for now)
+      localStorage.setItem('displayUserName', name);
+      localStorage.setItem('currentUser', JSON.stringify({ name, mobile, role }));
 
-    // Login logic: Seedha dashboard pe bhejne ke liye
-    localStorage.setItem('displayUserName', name);
-    localStorage.setItem('currentUser', JSON.stringify({ name, mobile, role }));
-
-    // Direct redirection based on role
-    toast.success("Account created successfully!");
-    if (role === 'seller') {
-      navigate('/seller');
-    } else {
-      navigate('/buyer');
+      // Direct redirection based on role
+      toast.success("Account created successfully!");
+      if (role === 'seller') {
+        navigate('/seller');
+      } else {
+        navigate('/buyer');
+      }
+    } catch (err) {
+      toast.error("Server connection error. Please try again.");
+      console.error(err);
     }
   };
 
   return (
     <>
-      <BackgroundLayer />
-
+      
       {/* Fixed Premium Navbar */}
       <nav className="navbar">
         <div className="container d-flex justify-content-between align-items-center">

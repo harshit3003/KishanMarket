@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import BackgroundLayer from '../components/BackgroundLayer';
 import '../assets/global.css';
 import '../assets/dynamic-features.css';
 import '../assets/seller-style.css';
@@ -11,14 +10,22 @@ import AIAssessor from '../components/SellerFeatures/AIAssessor';
 import LogisticsCalculator from '../components/SellerFeatures/LogisticsCalculator';
 import ColdStorageFinder from '../components/SellerFeatures/ColdStorageFinder';
 
-import allBuyersData from '../assets/buyers_data.json';
+const defaultBuyers = [
+  { "name": "ITC Limited", "crops": "Gehu", "rate": "1874", "location": "Rajasthan", "rating": "3.6" },
+  { "name": "Haryana Agro", "crops": "Mustard", "rate": "2974", "location": "Gujarat", "rating": "3.6" },
+  { "name": "Adani Wholesales", "crops": "Dhan", "rate": "2602", "location": "Haryana", "rating": "4.4" },
+  { "name": "Delhi Fresh", "crops": "Cotton", "rate": "1742", "location": "Madhya Pradesh", "rating": "3.7" },
+  { "name": "ITC Limited", "crops": "Chana", "rate": "2803", "location": "Rajasthan", "rating": "4.6" }
+];
 
 const SellerPage = () => {
   const navigate = useNavigate();
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState({ name: 'Guest', role: 'seller', location: '' });
   const [crops, setCrops] = useState([]);
-  const [buyers, setBuyers] = useState(allBuyersData.slice(0, 5));
+  const [buyers, setBuyers] = useState(defaultBuyers);
+  const [allBuyersData, setAllBuyersData] = useState([]);
+  const [isSearching, setIsSearching] = useState(false);
   
   // Search Form State
   const [searchLocation, setSearchLocation] = useState('');
@@ -86,21 +93,36 @@ const SellerPage = () => {
     }
   };
 
-  const handleSearchBuyer = (e) => {
+  const handleSearchBuyer = async (e) => {
     e.preventDefault();
+    setIsSearching(true);
+    let dataToFilter = allBuyersData;
+    
+    if (dataToFilter.length === 0) {
+      try {
+        const res = await fetch('/api/buyers_data');
+        dataToFilter = await res.json();
+        setAllBuyersData(dataToFilter);
+      } catch (err) {
+        console.error("Error loading buyers:", err);
+        setIsSearching(false);
+        return;
+      }
+    }
+
     const loc = searchLocation.toLowerCase();
-    const filtered = allBuyersData.filter(b => 
+    const filtered = dataToFilter.filter(b => 
       b.location.toLowerCase().includes(loc) && b.crops.toLowerCase() === searchCrop.toLowerCase()
     );
     // Limit to 50 results to prevent browser lag from rendering too many 3D cards
     setBuyers(filtered.slice(0, 50));
     setSearchTitle(loc ? `Results in ${searchLocation} for ${searchCrop}` : `Results for ${searchCrop}`);
+    setIsSearching(false);
   };
 
   return (
     <>
-      <BackgroundLayer />
-
+      
       {/* Fixed Premium Navbar */}
       <nav className="navbar">
         <div className="container d-flex justify-content-between align-items-center">
@@ -191,7 +213,9 @@ const SellerPage = () => {
               </select>
             </div>
             <div className="col-md-2 d-flex align-items-end">
-              <button type="submit" className="btn-accent w-100 btn-premium-hover"><i className="fas fa-search me-2"></i>Search</button>
+              <button type="submit" className="btn-accent w-100 btn-premium-hover" disabled={isSearching}>
+                {isSearching ? <><i className="fas fa-spinner fa-spin me-2"></i>Searching</> : <><i className="fas fa-search me-2"></i>Search</>}
+              </button>
             </div>
           </form>
         </div>

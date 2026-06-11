@@ -3,12 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import toast from 'react-hot-toast';
-import BackgroundLayer from '../components/BackgroundLayer';
 import '../assets/global.css';
 import '../assets/dynamic-features.css';
 import '../assets/buyer-style.css';
 
 import NegotiationChat from '../components/BuyerFeatures/NegotiationChat';
+
 
 const defaultCrops = [
   { id: 1, name: "Gehu (Sarbati)", weight: "50", rate: "2450", seller: "Kishan Singh", loc: "Punjab" },
@@ -45,14 +45,21 @@ const BuyerPage = () => {
     const userStr = localStorage.getItem('currentUser');
     if (userStr) setCurrentUser(JSON.parse(userStr));
 
-    const savedCrops = JSON.parse(localStorage.getItem('myCrops')) || [];
-    // Convert seller crops to buyer view format
-    const mappedCrops = savedCrops.map((c, i) => ({
-      id: 100 + i, name: c.name, weight: c.weight, rate: c.rate, seller: "Local Farmer", loc: "Nearby"
-    }));
-
-    setAllCrops([...defaultCrops, ...mappedCrops]);
-    setDisplayedCrops([...defaultCrops, ...mappedCrops]);
+    const fetchCrops = async () => {
+      try {
+        const res = await fetch('/api/crops');
+        if (res.ok) {
+          const apiCrops = await res.json();
+          setAllCrops(apiCrops);
+          setDisplayedCrops(apiCrops.slice(0, 50)); // Render top 50 to prevent lag
+        }
+      } catch (err) {
+        console.error("Failed to fetch crops", err);
+        setAllCrops(defaultCrops);
+        setDisplayedCrops(defaultCrops);
+      }
+    };
+    fetchCrops();
 
     const savedReqs = JSON.parse(localStorage.getItem('buyerRequests')) || [];
     setMyRequests(savedReqs);
@@ -97,7 +104,7 @@ const BuyerPage = () => {
       filtered = filtered.filter(c => c.loc.toLowerCase().includes(loc.toLowerCase()));
     }
 
-    setDisplayedCrops(filtered);
+    setDisplayedCrops(filtered.slice(0, 50)); // prevent browser lag
   };
 
   const toggleWatchlist = (crop) => {
@@ -127,8 +134,7 @@ const BuyerPage = () => {
 
   return (
     <>
-      <BackgroundLayer />
-
+      
       <nav className="navbar navbar-dark shadow-sm mb-4">
         <div className="container d-flex justify-content-between align-items-center">
           <Link className="navbar-brand fw-bold" to="/buyer"><i className="fas fa-seedling me-2"></i>Kishan<span>Market</span></Link>

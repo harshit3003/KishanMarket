@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import BackgroundLayer from '../components/BackgroundLayer';
 import '../assets/global.css';
 import '../assets/dynamic-features.css';
 import '../assets/login-style.css';
@@ -48,8 +47,7 @@ const LoginPage = () => {
 
     return (
         <>
-            <BackgroundLayer />
-
+            
             {/* Fixed Premium Navbar */}
             <nav className="navbar" style={{ position: 'fixed', top: 0, width: '100%', zIndex: 1000 }}>
                 <div className="container d-flex justify-content-between align-items-center">

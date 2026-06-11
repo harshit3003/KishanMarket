@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Chart from 'chart.js/auto';
 import toast from 'react-hot-toast';
-import BackgroundLayer from '../components/BackgroundLayer';
 import '../assets/global.css';
 import '../assets/seller-profile-style.css';
 
@@ -44,22 +43,22 @@ const SellersProfile = () => {
       setIsLoading(true);
       try {
         const [salesRes, marketRes, predictionsRes] = await Promise.all([
-          fetch('/api/seller-sales.json'),
-          fetch('/api/seller-market-intel.json'),
-          fetch('/api/seller-predictions.json')
+          fetch('/api/seller-sales?limit=5'),
+          fetch('/api/seller-market-intel?limit=5'),
+          fetch('/api/seller-predictions?limit=5')
         ]);
         
         if (salesRes.ok) {
           const data = await salesRes.json();
-          setSalesData(data.slice(0, 5));
+          setSalesData(data);
         }
         if (marketRes.ok) {
           const data = await marketRes.json();
-          setMarketData(data.slice(0, 5));
+          setMarketData(data);
         }
         if (predictionsRes.ok) {
           const data = await predictionsRes.json();
-          setPredictions(data.slice(0, 5));
+          setPredictions(data);
         }
       } catch (error) {
         console.error("Error fetching seller data:", error);
@@ -146,8 +145,7 @@ const SellersProfile = () => {
 
   return (
     <>
-      <BackgroundLayer />
-
+      
       <div id="app-wrapper">
         <aside id="sidebar" className={isSidebarOpen ? 'active' : ''}>
           <div className="sidebar-brand">

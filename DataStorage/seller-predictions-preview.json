@@ -1,0 +1,27 @@
+[
+  {
+    "crop": "Jowar Grade 2",
+    "trend": "up",
+    "value": "+3.2%"
+  },
+  {
+    "crop": "Gehu Grade 3",
+    "trend": "down",
+    "value": "-2.6%"
+  },
+  {
+    "crop": "Gehu Grade 3",
+    "trend": "stable",
+    "value": "1.3%"
+  },
+  {
+    "crop": "Sugarcane Grade 4",
+    "trend": "down",
+    "value": "-1.4%"
+  },
+  {
+    "crop": "Soyabean Grade 3",
+    "trend": "stable",
+    "value": "3.5%"
+  }
+]

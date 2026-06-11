@@ -1,0 +1,8002 @@
+[
+  {
+    "id": 1000,
+    "name": "Chana",
+    "weight": "179",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1001,
+    "name": "Makka",
+    "weight": "71",
+    "rate": "1925",
+    "seller": "Sunil Yadav",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1002,
+    "name": "Soyabean",
+    "weight": "194",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1003,
+    "name": "Bajra",
+    "weight": "98",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1004,
+    "name": "Soyabean",
+    "weight": "160",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1005,
+    "name": "Mustard",
+    "weight": "88",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1006,
+    "name": "Cotton",
+    "weight": "97",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1007,
+    "name": "Dhan",
+    "weight": "147",
+    "rate": "2980",
+    "seller": "Sunil Yadav",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1008,
+    "name": "Jowar",
+    "weight": "63",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1009,
+    "name": "Chana",
+    "weight": "197",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1010,
+    "name": "Bajra",
+    "weight": "154",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1011,
+    "name": "Chana",
+    "weight": "176",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1012,
+    "name": "Makka",
+    "weight": "158",
+    "rate": "1954",
+    "seller": "Kishan Singh",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1013,
+    "name": "Cotton",
+    "weight": "117",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1014,
+    "name": "Makka",
+    "weight": "199",
+    "rate": "1854",
+    "seller": "Harsh Patel",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1015,
+    "name": "Sugarcane",
+    "weight": "180",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1016,
+    "name": "Soyabean",
+    "weight": "115",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1017,
+    "name": "Cotton",
+    "weight": "45",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1018,
+    "name": "Gehu",
+    "weight": "148",
+    "rate": "2511",
+    "seller": "Harsh Patel",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1019,
+    "name": "Gehu",
+    "weight": "50",
+    "rate": "2268",
+    "seller": "Kishan Singh",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1020,
+    "name": "Mustard",
+    "weight": "173",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1021,
+    "name": "Sugarcane",
+    "weight": "36",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1022,
+    "name": "Chana",
+    "weight": "113",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1023,
+    "name": "Gehu",
+    "weight": "162",
+    "rate": "2399",
+    "seller": "Anil Desai",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1024,
+    "name": "Makka",
+    "weight": "80",
+    "rate": "2210",
+    "seller": "Ram Lal",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1025,
+    "name": "Cotton",
+    "weight": "145",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1026,
+    "name": "Bajra",
+    "weight": "196",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1027,
+    "name": "Dhan",
+    "weight": "57",
+    "rate": "3086",
+    "seller": "Amit Verma",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1028,
+    "name": "Chana",
+    "weight": "158",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1029,
+    "name": "Gehu",
+    "weight": "138",
+    "rate": "2573",
+    "seller": "Sunil Yadav",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1030,
+    "name": "Soyabean",
+    "weight": "33",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1031,
+    "name": "Dhan",
+    "weight": "56",
+    "rate": "3167",
+    "seller": "Sunil Yadav",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1032,
+    "name": "Makka",
+    "weight": "98",
+    "rate": "2181",
+    "seller": "Rajesh Gupta",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1033,
+    "name": "Bajra",
+    "weight": "138",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1034,
+    "name": "Mustard",
+    "weight": "60",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1035,
+    "name": "Mustard",
+    "weight": "116",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1036,
+    "name": "Makka",
+    "weight": "31",
+    "rate": "1929",
+    "seller": "Manoj Sharma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1037,
+    "name": "Bajra",
+    "weight": "186",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1038,
+    "name": "Mustard",
+    "weight": "89",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1039,
+    "name": "Sugarcane",
+    "weight": "123",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1040,
+    "name": "Cotton",
+    "weight": "100",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1041,
+    "name": "Soyabean",
+    "weight": "201",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1042,
+    "name": "Sugarcane",
+    "weight": "114",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1043,
+    "name": "Bajra",
+    "weight": "108",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1044,
+    "name": "Bajra",
+    "weight": "139",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1045,
+    "name": "Cotton",
+    "weight": "12",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1046,
+    "name": "Cotton",
+    "weight": "141",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1047,
+    "name": "Mustard",
+    "weight": "33",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1048,
+    "name": "Dhan",
+    "weight": "132",
+    "rate": "3100",
+    "seller": "Suresh Kumar",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1049,
+    "name": "Mustard",
+    "weight": "154",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1050,
+    "name": "Gehu",
+    "weight": "33",
+    "rate": "2648",
+    "seller": "Sunil Yadav",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1051,
+    "name": "Gehu",
+    "weight": "168",
+    "rate": "2634",
+    "seller": "Kishan Singh",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1052,
+    "name": "Gehu",
+    "weight": "129",
+    "rate": "2532",
+    "seller": "Vikas Reddy",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1053,
+    "name": "Dhan",
+    "weight": "140",
+    "rate": "3065",
+    "seller": "Vikas Reddy",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1054,
+    "name": "Mustard",
+    "weight": "56",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1055,
+    "name": "Cotton",
+    "weight": "21",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1056,
+    "name": "Makka",
+    "weight": "183",
+    "rate": "1931",
+    "seller": "Harsh Patel",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1057,
+    "name": "Gehu",
+    "weight": "55",
+    "rate": "2581",
+    "seller": "Manoj Sharma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1058,
+    "name": "Gehu",
+    "weight": "175",
+    "rate": "2444",
+    "seller": "Suresh Kumar",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1059,
+    "name": "Bajra",
+    "weight": "113",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1060,
+    "name": "Soyabean",
+    "weight": "111",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1061,
+    "name": "Chana",
+    "weight": "171",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1062,
+    "name": "Gehu",
+    "weight": "198",
+    "rate": "2435",
+    "seller": "Kishan Singh",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1063,
+    "name": "Jowar",
+    "weight": "80",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1064,
+    "name": "Dhan",
+    "weight": "133",
+    "rate": "2835",
+    "seller": "Harsh Patel",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1065,
+    "name": "Chana",
+    "weight": "169",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1066,
+    "name": "Bajra",
+    "weight": "201",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1067,
+    "name": "Jowar",
+    "weight": "42",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1068,
+    "name": "Makka",
+    "weight": "184",
+    "rate": "2042",
+    "seller": "Kishan Singh",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1069,
+    "name": "Sugarcane",
+    "weight": "206",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1070,
+    "name": "Soyabean",
+    "weight": "115",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1071,
+    "name": "Sugarcane",
+    "weight": "56",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1072,
+    "name": "Dhan",
+    "weight": "128",
+    "rate": "2817",
+    "seller": "Anil Desai",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1073,
+    "name": "Makka",
+    "weight": "201",
+    "rate": "1888",
+    "seller": "Manoj Sharma",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1074,
+    "name": "Chana",
+    "weight": "41",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1075,
+    "name": "Mustard",
+    "weight": "21",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1076,
+    "name": "Gehu",
+    "weight": "134",
+    "rate": "2623",
+    "seller": "Ram Lal",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1077,
+    "name": "Cotton",
+    "weight": "109",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1078,
+    "name": "Sugarcane",
+    "weight": "133",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1079,
+    "name": "Bajra",
+    "weight": "163",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1080,
+    "name": "Soyabean",
+    "weight": "121",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1081,
+    "name": "Cotton",
+    "weight": "188",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1082,
+    "name": "Chana",
+    "weight": "204",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1083,
+    "name": "Mustard",
+    "weight": "25",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1084,
+    "name": "Mustard",
+    "weight": "203",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1085,
+    "name": "Cotton",
+    "weight": "81",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1086,
+    "name": "Cotton",
+    "weight": "126",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1087,
+    "name": "Dhan",
+    "weight": "13",
+    "rate": "2909",
+    "seller": "Anil Desai",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1088,
+    "name": "Sugarcane",
+    "weight": "16",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1089,
+    "name": "Makka",
+    "weight": "202",
+    "rate": "2063",
+    "seller": "Amit Verma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1090,
+    "name": "Cotton",
+    "weight": "206",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1091,
+    "name": "Soyabean",
+    "weight": "98",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1092,
+    "name": "Sugarcane",
+    "weight": "127",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1093,
+    "name": "Gehu",
+    "weight": "31",
+    "rate": "2587",
+    "seller": "Vikas Reddy",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1094,
+    "name": "Chana",
+    "weight": "60",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1095,
+    "name": "Dhan",
+    "weight": "139",
+    "rate": "2884",
+    "seller": "Suresh Kumar",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1096,
+    "name": "Makka",
+    "weight": "183",
+    "rate": "2080",
+    "seller": "Harsh Patel",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1097,
+    "name": "Gehu",
+    "weight": "94",
+    "rate": "2303",
+    "seller": "Kishan Singh",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1098,
+    "name": "Chana",
+    "weight": "139",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1099,
+    "name": "Cotton",
+    "weight": "72",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1100,
+    "name": "Mustard",
+    "weight": "138",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1101,
+    "name": "Jowar",
+    "weight": "130",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1102,
+    "name": "Dhan",
+    "weight": "144",
+    "rate": "3055",
+    "seller": "Amit Verma",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1103,
+    "name": "Gehu",
+    "weight": "191",
+    "rate": "2376",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1104,
+    "name": "Cotton",
+    "weight": "176",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1105,
+    "name": "Cotton",
+    "weight": "126",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1106,
+    "name": "Bajra",
+    "weight": "33",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1107,
+    "name": "Gehu",
+    "weight": "171",
+    "rate": "2377",
+    "seller": "Ram Lal",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1108,
+    "name": "Makka",
+    "weight": "46",
+    "rate": "1923",
+    "seller": "Ram Lal",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1109,
+    "name": "Chana",
+    "weight": "43",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1110,
+    "name": "Bajra",
+    "weight": "104",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1111,
+    "name": "Dhan",
+    "weight": "82",
+    "rate": "2913",
+    "seller": "Kishan Singh",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1112,
+    "name": "Makka",
+    "weight": "136",
+    "rate": "2249",
+    "seller": "Rajesh Gupta",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1113,
+    "name": "Jowar",
+    "weight": "118",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1114,
+    "name": "Sugarcane",
+    "weight": "149",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1115,
+    "name": "Jowar",
+    "weight": "24",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1116,
+    "name": "Dhan",
+    "weight": "109",
+    "rate": "2986",
+    "seller": "Rajesh Gupta",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1117,
+    "name": "Cotton",
+    "weight": "72",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1118,
+    "name": "Dhan",
+    "weight": "107",
+    "rate": "3281",
+    "seller": "Harsh Patel",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1119,
+    "name": "Makka",
+    "weight": "33",
+    "rate": "1917",
+    "seller": "Ram Lal",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1120,
+    "name": "Soyabean",
+    "weight": "90",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1121,
+    "name": "Dhan",
+    "weight": "177",
+    "rate": "2867",
+    "seller": "Amit Verma",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1122,
+    "name": "Soyabean",
+    "weight": "166",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1123,
+    "name": "Bajra",
+    "weight": "196",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1124,
+    "name": "Chana",
+    "weight": "152",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1125,
+    "name": "Makka",
+    "weight": "30",
+    "rate": "2141",
+    "seller": "Kishan Singh",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1126,
+    "name": "Makka",
+    "weight": "103",
+    "rate": "2289",
+    "seller": "Suresh Kumar",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1127,
+    "name": "Mustard",
+    "weight": "101",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1128,
+    "name": "Bajra",
+    "weight": "14",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1129,
+    "name": "Chana",
+    "weight": "96",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1130,
+    "name": "Sugarcane",
+    "weight": "197",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1131,
+    "name": "Sugarcane",
+    "weight": "108",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1132,
+    "name": "Cotton",
+    "weight": "95",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1133,
+    "name": "Chana",
+    "weight": "167",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1134,
+    "name": "Cotton",
+    "weight": "44",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1135,
+    "name": "Mustard",
+    "weight": "91",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1136,
+    "name": "Makka",
+    "weight": "32",
+    "rate": "2131",
+    "seller": "Manoj Sharma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1137,
+    "name": "Sugarcane",
+    "weight": "147",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1138,
+    "name": "Mustard",
+    "weight": "47",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1139,
+    "name": "Chana",
+    "weight": "125",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1140,
+    "name": "Makka",
+    "weight": "204",
+    "rate": "2162",
+    "seller": "Amit Verma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1141,
+    "name": "Makka",
+    "weight": "132",
+    "rate": "2121",
+    "seller": "Vikas Reddy",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1142,
+    "name": "Chana",
+    "weight": "14",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1143,
+    "name": "Chana",
+    "weight": "85",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1144,
+    "name": "Chana",
+    "weight": "127",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1145,
+    "name": "Jowar",
+    "weight": "180",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1146,
+    "name": "Soyabean",
+    "weight": "165",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1147,
+    "name": "Sugarcane",
+    "weight": "140",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1148,
+    "name": "Bajra",
+    "weight": "156",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1149,
+    "name": "Mustard",
+    "weight": "169",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1150,
+    "name": "Dhan",
+    "weight": "106",
+    "rate": "3107",
+    "seller": "Harsh Patel",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1151,
+    "name": "Chana",
+    "weight": "128",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1152,
+    "name": "Gehu",
+    "weight": "188",
+    "rate": "2472",
+    "seller": "Kishan Singh",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1153,
+    "name": "Sugarcane",
+    "weight": "141",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1154,
+    "name": "Makka",
+    "weight": "172",
+    "rate": "2063",
+    "seller": "Harsh Patel",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1155,
+    "name": "Cotton",
+    "weight": "26",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1156,
+    "name": "Cotton",
+    "weight": "57",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1157,
+    "name": "Sugarcane",
+    "weight": "139",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1158,
+    "name": "Dhan",
+    "weight": "47",
+    "rate": "3292",
+    "seller": "Sunil Yadav",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1159,
+    "name": "Makka",
+    "weight": "34",
+    "rate": "1816",
+    "seller": "Suresh Kumar",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1160,
+    "name": "Dhan",
+    "weight": "68",
+    "rate": "3050",
+    "seller": "Amit Verma",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1161,
+    "name": "Mustard",
+    "weight": "117",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1162,
+    "name": "Makka",
+    "weight": "171",
+    "rate": "1994",
+    "seller": "Rajesh Gupta",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1163,
+    "name": "Chana",
+    "weight": "20",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1164,
+    "name": "Jowar",
+    "weight": "32",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1165,
+    "name": "Makka",
+    "weight": "185",
+    "rate": "1821",
+    "seller": "Ram Lal",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1166,
+    "name": "Mustard",
+    "weight": "116",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1167,
+    "name": "Sugarcane",
+    "weight": "50",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1168,
+    "name": "Jowar",
+    "weight": "123",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1169,
+    "name": "Bajra",
+    "weight": "128",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1170,
+    "name": "Sugarcane",
+    "weight": "88",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1171,
+    "name": "Jowar",
+    "weight": "94",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1172,
+    "name": "Makka",
+    "weight": "140",
+    "rate": "1884",
+    "seller": "Anil Desai",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1173,
+    "name": "Cotton",
+    "weight": "68",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1174,
+    "name": "Soyabean",
+    "weight": "158",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1175,
+    "name": "Soyabean",
+    "weight": "67",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1176,
+    "name": "Makka",
+    "weight": "16",
+    "rate": "2031",
+    "seller": "Ram Lal",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1177,
+    "name": "Gehu",
+    "weight": "173",
+    "rate": "2580",
+    "seller": "Harsh Patel",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1178,
+    "name": "Dhan",
+    "weight": "85",
+    "rate": "3254",
+    "seller": "Sunil Yadav",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1179,
+    "name": "Jowar",
+    "weight": "143",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1180,
+    "name": "Chana",
+    "weight": "154",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1181,
+    "name": "Cotton",
+    "weight": "185",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1182,
+    "name": "Gehu",
+    "weight": "125",
+    "rate": "2666",
+    "seller": "Ram Lal",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1183,
+    "name": "Dhan",
+    "weight": "97",
+    "rate": "2831",
+    "seller": "Anil Desai",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1184,
+    "name": "Makka",
+    "weight": "94",
+    "rate": "2220",
+    "seller": "Amit Verma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1185,
+    "name": "Soyabean",
+    "weight": "37",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1186,
+    "name": "Jowar",
+    "weight": "129",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1187,
+    "name": "Sugarcane",
+    "weight": "86",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1188,
+    "name": "Mustard",
+    "weight": "101",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1189,
+    "name": "Soyabean",
+    "weight": "191",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1190,
+    "name": "Sugarcane",
+    "weight": "52",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1191,
+    "name": "Gehu",
+    "weight": "185",
+    "rate": "2563",
+    "seller": "Harsh Patel",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1192,
+    "name": "Dhan",
+    "weight": "102",
+    "rate": "3286",
+    "seller": "Anil Desai",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1193,
+    "name": "Soyabean",
+    "weight": "66",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1194,
+    "name": "Sugarcane",
+    "weight": "148",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1195,
+    "name": "Bajra",
+    "weight": "209",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1196,
+    "name": "Soyabean",
+    "weight": "198",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1197,
+    "name": "Gehu",
+    "weight": "205",
+    "rate": "2405",
+    "seller": "Suresh Kumar",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1198,
+    "name": "Makka",
+    "weight": "170",
+    "rate": "1843",
+    "seller": "Suresh Kumar",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1199,
+    "name": "Mustard",
+    "weight": "51",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1200,
+    "name": "Jowar",
+    "weight": "47",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1201,
+    "name": "Bajra",
+    "weight": "102",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1202,
+    "name": "Makka",
+    "weight": "184",
+    "rate": "2150",
+    "seller": "Sunil Yadav",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1203,
+    "name": "Cotton",
+    "weight": "199",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1204,
+    "name": "Sugarcane",
+    "weight": "205",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1205,
+    "name": "Gehu",
+    "weight": "153",
+    "rate": "2485",
+    "seller": "Vikas Reddy",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1206,
+    "name": "Sugarcane",
+    "weight": "123",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1207,
+    "name": "Gehu",
+    "weight": "140",
+    "rate": "2415",
+    "seller": "Suresh Kumar",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1208,
+    "name": "Chana",
+    "weight": "93",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1209,
+    "name": "Chana",
+    "weight": "19",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1210,
+    "name": "Mustard",
+    "weight": "124",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1211,
+    "name": "Makka",
+    "weight": "11",
+    "rate": "2149",
+    "seller": "Suresh Kumar",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1212,
+    "name": "Chana",
+    "weight": "21",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1213,
+    "name": "Bajra",
+    "weight": "81",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1214,
+    "name": "Bajra",
+    "weight": "124",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1215,
+    "name": "Jowar",
+    "weight": "95",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1216,
+    "name": "Bajra",
+    "weight": "48",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1217,
+    "name": "Mustard",
+    "weight": "117",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1218,
+    "name": "Gehu",
+    "weight": "35",
+    "rate": "2324",
+    "seller": "Vikas Reddy",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1219,
+    "name": "Makka",
+    "weight": "126",
+    "rate": "2151",
+    "seller": "Kishan Singh",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1220,
+    "name": "Bajra",
+    "weight": "183",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1221,
+    "name": "Bajra",
+    "weight": "162",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1222,
+    "name": "Makka",
+    "weight": "209",
+    "rate": "1842",
+    "seller": "Amit Verma",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1223,
+    "name": "Gehu",
+    "weight": "60",
+    "rate": "2510",
+    "seller": "Ram Lal",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1224,
+    "name": "Chana",
+    "weight": "41",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1225,
+    "name": "Gehu",
+    "weight": "172",
+    "rate": "2671",
+    "seller": "Harsh Patel",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1226,
+    "name": "Jowar",
+    "weight": "204",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1227,
+    "name": "Gehu",
+    "weight": "108",
+    "rate": "2312",
+    "seller": "Anil Desai",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1228,
+    "name": "Jowar",
+    "weight": "130",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1229,
+    "name": "Gehu",
+    "weight": "36",
+    "rate": "2205",
+    "seller": "Sunil Yadav",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1230,
+    "name": "Jowar",
+    "weight": "18",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1231,
+    "name": "Cotton",
+    "weight": "157",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1232,
+    "name": "Chana",
+    "weight": "189",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1233,
+    "name": "Dhan",
+    "weight": "183",
+    "rate": "2973",
+    "seller": "Kishan Singh",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1234,
+    "name": "Gehu",
+    "weight": "31",
+    "rate": "2545",
+    "seller": "Vikas Reddy",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1235,
+    "name": "Cotton",
+    "weight": "188",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1236,
+    "name": "Bajra",
+    "weight": "55",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1237,
+    "name": "Dhan",
+    "weight": "64",
+    "rate": "3132",
+    "seller": "Anil Desai",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1238,
+    "name": "Bajra",
+    "weight": "57",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1239,
+    "name": "Gehu",
+    "weight": "92",
+    "rate": "2228",
+    "seller": "Suresh Kumar",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1240,
+    "name": "Mustard",
+    "weight": "15",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1241,
+    "name": "Soyabean",
+    "weight": "15",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1242,
+    "name": "Dhan",
+    "weight": "119",
+    "rate": "3202",
+    "seller": "Anil Desai",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1243,
+    "name": "Dhan",
+    "weight": "140",
+    "rate": "3258",
+    "seller": "Vikas Reddy",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1244,
+    "name": "Mustard",
+    "weight": "156",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1245,
+    "name": "Sugarcane",
+    "weight": "179",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1246,
+    "name": "Makka",
+    "weight": "24",
+    "rate": "1915",
+    "seller": "Kishan Singh",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1247,
+    "name": "Dhan",
+    "weight": "161",
+    "rate": "3028",
+    "seller": "Vikas Reddy",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1248,
+    "name": "Dhan",
+    "weight": "127",
+    "rate": "3218",
+    "seller": "Ram Lal",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1249,
+    "name": "Mustard",
+    "weight": "49",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1250,
+    "name": "Cotton",
+    "weight": "143",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1251,
+    "name": "Dhan",
+    "weight": "23",
+    "rate": "3062",
+    "seller": "Kishan Singh",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1252,
+    "name": "Mustard",
+    "weight": "52",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1253,
+    "name": "Soyabean",
+    "weight": "195",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1254,
+    "name": "Chana",
+    "weight": "150",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1255,
+    "name": "Bajra",
+    "weight": "71",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1256,
+    "name": "Mustard",
+    "weight": "118",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1257,
+    "name": "Bajra",
+    "weight": "141",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1258,
+    "name": "Cotton",
+    "weight": "62",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1259,
+    "name": "Gehu",
+    "weight": "57",
+    "rate": "2523",
+    "seller": "Suresh Kumar",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1260,
+    "name": "Gehu",
+    "weight": "149",
+    "rate": "2498",
+    "seller": "Manoj Sharma",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1261,
+    "name": "Gehu",
+    "weight": "77",
+    "rate": "2302",
+    "seller": "Suresh Kumar",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1262,
+    "name": "Soyabean",
+    "weight": "49",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1263,
+    "name": "Mustard",
+    "weight": "122",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1264,
+    "name": "Makka",
+    "weight": "48",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1265,
+    "name": "Bajra",
+    "weight": "162",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1266,
+    "name": "Bajra",
+    "weight": "178",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1267,
+    "name": "Mustard",
+    "weight": "134",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1268,
+    "name": "Jowar",
+    "weight": "204",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1269,
+    "name": "Gehu",
+    "weight": "111",
+    "rate": "2635",
+    "seller": "Manoj Sharma",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1270,
+    "name": "Dhan",
+    "weight": "92",
+    "rate": "3234",
+    "seller": "Sunil Yadav",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1271,
+    "name": "Gehu",
+    "weight": "129",
+    "rate": "2670",
+    "seller": "Harsh Patel",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1272,
+    "name": "Gehu",
+    "weight": "62",
+    "rate": "2313",
+    "seller": "Ram Lal",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1273,
+    "name": "Dhan",
+    "weight": "111",
+    "rate": "3201",
+    "seller": "Ram Lal",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1274,
+    "name": "Mustard",
+    "weight": "113",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1275,
+    "name": "Dhan",
+    "weight": "73",
+    "rate": "3242",
+    "seller": "Manoj Sharma",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1276,
+    "name": "Makka",
+    "weight": "190",
+    "rate": "1873",
+    "seller": "Kishan Singh",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1277,
+    "name": "Dhan",
+    "weight": "127",
+    "rate": "2886",
+    "seller": "Harsh Patel",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1278,
+    "name": "Jowar",
+    "weight": "123",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1279,
+    "name": "Cotton",
+    "weight": "77",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1280,
+    "name": "Bajra",
+    "weight": "14",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1281,
+    "name": "Makka",
+    "weight": "66",
+    "rate": "2182",
+    "seller": "Sunil Yadav",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1282,
+    "name": "Gehu",
+    "weight": "67",
+    "rate": "2345",
+    "seller": "Manoj Sharma",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1283,
+    "name": "Bajra",
+    "weight": "112",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1284,
+    "name": "Bajra",
+    "weight": "127",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1285,
+    "name": "Soyabean",
+    "weight": "91",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1286,
+    "name": "Gehu",
+    "weight": "53",
+    "rate": "2394",
+    "seller": "Anil Desai",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1287,
+    "name": "Bajra",
+    "weight": "163",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1288,
+    "name": "Soyabean",
+    "weight": "165",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1289,
+    "name": "Soyabean",
+    "weight": "113",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1290,
+    "name": "Jowar",
+    "weight": "175",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1291,
+    "name": "Soyabean",
+    "weight": "201",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1292,
+    "name": "Soyabean",
+    "weight": "129",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1293,
+    "name": "Chana",
+    "weight": "65",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1294,
+    "name": "Mustard",
+    "weight": "126",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1295,
+    "name": "Mustard",
+    "weight": "13",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1296,
+    "name": "Chana",
+    "weight": "204",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1297,
+    "name": "Sugarcane",
+    "weight": "177",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1298,
+    "name": "Makka",
+    "weight": "138",
+    "rate": "1849",
+    "seller": "Kishan Singh",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1299,
+    "name": "Chana",
+    "weight": "184",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1300,
+    "name": "Bajra",
+    "weight": "75",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1301,
+    "name": "Soyabean",
+    "weight": "185",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1302,
+    "name": "Dhan",
+    "weight": "156",
+    "rate": "3096",
+    "seller": "Amit Verma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1303,
+    "name": "Dhan",
+    "weight": "111",
+    "rate": "3020",
+    "seller": "Harsh Patel",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1304,
+    "name": "Jowar",
+    "weight": "184",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1305,
+    "name": "Bajra",
+    "weight": "38",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1306,
+    "name": "Mustard",
+    "weight": "61",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1307,
+    "name": "Makka",
+    "weight": "46",
+    "rate": "1831",
+    "seller": "Kishan Singh",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1308,
+    "name": "Dhan",
+    "weight": "14",
+    "rate": "3285",
+    "seller": "Kishan Singh",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1309,
+    "name": "Dhan",
+    "weight": "204",
+    "rate": "3043",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1310,
+    "name": "Makka",
+    "weight": "185",
+    "rate": "2123",
+    "seller": "Amit Verma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1311,
+    "name": "Sugarcane",
+    "weight": "33",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1312,
+    "name": "Cotton",
+    "weight": "14",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1313,
+    "name": "Cotton",
+    "weight": "53",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1314,
+    "name": "Soyabean",
+    "weight": "52",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1315,
+    "name": "Gehu",
+    "weight": "155",
+    "rate": "2495",
+    "seller": "Vikas Reddy",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1316,
+    "name": "Sugarcane",
+    "weight": "179",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1317,
+    "name": "Soyabean",
+    "weight": "160",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1318,
+    "name": "Makka",
+    "weight": "63",
+    "rate": "2152",
+    "seller": "Amit Verma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1319,
+    "name": "Gehu",
+    "weight": "55",
+    "rate": "2596",
+    "seller": "Vikas Reddy",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1320,
+    "name": "Gehu",
+    "weight": "136",
+    "rate": "2449",
+    "seller": "Suresh Kumar",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1321,
+    "name": "Dhan",
+    "weight": "23",
+    "rate": "2979",
+    "seller": "Sunil Yadav",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1322,
+    "name": "Jowar",
+    "weight": "39",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1323,
+    "name": "Gehu",
+    "weight": "164",
+    "rate": "2504",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1324,
+    "name": "Cotton",
+    "weight": "145",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1325,
+    "name": "Cotton",
+    "weight": "209",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1326,
+    "name": "Makka",
+    "weight": "77",
+    "rate": "2253",
+    "seller": "Ram Lal",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1327,
+    "name": "Chana",
+    "weight": "61",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1328,
+    "name": "Cotton",
+    "weight": "86",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1329,
+    "name": "Mustard",
+    "weight": "209",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1330,
+    "name": "Bajra",
+    "weight": "110",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1331,
+    "name": "Gehu",
+    "weight": "129",
+    "rate": "2358",
+    "seller": "Amit Verma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1332,
+    "name": "Cotton",
+    "weight": "127",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1333,
+    "name": "Makka",
+    "weight": "58",
+    "rate": "1816",
+    "seller": "Amit Verma",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1334,
+    "name": "Makka",
+    "weight": "106",
+    "rate": "2195",
+    "seller": "Ram Lal",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1335,
+    "name": "Cotton",
+    "weight": "187",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1336,
+    "name": "Gehu",
+    "weight": "41",
+    "rate": "2204",
+    "seller": "Anil Desai",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1337,
+    "name": "Dhan",
+    "weight": "80",
+    "rate": "2858",
+    "seller": "Ram Lal",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1338,
+    "name": "Dhan",
+    "weight": "19",
+    "rate": "3178",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1339,
+    "name": "Bajra",
+    "weight": "113",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1340,
+    "name": "Soyabean",
+    "weight": "173",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1341,
+    "name": "Dhan",
+    "weight": "20",
+    "rate": "3023",
+    "seller": "Manoj Sharma",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1342,
+    "name": "Jowar",
+    "weight": "10",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1343,
+    "name": "Jowar",
+    "weight": "74",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1344,
+    "name": "Soyabean",
+    "weight": "202",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1345,
+    "name": "Sugarcane",
+    "weight": "66",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1346,
+    "name": "Gehu",
+    "weight": "11",
+    "rate": "2218",
+    "seller": "Anil Desai",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1347,
+    "name": "Jowar",
+    "weight": "119",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1348,
+    "name": "Jowar",
+    "weight": "47",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1349,
+    "name": "Chana",
+    "weight": "99",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1350,
+    "name": "Dhan",
+    "weight": "18",
+    "rate": "3067",
+    "seller": "Vikas Reddy",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1351,
+    "name": "Chana",
+    "weight": "195",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1352,
+    "name": "Gehu",
+    "weight": "104",
+    "rate": "2309",
+    "seller": "Kishan Singh",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1353,
+    "name": "Soyabean",
+    "weight": "35",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1354,
+    "name": "Gehu",
+    "weight": "91",
+    "rate": "2668",
+    "seller": "Rajesh Gupta",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1355,
+    "name": "Bajra",
+    "weight": "145",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1356,
+    "name": "Dhan",
+    "weight": "199",
+    "rate": "3039",
+    "seller": "Rajesh Gupta",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1357,
+    "name": "Sugarcane",
+    "weight": "33",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1358,
+    "name": "Chana",
+    "weight": "97",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1359,
+    "name": "Chana",
+    "weight": "29",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1360,
+    "name": "Makka",
+    "weight": "90",
+    "rate": "1930",
+    "seller": "Suresh Kumar",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1361,
+    "name": "Soyabean",
+    "weight": "205",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1362,
+    "name": "Chana",
+    "weight": "50",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1363,
+    "name": "Dhan",
+    "weight": "101",
+    "rate": "3006",
+    "seller": "Manoj Sharma",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1364,
+    "name": "Bajra",
+    "weight": "77",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1365,
+    "name": "Sugarcane",
+    "weight": "112",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1366,
+    "name": "Cotton",
+    "weight": "63",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1367,
+    "name": "Sugarcane",
+    "weight": "140",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1368,
+    "name": "Sugarcane",
+    "weight": "117",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1369,
+    "name": "Cotton",
+    "weight": "113",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1370,
+    "name": "Chana",
+    "weight": "15",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1371,
+    "name": "Cotton",
+    "weight": "209",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1372,
+    "name": "Jowar",
+    "weight": "31",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1373,
+    "name": "Bajra",
+    "weight": "154",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1374,
+    "name": "Dhan",
+    "weight": "118",
+    "rate": "3142",
+    "seller": "Suresh Kumar",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1375,
+    "name": "Bajra",
+    "weight": "149",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1376,
+    "name": "Gehu",
+    "weight": "120",
+    "rate": "2291",
+    "seller": "Sunil Yadav",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1377,
+    "name": "Bajra",
+    "weight": "50",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1378,
+    "name": "Gehu",
+    "weight": "11",
+    "rate": "2484",
+    "seller": "Kishan Singh",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1379,
+    "name": "Mustard",
+    "weight": "19",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1380,
+    "name": "Dhan",
+    "weight": "132",
+    "rate": "3298",
+    "seller": "Anil Desai",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1381,
+    "name": "Soyabean",
+    "weight": "48",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1382,
+    "name": "Mustard",
+    "weight": "125",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1383,
+    "name": "Bajra",
+    "weight": "200",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1384,
+    "name": "Dhan",
+    "weight": "153",
+    "rate": "2859",
+    "seller": "Sunil Yadav",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1385,
+    "name": "Jowar",
+    "weight": "114",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1386,
+    "name": "Gehu",
+    "weight": "34",
+    "rate": "2312",
+    "seller": "Suresh Kumar",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1387,
+    "name": "Mustard",
+    "weight": "107",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1388,
+    "name": "Makka",
+    "weight": "11",
+    "rate": "2146",
+    "seller": "Ram Lal",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1389,
+    "name": "Jowar",
+    "weight": "88",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1390,
+    "name": "Sugarcane",
+    "weight": "136",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1391,
+    "name": "Chana",
+    "weight": "196",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1392,
+    "name": "Sugarcane",
+    "weight": "35",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1393,
+    "name": "Sugarcane",
+    "weight": "93",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1394,
+    "name": "Makka",
+    "weight": "116",
+    "rate": "1978",
+    "seller": "Sunil Yadav",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1395,
+    "name": "Gehu",
+    "weight": "109",
+    "rate": "2350",
+    "seller": "Vikas Reddy",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1396,
+    "name": "Gehu",
+    "weight": "17",
+    "rate": "2693",
+    "seller": "Kishan Singh",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1397,
+    "name": "Jowar",
+    "weight": "204",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1398,
+    "name": "Dhan",
+    "weight": "179",
+    "rate": "2934",
+    "seller": "Harsh Patel",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1399,
+    "name": "Dhan",
+    "weight": "50",
+    "rate": "2863",
+    "seller": "Anil Desai",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1400,
+    "name": "Cotton",
+    "weight": "183",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1401,
+    "name": "Soyabean",
+    "weight": "182",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1402,
+    "name": "Mustard",
+    "weight": "139",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1403,
+    "name": "Dhan",
+    "weight": "206",
+    "rate": "3094",
+    "seller": "Rajesh Gupta",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1404,
+    "name": "Makka",
+    "weight": "46",
+    "rate": "2299",
+    "seller": "Kishan Singh",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1405,
+    "name": "Jowar",
+    "weight": "97",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1406,
+    "name": "Dhan",
+    "weight": "119",
+    "rate": "3157",
+    "seller": "Manoj Sharma",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1407,
+    "name": "Sugarcane",
+    "weight": "207",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1408,
+    "name": "Dhan",
+    "weight": "117",
+    "rate": "2959",
+    "seller": "Amit Verma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1409,
+    "name": "Mustard",
+    "weight": "115",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1410,
+    "name": "Soyabean",
+    "weight": "35",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1411,
+    "name": "Bajra",
+    "weight": "51",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1412,
+    "name": "Cotton",
+    "weight": "83",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1413,
+    "name": "Bajra",
+    "weight": "79",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1414,
+    "name": "Dhan",
+    "weight": "97",
+    "rate": "2987",
+    "seller": "Anil Desai",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1415,
+    "name": "Mustard",
+    "weight": "79",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1416,
+    "name": "Makka",
+    "weight": "161",
+    "rate": "2069",
+    "seller": "Ram Lal",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1417,
+    "name": "Soyabean",
+    "weight": "29",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1418,
+    "name": "Sugarcane",
+    "weight": "200",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1419,
+    "name": "Makka",
+    "weight": "70",
+    "rate": "1909",
+    "seller": "Suresh Kumar",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1420,
+    "name": "Bajra",
+    "weight": "143",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1421,
+    "name": "Bajra",
+    "weight": "41",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1422,
+    "name": "Soyabean",
+    "weight": "113",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1423,
+    "name": "Gehu",
+    "weight": "80",
+    "rate": "2392",
+    "seller": "Rajesh Gupta",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1424,
+    "name": "Chana",
+    "weight": "104",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1425,
+    "name": "Dhan",
+    "weight": "155",
+    "rate": "2890",
+    "seller": "Kishan Singh",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1426,
+    "name": "Dhan",
+    "weight": "81",
+    "rate": "3082",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1427,
+    "name": "Sugarcane",
+    "weight": "60",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1428,
+    "name": "Chana",
+    "weight": "153",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1429,
+    "name": "Gehu",
+    "weight": "46",
+    "rate": "2466",
+    "seller": "Vikas Reddy",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1430,
+    "name": "Mustard",
+    "weight": "101",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1431,
+    "name": "Gehu",
+    "weight": "103",
+    "rate": "2587",
+    "seller": "Kishan Singh",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1432,
+    "name": "Jowar",
+    "weight": "68",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1433,
+    "name": "Dhan",
+    "weight": "175",
+    "rate": "3118",
+    "seller": "Vikas Reddy",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1434,
+    "name": "Soyabean",
+    "weight": "111",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1435,
+    "name": "Dhan",
+    "weight": "106",
+    "rate": "3208",
+    "seller": "Suresh Kumar",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1436,
+    "name": "Soyabean",
+    "weight": "56",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1437,
+    "name": "Chana",
+    "weight": "175",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1438,
+    "name": "Chana",
+    "weight": "120",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1439,
+    "name": "Mustard",
+    "weight": "92",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1440,
+    "name": "Dhan",
+    "weight": "29",
+    "rate": "2809",
+    "seller": "Suresh Kumar",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1441,
+    "name": "Soyabean",
+    "weight": "188",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1442,
+    "name": "Bajra",
+    "weight": "209",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1443,
+    "name": "Gehu",
+    "weight": "153",
+    "rate": "2471",
+    "seller": "Sunil Yadav",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1444,
+    "name": "Makka",
+    "weight": "200",
+    "rate": "1987",
+    "seller": "Sunil Yadav",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1445,
+    "name": "Cotton",
+    "weight": "24",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1446,
+    "name": "Bajra",
+    "weight": "79",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1447,
+    "name": "Jowar",
+    "weight": "198",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1448,
+    "name": "Cotton",
+    "weight": "169",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1449,
+    "name": "Chana",
+    "weight": "41",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1450,
+    "name": "Jowar",
+    "weight": "158",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1451,
+    "name": "Jowar",
+    "weight": "172",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1452,
+    "name": "Mustard",
+    "weight": "64",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1453,
+    "name": "Soyabean",
+    "weight": "47",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1454,
+    "name": "Makka",
+    "weight": "93",
+    "rate": "2115",
+    "seller": "Manoj Sharma",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1455,
+    "name": "Jowar",
+    "weight": "91",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1456,
+    "name": "Makka",
+    "weight": "60",
+    "rate": "2069",
+    "seller": "Amit Verma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1457,
+    "name": "Jowar",
+    "weight": "99",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1458,
+    "name": "Jowar",
+    "weight": "199",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1459,
+    "name": "Chana",
+    "weight": "61",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1460,
+    "name": "Mustard",
+    "weight": "130",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1461,
+    "name": "Gehu",
+    "weight": "114",
+    "rate": "2303",
+    "seller": "Amit Verma",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1462,
+    "name": "Chana",
+    "weight": "59",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1463,
+    "name": "Gehu",
+    "weight": "78",
+    "rate": "2686",
+    "seller": "Anil Desai",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1464,
+    "name": "Chana",
+    "weight": "82",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1465,
+    "name": "Sugarcane",
+    "weight": "167",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1466,
+    "name": "Jowar",
+    "weight": "71",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1467,
+    "name": "Makka",
+    "weight": "37",
+    "rate": "2256",
+    "seller": "Suresh Kumar",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1468,
+    "name": "Dhan",
+    "weight": "45",
+    "rate": "3057",
+    "seller": "Sunil Yadav",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1469,
+    "name": "Makka",
+    "weight": "57",
+    "rate": "2187",
+    "seller": "Rajesh Gupta",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1470,
+    "name": "Cotton",
+    "weight": "138",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1471,
+    "name": "Makka",
+    "weight": "67",
+    "rate": "1882",
+    "seller": "Suresh Kumar",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1472,
+    "name": "Soyabean",
+    "weight": "121",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1473,
+    "name": "Jowar",
+    "weight": "68",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1474,
+    "name": "Chana",
+    "weight": "201",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1475,
+    "name": "Mustard",
+    "weight": "142",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1476,
+    "name": "Cotton",
+    "weight": "121",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1477,
+    "name": "Soyabean",
+    "weight": "110",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1478,
+    "name": "Dhan",
+    "weight": "16",
+    "rate": "2894",
+    "seller": "Amit Verma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1479,
+    "name": "Soyabean",
+    "weight": "170",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1480,
+    "name": "Bajra",
+    "weight": "181",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1481,
+    "name": "Gehu",
+    "weight": "34",
+    "rate": "2470",
+    "seller": "Kishan Singh",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1482,
+    "name": "Dhan",
+    "weight": "105",
+    "rate": "3128",
+    "seller": "Ram Lal",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1483,
+    "name": "Dhan",
+    "weight": "22",
+    "rate": "3014",
+    "seller": "Anil Desai",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1484,
+    "name": "Chana",
+    "weight": "169",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1485,
+    "name": "Makka",
+    "weight": "202",
+    "rate": "2008",
+    "seller": "Manoj Sharma",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1486,
+    "name": "Mustard",
+    "weight": "199",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1487,
+    "name": "Jowar",
+    "weight": "22",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1488,
+    "name": "Gehu",
+    "weight": "145",
+    "rate": "2381",
+    "seller": "Amit Verma",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1489,
+    "name": "Soyabean",
+    "weight": "108",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1490,
+    "name": "Jowar",
+    "weight": "78",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1491,
+    "name": "Bajra",
+    "weight": "165",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1492,
+    "name": "Sugarcane",
+    "weight": "127",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1493,
+    "name": "Sugarcane",
+    "weight": "16",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1494,
+    "name": "Cotton",
+    "weight": "198",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1495,
+    "name": "Jowar",
+    "weight": "63",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1496,
+    "name": "Mustard",
+    "weight": "187",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1497,
+    "name": "Sugarcane",
+    "weight": "123",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1498,
+    "name": "Dhan",
+    "weight": "193",
+    "rate": "2953",
+    "seller": "Ram Lal",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1499,
+    "name": "Mustard",
+    "weight": "95",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1500,
+    "name": "Mustard",
+    "weight": "192",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1501,
+    "name": "Mustard",
+    "weight": "67",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1502,
+    "name": "Makka",
+    "weight": "187",
+    "rate": "2080",
+    "seller": "Ram Lal",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1503,
+    "name": "Bajra",
+    "weight": "104",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1504,
+    "name": "Makka",
+    "weight": "158",
+    "rate": "2195",
+    "seller": "Kishan Singh",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1505,
+    "name": "Bajra",
+    "weight": "93",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1506,
+    "name": "Bajra",
+    "weight": "196",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1507,
+    "name": "Sugarcane",
+    "weight": "157",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1508,
+    "name": "Sugarcane",
+    "weight": "105",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1509,
+    "name": "Mustard",
+    "weight": "71",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1510,
+    "name": "Jowar",
+    "weight": "106",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1511,
+    "name": "Sugarcane",
+    "weight": "130",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1512,
+    "name": "Gehu",
+    "weight": "111",
+    "rate": "2546",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1513,
+    "name": "Sugarcane",
+    "weight": "89",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1514,
+    "name": "Chana",
+    "weight": "87",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1515,
+    "name": "Sugarcane",
+    "weight": "117",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1516,
+    "name": "Dhan",
+    "weight": "70",
+    "rate": "2920",
+    "seller": "Sunil Yadav",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1517,
+    "name": "Sugarcane",
+    "weight": "117",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1518,
+    "name": "Sugarcane",
+    "weight": "68",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1519,
+    "name": "Dhan",
+    "weight": "167",
+    "rate": "3177",
+    "seller": "Ram Lal",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1520,
+    "name": "Dhan",
+    "weight": "148",
+    "rate": "3156",
+    "seller": "Rajesh Gupta",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1521,
+    "name": "Dhan",
+    "weight": "41",
+    "rate": "3127",
+    "seller": "Manoj Sharma",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1522,
+    "name": "Gehu",
+    "weight": "12",
+    "rate": "2244",
+    "seller": "Amit Verma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1523,
+    "name": "Makka",
+    "weight": "147",
+    "rate": "1902",
+    "seller": "Amit Verma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1524,
+    "name": "Gehu",
+    "weight": "136",
+    "rate": "2292",
+    "seller": "Manoj Sharma",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1525,
+    "name": "Mustard",
+    "weight": "84",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1526,
+    "name": "Soyabean",
+    "weight": "163",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1527,
+    "name": "Bajra",
+    "weight": "134",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1528,
+    "name": "Dhan",
+    "weight": "101",
+    "rate": "3202",
+    "seller": "Kishan Singh",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1529,
+    "name": "Makka",
+    "weight": "153",
+    "rate": "1973",
+    "seller": "Harsh Patel",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1530,
+    "name": "Sugarcane",
+    "weight": "68",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1531,
+    "name": "Makka",
+    "weight": "108",
+    "rate": "2142",
+    "seller": "Anil Desai",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1532,
+    "name": "Sugarcane",
+    "weight": "176",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1533,
+    "name": "Jowar",
+    "weight": "190",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1534,
+    "name": "Dhan",
+    "weight": "48",
+    "rate": "2830",
+    "seller": "Rajesh Gupta",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1535,
+    "name": "Cotton",
+    "weight": "23",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1536,
+    "name": "Mustard",
+    "weight": "145",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1537,
+    "name": "Jowar",
+    "weight": "49",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1538,
+    "name": "Sugarcane",
+    "weight": "79",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1539,
+    "name": "Jowar",
+    "weight": "142",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1540,
+    "name": "Soyabean",
+    "weight": "64",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1541,
+    "name": "Chana",
+    "weight": "170",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1542,
+    "name": "Chana",
+    "weight": "155",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1543,
+    "name": "Dhan",
+    "weight": "179",
+    "rate": "3127",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1544,
+    "name": "Cotton",
+    "weight": "36",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1545,
+    "name": "Chana",
+    "weight": "106",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1546,
+    "name": "Bajra",
+    "weight": "124",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1547,
+    "name": "Soyabean",
+    "weight": "32",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1548,
+    "name": "Jowar",
+    "weight": "108",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1549,
+    "name": "Makka",
+    "weight": "158",
+    "rate": "2228",
+    "seller": "Anil Desai",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1550,
+    "name": "Dhan",
+    "weight": "20",
+    "rate": "2942",
+    "seller": "Anil Desai",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1551,
+    "name": "Soyabean",
+    "weight": "166",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1552,
+    "name": "Cotton",
+    "weight": "30",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1553,
+    "name": "Mustard",
+    "weight": "142",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1554,
+    "name": "Soyabean",
+    "weight": "136",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1555,
+    "name": "Soyabean",
+    "weight": "72",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1556,
+    "name": "Dhan",
+    "weight": "85",
+    "rate": "3019",
+    "seller": "Kishan Singh",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1557,
+    "name": "Gehu",
+    "weight": "129",
+    "rate": "2448",
+    "seller": "Anil Desai",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1558,
+    "name": "Cotton",
+    "weight": "34",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1559,
+    "name": "Mustard",
+    "weight": "107",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1560,
+    "name": "Dhan",
+    "weight": "156",
+    "rate": "2867",
+    "seller": "Vikas Reddy",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1561,
+    "name": "Cotton",
+    "weight": "53",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1562,
+    "name": "Chana",
+    "weight": "189",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1563,
+    "name": "Dhan",
+    "weight": "146",
+    "rate": "3024",
+    "seller": "Amit Verma",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1564,
+    "name": "Dhan",
+    "weight": "94",
+    "rate": "2815",
+    "seller": "Amit Verma",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1565,
+    "name": "Gehu",
+    "weight": "201",
+    "rate": "2377",
+    "seller": "Kishan Singh",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1566,
+    "name": "Chana",
+    "weight": "62",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1567,
+    "name": "Soyabean",
+    "weight": "121",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1568,
+    "name": "Chana",
+    "weight": "197",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1569,
+    "name": "Mustard",
+    "weight": "71",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1570,
+    "name": "Chana",
+    "weight": "54",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1571,
+    "name": "Soyabean",
+    "weight": "197",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1572,
+    "name": "Cotton",
+    "weight": "122",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1573,
+    "name": "Sugarcane",
+    "weight": "76",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1574,
+    "name": "Mustard",
+    "weight": "158",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1575,
+    "name": "Dhan",
+    "weight": "186",
+    "rate": "3002",
+    "seller": "Harsh Patel",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1576,
+    "name": "Dhan",
+    "weight": "149",
+    "rate": "2883",
+    "seller": "Anil Desai",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1577,
+    "name": "Makka",
+    "weight": "81",
+    "rate": "1867",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1578,
+    "name": "Bajra",
+    "weight": "149",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1579,
+    "name": "Soyabean",
+    "weight": "170",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1580,
+    "name": "Makka",
+    "weight": "134",
+    "rate": "2045",
+    "seller": "Suresh Kumar",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1581,
+    "name": "Soyabean",
+    "weight": "20",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1582,
+    "name": "Soyabean",
+    "weight": "150",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1583,
+    "name": "Mustard",
+    "weight": "142",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1584,
+    "name": "Jowar",
+    "weight": "115",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1585,
+    "name": "Cotton",
+    "weight": "181",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1586,
+    "name": "Makka",
+    "weight": "207",
+    "rate": "1816",
+    "seller": "Kishan Singh",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1587,
+    "name": "Bajra",
+    "weight": "19",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1588,
+    "name": "Jowar",
+    "weight": "32",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1589,
+    "name": "Chana",
+    "weight": "132",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1590,
+    "name": "Soyabean",
+    "weight": "173",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1591,
+    "name": "Gehu",
+    "weight": "47",
+    "rate": "2614",
+    "seller": "Anil Desai",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1592,
+    "name": "Mustard",
+    "weight": "70",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1593,
+    "name": "Dhan",
+    "weight": "158",
+    "rate": "2928",
+    "seller": "Amit Verma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1594,
+    "name": "Chana",
+    "weight": "74",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1595,
+    "name": "Dhan",
+    "weight": "115",
+    "rate": "2815",
+    "seller": "Sunil Yadav",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1596,
+    "name": "Chana",
+    "weight": "126",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1597,
+    "name": "Soyabean",
+    "weight": "139",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1598,
+    "name": "Mustard",
+    "weight": "95",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1599,
+    "name": "Sugarcane",
+    "weight": "183",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1600,
+    "name": "Sugarcane",
+    "weight": "92",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1601,
+    "name": "Dhan",
+    "weight": "199",
+    "rate": "3044",
+    "seller": "Suresh Kumar",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1602,
+    "name": "Chana",
+    "weight": "73",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1603,
+    "name": "Mustard",
+    "weight": "49",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1604,
+    "name": "Dhan",
+    "weight": "108",
+    "rate": "3293",
+    "seller": "Suresh Kumar",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1605,
+    "name": "Soyabean",
+    "weight": "25",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1606,
+    "name": "Cotton",
+    "weight": "126",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1607,
+    "name": "Soyabean",
+    "weight": "145",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1608,
+    "name": "Chana",
+    "weight": "199",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1609,
+    "name": "Bajra",
+    "weight": "200",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1610,
+    "name": "Mustard",
+    "weight": "111",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1611,
+    "name": "Sugarcane",
+    "weight": "64",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1612,
+    "name": "Bajra",
+    "weight": "91",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1613,
+    "name": "Jowar",
+    "weight": "192",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1614,
+    "name": "Dhan",
+    "weight": "128",
+    "rate": "3181",
+    "seller": "Suresh Kumar",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1615,
+    "name": "Jowar",
+    "weight": "132",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1616,
+    "name": "Chana",
+    "weight": "190",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1617,
+    "name": "Makka",
+    "weight": "175",
+    "rate": "2228",
+    "seller": "Manoj Sharma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1618,
+    "name": "Soyabean",
+    "weight": "101",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1619,
+    "name": "Chana",
+    "weight": "41",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1620,
+    "name": "Dhan",
+    "weight": "130",
+    "rate": "3225",
+    "seller": "Manoj Sharma",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1621,
+    "name": "Jowar",
+    "weight": "31",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1622,
+    "name": "Cotton",
+    "weight": "187",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1623,
+    "name": "Sugarcane",
+    "weight": "199",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1624,
+    "name": "Gehu",
+    "weight": "93",
+    "rate": "2654",
+    "seller": "Rajesh Gupta",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1625,
+    "name": "Dhan",
+    "weight": "154",
+    "rate": "3000",
+    "seller": "Ram Lal",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1626,
+    "name": "Bajra",
+    "weight": "118",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1627,
+    "name": "Bajra",
+    "weight": "197",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1628,
+    "name": "Chana",
+    "weight": "205",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1629,
+    "name": "Mustard",
+    "weight": "142",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1630,
+    "name": "Sugarcane",
+    "weight": "33",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1631,
+    "name": "Bajra",
+    "weight": "22",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1632,
+    "name": "Jowar",
+    "weight": "116",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1633,
+    "name": "Jowar",
+    "weight": "101",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1634,
+    "name": "Chana",
+    "weight": "98",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1635,
+    "name": "Jowar",
+    "weight": "44",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1636,
+    "name": "Gehu",
+    "weight": "39",
+    "rate": "2663",
+    "seller": "Amit Verma",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1637,
+    "name": "Bajra",
+    "weight": "129",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1638,
+    "name": "Mustard",
+    "weight": "39",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1639,
+    "name": "Makka",
+    "weight": "102",
+    "rate": "1938",
+    "seller": "Kishan Singh",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1640,
+    "name": "Jowar",
+    "weight": "56",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1641,
+    "name": "Bajra",
+    "weight": "175",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1642,
+    "name": "Sugarcane",
+    "weight": "192",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1643,
+    "name": "Soyabean",
+    "weight": "71",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1644,
+    "name": "Mustard",
+    "weight": "128",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1645,
+    "name": "Bajra",
+    "weight": "208",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1646,
+    "name": "Sugarcane",
+    "weight": "69",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1647,
+    "name": "Mustard",
+    "weight": "139",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1648,
+    "name": "Chana",
+    "weight": "11",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1649,
+    "name": "Dhan",
+    "weight": "146",
+    "rate": "3054",
+    "seller": "Harsh Patel",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1650,
+    "name": "Jowar",
+    "weight": "59",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1651,
+    "name": "Dhan",
+    "weight": "44",
+    "rate": "3159",
+    "seller": "Suresh Kumar",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1652,
+    "name": "Cotton",
+    "weight": "136",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1653,
+    "name": "Soyabean",
+    "weight": "57",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1654,
+    "name": "Makka",
+    "weight": "206",
+    "rate": "2126",
+    "seller": "Kishan Singh",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1655,
+    "name": "Dhan",
+    "weight": "203",
+    "rate": "2847",
+    "seller": "Manoj Sharma",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1656,
+    "name": "Soyabean",
+    "weight": "204",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1657,
+    "name": "Sugarcane",
+    "weight": "203",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1658,
+    "name": "Mustard",
+    "weight": "65",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1659,
+    "name": "Dhan",
+    "weight": "203",
+    "rate": "2866",
+    "seller": "Kishan Singh",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1660,
+    "name": "Gehu",
+    "weight": "26",
+    "rate": "2224",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1661,
+    "name": "Gehu",
+    "weight": "152",
+    "rate": "2629",
+    "seller": "Vikas Reddy",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1662,
+    "name": "Bajra",
+    "weight": "146",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1663,
+    "name": "Sugarcane",
+    "weight": "204",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1664,
+    "name": "Gehu",
+    "weight": "130",
+    "rate": "2469",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1665,
+    "name": "Cotton",
+    "weight": "89",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1666,
+    "name": "Mustard",
+    "weight": "44",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1667,
+    "name": "Cotton",
+    "weight": "26",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1668,
+    "name": "Soyabean",
+    "weight": "147",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1669,
+    "name": "Gehu",
+    "weight": "144",
+    "rate": "2599",
+    "seller": "Sunil Yadav",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1670,
+    "name": "Jowar",
+    "weight": "123",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1671,
+    "name": "Cotton",
+    "weight": "110",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1672,
+    "name": "Mustard",
+    "weight": "114",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1673,
+    "name": "Sugarcane",
+    "weight": "73",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1674,
+    "name": "Chana",
+    "weight": "89",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1675,
+    "name": "Bajra",
+    "weight": "56",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1676,
+    "name": "Chana",
+    "weight": "55",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1677,
+    "name": "Bajra",
+    "weight": "185",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1678,
+    "name": "Makka",
+    "weight": "194",
+    "rate": "1841",
+    "seller": "Amit Verma",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1679,
+    "name": "Bajra",
+    "weight": "137",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1680,
+    "name": "Cotton",
+    "weight": "44",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1681,
+    "name": "Chana",
+    "weight": "177",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1682,
+    "name": "Dhan",
+    "weight": "207",
+    "rate": "2826",
+    "seller": "Sunil Yadav",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1683,
+    "name": "Jowar",
+    "weight": "185",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1684,
+    "name": "Cotton",
+    "weight": "192",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1685,
+    "name": "Chana",
+    "weight": "186",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1686,
+    "name": "Jowar",
+    "weight": "11",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1687,
+    "name": "Mustard",
+    "weight": "147",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1688,
+    "name": "Sugarcane",
+    "weight": "34",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1689,
+    "name": "Mustard",
+    "weight": "181",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1690,
+    "name": "Chana",
+    "weight": "69",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1691,
+    "name": "Chana",
+    "weight": "80",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1692,
+    "name": "Dhan",
+    "weight": "48",
+    "rate": "3023",
+    "seller": "Kishan Singh",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1693,
+    "name": "Bajra",
+    "weight": "206",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1694,
+    "name": "Cotton",
+    "weight": "38",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1695,
+    "name": "Mustard",
+    "weight": "111",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1696,
+    "name": "Soyabean",
+    "weight": "94",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1697,
+    "name": "Sugarcane",
+    "weight": "191",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1698,
+    "name": "Jowar",
+    "weight": "62",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1699,
+    "name": "Soyabean",
+    "weight": "44",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1700,
+    "name": "Soyabean",
+    "weight": "80",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1701,
+    "name": "Gehu",
+    "weight": "60",
+    "rate": "2407",
+    "seller": "Ram Lal",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1702,
+    "name": "Bajra",
+    "weight": "78",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1703,
+    "name": "Bajra",
+    "weight": "149",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1704,
+    "name": "Chana",
+    "weight": "97",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1705,
+    "name": "Sugarcane",
+    "weight": "162",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1706,
+    "name": "Sugarcane",
+    "weight": "143",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1707,
+    "name": "Cotton",
+    "weight": "153",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1708,
+    "name": "Cotton",
+    "weight": "191",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1709,
+    "name": "Soyabean",
+    "weight": "28",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1710,
+    "name": "Makka",
+    "weight": "157",
+    "rate": "2071",
+    "seller": "Suresh Kumar",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1711,
+    "name": "Cotton",
+    "weight": "117",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1712,
+    "name": "Sugarcane",
+    "weight": "101",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1713,
+    "name": "Mustard",
+    "weight": "208",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1714,
+    "name": "Mustard",
+    "weight": "49",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1715,
+    "name": "Bajra",
+    "weight": "50",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1716,
+    "name": "Chana",
+    "weight": "46",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1717,
+    "name": "Jowar",
+    "weight": "132",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1718,
+    "name": "Mustard",
+    "weight": "155",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1719,
+    "name": "Soyabean",
+    "weight": "98",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1720,
+    "name": "Mustard",
+    "weight": "205",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1721,
+    "name": "Makka",
+    "weight": "175",
+    "rate": "2239",
+    "seller": "Anil Desai",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1722,
+    "name": "Sugarcane",
+    "weight": "173",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1723,
+    "name": "Makka",
+    "weight": "105",
+    "rate": "2067",
+    "seller": "Suresh Kumar",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1724,
+    "name": "Gehu",
+    "weight": "142",
+    "rate": "2270",
+    "seller": "Amit Verma",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1725,
+    "name": "Jowar",
+    "weight": "98",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1726,
+    "name": "Sugarcane",
+    "weight": "106",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1727,
+    "name": "Cotton",
+    "weight": "184",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1728,
+    "name": "Sugarcane",
+    "weight": "91",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1729,
+    "name": "Mustard",
+    "weight": "168",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1730,
+    "name": "Mustard",
+    "weight": "19",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1731,
+    "name": "Sugarcane",
+    "weight": "183",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1732,
+    "name": "Cotton",
+    "weight": "197",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1733,
+    "name": "Soyabean",
+    "weight": "135",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1734,
+    "name": "Bajra",
+    "weight": "204",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1735,
+    "name": "Chana",
+    "weight": "196",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1736,
+    "name": "Chana",
+    "weight": "135",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1737,
+    "name": "Makka",
+    "weight": "18",
+    "rate": "1823",
+    "seller": "Sunil Yadav",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1738,
+    "name": "Sugarcane",
+    "weight": "101",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1739,
+    "name": "Bajra",
+    "weight": "17",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1740,
+    "name": "Dhan",
+    "weight": "84",
+    "rate": "3239",
+    "seller": "Sunil Yadav",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1741,
+    "name": "Mustard",
+    "weight": "129",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1742,
+    "name": "Gehu",
+    "weight": "111",
+    "rate": "2461",
+    "seller": "Suresh Kumar",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1743,
+    "name": "Chana",
+    "weight": "15",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1744,
+    "name": "Bajra",
+    "weight": "153",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1745,
+    "name": "Dhan",
+    "weight": "187",
+    "rate": "2809",
+    "seller": "Manoj Sharma",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1746,
+    "name": "Jowar",
+    "weight": "112",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1747,
+    "name": "Mustard",
+    "weight": "123",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1748,
+    "name": "Cotton",
+    "weight": "195",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1749,
+    "name": "Makka",
+    "weight": "145",
+    "rate": "2179",
+    "seller": "Rajesh Gupta",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1750,
+    "name": "Sugarcane",
+    "weight": "21",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1751,
+    "name": "Chana",
+    "weight": "45",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1752,
+    "name": "Gehu",
+    "weight": "136",
+    "rate": "2474",
+    "seller": "Sunil Yadav",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1753,
+    "name": "Cotton",
+    "weight": "201",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1754,
+    "name": "Soyabean",
+    "weight": "191",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1755,
+    "name": "Mustard",
+    "weight": "171",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1756,
+    "name": "Soyabean",
+    "weight": "100",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1757,
+    "name": "Jowar",
+    "weight": "197",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1758,
+    "name": "Makka",
+    "weight": "52",
+    "rate": "1958",
+    "seller": "Suresh Kumar",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1759,
+    "name": "Chana",
+    "weight": "90",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1760,
+    "name": "Sugarcane",
+    "weight": "164",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1761,
+    "name": "Chana",
+    "weight": "177",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1762,
+    "name": "Mustard",
+    "weight": "184",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1763,
+    "name": "Bajra",
+    "weight": "47",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1764,
+    "name": "Mustard",
+    "weight": "101",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1765,
+    "name": "Chana",
+    "weight": "110",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1766,
+    "name": "Sugarcane",
+    "weight": "78",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1767,
+    "name": "Cotton",
+    "weight": "78",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1768,
+    "name": "Bajra",
+    "weight": "102",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1769,
+    "name": "Makka",
+    "weight": "179",
+    "rate": "2133",
+    "seller": "Rajesh Gupta",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1770,
+    "name": "Gehu",
+    "weight": "135",
+    "rate": "2311",
+    "seller": "Vikas Reddy",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1771,
+    "name": "Makka",
+    "weight": "82",
+    "rate": "2207",
+    "seller": "Anil Desai",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1772,
+    "name": "Mustard",
+    "weight": "124",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1773,
+    "name": "Soyabean",
+    "weight": "105",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1774,
+    "name": "Chana",
+    "weight": "88",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1775,
+    "name": "Chana",
+    "weight": "113",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1776,
+    "name": "Mustard",
+    "weight": "92",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1777,
+    "name": "Soyabean",
+    "weight": "202",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1778,
+    "name": "Makka",
+    "weight": "60",
+    "rate": "1817",
+    "seller": "Ram Lal",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1779,
+    "name": "Makka",
+    "weight": "93",
+    "rate": "1915",
+    "seller": "Suresh Kumar",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1780,
+    "name": "Mustard",
+    "weight": "108",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1781,
+    "name": "Gehu",
+    "weight": "35",
+    "rate": "2462",
+    "seller": "Anil Desai",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1782,
+    "name": "Chana",
+    "weight": "200",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1783,
+    "name": "Mustard",
+    "weight": "10",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1784,
+    "name": "Chana",
+    "weight": "201",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1785,
+    "name": "Chana",
+    "weight": "131",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1786,
+    "name": "Jowar",
+    "weight": "122",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1787,
+    "name": "Makka",
+    "weight": "26",
+    "rate": "2177",
+    "seller": "Ram Lal",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1788,
+    "name": "Sugarcane",
+    "weight": "28",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1789,
+    "name": "Soyabean",
+    "weight": "24",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1790,
+    "name": "Sugarcane",
+    "weight": "204",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1791,
+    "name": "Makka",
+    "weight": "92",
+    "rate": "2117",
+    "seller": "Kishan Singh",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1792,
+    "name": "Gehu",
+    "weight": "128",
+    "rate": "2520",
+    "seller": "Ram Lal",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1793,
+    "name": "Mustard",
+    "weight": "178",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1794,
+    "name": "Gehu",
+    "weight": "111",
+    "rate": "2662",
+    "seller": "Anil Desai",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1795,
+    "name": "Sugarcane",
+    "weight": "193",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1796,
+    "name": "Gehu",
+    "weight": "21",
+    "rate": "2364",
+    "seller": "Suresh Kumar",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1797,
+    "name": "Bajra",
+    "weight": "196",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1798,
+    "name": "Sugarcane",
+    "weight": "133",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1799,
+    "name": "Makka",
+    "weight": "114",
+    "rate": "2168",
+    "seller": "Amit Verma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1800,
+    "name": "Mustard",
+    "weight": "155",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1801,
+    "name": "Jowar",
+    "weight": "73",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1802,
+    "name": "Soyabean",
+    "weight": "146",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1803,
+    "name": "Soyabean",
+    "weight": "148",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1804,
+    "name": "Mustard",
+    "weight": "166",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1805,
+    "name": "Bajra",
+    "weight": "112",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1806,
+    "name": "Soyabean",
+    "weight": "70",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1807,
+    "name": "Sugarcane",
+    "weight": "146",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1808,
+    "name": "Cotton",
+    "weight": "122",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1809,
+    "name": "Dhan",
+    "weight": "127",
+    "rate": "2998",
+    "seller": "Suresh Kumar",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1810,
+    "name": "Dhan",
+    "weight": "186",
+    "rate": "2914",
+    "seller": "Harsh Patel",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1811,
+    "name": "Mustard",
+    "weight": "200",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1812,
+    "name": "Sugarcane",
+    "weight": "145",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1813,
+    "name": "Jowar",
+    "weight": "163",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1814,
+    "name": "Dhan",
+    "weight": "61",
+    "rate": "3053",
+    "seller": "Manoj Sharma",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1815,
+    "name": "Gehu",
+    "weight": "180",
+    "rate": "2246",
+    "seller": "Amit Verma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1816,
+    "name": "Jowar",
+    "weight": "128",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1817,
+    "name": "Bajra",
+    "weight": "119",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1818,
+    "name": "Jowar",
+    "weight": "188",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1819,
+    "name": "Jowar",
+    "weight": "43",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1820,
+    "name": "Sugarcane",
+    "weight": "19",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1821,
+    "name": "Sugarcane",
+    "weight": "111",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1822,
+    "name": "Mustard",
+    "weight": "131",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1823,
+    "name": "Jowar",
+    "weight": "20",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1824,
+    "name": "Mustard",
+    "weight": "168",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1825,
+    "name": "Dhan",
+    "weight": "103",
+    "rate": "3006",
+    "seller": "Sunil Yadav",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1826,
+    "name": "Cotton",
+    "weight": "119",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1827,
+    "name": "Mustard",
+    "weight": "56",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1828,
+    "name": "Mustard",
+    "weight": "79",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1829,
+    "name": "Gehu",
+    "weight": "157",
+    "rate": "2218",
+    "seller": "Anil Desai",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1830,
+    "name": "Chana",
+    "weight": "13",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1831,
+    "name": "Soyabean",
+    "weight": "53",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1832,
+    "name": "Soyabean",
+    "weight": "179",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1833,
+    "name": "Jowar",
+    "weight": "20",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1834,
+    "name": "Sugarcane",
+    "weight": "139",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1835,
+    "name": "Gehu",
+    "weight": "57",
+    "rate": "2541",
+    "seller": "Sunil Yadav",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1836,
+    "name": "Jowar",
+    "weight": "41",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1837,
+    "name": "Gehu",
+    "weight": "119",
+    "rate": "2263",
+    "seller": "Suresh Kumar",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1838,
+    "name": "Gehu",
+    "weight": "102",
+    "rate": "2468",
+    "seller": "Ram Lal",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1839,
+    "name": "Dhan",
+    "weight": "170",
+    "rate": "3241",
+    "seller": "Kishan Singh",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1840,
+    "name": "Bajra",
+    "weight": "102",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1841,
+    "name": "Jowar",
+    "weight": "38",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1842,
+    "name": "Soyabean",
+    "weight": "194",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1843,
+    "name": "Gehu",
+    "weight": "118",
+    "rate": "2521",
+    "seller": "Ram Lal",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1844,
+    "name": "Jowar",
+    "weight": "60",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1845,
+    "name": "Mustard",
+    "weight": "49",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1846,
+    "name": "Dhan",
+    "weight": "41",
+    "rate": "2823",
+    "seller": "Anil Desai",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1847,
+    "name": "Mustard",
+    "weight": "111",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1848,
+    "name": "Cotton",
+    "weight": "90",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1849,
+    "name": "Dhan",
+    "weight": "43",
+    "rate": "3252",
+    "seller": "Amit Verma",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1850,
+    "name": "Cotton",
+    "weight": "131",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1851,
+    "name": "Chana",
+    "weight": "71",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1852,
+    "name": "Soyabean",
+    "weight": "199",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1853,
+    "name": "Soyabean",
+    "weight": "36",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1854,
+    "name": "Makka",
+    "weight": "22",
+    "rate": "1981",
+    "seller": "Suresh Kumar",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1855,
+    "name": "Makka",
+    "weight": "125",
+    "rate": "1912",
+    "seller": "Vikas Reddy",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1856,
+    "name": "Sugarcane",
+    "weight": "169",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1857,
+    "name": "Cotton",
+    "weight": "190",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1858,
+    "name": "Gehu",
+    "weight": "207",
+    "rate": "2635",
+    "seller": "Amit Verma",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1859,
+    "name": "Dhan",
+    "weight": "205",
+    "rate": "2965",
+    "seller": "Anil Desai",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1860,
+    "name": "Makka",
+    "weight": "76",
+    "rate": "2121",
+    "seller": "Harsh Patel",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1861,
+    "name": "Cotton",
+    "weight": "194",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1862,
+    "name": "Cotton",
+    "weight": "43",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1863,
+    "name": "Cotton",
+    "weight": "125",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1864,
+    "name": "Chana",
+    "weight": "201",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1865,
+    "name": "Chana",
+    "weight": "148",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1866,
+    "name": "Sugarcane",
+    "weight": "184",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1867,
+    "name": "Chana",
+    "weight": "171",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1868,
+    "name": "Jowar",
+    "weight": "61",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1869,
+    "name": "Sugarcane",
+    "weight": "15",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1870,
+    "name": "Makka",
+    "weight": "204",
+    "rate": "2142",
+    "seller": "Manoj Sharma",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1871,
+    "name": "Chana",
+    "weight": "147",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1872,
+    "name": "Jowar",
+    "weight": "95",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1873,
+    "name": "Gehu",
+    "weight": "150",
+    "rate": "2302",
+    "seller": "Manoj Sharma",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1874,
+    "name": "Jowar",
+    "weight": "53",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1875,
+    "name": "Makka",
+    "weight": "140",
+    "rate": "2227",
+    "seller": "Rajesh Gupta",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1876,
+    "name": "Dhan",
+    "weight": "23",
+    "rate": "3088",
+    "seller": "Kishan Singh",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1877,
+    "name": "Chana",
+    "weight": "95",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1878,
+    "name": "Mustard",
+    "weight": "163",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1879,
+    "name": "Jowar",
+    "weight": "24",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1880,
+    "name": "Soyabean",
+    "weight": "75",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1881,
+    "name": "Gehu",
+    "weight": "141",
+    "rate": "2651",
+    "seller": "Kishan Singh",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1882,
+    "name": "Makka",
+    "weight": "177",
+    "rate": "1832",
+    "seller": "Harsh Patel",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1883,
+    "name": "Sugarcane",
+    "weight": "170",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1884,
+    "name": "Cotton",
+    "weight": "31",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1885,
+    "name": "Jowar",
+    "weight": "153",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1886,
+    "name": "Sugarcane",
+    "weight": "12",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1887,
+    "name": "Soyabean",
+    "weight": "40",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1888,
+    "name": "Jowar",
+    "weight": "94",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1889,
+    "name": "Jowar",
+    "weight": "30",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1890,
+    "name": "Makka",
+    "weight": "174",
+    "rate": "2078",
+    "seller": "Sunil Yadav",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1891,
+    "name": "Cotton",
+    "weight": "10",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1892,
+    "name": "Jowar",
+    "weight": "56",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1893,
+    "name": "Makka",
+    "weight": "81",
+    "rate": "2215",
+    "seller": "Rajesh Gupta",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1894,
+    "name": "Makka",
+    "weight": "92",
+    "rate": "2116",
+    "seller": "Ram Lal",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1895,
+    "name": "Mustard",
+    "weight": "39",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1896,
+    "name": "Gehu",
+    "weight": "158",
+    "rate": "2278",
+    "seller": "Manoj Sharma",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1897,
+    "name": "Dhan",
+    "weight": "197",
+    "rate": "3176",
+    "seller": "Amit Verma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1898,
+    "name": "Dhan",
+    "weight": "40",
+    "rate": "3027",
+    "seller": "Rajesh Gupta",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1899,
+    "name": "Makka",
+    "weight": "190",
+    "rate": "2295",
+    "seller": "Ram Lal",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1900,
+    "name": "Makka",
+    "weight": "197",
+    "rate": "1870",
+    "seller": "Amit Verma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1901,
+    "name": "Mustard",
+    "weight": "192",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1902,
+    "name": "Cotton",
+    "weight": "74",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1903,
+    "name": "Jowar",
+    "weight": "195",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1904,
+    "name": "Jowar",
+    "weight": "113",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1905,
+    "name": "Mustard",
+    "weight": "62",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1906,
+    "name": "Jowar",
+    "weight": "22",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1907,
+    "name": "Soyabean",
+    "weight": "134",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1908,
+    "name": "Cotton",
+    "weight": "83",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1909,
+    "name": "Dhan",
+    "weight": "44",
+    "rate": "3246",
+    "seller": "Suresh Kumar",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1910,
+    "name": "Gehu",
+    "weight": "37",
+    "rate": "2604",
+    "seller": "Kishan Singh",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1911,
+    "name": "Dhan",
+    "weight": "193",
+    "rate": "3249",
+    "seller": "Harsh Patel",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1912,
+    "name": "Sugarcane",
+    "weight": "32",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1913,
+    "name": "Bajra",
+    "weight": "50",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1914,
+    "name": "Dhan",
+    "weight": "80",
+    "rate": "2809",
+    "seller": "Anil Desai",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1915,
+    "name": "Dhan",
+    "weight": "141",
+    "rate": "3203",
+    "seller": "Kishan Singh",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1916,
+    "name": "Mustard",
+    "weight": "157",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1917,
+    "name": "Gehu",
+    "weight": "74",
+    "rate": "2498",
+    "seller": "Anil Desai",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1918,
+    "name": "Sugarcane",
+    "weight": "94",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1919,
+    "name": "Dhan",
+    "weight": "24",
+    "rate": "3017",
+    "seller": "Vikas Reddy",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1920,
+    "name": "Soyabean",
+    "weight": "169",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1921,
+    "name": "Bajra",
+    "weight": "196",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1922,
+    "name": "Chana",
+    "weight": "92",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1923,
+    "name": "Makka",
+    "weight": "66",
+    "rate": "2004",
+    "seller": "Kishan Singh",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1924,
+    "name": "Gehu",
+    "weight": "122",
+    "rate": "2302",
+    "seller": "Suresh Kumar",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1925,
+    "name": "Chana",
+    "weight": "95",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1926,
+    "name": "Dhan",
+    "weight": "25",
+    "rate": "2978",
+    "seller": "Suresh Kumar",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1927,
+    "name": "Makka",
+    "weight": "104",
+    "rate": "2198",
+    "seller": "Sunil Yadav",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1928,
+    "name": "Makka",
+    "weight": "170",
+    "rate": "2226",
+    "seller": "Amit Verma",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1929,
+    "name": "Sugarcane",
+    "weight": "111",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1930,
+    "name": "Cotton",
+    "weight": "69",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1931,
+    "name": "Mustard",
+    "weight": "181",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1932,
+    "name": "Makka",
+    "weight": "208",
+    "rate": "2117",
+    "seller": "Vikas Reddy",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1933,
+    "name": "Makka",
+    "weight": "122",
+    "rate": "2057",
+    "seller": "Rajesh Gupta",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1934,
+    "name": "Jowar",
+    "weight": "66",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1935,
+    "name": "Cotton",
+    "weight": "141",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1936,
+    "name": "Dhan",
+    "weight": "40",
+    "rate": "3237",
+    "seller": "Sunil Yadav",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1937,
+    "name": "Chana",
+    "weight": "36",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1938,
+    "name": "Jowar",
+    "weight": "139",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1939,
+    "name": "Chana",
+    "weight": "28",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1940,
+    "name": "Cotton",
+    "weight": "67",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1941,
+    "name": "Bajra",
+    "weight": "197",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1942,
+    "name": "Dhan",
+    "weight": "77",
+    "rate": "3062",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1943,
+    "name": "Soyabean",
+    "weight": "91",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1944,
+    "name": "Cotton",
+    "weight": "197",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1945,
+    "name": "Jowar",
+    "weight": "156",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1946,
+    "name": "Mustard",
+    "weight": "36",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1947,
+    "name": "Soyabean",
+    "weight": "38",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1948,
+    "name": "Gehu",
+    "weight": "48",
+    "rate": "2457",
+    "seller": "Suresh Kumar",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1949,
+    "name": "Chana",
+    "weight": "17",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1950,
+    "name": "Chana",
+    "weight": "191",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Andhra Pradesh"
+  },
+  {
+    "id": 1951,
+    "name": "Jowar",
+    "weight": "86",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1952,
+    "name": "Mustard",
+    "weight": "139",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1953,
+    "name": "Cotton",
+    "weight": "76",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1954,
+    "name": "Jowar",
+    "weight": "187",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1955,
+    "name": "Soyabean",
+    "weight": "99",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1956,
+    "name": "Jowar",
+    "weight": "17",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1957,
+    "name": "Dhan",
+    "weight": "104",
+    "rate": "3235",
+    "seller": "Sunil Yadav",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1958,
+    "name": "Jowar",
+    "weight": "203",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1959,
+    "name": "Makka",
+    "weight": "44",
+    "rate": "1810",
+    "seller": "Sunil Yadav",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1960,
+    "name": "Gehu",
+    "weight": "20",
+    "rate": "2399",
+    "seller": "Sunil Yadav",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1961,
+    "name": "Chana",
+    "weight": "187",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1962,
+    "name": "Soyabean",
+    "weight": "146",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1963,
+    "name": "Jowar",
+    "weight": "59",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1964,
+    "name": "Jowar",
+    "weight": "55",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1965,
+    "name": "Sugarcane",
+    "weight": "167",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1966,
+    "name": "Jowar",
+    "weight": "107",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1967,
+    "name": "Soyabean",
+    "weight": "80",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1968,
+    "name": "Soyabean",
+    "weight": "114",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1969,
+    "name": "Makka",
+    "weight": "164",
+    "rate": "2205",
+    "seller": "Sunil Yadav",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1970,
+    "name": "Soyabean",
+    "weight": "88",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1971,
+    "name": "Bajra",
+    "weight": "58",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1972,
+    "name": "Bajra",
+    "weight": "116",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1973,
+    "name": "Bajra",
+    "weight": "203",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1974,
+    "name": "Gehu",
+    "weight": "49",
+    "rate": "2637",
+    "seller": "Kishan Singh",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1975,
+    "name": "Bajra",
+    "weight": "90",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1976,
+    "name": "Chana",
+    "weight": "204",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1977,
+    "name": "Chana",
+    "weight": "80",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1978,
+    "name": "Makka",
+    "weight": "117",
+    "rate": "1959",
+    "seller": "Harsh Patel",
+    "loc": "Telangana"
+  },
+  {
+    "id": 1979,
+    "name": "Chana",
+    "weight": "122",
+    "rate": "2000",
+    "seller": "Manoj Sharma",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1980,
+    "name": "Soyabean",
+    "weight": "38",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Karnataka"
+  },
+  {
+    "id": 1981,
+    "name": "Makka",
+    "weight": "109",
+    "rate": "2169",
+    "seller": "Rajesh Gupta",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1982,
+    "name": "Mustard",
+    "weight": "104",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1983,
+    "name": "Bajra",
+    "weight": "33",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1984,
+    "name": "Dhan",
+    "weight": "143",
+    "rate": "2800",
+    "seller": "Kishan Singh",
+    "loc": "Haryana"
+  },
+  {
+    "id": 1985,
+    "name": "Sugarcane",
+    "weight": "124",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Madhya Pradesh"
+  },
+  {
+    "id": 1986,
+    "name": "Cotton",
+    "weight": "108",
+    "rate": "2000",
+    "seller": "Rajesh Gupta",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1987,
+    "name": "Makka",
+    "weight": "28",
+    "rate": "2091",
+    "seller": "Sunil Yadav",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1988,
+    "name": "Mustard",
+    "weight": "122",
+    "rate": "2000",
+    "seller": "Suresh Kumar",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1989,
+    "name": "Soyabean",
+    "weight": "162",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1990,
+    "name": "Bajra",
+    "weight": "177",
+    "rate": "2000",
+    "seller": "Harsh Patel",
+    "loc": "Uttar Pradesh"
+  },
+  {
+    "id": 1991,
+    "name": "Bajra",
+    "weight": "141",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1992,
+    "name": "Cotton",
+    "weight": "60",
+    "rate": "2000",
+    "seller": "Ram Lal",
+    "loc": "Rajasthan"
+  },
+  {
+    "id": 1993,
+    "name": "Jowar",
+    "weight": "61",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Maharashtra"
+  },
+  {
+    "id": 1994,
+    "name": "Cotton",
+    "weight": "47",
+    "rate": "2000",
+    "seller": "Vikas Reddy",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1995,
+    "name": "Sugarcane",
+    "weight": "59",
+    "rate": "2000",
+    "seller": "Sunil Yadav",
+    "loc": "Delhi"
+  },
+  {
+    "id": 1996,
+    "name": "Bajra",
+    "weight": "35",
+    "rate": "2000",
+    "seller": "Kishan Singh",
+    "loc": "Karnal"
+  },
+  {
+    "id": 1997,
+    "name": "Cotton",
+    "weight": "146",
+    "rate": "2000",
+    "seller": "Amit Verma",
+    "loc": "Gujarat"
+  },
+  {
+    "id": 1998,
+    "name": "Soyabean",
+    "weight": "84",
+    "rate": "2000",
+    "seller": "Anil Desai",
+    "loc": "Punjab"
+  },
+  {
+    "id": 1999,
+    "name": "Makka",
+    "weight": "173",
+    "rate": "1965",
+    "seller": "Manoj Sharma",
+    "loc": "Telangana"
+  }
+]

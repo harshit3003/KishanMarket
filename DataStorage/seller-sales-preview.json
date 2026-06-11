@@ -1,0 +1,37 @@
+[
+  {
+    "date": "11 Apr",
+    "buyer": "Local Mandi",
+    "crop": "Makka",
+    "amount": "₹4,70,756",
+    "status": "Pending"
+  },
+  {
+    "date": "20 Apr",
+    "buyer": "Delhi Fresh",
+    "crop": "Makka",
+    "amount": "₹4,81,740",
+    "status": "Pending"
+  },
+  {
+    "date": "14 Apr",
+    "buyer": "AgriSafe",
+    "crop": "Mustard",
+    "amount": "₹4,30,651",
+    "status": "Success"
+  },
+  {
+    "date": "23 Apr",
+    "buyer": "Adani Wilmar",
+    "crop": "Gehu",
+    "amount": "₹2,88,637",
+    "status": "Cancelled"
+  },
+  {
+    "date": "11 Apr",
+    "buyer": "Local Mandi",
+    "crop": "Sugarcane",
+    "amount": "₹32,197",
+    "status": "Cancelled"
+  }
+]
