@@ -1,0 +1,5002 @@
+[
+  {
+    "name": "Jowar Mix 0",
+    "my": 2720,
+    "mandi": 2805
+  },
+  {
+    "name": "Mustard Mix 1",
+    "my": 3057,
+    "mandi": 3165
+  },
+  {
+    "name": "Gehu Mix 2",
+    "my": 2783,
+    "mandi": 2675
+  },
+  {
+    "name": "Bajra Mix 3",
+    "my": 2188,
+    "mandi": 2224
+  },
+  {
+    "name": "Mustard Mix 4",
+    "my": 2243,
+    "mandi": 2127
+  },
+  {
+    "name": "Bajra Mix 5",
+    "my": 1786,
+    "mandi": 1801
+  },
+  {
+    "name": "Jowar Mix 6",
+    "my": 2261,
+    "mandi": 2173
+  },
+  {
+    "name": "Mustard Mix 7",
+    "my": 2452,
+    "mandi": 2543
+  },
+  {
+    "name": "Soyabean Mix 8",
+    "my": 3418,
+    "mandi": 3487
+  },
+  {
+    "name": "Soyabean Mix 9",
+    "my": 2863,
+    "mandi": 2823
+  },
+  {
+    "name": "Sugarcane Mix 10",
+    "my": 1738,
+    "mandi": 1610
+  },
+  {
+    "name": "Cotton Mix 11",
+    "my": 3395,
+    "mandi": 3258
+  },
+  {
+    "name": "Jowar Mix 12",
+    "my": 2544,
+    "mandi": 2462
+  },
+  {
+    "name": "Bajra Mix 13",
+    "my": 1926,
+    "mandi": 1815
+  },
+  {
+    "name": "Chana Mix 14",
+    "my": 2491,
+    "mandi": 2496
+  },
+  {
+    "name": "Chana Mix 15",
+    "my": 2729,
+    "mandi": 2766
+  },
+  {
+    "name": "Soyabean Mix 16",
+    "my": 2574,
+    "mandi": 2629
+  },
+  {
+    "name": "Soyabean Mix 17",
+    "my": 2799,
+    "mandi": 2674
+  },
+  {
+    "name": "Makka Mix 18",
+    "my": 2639,
+    "mandi": 2782
+  },
+  {
+    "name": "Gehu Mix 19",
+    "my": 2358,
+    "mandi": 2209
+  },
+  {
+    "name": "Jowar Mix 20",
+    "my": 3437,
+    "mandi": 3440
+  },
+  {
+    "name": "Chana Mix 21",
+    "my": 3102,
+    "mandi": 3079
+  },
+  {
+    "name": "Dhan Mix 22",
+    "my": 1946,
+    "mandi": 1824
+  },
+  {
+    "name": "Gehu Mix 23",
+    "my": 2337,
+    "mandi": 2412
+  },
+  {
+    "name": "Makka Mix 24",
+    "my": 1758,
+    "mandi": 1842
+  },
+  {
+    "name": "Soyabean Mix 25",
+    "my": 2377,
+    "mandi": 2382
+  },
+  {
+    "name": "Mustard Mix 26",
+    "my": 2090,
+    "mandi": 2183
+  },
+  {
+    "name": "Cotton Mix 27",
+    "my": 3392,
+    "mandi": 3528
+  },
+  {
+    "name": "Bajra Mix 28",
+    "my": 1557,
+    "mandi": 1480
+  },
+  {
+    "name": "Sugarcane Mix 29",
+    "my": 2625,
+    "mandi": 2561
+  },
+  {
+    "name": "Gehu Mix 30",
+    "my": 2105,
+    "mandi": 1974
+  },
+  {
+    "name": "Bajra Mix 31",
+    "my": 2975,
+    "mandi": 2830
+  },
+  {
+    "name": "Mustard Mix 32",
+    "my": 3038,
+    "mandi": 2992
+  },
+  {
+    "name": "Mustard Mix 33",
+    "my": 2958,
+    "mandi": 2945
+  },
+  {
+    "name": "Gehu Mix 34",
+    "my": 1929,
+    "mandi": 1857
+  },
+  {
+    "name": "Makka Mix 35",
+    "my": 2990,
+    "mandi": 2846
+  },
+  {
+    "name": "Chana Mix 36",
+    "my": 2398,
+    "mandi": 2517
+  },
+  {
+    "name": "Makka Mix 37",
+    "my": 3388,
+    "mandi": 3531
+  },
+  {
+    "name": "Gehu Mix 38",
+    "my": 1871,
+    "mandi": 1825
+  },
+  {
+    "name": "Soyabean Mix 39",
+    "my": 2417,
+    "mandi": 2445
+  },
+  {
+    "name": "Soyabean Mix 40",
+    "my": 2169,
+    "mandi": 2312
+  },
+  {
+    "name": "Jowar Mix 41",
+    "my": 3382,
+    "mandi": 3500
+  },
+  {
+    "name": "Sugarcane Mix 42",
+    "my": 3124,
+    "mandi": 3038
+  },
+  {
+    "name": "Makka Mix 43",
+    "my": 3356,
+    "mandi": 3354
+  },
+  {
+    "name": "Chana Mix 44",
+    "my": 1625,
+    "mandi": 1676
+  },
+  {
+    "name": "Chana Mix 45",
+    "my": 1543,
+    "mandi": 1625
+  },
+  {
+    "name": "Bajra Mix 46",
+    "my": 1824,
+    "mandi": 1715
+  },
+  {
+    "name": "Dhan Mix 47",
+    "my": 1514,
+    "mandi": 1482
+  },
+  {
+    "name": "Gehu Mix 48",
+    "my": 1809,
+    "mandi": 1674
+  },
+  {
+    "name": "Gehu Mix 49",
+    "my": 1740,
+    "mandi": 1628
+  },
+  {
+    "name": "Bajra Mix 50",
+    "my": 2457,
+    "mandi": 2561
+  },
+  {
+    "name": "Sugarcane Mix 51",
+    "my": 2027,
+    "mandi": 2033
+  },
+  {
+    "name": "Mustard Mix 52",
+    "my": 2152,
+    "mandi": 2146
+  },
+  {
+    "name": "Makka Mix 53",
+    "my": 1681,
+    "mandi": 1552
+  },
+  {
+    "name": "Soyabean Mix 54",
+    "my": 2977,
+    "mandi": 3033
+  },
+  {
+    "name": "Bajra Mix 55",
+    "my": 2536,
+    "mandi": 2501
+  },
+  {
+    "name": "Soyabean Mix 56",
+    "my": 2859,
+    "mandi": 2875
+  },
+  {
+    "name": "Jowar Mix 57",
+    "my": 2842,
+    "mandi": 2921
+  },
+  {
+    "name": "Cotton Mix 58",
+    "my": 2771,
+    "mandi": 2718
+  },
+  {
+    "name": "Sugarcane Mix 59",
+    "my": 3419,
+    "mandi": 3388
+  },
+  {
+    "name": "Makka Mix 60",
+    "my": 1889,
+    "mandi": 1996
+  },
+  {
+    "name": "Cotton Mix 61",
+    "my": 3387,
+    "mandi": 3363
+  },
+  {
+    "name": "Dhan Mix 62",
+    "my": 2089,
+    "mandi": 2091
+  },
+  {
+    "name": "Sugarcane Mix 63",
+    "my": 3417,
+    "mandi": 3353
+  },
+  {
+    "name": "Chana Mix 64",
+    "my": 3205,
+    "mandi": 3151
+  },
+  {
+    "name": "Cotton Mix 65",
+    "my": 3201,
+    "mandi": 3335
+  },
+  {
+    "name": "Gehu Mix 66",
+    "my": 1991,
+    "mandi": 2082
+  },
+  {
+    "name": "Gehu Mix 67",
+    "my": 3094,
+    "mandi": 3090
+  },
+  {
+    "name": "Mustard Mix 68",
+    "my": 2972,
+    "mandi": 2945
+  },
+  {
+    "name": "Makka Mix 69",
+    "my": 3037,
+    "mandi": 3109
+  },
+  {
+    "name": "Dhan Mix 70",
+    "my": 1901,
+    "mandi": 1832
+  },
+  {
+    "name": "Mustard Mix 71",
+    "my": 2158,
+    "mandi": 2045
+  },
+  {
+    "name": "Dhan Mix 72",
+    "my": 3064,
+    "mandi": 3036
+  },
+  {
+    "name": "Gehu Mix 73",
+    "my": 1705,
+    "mandi": 1831
+  },
+  {
+    "name": "Chana Mix 74",
+    "my": 1602,
+    "mandi": 1687
+  },
+  {
+    "name": "Makka Mix 75",
+    "my": 2601,
+    "mandi": 2464
+  },
+  {
+    "name": "Bajra Mix 76",
+    "my": 2364,
+    "mandi": 2342
+  },
+  {
+    "name": "Soyabean Mix 77",
+    "my": 3189,
+    "mandi": 3182
+  },
+  {
+    "name": "Makka Mix 78",
+    "my": 3269,
+    "mandi": 3231
+  },
+  {
+    "name": "Bajra Mix 79",
+    "my": 2761,
+    "mandi": 2846
+  },
+  {
+    "name": "Soyabean Mix 80",
+    "my": 2588,
+    "mandi": 2508
+  },
+  {
+    "name": "Bajra Mix 81",
+    "my": 1596,
+    "mandi": 1510
+  },
+  {
+    "name": "Mustard Mix 82",
+    "my": 2675,
+    "mandi": 2789
+  },
+  {
+    "name": "Soyabean Mix 83",
+    "my": 2994,
+    "mandi": 2886
+  },
+  {
+    "name": "Cotton Mix 84",
+    "my": 1524,
+    "mandi": 1501
+  },
+  {
+    "name": "Cotton Mix 85",
+    "my": 3376,
+    "mandi": 3496
+  },
+  {
+    "name": "Sugarcane Mix 86",
+    "my": 2229,
+    "mandi": 2320
+  },
+  {
+    "name": "Soyabean Mix 87",
+    "my": 2159,
+    "mandi": 2200
+  },
+  {
+    "name": "Cotton Mix 88",
+    "my": 1931,
+    "mandi": 1896
+  },
+  {
+    "name": "Bajra Mix 89",
+    "my": 1507,
+    "mandi": 1443
+  },
+  {
+    "name": "Makka Mix 90",
+    "my": 2823,
+    "mandi": 2855
+  },
+  {
+    "name": "Gehu Mix 91",
+    "my": 1822,
+    "mandi": 1881
+  },
+  {
+    "name": "Chana Mix 92",
+    "my": 2113,
+    "mandi": 2103
+  },
+  {
+    "name": "Gehu Mix 93",
+    "my": 1690,
+    "mandi": 1585
+  },
+  {
+    "name": "Jowar Mix 94",
+    "my": 3277,
+    "mandi": 3294
+  },
+  {
+    "name": "Jowar Mix 95",
+    "my": 3202,
+    "mandi": 3285
+  },
+  {
+    "name": "Bajra Mix 96",
+    "my": 1743,
+    "mandi": 1779
+  },
+  {
+    "name": "Mustard Mix 97",
+    "my": 2889,
+    "mandi": 2824
+  },
+  {
+    "name": "Soyabean Mix 98",
+    "my": 2219,
+    "mandi": 2178
+  },
+  {
+    "name": "Soyabean Mix 99",
+    "my": 2220,
+    "mandi": 2170
+  },
+  {
+    "name": "Mustard Mix 100",
+    "my": 2905,
+    "mandi": 2802
+  },
+  {
+    "name": "Bajra Mix 101",
+    "my": 2101,
+    "mandi": 2248
+  },
+  {
+    "name": "Jowar Mix 102",
+    "my": 2641,
+    "mandi": 2565
+  },
+  {
+    "name": "Makka Mix 103",
+    "my": 2046,
+    "mandi": 1914
+  },
+  {
+    "name": "Soyabean Mix 104",
+    "my": 2071,
+    "mandi": 1967
+  },
+  {
+    "name": "Soyabean Mix 105",
+    "my": 3090,
+    "mandi": 3025
+  },
+  {
+    "name": "Sugarcane Mix 106",
+    "my": 1707,
+    "mandi": 1618
+  },
+  {
+    "name": "Bajra Mix 107",
+    "my": 3024,
+    "mandi": 2887
+  },
+  {
+    "name": "Mustard Mix 108",
+    "my": 3490,
+    "mandi": 3437
+  },
+  {
+    "name": "Mustard Mix 109",
+    "my": 2972,
+    "mandi": 3043
+  },
+  {
+    "name": "Soyabean Mix 110",
+    "my": 2109,
+    "mandi": 2091
+  },
+  {
+    "name": "Gehu Mix 111",
+    "my": 2906,
+    "mandi": 2895
+  },
+  {
+    "name": "Sugarcane Mix 112",
+    "my": 2440,
+    "mandi": 2352
+  },
+  {
+    "name": "Soyabean Mix 113",
+    "my": 3305,
+    "mandi": 3245
+  },
+  {
+    "name": "Sugarcane Mix 114",
+    "my": 2345,
+    "mandi": 2203
+  },
+  {
+    "name": "Gehu Mix 115",
+    "my": 1660,
+    "mandi": 1617
+  },
+  {
+    "name": "Cotton Mix 116",
+    "my": 3120,
+    "mandi": 3140
+  },
+  {
+    "name": "Soyabean Mix 117",
+    "my": 1978,
+    "mandi": 1831
+  },
+  {
+    "name": "Bajra Mix 118",
+    "my": 2952,
+    "mandi": 2908
+  },
+  {
+    "name": "Gehu Mix 119",
+    "my": 3161,
+    "mandi": 3046
+  },
+  {
+    "name": "Sugarcane Mix 120",
+    "my": 2232,
+    "mandi": 2206
+  },
+  {
+    "name": "Soyabean Mix 121",
+    "my": 3174,
+    "mandi": 3240
+  },
+  {
+    "name": "Sugarcane Mix 122",
+    "my": 2520,
+    "mandi": 2392
+  },
+  {
+    "name": "Makka Mix 123",
+    "my": 2653,
+    "mandi": 2623
+  },
+  {
+    "name": "Cotton Mix 124",
+    "my": 1733,
+    "mandi": 1666
+  },
+  {
+    "name": "Makka Mix 125",
+    "my": 1891,
+    "mandi": 1790
+  },
+  {
+    "name": "Sugarcane Mix 126",
+    "my": 2795,
+    "mandi": 2729
+  },
+  {
+    "name": "Bajra Mix 127",
+    "my": 2985,
+    "mandi": 2871
+  },
+  {
+    "name": "Dhan Mix 128",
+    "my": 1793,
+    "mandi": 1649
+  },
+  {
+    "name": "Makka Mix 129",
+    "my": 2219,
+    "mandi": 2228
+  },
+  {
+    "name": "Dhan Mix 130",
+    "my": 2533,
+    "mandi": 2586
+  },
+  {
+    "name": "Gehu Mix 131",
+    "my": 2549,
+    "mandi": 2492
+  },
+  {
+    "name": "Gehu Mix 132",
+    "my": 1637,
+    "mandi": 1776
+  },
+  {
+    "name": "Mustard Mix 133",
+    "my": 3195,
+    "mandi": 3244
+  },
+  {
+    "name": "Soyabean Mix 134",
+    "my": 1557,
+    "mandi": 1674
+  },
+  {
+    "name": "Jowar Mix 135",
+    "my": 3338,
+    "mandi": 3220
+  },
+  {
+    "name": "Sugarcane Mix 136",
+    "my": 2865,
+    "mandi": 2790
+  },
+  {
+    "name": "Cotton Mix 137",
+    "my": 2887,
+    "mandi": 2930
+  },
+  {
+    "name": "Dhan Mix 138",
+    "my": 3328,
+    "mandi": 3449
+  },
+  {
+    "name": "Mustard Mix 139",
+    "my": 2768,
+    "mandi": 2687
+  },
+  {
+    "name": "Soyabean Mix 140",
+    "my": 3330,
+    "mandi": 3330
+  },
+  {
+    "name": "Cotton Mix 141",
+    "my": 3297,
+    "mandi": 3207
+  },
+  {
+    "name": "Cotton Mix 142",
+    "my": 1588,
+    "mandi": 1666
+  },
+  {
+    "name": "Gehu Mix 143",
+    "my": 2287,
+    "mandi": 2322
+  },
+  {
+    "name": "Sugarcane Mix 144",
+    "my": 2819,
+    "mandi": 2675
+  },
+  {
+    "name": "Cotton Mix 145",
+    "my": 2581,
+    "mandi": 2469
+  },
+  {
+    "name": "Mustard Mix 146",
+    "my": 1646,
+    "mandi": 1709
+  },
+  {
+    "name": "Cotton Mix 147",
+    "my": 2980,
+    "mandi": 2913
+  },
+  {
+    "name": "Dhan Mix 148",
+    "my": 1796,
+    "mandi": 1906
+  },
+  {
+    "name": "Gehu Mix 149",
+    "my": 3393,
+    "mandi": 3418
+  },
+  {
+    "name": "Bajra Mix 150",
+    "my": 2382,
+    "mandi": 2248
+  },
+  {
+    "name": "Chana Mix 151",
+    "my": 1958,
+    "mandi": 1887
+  },
+  {
+    "name": "Soyabean Mix 152",
+    "my": 2687,
+    "mandi": 2695
+  },
+  {
+    "name": "Mustard Mix 153",
+    "my": 2873,
+    "mandi": 2855
+  },
+  {
+    "name": "Chana Mix 154",
+    "my": 2276,
+    "mandi": 2275
+  },
+  {
+    "name": "Jowar Mix 155",
+    "my": 1570,
+    "mandi": 1546
+  },
+  {
+    "name": "Chana Mix 156",
+    "my": 3060,
+    "mandi": 3071
+  },
+  {
+    "name": "Bajra Mix 157",
+    "my": 2454,
+    "mandi": 2473
+  },
+  {
+    "name": "Sugarcane Mix 158",
+    "my": 2766,
+    "mandi": 2628
+  },
+  {
+    "name": "Mustard Mix 159",
+    "my": 3334,
+    "mandi": 3236
+  },
+  {
+    "name": "Sugarcane Mix 160",
+    "my": 3468,
+    "mandi": 3467
+  },
+  {
+    "name": "Gehu Mix 161",
+    "my": 3302,
+    "mandi": 3308
+  },
+  {
+    "name": "Cotton Mix 162",
+    "my": 3367,
+    "mandi": 3368
+  },
+  {
+    "name": "Gehu Mix 163",
+    "my": 2910,
+    "mandi": 2811
+  },
+  {
+    "name": "Cotton Mix 164",
+    "my": 1522,
+    "mandi": 1622
+  },
+  {
+    "name": "Makka Mix 165",
+    "my": 2525,
+    "mandi": 2645
+  },
+  {
+    "name": "Mustard Mix 166",
+    "my": 3388,
+    "mandi": 3324
+  },
+  {
+    "name": "Bajra Mix 167",
+    "my": 1857,
+    "mandi": 1946
+  },
+  {
+    "name": "Jowar Mix 168",
+    "my": 1706,
+    "mandi": 1755
+  },
+  {
+    "name": "Soyabean Mix 169",
+    "my": 1742,
+    "mandi": 1780
+  },
+  {
+    "name": "Dhan Mix 170",
+    "my": 2532,
+    "mandi": 2403
+  },
+  {
+    "name": "Dhan Mix 171",
+    "my": 3356,
+    "mandi": 3442
+  },
+  {
+    "name": "Mustard Mix 172",
+    "my": 2776,
+    "mandi": 2667
+  },
+  {
+    "name": "Dhan Mix 173",
+    "my": 1711,
+    "mandi": 1632
+  },
+  {
+    "name": "Makka Mix 174",
+    "my": 2522,
+    "mandi": 2405
+  },
+  {
+    "name": "Sugarcane Mix 175",
+    "my": 2375,
+    "mandi": 2408
+  },
+  {
+    "name": "Chana Mix 176",
+    "my": 1555,
+    "mandi": 1677
+  },
+  {
+    "name": "Dhan Mix 177",
+    "my": 2700,
+    "mandi": 2846
+  },
+  {
+    "name": "Sugarcane Mix 178",
+    "my": 2855,
+    "mandi": 2763
+  },
+  {
+    "name": "Mustard Mix 179",
+    "my": 1740,
+    "mandi": 1854
+  },
+  {
+    "name": "Sugarcane Mix 180",
+    "my": 1919,
+    "mandi": 1843
+  },
+  {
+    "name": "Sugarcane Mix 181",
+    "my": 2883,
+    "mandi": 2862
+  },
+  {
+    "name": "Bajra Mix 182",
+    "my": 1671,
+    "mandi": 1583
+  },
+  {
+    "name": "Sugarcane Mix 183",
+    "my": 2386,
+    "mandi": 2415
+  },
+  {
+    "name": "Jowar Mix 184",
+    "my": 2252,
+    "mandi": 2220
+  },
+  {
+    "name": "Makka Mix 185",
+    "my": 2277,
+    "mandi": 2389
+  },
+  {
+    "name": "Dhan Mix 186",
+    "my": 3229,
+    "mandi": 3194
+  },
+  {
+    "name": "Cotton Mix 187",
+    "my": 2670,
+    "mandi": 2659
+  },
+  {
+    "name": "Soyabean Mix 188",
+    "my": 1562,
+    "mandi": 1673
+  },
+  {
+    "name": "Chana Mix 189",
+    "my": 2507,
+    "mandi": 2543
+  },
+  {
+    "name": "Bajra Mix 190",
+    "my": 3014,
+    "mandi": 3101
+  },
+  {
+    "name": "Jowar Mix 191",
+    "my": 2588,
+    "mandi": 2468
+  },
+  {
+    "name": "Soyabean Mix 192",
+    "my": 2103,
+    "mandi": 2091
+  },
+  {
+    "name": "Chana Mix 193",
+    "my": 1771,
+    "mandi": 1675
+  },
+  {
+    "name": "Sugarcane Mix 194",
+    "my": 3382,
+    "mandi": 3445
+  },
+  {
+    "name": "Sugarcane Mix 195",
+    "my": 2572,
+    "mandi": 2676
+  },
+  {
+    "name": "Soyabean Mix 196",
+    "my": 2684,
+    "mandi": 2549
+  },
+  {
+    "name": "Bajra Mix 197",
+    "my": 2427,
+    "mandi": 2504
+  },
+  {
+    "name": "Cotton Mix 198",
+    "my": 1851,
+    "mandi": 1775
+  },
+  {
+    "name": "Cotton Mix 199",
+    "my": 2272,
+    "mandi": 2297
+  },
+  {
+    "name": "Makka Mix 200",
+    "my": 3044,
+    "mandi": 3055
+  },
+  {
+    "name": "Sugarcane Mix 201",
+    "my": 1744,
+    "mandi": 1792
+  },
+  {
+    "name": "Sugarcane Mix 202",
+    "my": 3061,
+    "mandi": 3206
+  },
+  {
+    "name": "Bajra Mix 203",
+    "my": 3230,
+    "mandi": 3192
+  },
+  {
+    "name": "Gehu Mix 204",
+    "my": 2193,
+    "mandi": 2239
+  },
+  {
+    "name": "Chana Mix 205",
+    "my": 3440,
+    "mandi": 3293
+  },
+  {
+    "name": "Cotton Mix 206",
+    "my": 3366,
+    "mandi": 3294
+  },
+  {
+    "name": "Bajra Mix 207",
+    "my": 3131,
+    "mandi": 3267
+  },
+  {
+    "name": "Makka Mix 208",
+    "my": 2360,
+    "mandi": 2381
+  },
+  {
+    "name": "Bajra Mix 209",
+    "my": 2960,
+    "mandi": 3022
+  },
+  {
+    "name": "Soyabean Mix 210",
+    "my": 2419,
+    "mandi": 2327
+  },
+  {
+    "name": "Makka Mix 211",
+    "my": 1599,
+    "mandi": 1713
+  },
+  {
+    "name": "Gehu Mix 212",
+    "my": 2851,
+    "mandi": 2808
+  },
+  {
+    "name": "Bajra Mix 213",
+    "my": 1546,
+    "mandi": 1399
+  },
+  {
+    "name": "Makka Mix 214",
+    "my": 2669,
+    "mandi": 2709
+  },
+  {
+    "name": "Soyabean Mix 215",
+    "my": 2481,
+    "mandi": 2588
+  },
+  {
+    "name": "Soyabean Mix 216",
+    "my": 1777,
+    "mandi": 1873
+  },
+  {
+    "name": "Jowar Mix 217",
+    "my": 3251,
+    "mandi": 3341
+  },
+  {
+    "name": "Mustard Mix 218",
+    "my": 1834,
+    "mandi": 1923
+  },
+  {
+    "name": "Chana Mix 219",
+    "my": 2654,
+    "mandi": 2568
+  },
+  {
+    "name": "Mustard Mix 220",
+    "my": 3370,
+    "mandi": 3352
+  },
+  {
+    "name": "Dhan Mix 221",
+    "my": 3475,
+    "mandi": 3374
+  },
+  {
+    "name": "Jowar Mix 222",
+    "my": 2494,
+    "mandi": 2638
+  },
+  {
+    "name": "Cotton Mix 223",
+    "my": 2252,
+    "mandi": 2117
+  },
+  {
+    "name": "Cotton Mix 224",
+    "my": 2735,
+    "mandi": 2709
+  },
+  {
+    "name": "Soyabean Mix 225",
+    "my": 1516,
+    "mandi": 1487
+  },
+  {
+    "name": "Cotton Mix 226",
+    "my": 1534,
+    "mandi": 1585
+  },
+  {
+    "name": "Dhan Mix 227",
+    "my": 3058,
+    "mandi": 3066
+  },
+  {
+    "name": "Gehu Mix 228",
+    "my": 2628,
+    "mandi": 2546
+  },
+  {
+    "name": "Cotton Mix 229",
+    "my": 3273,
+    "mandi": 3128
+  },
+  {
+    "name": "Mustard Mix 230",
+    "my": 2197,
+    "mandi": 2212
+  },
+  {
+    "name": "Cotton Mix 231",
+    "my": 2694,
+    "mandi": 2683
+  },
+  {
+    "name": "Gehu Mix 232",
+    "my": 2789,
+    "mandi": 2838
+  },
+  {
+    "name": "Makka Mix 233",
+    "my": 2289,
+    "mandi": 2153
+  },
+  {
+    "name": "Dhan Mix 234",
+    "my": 2314,
+    "mandi": 2341
+  },
+  {
+    "name": "Dhan Mix 235",
+    "my": 1921,
+    "mandi": 1795
+  },
+  {
+    "name": "Dhan Mix 236",
+    "my": 1688,
+    "mandi": 1622
+  },
+  {
+    "name": "Cotton Mix 237",
+    "my": 2014,
+    "mandi": 1925
+  },
+  {
+    "name": "Gehu Mix 238",
+    "my": 1999,
+    "mandi": 1945
+  },
+  {
+    "name": "Jowar Mix 239",
+    "my": 3275,
+    "mandi": 3286
+  },
+  {
+    "name": "Dhan Mix 240",
+    "my": 1520,
+    "mandi": 1545
+  },
+  {
+    "name": "Chana Mix 241",
+    "my": 2614,
+    "mandi": 2688
+  },
+  {
+    "name": "Bajra Mix 242",
+    "my": 2529,
+    "mandi": 2428
+  },
+  {
+    "name": "Chana Mix 243",
+    "my": 3461,
+    "mandi": 3589
+  },
+  {
+    "name": "Sugarcane Mix 244",
+    "my": 1940,
+    "mandi": 2063
+  },
+  {
+    "name": "Chana Mix 245",
+    "my": 1825,
+    "mandi": 1692
+  },
+  {
+    "name": "Soyabean Mix 246",
+    "my": 3142,
+    "mandi": 3174
+  },
+  {
+    "name": "Bajra Mix 247",
+    "my": 1707,
+    "mandi": 1819
+  },
+  {
+    "name": "Soyabean Mix 248",
+    "my": 3345,
+    "mandi": 3352
+  },
+  {
+    "name": "Makka Mix 249",
+    "my": 3132,
+    "mandi": 3262
+  },
+  {
+    "name": "Jowar Mix 250",
+    "my": 1959,
+    "mandi": 1919
+  },
+  {
+    "name": "Cotton Mix 251",
+    "my": 2512,
+    "mandi": 2524
+  },
+  {
+    "name": "Soyabean Mix 252",
+    "my": 2327,
+    "mandi": 2343
+  },
+  {
+    "name": "Dhan Mix 253",
+    "my": 1815,
+    "mandi": 1851
+  },
+  {
+    "name": "Jowar Mix 254",
+    "my": 1547,
+    "mandi": 1575
+  },
+  {
+    "name": "Gehu Mix 255",
+    "my": 2519,
+    "mandi": 2427
+  },
+  {
+    "name": "Mustard Mix 256",
+    "my": 2675,
+    "mandi": 2778
+  },
+  {
+    "name": "Mustard Mix 257",
+    "my": 2753,
+    "mandi": 2682
+  },
+  {
+    "name": "Jowar Mix 258",
+    "my": 1980,
+    "mandi": 1987
+  },
+  {
+    "name": "Soyabean Mix 259",
+    "my": 2595,
+    "mandi": 2534
+  },
+  {
+    "name": "Jowar Mix 260",
+    "my": 2177,
+    "mandi": 2271
+  },
+  {
+    "name": "Sugarcane Mix 261",
+    "my": 3183,
+    "mandi": 3152
+  },
+  {
+    "name": "Dhan Mix 262",
+    "my": 2088,
+    "mandi": 2229
+  },
+  {
+    "name": "Cotton Mix 263",
+    "my": 3054,
+    "mandi": 3054
+  },
+  {
+    "name": "Cotton Mix 264",
+    "my": 3144,
+    "mandi": 3244
+  },
+  {
+    "name": "Dhan Mix 265",
+    "my": 2759,
+    "mandi": 2776
+  },
+  {
+    "name": "Mustard Mix 266",
+    "my": 1685,
+    "mandi": 1732
+  },
+  {
+    "name": "Dhan Mix 267",
+    "my": 2961,
+    "mandi": 2832
+  },
+  {
+    "name": "Gehu Mix 268",
+    "my": 2580,
+    "mandi": 2548
+  },
+  {
+    "name": "Bajra Mix 269",
+    "my": 2085,
+    "mandi": 2015
+  },
+  {
+    "name": "Cotton Mix 270",
+    "my": 1943,
+    "mandi": 1948
+  },
+  {
+    "name": "Chana Mix 271",
+    "my": 2362,
+    "mandi": 2316
+  },
+  {
+    "name": "Makka Mix 272",
+    "my": 3167,
+    "mandi": 3302
+  },
+  {
+    "name": "Jowar Mix 273",
+    "my": 3429,
+    "mandi": 3457
+  },
+  {
+    "name": "Sugarcane Mix 274",
+    "my": 1834,
+    "mandi": 1831
+  },
+  {
+    "name": "Sugarcane Mix 275",
+    "my": 3203,
+    "mandi": 3073
+  },
+  {
+    "name": "Jowar Mix 276",
+    "my": 3485,
+    "mandi": 3458
+  },
+  {
+    "name": "Bajra Mix 277",
+    "my": 1743,
+    "mandi": 1657
+  },
+  {
+    "name": "Gehu Mix 278",
+    "my": 3132,
+    "mandi": 3207
+  },
+  {
+    "name": "Gehu Mix 279",
+    "my": 3342,
+    "mandi": 3200
+  },
+  {
+    "name": "Mustard Mix 280",
+    "my": 2292,
+    "mandi": 2188
+  },
+  {
+    "name": "Jowar Mix 281",
+    "my": 2583,
+    "mandi": 2706
+  },
+  {
+    "name": "Cotton Mix 282",
+    "my": 2388,
+    "mandi": 2356
+  },
+  {
+    "name": "Bajra Mix 283",
+    "my": 1823,
+    "mandi": 1761
+  },
+  {
+    "name": "Chana Mix 284",
+    "my": 2509,
+    "mandi": 2555
+  },
+  {
+    "name": "Dhan Mix 285",
+    "my": 3439,
+    "mandi": 3488
+  },
+  {
+    "name": "Jowar Mix 286",
+    "my": 2623,
+    "mandi": 2595
+  },
+  {
+    "name": "Sugarcane Mix 287",
+    "my": 1541,
+    "mandi": 1643
+  },
+  {
+    "name": "Mustard Mix 288",
+    "my": 2143,
+    "mandi": 2199
+  },
+  {
+    "name": "Soyabean Mix 289",
+    "my": 1699,
+    "mandi": 1648
+  },
+  {
+    "name": "Bajra Mix 290",
+    "my": 3211,
+    "mandi": 3211
+  },
+  {
+    "name": "Chana Mix 291",
+    "my": 1898,
+    "mandi": 1908
+  },
+  {
+    "name": "Dhan Mix 292",
+    "my": 2622,
+    "mandi": 2659
+  },
+  {
+    "name": "Chana Mix 293",
+    "my": 2788,
+    "mandi": 2819
+  },
+  {
+    "name": "Bajra Mix 294",
+    "my": 2498,
+    "mandi": 2425
+  },
+  {
+    "name": "Dhan Mix 295",
+    "my": 2662,
+    "mandi": 2570
+  },
+  {
+    "name": "Mustard Mix 296",
+    "my": 1997,
+    "mandi": 1983
+  },
+  {
+    "name": "Mustard Mix 297",
+    "my": 3107,
+    "mandi": 3015
+  },
+  {
+    "name": "Chana Mix 298",
+    "my": 2964,
+    "mandi": 2845
+  },
+  {
+    "name": "Makka Mix 299",
+    "my": 2420,
+    "mandi": 2419
+  },
+  {
+    "name": "Gehu Mix 300",
+    "my": 2965,
+    "mandi": 2873
+  },
+  {
+    "name": "Jowar Mix 301",
+    "my": 2071,
+    "mandi": 2154
+  },
+  {
+    "name": "Jowar Mix 302",
+    "my": 2076,
+    "mandi": 2221
+  },
+  {
+    "name": "Dhan Mix 303",
+    "my": 3182,
+    "mandi": 3204
+  },
+  {
+    "name": "Makka Mix 304",
+    "my": 2096,
+    "mandi": 2068
+  },
+  {
+    "name": "Soyabean Mix 305",
+    "my": 2031,
+    "mandi": 2092
+  },
+  {
+    "name": "Makka Mix 306",
+    "my": 2036,
+    "mandi": 2117
+  },
+  {
+    "name": "Soyabean Mix 307",
+    "my": 1960,
+    "mandi": 1945
+  },
+  {
+    "name": "Cotton Mix 308",
+    "my": 1654,
+    "mandi": 1668
+  },
+  {
+    "name": "Gehu Mix 309",
+    "my": 3169,
+    "mandi": 3185
+  },
+  {
+    "name": "Bajra Mix 310",
+    "my": 2014,
+    "mandi": 1942
+  },
+  {
+    "name": "Gehu Mix 311",
+    "my": 2445,
+    "mandi": 2483
+  },
+  {
+    "name": "Jowar Mix 312",
+    "my": 2714,
+    "mandi": 2763
+  },
+  {
+    "name": "Chana Mix 313",
+    "my": 3090,
+    "mandi": 3008
+  },
+  {
+    "name": "Chana Mix 314",
+    "my": 3184,
+    "mandi": 3228
+  },
+  {
+    "name": "Mustard Mix 315",
+    "my": 1851,
+    "mandi": 1756
+  },
+  {
+    "name": "Bajra Mix 316",
+    "my": 3183,
+    "mandi": 3178
+  },
+  {
+    "name": "Bajra Mix 317",
+    "my": 2335,
+    "mandi": 2482
+  },
+  {
+    "name": "Dhan Mix 318",
+    "my": 2702,
+    "mandi": 2741
+  },
+  {
+    "name": "Chana Mix 319",
+    "my": 2370,
+    "mandi": 2242
+  },
+  {
+    "name": "Sugarcane Mix 320",
+    "my": 3327,
+    "mandi": 3448
+  },
+  {
+    "name": "Sugarcane Mix 321",
+    "my": 2852,
+    "mandi": 2914
+  },
+  {
+    "name": "Jowar Mix 322",
+    "my": 2002,
+    "mandi": 1945
+  },
+  {
+    "name": "Mustard Mix 323",
+    "my": 3001,
+    "mandi": 2924
+  },
+  {
+    "name": "Gehu Mix 324",
+    "my": 2393,
+    "mandi": 2435
+  },
+  {
+    "name": "Gehu Mix 325",
+    "my": 2137,
+    "mandi": 2153
+  },
+  {
+    "name": "Makka Mix 326",
+    "my": 2763,
+    "mandi": 2708
+  },
+  {
+    "name": "Soyabean Mix 327",
+    "my": 2322,
+    "mandi": 2300
+  },
+  {
+    "name": "Chana Mix 328",
+    "my": 1778,
+    "mandi": 1927
+  },
+  {
+    "name": "Jowar Mix 329",
+    "my": 1884,
+    "mandi": 1894
+  },
+  {
+    "name": "Bajra Mix 330",
+    "my": 2650,
+    "mandi": 2763
+  },
+  {
+    "name": "Chana Mix 331",
+    "my": 2325,
+    "mandi": 2271
+  },
+  {
+    "name": "Makka Mix 332",
+    "my": 3171,
+    "mandi": 3163
+  },
+  {
+    "name": "Mustard Mix 333",
+    "my": 2673,
+    "mandi": 2659
+  },
+  {
+    "name": "Sugarcane Mix 334",
+    "my": 2713,
+    "mandi": 2598
+  },
+  {
+    "name": "Makka Mix 335",
+    "my": 3179,
+    "mandi": 3290
+  },
+  {
+    "name": "Soyabean Mix 336",
+    "my": 3135,
+    "mandi": 3117
+  },
+  {
+    "name": "Sugarcane Mix 337",
+    "my": 2609,
+    "mandi": 2736
+  },
+  {
+    "name": "Gehu Mix 338",
+    "my": 3473,
+    "mandi": 3354
+  },
+  {
+    "name": "Soyabean Mix 339",
+    "my": 2557,
+    "mandi": 2694
+  },
+  {
+    "name": "Jowar Mix 340",
+    "my": 1770,
+    "mandi": 1809
+  },
+  {
+    "name": "Bajra Mix 341",
+    "my": 2357,
+    "mandi": 2280
+  },
+  {
+    "name": "Gehu Mix 342",
+    "my": 2455,
+    "mandi": 2349
+  },
+  {
+    "name": "Mustard Mix 343",
+    "my": 2003,
+    "mandi": 1928
+  },
+  {
+    "name": "Makka Mix 344",
+    "my": 2325,
+    "mandi": 2248
+  },
+  {
+    "name": "Gehu Mix 345",
+    "my": 1935,
+    "mandi": 2004
+  },
+  {
+    "name": "Sugarcane Mix 346",
+    "my": 1677,
+    "mandi": 1709
+  },
+  {
+    "name": "Gehu Mix 347",
+    "my": 2329,
+    "mandi": 2379
+  },
+  {
+    "name": "Sugarcane Mix 348",
+    "my": 2756,
+    "mandi": 2795
+  },
+  {
+    "name": "Bajra Mix 349",
+    "my": 3048,
+    "mandi": 3005
+  },
+  {
+    "name": "Jowar Mix 350",
+    "my": 3346,
+    "mandi": 3312
+  },
+  {
+    "name": "Makka Mix 351",
+    "my": 2987,
+    "mandi": 3039
+  },
+  {
+    "name": "Cotton Mix 352",
+    "my": 2151,
+    "mandi": 2168
+  },
+  {
+    "name": "Sugarcane Mix 353",
+    "my": 3294,
+    "mandi": 3207
+  },
+  {
+    "name": "Makka Mix 354",
+    "my": 3288,
+    "mandi": 3258
+  },
+  {
+    "name": "Mustard Mix 355",
+    "my": 1937,
+    "mandi": 2028
+  },
+  {
+    "name": "Cotton Mix 356",
+    "my": 3344,
+    "mandi": 3303
+  },
+  {
+    "name": "Gehu Mix 357",
+    "my": 2789,
+    "mandi": 2760
+  },
+  {
+    "name": "Dhan Mix 358",
+    "my": 2050,
+    "mandi": 2107
+  },
+  {
+    "name": "Bajra Mix 359",
+    "my": 2965,
+    "mandi": 2990
+  },
+  {
+    "name": "Chana Mix 360",
+    "my": 2450,
+    "mandi": 2464
+  },
+  {
+    "name": "Mustard Mix 361",
+    "my": 2317,
+    "mandi": 2358
+  },
+  {
+    "name": "Soyabean Mix 362",
+    "my": 2720,
+    "mandi": 2663
+  },
+  {
+    "name": "Makka Mix 363",
+    "my": 2142,
+    "mandi": 2186
+  },
+  {
+    "name": "Gehu Mix 364",
+    "my": 3081,
+    "mandi": 3207
+  },
+  {
+    "name": "Soyabean Mix 365",
+    "my": 1598,
+    "mandi": 1488
+  },
+  {
+    "name": "Mustard Mix 366",
+    "my": 2793,
+    "mandi": 2787
+  },
+  {
+    "name": "Chana Mix 367",
+    "my": 3105,
+    "mandi": 3164
+  },
+  {
+    "name": "Bajra Mix 368",
+    "my": 2229,
+    "mandi": 2347
+  },
+  {
+    "name": "Bajra Mix 369",
+    "my": 2209,
+    "mandi": 2254
+  },
+  {
+    "name": "Bajra Mix 370",
+    "my": 1569,
+    "mandi": 1470
+  },
+  {
+    "name": "Soyabean Mix 371",
+    "my": 2374,
+    "mandi": 2443
+  },
+  {
+    "name": "Bajra Mix 372",
+    "my": 1721,
+    "mandi": 1668
+  },
+  {
+    "name": "Bajra Mix 373",
+    "my": 3484,
+    "mandi": 3619
+  },
+  {
+    "name": "Mustard Mix 374",
+    "my": 2945,
+    "mandi": 2828
+  },
+  {
+    "name": "Soyabean Mix 375",
+    "my": 2436,
+    "mandi": 2495
+  },
+  {
+    "name": "Makka Mix 376",
+    "my": 2172,
+    "mandi": 2131
+  },
+  {
+    "name": "Cotton Mix 377",
+    "my": 1682,
+    "mandi": 1787
+  },
+  {
+    "name": "Bajra Mix 378",
+    "my": 2574,
+    "mandi": 2489
+  },
+  {
+    "name": "Mustard Mix 379",
+    "my": 2836,
+    "mandi": 2696
+  },
+  {
+    "name": "Sugarcane Mix 380",
+    "my": 3289,
+    "mandi": 3315
+  },
+  {
+    "name": "Makka Mix 381",
+    "my": 2058,
+    "mandi": 2071
+  },
+  {
+    "name": "Chana Mix 382",
+    "my": 2868,
+    "mandi": 2817
+  },
+  {
+    "name": "Sugarcane Mix 383",
+    "my": 2871,
+    "mandi": 2915
+  },
+  {
+    "name": "Dhan Mix 384",
+    "my": 2450,
+    "mandi": 2597
+  },
+  {
+    "name": "Cotton Mix 385",
+    "my": 1817,
+    "mandi": 1893
+  },
+  {
+    "name": "Mustard Mix 386",
+    "my": 2025,
+    "mandi": 1935
+  },
+  {
+    "name": "Chana Mix 387",
+    "my": 2123,
+    "mandi": 2180
+  },
+  {
+    "name": "Bajra Mix 388",
+    "my": 3478,
+    "mandi": 3336
+  },
+  {
+    "name": "Mustard Mix 389",
+    "my": 1664,
+    "mandi": 1761
+  },
+  {
+    "name": "Jowar Mix 390",
+    "my": 1773,
+    "mandi": 1904
+  },
+  {
+    "name": "Makka Mix 391",
+    "my": 1914,
+    "mandi": 1770
+  },
+  {
+    "name": "Makka Mix 392",
+    "my": 2876,
+    "mandi": 2907
+  },
+  {
+    "name": "Gehu Mix 393",
+    "my": 2096,
+    "mandi": 2100
+  },
+  {
+    "name": "Bajra Mix 394",
+    "my": 2148,
+    "mandi": 2020
+  },
+  {
+    "name": "Mustard Mix 395",
+    "my": 3293,
+    "mandi": 3439
+  },
+  {
+    "name": "Chana Mix 396",
+    "my": 1813,
+    "mandi": 1883
+  },
+  {
+    "name": "Bajra Mix 397",
+    "my": 2527,
+    "mandi": 2407
+  },
+  {
+    "name": "Soyabean Mix 398",
+    "my": 1553,
+    "mandi": 1510
+  },
+  {
+    "name": "Chana Mix 399",
+    "my": 2073,
+    "mandi": 1978
+  },
+  {
+    "name": "Dhan Mix 400",
+    "my": 2621,
+    "mandi": 2710
+  },
+  {
+    "name": "Gehu Mix 401",
+    "my": 2524,
+    "mandi": 2388
+  },
+  {
+    "name": "Sugarcane Mix 402",
+    "my": 2974,
+    "mandi": 3051
+  },
+  {
+    "name": "Soyabean Mix 403",
+    "my": 1821,
+    "mandi": 1869
+  },
+  {
+    "name": "Cotton Mix 404",
+    "my": 3062,
+    "mandi": 3018
+  },
+  {
+    "name": "Makka Mix 405",
+    "my": 3407,
+    "mandi": 3308
+  },
+  {
+    "name": "Mustard Mix 406",
+    "my": 2537,
+    "mandi": 2440
+  },
+  {
+    "name": "Chana Mix 407",
+    "my": 2107,
+    "mandi": 2094
+  },
+  {
+    "name": "Soyabean Mix 408",
+    "my": 2218,
+    "mandi": 2084
+  },
+  {
+    "name": "Soyabean Mix 409",
+    "my": 1864,
+    "mandi": 1730
+  },
+  {
+    "name": "Mustard Mix 410",
+    "my": 2162,
+    "mandi": 2221
+  },
+  {
+    "name": "Dhan Mix 411",
+    "my": 2352,
+    "mandi": 2502
+  },
+  {
+    "name": "Jowar Mix 412",
+    "my": 2154,
+    "mandi": 2231
+  },
+  {
+    "name": "Dhan Mix 413",
+    "my": 1798,
+    "mandi": 1939
+  },
+  {
+    "name": "Gehu Mix 414",
+    "my": 1570,
+    "mandi": 1640
+  },
+  {
+    "name": "Dhan Mix 415",
+    "my": 2133,
+    "mandi": 2194
+  },
+  {
+    "name": "Makka Mix 416",
+    "my": 1848,
+    "mandi": 1836
+  },
+  {
+    "name": "Gehu Mix 417",
+    "my": 2216,
+    "mandi": 2107
+  },
+  {
+    "name": "Bajra Mix 418",
+    "my": 2046,
+    "mandi": 2017
+  },
+  {
+    "name": "Gehu Mix 419",
+    "my": 2840,
+    "mandi": 2931
+  },
+  {
+    "name": "Chana Mix 420",
+    "my": 3024,
+    "mandi": 2888
+  },
+  {
+    "name": "Gehu Mix 421",
+    "my": 2722,
+    "mandi": 2755
+  },
+  {
+    "name": "Sugarcane Mix 422",
+    "my": 3319,
+    "mandi": 3295
+  },
+  {
+    "name": "Gehu Mix 423",
+    "my": 3218,
+    "mandi": 3082
+  },
+  {
+    "name": "Soyabean Mix 424",
+    "my": 1910,
+    "mandi": 1826
+  },
+  {
+    "name": "Makka Mix 425",
+    "my": 2374,
+    "mandi": 2472
+  },
+  {
+    "name": "Cotton Mix 426",
+    "my": 1636,
+    "mandi": 1633
+  },
+  {
+    "name": "Soyabean Mix 427",
+    "my": 1874,
+    "mandi": 1780
+  },
+  {
+    "name": "Soyabean Mix 428",
+    "my": 2989,
+    "mandi": 3090
+  },
+  {
+    "name": "Bajra Mix 429",
+    "my": 3376,
+    "mandi": 3418
+  },
+  {
+    "name": "Dhan Mix 430",
+    "my": 3035,
+    "mandi": 2908
+  },
+  {
+    "name": "Chana Mix 431",
+    "my": 1947,
+    "mandi": 2061
+  },
+  {
+    "name": "Bajra Mix 432",
+    "my": 2443,
+    "mandi": 2384
+  },
+  {
+    "name": "Mustard Mix 433",
+    "my": 2459,
+    "mandi": 2424
+  },
+  {
+    "name": "Cotton Mix 434",
+    "my": 1618,
+    "mandi": 1645
+  },
+  {
+    "name": "Mustard Mix 435",
+    "my": 2157,
+    "mandi": 2158
+  },
+  {
+    "name": "Cotton Mix 436",
+    "my": 2506,
+    "mandi": 2376
+  },
+  {
+    "name": "Makka Mix 437",
+    "my": 3422,
+    "mandi": 3480
+  },
+  {
+    "name": "Gehu Mix 438",
+    "my": 3055,
+    "mandi": 3184
+  },
+  {
+    "name": "Makka Mix 439",
+    "my": 2806,
+    "mandi": 2810
+  },
+  {
+    "name": "Cotton Mix 440",
+    "my": 1796,
+    "mandi": 1873
+  },
+  {
+    "name": "Sugarcane Mix 441",
+    "my": 2550,
+    "mandi": 2470
+  },
+  {
+    "name": "Chana Mix 442",
+    "my": 1578,
+    "mandi": 1530
+  },
+  {
+    "name": "Gehu Mix 443",
+    "my": 3203,
+    "mandi": 3054
+  },
+  {
+    "name": "Jowar Mix 444",
+    "my": 2831,
+    "mandi": 2729
+  },
+  {
+    "name": "Chana Mix 445",
+    "my": 2310,
+    "mandi": 2243
+  },
+  {
+    "name": "Soyabean Mix 446",
+    "my": 3449,
+    "mandi": 3594
+  },
+  {
+    "name": "Dhan Mix 447",
+    "my": 3320,
+    "mandi": 3467
+  },
+  {
+    "name": "Jowar Mix 448",
+    "my": 1601,
+    "mandi": 1476
+  },
+  {
+    "name": "Cotton Mix 449",
+    "my": 2036,
+    "mandi": 2124
+  },
+  {
+    "name": "Gehu Mix 450",
+    "my": 2983,
+    "mandi": 3102
+  },
+  {
+    "name": "Bajra Mix 451",
+    "my": 2001,
+    "mandi": 2129
+  },
+  {
+    "name": "Makka Mix 452",
+    "my": 1928,
+    "mandi": 1816
+  },
+  {
+    "name": "Dhan Mix 453",
+    "my": 3400,
+    "mandi": 3281
+  },
+  {
+    "name": "Jowar Mix 454",
+    "my": 3241,
+    "mandi": 3219
+  },
+  {
+    "name": "Sugarcane Mix 455",
+    "my": 2326,
+    "mandi": 2363
+  },
+  {
+    "name": "Gehu Mix 456",
+    "my": 1811,
+    "mandi": 1684
+  },
+  {
+    "name": "Mustard Mix 457",
+    "my": 2718,
+    "mandi": 2688
+  },
+  {
+    "name": "Bajra Mix 458",
+    "my": 1672,
+    "mandi": 1728
+  },
+  {
+    "name": "Gehu Mix 459",
+    "my": 2520,
+    "mandi": 2463
+  },
+  {
+    "name": "Cotton Mix 460",
+    "my": 3490,
+    "mandi": 3538
+  },
+  {
+    "name": "Chana Mix 461",
+    "my": 2791,
+    "mandi": 2890
+  },
+  {
+    "name": "Gehu Mix 462",
+    "my": 2850,
+    "mandi": 2738
+  },
+  {
+    "name": "Cotton Mix 463",
+    "my": 2016,
+    "mandi": 1971
+  },
+  {
+    "name": "Mustard Mix 464",
+    "my": 2674,
+    "mandi": 2680
+  },
+  {
+    "name": "Cotton Mix 465",
+    "my": 2026,
+    "mandi": 1904
+  },
+  {
+    "name": "Dhan Mix 466",
+    "my": 2793,
+    "mandi": 2810
+  },
+  {
+    "name": "Soyabean Mix 467",
+    "my": 2934,
+    "mandi": 2952
+  },
+  {
+    "name": "Cotton Mix 468",
+    "my": 3265,
+    "mandi": 3133
+  },
+  {
+    "name": "Jowar Mix 469",
+    "my": 3017,
+    "mandi": 3083
+  },
+  {
+    "name": "Soyabean Mix 470",
+    "my": 2655,
+    "mandi": 2579
+  },
+  {
+    "name": "Mustard Mix 471",
+    "my": 2086,
+    "mandi": 1981
+  },
+  {
+    "name": "Bajra Mix 472",
+    "my": 3037,
+    "mandi": 3121
+  },
+  {
+    "name": "Chana Mix 473",
+    "my": 3036,
+    "mandi": 3062
+  },
+  {
+    "name": "Mustard Mix 474",
+    "my": 2681,
+    "mandi": 2578
+  },
+  {
+    "name": "Cotton Mix 475",
+    "my": 2688,
+    "mandi": 2592
+  },
+  {
+    "name": "Makka Mix 476",
+    "my": 2352,
+    "mandi": 2410
+  },
+  {
+    "name": "Chana Mix 477",
+    "my": 2042,
+    "mandi": 2023
+  },
+  {
+    "name": "Chana Mix 478",
+    "my": 2827,
+    "mandi": 2810
+  },
+  {
+    "name": "Dhan Mix 479",
+    "my": 3400,
+    "mandi": 3326
+  },
+  {
+    "name": "Soyabean Mix 480",
+    "my": 1684,
+    "mandi": 1574
+  },
+  {
+    "name": "Cotton Mix 481",
+    "my": 3261,
+    "mandi": 3146
+  },
+  {
+    "name": "Chana Mix 482",
+    "my": 1741,
+    "mandi": 1789
+  },
+  {
+    "name": "Dhan Mix 483",
+    "my": 1515,
+    "mandi": 1395
+  },
+  {
+    "name": "Dhan Mix 484",
+    "my": 1603,
+    "mandi": 1511
+  },
+  {
+    "name": "Gehu Mix 485",
+    "my": 2270,
+    "mandi": 2250
+  },
+  {
+    "name": "Cotton Mix 486",
+    "my": 2353,
+    "mandi": 2493
+  },
+  {
+    "name": "Bajra Mix 487",
+    "my": 3436,
+    "mandi": 3405
+  },
+  {
+    "name": "Dhan Mix 488",
+    "my": 1943,
+    "mandi": 2044
+  },
+  {
+    "name": "Cotton Mix 489",
+    "my": 2888,
+    "mandi": 2784
+  },
+  {
+    "name": "Dhan Mix 490",
+    "my": 2065,
+    "mandi": 1957
+  },
+  {
+    "name": "Makka Mix 491",
+    "my": 1729,
+    "mandi": 1683
+  },
+  {
+    "name": "Dhan Mix 492",
+    "my": 2705,
+    "mandi": 2615
+  },
+  {
+    "name": "Cotton Mix 493",
+    "my": 1793,
+    "mandi": 1890
+  },
+  {
+    "name": "Bajra Mix 494",
+    "my": 3196,
+    "mandi": 3126
+  },
+  {
+    "name": "Sugarcane Mix 495",
+    "my": 1978,
+    "mandi": 1852
+  },
+  {
+    "name": "Bajra Mix 496",
+    "my": 3450,
+    "mandi": 3449
+  },
+  {
+    "name": "Bajra Mix 497",
+    "my": 2911,
+    "mandi": 2985
+  },
+  {
+    "name": "Cotton Mix 498",
+    "my": 2255,
+    "mandi": 2238
+  },
+  {
+    "name": "Gehu Mix 499",
+    "my": 1778,
+    "mandi": 1914
+  },
+  {
+    "name": "Chana Mix 500",
+    "my": 2692,
+    "mandi": 2756
+  },
+  {
+    "name": "Chana Mix 501",
+    "my": 1919,
+    "mandi": 1919
+  },
+  {
+    "name": "Sugarcane Mix 502",
+    "my": 2532,
+    "mandi": 2637
+  },
+  {
+    "name": "Gehu Mix 503",
+    "my": 1689,
+    "mandi": 1561
+  },
+  {
+    "name": "Soyabean Mix 504",
+    "my": 2666,
+    "mandi": 2552
+  },
+  {
+    "name": "Bajra Mix 505",
+    "my": 1780,
+    "mandi": 1673
+  },
+  {
+    "name": "Mustard Mix 506",
+    "my": 2199,
+    "mandi": 2344
+  },
+  {
+    "name": "Soyabean Mix 507",
+    "my": 2725,
+    "mandi": 2735
+  },
+  {
+    "name": "Sugarcane Mix 508",
+    "my": 2261,
+    "mandi": 2378
+  },
+  {
+    "name": "Makka Mix 509",
+    "my": 3050,
+    "mandi": 3151
+  },
+  {
+    "name": "Soyabean Mix 510",
+    "my": 1682,
+    "mandi": 1803
+  },
+  {
+    "name": "Chana Mix 511",
+    "my": 2563,
+    "mandi": 2623
+  },
+  {
+    "name": "Bajra Mix 512",
+    "my": 2282,
+    "mandi": 2344
+  },
+  {
+    "name": "Cotton Mix 513",
+    "my": 1955,
+    "mandi": 1977
+  },
+  {
+    "name": "Gehu Mix 514",
+    "my": 3156,
+    "mandi": 3014
+  },
+  {
+    "name": "Jowar Mix 515",
+    "my": 1985,
+    "mandi": 1916
+  },
+  {
+    "name": "Dhan Mix 516",
+    "my": 2298,
+    "mandi": 2407
+  },
+  {
+    "name": "Dhan Mix 517",
+    "my": 2431,
+    "mandi": 2425
+  },
+  {
+    "name": "Sugarcane Mix 518",
+    "my": 2758,
+    "mandi": 2749
+  },
+  {
+    "name": "Gehu Mix 519",
+    "my": 2598,
+    "mandi": 2663
+  },
+  {
+    "name": "Chana Mix 520",
+    "my": 3188,
+    "mandi": 3178
+  },
+  {
+    "name": "Sugarcane Mix 521",
+    "my": 1698,
+    "mandi": 1843
+  },
+  {
+    "name": "Soyabean Mix 522",
+    "my": 2744,
+    "mandi": 2605
+  },
+  {
+    "name": "Gehu Mix 523",
+    "my": 3129,
+    "mandi": 2984
+  },
+  {
+    "name": "Makka Mix 524",
+    "my": 2260,
+    "mandi": 2195
+  },
+  {
+    "name": "Cotton Mix 525",
+    "my": 2410,
+    "mandi": 2464
+  },
+  {
+    "name": "Dhan Mix 526",
+    "my": 2759,
+    "mandi": 2733
+  },
+  {
+    "name": "Sugarcane Mix 527",
+    "my": 1689,
+    "mandi": 1669
+  },
+  {
+    "name": "Jowar Mix 528",
+    "my": 2457,
+    "mandi": 2560
+  },
+  {
+    "name": "Sugarcane Mix 529",
+    "my": 2548,
+    "mandi": 2546
+  },
+  {
+    "name": "Makka Mix 530",
+    "my": 2548,
+    "mandi": 2687
+  },
+  {
+    "name": "Chana Mix 531",
+    "my": 2069,
+    "mandi": 2157
+  },
+  {
+    "name": "Mustard Mix 532",
+    "my": 2188,
+    "mandi": 2160
+  },
+  {
+    "name": "Gehu Mix 533",
+    "my": 2081,
+    "mandi": 1986
+  },
+  {
+    "name": "Gehu Mix 534",
+    "my": 2042,
+    "mandi": 1921
+  },
+  {
+    "name": "Soyabean Mix 535",
+    "my": 1563,
+    "mandi": 1684
+  },
+  {
+    "name": "Soyabean Mix 536",
+    "my": 1855,
+    "mandi": 1982
+  },
+  {
+    "name": "Gehu Mix 537",
+    "my": 3243,
+    "mandi": 3306
+  },
+  {
+    "name": "Bajra Mix 538",
+    "my": 2667,
+    "mandi": 2676
+  },
+  {
+    "name": "Makka Mix 539",
+    "my": 3291,
+    "mandi": 3148
+  },
+  {
+    "name": "Soyabean Mix 540",
+    "my": 3382,
+    "mandi": 3325
+  },
+  {
+    "name": "Chana Mix 541",
+    "my": 2099,
+    "mandi": 2239
+  },
+  {
+    "name": "Makka Mix 542",
+    "my": 2943,
+    "mandi": 2840
+  },
+  {
+    "name": "Jowar Mix 543",
+    "my": 2885,
+    "mandi": 2874
+  },
+  {
+    "name": "Mustard Mix 544",
+    "my": 2146,
+    "mandi": 2274
+  },
+  {
+    "name": "Mustard Mix 545",
+    "my": 3367,
+    "mandi": 3314
+  },
+  {
+    "name": "Soyabean Mix 546",
+    "my": 2099,
+    "mandi": 2106
+  },
+  {
+    "name": "Soyabean Mix 547",
+    "my": 1808,
+    "mandi": 1770
+  },
+  {
+    "name": "Cotton Mix 548",
+    "my": 1999,
+    "mandi": 1981
+  },
+  {
+    "name": "Soyabean Mix 549",
+    "my": 2605,
+    "mandi": 2621
+  },
+  {
+    "name": "Dhan Mix 550",
+    "my": 3457,
+    "mandi": 3324
+  },
+  {
+    "name": "Gehu Mix 551",
+    "my": 2843,
+    "mandi": 2793
+  },
+  {
+    "name": "Mustard Mix 552",
+    "my": 2207,
+    "mandi": 2334
+  },
+  {
+    "name": "Makka Mix 553",
+    "my": 2096,
+    "mandi": 2144
+  },
+  {
+    "name": "Cotton Mix 554",
+    "my": 2683,
+    "mandi": 2628
+  },
+  {
+    "name": "Jowar Mix 555",
+    "my": 3214,
+    "mandi": 3151
+  },
+  {
+    "name": "Bajra Mix 556",
+    "my": 2426,
+    "mandi": 2538
+  },
+  {
+    "name": "Makka Mix 557",
+    "my": 2909,
+    "mandi": 2874
+  },
+  {
+    "name": "Chana Mix 558",
+    "my": 3162,
+    "mandi": 3088
+  },
+  {
+    "name": "Gehu Mix 559",
+    "my": 2810,
+    "mandi": 2883
+  },
+  {
+    "name": "Bajra Mix 560",
+    "my": 3212,
+    "mandi": 3075
+  },
+  {
+    "name": "Sugarcane Mix 561",
+    "my": 3429,
+    "mandi": 3409
+  },
+  {
+    "name": "Soyabean Mix 562",
+    "my": 3194,
+    "mandi": 3064
+  },
+  {
+    "name": "Bajra Mix 563",
+    "my": 2589,
+    "mandi": 2631
+  },
+  {
+    "name": "Soyabean Mix 564",
+    "my": 3129,
+    "mandi": 3119
+  },
+  {
+    "name": "Sugarcane Mix 565",
+    "my": 3460,
+    "mandi": 3483
+  },
+  {
+    "name": "Jowar Mix 566",
+    "my": 1812,
+    "mandi": 1731
+  },
+  {
+    "name": "Jowar Mix 567",
+    "my": 2171,
+    "mandi": 2293
+  },
+  {
+    "name": "Dhan Mix 568",
+    "my": 3480,
+    "mandi": 3330
+  },
+  {
+    "name": "Jowar Mix 569",
+    "my": 1661,
+    "mandi": 1602
+  },
+  {
+    "name": "Mustard Mix 570",
+    "my": 3355,
+    "mandi": 3435
+  },
+  {
+    "name": "Mustard Mix 571",
+    "my": 3496,
+    "mandi": 3481
+  },
+  {
+    "name": "Mustard Mix 572",
+    "my": 2736,
+    "mandi": 2770
+  },
+  {
+    "name": "Chana Mix 573",
+    "my": 1958,
+    "mandi": 1974
+  },
+  {
+    "name": "Jowar Mix 574",
+    "my": 2292,
+    "mandi": 2343
+  },
+  {
+    "name": "Makka Mix 575",
+    "my": 2264,
+    "mandi": 2158
+  },
+  {
+    "name": "Chana Mix 576",
+    "my": 2299,
+    "mandi": 2359
+  },
+  {
+    "name": "Makka Mix 577",
+    "my": 3309,
+    "mandi": 3199
+  },
+  {
+    "name": "Makka Mix 578",
+    "my": 1815,
+    "mandi": 1820
+  },
+  {
+    "name": "Gehu Mix 579",
+    "my": 1768,
+    "mandi": 1653
+  },
+  {
+    "name": "Cotton Mix 580",
+    "my": 3224,
+    "mandi": 3333
+  },
+  {
+    "name": "Dhan Mix 581",
+    "my": 1591,
+    "mandi": 1732
+  },
+  {
+    "name": "Gehu Mix 582",
+    "my": 2196,
+    "mandi": 2305
+  },
+  {
+    "name": "Sugarcane Mix 583",
+    "my": 2854,
+    "mandi": 2996
+  },
+  {
+    "name": "Soyabean Mix 584",
+    "my": 2326,
+    "mandi": 2380
+  },
+  {
+    "name": "Sugarcane Mix 585",
+    "my": 3119,
+    "mandi": 3091
+  },
+  {
+    "name": "Makka Mix 586",
+    "my": 2897,
+    "mandi": 2802
+  },
+  {
+    "name": "Gehu Mix 587",
+    "my": 2911,
+    "mandi": 2863
+  },
+  {
+    "name": "Dhan Mix 588",
+    "my": 1832,
+    "mandi": 1753
+  },
+  {
+    "name": "Chana Mix 589",
+    "my": 2482,
+    "mandi": 2593
+  },
+  {
+    "name": "Soyabean Mix 590",
+    "my": 3092,
+    "mandi": 3207
+  },
+  {
+    "name": "Bajra Mix 591",
+    "my": 2353,
+    "mandi": 2341
+  },
+  {
+    "name": "Dhan Mix 592",
+    "my": 2190,
+    "mandi": 2082
+  },
+  {
+    "name": "Chana Mix 593",
+    "my": 2995,
+    "mandi": 2982
+  },
+  {
+    "name": "Sugarcane Mix 594",
+    "my": 3149,
+    "mandi": 3105
+  },
+  {
+    "name": "Gehu Mix 595",
+    "my": 2382,
+    "mandi": 2481
+  },
+  {
+    "name": "Cotton Mix 596",
+    "my": 2727,
+    "mandi": 2684
+  },
+  {
+    "name": "Sugarcane Mix 597",
+    "my": 3447,
+    "mandi": 3490
+  },
+  {
+    "name": "Chana Mix 598",
+    "my": 2812,
+    "mandi": 2713
+  },
+  {
+    "name": "Bajra Mix 599",
+    "my": 3465,
+    "mandi": 3385
+  },
+  {
+    "name": "Chana Mix 600",
+    "my": 3362,
+    "mandi": 3228
+  },
+  {
+    "name": "Makka Mix 601",
+    "my": 3236,
+    "mandi": 3232
+  },
+  {
+    "name": "Dhan Mix 602",
+    "my": 3285,
+    "mandi": 3154
+  },
+  {
+    "name": "Bajra Mix 603",
+    "my": 3225,
+    "mandi": 3311
+  },
+  {
+    "name": "Cotton Mix 604",
+    "my": 1906,
+    "mandi": 1962
+  },
+  {
+    "name": "Makka Mix 605",
+    "my": 2091,
+    "mandi": 2191
+  },
+  {
+    "name": "Soyabean Mix 606",
+    "my": 1554,
+    "mandi": 1684
+  },
+  {
+    "name": "Gehu Mix 607",
+    "my": 2298,
+    "mandi": 2292
+  },
+  {
+    "name": "Jowar Mix 608",
+    "my": 2363,
+    "mandi": 2333
+  },
+  {
+    "name": "Bajra Mix 609",
+    "my": 2722,
+    "mandi": 2840
+  },
+  {
+    "name": "Mustard Mix 610",
+    "my": 3264,
+    "mandi": 3150
+  },
+  {
+    "name": "Jowar Mix 611",
+    "my": 1892,
+    "mandi": 1776
+  },
+  {
+    "name": "Makka Mix 612",
+    "my": 2397,
+    "mandi": 2438
+  },
+  {
+    "name": "Bajra Mix 613",
+    "my": 2327,
+    "mandi": 2440
+  },
+  {
+    "name": "Dhan Mix 614",
+    "my": 2928,
+    "mandi": 2876
+  },
+  {
+    "name": "Bajra Mix 615",
+    "my": 1584,
+    "mandi": 1474
+  },
+  {
+    "name": "Jowar Mix 616",
+    "my": 1646,
+    "mandi": 1746
+  },
+  {
+    "name": "Dhan Mix 617",
+    "my": 2669,
+    "mandi": 2627
+  },
+  {
+    "name": "Gehu Mix 618",
+    "my": 1929,
+    "mandi": 2052
+  },
+  {
+    "name": "Mustard Mix 619",
+    "my": 2394,
+    "mandi": 2444
+  },
+  {
+    "name": "Chana Mix 620",
+    "my": 3148,
+    "mandi": 3250
+  },
+  {
+    "name": "Soyabean Mix 621",
+    "my": 2867,
+    "mandi": 2938
+  },
+  {
+    "name": "Makka Mix 622",
+    "my": 1667,
+    "mandi": 1624
+  },
+  {
+    "name": "Makka Mix 623",
+    "my": 1700,
+    "mandi": 1629
+  },
+  {
+    "name": "Sugarcane Mix 624",
+    "my": 2671,
+    "mandi": 2661
+  },
+  {
+    "name": "Cotton Mix 625",
+    "my": 3133,
+    "mandi": 3267
+  },
+  {
+    "name": "Dhan Mix 626",
+    "my": 2290,
+    "mandi": 2262
+  },
+  {
+    "name": "Jowar Mix 627",
+    "my": 1943,
+    "mandi": 1941
+  },
+  {
+    "name": "Gehu Mix 628",
+    "my": 2994,
+    "mandi": 2940
+  },
+  {
+    "name": "Jowar Mix 629",
+    "my": 2700,
+    "mandi": 2833
+  },
+  {
+    "name": "Bajra Mix 630",
+    "my": 3246,
+    "mandi": 3311
+  },
+  {
+    "name": "Makka Mix 631",
+    "my": 2446,
+    "mandi": 2314
+  },
+  {
+    "name": "Soyabean Mix 632",
+    "my": 1612,
+    "mandi": 1742
+  },
+  {
+    "name": "Mustard Mix 633",
+    "my": 3497,
+    "mandi": 3494
+  },
+  {
+    "name": "Makka Mix 634",
+    "my": 1847,
+    "mandi": 1986
+  },
+  {
+    "name": "Mustard Mix 635",
+    "my": 2383,
+    "mandi": 2237
+  },
+  {
+    "name": "Gehu Mix 636",
+    "my": 2772,
+    "mandi": 2871
+  },
+  {
+    "name": "Bajra Mix 637",
+    "my": 2976,
+    "mandi": 2905
+  },
+  {
+    "name": "Jowar Mix 638",
+    "my": 2803,
+    "mandi": 2881
+  },
+  {
+    "name": "Mustard Mix 639",
+    "my": 2472,
+    "mandi": 2441
+  },
+  {
+    "name": "Dhan Mix 640",
+    "my": 2500,
+    "mandi": 2369
+  },
+  {
+    "name": "Dhan Mix 641",
+    "my": 2634,
+    "mandi": 2676
+  },
+  {
+    "name": "Mustard Mix 642",
+    "my": 2009,
+    "mandi": 1999
+  },
+  {
+    "name": "Jowar Mix 643",
+    "my": 2862,
+    "mandi": 2924
+  },
+  {
+    "name": "Cotton Mix 644",
+    "my": 2211,
+    "mandi": 2090
+  },
+  {
+    "name": "Gehu Mix 645",
+    "my": 2902,
+    "mandi": 2928
+  },
+  {
+    "name": "Gehu Mix 646",
+    "my": 2988,
+    "mandi": 2971
+  },
+  {
+    "name": "Jowar Mix 647",
+    "my": 1940,
+    "mandi": 2062
+  },
+  {
+    "name": "Sugarcane Mix 648",
+    "my": 1903,
+    "mandi": 2046
+  },
+  {
+    "name": "Chana Mix 649",
+    "my": 3199,
+    "mandi": 3116
+  },
+  {
+    "name": "Gehu Mix 650",
+    "my": 2873,
+    "mandi": 2926
+  },
+  {
+    "name": "Cotton Mix 651",
+    "my": 2897,
+    "mandi": 2771
+  },
+  {
+    "name": "Chana Mix 652",
+    "my": 1735,
+    "mandi": 1637
+  },
+  {
+    "name": "Sugarcane Mix 653",
+    "my": 2934,
+    "mandi": 2921
+  },
+  {
+    "name": "Sugarcane Mix 654",
+    "my": 1603,
+    "mandi": 1746
+  },
+  {
+    "name": "Jowar Mix 655",
+    "my": 1550,
+    "mandi": 1690
+  },
+  {
+    "name": "Bajra Mix 656",
+    "my": 2663,
+    "mandi": 2774
+  },
+  {
+    "name": "Jowar Mix 657",
+    "my": 2843,
+    "mandi": 2856
+  },
+  {
+    "name": "Mustard Mix 658",
+    "my": 1969,
+    "mandi": 1883
+  },
+  {
+    "name": "Dhan Mix 659",
+    "my": 2016,
+    "mandi": 2057
+  },
+  {
+    "name": "Mustard Mix 660",
+    "my": 1576,
+    "mandi": 1430
+  },
+  {
+    "name": "Makka Mix 661",
+    "my": 2563,
+    "mandi": 2447
+  },
+  {
+    "name": "Chana Mix 662",
+    "my": 1544,
+    "mandi": 1434
+  },
+  {
+    "name": "Chana Mix 663",
+    "my": 3007,
+    "mandi": 3129
+  },
+  {
+    "name": "Jowar Mix 664",
+    "my": 2005,
+    "mandi": 2133
+  },
+  {
+    "name": "Bajra Mix 665",
+    "my": 2661,
+    "mandi": 2590
+  },
+  {
+    "name": "Mustard Mix 666",
+    "my": 3091,
+    "mandi": 3232
+  },
+  {
+    "name": "Gehu Mix 667",
+    "my": 2999,
+    "mandi": 3140
+  },
+  {
+    "name": "Gehu Mix 668",
+    "my": 1603,
+    "mandi": 1622
+  },
+  {
+    "name": "Makka Mix 669",
+    "my": 2996,
+    "mandi": 2904
+  },
+  {
+    "name": "Jowar Mix 670",
+    "my": 2650,
+    "mandi": 2650
+  },
+  {
+    "name": "Sugarcane Mix 671",
+    "my": 3415,
+    "mandi": 3499
+  },
+  {
+    "name": "Gehu Mix 672",
+    "my": 1573,
+    "mandi": 1582
+  },
+  {
+    "name": "Soyabean Mix 673",
+    "my": 1595,
+    "mandi": 1487
+  },
+  {
+    "name": "Makka Mix 674",
+    "my": 3187,
+    "mandi": 3230
+  },
+  {
+    "name": "Gehu Mix 675",
+    "my": 2575,
+    "mandi": 2546
+  },
+  {
+    "name": "Bajra Mix 676",
+    "my": 3409,
+    "mandi": 3526
+  },
+  {
+    "name": "Dhan Mix 677",
+    "my": 2787,
+    "mandi": 2908
+  },
+  {
+    "name": "Soyabean Mix 678",
+    "my": 1704,
+    "mandi": 1615
+  },
+  {
+    "name": "Makka Mix 679",
+    "my": 2034,
+    "mandi": 1889
+  },
+  {
+    "name": "Cotton Mix 680",
+    "my": 3212,
+    "mandi": 3261
+  },
+  {
+    "name": "Makka Mix 681",
+    "my": 2811,
+    "mandi": 2759
+  },
+  {
+    "name": "Soyabean Mix 682",
+    "my": 2573,
+    "mandi": 2660
+  },
+  {
+    "name": "Chana Mix 683",
+    "my": 1846,
+    "mandi": 1810
+  },
+  {
+    "name": "Soyabean Mix 684",
+    "my": 2566,
+    "mandi": 2540
+  },
+  {
+    "name": "Dhan Mix 685",
+    "my": 1537,
+    "mandi": 1560
+  },
+  {
+    "name": "Makka Mix 686",
+    "my": 2196,
+    "mandi": 2155
+  },
+  {
+    "name": "Sugarcane Mix 687",
+    "my": 2959,
+    "mandi": 3090
+  },
+  {
+    "name": "Sugarcane Mix 688",
+    "my": 3431,
+    "mandi": 3429
+  },
+  {
+    "name": "Bajra Mix 689",
+    "my": 3395,
+    "mandi": 3382
+  },
+  {
+    "name": "Bajra Mix 690",
+    "my": 2454,
+    "mandi": 2548
+  },
+  {
+    "name": "Sugarcane Mix 691",
+    "my": 3453,
+    "mandi": 3383
+  },
+  {
+    "name": "Bajra Mix 692",
+    "my": 3131,
+    "mandi": 3048
+  },
+  {
+    "name": "Mustard Mix 693",
+    "my": 1628,
+    "mandi": 1707
+  },
+  {
+    "name": "Sugarcane Mix 694",
+    "my": 1857,
+    "mandi": 1781
+  },
+  {
+    "name": "Makka Mix 695",
+    "my": 2670,
+    "mandi": 2587
+  },
+  {
+    "name": "Bajra Mix 696",
+    "my": 3041,
+    "mandi": 3185
+  },
+  {
+    "name": "Makka Mix 697",
+    "my": 1947,
+    "mandi": 1985
+  },
+  {
+    "name": "Sugarcane Mix 698",
+    "my": 3346,
+    "mandi": 3220
+  },
+  {
+    "name": "Sugarcane Mix 699",
+    "my": 3260,
+    "mandi": 3199
+  },
+  {
+    "name": "Bajra Mix 700",
+    "my": 1755,
+    "mandi": 1846
+  },
+  {
+    "name": "Sugarcane Mix 701",
+    "my": 2633,
+    "mandi": 2562
+  },
+  {
+    "name": "Makka Mix 702",
+    "my": 2588,
+    "mandi": 2667
+  },
+  {
+    "name": "Bajra Mix 703",
+    "my": 2202,
+    "mandi": 2207
+  },
+  {
+    "name": "Cotton Mix 704",
+    "my": 2728,
+    "mandi": 2582
+  },
+  {
+    "name": "Sugarcane Mix 705",
+    "my": 2525,
+    "mandi": 2467
+  },
+  {
+    "name": "Chana Mix 706",
+    "my": 3069,
+    "mandi": 2987
+  },
+  {
+    "name": "Jowar Mix 707",
+    "my": 2353,
+    "mandi": 2464
+  },
+  {
+    "name": "Cotton Mix 708",
+    "my": 1528,
+    "mandi": 1649
+  },
+  {
+    "name": "Jowar Mix 709",
+    "my": 2598,
+    "mandi": 2507
+  },
+  {
+    "name": "Dhan Mix 710",
+    "my": 1789,
+    "mandi": 1698
+  },
+  {
+    "name": "Mustard Mix 711",
+    "my": 2326,
+    "mandi": 2206
+  },
+  {
+    "name": "Makka Mix 712",
+    "my": 1747,
+    "mandi": 1597
+  },
+  {
+    "name": "Cotton Mix 713",
+    "my": 3274,
+    "mandi": 3334
+  },
+  {
+    "name": "Jowar Mix 714",
+    "my": 1831,
+    "mandi": 1693
+  },
+  {
+    "name": "Chana Mix 715",
+    "my": 3353,
+    "mandi": 3448
+  },
+  {
+    "name": "Gehu Mix 716",
+    "my": 1580,
+    "mandi": 1692
+  },
+  {
+    "name": "Bajra Mix 717",
+    "my": 2709,
+    "mandi": 2805
+  },
+  {
+    "name": "Chana Mix 718",
+    "my": 1811,
+    "mandi": 1801
+  },
+  {
+    "name": "Jowar Mix 719",
+    "my": 3273,
+    "mandi": 3253
+  },
+  {
+    "name": "Soyabean Mix 720",
+    "my": 3107,
+    "mandi": 2987
+  },
+  {
+    "name": "Mustard Mix 721",
+    "my": 2491,
+    "mandi": 2378
+  },
+  {
+    "name": "Makka Mix 722",
+    "my": 2487,
+    "mandi": 2561
+  },
+  {
+    "name": "Chana Mix 723",
+    "my": 2509,
+    "mandi": 2443
+  },
+  {
+    "name": "Jowar Mix 724",
+    "my": 3010,
+    "mandi": 2953
+  },
+  {
+    "name": "Gehu Mix 725",
+    "my": 1857,
+    "mandi": 1712
+  },
+  {
+    "name": "Makka Mix 726",
+    "my": 3298,
+    "mandi": 3280
+  },
+  {
+    "name": "Bajra Mix 727",
+    "my": 2189,
+    "mandi": 2167
+  },
+  {
+    "name": "Cotton Mix 728",
+    "my": 1633,
+    "mandi": 1765
+  },
+  {
+    "name": "Sugarcane Mix 729",
+    "my": 2074,
+    "mandi": 1970
+  },
+  {
+    "name": "Jowar Mix 730",
+    "my": 1827,
+    "mandi": 1677
+  },
+  {
+    "name": "Soyabean Mix 731",
+    "my": 3265,
+    "mandi": 3306
+  },
+  {
+    "name": "Makka Mix 732",
+    "my": 2894,
+    "mandi": 3043
+  },
+  {
+    "name": "Bajra Mix 733",
+    "my": 2429,
+    "mandi": 2467
+  },
+  {
+    "name": "Dhan Mix 734",
+    "my": 2500,
+    "mandi": 2475
+  },
+  {
+    "name": "Cotton Mix 735",
+    "my": 2600,
+    "mandi": 2588
+  },
+  {
+    "name": "Bajra Mix 736",
+    "my": 2876,
+    "mandi": 2936
+  },
+  {
+    "name": "Sugarcane Mix 737",
+    "my": 2663,
+    "mandi": 2653
+  },
+  {
+    "name": "Sugarcane Mix 738",
+    "my": 1976,
+    "mandi": 1840
+  },
+  {
+    "name": "Makka Mix 739",
+    "my": 2704,
+    "mandi": 2658
+  },
+  {
+    "name": "Gehu Mix 740",
+    "my": 2525,
+    "mandi": 2611
+  },
+  {
+    "name": "Sugarcane Mix 741",
+    "my": 1609,
+    "mandi": 1461
+  },
+  {
+    "name": "Chana Mix 742",
+    "my": 2362,
+    "mandi": 2230
+  },
+  {
+    "name": "Makka Mix 743",
+    "my": 3365,
+    "mandi": 3321
+  },
+  {
+    "name": "Jowar Mix 744",
+    "my": 3034,
+    "mandi": 3018
+  },
+  {
+    "name": "Sugarcane Mix 745",
+    "my": 2654,
+    "mandi": 2589
+  },
+  {
+    "name": "Mustard Mix 746",
+    "my": 2658,
+    "mandi": 2594
+  },
+  {
+    "name": "Makka Mix 747",
+    "my": 3013,
+    "mandi": 3114
+  },
+  {
+    "name": "Soyabean Mix 748",
+    "my": 3202,
+    "mandi": 3134
+  },
+  {
+    "name": "Chana Mix 749",
+    "my": 1596,
+    "mandi": 1641
+  },
+  {
+    "name": "Chana Mix 750",
+    "my": 3469,
+    "mandi": 3595
+  },
+  {
+    "name": "Bajra Mix 751",
+    "my": 1557,
+    "mandi": 1438
+  },
+  {
+    "name": "Gehu Mix 752",
+    "my": 2026,
+    "mandi": 2149
+  },
+  {
+    "name": "Jowar Mix 753",
+    "my": 1994,
+    "mandi": 2117
+  },
+  {
+    "name": "Sugarcane Mix 754",
+    "my": 2653,
+    "mandi": 2681
+  },
+  {
+    "name": "Mustard Mix 755",
+    "my": 3293,
+    "mandi": 3326
+  },
+  {
+    "name": "Sugarcane Mix 756",
+    "my": 1548,
+    "mandi": 1440
+  },
+  {
+    "name": "Makka Mix 757",
+    "my": 2696,
+    "mandi": 2767
+  },
+  {
+    "name": "Bajra Mix 758",
+    "my": 2327,
+    "mandi": 2261
+  },
+  {
+    "name": "Chana Mix 759",
+    "my": 2189,
+    "mandi": 2259
+  },
+  {
+    "name": "Cotton Mix 760",
+    "my": 3019,
+    "mandi": 3161
+  },
+  {
+    "name": "Chana Mix 761",
+    "my": 2156,
+    "mandi": 2276
+  },
+  {
+    "name": "Soyabean Mix 762",
+    "my": 3268,
+    "mandi": 3218
+  },
+  {
+    "name": "Sugarcane Mix 763",
+    "my": 2210,
+    "mandi": 2350
+  },
+  {
+    "name": "Dhan Mix 764",
+    "my": 1832,
+    "mandi": 1875
+  },
+  {
+    "name": "Chana Mix 765",
+    "my": 2850,
+    "mandi": 2958
+  },
+  {
+    "name": "Cotton Mix 766",
+    "my": 1517,
+    "mandi": 1385
+  },
+  {
+    "name": "Cotton Mix 767",
+    "my": 2044,
+    "mandi": 2021
+  },
+  {
+    "name": "Sugarcane Mix 768",
+    "my": 3365,
+    "mandi": 3256
+  },
+  {
+    "name": "Jowar Mix 769",
+    "my": 2863,
+    "mandi": 2759
+  },
+  {
+    "name": "Jowar Mix 770",
+    "my": 2474,
+    "mandi": 2497
+  },
+  {
+    "name": "Chana Mix 771",
+    "my": 3455,
+    "mandi": 3491
+  },
+  {
+    "name": "Chana Mix 772",
+    "my": 1866,
+    "mandi": 1957
+  },
+  {
+    "name": "Jowar Mix 773",
+    "my": 1637,
+    "mandi": 1635
+  },
+  {
+    "name": "Sugarcane Mix 774",
+    "my": 1512,
+    "mandi": 1542
+  },
+  {
+    "name": "Makka Mix 775",
+    "my": 2964,
+    "mandi": 3023
+  },
+  {
+    "name": "Cotton Mix 776",
+    "my": 1778,
+    "mandi": 1737
+  },
+  {
+    "name": "Cotton Mix 777",
+    "my": 1599,
+    "mandi": 1737
+  },
+  {
+    "name": "Dhan Mix 778",
+    "my": 1759,
+    "mandi": 1791
+  },
+  {
+    "name": "Dhan Mix 779",
+    "my": 1852,
+    "mandi": 1730
+  },
+  {
+    "name": "Gehu Mix 780",
+    "my": 2847,
+    "mandi": 2728
+  },
+  {
+    "name": "Sugarcane Mix 781",
+    "my": 2817,
+    "mandi": 2850
+  },
+  {
+    "name": "Makka Mix 782",
+    "my": 3187,
+    "mandi": 3267
+  },
+  {
+    "name": "Makka Mix 783",
+    "my": 3332,
+    "mandi": 3445
+  },
+  {
+    "name": "Makka Mix 784",
+    "my": 2858,
+    "mandi": 2799
+  },
+  {
+    "name": "Gehu Mix 785",
+    "my": 1756,
+    "mandi": 1864
+  },
+  {
+    "name": "Bajra Mix 786",
+    "my": 2969,
+    "mandi": 2944
+  },
+  {
+    "name": "Soyabean Mix 787",
+    "my": 2343,
+    "mandi": 2492
+  },
+  {
+    "name": "Makka Mix 788",
+    "my": 2868,
+    "mandi": 2927
+  },
+  {
+    "name": "Makka Mix 789",
+    "my": 3281,
+    "mandi": 3250
+  },
+  {
+    "name": "Mustard Mix 790",
+    "my": 2733,
+    "mandi": 2753
+  },
+  {
+    "name": "Bajra Mix 791",
+    "my": 2658,
+    "mandi": 2801
+  },
+  {
+    "name": "Bajra Mix 792",
+    "my": 2176,
+    "mandi": 2266
+  },
+  {
+    "name": "Sugarcane Mix 793",
+    "my": 2264,
+    "mandi": 2243
+  },
+  {
+    "name": "Cotton Mix 794",
+    "my": 2153,
+    "mandi": 2099
+  },
+  {
+    "name": "Chana Mix 795",
+    "my": 2307,
+    "mandi": 2454
+  },
+  {
+    "name": "Gehu Mix 796",
+    "my": 3262,
+    "mandi": 3402
+  },
+  {
+    "name": "Bajra Mix 797",
+    "my": 1546,
+    "mandi": 1678
+  },
+  {
+    "name": "Sugarcane Mix 798",
+    "my": 1574,
+    "mandi": 1485
+  },
+  {
+    "name": "Cotton Mix 799",
+    "my": 3048,
+    "mandi": 3084
+  },
+  {
+    "name": "Dhan Mix 800",
+    "my": 2323,
+    "mandi": 2223
+  },
+  {
+    "name": "Cotton Mix 801",
+    "my": 1683,
+    "mandi": 1639
+  },
+  {
+    "name": "Makka Mix 802",
+    "my": 2044,
+    "mandi": 2075
+  },
+  {
+    "name": "Mustard Mix 803",
+    "my": 3249,
+    "mandi": 3265
+  },
+  {
+    "name": "Mustard Mix 804",
+    "my": 2180,
+    "mandi": 2295
+  },
+  {
+    "name": "Soyabean Mix 805",
+    "my": 3435,
+    "mandi": 3559
+  },
+  {
+    "name": "Jowar Mix 806",
+    "my": 3209,
+    "mandi": 3132
+  },
+  {
+    "name": "Soyabean Mix 807",
+    "my": 2748,
+    "mandi": 2742
+  },
+  {
+    "name": "Jowar Mix 808",
+    "my": 1876,
+    "mandi": 1772
+  },
+  {
+    "name": "Makka Mix 809",
+    "my": 2443,
+    "mandi": 2463
+  },
+  {
+    "name": "Jowar Mix 810",
+    "my": 1611,
+    "mandi": 1461
+  },
+  {
+    "name": "Gehu Mix 811",
+    "my": 2014,
+    "mandi": 1897
+  },
+  {
+    "name": "Bajra Mix 812",
+    "my": 1885,
+    "mandi": 1865
+  },
+  {
+    "name": "Mustard Mix 813",
+    "my": 2422,
+    "mandi": 2423
+  },
+  {
+    "name": "Soyabean Mix 814",
+    "my": 2008,
+    "mandi": 1912
+  },
+  {
+    "name": "Cotton Mix 815",
+    "my": 1567,
+    "mandi": 1519
+  },
+  {
+    "name": "Dhan Mix 816",
+    "my": 2636,
+    "mandi": 2638
+  },
+  {
+    "name": "Dhan Mix 817",
+    "my": 1558,
+    "mandi": 1512
+  },
+  {
+    "name": "Makka Mix 818",
+    "my": 3033,
+    "mandi": 2920
+  },
+  {
+    "name": "Makka Mix 819",
+    "my": 2146,
+    "mandi": 2081
+  },
+  {
+    "name": "Dhan Mix 820",
+    "my": 2651,
+    "mandi": 2776
+  },
+  {
+    "name": "Bajra Mix 821",
+    "my": 1945,
+    "mandi": 2075
+  },
+  {
+    "name": "Jowar Mix 822",
+    "my": 1805,
+    "mandi": 1737
+  },
+  {
+    "name": "Dhan Mix 823",
+    "my": 2371,
+    "mandi": 2223
+  },
+  {
+    "name": "Bajra Mix 824",
+    "my": 3237,
+    "mandi": 3315
+  },
+  {
+    "name": "Soyabean Mix 825",
+    "my": 1917,
+    "mandi": 1916
+  },
+  {
+    "name": "Cotton Mix 826",
+    "my": 1696,
+    "mandi": 1832
+  },
+  {
+    "name": "Chana Mix 827",
+    "my": 2654,
+    "mandi": 2611
+  },
+  {
+    "name": "Gehu Mix 828",
+    "my": 2515,
+    "mandi": 2542
+  },
+  {
+    "name": "Makka Mix 829",
+    "my": 3039,
+    "mandi": 3097
+  },
+  {
+    "name": "Sugarcane Mix 830",
+    "my": 2394,
+    "mandi": 2312
+  },
+  {
+    "name": "Mustard Mix 831",
+    "my": 3131,
+    "mandi": 3124
+  },
+  {
+    "name": "Cotton Mix 832",
+    "my": 3089,
+    "mandi": 2988
+  },
+  {
+    "name": "Jowar Mix 833",
+    "my": 2858,
+    "mandi": 2836
+  },
+  {
+    "name": "Soyabean Mix 834",
+    "my": 1629,
+    "mandi": 1565
+  },
+  {
+    "name": "Chana Mix 835",
+    "my": 3152,
+    "mandi": 3285
+  },
+  {
+    "name": "Makka Mix 836",
+    "my": 2252,
+    "mandi": 2139
+  },
+  {
+    "name": "Jowar Mix 837",
+    "my": 3453,
+    "mandi": 3579
+  },
+  {
+    "name": "Gehu Mix 838",
+    "my": 3201,
+    "mandi": 3138
+  },
+  {
+    "name": "Soyabean Mix 839",
+    "my": 3453,
+    "mandi": 3344
+  },
+  {
+    "name": "Soyabean Mix 840",
+    "my": 1708,
+    "mandi": 1762
+  },
+  {
+    "name": "Mustard Mix 841",
+    "my": 3452,
+    "mandi": 3461
+  },
+  {
+    "name": "Makka Mix 842",
+    "my": 2764,
+    "mandi": 2783
+  },
+  {
+    "name": "Soyabean Mix 843",
+    "my": 2242,
+    "mandi": 2333
+  },
+  {
+    "name": "Bajra Mix 844",
+    "my": 2801,
+    "mandi": 2683
+  },
+  {
+    "name": "Chana Mix 845",
+    "my": 1688,
+    "mandi": 1697
+  },
+  {
+    "name": "Makka Mix 846",
+    "my": 1542,
+    "mandi": 1496
+  },
+  {
+    "name": "Jowar Mix 847",
+    "my": 3049,
+    "mandi": 2913
+  },
+  {
+    "name": "Cotton Mix 848",
+    "my": 2912,
+    "mandi": 2883
+  },
+  {
+    "name": "Bajra Mix 849",
+    "my": 3423,
+    "mandi": 3360
+  },
+  {
+    "name": "Cotton Mix 850",
+    "my": 1795,
+    "mandi": 1897
+  },
+  {
+    "name": "Mustard Mix 851",
+    "my": 1722,
+    "mandi": 1718
+  },
+  {
+    "name": "Makka Mix 852",
+    "my": 2028,
+    "mandi": 1969
+  },
+  {
+    "name": "Soyabean Mix 853",
+    "my": 2968,
+    "mandi": 3025
+  },
+  {
+    "name": "Chana Mix 854",
+    "my": 1934,
+    "mandi": 1854
+  },
+  {
+    "name": "Jowar Mix 855",
+    "my": 2912,
+    "mandi": 2857
+  },
+  {
+    "name": "Makka Mix 856",
+    "my": 3413,
+    "mandi": 3503
+  },
+  {
+    "name": "Cotton Mix 857",
+    "my": 3458,
+    "mandi": 3425
+  },
+  {
+    "name": "Mustard Mix 858",
+    "my": 2387,
+    "mandi": 2495
+  },
+  {
+    "name": "Soyabean Mix 859",
+    "my": 2947,
+    "mandi": 2817
+  },
+  {
+    "name": "Chana Mix 860",
+    "my": 1694,
+    "mandi": 1772
+  },
+  {
+    "name": "Soyabean Mix 861",
+    "my": 2985,
+    "mandi": 2954
+  },
+  {
+    "name": "Makka Mix 862",
+    "my": 2133,
+    "mandi": 2275
+  },
+  {
+    "name": "Gehu Mix 863",
+    "my": 1586,
+    "mandi": 1528
+  },
+  {
+    "name": "Chana Mix 864",
+    "my": 2261,
+    "mandi": 2147
+  },
+  {
+    "name": "Soyabean Mix 865",
+    "my": 3395,
+    "mandi": 3464
+  },
+  {
+    "name": "Sugarcane Mix 866",
+    "my": 2899,
+    "mandi": 3008
+  },
+  {
+    "name": "Bajra Mix 867",
+    "my": 2366,
+    "mandi": 2278
+  },
+  {
+    "name": "Mustard Mix 868",
+    "my": 3208,
+    "mandi": 3214
+  },
+  {
+    "name": "Gehu Mix 869",
+    "my": 2119,
+    "mandi": 1991
+  },
+  {
+    "name": "Cotton Mix 870",
+    "my": 2475,
+    "mandi": 2579
+  },
+  {
+    "name": "Makka Mix 871",
+    "my": 2009,
+    "mandi": 2132
+  },
+  {
+    "name": "Chana Mix 872",
+    "my": 2311,
+    "mandi": 2173
+  },
+  {
+    "name": "Dhan Mix 873",
+    "my": 2594,
+    "mandi": 2448
+  },
+  {
+    "name": "Soyabean Mix 874",
+    "my": 2059,
+    "mandi": 2112
+  },
+  {
+    "name": "Jowar Mix 875",
+    "my": 2112,
+    "mandi": 2063
+  },
+  {
+    "name": "Jowar Mix 876",
+    "my": 3218,
+    "mandi": 3086
+  },
+  {
+    "name": "Cotton Mix 877",
+    "my": 1561,
+    "mandi": 1542
+  },
+  {
+    "name": "Bajra Mix 878",
+    "my": 3459,
+    "mandi": 3600
+  },
+  {
+    "name": "Bajra Mix 879",
+    "my": 2256,
+    "mandi": 2149
+  },
+  {
+    "name": "Mustard Mix 880",
+    "my": 1816,
+    "mandi": 1713
+  },
+  {
+    "name": "Makka Mix 881",
+    "my": 2797,
+    "mandi": 2757
+  },
+  {
+    "name": "Makka Mix 882",
+    "my": 2763,
+    "mandi": 2810
+  },
+  {
+    "name": "Cotton Mix 883",
+    "my": 2971,
+    "mandi": 2927
+  },
+  {
+    "name": "Makka Mix 884",
+    "my": 1515,
+    "mandi": 1500
+  },
+  {
+    "name": "Dhan Mix 885",
+    "my": 3378,
+    "mandi": 3331
+  },
+  {
+    "name": "Gehu Mix 886",
+    "my": 3219,
+    "mandi": 3270
+  },
+  {
+    "name": "Gehu Mix 887",
+    "my": 2670,
+    "mandi": 2526
+  },
+  {
+    "name": "Mustard Mix 888",
+    "my": 2552,
+    "mandi": 2581
+  },
+  {
+    "name": "Makka Mix 889",
+    "my": 2280,
+    "mandi": 2166
+  },
+  {
+    "name": "Soyabean Mix 890",
+    "my": 2817,
+    "mandi": 2739
+  },
+  {
+    "name": "Jowar Mix 891",
+    "my": 3167,
+    "mandi": 3053
+  },
+  {
+    "name": "Chana Mix 892",
+    "my": 2050,
+    "mandi": 2037
+  },
+  {
+    "name": "Gehu Mix 893",
+    "my": 2822,
+    "mandi": 2822
+  },
+  {
+    "name": "Gehu Mix 894",
+    "my": 3490,
+    "mandi": 3377
+  },
+  {
+    "name": "Bajra Mix 895",
+    "my": 3193,
+    "mandi": 3108
+  },
+  {
+    "name": "Sugarcane Mix 896",
+    "my": 2238,
+    "mandi": 2376
+  },
+  {
+    "name": "Sugarcane Mix 897",
+    "my": 2428,
+    "mandi": 2280
+  },
+  {
+    "name": "Chana Mix 898",
+    "my": 3447,
+    "mandi": 3456
+  },
+  {
+    "name": "Dhan Mix 899",
+    "my": 2126,
+    "mandi": 2167
+  },
+  {
+    "name": "Soyabean Mix 900",
+    "my": 3034,
+    "mandi": 3015
+  },
+  {
+    "name": "Dhan Mix 901",
+    "my": 2350,
+    "mandi": 2494
+  },
+  {
+    "name": "Chana Mix 902",
+    "my": 3142,
+    "mandi": 3244
+  },
+  {
+    "name": "Makka Mix 903",
+    "my": 1761,
+    "mandi": 1753
+  },
+  {
+    "name": "Cotton Mix 904",
+    "my": 3033,
+    "mandi": 3132
+  },
+  {
+    "name": "Soyabean Mix 905",
+    "my": 2176,
+    "mandi": 2107
+  },
+  {
+    "name": "Chana Mix 906",
+    "my": 3461,
+    "mandi": 3314
+  },
+  {
+    "name": "Makka Mix 907",
+    "my": 3293,
+    "mandi": 3352
+  },
+  {
+    "name": "Gehu Mix 908",
+    "my": 2478,
+    "mandi": 2536
+  },
+  {
+    "name": "Bajra Mix 909",
+    "my": 2619,
+    "mandi": 2670
+  },
+  {
+    "name": "Sugarcane Mix 910",
+    "my": 3172,
+    "mandi": 3172
+  },
+  {
+    "name": "Bajra Mix 911",
+    "my": 3026,
+    "mandi": 2901
+  },
+  {
+    "name": "Dhan Mix 912",
+    "my": 1608,
+    "mandi": 1664
+  },
+  {
+    "name": "Dhan Mix 913",
+    "my": 3006,
+    "mandi": 3008
+  },
+  {
+    "name": "Makka Mix 914",
+    "my": 3257,
+    "mandi": 3268
+  },
+  {
+    "name": "Soyabean Mix 915",
+    "my": 3097,
+    "mandi": 3098
+  },
+  {
+    "name": "Chana Mix 916",
+    "my": 1830,
+    "mandi": 1963
+  },
+  {
+    "name": "Soyabean Mix 917",
+    "my": 2132,
+    "mandi": 2131
+  },
+  {
+    "name": "Makka Mix 918",
+    "my": 1693,
+    "mandi": 1562
+  },
+  {
+    "name": "Soyabean Mix 919",
+    "my": 3447,
+    "mandi": 3371
+  },
+  {
+    "name": "Mustard Mix 920",
+    "my": 2447,
+    "mandi": 2411
+  },
+  {
+    "name": "Dhan Mix 921",
+    "my": 2466,
+    "mandi": 2487
+  },
+  {
+    "name": "Mustard Mix 922",
+    "my": 1904,
+    "mandi": 1973
+  },
+  {
+    "name": "Jowar Mix 923",
+    "my": 3440,
+    "mandi": 3474
+  },
+  {
+    "name": "Mustard Mix 924",
+    "my": 2219,
+    "mandi": 2208
+  },
+  {
+    "name": "Bajra Mix 925",
+    "my": 2087,
+    "mandi": 2165
+  },
+  {
+    "name": "Makka Mix 926",
+    "my": 1798,
+    "mandi": 1844
+  },
+  {
+    "name": "Cotton Mix 927",
+    "my": 2666,
+    "mandi": 2783
+  },
+  {
+    "name": "Chana Mix 928",
+    "my": 3463,
+    "mandi": 3375
+  },
+  {
+    "name": "Sugarcane Mix 929",
+    "my": 2604,
+    "mandi": 2601
+  },
+  {
+    "name": "Sugarcane Mix 930",
+    "my": 3109,
+    "mandi": 2962
+  },
+  {
+    "name": "Sugarcane Mix 931",
+    "my": 2133,
+    "mandi": 2042
+  },
+  {
+    "name": "Chana Mix 932",
+    "my": 3073,
+    "mandi": 3097
+  },
+  {
+    "name": "Gehu Mix 933",
+    "my": 3055,
+    "mandi": 3170
+  },
+  {
+    "name": "Soyabean Mix 934",
+    "my": 2121,
+    "mandi": 2183
+  },
+  {
+    "name": "Cotton Mix 935",
+    "my": 3261,
+    "mandi": 3131
+  },
+  {
+    "name": "Makka Mix 936",
+    "my": 2367,
+    "mandi": 2456
+  },
+  {
+    "name": "Gehu Mix 937",
+    "my": 2519,
+    "mandi": 2657
+  },
+  {
+    "name": "Soyabean Mix 938",
+    "my": 1720,
+    "mandi": 1597
+  },
+  {
+    "name": "Gehu Mix 939",
+    "my": 1977,
+    "mandi": 1902
+  },
+  {
+    "name": "Jowar Mix 940",
+    "my": 1676,
+    "mandi": 1536
+  },
+  {
+    "name": "Bajra Mix 941",
+    "my": 2759,
+    "mandi": 2665
+  },
+  {
+    "name": "Gehu Mix 942",
+    "my": 1881,
+    "mandi": 1846
+  },
+  {
+    "name": "Dhan Mix 943",
+    "my": 2739,
+    "mandi": 2731
+  },
+  {
+    "name": "Mustard Mix 944",
+    "my": 2138,
+    "mandi": 2048
+  },
+  {
+    "name": "Gehu Mix 945",
+    "my": 3481,
+    "mandi": 3466
+  },
+  {
+    "name": "Dhan Mix 946",
+    "my": 1682,
+    "mandi": 1565
+  },
+  {
+    "name": "Mustard Mix 947",
+    "my": 2280,
+    "mandi": 2251
+  },
+  {
+    "name": "Mustard Mix 948",
+    "my": 1872,
+    "mandi": 1837
+  },
+  {
+    "name": "Makka Mix 949",
+    "my": 3073,
+    "mandi": 3180
+  },
+  {
+    "name": "Gehu Mix 950",
+    "my": 3422,
+    "mandi": 3418
+  },
+  {
+    "name": "Dhan Mix 951",
+    "my": 2299,
+    "mandi": 2349
+  },
+  {
+    "name": "Mustard Mix 952",
+    "my": 3464,
+    "mandi": 3593
+  },
+  {
+    "name": "Bajra Mix 953",
+    "my": 2688,
+    "mandi": 2763
+  },
+  {
+    "name": "Soyabean Mix 954",
+    "my": 2221,
+    "mandi": 2174
+  },
+  {
+    "name": "Cotton Mix 955",
+    "my": 3000,
+    "mandi": 3009
+  },
+  {
+    "name": "Soyabean Mix 956",
+    "my": 1604,
+    "mandi": 1653
+  },
+  {
+    "name": "Jowar Mix 957",
+    "my": 2774,
+    "mandi": 2637
+  },
+  {
+    "name": "Mustard Mix 958",
+    "my": 1990,
+    "mandi": 1913
+  },
+  {
+    "name": "Soyabean Mix 959",
+    "my": 2840,
+    "mandi": 2880
+  },
+  {
+    "name": "Gehu Mix 960",
+    "my": 1850,
+    "mandi": 1901
+  },
+  {
+    "name": "Dhan Mix 961",
+    "my": 2688,
+    "mandi": 2730
+  },
+  {
+    "name": "Cotton Mix 962",
+    "my": 2941,
+    "mandi": 2792
+  },
+  {
+    "name": "Gehu Mix 963",
+    "my": 2946,
+    "mandi": 3055
+  },
+  {
+    "name": "Bajra Mix 964",
+    "my": 1763,
+    "mandi": 1719
+  },
+  {
+    "name": "Soyabean Mix 965",
+    "my": 1661,
+    "mandi": 1720
+  },
+  {
+    "name": "Makka Mix 966",
+    "my": 3258,
+    "mandi": 3377
+  },
+  {
+    "name": "Chana Mix 967",
+    "my": 2759,
+    "mandi": 2698
+  },
+  {
+    "name": "Dhan Mix 968",
+    "my": 3171,
+    "mandi": 3082
+  },
+  {
+    "name": "Cotton Mix 969",
+    "my": 2685,
+    "mandi": 2700
+  },
+  {
+    "name": "Jowar Mix 970",
+    "my": 3363,
+    "mandi": 3497
+  },
+  {
+    "name": "Sugarcane Mix 971",
+    "my": 2402,
+    "mandi": 2473
+  },
+  {
+    "name": "Gehu Mix 972",
+    "my": 2128,
+    "mandi": 2140
+  },
+  {
+    "name": "Chana Mix 973",
+    "my": 2305,
+    "mandi": 2372
+  },
+  {
+    "name": "Dhan Mix 974",
+    "my": 3426,
+    "mandi": 3386
+  },
+  {
+    "name": "Soyabean Mix 975",
+    "my": 2324,
+    "mandi": 2253
+  },
+  {
+    "name": "Dhan Mix 976",
+    "my": 3499,
+    "mandi": 3589
+  },
+  {
+    "name": "Cotton Mix 977",
+    "my": 3056,
+    "mandi": 3109
+  },
+  {
+    "name": "Mustard Mix 978",
+    "my": 2807,
+    "mandi": 2685
+  },
+  {
+    "name": "Soyabean Mix 979",
+    "my": 2676,
+    "mandi": 2745
+  },
+  {
+    "name": "Cotton Mix 980",
+    "my": 3378,
+    "mandi": 3279
+  },
+  {
+    "name": "Sugarcane Mix 981",
+    "my": 2885,
+    "mandi": 2900
+  },
+  {
+    "name": "Makka Mix 982",
+    "my": 2749,
+    "mandi": 2832
+  },
+  {
+    "name": "Dhan Mix 983",
+    "my": 2834,
+    "mandi": 2745
+  },
+  {
+    "name": "Dhan Mix 984",
+    "my": 3365,
+    "mandi": 3482
+  },
+  {
+    "name": "Sugarcane Mix 985",
+    "my": 2937,
+    "mandi": 2979
+  },
+  {
+    "name": "Mustard Mix 986",
+    "my": 2412,
+    "mandi": 2322
+  },
+  {
+    "name": "Bajra Mix 987",
+    "my": 3441,
+    "mandi": 3426
+  },
+  {
+    "name": "Gehu Mix 988",
+    "my": 2456,
+    "mandi": 2414
+  },
+  {
+    "name": "Soyabean Mix 989",
+    "my": 1583,
+    "mandi": 1633
+  },
+  {
+    "name": "Bajra Mix 990",
+    "my": 3370,
+    "mandi": 3315
+  },
+  {
+    "name": "Dhan Mix 991",
+    "my": 3104,
+    "mandi": 3180
+  },
+  {
+    "name": "Soyabean Mix 992",
+    "my": 1850,
+    "mandi": 1828
+  },
+  {
+    "name": "Sugarcane Mix 993",
+    "my": 2215,
+    "mandi": 2171
+  },
+  {
+    "name": "Makka Mix 994",
+    "my": 2531,
+    "mandi": 2627
+  },
+  {
+    "name": "Chana Mix 995",
+    "my": 2840,
+    "mandi": 2772
+  },
+  {
+    "name": "Makka Mix 996",
+    "my": 3174,
+    "mandi": 3089
+  },
+  {
+    "name": "Bajra Mix 997",
+    "my": 2615,
+    "mandi": 2466
+  },
+  {
+    "name": "Cotton Mix 998",
+    "my": 2993,
+    "mandi": 3096
+  },
+  {
+    "name": "Gehu Mix 999",
+    "my": 2707,
+    "mandi": 2588
+  }
+]

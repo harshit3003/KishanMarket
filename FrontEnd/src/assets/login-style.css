@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@400;600&display=swap');
+
+/* ─── CSS Variables (Exact as per Screenshot) ─────────────────── */
+:root {
+    --dark-bg: #0e0803;
+    /* Deep espresso dark */
+    --brand-clr: #e8890c;
+    /* Primary orange */
+    --brand-grad: linear-gradient(160deg, #e8890c 0%, #c96b00 100%);
+    --card-cream: #fdf6e3;
+    /* Right side panel */
+    --text-main: #1e1206;
+    --text-muted: #8a7560;
+    --radius: 24px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login-page-wrapper {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--dark-bg);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ─── Background Layer (The Screenshot Look) ─────────────────── */
+.login-bg-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background: radial-gradient(circle at 20% 50%, #22150a 0%, #0e0803 100%);
+}
+
+.grain {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.sun-ring {
+    position: absolute;
+    left: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    border: 1px solid rgba(232, 137, 12, 0.04);
+}
+
+.ring-1 {
+    width: 400px;
+    height: 400px;
+}
+
+.ring-2 {
+    width: 800px;
+    height: 800px;
+}
+
+/* ─── Main Card Container ─────────────────────────────────── */
+.page-wrap {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    width: 95%;
+    max-width: 940px;
+    height: 580px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ─── Left Panel (Branding) ───────────────────────────────── */
+.brand-panel {
+    width: 42%;
+    background: var(--brand-grad);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 40px;
+    color: white;
+    text-align: center;
+}
+
+.brand-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.brand-logo {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 20px;
+    backdrop-filter: blur(10px);
+}
+
+.brand-name {
+    font-family: 'Abril Fatface', serif;
+    font-size: 3rem;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.brand-tagline {
+    font-family: 'Noto Sans Devanagari', sans-serif;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.brand-stats {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+}
+
+.stat-num {
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+/* ─── Right Panel (Form) ──────────────────────────────────── */
+.form-panel {
+    flex: 1;
+    background: var(--card-cream);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-header {
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    font-family: 'Abril Fatface', serif;
+    font-size: 2.2rem;
+    color: var(--text-main);
+}
+
+.form-header p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.form-link {
+    color: var(--brand-clr);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* ─── Inputs & Fields ─────────────────────────────────────── */
+.field {
+    margin-bottom: 18px;
+}
+
+.field label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-main);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+input[type="text"],
+input[type="tel"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2.5px solid #eee5d3;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    background: white;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: var(--brand-clr);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(232, 137, 12, 0.1);
+}
+
+/* Role Toggle Buttons */
+.role-toggle {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.role-toggle input {
+    display: none;
+}
+
+.role-btn {
+    flex: 1;
+    padding: 15px;
+    border: 2.5px solid #eee5d3;
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    background: white;
+    transition: 0.3s;
+}
+
+.role-toggle input:checked+.role-btn {
+    border-color: var(--brand-clr);
+    background: #fff9ed;
+}
+
+/* ─── Login Button ────────────────────────────────────────── */
+.submit-btn {
+    background: linear-gradient(160deg, #e8890c 0%, #c96b00 100%);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(232, 137, 12, 0.4);
+}
+
+/* ─── Responsive ────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .page-wrap {
+        flex-direction: column;
+        height: auto;
+        margin: 20px;
+    }
+
+    .brand-panel {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .form-panel {
+        padding: 30px;
+    }
+}

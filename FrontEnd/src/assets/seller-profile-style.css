@@ -1,0 +1,95 @@
+:root { 
+    --primary: #1b4332; --accent: #f59e0b; --success: #2d6a4f; 
+    --wheat: #d4c1a5; --wheat-dark: #bc6c25;
+    --glass: rgba(255, 255, 255, 0.45); --border: rgba(212, 193, 165, 0.4);
+    --sidebar-w: 280px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; transition: 0.3s; }
+
+body { 
+    background: linear-gradient(135deg, #fff4e6 0%, #fce9d5 40%, #e3d5ca 100%); 
+    background-attachment: fixed; min-height: 100vh; overflow-x: hidden; 
+}
+
+#sidebar { 
+    width: var(--sidebar-w); 
+    background: linear-gradient(180deg, #1b4332 0%, #0d2119 100%); 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    height: 100vh; 
+    z-index: 1100; 
+    box-shadow: 10px 0 30px rgba(0,0,0,0.1); 
+}
+.sidebar-brand { padding: 2.5rem 1.5rem; font-size: 1.5rem; font-weight: 800; color: white; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.sidebar-brand span { color: var(--accent); }
+.nav-link { display: flex; align-items: center; padding: 1.2rem 1.5rem; color: rgba(255,255,255,0.6); text-decoration: none; border-left: 4px solid transparent; cursor: pointer; }
+.nav-link.active, .nav-link:hover { background: rgba(255,255,255,0.1); color: var(--accent); border-left-color: var(--accent); }
+
+#main-content { margin-left: var(--sidebar-w); flex: 1; width: calc(100vw - var(--sidebar-w)); }
+.top-header { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); padding: 1rem 2.5rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border); }
+.btn-back { padding: 0.5rem 1.2rem; border: 2px solid var(--primary); border-radius: 12px; color: var(--primary); text-decoration: none; font-weight: 700; font-size: 0.85rem; }
+
+.content-body { padding: 2.5rem; }
+.premium-glass-card { background: var(--glass); backdrop-filter: blur(25px) saturate(180%); border: 1px solid var(--border); border-radius: 28px; padding: 2rem; box-shadow: 0 15px 35px rgba(0,0,0,0.08); animation: fadeInUp 0.5s ease; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; }
+.premium-glass-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 20px 40px rgba(82, 183, 136, 0.15), inset 0 1px 2px rgba(255,255,255,1); border-color: rgba(82, 183, 136, 0.4); }
+.premium-glass-card::before { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%); transform: skewX(-25deg); transition: all 0.7s ease; z-index: 1; pointer-events: none; }
+.premium-glass-card:hover::before { left: 200%; }
+
+.advisory-card { border-left: 6px solid var(--success); }
+
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; perspective: 1000px; }
+.stat-card { background: var(--wheat) !important; padding: 1.5rem; border-radius: 22px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid rgba(255,255,255,0.3); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); transform-style: preserve-3d; }
+.stat-card h6 { color: #4a3728; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 10px; transform: translateZ(20px); }
+.stat-card h3 { color: var(--primary) !important; font-weight: 800; font-size: 2rem; transform: translateZ(40px); }
+.stat-card:hover { background: var(--wheat-dark) !important; transform: translateY(-10px) rotateX(5deg) scale(1.05); box-shadow: 0 25px 45px rgba(188, 108, 37, 0.3); }
+.stat-card:hover h6, .stat-card:hover h3 { color: white !important; }
+/* --- PIXEL PERFECT CHART FIX --- */
+/* --- PIXEL PERFECT CHART CONTAINER --- */
+.chart-container {
+    position: relative;
+    height: 320px; /* Isse box ki height maintain rahegi */
+    width: 100%;
+    margin-top: 10px;
+    overflow: hidden; /* Extra safety */
+}
+
+/* Taaki legend aur chart ke beech sahi gap rahe */
+.premium-glass-card h6 {
+    margin-bottom: 20px !important;
+}
+
+/* Canvas ko box ke andar force karne ke liye */
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+/* Prediction item styling */
+.prediction-box {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.prediction-box:hover {
+    background: white;
+    transform: scale(1.05);
+}
+.chart-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+
+
+.profile-tab.d-none { display: none !important; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 992px) { 
+    #sidebar { transform: translateX(-100%); } 
+    #sidebar.active { transform: translateX(0); } 
+    #main-content { margin-left: 0; width: 100vw; } 
+    .chart-grid { grid-template-columns: 1fr; }
+}
