@@ -2,6 +2,10 @@
   "name": "kishan-market",
   "version": "1.0.0",
   "description": "KishanMarket Agritech Direct Trading Platform",
+  "engines": {
+    "node": "20.x",
+    "npm": ">=9.0.0"
+  },
   "scripts": {
     "build": "npm install --prefix Backend && npm install --prefix FrontEnd && npm run build --prefix FrontEnd",
     "start": "node Backend/server.js"
