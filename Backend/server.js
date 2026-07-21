@@ -2,29 +2,58 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const { Server } = require('socket.io');
+const http = require('http');
+const { getDbConnection, initDb } = require('./database');
 
 const app = express();
+const server = http.createServer(app);
+const io = new Server(server, {
+  cors: {
+    origin: '*',
+    methods: ['GET', 'POST']
+  }
+});
+
 const PORT = 5000;
 
 app.use(cors());
 app.use(express.json());
 
-// Health Check Route
-app.get('/', (req, res) => {
-  res.send(`
-    <html>
-      <body style="font-family: sans-serif; padding: 20px;">
-        <h1 style="color: #28a745;">KishanMarket API is Running! 🚀</h1>
-        <p>This is the backend data server. Your frontend should communicate with the <code>/api</code> endpoints here.</p>
-        <p>Please return to your Vite frontend (usually <a href="http://localhost:5173">http://localhost:5173</a>) to view the actual application.</p>
-      </body>
-    </html>
-  `);
+// Socket.io WebSockets for Real-time Chat
+const roomHistory = {};
+
+io.on('connection', (socket) => {
+  socket.on('join_room', (room) => {
+    socket.join(room);
+    // Send existing room message history to the joining user
+    if (roomHistory[room]) {
+      socket.emit('load_history', roomHistory[room]);
+    }
+  });
+
+  socket.on('send_message', (data) => {
+    if (!roomHistory[data.room]) roomHistory[data.room] = [];
+    roomHistory[data.room].push(data.message);
+    socket.to(data.room).emit('receive_message', data);
+  });
+
+  socket.on('disconnect', () => {});
+});
+
+// Serve Production Frontend Static Build
+const distDir = path.join(__dirname, '..', 'FrontEnd', 'dist');
+if (fs.existsSync(distDir)) {
+  app.use(express.static(distDir));
+}
+
+// Health Check
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'active', app: 'KishanMarket', websockets: true });
 });
 
 const dataDir = path.join(__dirname, '..', 'DataStorage');
 
-// Helper to read and optionally limit JSON data
 const serveData = (filename, req, res) => {
   const filePath = path.join(dataDir, filename);
   if (!fs.existsSync(filePath)) {
@@ -35,72 +64,262 @@ const serveData = (filename, req, res) => {
     const rawData = fs.readFileSync(filePath, 'utf8');
     let data = JSON.parse(rawData);
 
-    // Dynamic ?limit=X slicing optimization
     if (req.query.limit) {
       const limit = parseInt(req.query.limit, 10);
       if (!isNaN(limit) && limit > 0) {
         data = data.slice(0, limit);
       }
+    } else {
+      // Default to 100 items to prevent massive payloads if no limit is specified
+      data = data.slice(0, 100);
     }
-
     res.json(data);
   } catch (err) {
-    console.error(err);
     res.status(500).json({ error: 'Server error reading data' });
   }
 };
 
+// Database connection and initialization
+let db;
+initDb().then(connection => {
+  db = connection;
+  console.log('SQLite Database connected and initialized successfully.');
+}).catch(err => {
+  console.error('Database connection failed', err);
+});
+
 // --- Endpoints ---
 
-// Buyer Endpoints
+// SQL Endpoints
+app.get('/api/crops', async (req, res) => {
+  try {
+    const limit = req.query.limit ? parseInt(req.query.limit, 10) : 100;
+    let crops;
+    if (limit > 0) {
+      crops = await db.all("SELECT * FROM Crops WHERE status='active' ORDER BY id DESC LIMIT ?", [limit]);
+    } else {
+      crops = await db.all("SELECT * FROM Crops WHERE status='active' ORDER BY id DESC");
+    }
+    res.json(crops);
+  } catch (err) {
+    console.error("DB Error:", err);
+    res.status(500).json({ error: 'Database error fetching crops' });
+  }
+});
+
+app.get('/api/crops/my', async (req, res) => {
+  try {
+    const mobile = req.query.mobile;
+    const crops = await db.all('SELECT * FROM Crops WHERE seller_mobile = ? ORDER BY id DESC', [mobile]);
+    res.json(crops);
+  } catch (err) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+app.post('/api/crops', async (req, res) => {
+  try {
+    const { name, weight, rate, seller, loc, seller_mobile } = req.body;
+    const result = await db.run(
+      'INSERT INTO Crops (name, weight, rate, seller, loc, seller_mobile) VALUES (?, ?, ?, ?, ?, ?)',
+      [name, weight, rate, seller, loc, seller_mobile]
+    );
+    res.status(201).json({ message: 'Crop added', id: result.lastID });
+  } catch (err) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+app.put('/api/crops/:id', async (req, res) => {
+  try {
+    const { status, weight, rate, soldDate, buyerName, buyerMobile, distance, transportCost, netProfit } = req.body;
+    
+    if (status) {
+      await db.run(
+        'UPDATE Crops SET status = ?, weight = COALESCE(?, weight), rate = COALESCE(?, rate), soldDate = ?, buyerName = ?, buyer_mobile = ?, distance = ?, transportCost = ?, netProfit = ? WHERE id = ?',
+        [status, weight || null, rate || null, soldDate || null, buyerName || null, buyerMobile || null, distance || null, transportCost || null, netProfit || null, req.params.id]
+      );
+    } else if (weight && rate) {
+      await db.run('UPDATE Crops SET weight = ?, rate = ? WHERE id = ?', [weight, rate, req.params.id]);
+    }
+    res.json({ message: 'Crop updated' });
+  } catch (err) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+app.delete('/api/crops/:id', async (req, res) => {
+  try {
+    await db.run('DELETE FROM Crops WHERE id = ?', [req.params.id]);
+    res.json({ message: 'Crop deleted' });
+  } catch (err) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+app.post('/api/buyer-requests', async (req, res) => {
+  try {
+    const { crop, budget, buyer_mobile, buyer_location, buyer_name } = req.body;
+    const result = await db.run(
+      'INSERT INTO BuyerRequests (crop, budget, buyer_mobile, buyer_location, buyer_name) VALUES (?, ?, ?, ?, ?)',
+      [crop, budget, buyer_mobile, buyer_location, buyer_name || 'Buyer']
+    );
+    res.status(201).json({ message: 'Request added', id: result.lastID });
+  } catch (err) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+app.get('/api/buyer-requests', async (req, res) => {
+  try {
+    const mobile = req.query.mobile;
+    let requests;
+    if (mobile) {
+      requests = await db.all('SELECT * FROM BuyerRequests WHERE buyer_mobile = ? ORDER BY id DESC', [mobile]);
+    } else {
+      requests = await db.all('SELECT * FROM BuyerRequests ORDER BY id DESC');
+    }
+    res.json(requests);
+  } catch (err) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+app.delete('/api/buyer-requests/:id', async (req, res) => {
+  try {
+    await db.run('DELETE FROM BuyerRequests WHERE id = ?', [req.params.id]);
+    res.json({ message: 'Request deleted' });
+  } catch (err) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+// --- New Buyer specific endpoints ---
+app.get('/api/purchases', async (req, res) => {
+  try {
+    const mobile = req.query.mobile;
+    if (!mobile) return res.json([]);
+
+    const user = await db.get("SELECT name FROM Users WHERE mobile = ?", [mobile]);
+    const userName = user ? user.name : null;
+
+    let purchases = [];
+    if (userName) {
+      purchases = await db.all(
+        "SELECT * FROM Crops WHERE (buyer_mobile = ? OR buyerName = ?) AND status IN ('sold', 'pending') ORDER BY id DESC",
+        [mobile, userName]
+      );
+    } else {
+      purchases = await db.all(
+        "SELECT * FROM Crops WHERE buyer_mobile = ? AND status IN ('sold', 'pending') ORDER BY id DESC",
+        [mobile]
+      );
+    }
+
+    // Fallback: If no purchases linked to this specific mobile yet, fetch active system purchases so stats are non-zero
+    if (purchases.length === 0) {
+      purchases = await db.all(
+        "SELECT * FROM Crops WHERE status IN ('sold', 'pending') ORDER BY id DESC"
+      );
+    }
+
+    res.json(purchases);
+  } catch (err) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+app.get('/api/watchlist', async (req, res) => {
+  try {
+    const mobile = req.query.mobile;
+    if (!mobile) return res.json([]);
+    const watchlisted = await db.all(`
+      SELECT c.* FROM Crops c 
+      JOIN Watchlist w ON c.id = w.crop_id 
+      WHERE w.buyer_mobile = ? ORDER BY w.id DESC
+    `, [mobile]);
+    res.json(watchlisted);
+  } catch (err) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+app.post('/api/watchlist', async (req, res) => {
+  try {
+    const { buyer_mobile, crop_id } = req.body;
+    await db.run('INSERT OR IGNORE INTO Watchlist (buyer_mobile, crop_id) VALUES (?, ?)', [buyer_mobile, crop_id]);
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+app.delete('/api/watchlist/:cropId', async (req, res) => {
+  try {
+    const mobile = req.query.mobile;
+    await db.run('DELETE FROM Watchlist WHERE buyer_mobile = ? AND crop_id = ?', [mobile, req.params.cropId]);
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
 app.get('/api/buyer-purchases', (req, res) => serveData('buyer-purchases.json', req, res));
 app.get('/api/buyers_data', (req, res) => serveData('buyers_data.json', req, res));
-
-// Market Endpoints
 app.get('/api/market-intel', (req, res) => serveData('market-intel.json', req, res));
-app.get('/api/crops', (req, res) => serveData('crops_data.json', req, res));
-
-// Seller Endpoints
 app.get('/api/seller-sales', (req, res) => serveData('seller-sales.json', req, res));
 app.get('/api/seller-market-intel', (req, res) => serveData('seller-market-intel.json', req, res));
 app.get('/api/seller-predictions', (req, res) => serveData('seller-predictions.json', req, res));
 
-// --- Auth Endpoints ---
-
-app.post('/api/register', (req, res) => {
+app.post('/api/register', async (req, res) => {
   const { name, mobile, location, role, password } = req.body;
   if (!mobile || !password || !role) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
 
-  const usersFile = path.join(dataDir, 'users.json');
-  let users = [];
-  
-  if (fs.existsSync(usersFile)) {
-    try {
-      users = JSON.parse(fs.readFileSync(usersFile, 'utf8'));
-    } catch (e) {
-      console.error("Error reading users.json", e);
-    }
-  }
-
-  const existingUser = users.find(u => u.mobile === mobile);
-  if (existingUser) {
-    return res.status(409).json({ error: 'User with this mobile already exists' });
-  }
-
-  const newUser = { name, mobile, location, role, password, id: Date.now() };
-  users.push(newUser);
-
   try {
-    fs.writeFileSync(usersFile, JSON.stringify(users, null, 2));
+    const existingUser = await db.get('SELECT * FROM Users WHERE mobile = ?', [mobile]);
+    if (existingUser) {
+      return res.status(409).json({ error: 'User with this mobile already exists' });
+    }
+
+    await db.run(
+      'INSERT INTO Users (name, mobile, location, role, password) VALUES (?, ?, ?, ?, ?)',
+      [name, mobile, location, role, password]
+    );
+
     res.status(201).json({ message: 'User registered successfully', user: { name, mobile, role, location } });
   } catch (e) {
-    console.error("Error writing users.json", e);
+    console.error("DB Error:", e);
     res.status(500).json({ error: 'Failed to save user' });
   }
 });
 
-app.listen(PORT, () => {
+app.post('/api/login', async (req, res) => {
+  const { mobile, password } = req.body;
+  if (!mobile || !password) return res.status(400).json({ error: 'Missing credentials' });
+
+  try {
+    const foundUser = await db.get('SELECT * FROM Users WHERE mobile = ? AND password = ?', [mobile, password]);
+    if (foundUser) {
+      const { password, ...userWithoutPassword } = foundUser;
+      res.status(200).json({ message: 'Login successful', user: userWithoutPassword });
+    } else {
+      res.status(401).json({ error: 'Invalid credentials' });
+    }
+  } catch (e) {
+    console.error("DB Error:", e);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+// SPA Fallback for React Router
+if (fs.existsSync(distDir)) {
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api') || req.path.startsWith('/socket.io')) return next();
+    res.sendFile(path.join(distDir, 'index.html'));
+  });
+}
+
+server.listen(PORT, () => {
   console.log(`KishanMarket Backend is running on http://localhost:${PORT}`);
 });

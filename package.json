@@ -1,0 +1,10 @@
+{
+  "name": "kishan-market",
+  "version": "1.0.0",
+  "description": "KishanMarket Agritech Direct Trading Platform",
+  "scripts": {
+    "postinstall": "cd Backend && npm install && cd ../FrontEnd && npm install",
+    "build": "cd FrontEnd && npm run build",
+    "start": "cd Backend && node server.js"
+  }
+}

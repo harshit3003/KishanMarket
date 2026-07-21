@@ -6,6 +6,12 @@ import '../assets/dynamic-features.css';
 const LandingPage = () => {
   const navigate = useNavigate();
 
+  React.useEffect(() => {
+    // Automatically clear the session when visiting the main landing page
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('displayUserName');
+  }, []);
+
   return (
     <>
             

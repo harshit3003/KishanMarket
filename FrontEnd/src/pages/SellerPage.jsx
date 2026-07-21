@@ -4,11 +4,14 @@ import toast from 'react-hot-toast';
 import '../assets/global.css';
 import '../assets/dynamic-features.css';
 import '../assets/seller-style.css';
-import BuyersMap from '../components/SellerFeatures/BuyersMap';
+import InteractiveMarketMap from '../components/InteractiveMarketMap';
 import LiveBiddingToasts from '../components/SellerFeatures/LiveBiddingToasts';
 import AIAssessor from '../components/SellerFeatures/AIAssessor';
 import LogisticsCalculator from '../components/SellerFeatures/LogisticsCalculator';
 import ColdStorageFinder from '../components/SellerFeatures/ColdStorageFinder';
+import WeatherDashboard from '../components/SellerFeatures/WeatherDashboard';
+import NegotiationChat from '../components/BuyerFeatures/NegotiationChat';
+import socket from '../socket';
 
 const defaultBuyers = [
   { "name": "ITC Limited", "crops": "Gehu", "rate": "1874", "location": "Rajasthan", "rating": "3.6" },
@@ -20,7 +23,13 @@ const defaultBuyers = [
 
 const SellerPage = () => {
   const navigate = useNavigate();
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [isLiveBidsOpen, setIsLiveBidsOpen] = useState(false);
+
+  // New states for Interactive Modals
+  const [editModalData, setEditModalData] = useState({ open: false, index: null, weight: '', rate: '' });
+  const [sellModalData, setSellModalData] = useState({ open: false, index: null, distance: 50, buyerName: '' });
   const [currentUser, setCurrentUser] = useState({ name: 'Guest', role: 'seller', location: '' });
   const [crops, setCrops] = useState([]);
   const [buyers, setBuyers] = useState(defaultBuyers);
@@ -37,19 +46,341 @@ const SellerPage = () => {
   const [cropWeight, setCropWeight] = useState('');
   const [cropRate, setCropRate] = useState('');
 
-  // Live Bids Modal State
-  const [isLiveBidsOpen, setIsLiveBidsOpen] = useState(false);
+  // Live Weather State for Widget
+  const [liveTemp, setLiveTemp] = useState('28');
+  const [liveWind, setLiveWind] = useState('12');
+  const [weatherLocation, setWeatherLocation] = useState('Karnal, Haryana');
+  const [weatherCondition, setWeatherCondition] = useState('Clear Sky');
+  const [advisoryText, setAdvisoryText] = useState('Clear, good for harvesting Gehu (Wheat)');
   
   // Card Hover State
   const [hoveredCardIndex, setHoveredCardIndex] = useState(null);
 
-  useEffect(() => {
-    const userStr = localStorage.getItem('currentUser');
-    if (userStr) setCurrentUser(JSON.parse(userStr));
+  // Chat State
+  const [activeChat, setActiveChat] = useState(null);
+  const [unreadCounts, setUnreadCounts] = useState({});
 
-    const savedCrops = JSON.parse(localStorage.getItem('myCrops')) || [];
-    setCrops(savedCrops);
+  useEffect(() => {
+    let currentMobile = 'guest';
+    const userStr = localStorage.getItem('currentUser');
+    if (userStr) {
+      const parsedUser = JSON.parse(userStr);
+      setCurrentUser(parsedUser);
+      currentMobile = parsedUser.mobile || 'guest';
+    }
+
+    let initLoc = 'Karnal, Haryana';
+    if (userStr) {
+      const parsedUser = JSON.parse(userStr);
+      if (parsedUser.location) initLoc = parsedUser.location;
+    }
+    setWeatherLocation(initLoc);
+
+    const fetchInitialData = async (mobile, loc) => {
+      try {
+        const cropsRes = await fetch(`/api/crops/my?mobile=${mobile}`);
+        if (cropsRes.ok) {
+          setCrops(await cropsRes.json());
+        }
+
+        const reqsRes = await fetch('/api/buyer-requests');
+        if (reqsRes.ok) {
+          const reqs = await reqsRes.json();
+          const formattedRequests = reqs.map(req => ({
+            reqId: req.id,
+            name: req.buyer_name || "Direct Buyer (New Request)",
+            mobile: req.buyer_mobile,
+            crops: req.crop,
+            rate: req.budget,
+            location: req.buyer_location || 'Unknown',
+            rating: "New"
+          }));
+          
+          const allBuyers = [...formattedRequests, ...defaultBuyers];
+          
+          // Filter by seller's location (State or City matching)
+          let localizedBuyers = allBuyers;
+          if (loc && loc !== '') {
+            const sellerParts = loc.toLowerCase().split(',').map(s => s.trim());
+            localizedBuyers = allBuyers.filter(buyer => {
+              const bLoc = buyer.location.toLowerCase();
+              return sellerParts.some(part => bLoc.includes(part) || part.includes(bLoc));
+            });
+          }
+          
+          // If no buyers found in immediate area, show all as fallback
+          setBuyers(localizedBuyers.length > 0 ? localizedBuyers : allBuyers);
+        }
+      } catch (err) {}
+    };
+
+    fetchInitialData(currentMobile, initLoc);
+
+    // Fetch actual live weather for the widget
+    if (initLoc !== 'Karnal, Haryana') {
+      fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(initLoc)}&count=1`)
+        .then(res => res.json())
+        .then(geoData => {
+          if (geoData.results && geoData.results.length > 0) {
+            fetchWeatherData(geoData.results[0].latitude, geoData.results[0].longitude, initLoc);
+          } else {
+            fetchWeatherData(29.68, 76.99, 'Haryana');
+          }
+        }).catch(() => fetchWeatherData(29.68, 76.99, 'Haryana'));
+    } else {
+      fetchWeatherData(29.68, 76.99, 'Haryana');
+    }
   }, []);
+
+  // Socket room auto-join and unread message counter
+  useEffect(() => {
+    if (crops.length > 0 && currentUser.name) {
+      crops.forEach(crop => {
+        const roomId = `room_${currentUser.name}_${crop.name}`.toLowerCase().replace(/\s+/g, '_');
+        socket.emit('join_room', roomId);
+      });
+    }
+  }, [crops, currentUser]);
+
+  useEffect(() => {
+    const handleReceive = (data) => {
+      if (data.message && data.message.sender === 'buyer') {
+        const room = data.room;
+        setUnreadCounts(prev => ({
+          ...prev,
+          [room]: (prev[room] || 0) + 1
+        }));
+        toast.success(`💬 New buyer message received!`, { id: room });
+      }
+    };
+
+    socket.on('receive_message', handleReceive);
+    return () => socket.off('receive_message', handleReceive);
+  }, []);
+
+  const openChatForCrop = (crop) => {
+    const sellerName = currentUser.name || crop.seller;
+    const roomId = `room_${sellerName}_${crop.name}`.toLowerCase().replace(/\s+/g, '_');
+    setUnreadCounts(prev => ({ ...prev, [roomId]: 0 }));
+    setActiveChat({ name: crop.name, weight: crop.weight, rate: crop.rate, seller: sellerName });
+  };
+
+  const totalUnread = Object.values(unreadCounts).reduce((a, b) => a + b, 0);
+
+  const fetchWeatherData = async (lat, lon, locationName = '') => {
+    try {
+      const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`);
+      const data = await res.json();
+      if (data.current_weather) {
+        setLiveTemp(Math.round(data.current_weather.temperature));
+        setLiveWind(Math.round(data.current_weather.windspeed));
+        
+        const code = data.current_weather.weathercode;
+        const safeLoc = locationName || '';
+        const cropHint = safeLoc.toLowerCase().includes('punjab') || safeLoc.toLowerCase().includes('haryana') ? 'Gehu (Wheat)' : 'Dhan (Rice) and local crops';
+        
+        if (code === 0) {
+           setWeatherCondition('Clear Sky');
+           setAdvisoryText(`Mausam bilkul saaf hai, ${cropHint} ki katai (harvesting) ke liye behtareen samay.`);
+        } else if (code >= 1 && code <= 3) {
+           setWeatherCondition('Partly Cloudy');
+           setAdvisoryText(`Mausam thik hai, ${cropHint} par dhyaan dein.`);
+        } else if ((code >= 51 && code <= 67) || (code >= 80 && code <= 82)) {
+           setWeatherCondition('Rainy');
+           setAdvisoryText(`Baarish ki sambhavna hai! Kati hui ${cropHint} ko surakshit rakhein.`);
+        } else {
+           setWeatherCondition('Extreme Weather');
+           setAdvisoryText(`Kharab mausam alert! Khet mein kaam karne se bachein aur ${cropHint} ko dhak dein.`);
+        }
+      }
+    } catch (e) {
+      console.log('Weather fetch failed', e);
+    }
+  };
+
+  const handleChangeLocation = async () => {
+    const newLoc = window.prompt("Enter any city worldwide (e.g., Delhi, London, New York):");
+    if (!newLoc) return;
+
+    try {
+      // 1. Geocode the city name to Latitude/Longitude
+      const geoRes = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(newLoc)}&count=1`);
+      const geoData = await geoRes.json();
+      
+      if (geoData.results && geoData.results.length > 0) {
+        const { latitude, longitude, name, country } = geoData.results[0];
+        const formattedLoc = country ? `${name}, ${country}` : name;
+        
+        // 2. Fetch Weather for new coordinates
+        await fetchWeatherData(latitude, longitude, formattedLoc);
+        
+        // 3. Update UI
+        setWeatherLocation(formattedLoc);
+        
+        toast.success(`Weather location updated to ${formattedLoc}`);
+        
+        // Removed localStorage saving to prevent permanently altering the user's registered profile location!
+      } else {
+        toast.error("City not found. Try another name.");
+      }
+    } catch (err) {
+      toast.error("Failed to fetch location data.");
+    }
+  };
+
+  const handleEditCrop = (idx) => {
+    const crop = crops[idx];
+    setEditModalData({ open: true, index: idx, weight: crop.weight, rate: crop.rate, name: crop.name });
+  };
+
+  const confirmEditCrop = async (e) => {
+    e.preventDefault();
+    const idx = editModalData.index;
+    const crop = crops[idx];
+    if (!crop || !crop.id) return;
+    
+    try {
+      await fetch(`/api/crops/${crop.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ weight: editModalData.weight, rate: editModalData.rate })
+      });
+      const getRes = await fetch(`/api/crops/my?mobile=${currentUser.mobile || 'guest'}`);
+      setCrops(await getRes.json());
+      setEditModalData({ open: false, index: null, weight: '', rate: '', name: '' });
+      toast.success('Listing updated successfully!');
+    } catch (err) {
+      toast.error('Failed to update listing on server.');
+    }
+  };
+
+  const handleMarkSold = (idx) => {
+    const crop = crops[idx];
+    setSellModalData({ open: true, index: idx, buyerIndex: null, distance: 50, buyerName: '', buyerMobile: '', paymentStatus: 'pending', cropName: crop.name, maxWeight: parseInt(crop.weight), weight: crop.weight, rate: crop.rate });
+  };
+
+  const handleDirectSell = (buyer, buyerIndex) => {
+    const cropIndex = crops.findIndex(c => c.name.toLowerCase() === buyer.crops.toLowerCase() && c.status !== 'sold' && c.status !== 'pending');
+    if (cropIndex === -1) {
+      toast.error(`You don't have any active ${buyer.crops} listings to sell! Upload one first.`);
+      return;
+    }
+    const crop = crops[cropIndex];
+    setSellModalData({
+      open: true,
+      index: cropIndex,
+      buyerIndex: buyerIndex,
+      distance: 50,
+      buyerName: buyer.name,
+      paymentStatus: 'pending',
+      cropName: crop.name,
+      maxWeight: parseInt(crop.weight),
+      weight: crop.weight,
+      rate: buyer.rate,
+      buyerMobile: buyer.mobile || '',
+      reqId: buyer.reqId || null
+    });
+  };
+
+  const confirmMarkSold = async (e) => {
+    e.preventDefault();
+    const idx = sellModalData.index;
+    const crop = crops[idx];
+    if (!crop || !crop.id) return;
+    
+    const soldWeight = parseInt(sellModalData.weight);
+    const originalWeight = parseInt(crop.weight);
+
+    if (!soldWeight || soldWeight <= 0) {
+      toast.error("Please enter a valid amount to sell.");
+      return;
+    }
+
+    const transportCost = (sellModalData.distance / 10) * 25 * soldWeight;
+    const grossRevenue = parseInt(sellModalData.rate) * soldWeight;
+    const netProfit = grossRevenue - transportCost;
+    
+    try {
+      if (soldWeight < originalWeight) {
+        // Update original crop weight
+        await fetch(`/api/crops/${crop.id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ weight: (originalWeight - soldWeight).toString(), rate: crop.rate })
+        });
+        
+        // Add new sold crop entry
+        const res = await fetch('/api/crops', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: crop.name, weight: soldWeight.toString(), rate: sellModalData.rate,
+            seller: currentUser.name || 'Guest', loc: currentUser.location || crop.loc || 'Unknown', seller_mobile: currentUser.mobile || 'guest'
+          })
+        });
+        const newCropData = await res.json();
+        
+        // Mark the newly added crop as sold
+        if (newCropData.id) {
+          await fetch(`/api/crops/${newCropData.id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              status: sellModalData.paymentStatus,
+              soldDate: new Date().toLocaleDateString(),
+              buyerName: sellModalData.buyerName || 'Unknown Buyer',
+              buyerMobile: sellModalData.buyerMobile || null,
+              distance: sellModalData.distance,
+              transportCost: transportCost,
+              netProfit: netProfit
+            })
+          });
+        }
+      } else {
+        // Mark existing crop as sold with updated weight & rate
+        await fetch(`/api/crops/${crop.id}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            weight: soldWeight.toString(),
+            rate: sellModalData.rate ? sellModalData.rate.toString() : crop.rate,
+            status: sellModalData.paymentStatus,
+            soldDate: new Date().toLocaleDateString(),
+            buyerName: sellModalData.buyerName || 'Unknown Buyer',
+            buyerMobile: sellModalData.buyerMobile || null,
+            distance: sellModalData.distance,
+            transportCost: transportCost,
+            netProfit: netProfit
+          })
+        });
+      }
+
+      if (sellModalData.reqId) {
+        await fetch(`/api/buyer-requests/${sellModalData.reqId}`, { method: 'DELETE' });
+      }
+
+      // Refresh data
+      const getRes = await fetch(`/api/crops/my?mobile=${currentUser.mobile || 'guest'}`);
+      setCrops(await getRes.json());
+
+      if (sellModalData.buyerIndex !== null && sellModalData.buyerIndex !== undefined) {
+        const updatedBuyers = buyers.filter((_, i) => i !== sellModalData.buyerIndex);
+        setBuyers(updatedBuyers);
+      }
+
+      setSellModalData({ open: false, index: null, buyerIndex: null, distance: 50, buyerName: '', paymentStatus: 'pending' });
+      toast.success(sellModalData.paymentStatus === 'sold' ? 'Sale completed! Profit tracked.' : 'Order marked as pending. Awaiting completion.');
+    } catch (e) {
+      toast.error('Failed to process sale on server.');
+    }
+  };
+
+  const handlePublish = (e) => {
+    e.preventDefault();
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('displayUserName');
+    navigate('/login');
+  };
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -68,26 +399,44 @@ const SellerPage = () => {
     setIsProfileOpen(false); // Close dropdown
   };
 
-  const handleUploadCrop = (e) => {
+  const handleUploadCrop = async (e) => {
     e.preventDefault();
     if (!cropName || !cropWeight || !cropRate) return;
 
     const dateStr = new Date().toLocaleDateString('en-GB');
-    const newCrop = { name: cropName, weight: cropWeight, rate: cropRate, date: dateStr };
     
-    const updatedCrops = [newCrop, ...crops];
-    setCrops(updatedCrops);
-    localStorage.setItem('myCrops', JSON.stringify(updatedCrops));
+    try {
+      const res = await fetch('/api/crops', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: cropName,
+          weight: cropWeight,
+          rate: cropRate,
+          seller: currentUser.name || 'Guest',
+          loc: currentUser.location || 'Unknown',
+          seller_mobile: currentUser.mobile || 'guest'
+        })
+      });
 
-    setCropName('');
-    setCropWeight('');
-    setCropRate('');
-    toast.success(`${newCrop.name} uploaded successfully!`);
+      if (res.ok) {
+        // Refresh local state from DB
+        const getRes = await fetch(`/api/crops/my?mobile=${currentUser.mobile || 'guest'}`);
+        setCrops(await getRes.json());
+        
+        setCropName('');
+        setCropWeight('');
+        setCropRate('');
+        toast.success(`${cropName} uploaded successfully!`);
+      }
+    } catch (e) {
+      toast.error('Failed to upload crop to server.');
+    }
   };
 
   const handleClearAll = () => {
     if (window.confirm("Clear stock history?")) {
-      localStorage.removeItem('myCrops');
+      localStorage.removeItem(`myCrops_${currentUser.mobile || 'guest'}`);
       setCrops([]);
       toast.success("Stock history cleared.");
     }
@@ -114,8 +463,21 @@ const SellerPage = () => {
     const filtered = dataToFilter.filter(b => 
       b.location.toLowerCase().includes(loc) && b.crops.toLowerCase() === searchCrop.toLowerCase()
     );
-    // Limit to 50 results to prevent browser lag from rendering too many 3D cards
-    setBuyers(filtered.slice(0, 50));
+
+    // Inject matching real-time Buyer Requests into search results
+    const savedBuyerRequests = JSON.parse(localStorage.getItem('buyerRequests')) || [];
+    const formattedRequests = savedBuyerRequests
+      .filter(req => req.crop.toLowerCase().includes(searchCrop.toLowerCase()))
+      .map(req => ({
+        name: "Direct Buyer (New Request)",
+        crops: req.crop,
+        rate: req.budget,
+        location: loc ? searchLocation : (currentUser.location || 'Unknown'),
+        rating: "New"
+      }));
+
+    // Limit to 50 results to prevent browser lag from rendering too many 3D cards, prioritizing live requests
+    setBuyers([...formattedRequests, ...filtered].slice(0, 50));
     setSearchTitle(loc ? `Results in ${searchLocation} for ${searchCrop}` : `Results for ${searchCrop}`);
     setIsSearching(false);
   };
@@ -130,20 +492,30 @@ const SellerPage = () => {
             <i className="fas fa-seedling me-2"></i>Kishan<span>Market</span>
           </Link>
 
-          <div className="profile-container position-relative">
-            <i className="fas fa-user-circle fa-2x profile-icon" id="profileIcon" style={{ cursor: 'pointer' }} onClick={toggleProfile}></i>
-            <div className="profile-dropdown" id="profileDropdown" style={{ display: isProfileOpen ? 'block' : 'none' }}>
-              <div className="dropdown-user-info">
-                <h6 className="m-0 fw-bold" id="sellerProfileName">{currentUser.name}</h6>
-                <small className="text-muted">Seller ID: KM-2026</small>
+          <div className="d-flex align-items-center gap-3">
+            <div className="position-relative" style={{ cursor: 'pointer' }} onClick={() => toast(totalUnread > 0 ? `You have ${totalUnread} unread messages!` : "No new chat notifications.", { icon: '🔔' })}>
+              <i className="fas fa-bell fa-lg text-white"></i>
+              {totalUnread > 0 && (
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger shadow-sm" style={{ fontSize: '0.65rem' }}>
+                  {totalUnread}
+                </span>
+              )}
+            </div>
+
+            <div className="profile-container position-relative">
+              <i className="fas fa-user-circle fa-2x profile-icon" id="profileIcon" style={{ cursor: 'pointer' }} onClick={toggleProfile}></i>
+              <div className="profile-dropdown" id="profileDropdown" style={{ display: isProfileOpen ? 'block' : 'none' }}>
+                <div className="dropdown-user-info">
+                  <h6 className="m-0 fw-bold" id="sellerProfileName">{currentUser.name}</h6>
+                  <small className="text-muted">Seller ID: KM-2026</small>
+                </div>
+                <ul className="dropdown-links-list">
+                  <li><Link to="/profile/seller"><i className="fas fa-user"></i> My Profile</Link></li>
+                  <li><a href="#live-bids" onClick={handleOpenLiveBids}><i className="fas fa-gavel text-warning"></i> Live Bids <span className="badge bg-danger ms-2 rounded-pill">New</span></a></li>
+                  <li className="dropdown-divider"></li>
+                  <li><a href="#" className="logout-item" onClick={handleLogout} style={{ color: '#000000' }}><i className="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
               </div>
-              <ul className="dropdown-links-list">
-                <li><Link to="/profile/seller"><i className="fas fa-user"></i> My Profile</Link></li>
-                <li><Link to="/buyer"><i className="fas fa-shopping-basket"></i> Buy Grains</Link></li>
-                <li><a href="#live-bids" onClick={handleOpenLiveBids}><i className="fas fa-gavel text-warning"></i> Live Bids <span className="badge bg-danger ms-2 rounded-pill">New</span></a></li>
-                <li className="dropdown-divider"></li>
-                <li><a href="#" className="logout-item" onClick={handleLogout} style={{ color: '#000000' }}><i className="fas fa-sign-out-alt"></i> Logout</a></li>
-              </ul>
             </div>
           </div>
         </div>
@@ -175,18 +547,95 @@ const SellerPage = () => {
             </div>
           </div>
         </div>
+        {/* Upload & Inventory Grid */}
+        <div className="row g-4 mb-5 mt-3">
+          <div className="col-md-6">
+            <div className="glass-card-premium p-4 h-100" style={{ transformStyle: 'preserve-3d' }}>
+              <h5 className="section-title" style={{ transform: 'translateZ(30px)' }}><i className="fas fa-upload me-2"></i> Upload Crop Listing</h5>
+              <form id="uploadForm" onSubmit={handleUploadCrop} style={{ transform: 'translateZ(20px)' }}>
+                <div className="mb-3">
+                  <label className="form-label">Crop Name</label>
+                  <select className="form-select custom-input input-premium" value={cropName} onChange={(e) => setCropName(e.target.value)} required>
+                    <option value="" disabled>Fasal Chunein (Select Crop)</option>
+                    <option value="Gehu">Gehu (Wheat)</option>
+                    <option value="Dhan">Dhan (Rice)</option>
+                    <option value="Makka">Makka (Maize)</option>
+                    <option value="Mustard">Mustard (Sarson)</option>
+                    <option value="Cotton">Cotton (Kapas)</option>
+                  </select>
+                </div>
+                <div className="row">
+                  <div className="col-6 mb-4">
+                    <label className="form-label">Weight (Quintals)</label>
+                    <input type="number" className="form-control custom-input input-premium" placeholder="0" value={cropWeight} onChange={(e) => setCropWeight(e.target.value)} required />
+                  </div>
+                  <div className="col-6 mb-4">
+                    <label className="form-label">Target Rate (₹/q)</label>
+                    <input type="number" className="form-control custom-input input-premium" placeholder="₹" value={cropRate} onChange={(e) => setCropRate(e.target.value)} required />
+                  </div>
+                </div>
+                <button type="submit" className="btn-primary-dark w-100 btn-premium-hover">Publish Listing</button>
+              </form>
+            </div>
+          </div>
+
+          <div className="col-md-6">
+            <div className="glass-card-premium p-4 h-100" style={{ transformStyle: 'preserve-3d' }}>
+              <div className="d-flex justify-content-between align-items-center section-title" style={{ paddingBottom: '9px', marginBottom: '20px', transform: 'translateZ(30px)' }}>
+                <h5 className="m-0 p-0 border-0"><i className="fas fa-warehouse me-2"></i> Your Active Listings</h5>
+                <button className="btn btn-sm btn-outline-danger btn-premium-hover" title="Clear History" onClick={handleClearAll} style={{ borderRadius: 'var(--radius-md)' }}><i className="fas fa-trash"></i></button>
+              </div>
+              <div id="cropListContainer" style={{ maxHeight: '250px', overflowY: 'auto', paddingRight: '5px', transform: 'translateZ(20px)' }}>
+                {crops.filter(c => c.status !== 'sold' && c.status !== 'pending').length === 0 ? (
+                  <p className="text-muted text-center p-3 small">Koi history nahi hai.</p>
+                ) : (
+                  crops.map((crop, idx) => {
+                    if (crop.status === 'sold' || crop.status === 'pending') return null;
+                    const cropRoomId = `room_${currentUser.name || crop.seller}_${crop.name}`.toLowerCase().replace(/\s+/g, '_');
+                    const unreadCount = unreadCounts[cropRoomId] || 0;
+                    return (
+                      <div className="inventory-item shadow-sm d-flex justify-content-between align-items-center p-2 mb-2" key={idx}>
+                        <div className="d-flex align-items-center flex-grow-1">
+                          <div className="wheat-bar me-2"></div>
+                          <div><p className="m-0 small"><strong>{crop.weight}q {crop.name}</strong> @ ₹{crop.rate}/q</p></div>
+                        </div>
+                        <div className="d-flex gap-2 align-items-center">
+                          <button onClick={() => openChatForCrop(crop)} className="btn btn-sm btn-outline-success py-0 px-2 position-relative" style={{fontSize:'0.75rem', borderRadius:'10px'}}>
+                            <i className="fas fa-comments me-1"></i> Chat
+                            {unreadCount > 0 && (
+                              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger shadow-sm" style={{ fontSize: '0.65rem' }}>
+                                {unreadCount}
+                              </span>
+                            )}
+                          </button>
+                          <button onClick={() => handleEditCrop(idx)} className="btn btn-sm btn-outline-primary py-0 px-2" style={{fontSize:'0.75rem', borderRadius:'10px'}}>Edit</button>
+                          <button onClick={() => handleMarkSold(idx)} className="btn btn-sm btn-success py-0 px-2" style={{fontSize:'0.75rem', borderRadius:'10px'}}>Sell</button>
+                        </div>
+                      </div>
+                    )
+                  })
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
 
         {/* Local Weather & Farming Widget */}
         <div className="row mb-4 mt-4">
           <div className="col-12">
             <div className="weather-card">
               <div className="weather-info">
-                <h3>28°C</h3>
-                <p>{currentUser.location || 'Karnal, Haryana'}</p>
+                <h3>{liveTemp}°C</h3>
+                <p className="d-flex align-items-center">
+                  {weatherLocation}
+                  <button className="btn btn-sm btn-outline-light ms-3 py-0 px-2" onClick={handleChangeLocation} style={{ fontSize: '0.8rem', borderRadius: '15px' }}>
+                    <i className="fas fa-edit me-1"></i> Change
+                  </button>
+                </p>
                 <div className="weather-details">
-                  <span><i className="fas fa-tint me-1"></i> Humidity: 45%</span>
-                  <span><i className="fas fa-wind me-1"></i> Wind: 12 km/h</span>
-                  <span><i className="fas fa-cloud-sun me-1"></i> Forecast: Clear, good for harvesting</span>
+                  <span><i className="fas fa-tint me-1"></i> Condition: {weatherCondition}</span>
+                  <span><i className="fas fa-wind me-1"></i> Wind: {liveWind} km/h</span>
+                  <span><i className="fas fa-cloud-sun me-1"></i> Advisory: {advisoryText}</span>
                 </div>
               </div>
               <div className="weather-icon-container">
@@ -195,6 +644,28 @@ const SellerPage = () => {
             </div>
           </div>
         </div>
+
+
+
+        {/* Dashboard Tools Section */}
+        <div className="row g-4 mb-5">
+          <div className="col-md-3">
+            <WeatherDashboard locationKey={weatherLocation} />
+          </div>
+          <div className="col-md-3">
+            <AIAssessor onApplyRate={(rate, name) => {
+              setCropRate(rate.toString());
+              if (name) setCropName(name);
+            }} />
+          </div>
+          <div className="col-md-3">
+            <LogisticsCalculator />
+          </div>
+          <div className="col-md-3">
+            <ColdStorageFinder />
+          </div>
+        </div>
+
 
         {/* Khareedar Dhundein Box */}
         <div className="glass-card-premium p-4 mt-4 mb-4" style={{ transformStyle: 'preserve-3d' }}>
@@ -220,69 +691,13 @@ const SellerPage = () => {
           </form>
         </div>
 
-        {/* AI & Logistics Section */}
-        <div className="row g-4 mb-5">
-          <div className="col-md-4">
-            <AIAssessor />
-          </div>
-          <div className="col-md-4">
-            <LogisticsCalculator />
-          </div>
-          <div className="col-md-4">
-            <ColdStorageFinder />
-          </div>
-        </div>
-
-        {/* Upload & Inventory Grid */}
-        <div className="row g-4 mb-5">
-          <div className="col-md-6">
-            <div className="glass-card-premium p-4 h-100" style={{ transformStyle: 'preserve-3d' }}>
-              <h5 className="section-title" style={{ transform: 'translateZ(30px)' }}><i className="fas fa-upload me-2"></i> Upload Crop Listing</h5>
-              <form id="uploadForm" onSubmit={handleUploadCrop} style={{ transform: 'translateZ(20px)' }}>
-                <div className="mb-3">
-                  <label className="form-label">Crop Name</label>
-                  <input type="text" className="form-control custom-input input-premium" placeholder="e.g. Gehu" value={cropName} onChange={(e) => setCropName(e.target.value)} required />
-                </div>
-                <div className="row">
-                  <div className="col-6 mb-4">
-                    <label className="form-label">Weight (Quintals)</label>
-                    <input type="number" className="form-control custom-input input-premium" placeholder="0" value={cropWeight} onChange={(e) => setCropWeight(e.target.value)} required />
-                  </div>
-                  <div className="col-6 mb-4">
-                    <label className="form-label">Target Rate (₹/q)</label>
-                    <input type="number" className="form-control custom-input input-premium" placeholder="₹" value={cropRate} onChange={(e) => setCropRate(e.target.value)} required />
-                  </div>
-                </div>
-                <button type="submit" className="btn-primary-dark w-100 btn-premium-hover">Publish Listing</button>
-              </form>
-            </div>
-          </div>
-
-          <div className="col-md-6">
-            <div className="glass-card-premium p-4 h-100" style={{ transformStyle: 'preserve-3d' }}>
-              <div className="d-flex justify-content-between align-items-center section-title" style={{ paddingBottom: '9px', marginBottom: '20px', transform: 'translateZ(30px)' }}>
-                <h5 className="m-0 p-0 border-0"><i className="fas fa-warehouse me-2"></i> Your Active Listings</h5>
-                <button className="btn btn-sm btn-outline-danger btn-premium-hover" title="Clear History" onClick={handleClearAll} style={{ borderRadius: 'var(--radius-md)' }}><i className="fas fa-trash"></i></button>
-              </div>
-              <div id="cropListContainer" style={{ maxHeight: '250px', overflowY: 'auto', paddingRight: '5px', transform: 'translateZ(20px)' }}>
-                {crops.length === 0 ? (
-                  <p className="text-muted text-center p-3 small">Koi history nahi hai.</p>
-                ) : (
-                  crops.map((crop, idx) => (
-                    <div className="inventory-item shadow-sm" key={idx}>
-                      <div className="wheat-bar"></div>
-                      <div className="flex-grow-1"><p className="m-0 small"><strong>{crop.weight}q {crop.name}</strong> @ ₹{crop.rate}/q</p></div>
-                      <div className="text-end"><span style={{ fontSize: '10px' }} className="text-muted">{crop.date}</span></div>
-                    </div>
-                  ))
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Interactive Map */}
-        <BuyersMap />
+        <InteractiveMarketMap 
+          userLocation={weatherLocation || currentUser.location || 'Karnal, Haryana'} 
+          userRole="seller" 
+          items={buyers} 
+          title="Live Buyers Near You" 
+        />
 
         {/* Buyers Grid */}
         <div className="buyer-header-box d-flex justify-content-between align-items-center mb-4">
@@ -297,7 +712,7 @@ const SellerPage = () => {
             buyers.map((buyer, idx) => {
               const isHovered = hoveredCardIndex === idx;
               return (
-                <div className="col-md-4" key={idx}>
+                <div className="col-md-4" key={`${buyer.name}-${buyer.crops}-${idx}`}>
                   <div 
                     className="glass-card-premium p-4 h-100 d-flex flex-column align-items-center text-center shadow-lg" 
                     style={{ 
@@ -332,16 +747,32 @@ const SellerPage = () => {
                     <h4 className={`fw-bold mb-4 mt-2 ${isHovered ? 'text-white' : 'text-success'}`} style={{ transform: 'translateZ(30px)', transition: 'all 0.4s ease' }}>
                       Rate: ₹{buyer.rate}/q
                     </h4>
-                    
-                    <button className="btn w-100 fw-bold mt-auto btn-premium-hover" style={{ 
-                      background: isHovered ? '#f8f9fa' : 'var(--primary)', 
-                      color: isHovered ? '#2e4a35' : 'white', 
-                      borderRadius: '10px', padding: '12px 0', 
-                      boxShadow: isHovered ? '0 4px 6px rgba(0,0,0,0.1)' : 'none', 
-                      transform: 'translateZ(30px)', transition: 'all 0.4s ease' 
-                    }}>
-                      Buy Now / Contact
-                    </button>
+                    <div className="d-flex gap-2 w-100 mt-auto">
+                      <button 
+                        className="btn fw-bold w-50 btn-premium-hover" 
+                        onClick={() => setActiveChat({ name: buyer.crops, weight: "Bulk", rate: buyer.rate, seller: buyer.name })}
+                        style={{ 
+                          background: isHovered ? 'transparent' : 'transparent', 
+                          border: isHovered ? '2px solid #f8f9fa' : '2px solid var(--primary)',
+                          color: isHovered ? '#f8f9fa' : 'var(--primary)', 
+                          borderRadius: '10px', padding: '10px 0', 
+                          transform: 'translateZ(30px)', transition: 'all 0.4s ease' 
+                        }}>
+                        Contact
+                      </button>
+                      <button 
+                        className="btn fw-bold w-50 btn-premium-hover" 
+                        onClick={() => handleDirectSell(buyer, idx)}
+                        style={{ 
+                          background: isHovered ? '#f8f9fa' : 'var(--primary)', 
+                          color: isHovered ? '#2e4a35' : 'white', 
+                          borderRadius: '10px', padding: '10px 0', 
+                          boxShadow: isHovered ? '0 4px 6px rgba(0,0,0,0.1)' : 'none', 
+                          transform: 'translateZ(30px)', transition: 'all 0.4s ease' 
+                        }}>
+                        Sell Now
+                      </button>
+                    </div>
                   </div>
                 </div>
               );
@@ -352,6 +783,101 @@ const SellerPage = () => {
       </div>
       
       <LiveBiddingToasts isModalOpen={isLiveBidsOpen} onClose={() => setIsLiveBidsOpen(false)} />
+      <NegotiationChat chatData={activeChat} onClose={() => setActiveChat(null)} />
+
+      {/* Edit Crop Modal */}
+      {editModalData.open && (
+        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(5px)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div className="glass-card-premium p-4" style={{ width: '90%', maxWidth: '400px', background: 'white' }}>
+            <h4 className="fw-bold mb-3">Edit {editModalData.name}</h4>
+            <form onSubmit={confirmEditCrop}>
+              <div className="mb-3">
+                <label className="form-label">Weight (Quintals)</label>
+                <input type="number" className="form-control" value={editModalData.weight} onChange={e => setEditModalData({...editModalData, weight: e.target.value})} required />
+              </div>
+              <div className="mb-3">
+                <label className="form-label">Rate (₹/q)</label>
+                <input type="number" className="form-control" value={editModalData.rate} onChange={e => setEditModalData({...editModalData, rate: e.target.value})} required />
+              </div>
+              <div className="d-flex justify-content-end gap-2">
+                <button type="button" className="btn btn-light" onClick={() => setEditModalData({open: false})}>Cancel</button>
+                <button type="submit" className="btn btn-success">Save Changes</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* Sell Crop Modal */}
+      {sellModalData.open && (
+        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(5px)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div className="glass-card-premium p-4" style={{ width: '90%', maxWidth: '500px', background: 'white' }}>
+            <h4 className="fw-bold mb-3 text-success"><i className="fas fa-handshake me-2"></i>Dispatch & Sell {sellModalData.cropName}</h4>
+            <form onSubmit={confirmMarkSold}>
+              <div className="mb-3">
+                <label className="form-label">Buyer's Name / Company</label>
+                <input type="text" className="form-control custom-input" placeholder="e.g. Ramesh Trading Co." value={sellModalData.buyerName} onChange={e => setSellModalData({...sellModalData, buyerName: e.target.value})} required />
+              </div>
+
+              <div className="mb-3">
+                <label className="form-label">Buyer's Mobile Number (To link purchase)</label>
+                <input type="text" className="form-control custom-input" placeholder="e.g. 9876543210" value={sellModalData.buyerMobile} onChange={e => setSellModalData({...sellModalData, buyerMobile: e.target.value})} required />
+              </div>
+              
+              <div className="mb-3">
+                <label className="form-label d-flex justify-content-between">
+                  <span>Amount to Sell (Quintals)</span>
+                  <span className="text-muted">Available Stock: {sellModalData.maxWeight}q</span>
+                </label>
+                <input type="number" className="form-control custom-input" placeholder="e.g. 50" min="1" value={sellModalData.weight} onChange={e => setSellModalData({...sellModalData, weight: e.target.value})} required />
+              </div>
+
+              <div className="mb-3">
+                <label className="form-label">Selling Rate (₹/q)</label>
+                <input type="number" className="form-control custom-input" placeholder="e.g. 2450" min="1" value={sellModalData.rate} onChange={e => setSellModalData({...sellModalData, rate: e.target.value})} required />
+              </div>
+
+              <div className="mb-3">
+                <label className="form-label d-flex justify-content-between">
+                  <span>Distance to Buyer</span>
+                  <span className="fw-bold text-success">{sellModalData.distance} km</span>
+                </label>
+                <input type="range" className="form-range" min="0" max="500" step="10" value={sellModalData.distance} onChange={(e) => setSellModalData({...sellModalData, distance: e.target.value})} />
+                <small className="text-muted d-block mt-1">₹25 per quintal per 10km</small>
+              </div>
+
+              <div className="p-3 bg-light rounded border mb-4">
+                <div className="d-flex justify-content-between mb-2">
+                  <span className="text-muted">Gross Revenue:</span>
+                  <span>₹{(sellModalData.rate * sellModalData.weight).toLocaleString('en-IN')}</span>
+                </div>
+                <div className="d-flex justify-content-between mb-2">
+                  <span className="text-muted">Transport Cost:</span>
+                  <span className="text-danger">- ₹{((sellModalData.distance / 10) * 25 * sellModalData.weight).toLocaleString('en-IN')}</span>
+                </div>
+                <hr className="my-2"/>
+                <div className="d-flex justify-content-between fw-bold">
+                  <span>Net Take-Home Profit:</span>
+                  <span className="text-success fs-5">₹{((sellModalData.rate * sellModalData.weight) - ((sellModalData.distance / 10) * 25 * sellModalData.weight)).toLocaleString('en-IN')}</span>
+                </div>
+              </div>
+
+              <div className="mb-3">
+                <label className="form-label">Payment & Delivery Status</label>
+                <select className="form-select custom-input" value={sellModalData.paymentStatus} onChange={e => setSellModalData({...sellModalData, paymentStatus: e.target.value})}>
+                  <option value="pending">Awaiting Payment/Transport (Pending)</option>
+                  <option value="sold">Delivered & Paid (Completed)</option>
+                </select>
+              </div>
+
+              <div className="d-flex justify-content-end gap-2">
+                <button type="button" className="btn btn-light" onClick={() => setSellModalData({open: false})}>Cancel</button>
+                <button type="submit" className="btn btn-success fw-bold px-4">Confirm Sale</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 };

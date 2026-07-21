@@ -12,12 +12,29 @@ import SellersProfile from './pages/SellersProfile';
 import MyOrder from './pages/MyOrder';
 import BackgroundLayer from './components/BackgroundLayer';
 
-// A simple wrapper to protect dashboard routes
 const ProtectedRoute = ({ children }) => {
-  const user = localStorage.getItem('currentUser');
-  if (!user) {
+  const userStr = localStorage.getItem('currentUser');
+  if (!userStr) {
     return <Navigate to="/login" replace />;
   }
+  return children;
+};
+
+// Strict Role Guard for Buyers
+const BuyerRoute = ({ children }) => {
+  const userStr = localStorage.getItem('currentUser');
+  if (!userStr) return <Navigate to="/login" replace />;
+  const user = JSON.parse(userStr);
+  if (user.role !== 'buyer') return <Navigate to="/seller" replace />;
+  return children;
+};
+
+// Strict Role Guard for Sellers
+const SellerRoute = ({ children }) => {
+  const userStr = localStorage.getItem('currentUser');
+  if (!userStr) return <Navigate to="/login" replace />;
+  const user = JSON.parse(userStr);
+  if (user.role !== 'seller') return <Navigate to="/buyer" replace />;
   return children;
 };
 
@@ -39,17 +56,19 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* Public Landing Page */}
-          <Route path="/" element={<AuthRoute><LandingPage /></AuthRoute>} />
+          <Route path="/" element={<LandingPage />} />
           
           {/* Public authentication pages */}
           <Route path="/register" element={<AuthRoute><RegistrationPage /></AuthRoute>} />
           <Route path="/login" element={<AuthRoute><LoginPage /></AuthRoute>} />
           
-          {/* Protected Dashboard Routes */}
-          <Route path="/buyer" element={<ProtectedRoute><BuyerPage /></ProtectedRoute>} />
-          <Route path="/seller" element={<ProtectedRoute><SellerPage /></ProtectedRoute>} />
-          <Route path="/profile/buyer" element={<ProtectedRoute><BuyyersProfile /></ProtectedRoute>} />
-          <Route path="/profile/seller" element={<ProtectedRoute><SellersProfile /></ProtectedRoute>} />
+          {/* Protected Dashboard Routes - Strict Role Isolation */}
+          <Route path="/buyer" element={<BuyerRoute><BuyerPage /></BuyerRoute>} />
+          <Route path="/profile/buyer" element={<BuyerRoute><BuyyersProfile /></BuyerRoute>} />
+          
+          <Route path="/seller" element={<SellerRoute><SellerPage /></SellerRoute>} />
+          <Route path="/profile/seller" element={<SellerRoute><SellersProfile /></SellerRoute>} />
+          
           <Route path="/orders" element={<ProtectedRoute><MyOrder /></ProtectedRoute>} />
 
           {/* 404 Not Found */}

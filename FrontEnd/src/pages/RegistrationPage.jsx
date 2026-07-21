@@ -17,12 +17,45 @@ const RegistrationPage = () => {
     termsAccepted: false
   });
 
+  const [suggestions, setSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+
+  const fetchLocations = async (query) => {
+    if (query.length < 3) {
+      setSuggestions([]);
+      setShowSuggestions(false);
+      return;
+    }
+    try {
+      const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(query)}&count=5`);
+      const data = await res.json();
+      if (data.results) {
+        setSuggestions(data.results);
+        setShowSuggestions(true);
+      } else {
+        setSuggestions([]);
+      }
+    } catch (e) {
+      setSuggestions([]);
+    }
+  };
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
       [name]: type === 'checkbox' ? checked : value
     });
+
+    if (name === 'location') {
+      fetchLocations(value);
+    }
+  };
+
+  const handleSelectLocation = (loc) => {
+    const formatted = loc.admin1 ? `${loc.name}, ${loc.admin1}` : `${loc.name}, ${loc.country}`;
+    setFormData({ ...formData, location: formatted });
+    setShowSuggestions(false);
   };
 
   const handleSubmit = async (e) => {
@@ -143,7 +176,18 @@ const RegistrationPage = () => {
               <label htmlFor="location" className="form-label fw-bold">
                 <i className="fas fa-map-marker-alt me-2" style={{ color: 'var(--accent)' }}></i>Location / Mandi
               </label>
-              <input type="text" id="location" name="location" className="form-control custom-input input-premium" placeholder="e.g. Karnal, Haryana" required autoComplete="off" value={formData.location} onChange={handleChange} />
+              <div className="position-relative">
+                <input type="text" id="location" name="location" className="form-control custom-input input-premium" placeholder="e.g. Karnal, Haryana" required autoComplete="off" value={formData.location} onChange={handleChange} onBlur={() => setTimeout(() => setShowSuggestions(false), 200)} />
+                {showSuggestions && suggestions.length > 0 && (
+                  <ul className="list-group position-absolute w-100 shadow" style={{ zIndex: 1000, maxHeight: '200px', overflowY: 'auto' }}>
+                    {suggestions.map((s, idx) => (
+                      <li key={idx} className="list-group-item list-group-item-action" style={{ cursor: 'pointer' }} onMouseDown={() => handleSelectLocation(s)}>
+                        {s.name}{s.admin1 ? `, ${s.admin1}` : ''} <small className="text-muted">({s.country})</small>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
             </div>
 
             <div className="mb-3">

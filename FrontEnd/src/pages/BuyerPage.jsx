@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Chart from 'chart.js/auto';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import toast from 'react-hot-toast';
@@ -8,6 +9,8 @@ import '../assets/dynamic-features.css';
 import '../assets/buyer-style.css';
 
 import NegotiationChat from '../components/BuyerFeatures/NegotiationChat';
+import socket from '../socket';
+import InteractiveMarketMap from '../components/InteractiveMarketMap';
 
 
 const defaultCrops = [
@@ -31,6 +34,8 @@ const BuyerPage = () => {
   const [watchlist, setWatchlist] = useState([]);
   const [activeChat, setActiveChat] = useState(null);
   const [myRequests, setMyRequests] = useState([]);
+  const [myPurchases, setMyPurchases] = useState([]);
+  const [unreadCounts, setUnreadCounts] = useState({});
 
   // Search State
   const [searchLoc, setSearchLoc] = useState('');
@@ -41,29 +46,259 @@ const BuyerPage = () => {
   const [reqCrop, setReqCrop] = useState('');
   const [reqBudget, setReqBudget] = useState('');
 
+  // Graph Ref
+  const priceChartRef = useRef(null);
+  const chartInstanceRef = useRef(null);
+
+  // Socket room auto-join and unread message counter for Buyer
   useEffect(() => {
+    if (allCrops.length > 0) {
+      allCrops.forEach(crop => {
+        const roomId = `room_${crop.seller}_${crop.name}`.toLowerCase().replace(/\s+/g, '_');
+        socket.emit('join_room', roomId);
+      });
+    }
+    if (myRequests.length > 0 && currentUser.name) {
+      myRequests.forEach(req => {
+        const reqRoomId = `room_${currentUser.name}_${req.crop}`.toLowerCase().replace(/\s+/g, '_');
+        socket.emit('join_room', reqRoomId);
+      });
+    }
+  }, [allCrops, myRequests, currentUser]);
+
+  useEffect(() => {
+    const handleReceive = (data) => {
+      if (data.message && data.message.sender === 'seller') {
+        const room = data.room;
+        setUnreadCounts(prev => ({
+          ...prev,
+          [room]: (prev[room] || 0) + 1
+        }));
+        toast.success(`💬 New message from Seller!`, { id: room });
+      }
+    };
+
+    socket.on('receive_message', handleReceive);
+    return () => socket.off('receive_message', handleReceive);
+  }, []);
+
+  const openChatForCrop = (crop) => {
+    const roomId = `room_${crop.seller}_${crop.name}`.toLowerCase().replace(/\s+/g, '_');
+    setUnreadCounts(prev => ({ ...prev, [roomId]: 0 }));
+    setActiveChat(crop);
+  };
+
+  const handleDeleteRequest = async (reqId) => {
+    if (!reqId) return;
+    try {
+      const res = await fetch(`/api/buyer-requests/${reqId}`, { method: 'DELETE' });
+      if (res.ok) {
+        setMyRequests(prev => prev.filter(r => r.id !== reqId));
+        toast.success('Request deleted successfully!');
+      }
+    } catch (err) {
+      toast.error('Failed to delete request.');
+    }
+  };
+
+  const totalUnread = Object.values(unreadCounts).reduce((a, b) => a + b, 0);
+
+  useEffect(() => {
+    let currentMobile = 'guest';
+    let buyerLoc = '';
     const userStr = localStorage.getItem('currentUser');
-    if (userStr) setCurrentUser(JSON.parse(userStr));
+    if (userStr) {
+      const parsed = JSON.parse(userStr);
+      setCurrentUser(parsed);
+      currentMobile = parsed.mobile || 'guest';
+      buyerLoc = parsed.location || '';
+    }
+
+    const filterByLoc = async (cropsList) => {
+      if (!buyerLoc || buyerLoc === '') return cropsList;
+      const locParts = buyerLoc.toLowerCase().split(',').map(s => s.trim());
+      const filtered = cropsList.filter(crop => {
+        const cLoc = (crop.loc || '').toLowerCase();
+        return locParts.some(part => cLoc.includes(part) || part.includes(cLoc));
+      });
+      
+      if (filtered.length > 0) return filtered;
+
+      // Fallback: If no direct matches, sort crops by shortest geographic distance
+      try {
+        const buyerRes = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(buyerLoc)}&count=1`);
+        const buyerData = await buyerRes.json();
+        if (!buyerData.results || buyerData.results.length === 0) return cropsList;
+        
+        const { latitude: bLat, longitude: bLng } = buyerData.results[0];
+        
+        // Find unique crop locations to minimize API calls
+        const uniqueLocs = [...new Set(cropsList.map(c => c.loc || 'Unknown'))].filter(l => l !== 'Unknown');
+        const coordsMap = {};
+        
+        await Promise.all(uniqueLocs.map(async (locName) => {
+           try {
+             const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(locName)}&count=1`);
+             const data = await res.json();
+             if (data.results && data.results.length > 0) {
+               coordsMap[locName] = { lat: data.results[0].latitude, lng: data.results[0].longitude };
+             }
+           } catch (err) {}
+        }));
+        
+        const getDistance = (lat1, lon1, lat2, lon2) => {
+          const R = 6371; // km
+          const dLat = (lat2 - lat1) * Math.PI / 180;
+          const dLon = (lon2 - lon1) * Math.PI / 180;
+          const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+            Math.sin(dLon/2) * Math.sin(dLon/2);
+          return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        };
+        
+        const sortedCrops = [...cropsList].sort((a, b) => {
+          const aCoords = coordsMap[a.loc];
+          const bCoords = coordsMap[b.loc];
+          if (!aCoords && !bCoords) return 0;
+          if (!aCoords) return 1;
+          if (!bCoords) return -1;
+          return getDistance(bLat, bLng, aCoords.lat, aCoords.lng) - getDistance(bLat, bLng, bCoords.lat, bCoords.lng);
+        });
+        
+        return sortedCrops;
+      } catch (err) {
+        return cropsList;
+      }
+    };
 
     const fetchCrops = async () => {
+      // CACHE LOAD
+      const cachedCrops = localStorage.getItem('cache_buyerCrops');
+      if (cachedCrops) {
+        const parsed = JSON.parse(cachedCrops);
+        setAllCrops(parsed);
+        const filteredCached = await filterByLoc(parsed);
+        setDisplayedCrops(filteredCached.slice(0, 5));
+      }
+
       try {
-        const res = await fetch('/api/crops');
+        const res = await fetch('/api/crops?limit=50');
         if (res.ok) {
           const apiCrops = await res.json();
           setAllCrops(apiCrops);
-          setDisplayedCrops(apiCrops.slice(0, 50)); // Render top 50 to prevent lag
+          const filteredApi = await filterByLoc(apiCrops);
+          setDisplayedCrops(filteredApi.slice(0, 5));
+          localStorage.setItem('cache_buyerCrops', JSON.stringify(apiCrops));
         }
       } catch (err) {
         console.error("Failed to fetch crops", err);
-        setAllCrops(defaultCrops);
-        setDisplayedCrops(defaultCrops);
+        if (!cachedCrops) {
+          setAllCrops(defaultCrops);
+          const filteredDefault = await filterByLoc(defaultCrops);
+          setDisplayedCrops(filteredDefault.slice(0, 5));
+        }
       }
     };
     fetchCrops();
 
-    const savedReqs = JSON.parse(localStorage.getItem('buyerRequests')) || [];
-    setMyRequests(savedReqs);
+    const fetchRequests = async () => {
+      try {
+        const reqRes = await fetch(`/api/buyer-requests?mobile=${currentMobile}`);
+        if (reqRes.ok) {
+          setMyRequests(await reqRes.json());
+        }
+      } catch (err) {
+        console.error("Failed to fetch requests", err);
+      }
+    };
+
+    const fetchWatchlist = async () => {
+      try {
+        const res = await fetch(`/api/watchlist?mobile=${currentMobile}`);
+        if (res.ok) setWatchlist(await res.json());
+      } catch (err) {}
+    };
+
+    const fetchPurchases = async () => {
+      try {
+        const res = await fetch(`/api/purchases?mobile=${currentMobile}`);
+        if (res.ok) setMyPurchases(await res.json());
+      } catch (err) {}
+    };
+
+    fetchRequests();
+    if (currentMobile !== 'guest') {
+      fetchWatchlist();
+      fetchPurchases();
+    }
   }, []);
+
+  // Dynamic Chart Effect
+  useEffect(() => {
+    if (priceChartRef.current) {
+      if (chartInstanceRef.current) {
+        chartInstanceRef.current.destroy();
+      }
+
+      const ctx = priceChartRef.current.getContext('2d');
+
+      // Generate dynamic data based on activeFilter
+      const basePrice = activeFilter === 'Gehu' ? 2450 : activeFilter === 'Dhan' ? 3100 : activeFilter === 'Makka' ? 1850 : 2500;
+      const cropName = activeFilter === 'all' ? 'Market Average' : activeFilter;
+
+      const dataPoints = Array.from({ length: 30 }, (_, i) => {
+        // Create a realistic-looking trend line
+        const fluctuation = Math.sin(i / 3) * 100 + (Math.random() * 50 - 25);
+        return Math.round(basePrice + fluctuation);
+      });
+
+      chartInstanceRef.current = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: Array.from({ length: 30 }, (_, i) => `Day ${i + 1}`),
+          datasets: [{
+            label: `${cropName} Price (₹/q)`,
+            data: dataPoints,
+            borderColor: '#52b788',
+            backgroundColor: 'rgba(82, 183, 136, 0.2)',
+            fill: true,
+            tension: 0.4,
+            pointRadius: 2,
+            pointHoverRadius: 5
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: function (context) {
+                  return `${cropName}: ₹${context.parsed.y}/q`;
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: false,
+              grid: { color: 'rgba(0,0,0,0.05)' }
+            },
+            x: {
+              grid: { display: false }
+            }
+          }
+        }
+      });
+    }
+
+    return () => {
+      if (chartInstanceRef.current) {
+        chartInstanceRef.current.destroy();
+      }
+    };
+  }, [activeFilter]);
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -104,57 +339,91 @@ const BuyerPage = () => {
       filtered = filtered.filter(c => c.loc.toLowerCase().includes(loc.toLowerCase()));
     }
 
-    setDisplayedCrops(filtered.slice(0, 50)); // prevent browser lag
+    setDisplayedCrops(filtered.slice(0, 5)); // prevent browser lag
   };
 
-  const toggleWatchlist = (crop) => {
+  const toggleWatchlist = async (crop) => {
+    if (!currentUser.mobile || currentUser.mobile === 'guest') {
+      toast.error('Please login to save crops to your watchlist.');
+      return;
+    }
     const exists = watchlist.find(c => c.id === crop.id);
     if (exists) {
       setWatchlist(watchlist.filter(c => c.id !== crop.id));
+      await fetch(`/api/watchlist/${crop.id}?mobile=${currentUser.mobile}`, { method: 'DELETE' });
     } else {
       if (window.confirm("Is crop ko apni watchlist mein daalna chahte hain?")) {
         toast.success(`${crop.name} added to watchlist!`);
         setWatchlist([...watchlist, crop]);
+        await fetch('/api/watchlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ buyer_mobile: currentUser.mobile, crop_id: crop.id })
+        });
       }
     }
   };
 
-  const handleRequestSubmit = (e) => {
+  const handleRequestSubmit = async (e) => {
     e.preventDefault();
     if (!reqCrop || !reqBudget) return;
 
-    const newReq = { crop: reqCrop, budget: reqBudget, status: 'Pending' };
-    const updated = [newReq, ...myRequests];
-    setMyRequests(updated);
-    localStorage.setItem('buyerRequests', JSON.stringify(updated));
-    setReqCrop('');
-    setReqBudget('');
-    toast.success("Request Posted! Sellers will contact you shortly.");
+    try {
+      const res = await fetch('/api/buyer-requests', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          crop: reqCrop,
+          budget: reqBudget,
+          buyer_mobile: currentUser.mobile || 'guest',
+          buyer_location: currentUser.location || 'Unknown',
+          buyer_name: currentUser.name || 'Buyer'
+        })
+      });
+      if (res.ok) {
+        const getRes = await fetch(`/api/buyer-requests?mobile=${currentUser.mobile || 'guest'}`);
+        setMyRequests(await getRes.json());
+        setReqCrop('');
+        setReqBudget('');
+        toast.success("Request Posted! Sellers will contact you shortly.");
+      }
+    } catch (e) {
+      toast.error("Failed to post request to server.");
+    }
   };
 
   return (
     <>
-      
+
       <nav className="navbar navbar-dark shadow-sm mb-4">
         <div className="container d-flex justify-content-between align-items-center">
           <Link className="navbar-brand fw-bold" to="/buyer"><i className="fas fa-seedling me-2"></i>Kishan<span>Market</span></Link>
 
-          <div className="profile-container position-relative">
-            <i className="fas fa-user-circle fa-2x text-white" id="profileIcon" style={{ cursor: 'pointer' }} onClick={toggleProfile}></i>
-            <div className="profile-dropdown shadow-lg" id="profileDropdown" style={{ display: isProfileOpen ? 'block' : 'none' }}>
-              <div className="dropdown-user-info">
-                <h6 className="m-0 fw-bold" id="buyerProfileName">{currentUser.name}</h6>
-                <small className="text-muted">Buyer ID: KB-2026</small>
-              </div>
-              <ul className="dropdown-links-list">
-                <li><Link to="/profile/buyer"><i className="fas fa-user"></i> My Profile</Link></li>
-                <li><Link to="/orders"><i className="fas fa-shopping-basket"></i> My Orders</Link></li>
-                <li><a href="#"><i className="fas fa-heart"></i> Watchlist</a></li>
-                <li><Link to="/seller"><i className="fas fa-shopping-basket"></i> Sell Grains</Link></li>
+          <div className="d-flex align-items-center gap-3">
+            <div className="position-relative" style={{ cursor: 'pointer' }} onClick={() => toast(totalUnread > 0 ? `You have ${totalUnread} unread messages!` : "No new chat notifications.", { icon: '🔔' })}>
+              <i className="fas fa-bell fa-lg text-white"></i>
+              {totalUnread > 0 && (
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger shadow-sm" style={{ fontSize: '0.65rem' }}>
+                  {totalUnread}
+                </span>
+              )}
+            </div>
 
-                <li className="dropdown-divider"></li>
-                <li><a href="#" className="logout-item" onClick={handleLogout}><i className="fas fa-sign-out-alt"></i> Logout</a></li>
-              </ul>
+            <div className="profile-container position-relative">
+              <i className="fas fa-user-circle fa-2x text-white" id="profileIcon" style={{ cursor: 'pointer' }} onClick={toggleProfile}></i>
+              <div className="profile-dropdown shadow-lg" id="profileDropdown" style={{ display: isProfileOpen ? 'block' : 'none' }}>
+                <div className="dropdown-user-info">
+                  <h6 className="m-0 fw-bold" id="buyerProfileName">{currentUser.name}</h6>
+                  <small className="text-muted">Buyer ID: KB-2026</small>
+                </div>
+                <ul className="dropdown-links-list">
+                  <li><Link to="/profile/buyer"><i className="fas fa-user"></i> My Profile</Link></li>
+                  <li><Link to="/orders"><i className="fas fa-shopping-basket"></i> My Orders</Link></li>
+                  <li><a href="#"><i className="fas fa-heart"></i> Watchlist</a></li>
+                  <li className="dropdown-divider"></li>
+                  <li><a href="#" className="logout-item" onClick={handleLogout}><i className="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -186,52 +455,23 @@ const BuyerPage = () => {
         </div>
 
         {/* Live Analytics Chart Component */}
-        <div className="analytics-card">
+        <div className="analytics-card mb-5">
           <div className="chart-header">
-            <h5 className="chart-title"><i className="fas fa-chart-line me-2"></i> Wheat (Gehu) 30-Day Price Trend</h5>
-            <span className="badge bg-success rounded-pill px-3 py-2">+4.2% This Month</span>
+            <h5 className="chart-title"><i className="fas fa-chart-line me-2"></i> {activeFilter === 'all' ? 'All Crops' : activeFilter} 30-Day Price Trend</h5>
+            <span className="badge bg-success rounded-pill px-3 py-2">Live Market Data</span>
           </div>
-          <div className="chart-container">
-            <div className="chart-bar-wrapper">
-              <span className="chart-tooltip">₹2100</span>
-              <div className="chart-bar" style={{ height: '50%' }}></div>
-              <span className="chart-label">Week 1</span>
-            </div>
-            <div className="chart-bar-wrapper">
-              <span className="chart-tooltip">₹2150</span>
-              <div className="chart-bar" style={{ height: '60%' }}></div>
-              <span className="chart-label">Week 2</span>
-            </div>
-            <div className="chart-bar-wrapper">
-              <span className="chart-tooltip">₹2300</span>
-              <div className="chart-bar" style={{ height: '80%' }}></div>
-              <span className="chart-label">Week 3</span>
-            </div>
-            <div className="chart-bar-wrapper">
-              <span className="chart-tooltip">₹2450</span>
-              <div className="chart-bar" style={{ height: '100%' }}></div>
-              <span className="chart-label">Week 4</span>
-            </div>
+          <div className="chart-container" style={{ height: '300px', width: '100%', position: 'relative' }}>
+            <canvas ref={priceChartRef}></canvas>
           </div>
         </div>
 
-        {/* Interactive Mandi Map */}
-        <div className="glass-card p-4 mb-5 shadow-sm border-accent">
-          <h5 className="text-success fw-bold mb-3"><i className="fas fa-map-marker-alt me-2"></i> Live Mandi Map</h5>
-          <div className="mandi-map-container" style={{ height: '300px', backgroundColor: '#e9ecef', borderRadius: '10px', overflow: 'hidden' }}>
-            <MapContainer center={[25.5, 75]} zoom={6} style={{ height: '100%', width: '100%' }}>
-              <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-              {mandiLocations.map(m => (
-                <Marker key={m.id} position={[m.lat, m.lng]}>
-                  <Popup>
-                    <strong>{m.name}</strong><br />
-                    {m.crop} - {m.rate}
-                  </Popup>
-                </Marker>
-              ))}
-            </MapContainer>
-          </div>
-        </div>
+        {/* Dynamic Interactive Market Map */}
+        <InteractiveMarketMap 
+          userLocation={currentUser.location || 'Banda, Uttar Pradesh'} 
+          userRole="buyer" 
+          items={displayedCrops} 
+          title="Live Crop Sellers Near You" 
+        />
 
         <div className="glass-card p-4 mb-5 shadow-sm border-accent">
           <h5 className="text-success fw-bold mb-3"><i className="fas fa-search me-2"></i> Fasal Dhundein (Search Crops)</h5>
@@ -245,6 +485,8 @@ const BuyerPage = () => {
                 <option value="Gehu">Gehu (Wheat)</option>
                 <option value="Dhan">Dhan (Paddy)</option>
                 <option value="Makka">Makka (Maize)</option>
+                <option value="Mustard">Mustard (Sarson)</option>
+                <option value="Cotton">Cotton (Kapas)</option>
               </select>
             </div>
             <div className="col-md-2">
@@ -279,6 +521,8 @@ const BuyerPage = () => {
           ) : (
             displayedCrops.map((crop, idx) => {
               const isWatchlisted = watchlist.some(c => c.id === crop.id);
+              const cropRoomId = `room_${crop.seller}_${crop.name}`.toLowerCase().replace(/\s+/g, '_');
+              const unreadCount = unreadCounts[cropRoomId] || 0;
               return (
                 <div className="col-md-4" key={idx}>
                   <div className="crop-card shadow-sm h-100 p-3 bg-white rounded border">
@@ -291,8 +535,13 @@ const BuyerPage = () => {
                       <button className={`btn btn-sm ${isWatchlisted ? 'btn-danger' : 'btn-outline-danger'}`} onClick={() => toggleWatchlist(crop)}>
                         <i className="fas fa-heart"></i> {isWatchlisted ? 'Saved' : 'Watch'}
                       </button>
-                      <button className="btn btn-sm btn-success px-3" onClick={() => setActiveChat(crop)}>
+                      <button className="btn btn-sm btn-success px-3 position-relative" onClick={() => openChatForCrop(crop)}>
                         <i className="fas fa-comments me-1"></i> Contact
+                        {unreadCount > 0 && (
+                          <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger shadow-sm" style={{ fontSize: '0.65rem' }}>
+                            {unreadCount}
+                          </span>
+                        )}
                       </button>
                     </div>
                   </div>
@@ -309,7 +558,14 @@ const BuyerPage = () => {
               <form onSubmit={handleRequestSubmit}>
                 <div className="mb-3">
                   <label className="form-label small fw-bold">Kaunsi Fasal Chahiye?</label>
-                  <input type="text" className="form-control custom-input" placeholder="e.g. 100q Gehu chahiye" value={reqCrop} onChange={(e) => setReqCrop(e.target.value)} required />
+                  <select className="form-select custom-input" value={reqCrop} onChange={(e) => setReqCrop(e.target.value)} required>
+                    <option value="" disabled>Fasal Chunein (Select Crop)</option>
+                    <option value="Gehu">Gehu (Wheat)</option>
+                    <option value="Dhan">Dhan (Rice)</option>
+                    <option value="Makka">Makka (Maize)</option>
+                    <option value="Mustard">Mustard (Sarson)</option>
+                    <option value="Cotton">Cotton (Kapas)</option>
+                  </select>
                 </div>
                 <div className="mb-3">
                   <label className="form-label small fw-bold">Aapka Budget (₹/q)</label>
@@ -324,15 +580,39 @@ const BuyerPage = () => {
                 {myRequests.length === 0 ? (
                   <p className="text-muted small">Aapki koi request nahi hai.</p>
                 ) : (
-                  myRequests.map((req, i) => (
-                    <div key={i} className="d-flex justify-content-between align-items-center bg-light p-2 mb-2 rounded border">
-                      <div>
-                        <h6 className="m-0 fw-bold text-success">{req.crop}</h6>
-                        <small className="text-muted">Budget: ₹{req.budget}/q</small>
+                  myRequests.map((req, i) => {
+                    const reqRoomId = `room_${currentUser.name || 'buyer'}_${req.crop}`.toLowerCase().replace(/\s+/g, '_');
+                    const reqUnread = unreadCounts[reqRoomId] || 0;
+                    return (
+                      <div key={i} className="d-flex justify-content-between align-items-center bg-light p-2 mb-2 rounded border">
+                        <div>
+                          <h6 className="m-0 fw-bold text-success">{req.crop}</h6>
+                          <small className="text-muted">Budget: ₹{req.budget}/q</small>
+                        </div>
+                        <div className="d-flex align-items-center gap-2">
+                          <button 
+                            onClick={() => openChatForCrop({ name: req.crop, weight: 'Bulk', rate: req.budget, seller: currentUser.name || 'buyer' })} 
+                            className="btn btn-sm btn-outline-success py-0 px-2 position-relative" 
+                            style={{ fontSize: '0.75rem', borderRadius: '10px' }}>
+                            <i className="fas fa-comments me-1"></i> Chat
+                            {reqUnread > 0 && (
+                              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger shadow-sm" style={{ fontSize: '0.65rem' }}>
+                                {reqUnread}
+                              </span>
+                            )}
+                          </button>
+                          <span className="badge bg-warning text-dark me-1">{req.status}</span>
+                          <button 
+                            onClick={() => handleDeleteRequest(req.id)} 
+                            className="btn btn-sm btn-outline-danger py-0 px-2" 
+                            style={{ fontSize: '0.75rem', borderRadius: '10px' }}
+                            title="Delete Request">
+                            <i className="fas fa-trash"></i>
+                          </button>
+                        </div>
                       </div>
-                      <span className="badge bg-warning text-dark">{req.status}</span>
-                    </div>
-                  ))
+                    );
+                  })
                 )}
               </div>
             </div>
@@ -365,6 +645,8 @@ const BuyerPage = () => {
                   ))
                 )}
               </div>
+              
+
             </div>
           </div>
         </div>

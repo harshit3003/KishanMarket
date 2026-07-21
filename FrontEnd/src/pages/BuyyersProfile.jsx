@@ -31,16 +31,28 @@ const BuyyersProfile = () => {
 
   const [purchases, setPurchases] = useState([]);
   const [marketData, setMarketData] = useState([]);
+  const [activeRequestsCount, setActiveRequestsCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
+  const [currentMobile, setCurrentMobile] = useState(() => {
+    const userStr = localStorage.getItem('currentUser');
+    if (userStr) {
+      try {
+        const user = JSON.parse(userStr);
+        return user.mobile || 'guest';
+      } catch (e) {}
+    }
+    return 'guest';
+  });
+
   useEffect(() => {
-    // Simulate fetching from real API endpoints
     const fetchData = async () => {
       setIsLoading(true);
       try {
-        const [purchasesRes, marketRes] = await Promise.all([
-          fetch('/api/buyer-purchases?limit=5'),
-          fetch('/api/market-intel?limit=5')
+        const [purchasesRes, marketRes, reqsRes] = await Promise.all([
+          fetch(`/api/purchases?mobile=${currentMobile}`),
+          fetch('/api/market-intel?limit=5'),
+          fetch(`/api/buyer-requests?mobile=${currentMobile}`)
         ]);
         
         if (purchasesRes.ok) {
@@ -52,6 +64,11 @@ const BuyyersProfile = () => {
           const mData = await marketRes.json();
           setMarketData(mData);
         }
+
+        if (reqsRes.ok) {
+          const rData = await reqsRes.json();
+          setActiveRequestsCount(rData.length);
+        }
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -60,9 +77,23 @@ const BuyyersProfile = () => {
     };
     
     fetchData();
-  }, []);
+  }, [currentMobile]);
 
-  const totalSpent = purchases.reduce((acc, p) => acc + p.a, 0);
+  const cleanNumber = (val) => {
+    if (!val) return 0;
+    if (typeof val === 'number') return val;
+    const num = parseFloat(val.toString().replace(/[^0-9.]/g, ''));
+    return isNaN(num) ? 0 : num;
+  };
+
+  const formatCurrency = (val) => {
+    if (val >= 10000000) return `₹${(val / 10000000).toFixed(2)} Cr`;
+    if (val >= 100000) return `₹${(val / 100000).toFixed(2)} Lakh`;
+    return `₹${val.toLocaleString('en-IN')}`;
+  };
+
+  // Calculate real totals based on SQLite Crops data
+  const totalSpent = purchases.reduce((acc, p) => acc + (cleanNumber(p.rate) * cleanNumber(p.weight)), 0);
   const priceDrops = marketData.filter(d => d.tr === 'down').length;
 
   useEffect(() => {
@@ -71,18 +102,42 @@ const BuyyersProfile = () => {
       if (categoryChartInstance.current) categoryChartInstance.current.destroy();
 
       if (spendChartRef.current) {
-        // Prepare dynamic chart data from fetched purchases
-        const chartData = [35000, 80000, 45000, totalSpent > 0 ? totalSpent : 170750];
+        // Build dynamic line chart data from actual purchases
+        const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const monthlySums = {};
+
+        purchases.forEach(p => {
+          if (p.soldDate) {
+            const dateObj = new Date(p.soldDate);
+            if (!isNaN(dateObj.getTime())) {
+              const mName = monthNames[dateObj.getMonth()];
+              const cost = cleanNumber(p.rate) * cleanNumber(p.weight);
+              monthlySums[mName] = (monthlySums[mName] || 0) + cost;
+            }
+          }
+        });
+
+        let chartLabels = Object.keys(monthlySums);
+        let chartData = Object.values(monthlySums);
+
+        if (chartLabels.length === 0) {
+          chartLabels = ['Jan', 'Feb', 'Mar', 'Apr'];
+          if (totalSpent > 0) {
+            chartData = [Math.round(totalSpent * 0.15), Math.round(totalSpent * 0.35), Math.round(totalSpent * 0.6), totalSpent];
+          } else {
+            chartData = [0, 0, 0, 0];
+          }
+        }
 
         spendChartInstance.current = new Chart(spendChartRef.current, {
           type: 'line',
           data: {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr'],
+            labels: chartLabels,
             datasets: [{
               label: 'Total Paid (₹)',
               data: chartData,
-              borderColor: '#f59e0b',
-              backgroundColor: 'rgba(245, 158, 11, 0.05)',
+              borderColor: '#10b981',
+              backgroundColor: 'rgba(16, 185, 129, 0.1)',
               fill: true, tension: 0.4
             }]
           },
@@ -91,13 +146,30 @@ const BuyyersProfile = () => {
       }
 
       if (categoryChartRef.current) {
+        // Build dynamic category distribution from purchases
+        const cropCounts = {};
+        purchases.forEach(p => {
+          const name = p.name || 'Crop';
+          cropCounts[name] = (cropCounts[name] || 0) + (cleanNumber(p.weight) || 1);
+        });
+
+        let catLabels = Object.keys(cropCounts);
+        let catData = Object.values(cropCounts);
+
+        if (catLabels.length === 0) {
+          catLabels = ['Grains', 'Pulses', 'Vegetables'];
+          catData = [50, 30, 20];
+        }
+
+        const colors = ['#10b981', '#059669', '#047857', '#34d399', '#6ee7b7'];
+
         categoryChartInstance.current = new Chart(categoryChartRef.current, {
           type: 'doughnut',
           data: {
-            labels: ['Grains', 'Vegetables', 'Fruits'],
+            labels: catLabels,
             datasets: [{
-              data: [70, 20, 10],
-              backgroundColor: ['#1b4332', '#d4c1a5', '#bc6c25'],
+              data: catData,
+              backgroundColor: colors.slice(0, catLabels.length),
               borderWidth: 0
             }]
           },
@@ -105,7 +177,7 @@ const BuyyersProfile = () => {
         });
       }
     }
-  }, [activeTab, isLoading]);
+  }, [activeTab, isLoading, purchases, totalSpent]);
 
   const handleExportCSV = () => {
     let csv = [];
@@ -206,7 +278,7 @@ const BuyyersProfile = () => {
                     <>
                       <div className="stat-card">
                         <h6>Total Spent</h6>
-                        <h3>₹<span>{totalSpent.toLocaleString('en-IN')}</span></h3>
+                        <h3 className="text-truncate"><span>{formatCurrency(totalSpent)}</span></h3>
                       </div>
                       <div className="stat-card border-profit">
                         <h6>Total Orders</h6>
@@ -214,7 +286,7 @@ const BuyyersProfile = () => {
                       </div>
                       <div className="stat-card">
                         <h6>Active Bids</h6>
-                        <h3>4</h3>
+                        <h3>{activeRequestsCount}</h3>
                       </div>
                       <div className="stat-card">
                         <h6>Trust Score</h6>
@@ -259,21 +331,28 @@ const BuyyersProfile = () => {
                         ) : purchases.length === 0 ? (
                           <tr><td colSpan="6" className="text-center py-4 text-muted">No orders found.</td></tr>
                         ) : (
-                          purchases.map((o, idx) => (
-                          <tr key={idx}>
-                            <td>{o.d}</td>
-                            <td className="fw-bold">{o.s}</td>
-                            <td><span className="badge bg-light text-dark border">{o.i}</span></td>
-                            <td>{o.w}</td>
-                            <td className="fw-bold text-success">₹{o.a.toLocaleString()}</td>
-                            <td>
-                              <span className={`badge ${o.st === 'Delivered' ? 'bg-success' : 'bg-warning'} rounded-pill`}>
-                                {o.st}
-                              </span>
-                            </td>
-                          </tr>
-                        ))
-                      )}
+                          purchases.map((o, idx) => {
+                            const rateNum = cleanNumber(o.rate);
+                            const weightNum = cleanNumber(o.weight);
+                            const totalPaid = rateNum * weightNum;
+                            const weightStr = weightNum > 0 ? `${weightNum}q` : 'N/A';
+                            const statusLabel = o.status === 'sold' ? 'Delivered' : (o.status || 'Pending');
+                            return (
+                              <tr key={idx}>
+                                <td>{o.soldDate ? new Date(o.soldDate).toLocaleDateString() : 'Unknown'}</td>
+                                <td className="fw-bold">{o.seller}</td>
+                                <td><span className="badge bg-light text-dark border">{o.name}</span></td>
+                                <td>{weightStr}</td>
+                                <td className="fw-bold text-success">{formatCurrency(totalPaid)}</td>
+                                <td>
+                                  <span className={`badge ${statusLabel === 'Delivered' ? 'bg-success' : 'bg-warning'} rounded-pill`}>
+                                    {statusLabel}
+                                  </span>
+                                </td>
+                              </tr>
+                            );
+                          })
+                        )}
                       </tbody>
                     </table>
                   </div>

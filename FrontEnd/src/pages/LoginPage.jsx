@@ -19,18 +19,27 @@ const LoginPage = () => {
         });
     };
 
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         e.preventDefault();
         const inputPhone = formData.loginPhone.trim();
         const inputPassword = formData.loginPassword;
 
-        // Database se users list nikalna
-        const users = JSON.parse(localStorage.getItem('kishanUsers')) || [];
+        try {
+            const response = await fetch('/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ mobile: inputPhone, password: inputPassword })
+            });
+            
+            const data = await response.json();
+            
+            if (!response.ok) {
+                toast.error(data.error || "Invalid credentials. Please try again or create an account.");
+                return;
+            }
 
-        // User ko mobile number aur password se dhoondna
-        const foundUser = users.find(u => u.mobile === inputPhone && u.password === inputPassword);
-
-        if (foundUser) {
+            const foundUser = data.user;
+            
             localStorage.setItem('displayUserName', foundUser.name);
             localStorage.setItem('currentUser', JSON.stringify(foundUser));
             toast.success(`Welcome back, ${foundUser.name}!`);
@@ -40,8 +49,9 @@ const LoginPage = () => {
             } else {
                 navigate('/buyer');
             }
-        } else {
-            toast.error("Invalid credentials. Please try again or create an account.");
+        } catch (err) {
+            toast.error("Server connection error. Please try again.");
+            console.error(err);
         }
     };
 

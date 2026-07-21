@@ -5,23 +5,45 @@ import '../assets/global.css';
 import '../assets/dynamic-features.css';
 import '../assets/myorder-style.css';
 
-const pastOrdersData = [
-    { id: "KM8810", date: "05 Oct, 2026", crop: "Premium Basmati Dhan", seller: "Ramesh Farms", amount: "₹85,000", status: "Delivered" },
-    { id: "KM8792", date: "28 Sep, 2026", crop: "Organic Makka", seller: "MP Traders", amount: "₹18,500", status: "Delivered" },
-    { id: "KM8655", date: "15 Sep, 2026", crop: "Sarbati Gehu", seller: "Kishan Singh", amount: "₹45,000", status: "Delivered" }
-];
+
 
 const MyOrder = () => {
   const navigate = useNavigate();
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState({ name: 'Guest', role: 'buyer' });
 
+  const [purchases, setPurchases] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
+    let mobile = 'guest';
     const userStr = localStorage.getItem('currentUser');
     if (userStr) {
-      setCurrentUser(JSON.parse(userStr));
+      const parsedUser = JSON.parse(userStr);
+      setCurrentUser(parsedUser);
+      mobile = parsedUser.mobile || 'guest';
     }
+
+    const fetchOrders = async () => {
+      setIsLoading(true);
+      if (mobile !== 'guest') {
+        try {
+          const res = await fetch(`/api/purchases?mobile=${mobile}`);
+          if (res.ok) {
+            setPurchases(await res.json());
+          }
+        } catch (e) {
+          console.error("Failed to fetch orders");
+        }
+      }
+      setIsLoading(false);
+    };
+
+    fetchOrders();
   }, []);
+
+  const activeOrder = purchases.find(p => p.status !== 'sold' && p.status !== 'completed' && p.status !== 'Delivered') || purchases[0];
+  const pastOrders = purchases.filter(p => p !== activeOrder);
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -74,100 +96,109 @@ const MyOrder = () => {
         </div>
 
         <div className="row g-4 mb-5">
-          {/* Active Tracking Card */}
-          <div className="col-12">
-            <div className="glass-card-premium p-5 border-accent position-relative overflow-hidden"
-              style={{ boxShadow: '0 20px 40px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.1)' }}>
-              {/* Decorative background glow */}
-              <div style={{ position: 'absolute', top: '-50px', right: '-50px', width: '200px', height: '200px', background: 'radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, rgba(0,0,0,0) 70%)', borderRadius: '50%', pointerEvents: 'none' }}></div>
+          {isLoading ? (
+             <div className="col-12 text-center py-5">
+               <i className="fas fa-spinner fa-spin fa-2x text-success"></i>
+               <p className="mt-2 text-muted">Loading your orders...</p>
+             </div>
+          ) : purchases.length === 0 ? (
+             <div className="col-12 text-center py-5">
+               <i className="fas fa-box-open fa-3x text-muted mb-3 opacity-50"></i>
+               <h4 className="text-muted">No Orders Found</h4>
+               <p className="text-muted">Aapne abhi tak koi fasal nahi kharidi hai.</p>
+               <Link to="/buyer" className="btn btn-success mt-2 px-4">Browse Market</Link>
+             </div>
+          ) : (
+            <>
+              {activeOrder && (
+                <div className="col-12">
+                  <div className="glass-card-premium p-5 border-accent position-relative overflow-hidden"
+                    style={{ boxShadow: '0 20px 40px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.1)' }}>
+                    <div style={{ position: 'absolute', top: '-50px', right: '-50px', width: '200px', height: '200px', background: 'radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, rgba(0,0,0,0) 70%)', borderRadius: '50%', pointerEvents: 'none' }}></div>
 
-              <div className="d-flex justify-content-between align-items-center mb-4 position-relative" style={{ zIndex: 2 }}>
-                <h5 className="fw-bold m-0" style={{ background: 'linear-gradient(90deg, #52b788, #52b788)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                  <i className="fas fa-satellite-dish me-2" style={{ color: '#52b788' }}></i> Live Transit: Order #KM8823
-                </h5>
-                <div className="d-flex align-items-center gap-3">
-                  <span className="d-flex align-items-center text-success fw-bold small"><span className="live-dot me-2"></span> GPS Active</span>
-                  <span className="badge bg-success text-white px-3 py-2 rounded-pill shadow-sm" style={{ fontWeight: 800, letterSpacing: '0.5px' }}>EST. TOMORROW</span>
-                </div>
-              </div>
-
-              <div className="d-flex flex-wrap justify-content-between align-items-center mb-5 border-bottom border-success border-opacity-10 pb-4">
-                <div className="mb-3 mb-md-0">
-                  <h2 className="fw-bold mb-1 text-dark" style={{ letterSpacing: '-0.5px' }}>50q Premium Gehu</h2>
-                  <p className="mb-0 text-muted" style={{ fontSize: '0.95rem' }}><i className="fas fa-map-marker-alt text-success me-1"></i> Jaipur, RJ &nbsp; <span className="text-success fw-bold">₹1,22,500</span></p>
-                </div>
-                <button className="btn btn-success fw-bold px-4 py-2 rounded-pill shadow" style={{ transition: 'all 0.3s ease', border: '2px solid rgba(255,255,255,0.2)' }}>
-                  <i className="fas fa-phone-alt me-2"></i>Call Driver (Raju)
-                </button>
-              </div>
-
-              {/* Professional Tracking Layout */}
-              <div className="tracking-container mt-4 pt-4 border-top" style={{ borderColor: 'rgba(255,255,255,0.1) !important' }}>
-                <div className="d-flex justify-content-between position-relative">
-                  {/* Background line */}
-                  <div className="position-absolute" style={{ top: '24px', left: '10%', right: '10%', height: '2px', background: 'rgba(255,255,255,0.1)', zIndex: 1 }}></div>
-
-                  {/* Active progress line */}
-                  <div className="position-absolute" style={{ top: '24px', left: '10%', width: '50%', height: '2px', background: '#52b788', zIndex: 2, transition: 'width 1s ease' }}></div>
-
-                  {/* Steps */}
-                  <div className="tracking-step text-center position-relative" style={{ zIndex: 3, flex: 1 }}>
-                    <div className="step-icon-pro completed mx-auto mb-2"><i className="fas fa-check"></i></div>
-                    <span className="d-block small fw-bold text-dark">Order Confirmed</span>
-                    <small className="text-muted" style={{ fontSize: '0.75rem' }}>Oct 12, 09:30 AM</small>
-                  </div>
-
-                  <div className="tracking-step text-center position-relative" style={{ zIndex: 3, flex: 1 }}>
-                    <div className="step-icon-pro completed mx-auto mb-2"><i className="fas fa-box"></i></div>
-                    <span className="d-block small fw-bold text-dark">Packed</span>
-                    <small className="text-muted" style={{ fontSize: '0.75rem' }}>Oct 13, 14:15 PM</small>
-                  </div>
-
-                  <div className="tracking-step text-center position-relative" style={{ zIndex: 3, flex: 1 }}>
-                    <div className="step-icon-pro active mx-auto mb-2"><i className="fas fa-truck"></i></div>
-                    <span className="d-block small fw-bold text-success">In Transit</span>
-                    <small className="text-muted" style={{ fontSize: '0.75rem' }}>Oct 14, 08:00 AM</small>
-                  </div>
-
-                  <div className="tracking-step text-center position-relative" style={{ zIndex: 3, flex: 1 }}>
-                    <div className="step-icon-pro pending mx-auto mb-2"><i className="fas fa-home"></i></div>
-                    <span className="d-block small fw-bold text-muted">Delivered</span>
-                    <small className="text-muted" style={{ fontSize: '0.75rem' }}>Est. Oct 15</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Past Orders */}
-          <div className="col-12 mt-5">
-            <h3 className="text-dark fw-bold mb-4 border-start border-success border-4 ps-3">Recent Transactions</h3>
-            <div className="row g-4">
-              {pastOrdersData.map((order, i) => (
-                <div className="col-md-6 col-lg-4" key={i} style={{ perspective: '1000px' }}>
-                  <div className="glass-card-premium p-4 h-100 position-relative transaction-card" style={{ transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)', borderTop: '3px solid #52b788', transformStyle: 'preserve-3d' }}>
-                    <div className="d-flex justify-content-between align-items-start mb-3" style={{ transform: 'translateZ(20px)' }}>
-                      <span className="badge bg-success rounded-pill px-3 py-1 bg-opacity-25 text-success border border-success">
-                        <i className="fas fa-check-circle me-1"></i> {order.status}
-                      </span>
-                      <span className="text-muted small fw-bold">{order.date}</span>
-                    </div>
-                    <h5 className="fw-bold text-dark mb-1" style={{ transform: 'translateZ(30px)' }}>{order.crop}</h5>
-                    <p className="text-muted small mb-3" style={{ transform: 'translateZ(20px)' }}><i className="fas fa-store me-2"></i>{order.seller}</p>
-                    <div className="d-flex justify-content-between align-items-end mt-4 pt-3 border-top border-secondary border-opacity-25" style={{ transform: 'translateZ(40px)' }}>
-                      <div>
-                        <small className="text-muted d-block" style={{ fontSize: '0.7rem' }}>TOTAL AMOUNT</small>
-                        <span className="fw-bold fs-5 text-success">{order.amount}</span>
+                    <div className="d-flex justify-content-between align-items-center mb-4 position-relative" style={{ zIndex: 2 }}>
+                      <h5 className="fw-bold m-0" style={{ background: 'linear-gradient(90deg, #52b788, #52b788)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                        <i className="fas fa-satellite-dish me-2" style={{ color: '#52b788' }}></i> {activeOrder.status === 'sold' ? 'Delivered Order' : 'Live Transit'}: #{activeOrder.id}
+                      </h5>
+                      <div className="d-flex align-items-center gap-3">
+                        <span className="d-flex align-items-center text-success fw-bold small"><span className="live-dot me-2"></span> {activeOrder.status === 'sold' ? 'Completed' : 'GPS Active'}</span>
+                        <span className="badge bg-success text-white px-3 py-2 rounded-pill shadow-sm" style={{ fontWeight: 800, letterSpacing: '0.5px' }}>{activeOrder.status === 'sold' ? 'DELIVERED' : 'EST. TOMORROW'}</span>
                       </div>
-                      <button className="btn btn-sm btn-success rounded-circle shadow" style={{ width: '40px', height: '40px' }} onClick={() => viewDetails(order.id)}>
-                        <i className="fas fa-chevron-right"></i>
+                    </div>
+
+                    <div className="d-flex flex-wrap justify-content-between align-items-center mb-5 border-bottom border-success border-opacity-10 pb-4">
+                      <div className="mb-3 mb-md-0">
+                        <h2 className="fw-bold mb-1 text-dark" style={{ letterSpacing: '-0.5px' }}>{activeOrder.weight}q {activeOrder.name}</h2>
+                        <p className="mb-0 text-muted" style={{ fontSize: '0.95rem' }}><i className="fas fa-map-marker-alt text-success me-1"></i> {activeOrder.seller} &nbsp; <span className="text-success fw-bold">₹{(parseInt(activeOrder.rate||0)*parseInt(activeOrder.weight||0)).toLocaleString('en-IN')}</span></p>
+                      </div>
+                      <button className="btn btn-success fw-bold px-4 py-2 rounded-pill shadow" style={{ transition: 'all 0.3s ease', border: '2px solid rgba(255,255,255,0.2)' }}>
+                        <i className="fas fa-phone-alt me-2"></i>Contact Seller
                       </button>
                     </div>
+
+                    <div className="tracking-container mt-4 pt-4 border-top" style={{ borderColor: 'rgba(255,255,255,0.1) !important' }}>
+                      <div className="d-flex justify-content-between position-relative">
+                        <div className="position-absolute" style={{ top: '24px', left: '10%', right: '10%', height: '2px', background: 'rgba(255,255,255,0.1)', zIndex: 1 }}></div>
+                        <div className="position-absolute" style={{ top: '24px', left: '10%', width: activeOrder.status === 'sold' ? '80%' : '50%', height: '2px', background: '#52b788', zIndex: 2, transition: 'width 1s ease' }}></div>
+
+                        <div className="tracking-step text-center position-relative" style={{ zIndex: 3, flex: 1 }}>
+                          <div className="step-icon-pro completed mx-auto mb-2"><i className="fas fa-check"></i></div>
+                          <span className="d-block small fw-bold text-dark">Order Confirmed</span>
+                        </div>
+
+                        <div className="tracking-step text-center position-relative" style={{ zIndex: 3, flex: 1 }}>
+                          <div className="step-icon-pro completed mx-auto mb-2"><i className="fas fa-box"></i></div>
+                          <span className="d-block small fw-bold text-dark">Packed</span>
+                        </div>
+
+                        <div className="tracking-step text-center position-relative" style={{ zIndex: 3, flex: 1 }}>
+                          <div className={`step-icon-pro ${activeOrder.status === 'sold' ? 'completed' : 'active'} mx-auto mb-2`}><i className="fas fa-truck"></i></div>
+                          <span className={`d-block small fw-bold ${activeOrder.status === 'sold' ? 'text-dark' : 'text-success'}`}>In Transit</span>
+                        </div>
+
+                        <div className="tracking-step text-center position-relative" style={{ zIndex: 3, flex: 1 }}>
+                          <div className={`step-icon-pro ${activeOrder.status === 'sold' ? 'completed' : 'pending'} mx-auto mb-2`}><i className="fas fa-home"></i></div>
+                          <span className={`d-block small fw-bold ${activeOrder.status === 'sold' ? 'text-success' : 'text-muted'}`}>Delivered</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              ))}
+              )}
+
+          {/* Past Orders */}
+          {pastOrders.length > 0 && (
+            <div className="col-12 mt-5">
+              <h3 className="text-dark fw-bold mb-4 border-start border-success border-4 ps-3">Recent Transactions</h3>
+              <div className="row g-4">
+                {pastOrders.map((order, i) => (
+                  <div className="col-md-6 col-lg-4" key={i} style={{ perspective: '1000px' }}>
+                    <div className="glass-card-premium p-4 h-100 position-relative transaction-card" style={{ transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)', borderTop: '3px solid #52b788', transformStyle: 'preserve-3d' }}>
+                      <div className="d-flex justify-content-between align-items-start mb-3" style={{ transform: 'translateZ(20px)' }}>
+                        <span className="badge bg-success rounded-pill px-3 py-1 bg-opacity-25 text-success border border-success">
+                          <i className="fas fa-check-circle me-1"></i> {order.status === 'sold' ? 'Delivered' : (order.status || 'Completed')}
+                        </span>
+                        <span className="text-muted small fw-bold">{order.soldDate ? new Date(order.soldDate).toLocaleDateString() : 'Unknown Date'}</span>
+                      </div>
+                      <h5 className="fw-bold text-dark mb-1" style={{ transform: 'translateZ(30px)' }}>{order.name} ({order.weight}q)</h5>
+                      <p className="text-muted small mb-3" style={{ transform: 'translateZ(20px)' }}><i className="fas fa-store me-2"></i>{order.seller}</p>
+                      <div className="d-flex justify-content-between align-items-end mt-4 pt-3 border-top border-secondary border-opacity-25" style={{ transform: 'translateZ(40px)' }}>
+                        <div>
+                          <small className="text-muted d-block" style={{ fontSize: '0.7rem' }}>TOTAL AMOUNT</small>
+                          <span className="fw-bold fs-5 text-success">₹{(parseInt(order.rate||0)*parseInt(order.weight||0)).toLocaleString('en-IN')}</span>
+                        </div>
+                        <button className="btn btn-sm btn-success rounded-circle shadow" style={{ width: '40px', height: '40px' }} onClick={() => viewDetails(order.id)}>
+                          <i className="fas fa-chevron-right"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
+        </>
+        )}
         </div>
       </div>
     </>

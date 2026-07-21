@@ -1,18 +1,48 @@
 import React, { useState, useEffect, useRef } from 'react';
+import socket from '../../socket';
 
 const NegotiationChat = ({ chatData, onClose }) => {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState('');
   const chatEndRef = useRef(null);
+  
+  const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
+  const myRole = currentUser.role || 'buyer';
+
+  // Room ID based on unique seller & crop combo
+  const roomId = chatData ? `room_${chatData.seller}_${chatData.name}`.toLowerCase().replace(/\s+/g, '_') : null;
 
   useEffect(() => {
-    if (chatData) {
-      // Load initial greeting message
-      setMessages([
-        { id: 1, sender: 'seller', text: `Namaste! I have ${chatData.weight}q of ${chatData.name} available at ₹${chatData.rate}/q. Are you interested?`, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }
-      ]);
+    if (chatData && roomId) {
+      // Connect to the room
+      socket.emit('join_room', roomId);
     }
-  }, [chatData]);
+    
+    // Listen for room history
+    const handleHistory = (history) => {
+      if (history && history.length > 0) {
+        setMessages(history);
+      } else if (chatData) {
+        setMessages([
+          { id: 1, sender: 'seller', text: `Namaste! Selling ${chatData.weight || 'bulk'}q of ${chatData.name} at ₹${chatData.rate}/q.`, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) }
+        ]);
+      }
+    };
+
+    // Listen for incoming websocket messages
+    const handleReceive = (data) => {
+      setMessages((prev) => [...prev, data.message]);
+    };
+
+    socket.on('load_history', handleHistory);
+    socket.on('receive_message', handleReceive);
+
+    // Cleanup listeners when chat closes
+    return () => {
+      socket.off('load_history', handleHistory);
+      socket.off('receive_message', handleReceive);
+    };
+  }, [chatData, roomId]);
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -27,14 +57,13 @@ const NegotiationChat = ({ chatData, onClose }) => {
   };
 
   const sendMessage = (text) => {
-    const newMsg = { id: Date.now(), sender: 'buyer', text, time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) };
+    const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    const newMsg = { id: Date.now(), sender: myRole, text, time };
+    
     setMessages(prev => [...prev, newMsg]);
 
-    // Simulate seller reply
-    setTimeout(() => {
-      const reply = { id: Date.now() + 1, sender: 'seller', text: "Let me check the mandi rates and get back to you.", time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) };
-      setMessages(prev => [...prev, reply]);
-    }, 2000);
+    // Emit over WebSocket to the other person in the room!
+    socket.emit('send_message', { room: roomId, message: newMsg });
   };
 
   const sendOffer = (discount) => {
@@ -67,21 +96,24 @@ const NegotiationChat = ({ chatData, onClose }) => {
 
       {/* Messages */}
       <div className="flex-grow-1 p-3" style={{ overflowY: 'auto', backgroundColor: '#e2e8f0', backgroundImage: 'url("https://www.transparenttextures.com/patterns/cubes.png")' }}>
-        {messages.map(msg => (
-          <div key={msg.id} className={`d-flex flex-column mb-3 ${msg.sender === 'buyer' ? 'align-items-end' : 'align-items-start'}`}>
-            <div style={{
-              maxWidth: '80%', padding: '10px 15px', borderRadius: '15px',
-              backgroundColor: msg.sender === 'buyer' ? '#16a34a' : '#ffffff',
-              color: msg.sender === 'buyer' ? '#ffffff' : '#000000',
-              borderBottomRightRadius: msg.sender === 'buyer' ? '0' : '15px',
-              borderBottomLeftRadius: msg.sender === 'seller' ? '0' : '15px',
-              boxShadow: '0 2px 5px rgba(0,0,0,0.05)'
-            }}>
-              <p className="m-0" style={{ fontSize: '0.9rem' }}>{msg.text}</p>
+        {messages.map((msg) => {
+          const isMe = msg.sender === myRole;
+          return (
+            <div key={msg.id} className={`d-flex flex-column mb-3 ${isMe ? 'align-items-end' : 'align-items-start'}`}>
+              <div style={{
+                maxWidth: '80%', padding: '10px 15px', borderRadius: '15px',
+                backgroundColor: isMe ? '#16a34a' : '#ffffff',
+                color: isMe ? '#ffffff' : '#000000',
+                borderBottomRightRadius: isMe ? '0' : '15px',
+                borderBottomLeftRadius: isMe ? '15px' : '0',
+                boxShadow: '0 2px 5px rgba(0,0,0,0.05)'
+              }}>
+                <p className="m-0" style={{ fontSize: '0.9rem' }}>{msg.text}</p>
+              </div>
+              <small className="text-muted mt-1" style={{ fontSize: '10px' }}>{msg.time}</small>
             </div>
-            <small className="text-muted mt-1" style={{ fontSize: '10px' }}>{msg.time}</small>
-          </div>
-        ))}
+          );
+        })}
         <div ref={chatEndRef} />
       </div>
 

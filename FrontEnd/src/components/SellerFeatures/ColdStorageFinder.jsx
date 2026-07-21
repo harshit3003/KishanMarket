@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 
 const mockStorages = [
   { name: 'Kisan Cold Storage', distance: '12 km', rate: '₹20/q/day', available: true },
@@ -7,7 +8,24 @@ const mockStorages = [
 ];
 
 const ColdStorageFinder = () => {
+  const [modalData, setModalData] = useState({ open: false, storage: null, amount: '', days: '' });
+
+  const handleBookClick = (storage) => {
+    setModalData({ open: true, storage, amount: '', days: '' });
+  };
+
+  const handleConfirmBooking = (e) => {
+    e.preventDefault();
+    if (!modalData.amount || !modalData.days) {
+      toast.error('Please enter both amount and days.');
+      return;
+    }
+    toast.success(`Successfully booked ${modalData.amount}q at ${modalData.storage.name} for ${modalData.days} days!`);
+    setModalData({ open: false, storage: null, amount: '', days: '' });
+  };
+
   return (
+    <>
     <div className="glass-card-premium p-4 h-100" style={{ transformStyle: 'preserve-3d' }}>
       <h5 className="section-title d-flex justify-content-between align-items-center" style={{ transform: 'translateZ(30px)' }}>
         <span><i className="fas fa-snowflake text-info me-2"></i> Cold Storages</span>
@@ -23,13 +41,53 @@ const ColdStorageFinder = () => {
               <h6 className="m-0 fw-bold">{storage.name}</h6>
               <small className="text-muted"><i className="fas fa-map-marker-alt text-danger"></i> {storage.distance} • {storage.rate}</small>
             </div>
-            <button className={`btn btn-sm btn-premium-hover ${storage.available ? 'btn-outline-info' : 'btn-outline-secondary disabled'}`} style={{ transform: 'translateZ(10px)' }}>
+            <button 
+              className={`btn btn-sm btn-premium-hover ${storage.available ? 'btn-outline-info' : 'btn-outline-secondary disabled'}`} 
+              style={{ transform: 'translateZ(10px)' }}
+              onClick={() => storage.available && handleBookClick(storage)}
+            >
               {storage.available ? 'Book' : 'Full'}
             </button>
           </div>
         ))}
       </div>
     </div>
+
+    {/* Booking Modal */}
+    {modalData.open && (
+      <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(5px)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div className="glass-card-premium p-4" style={{ width: '90%', maxWidth: '400px', background: 'white' }}>
+          <h4 className="fw-bold mb-3 text-info"><i className="fas fa-snowflake me-2"></i>Book Storage</h4>
+          <p className="mb-3"><strong>{modalData.storage.name}</strong><br/><small className="text-muted">Rate: {modalData.storage.rate}</small></p>
+          
+          <form onSubmit={handleConfirmBooking}>
+            <div className="mb-3">
+              <label className="form-label">Amount of Crop (Quintals)</label>
+              <input type="number" className="form-control custom-input" placeholder="e.g. 50" min="1" value={modalData.amount} onChange={e => setModalData({...modalData, amount: e.target.value})} required />
+            </div>
+            <div className="mb-3">
+              <label className="form-label">Duration (Days)</label>
+              <input type="number" className="form-control custom-input" placeholder="e.g. 15" min="1" value={modalData.days} onChange={e => setModalData({...modalData, days: e.target.value})} required />
+            </div>
+
+            {modalData.amount && modalData.days && (
+              <div className="p-3 bg-light rounded border mb-4">
+                <div className="d-flex justify-content-between fw-bold">
+                  <span>Estimated Total Cost:</span>
+                  <span className="text-info fs-5">₹{(parseInt(modalData.storage.rate.match(/\d+/)[0]) * modalData.amount * modalData.days).toLocaleString('en-IN')}</span>
+                </div>
+              </div>
+            )}
+
+            <div className="d-flex justify-content-end gap-2">
+              <button type="button" className="btn btn-light" onClick={() => setModalData({open: false, storage: null, amount: '', days: ''})}>Cancel</button>
+              <button type="submit" className="btn btn-info text-white fw-bold">Confirm Booking</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    )}
+    </>
   );
 };
 
