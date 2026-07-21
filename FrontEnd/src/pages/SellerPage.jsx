@@ -12,6 +12,7 @@ import ColdStorageFinder from '../components/SellerFeatures/ColdStorageFinder';
 import WeatherDashboard from '../components/SellerFeatures/WeatherDashboard';
 import NegotiationChat from '../components/BuyerFeatures/NegotiationChat';
 import socket from '../socket';
+import { getInstantCoords } from '../utils/geoUtils';
 
 const defaultBuyers = [
   { "name": "ITC Limited", "crops": "Gehu", "rate": "1874", "location": "Rajasthan", "rating": "3.6" },
@@ -171,7 +172,6 @@ const SellerPage = () => {
           
           const allBuyers = [...formattedRequests, ...defaultBuyers];
           
-          // Filter by seller's location (State or City matching)
           let localizedBuyers = allBuyers;
           if (loc && loc !== '') {
             const sellerParts = loc.toLowerCase().split(',').map(s => s.trim());
@@ -181,7 +181,6 @@ const SellerPage = () => {
             });
           }
           
-          // If no buyers found in immediate area, show all as fallback
           setBuyers(localizedBuyers.length > 0 ? localizedBuyers : allBuyers);
         }
       } catch (err) {}
@@ -189,20 +188,9 @@ const SellerPage = () => {
 
     fetchInitialData(currentMobile, initLoc);
 
-    // Fetch actual live weather for the widget
-    if (initLoc !== 'Karnal, Haryana') {
-      fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(initLoc)}&count=1`)
-        .then(res => res.json())
-        .then(geoData => {
-          if (geoData.results && geoData.results.length > 0) {
-            fetchWeatherData(geoData.results[0].latitude, geoData.results[0].longitude, initLoc);
-          } else {
-            fetchWeatherData(29.68, 76.99, 'Haryana');
-          }
-        }).catch(() => fetchWeatherData(29.68, 76.99, 'Haryana'));
-    } else {
-      fetchWeatherData(29.68, 76.99, 'Haryana');
-    }
+    // Fetch actual live weather for logged-in seller location
+    const [lat, lng] = getInstantCoords(initLoc);
+    fetchWeatherData(lat, lng, initLoc);
   }, []);
 
   // Socket room auto-join and unread message counter
@@ -271,33 +259,14 @@ const SellerPage = () => {
     }
   };
 
-  const handleChangeLocation = async () => {
-    const newLoc = window.prompt("Enter any city worldwide (e.g., Delhi, London, New York):");
-    if (!newLoc) return;
-
-    try {
-      // 1. Geocode the city name to Latitude/Longitude
-      const geoRes = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(newLoc)}&count=1`);
-      const geoData = await geoRes.json();
-      
-      if (geoData.results && geoData.results.length > 0) {
-        const { latitude, longitude, name, country } = geoData.results[0];
-        const formattedLoc = country ? `${name}, ${country}` : name;
-        
-        // 2. Fetch Weather for new coordinates
-        await fetchWeatherData(latitude, longitude, formattedLoc);
-        
-        // 3. Update UI
-        setWeatherLocation(formattedLoc);
-        
-        toast.success(`Weather location updated to ${formattedLoc}`);
-        
-        // Removed localStorage saving to prevent permanently altering the user's registered profile location!
-      } else {
-        toast.error("City not found. Try another name.");
-      }
-    } catch (err) {
-      toast.error("Failed to fetch location data.");
+  const handleChangeLocation = () => {
+    const newLoc = window.prompt("Enter your city/state location (e.g. Ludhiana, Jaipur, Delhi, Banda):");
+    if (newLoc && newLoc.trim()) {
+      const cleanLoc = newLoc.trim();
+      setWeatherLocation(cleanLoc);
+      const [lat, lng] = getInstantCoords(cleanLoc);
+      fetchWeatherData(lat, lng, cleanLoc);
+      toast.success(`Weather location updated to ${cleanLoc}`);
     }
   };
 
