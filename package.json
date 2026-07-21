@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "KishanMarket Agritech Direct Trading Platform",
   "scripts": {
-    "postinstall": "cd Backend && npm install && cd ../FrontEnd && npm install",
-    "build": "cd FrontEnd && npm run build",
-    "start": "cd Backend && node server.js"
+    "build": "npm install --prefix Backend && npm install --prefix FrontEnd && npm run build --prefix FrontEnd",
+    "start": "node Backend/server.js"
   }
 }
