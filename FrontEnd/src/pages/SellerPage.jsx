@@ -136,17 +136,15 @@ const SellerPage = () => {
 
   useEffect(() => {
     let currentMobile = 'guest';
+    let initLoc = 'Karnal, Haryana';
     const userStr = localStorage.getItem('currentUser');
     if (userStr) {
       const parsedUser = JSON.parse(userStr);
       setCurrentUser(parsedUser);
       currentMobile = parsedUser.mobile || 'guest';
-    }
-
-    let initLoc = 'Karnal, Haryana';
-    if (userStr) {
-      const parsedUser = JSON.parse(userStr);
-      if (parsedUser.location) initLoc = parsedUser.location;
+      if (parsedUser.location && parsedUser.location.trim() !== '') {
+        initLoc = parsedUser.location;
+      }
     }
     setWeatherLocation(initLoc);
 

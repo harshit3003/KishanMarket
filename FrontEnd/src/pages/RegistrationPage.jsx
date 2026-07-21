@@ -98,9 +98,9 @@ const RegistrationPage = () => {
         return;
       }
 
-      // Login logic: Seedha dashboard pe bhejne ke liye (Keep active session in local storage for now)
+      // Login logic: Keep active session in local storage
       localStorage.setItem('displayUserName', name);
-      localStorage.setItem('currentUser', JSON.stringify({ name, mobile, role }));
+      localStorage.setItem('currentUser', JSON.stringify({ name, mobile, role, location }));
 
       // Direct redirection based on role
       toast.success("Account created successfully!");
