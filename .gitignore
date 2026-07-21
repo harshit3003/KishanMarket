@@ -1,0 +1,6 @@
+node_modules/
+**/node_modules/
+FrontEnd/dist/
+Backend/database.sqlite
+.DS_Store
+*.log
