@@ -90,12 +90,12 @@ const AIAssessor = ({ onApplyRate }) => {
   };
 
   return (
-    <div className="glass-card-premium p-4 h-100 position-relative overflow-hidden" style={{ transformStyle: 'preserve-3d' }}>
-      <div className="d-flex justify-content-between align-items-center mb-3" style={{ transform: 'translateZ(30px)' }}>
-        <h5 className="section-title m-0">
-          <i className="fas fa-brain text-success me-2"></i> AI Crop Assessor
-        </h5>
-        <button className="btn btn-sm btn-outline-secondary py-0 px-2" onClick={() => setStatus(status === 'calibrate' ? 'idle' : 'calibrate')} style={{ fontSize: '0.75rem', borderRadius: '10px' }}>
+    <div className="glass-card-premium p-3 h-100 position-relative overflow-hidden d-flex flex-column justify-content-between" style={{ transformStyle: 'preserve-3d' }}>
+      <div className="d-flex justify-content-between align-items-center mb-2 gap-2" style={{ transform: 'translateZ(30px)' }}>
+        <h6 className="fw-bold text-success m-0 text-nowrap" style={{ fontSize: '0.95rem' }}>
+          <i className="fas fa-brain text-success me-1"></i> AI Crop Assessor
+        </h6>
+        <button className="btn btn-sm btn-outline-secondary py-0 px-2 text-nowrap flex-shrink-0" onClick={() => setStatus(status === 'calibrate' ? 'idle' : 'calibrate')} style={{ fontSize: '0.7rem', borderRadius: '8px' }}>
           <i className="fas fa-sliders-h me-1"></i> {status === 'calibrate' ? 'Back' : 'Train AI'}
         </button>
       </div>
@@ -122,10 +122,10 @@ const AIAssessor = ({ onApplyRate }) => {
       )}
 
       {status === 'idle' && (
-        <div className="d-flex flex-column h-100 justify-content-between">
-          <div className="mb-3">
-            <label className="form-label small fw-bold text-muted">Select Crop Type</label>
-            <select className="form-select form-select-sm" value={selectedCrop} onChange={e => setSelectedCrop(e.target.value)}>
+        <div className="d-flex flex-column justify-content-between flex-grow-1">
+          <div className="mb-2">
+            <label className="form-label text-muted fw-bold mb-1" style={{ fontSize: '0.75rem' }}>SELECT CROP TYPE</label>
+            <select className="form-select form-select-sm" value={selectedCrop} onChange={e => setSelectedCrop(e.target.value)} style={{ fontSize: '0.85rem' }}>
               <option value="Gehu">Gehu (Wheat)</option>
               <option value="Dhan">Dhan (Rice)</option>
               <option value="Makka">Makka (Maize)</option>
@@ -135,13 +135,13 @@ const AIAssessor = ({ onApplyRate }) => {
           </div>
 
           <div 
-            className="text-center p-4 border border-2 border-dashed rounded bg-light hover-shadow" 
+            className="text-center p-3 border border-2 border-dashed rounded bg-light hover-shadow mt-2" 
             style={{ borderColor: '#cbd5e1', cursor: 'pointer', transform: 'translateZ(20px)', transition: 'all 0.3s ease' }} 
             onClick={() => fileInputRef.current?.click()}
           >
-            <i className="fas fa-camera fa-3x text-success mb-2 opacity-75"></i>
-            <p className="m-0 fw-bold text-dark">Upload Grain Image</p>
-            <small className="text-muted d-block mt-1">AI inspects moisture, impurities & suggests rate.</small>
+            <i className="fas fa-camera fa-2x text-success mb-2 opacity-75"></i>
+            <p className="m-0 fw-bold text-dark small">Upload Grain Image</p>
+            <small className="text-muted d-block mt-1" style={{ fontSize: '0.75rem' }}>AI inspects moisture & impurities</small>
             <input type="file" ref={fileInputRef} className="d-none" accept="image/*" onChange={handleImageSelect} />
           </div>
         </div>

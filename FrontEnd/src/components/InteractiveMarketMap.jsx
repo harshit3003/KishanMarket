@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import { getInstantCoords } from '../utils/geoUtils';
 
 // Custom Leaflet Markers with distinct colors
 const createCustomIcon = (color) => {
@@ -33,86 +34,22 @@ const MapRecenter = ({ center }) => {
 };
 
 const InteractiveMarketMap = ({ userLocation = 'Karnal, Haryana', userRole = 'seller', items = [], title = 'Live Market Map' }) => {
-  const [mapCenter, setMapCenter] = useState([28.6139, 77.2090]); // Default Delhi
-  const [userCoords, setUserCoords] = useState(null);
-  const [geocodedMarkers, setGeocodedMarkers] = useState([]);
-  const [isGeocoding, setIsGeocoding] = useState(false);
+  const userCoordsInstant = getInstantCoords(userLocation);
+  const [mapCenter, setMapCenter] = useState(userCoordsInstant);
+  const [userCoords, setUserCoords] = useState(userCoordsInstant);
 
-  // 1. Geocode current user's profile location
-  useEffect(() => {
-    if (!userLocation) return;
-    
-    const geocodeUser = async () => {
-      try {
-        const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(userLocation)}&count=1`);
-        const data = await res.json();
-        if (data.results && data.results.length > 0) {
-          const lat = data.results[0].latitude;
-          const lng = data.results[0].longitude;
-          setMapCenter([lat, lng]);
-          setUserCoords([lat, lng]);
-        }
-      } catch (err) {
-        console.error("Geocoding user location failed", err);
-      }
+  // Instant zero-latency marker calculation
+  const geocodedMarkers = (items || []).map((item, idx) => {
+    const locName = item.loc || item.location || item.buyer_location || 'India';
+    const coords = getInstantCoords(locName);
+    return {
+      ...item,
+      coords: coords,
+      lat: coords[0] + ((idx % 3) * 0.005), // Subtle jitter to avoid overlapping pins
+      lng: coords[1] + ((idx % 2) * 0.005),
+      markerType: item.budget || item.buyer_mobile ? 'buyer' : 'seller'
     };
-
-    geocodeUser();
-  }, [userLocation]);
-
-  // 2. Geocode listings & buyer requests dynamically
-  useEffect(() => {
-    const geocodeItems = async () => {
-      if (!items || items.length === 0) {
-        setGeocodedMarkers([]);
-        return;
-      }
-      
-      setIsGeocoding(true);
-      const results = [];
-      const cache = {};
-
-      for (let i = 0; i < Math.min(items.length, 12); i++) {
-        const item = items[i];
-        const locName = item.location || item.loc || userLocation;
-        
-        if (!locName) continue;
-
-        let coords = cache[locName];
-        if (!coords) {
-          try {
-            const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(locName)}&count=1`);
-            const data = await res.json();
-            if (data.results && data.results.length > 0) {
-              // Add slight random offset so multiple items in same city don't overlap completely
-              const offsetLat = (Math.random() - 0.5) * 0.05;
-              const offsetLng = (Math.random() - 0.5) * 0.05;
-              coords = [data.results[0].latitude + offsetLat, data.results[0].longitude + offsetLng];
-              cache[locName] = coords;
-            }
-          } catch (e) {}
-        }
-
-        if (coords) {
-          results.push({
-            id: item.id || i,
-            title: item.name || item.crop || item.crops || 'Market Listing',
-            person: item.seller || item.name || item.buyer_name || 'Trader',
-            rate: item.rate || item.budget || 'Negotiable',
-            weight: item.weight ? `${item.weight}q` : '',
-            location: locName,
-            type: item.crops || item.buyer_mobile ? 'buyer' : 'seller',
-            coords
-          });
-        }
-      }
-
-      setGeocodedMarkers(results);
-      setIsGeocoding(false);
-    };
-
-    geocodeItems();
-  }, [items, userLocation]);
+  });
 
   return (
     <div className="glass-card-premium p-0 overflow-hidden mb-4 rounded-3 shadow-lg" style={{ height: '420px', position: 'relative' }}>
@@ -135,11 +72,7 @@ const InteractiveMarketMap = ({ userLocation = 'Karnal, Haryana', userRole = 'se
         </div>
       </div>
 
-      {isGeocoding && (
-        <div className="position-absolute bottom-0 end-0 m-3 px-3 py-2 bg-dark text-white rounded-pill shadow small opacity-75" style={{ zIndex: 400 }}>
-          <i className="fas fa-spinner fa-spin me-2 text-warning"></i> Geocoding live market pins...
-        </div>
-      )}
+
 
       <MapContainer center={mapCenter} zoom={8} style={{ height: '100%', width: '100%' }}>
         <MapRecenter center={mapCenter} />

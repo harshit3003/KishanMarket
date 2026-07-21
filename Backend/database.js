@@ -59,6 +59,23 @@ async function initDb() {
     );
   `);
 
+  await db.exec(`
+    CREATE TABLE IF NOT EXISTS Bids (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      crop_id INTEGER NOT NULL,
+      crop_name TEXT NOT NULL,
+      buyer_name TEXT NOT NULL,
+      buyer_mobile TEXT NOT NULL,
+      seller_name TEXT NOT NULL,
+      seller_mobile TEXT,
+      asking_rate TEXT NOT NULL,
+      bid_rate TEXT NOT NULL,
+      weight TEXT NOT NULL,
+      status TEXT DEFAULT 'pending',
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
+  `);
+
   // Safely patch existing Crops table if missing new columns (ignores errors if columns already exist)
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN seller_mobile TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN status TEXT DEFAULT 'active';`); } catch(e) {}

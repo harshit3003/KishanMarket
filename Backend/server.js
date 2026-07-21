@@ -263,6 +263,64 @@ app.delete('/api/watchlist/:cropId', async (req, res) => {
     res.status(500).json({ error: 'Database error' });
   }
 });
+
+// Bidding API Endpoints
+app.post('/api/bids', async (req, res) => {
+  try {
+    const { crop_id, crop_name, buyer_name, buyer_mobile, seller_name, seller_mobile, asking_rate, bid_rate, weight } = req.body;
+    const result = await db.run(
+      `INSERT INTO Bids (crop_id, crop_name, buyer_name, buyer_mobile, seller_name, seller_mobile, asking_rate, bid_rate, weight) 
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [crop_id || 0, crop_name || 'Crop', buyer_name || 'Buyer', buyer_mobile || 'guest', seller_name || 'Seller', seller_mobile || 'guest', asking_rate || '0', bid_rate || '0', weight || '0']
+    );
+
+    // Update crop price in database
+    if (crop_id && crop_id !== 0) {
+      await db.run('UPDATE Crops SET rate = ? WHERE id = ?', [bid_rate, crop_id]);
+    }
+
+    const newBid = { id: result.lastID, crop_id: crop_id || 0, crop_name, buyer_name, buyer_mobile, seller_name, seller_mobile, asking_rate, bid_rate, weight, status: 'pending' };
+    
+    // Broadcast real-time updates
+    io.emit('new_bid_placed', newBid);
+    io.emit('crop_price_updated', { crop_id: crop_id || 0, crop_name, new_rate: bid_rate });
+
+    res.json({ message: 'Bid placed successfully', bidId: result.lastID });
+  } catch (err) {
+    console.error("Bid POST error:", err);
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+app.get('/api/bids/seller', async (req, res) => {
+  try {
+    const { mobile, name } = req.query;
+    const bids = await db.all(
+      `SELECT * FROM Bids WHERE (seller_mobile = ? OR seller_name = ?) ORDER BY id DESC`,
+      [mobile || 'guest', name || 'Guest']
+    );
+    res.json(bids);
+  } catch (err) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+app.put('/api/bids/:id/status', async (req, res) => {
+  try {
+    const { status } = req.body;
+    await db.run('UPDATE Bids SET status = ? WHERE id = ?', [status, req.params.id]);
+    
+    const bid = await db.get('SELECT * FROM Bids WHERE id = ?', [req.params.id]);
+    if (bid && status === 'accepted' && bid.crop_id) {
+      await db.run('UPDATE Crops SET rate = ? WHERE id = ?', [bid.bid_rate, bid.crop_id]);
+      io.emit('crop_price_updated', { crop_id: bid.crop_id, crop_name: bid.crop_name, new_rate: bid.bid_rate });
+    }
+
+    res.json({ message: `Bid ${status}` });
+  } catch (err) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
 app.get('/api/buyer-purchases', (req, res) => serveData('buyer-purchases.json', req, res));
 app.get('/api/buyers_data', (req, res) => serveData('buyers_data.json', req, res));
 app.get('/api/market-intel', (req, res) => serveData('market-intel.json', req, res));

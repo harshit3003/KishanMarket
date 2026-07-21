@@ -438,3 +438,77 @@ body {
     box-shadow: 0 0 15px rgba(82, 183, 136, 0.2);
     transform: translateY(-2px);
 }
+
+/* =========================================
+   ENHANCED GLOBAL ANIMATION STYLES
+========================================= */
+
+@keyframes smoothPageFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(24px) scale(0.98);
+        filter: blur(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        filter: blur(0);
+    }
+}
+
+.page-animate,
+main,
+.container,
+.glass-card,
+.glass-card-premium {
+    animation: smoothPageFadeIn 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hover Spring & Glow Physics */
+@keyframes hoverGlowPulse {
+    0%, 100% { box-shadow: 0 10px 30px rgba(76, 175, 80, 0.15), 0 0 0 1px rgba(76, 175, 80, 0.2); }
+    50% { box-shadow: 0 15px 35px rgba(245, 158, 11, 0.25), 0 0 20px rgba(245, 158, 11, 0.3); }
+}
+
+.glass-card-premium:hover,
+.inventory-item:hover,
+.transaction-card:hover {
+    transform: translateY(-6px) scale(1.015) !important;
+    animation: hoverGlowPulse 4s infinite ease-in-out;
+}
+
+/* Tactile Button Micro-Animations */
+.btn, button {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.btn:hover, button:hover {
+    transform: translateY(-3px) scale(1.03);
+    filter: brightness(1.06);
+}
+
+.btn:active, button:active {
+    transform: translateY(1px) scale(0.96) !important;
+}
+
+/* Staggered Grid Card Entrances */
+.row > [class*="col-"]:nth-child(1) { animation-delay: 0.05s; }
+.row > [class*="col-"]:nth-child(2) { animation-delay: 0.12s; }
+.row > [class*="col-"]:nth-child(3) { animation-delay: 0.19s; }
+.row > [class*="col-"]:nth-child(4) { animation-delay: 0.26s; }
+.row > [class*="col-"]:nth-child(5) { animation-delay: 0.33s; }
+.row > [class*="col-"]:nth-child(6) { animation-delay: 0.40s; }
+
+/* Text Shimmer Gradient */
+@keyframes textShimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.shimmer-text, .section-title {
+    background: linear-gradient(90deg, #1b4332 0%, #4caf50 50%, #f59e0b 75%, #1b4332 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textShimmer 6s linear infinite;
+}

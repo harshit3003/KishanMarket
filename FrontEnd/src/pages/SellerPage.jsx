@@ -56,9 +56,82 @@ const SellerPage = () => {
   // Card Hover State
   const [hoveredCardIndex, setHoveredCardIndex] = useState(null);
 
-  // Chat State
+  const [myCropsCount, setMyCropsCount] = useState(0);
   const [activeChat, setActiveChat] = useState(null);
   const [unreadCounts, setUnreadCounts] = useState({});
+  const [receivedBids, setReceivedBids] = useState([]);
+  const [isBidsModalOpen, setIsBidsModalOpen] = useState(false);
+
+  useEffect(() => {
+    const fetchBids = async () => {
+      try {
+        const res = await fetch(`/api/bids/seller?mobile=${currentUser.mobile || 'guest'}&name=${encodeURIComponent(currentUser.name || 'Guest')}`);
+        if (res.ok) setReceivedBids(await res.json());
+      } catch (e) {}
+    };
+    fetchBids();
+  }, [currentUser]);
+
+  useEffect(() => {
+    const handleNewBid = (bid) => {
+      if (bid.seller_mobile === currentUser.mobile || bid.seller_name === currentUser.name) {
+        toast.success(`💰 Nayi Boli! ${bid.buyer_name} ne ₹${bid.bid_rate}/q ki boli lagai!`);
+        setReceivedBids(prev => [bid, ...prev]);
+      }
+    };
+
+    const handlePriceUpdate = (data) => {
+      setCrops(prevCrops => prevCrops.map(crop => {
+        if (crop.id === data.crop_id || (crop.name && crop.name.toLowerCase() === data.crop_name.toLowerCase())) {
+          return { ...crop, rate: data.new_rate };
+        }
+        return crop;
+      }));
+    };
+
+    socket.on('new_bid_placed', handleNewBid);
+    socket.on('crop_price_updated', handlePriceUpdate);
+    return () => {
+      socket.off('new_bid_placed', handleNewBid);
+      socket.off('crop_price_updated', handlePriceUpdate);
+    };
+  }, [currentUser]);
+
+  const handleAcceptBid = async (bid) => {
+    try {
+      await fetch(`/api/bids/${bid.id}/status`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status: 'accepted' })
+      });
+      setReceivedBids(prev => prev.map(b => b.id === bid.id ? { ...b, status: 'accepted' } : b));
+      setSellModalData({
+        open: true,
+        index: 0,
+        buyerIndex: null,
+        distance: 25,
+        buyerName: bid.buyer_name,
+        buyerMobile: bid.buyer_mobile,
+        paymentStatus: 'sold',
+        cropName: bid.crop_name,
+        maxWeight: parseInt(bid.weight),
+        weight: bid.weight,
+        rate: bid.bid_rate
+      });
+    } catch (e) {}
+  };
+
+  const handleRejectBid = async (bidId) => {
+    try {
+      await fetch(`/api/bids/${bidId}/status`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status: 'rejected' })
+      });
+      setReceivedBids(prev => prev.map(b => b.id === bidId ? { ...b, status: 'rejected' } : b));
+      toast.error('Boli asweekar kar di gayi.');
+    } catch (e) {}
+  };
 
   useEffect(() => {
     let currentMobile = 'guest';
@@ -493,6 +566,15 @@ const SellerPage = () => {
           </Link>
 
           <div className="d-flex align-items-center gap-3">
+            <div className="position-relative" style={{ cursor: 'pointer' }} onClick={() => setIsBidsModalOpen(true)} title="Live Bids Received">
+              <i className="fas fa-gavel fa-lg text-warning"></i>
+              {receivedBids.filter(b => b.status === 'pending').length > 0 && (
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger shadow-sm" style={{ fontSize: '0.65rem' }}>
+                  {receivedBids.filter(b => b.status === 'pending').length}
+                </span>
+              )}
+            </div>
+
             <div className="position-relative" style={{ cursor: 'pointer' }} onClick={() => toast(totalUnread > 0 ? `You have ${totalUnread} unread messages!` : "No new chat notifications.", { icon: '🔔' })}>
               <i className="fas fa-bell fa-lg text-white"></i>
               {totalUnread > 0 && (
@@ -547,6 +629,8 @@ const SellerPage = () => {
             </div>
           </div>
         </div>
+
+
         {/* Upload & Inventory Grid */}
         <div className="row g-4 mb-5 mt-3">
           <div className="col-md-6">
@@ -875,6 +959,49 @@ const SellerPage = () => {
                 <button type="submit" className="btn btn-success fw-bold px-4">Confirm Sale</button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Live Received Bids Modal */}
+      {isBidsModalOpen && (
+        <div className="dynamic-modal-overlay active">
+          <div className="dynamic-modal text-start p-4" style={{ maxWidth: '600px', maxHeight: '85vh', overflowY: 'auto' }}>
+            <div className="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
+              <h5 className="fw-bold text-dark m-0"><i className="fas fa-gavel text-warning me-2"></i> Live Received Boli (Bids)</h5>
+              <button className="btn-close" onClick={() => setIsBidsModalOpen(false)}></button>
+            </div>
+            {receivedBids.length === 0 ? (
+              <p className="text-muted text-center py-4">Abhi tak koi boli prapt nahi hui hai.</p>
+            ) : (
+              <div className="row g-3">
+                {receivedBids.map((b, i) => (
+                  <div className="col-12" key={i}>
+                    <div className="p-3 bg-white rounded border border-warning shadow-sm d-flex justify-content-between align-items-center">
+                      <div>
+                        <span className="badge bg-warning text-dark mb-1">New Boli</span>
+                        <h6 className="m-0 fw-bold">{b.crop_name || 'Crop'} ({b.weight || 0}q)</h6>
+                        <small className="text-muted">Buyer: <strong>{b.buyer_name || 'Buyer'}</strong> ({b.buyer_mobile || 'N/A'})</small>
+                        <div className="mt-1">
+                          <span className="text-decoration-line-through text-muted small me-2">Asking: ₹{b.asking_rate || 0}/q</span>
+                          <span className="fw-bold text-success fs-6">Bid: ₹{b.bid_rate || 0}/q</span>
+                        </div>
+                      </div>
+                      <div>
+                        {(!b.status || b.status === 'pending') ? (
+                          <div className="d-flex gap-2">
+                            <button className="btn btn-sm btn-success fw-bold py-1 px-3" onClick={() => { setIsBidsModalOpen(false); handleAcceptBid(b); }}>Accept</button>
+                            <button className="btn btn-sm btn-outline-danger py-1 px-3" onClick={() => handleRejectBid(b.id)}>Reject</button>
+                          </div>
+                        ) : (
+                          <span className={`badge ${b.status === 'accepted' ? 'bg-success' : 'bg-secondary'}`}>{(b.status || 'pending').toUpperCase()}</span>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       )}

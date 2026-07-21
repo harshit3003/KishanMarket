@@ -4,6 +4,7 @@ import Chart from 'chart.js/auto';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import toast from 'react-hot-toast';
+import { getInstantCoords } from '../utils/geoUtils';
 import '../assets/global.css';
 import '../assets/dynamic-features.css';
 import '../assets/buyer-style.css';
@@ -36,6 +37,48 @@ const BuyerPage = () => {
   const [myRequests, setMyRequests] = useState([]);
   const [myPurchases, setMyPurchases] = useState([]);
   const [unreadCounts, setUnreadCounts] = useState({});
+  const [bidModal, setBidModal] = useState({ open: false, crop: null, bidRate: '', weight: '' });
+
+  const openBidModal = (crop) => {
+    setBidModal({ open: true, crop, bidRate: crop.rate, weight: crop.weight });
+  };
+
+  const submitBid = async (e) => {
+    e.preventDefault();
+    if (!bidModal.crop || !bidModal.bidRate) return;
+    try {
+      const res = await fetch('/api/bids', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          crop_id: bidModal.crop.id || 0,
+          crop_name: bidModal.crop.name,
+          buyer_name: currentUser.name || 'Buyer',
+          buyer_mobile: currentUser.mobile || 'guest',
+          seller_name: bidModal.crop.seller || 'Seller',
+          seller_mobile: bidModal.crop.seller_mobile || 'guest',
+          asking_rate: bidModal.crop.rate,
+          bid_rate: bidModal.bidRate,
+          weight: bidModal.weight
+        })
+      });
+      if (res.ok) {
+        toast.success(`₹${bidModal.bidRate}/q ki Boli safaltapoorvak lagai gayi!`);
+
+        // Update displayed crops state immediately on screen
+        setDisplayedCrops(prev => prev.map(c => {
+          if (c.id === bidModal.crop.id || c.name.toLowerCase() === bidModal.crop.name.toLowerCase()) {
+            return { ...c, rate: bidModal.bidRate };
+          }
+          return c;
+        }));
+
+        setBidModal({ open: false, crop: null, bidRate: '', weight: '' });
+      }
+    } catch (err) {
+      toast.error('Boli lagane me samasya aayi.');
+    }
+  };
 
   // Search State
   const [searchLoc, setSearchLoc] = useState('');
@@ -88,6 +131,27 @@ const BuyerPage = () => {
     setActiveChat(crop);
   };
 
+  useEffect(() => {
+    const handlePriceUpdate = (data) => {
+      setAllCrops(prevCrops => prevCrops.map(crop => {
+        if (crop.id === data.crop_id || (crop.name && crop.name.toLowerCase() === data.crop_name.toLowerCase())) {
+          return { ...crop, rate: data.new_rate };
+        }
+        return crop;
+      }));
+
+      setDisplayedCrops(prevCrops => prevCrops.map(crop => {
+        if (crop.id === data.crop_id || (crop.name && crop.name.toLowerCase() === data.crop_name.toLowerCase())) {
+          return { ...crop, rate: data.new_rate };
+        }
+        return crop;
+      }));
+    };
+
+    socket.on('crop_price_updated', handlePriceUpdate);
+    return () => socket.off('crop_price_updated', handlePriceUpdate);
+  }, []);
+
   const handleDeleteRequest = async (reqId) => {
     if (!reqId) return;
     try {
@@ -114,7 +178,7 @@ const BuyerPage = () => {
       buyerLoc = parsed.location || '';
     }
 
-    const filterByLoc = async (cropsList) => {
+    const filterByLoc = (cropsList) => {
       if (!buyerLoc || buyerLoc === '') return cropsList;
       const locParts = buyerLoc.toLowerCase().split(',').map(s => s.trim());
       const filtered = cropsList.filter(crop => {
@@ -124,51 +188,26 @@ const BuyerPage = () => {
       
       if (filtered.length > 0) return filtered;
 
-      // Fallback: If no direct matches, sort crops by shortest geographic distance
-      try {
-        const buyerRes = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(buyerLoc)}&count=1`);
-        const buyerData = await buyerRes.json();
-        if (!buyerData.results || buyerData.results.length === 0) return cropsList;
-        
-        const { latitude: bLat, longitude: bLng } = buyerData.results[0];
-        
-        // Find unique crop locations to minimize API calls
-        const uniqueLocs = [...new Set(cropsList.map(c => c.loc || 'Unknown'))].filter(l => l !== 'Unknown');
-        const coordsMap = {};
-        
-        await Promise.all(uniqueLocs.map(async (locName) => {
-           try {
-             const res = await fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(locName)}&count=1`);
-             const data = await res.json();
-             if (data.results && data.results.length > 0) {
-               coordsMap[locName] = { lat: data.results[0].latitude, lng: data.results[0].longitude };
-             }
-           } catch (err) {}
-        }));
-        
-        const getDistance = (lat1, lon1, lat2, lon2) => {
-          const R = 6371; // km
-          const dLat = (lat2 - lat1) * Math.PI / 180;
-          const dLon = (lon2 - lon1) * Math.PI / 180;
-          const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
-            Math.sin(dLon/2) * Math.sin(dLon/2);
-          return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-        };
-        
-        const sortedCrops = [...cropsList].sort((a, b) => {
-          const aCoords = coordsMap[a.loc];
-          const bCoords = coordsMap[b.loc];
-          if (!aCoords && !bCoords) return 0;
-          if (!aCoords) return 1;
-          if (!bCoords) return -1;
-          return getDistance(bLat, bLng, aCoords.lat, aCoords.lng) - getDistance(bLat, bLng, bCoords.lat, bCoords.lng);
-        });
-        
-        return sortedCrops;
-      } catch (err) {
-        return cropsList;
-      }
+      // Fallback: If no direct matches, sort crops by shortest geographic distance using instant coords
+      const [bLat, bLng] = getInstantCoords(buyerLoc);
+      
+      const getDistance = (lat1, lon1, lat2, lon2) => {
+        const R = 6371; // km
+        const dLat = (lat2 - lat1) * Math.PI / 180;
+        const dLon = (lon2 - lon1) * Math.PI / 180;
+        const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+          Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+          Math.sin(dLon/2) * Math.sin(dLon/2);
+        return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+      };
+      
+      const sortedCrops = [...cropsList].sort((a, b) => {
+        const [aLat, aLng] = getInstantCoords(a.loc || 'India');
+        const [bCoordsLat, bCoordsLng] = getInstantCoords(b.loc || 'India');
+        return getDistance(bLat, bLng, aLat, aLng) - getDistance(bLat, bLng, bCoordsLat, bCoordsLng);
+      });
+      
+      return sortedCrops;
     };
 
     const fetchCrops = async () => {
@@ -176,27 +215,28 @@ const BuyerPage = () => {
       const cachedCrops = localStorage.getItem('cache_buyerCrops');
       if (cachedCrops) {
         const parsed = JSON.parse(cachedCrops);
-        setAllCrops(parsed);
-        const filteredCached = await filterByLoc(parsed);
-        setDisplayedCrops(filteredCached.slice(0, 5));
+        if (parsed && parsed.length > 0) {
+          setAllCrops(parsed);
+          setDisplayedCrops(filterByLoc(parsed));
+        }
       }
 
       try {
         const res = await fetch('/api/crops?limit=50');
         if (res.ok) {
           const apiCrops = await res.json();
-          setAllCrops(apiCrops);
-          const filteredApi = await filterByLoc(apiCrops);
-          setDisplayedCrops(filteredApi.slice(0, 5));
-          localStorage.setItem('cache_buyerCrops', JSON.stringify(apiCrops));
+          const finalCrops = (apiCrops && apiCrops.length > 0) ? apiCrops : defaultCrops;
+          setAllCrops(finalCrops);
+          setDisplayedCrops(filterByLoc(finalCrops));
+          localStorage.setItem('cache_buyerCrops', JSON.stringify(finalCrops));
+        } else {
+          setAllCrops(defaultCrops);
+          setDisplayedCrops(filterByLoc(defaultCrops));
         }
       } catch (err) {
         console.error("Failed to fetch crops", err);
-        if (!cachedCrops) {
-          setAllCrops(defaultCrops);
-          const filteredDefault = await filterByLoc(defaultCrops);
-          setDisplayedCrops(filteredDefault.slice(0, 5));
-        }
+        setAllCrops(defaultCrops);
+        setDisplayedCrops(filterByLoc(defaultCrops));
       }
     };
     fetchCrops();
@@ -531,12 +571,15 @@ const BuyerPage = () => {
                     <p className="text-muted small mb-1">Seller: <strong>{crop.seller}</strong></p>
                     <p className="m-0">Vazan: {crop.weight}q</p>
                     <p className="fs-5 fw-bold text-success mt-2">Rate: ₹{crop.rate}/q</p>
-                    <div className="d-flex justify-content-between mt-3">
+                    <div className="d-flex justify-content-between align-items-center mt-3 gap-1">
                       <button className={`btn btn-sm ${isWatchlisted ? 'btn-danger' : 'btn-outline-danger'}`} onClick={() => toggleWatchlist(crop)}>
-                        <i className="fas fa-heart"></i> {isWatchlisted ? 'Saved' : 'Watch'}
+                        <i className="fas fa-heart"></i>
                       </button>
-                      <button className="btn btn-sm btn-success px-3 position-relative" onClick={() => openChatForCrop(crop)}>
-                        <i className="fas fa-comments me-1"></i> Contact
+                      <button className="btn btn-sm btn-warning text-dark fw-bold px-2" onClick={() => openBidModal(crop)} title="Place Custom Bid">
+                        <i className="fas fa-gavel me-1"></i> Boli Lagayein
+                      </button>
+                      <button className="btn btn-sm btn-success px-2 position-relative" onClick={() => openChatForCrop(crop)}>
+                        <i className="fas fa-comments me-1"></i> Chat
                         {unreadCount > 0 && (
                           <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger shadow-sm" style={{ fontSize: '0.65rem' }}>
                             {unreadCount}
@@ -653,6 +696,35 @@ const BuyerPage = () => {
       </div>
 
       <NegotiationChat chatData={activeChat} onClose={() => setActiveChat(null)} />
+      {/* Real-time Bidding Modal */}
+      {bidModal.open && bidModal.crop && (
+        <div className="dynamic-modal-overlay active">
+          <div className="dynamic-modal text-start p-4" style={{ maxWidth: '420px' }}>
+            <div className="d-flex justify-content-between align-items-center mb-3">
+              <h5 className="fw-bold text-dark m-0"><i className="fas fa-gavel text-warning me-2"></i> Boli Lagayein (Place Bid)</h5>
+              <button className="btn-close" onClick={() => setBidModal({ open: false, crop: null, bidRate: '', weight: '' })}></button>
+            </div>
+            <div className="p-2 bg-light rounded mb-3 border">
+              <p className="m-0 small"><strong>Fasal:</strong> {bidModal.crop.name} ({bidModal.crop.weight}q)</p>
+              <p className="m-0 small text-muted">Asking Rate: ₹{bidModal.crop.rate}/q • Seller: {bidModal.crop.seller}</p>
+            </div>
+            <form onSubmit={submitBid}>
+              <div className="mb-3">
+                <label className="form-label small fw-bold">Aapki Boli Rate (₹/q)</label>
+                <input type="number" className="form-control custom-input" placeholder="e.g. 2500" value={bidModal.bidRate} onChange={e => setBidModal({...bidModal, bidRate: e.target.value})} required />
+              </div>
+              <div className="mb-3">
+                <label className="form-label small fw-bold">Quantity (Quintals)</label>
+                <input type="number" className="form-control custom-input" value={bidModal.weight} onChange={e => setBidModal({...bidModal, weight: e.target.value})} required />
+              </div>
+              <div className="d-flex gap-2">
+                <button type="button" className="btn btn-secondary w-50" onClick={() => setBidModal({ open: false, crop: null, bidRate: '', weight: '' })}>Cancel</button>
+                <button type="submit" className="btn btn-success w-50 fw-bold">Submit Boli</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 };

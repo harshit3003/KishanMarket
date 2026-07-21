@@ -9,14 +9,12 @@ const BackgroundLayer = () => {
     let animationFrameId;
     
     const handleMouseMove = (e) => {
-      // Throttle updates using requestAnimationFrame for maximum performance
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
       
       animationFrameId = requestAnimationFrame(() => {
         const x = (e.clientX / window.innerWidth - 0.5) * 20; 
         const y = (e.clientY / window.innerHeight - 0.5) * 20;
         
-        // Directly mutate DOM to avoid React re-renders
         if (layerRef.current) {
           layerRef.current.style.transform = `translate(${-x}px, ${-y}px)`;
         }
@@ -53,7 +51,17 @@ const BackgroundLayer = () => {
         ))}
       </div>
 
-      {/* Existing Sun Rings */}
+      {/* Floating Crop Particles */}
+      <div className="floating-crops">
+        <div className="floating-crop-item">🌾</div>
+        <div className="floating-crop-item">🌱</div>
+        <div className="floating-crop-item">🌽</div>
+        <div className="floating-crop-item">✨</div>
+        <div className="floating-crop-item">🌻</div>
+        <div className="floating-crop-item">🥬</div>
+      </div>
+
+      {/* Sun Rings */}
       <div className="sun-ring ring-1"></div>
       <div className="sun-ring ring-2"></div>
       <div className="sun-ring ring-3"></div>

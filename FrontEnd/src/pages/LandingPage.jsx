@@ -46,7 +46,7 @@ const LandingPage = () => {
             <Link to="/register" className="btn btn-success btn-lg rounded-pill px-5 fw-bold shadow-lg btn-premium-hover">
               Get Started Now <i className="fas fa-arrow-right ms-2"></i>
             </Link>
-            <Link to="/login" className="btn btn-outline-success btn-lg rounded-pill px-5 fw-bold bg-white btn-premium-hover">
+            <Link to="/login" className="btn btn-lg rounded-pill px-4 fw-bold text-white shadow-lg btn-premium-hover" style={{ backgroundColor: '#1b4332', border: '2px solid #081c15' }}>
               I already have an account
             </Link>
           </div>
