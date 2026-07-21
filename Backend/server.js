@@ -312,11 +312,13 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
-// SPA Fallback for React Router
+// SPA Fallback for React Router (Express 5 Compatible)
 if (fs.existsSync(distDir)) {
-  app.get('*', (req, res, next) => {
-    if (req.path.startsWith('/api') || req.path.startsWith('/socket.io')) return next();
-    res.sendFile(path.join(distDir, 'index.html'));
+  app.use((req, res, next) => {
+    if (req.method === 'GET' && !req.path.startsWith('/api') && !req.path.startsWith('/socket.io')) {
+      return res.sendFile(path.join(distDir, 'index.html'));
+    }
+    next();
   });
 }
 
