@@ -6,10 +6,15 @@ import '../assets/dynamic-features.css';
 const LandingPage = () => {
   const navigate = useNavigate();
 
+  const [activeUser, setActiveUser] = React.useState(null);
+
   React.useEffect(() => {
-    // Automatically clear the session when visiting the main landing page
-    localStorage.removeItem('currentUser');
-    localStorage.removeItem('displayUserName');
+    const userStr = localStorage.getItem('currentUser');
+    if (userStr) {
+      try {
+        setActiveUser(JSON.parse(userStr));
+      } catch (e) {}
+    }
   }, []);
 
   return (
@@ -21,13 +26,21 @@ const LandingPage = () => {
           <Link className="navbar-brand fw-bold text-decoration-none" to="/" style={{ color: 'white' }}>
             <i className="fas fa-seedling me-2"></i>Kishan<span style={{ color: '#f59e0b' }}>Market</span>
           </Link>
-          <div className="d-flex gap-3">
-            <Link to="/login" className="btn btn-outline-light rounded-pill px-4 fw-bold">
-              Login
-            </Link>
-            <Link to="/register" className="btn btn-success rounded-pill px-4 fw-bold shadow">
-              Sign Up
-            </Link>
+          <div className="d-flex gap-3 align-items-center">
+            {activeUser ? (
+              <Link to={activeUser.role === 'seller' ? '/seller' : '/buyer'} className="btn btn-warning rounded-pill px-4 fw-bold shadow">
+                Dashboard ({activeUser.name}) <i className="fas fa-arrow-right ms-1"></i>
+              </Link>
+            ) : (
+              <>
+                <Link to="/login" className="btn btn-outline-light rounded-pill px-4 fw-bold">
+                  Login
+                </Link>
+                <Link to="/register" className="btn btn-success rounded-pill px-4 fw-bold shadow">
+                  Sign Up
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </nav>
