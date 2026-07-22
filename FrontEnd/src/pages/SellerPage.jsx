@@ -174,22 +174,34 @@ const SellerPage = () => {
   useEffect(() => {
     let currentMobile = 'guest';
     let initLoc = 'Karnal, Haryana';
+    let currentName = 'Guest';
+
     const userStr = localStorage.getItem('currentUser');
     if (userStr) {
-      const parsedUser = JSON.parse(userStr);
-      setCurrentUser(parsedUser);
-      currentMobile = parsedUser.mobile || 'guest';
-      if (parsedUser.location && parsedUser.location.trim() !== '') {
-        initLoc = parsedUser.location;
-      }
+      try {
+        const parsedUser = JSON.parse(userStr);
+        setCurrentUser(parsedUser);
+        currentMobile = parsedUser.mobile || 'guest';
+        currentName = parsedUser.name || 'Guest';
+        if (parsedUser.location && parsedUser.location.trim() !== '') {
+          initLoc = parsedUser.location;
+        }
+      } catch (e) {}
     }
     setWeatherLocation(initLoc);
 
     const fetchInitialData = async (mobile, loc, name) => {
       try {
-        const cropsRes = await fetch(`/api/crops/my?mobile=${mobile}&name=${encodeURIComponent(name || 'Guest')}`);
-        if (cropsRes.ok) {
-          setCrops(await cropsRes.json());
+        if (mobile && mobile !== 'guest') {
+          const cropsRes = await fetch(`/api/crops/my?mobile=${mobile}&name=${encodeURIComponent(name)}`);
+          if (cropsRes.ok) {
+            setCrops(await cropsRes.json());
+          }
+
+          const bidsRes = await fetch(`/api/bids/seller?mobile=${mobile}`);
+          if (bidsRes.ok) {
+            setReceivedBids(await bidsRes.json());
+          }
         }
 
         const reqsRes = await fetch('/api/buyer-requests');
@@ -221,7 +233,7 @@ const SellerPage = () => {
       } catch (err) {}
     };
 
-    fetchInitialData(currentMobile, initLoc, currentUser.name);
+    fetchInitialData(currentMobile, initLoc, currentName);
 
     // Fetch actual live weather for logged-in seller location
     const [lat, lng] = getInstantCoords(initLoc);
