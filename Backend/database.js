@@ -2,6 +2,33 @@ const sqlite3 = require('sqlite3');
 const { open } = require('sqlite');
 const path = require('path');
 
+const fs = require('fs');
+
+const dataStoreDir = path.join(__dirname, 'server_storage');
+if (!fs.existsSync(dataStoreDir)) {
+  fs.mkdirSync(dataStoreDir, { recursive: true });
+}
+
+function saveTableToFile(filename, data) {
+  try {
+    fs.writeFileSync(path.join(dataStoreDir, filename), JSON.stringify(data, null, 2));
+  } catch (e) {
+    console.error(`Failed to save ${filename}:`, e);
+  }
+}
+
+function loadTableFromFile(filename) {
+  try {
+    const filePath = path.join(dataStoreDir, filename);
+    if (fs.existsSync(filePath)) {
+      return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    }
+  } catch (e) {
+    console.error(`Failed to load ${filename}:`, e);
+  }
+  return [];
+}
+
 // Initialize database connection
 async function getDbConnection() {
   return open({
@@ -87,11 +114,50 @@ async function initDb() {
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN buyer_mobile TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE BuyerRequests ADD COLUMN buyer_name TEXT;`); } catch(e) {}
 
+  // Hydrate SQLite database from server_storage files on startup
+  try {
+    const savedUsers = loadTableFromFile('users.json');
+    for (const u of savedUsers) {
+      await db.run(
+        'INSERT OR IGNORE INTO Users (name, mobile, location, role, password) VALUES (?, ?, ?, ?, ?)',
+        [u.name, u.mobile, u.location || '', u.role, u.password]
+      );
+    }
+
+    const savedCrops = loadTableFromFile('crops.json');
+    for (const c of savedCrops) {
+      await db.run(
+        'INSERT OR IGNORE INTO Crops (id, name, weight, rate, seller, loc, seller_mobile, status, soldDate, buyerName, distance, transportCost, netProfit, buyer_mobile) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        [c.id, c.name, c.weight, c.rate, c.seller, c.loc, c.seller_mobile, c.status || 'active', c.soldDate || null, c.buyerName || null, c.distance || null, c.transportCost || null, c.netProfit || null, c.buyer_mobile || null]
+      );
+    }
+
+    const savedRequests = loadTableFromFile('buyer_requests.json');
+    for (const r of savedRequests) {
+      await db.run(
+        'INSERT OR IGNORE INTO BuyerRequests (id, crop, budget, status, buyer_mobile, buyer_location, buyer_name) VALUES (?, ?, ?, ?, ?, ?, ?)',
+        [r.id, r.crop, r.budget, r.status || 'Pending', r.buyer_mobile, r.buyer_location, r.buyer_name]
+      );
+    }
+
+    const savedBids = loadTableFromFile('bids.json');
+    for (const b of savedBids) {
+      await db.run(
+        'INSERT OR IGNORE INTO Bids (id, crop_id, crop_name, buyer_name, buyer_mobile, seller_name, seller_mobile, asking_rate, bid_rate, weight, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        [b.id, b.crop_id, b.crop_name, b.buyer_name, b.buyer_mobile, b.seller_name, b.seller_mobile, b.asking_rate, b.bid_rate, b.weight, b.status || 'pending']
+      );
+    }
+  } catch (err) {
+    console.error("Hydration warning:", err);
+  }
+
   console.log('Database tables verified/created successfully.');
   return db;
 }
 
 module.exports = {
   getDbConnection,
-  initDb
+  initDb,
+  saveTableToFile,
+  loadTableFromFile
 };

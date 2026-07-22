@@ -98,12 +98,7 @@ const RegistrationPage = () => {
         return;
       }
 
-      // Save to device persistent registered_users storage
-      const localUsers = JSON.parse(localStorage.getItem('registered_users') || '[]');
-      const updatedUsers = [...localUsers.filter(u => u.mobile !== mobile), { name, mobile, role, location, password }];
-      localStorage.setItem('registered_users', JSON.stringify(updatedUsers));
-
-      // Login logic: Keep active session in local storage
+      // Active session storage for current logged-in user
       localStorage.setItem('displayUserName', name);
       localStorage.setItem('currentUser', JSON.stringify({ name, mobile, role, location }));
 

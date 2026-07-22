@@ -33,63 +33,24 @@ const LoginPage = () => {
             
             const data = await response.json();
             
-            if (response.ok && data.user) {
-                const foundUser = data.user;
-                localStorage.setItem('displayUserName', foundUser.name);
-                localStorage.setItem('currentUser', JSON.stringify(foundUser));
-                
-                // Keep local device accounts list updated
-                const localUsers = JSON.parse(localStorage.getItem('registered_users') || '[]');
-                const updatedUsers = [...localUsers.filter(u => u.mobile !== foundUser.mobile), foundUser];
-                localStorage.setItem('registered_users', JSON.stringify(updatedUsers));
-
-                toast.success(`Welcome back, ${foundUser.name}!`);
-                if (foundUser.role === "seller") {
-                    navigate('/seller');
-                } else {
-                    navigate('/buyer');
-                }
+            if (!response.ok) {
+                toast.error(data.error || "Invalid credentials. Please check your phone and password.");
                 return;
             }
-        } catch (err) {
-            console.log("Server login error, attempting local device account match...");
-        }
 
-        // Fallback: Check local device registered accounts (handles server restarts & offline tab logins)
-        const localUsers = JSON.parse(localStorage.getItem('registered_users') || '[]');
-        const matchedLocalUser = localUsers.find(u => u.mobile === inputPhone && u.password === inputPassword);
+            const foundUser = data.user;
+            localStorage.setItem('displayUserName', foundUser.name);
+            localStorage.setItem('currentUser', JSON.stringify(foundUser));
 
-        if (matchedLocalUser) {
-            const userObj = {
-                name: matchedLocalUser.name,
-                mobile: matchedLocalUser.mobile,
-                role: matchedLocalUser.role,
-                location: matchedLocalUser.location || ''
-            };
-            localStorage.setItem('displayUserName', userObj.name);
-            localStorage.setItem('currentUser', JSON.stringify(userObj));
-            
-            // Re-sync user back to backend database in background
-            fetch('/api/register', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: matchedLocalUser.name,
-                    mobile: matchedLocalUser.mobile,
-                    location: matchedLocalUser.location || '',
-                    role: matchedLocalUser.role,
-                    password: matchedLocalUser.password
-                })
-            }).catch(() => {});
-
-            toast.success(`Welcome back, ${userObj.name}!`);
-            if (userObj.role === "seller") {
+            toast.success(`Welcome back, ${foundUser.name}!`);
+            if (foundUser.role === "seller") {
                 navigate('/seller');
             } else {
                 navigate('/buyer');
             }
-        } else {
-            toast.error("Invalid mobile number or password. Please try again or create an account.");
+        } catch (err) {
+            toast.error("Server connection error. Please try again.");
+            console.error(err);
         }
     };
 

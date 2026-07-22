@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { Server } = require('socket.io');
 const http = require('http');
-const { getDbConnection, initDb } = require('./database');
+const { getDbConnection, initDb, saveTableToFile } = require('./database');
 
 const app = express();
 const server = http.createServer(app);
@@ -79,7 +79,6 @@ const serveData = (filename, req, res) => {
   }
 };
 
-// Database connection and initialization
 let db;
 initDb().then(connection => {
   db = connection;
@@ -87,6 +86,39 @@ initDb().then(connection => {
 }).catch(err => {
   console.error('Database connection failed', err);
 });
+
+// Server-side file backup sync helpers
+async function syncUsers() {
+  if (!db) return;
+  try {
+    const users = await db.all('SELECT name, mobile, location, role, password FROM Users');
+    saveTableToFile('users.json', users);
+  } catch (e) {}
+}
+
+async function syncCrops() {
+  if (!db) return;
+  try {
+    const crops = await db.all('SELECT * FROM Crops');
+    saveTableToFile('crops.json', crops);
+  } catch (e) {}
+}
+
+async function syncRequests() {
+  if (!db) return;
+  try {
+    const reqs = await db.all('SELECT * FROM BuyerRequests');
+    saveTableToFile('buyer_requests.json', reqs);
+  } catch (e) {}
+}
+
+async function syncBids() {
+  if (!db) return;
+  try {
+    const bids = await db.all('SELECT * FROM Bids');
+    saveTableToFile('bids.json', bids);
+  } catch (e) {}
+}
 
 // --- Endpoints ---
 
@@ -124,6 +156,7 @@ app.post('/api/crops', async (req, res) => {
       'INSERT INTO Crops (name, weight, rate, seller, loc, seller_mobile) VALUES (?, ?, ?, ?, ?, ?)',
       [name, weight, rate, seller, loc, seller_mobile]
     );
+    await syncCrops();
     res.status(201).json({ message: 'Crop added', id: result.lastID });
   } catch (err) {
     res.status(500).json({ error: 'Database error' });
@@ -142,6 +175,7 @@ app.put('/api/crops/:id', async (req, res) => {
     } else if (weight && rate) {
       await db.run('UPDATE Crops SET weight = ?, rate = ? WHERE id = ?', [weight, rate, req.params.id]);
     }
+    await syncCrops();
     res.json({ message: 'Crop updated' });
   } catch (err) {
     res.status(500).json({ error: 'Database error' });
@@ -151,6 +185,7 @@ app.put('/api/crops/:id', async (req, res) => {
 app.delete('/api/crops/:id', async (req, res) => {
   try {
     await db.run('DELETE FROM Crops WHERE id = ?', [req.params.id]);
+    await syncCrops();
     res.json({ message: 'Crop deleted' });
   } catch (err) {
     res.status(500).json({ error: 'Database error' });
@@ -164,6 +199,7 @@ app.post('/api/buyer-requests', async (req, res) => {
       'INSERT INTO BuyerRequests (crop, budget, buyer_mobile, buyer_location, buyer_name) VALUES (?, ?, ?, ?, ?)',
       [crop, budget, buyer_mobile, buyer_location, buyer_name || 'Buyer']
     );
+    await syncRequests();
     res.status(201).json({ message: 'Request added', id: result.lastID });
   } catch (err) {
     res.status(500).json({ error: 'Database error' });
@@ -188,6 +224,7 @@ app.get('/api/buyer-requests', async (req, res) => {
 app.delete('/api/buyer-requests/:id', async (req, res) => {
   try {
     await db.run('DELETE FROM BuyerRequests WHERE id = ?', [req.params.id]);
+    await syncRequests();
     res.json({ message: 'Request deleted' });
   } catch (err) {
     res.status(500).json({ error: 'Database error' });
@@ -344,6 +381,8 @@ app.post('/api/register', async (req, res) => {
       'INSERT INTO Users (name, mobile, location, role, password) VALUES (?, ?, ?, ?, ?)',
       [name, mobile, location, role, password]
     );
+
+    await syncUsers();
 
     res.status(201).json({ message: 'User registered successfully', user: { name, mobile, role, location } });
   } catch (e) {
