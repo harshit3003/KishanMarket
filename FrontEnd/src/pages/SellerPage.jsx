@@ -148,9 +148,9 @@ const SellerPage = () => {
     }
     setWeatherLocation(initLoc);
 
-    const fetchInitialData = async (mobile, loc) => {
+    const fetchInitialData = async (mobile, loc, name) => {
       try {
-        const cropsRes = await fetch(`/api/crops/my?mobile=${mobile}`);
+        const cropsRes = await fetch(`/api/crops/my?mobile=${mobile}&name=${encodeURIComponent(name || 'Guest')}`);
         if (cropsRes.ok) {
           setCrops(await cropsRes.json());
         }
@@ -184,7 +184,7 @@ const SellerPage = () => {
       } catch (err) {}
     };
 
-    fetchInitialData(currentMobile, initLoc);
+    fetchInitialData(currentMobile, initLoc, currentUser.name);
 
     // Fetch actual live weather for logged-in seller location
     const [lat, lng] = getInstantCoords(initLoc);
@@ -461,7 +461,7 @@ const SellerPage = () => {
 
       if (res.ok) {
         // Refresh local state from DB
-        const getRes = await fetch(`/api/crops/my?mobile=${currentUser.mobile || 'guest'}`);
+        const getRes = await fetch(`/api/crops/my?mobile=${currentUser.mobile || 'guest'}&name=${encodeURIComponent(currentUser.name || 'Guest')}`);
         setCrops(await getRes.json());
         
         setCropName('');

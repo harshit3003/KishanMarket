@@ -142,7 +142,11 @@ app.get('/api/crops', async (req, res) => {
 app.get('/api/crops/my', async (req, res) => {
   try {
     const mobile = req.query.mobile;
-    const crops = await db.all('SELECT * FROM Crops WHERE seller_mobile = ? ORDER BY id DESC', [mobile]);
+    const name = req.query.name;
+    const crops = await db.all(
+      'SELECT * FROM Crops WHERE (seller_mobile = ? OR seller = ?) ORDER BY id DESC',
+      [mobile || '', name || '']
+    );
     res.json(crops);
   } catch (err) {
     res.status(500).json({ error: 'Database error' });
@@ -209,9 +213,13 @@ app.post('/api/buyer-requests', async (req, res) => {
 app.get('/api/buyer-requests', async (req, res) => {
   try {
     const mobile = req.query.mobile;
+    const name = req.query.name;
     let requests;
-    if (mobile) {
-      requests = await db.all('SELECT * FROM BuyerRequests WHERE buyer_mobile = ? ORDER BY id DESC', [mobile]);
+    if (mobile || name) {
+      requests = await db.all(
+        'SELECT * FROM BuyerRequests WHERE (buyer_mobile = ? OR buyer_name = ?) ORDER BY id DESC',
+        [mobile || '', name || '']
+      );
     } else {
       requests = await db.all('SELECT * FROM BuyerRequests ORDER BY id DESC');
     }
