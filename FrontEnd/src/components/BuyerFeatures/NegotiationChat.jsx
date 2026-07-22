@@ -104,7 +104,9 @@ const NegotiationChat = ({ chatData, onClose }) => {
             <i className="fas fa-user"></i>
           </div>
           <div>
-            <h6 className="m-0 fw-bold">{chatData.seller}</h6>
+            <h6 className="m-0 fw-bold">
+              {myRole === 'seller' ? (chatData.buyer || chatData.buyerName || 'Buyer') : (chatData.seller || 'Seller')}
+            </h6>
             <small style={{ fontSize: '11px', opacity: 0.8 }}>Selling: {chatData.name}</small>
           </div>
         </div>

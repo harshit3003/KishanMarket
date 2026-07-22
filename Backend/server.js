@@ -216,6 +216,25 @@ app.delete('/api/crops/:id', async (req, res) => {
   }
 });
 
+app.get('/api/chat/rooms', async (req, res) => {
+  try {
+    const { seller_key, crop_key } = req.query;
+    if (!seller_key || !crop_key) return res.json([]);
+    
+    const sSan = seller_key.toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+    const cSan = crop_key.toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+    const pattern = `room_${sSan}_%_${cSan}`;
+
+    const rows = await db.all(
+      'SELECT DISTINCT room_id FROM Messages WHERE room_id LIKE ? ORDER BY id DESC',
+      [pattern]
+    );
+    res.json(rows.map(r => r.room_id));
+  } catch (err) {
+    res.status(500).json({ error: 'Database error fetching rooms' });
+  }
+});
+
 app.post('/api/buyer-requests', async (req, res) => {
   try {
     const { crop, budget, buyer_mobile, buyer_location, buyer_name } = req.body;
