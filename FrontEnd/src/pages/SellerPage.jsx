@@ -255,10 +255,22 @@ const SellerPage = () => {
   }, []);
 
   const openChatForCrop = (crop) => {
-    const sellerName = currentUser.name || crop.seller;
-    const roomId = `room_${sellerName}_${crop.name}`.toLowerCase().replace(/\s+/g, '_');
+    const sellerKey = (currentUser.mobile || currentUser.name || 'seller').toString().toLowerCase();
+    const buyerKey = (crop.buyer_mobile || crop.buyerName || crop.buyer || 'buyer').toString().toLowerCase();
+    const cropKey = (crop.name || 'crop').toString().toLowerCase();
+    const roomId = `room_${sellerKey}_${buyerKey}_${cropKey}`.replace(/\s+/g, '_');
+
     setUnreadCounts(prev => ({ ...prev, [roomId]: 0 }));
-    setActiveChat({ name: crop.name, weight: crop.weight, rate: crop.rate, seller: sellerName });
+    setActiveChat({
+      name: crop.name,
+      weight: crop.weight,
+      rate: crop.rate,
+      seller: currentUser.name,
+      seller_mobile: currentUser.mobile,
+      buyer: crop.buyerName || crop.buyer || 'Buyer',
+      buyerMobile: crop.buyer_mobile,
+      roomId
+    });
   };
 
   const totalUnread = Object.values(unreadCounts).reduce((a, b) => a + b, 0);
@@ -832,7 +844,23 @@ const SellerPage = () => {
                     <div className="d-flex gap-2 w-100 mt-auto">
                       <button 
                         className="btn fw-bold w-50 btn-premium-hover" 
-                        onClick={() => setActiveChat({ name: buyer.crops, weight: "Bulk", rate: buyer.rate, seller: buyer.name })}
+                        onClick={() => {
+                          const sellerKey = (currentUser.mobile || currentUser.name || 'seller').toString().toLowerCase();
+                          const buyerKey = (buyer.mobile || buyer.name || 'buyer').toString().toLowerCase();
+                          const cropKey = (buyer.crops || 'crop').toString().toLowerCase();
+                          const roomId = `room_${sellerKey}_${buyerKey}_${cropKey}`.replace(/\s+/g, '_');
+                          setUnreadCounts(prev => ({ ...prev, [roomId]: 0 }));
+                          setActiveChat({
+                            name: buyer.crops,
+                            weight: "Bulk",
+                            rate: buyer.rate,
+                            seller: currentUser.name,
+                            seller_mobile: currentUser.mobile,
+                            buyer: buyer.name,
+                            buyerMobile: buyer.mobile,
+                            roomId
+                          });
+                        }}
                         style={{ 
                           background: isHovered ? 'transparent' : 'transparent', 
                           border: isHovered ? '2px solid #f8f9fa' : '2px solid var(--primary)',

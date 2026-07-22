@@ -9,10 +9,18 @@ const NegotiationChat = ({ chatData, onClose }) => {
   const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
   const myRole = currentUser.role || 'buyer';
 
-  // Room ID based on unique seller & crop combo
-  const roomId = chatData 
-    ? (chatData.roomId || `room_${chatData.seller || 'seller'}_${chatData.name || 'crop'}`).toLowerCase().replace(/\s+/g, '_') 
-    : null;
+  const getRoomId = () => {
+    if (!chatData) return null;
+    if (chatData.roomId) return chatData.roomId.toLowerCase().replace(/\s+/g, '_');
+    
+    const sellerKey = (chatData.seller_mobile || chatData.seller || 'seller').toString().toLowerCase();
+    const buyerKey = (chatData.buyerMobile || chatData.buyer_mobile || chatData.buyer || currentUser.mobile || 'buyer').toString().toLowerCase();
+    const cropKey = (chatData.name || chatData.crop || 'crop').toString().toLowerCase();
+
+    return `room_${sellerKey}_${buyerKey}_${cropKey}`.replace(/\s+/g, '_');
+  };
+
+  const roomId = getRoomId();
 
   useEffect(() => {
     if (chatData && roomId) {

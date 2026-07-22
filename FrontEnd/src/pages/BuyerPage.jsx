@@ -136,9 +136,19 @@ const BuyerPage = () => {
   }, [currentUser]);
 
   const openChatForCrop = (crop) => {
-    const roomId = `room_${crop.seller}_${crop.name}`.toLowerCase().replace(/\s+/g, '_');
+    const sellerKey = (crop.seller_mobile || crop.seller || 'seller').toString().toLowerCase();
+    const buyerKey = (currentUser.mobile || currentUser.name || 'buyer').toString().toLowerCase();
+    const cropKey = (crop.name || crop.crop || 'crop').toString().toLowerCase();
+
+    const roomId = `room_${sellerKey}_${buyerKey}_${cropKey}`.replace(/\s+/g, '_');
+
     setUnreadCounts(prev => ({ ...prev, [roomId]: 0 }));
-    setActiveChat(crop);
+    setActiveChat({
+      ...crop,
+      buyerMobile: currentUser.mobile,
+      buyerName: currentUser.name,
+      roomId
+    });
   };
 
   useEffect(() => {
