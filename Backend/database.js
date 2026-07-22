@@ -101,6 +101,15 @@ async function initDb() {
       status TEXT DEFAULT 'pending',
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );
+
+    CREATE TABLE IF NOT EXISTS Messages (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      room_id TEXT NOT NULL,
+      sender TEXT NOT NULL,
+      text TEXT NOT NULL,
+      time TEXT NOT NULL,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
   `);
 
   // Safely patch existing Crops table if missing new columns (ignores errors if columns already exist)
@@ -145,6 +154,14 @@ async function initDb() {
       await db.run(
         'INSERT OR IGNORE INTO Bids (id, crop_id, crop_name, buyer_name, buyer_mobile, seller_name, seller_mobile, asking_rate, bid_rate, weight, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
         [b.id, b.crop_id, b.crop_name, b.buyer_name, b.buyer_mobile, b.seller_name, b.seller_mobile, b.asking_rate, b.bid_rate, b.weight, b.status || 'pending']
+      );
+    }
+
+    const savedMessages = loadTableFromFile('messages.json');
+    for (const m of savedMessages) {
+      await db.run(
+        'INSERT OR IGNORE INTO Messages (id, room_id, sender, text, time) VALUES (?, ?, ?, ?, ?)',
+        [m.id, m.room_id, m.sender, m.text, m.time]
       );
     }
   } catch (err) {

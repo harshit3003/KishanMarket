@@ -121,9 +121,19 @@ const BuyerPage = () => {
       }
     };
 
+    const handleCounterBid = (bid) => {
+      if (bid.buyer_mobile === currentUser.mobile || bid.buyer_name === currentUser.name) {
+        toast.success(`🤝 Seller ne Counter-Offer ₹${bid.bid_rate}/q ka bhej diya hai!`, { duration: 5000 });
+      }
+    };
+
     socket.on('receive_message', handleReceive);
-    return () => socket.off('receive_message', handleReceive);
-  }, []);
+    socket.on('counter_bid_placed', handleCounterBid);
+    return () => {
+      socket.off('receive_message', handleReceive);
+      socket.off('counter_bid_placed', handleCounterBid);
+    };
+  }, [currentUser]);
 
   const openChatForCrop = (crop) => {
     const roomId = `room_${crop.seller}_${crop.name}`.toLowerCase().replace(/\s+/g, '_');

@@ -62,6 +62,22 @@ const SellerPage = () => {
   const [unreadCounts, setUnreadCounts] = useState({});
   const [receivedBids, setReceivedBids] = useState([]);
   const [isBidsModalOpen, setIsBidsModalOpen] = useState(false);
+  const [counterInputMap, setCounterInputMap] = useState({});
+  const [mandiTicker, setMandiTicker] = useState([
+    { name: "Gehu", rate: 2450, trend: "+1.2%" },
+    { name: "Dhan", rate: 2100, trend: "+0.8%" },
+    { name: "Makka", rate: 1850, trend: "-0.5%" }
+  ]);
+
+  useEffect(() => {
+    const fetchTicker = async () => {
+      try {
+        const res = await fetch('/api/mandi-ticker');
+        if (res.ok) setMandiTicker(await res.json());
+      } catch (e) {}
+    };
+    fetchTicker();
+  }, []);
 
   useEffect(() => {
     const fetchBids = async () => {
@@ -132,6 +148,27 @@ const SellerPage = () => {
       setReceivedBids(prev => prev.map(b => b.id === bidId ? { ...b, status: 'rejected' } : b));
       toast.error('Boli asweekar kar di gayi.');
     } catch (e) {}
+  };
+
+  const handleCounterBid = async (bidId) => {
+    const rateVal = counterInputMap[bidId];
+    if (!rateVal) {
+      toast.error("Pehle naya rate enter karein!");
+      return;
+    }
+    try {
+      const res = await fetch('/api/bids/counter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ bid_id: bidId, counter_rate: rateVal })
+      });
+      if (res.ok) {
+        toast.success(`Counter-offer ₹${rateVal}/q buyer ko bhej diya gaya!`);
+        setReceivedBids(prev => prev.map(b => b.id === bidId ? { ...b, bid_rate: rateVal, status: 'counter_offered' } : b));
+      }
+    } catch (e) {
+      toast.error("Counter offer nahi bheja ja saka.");
+    }
   };
 
   useEffect(() => {
@@ -579,21 +616,15 @@ const SellerPage = () => {
             <span>LIVE MANDI RATES</span>
           </div>
           <div className="ticker-content">
-            <div className="rate-item">
-              <span className="crop-name">Gehu</span>
-              <span className="crop-price">₹2,450/q</span>
-              <span className="price-up"><i className="fas fa-caret-up"></i> +₹50</span>
-            </div>
-            <div className="rate-item">
-              <span className="crop-name">Dhan</span>
-              <span className="crop-price">₹2,100/q</span>
-              <span className="price-down"><i className="fas fa-caret-down"></i> -₹20</span>
-            </div>
-            <div className="rate-item">
-              <span className="crop-name">Makka</span>
-              <span className="crop-price">₹1,850/q</span>
-              <span className="price-up"><i className="fas fa-caret-up"></i> +₹15</span>
-            </div>
+            {mandiTicker.map((item, i) => (
+              <div className="rate-item" key={i}>
+                <span className="crop-name">{item.name}</span>
+                <span className="crop-price">₹{item.rate}/q</span>
+                <span className={(item.trend || '').includes('-') ? "price-down" : "price-up"}>
+                  <i className={(item.trend || '').includes('-') ? "fas fa-caret-down" : "fas fa-caret-up"}></i> {item.trend || 'Stable'}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -956,12 +987,25 @@ const SellerPage = () => {
                       </div>
                       <div>
                         {(!b.status || b.status === 'pending') ? (
-                          <div className="d-flex gap-2">
-                            <button className="btn btn-sm btn-success fw-bold py-1 px-3" onClick={() => { setIsBidsModalOpen(false); handleAcceptBid(b); }}>Accept</button>
-                            <button className="btn btn-sm btn-outline-danger py-1 px-3" onClick={() => handleRejectBid(b.id)}>Reject</button>
+                          <div className="d-flex flex-column gap-2 align-items-end">
+                            <div className="d-flex gap-2">
+                              <button className="btn btn-sm btn-success fw-bold py-1 px-3" onClick={() => { setIsBidsModalOpen(false); handleAcceptBid(b); }}>Accept</button>
+                              <button className="btn btn-sm btn-outline-danger py-1 px-3" onClick={() => handleRejectBid(b.id)}>Reject</button>
+                            </div>
+                            <div className="d-flex gap-1 mt-1">
+                              <input 
+                                type="number" 
+                                className="form-control form-control-sm py-0 px-2" 
+                                style={{ width: '95px', fontSize: '0.8rem' }} 
+                                placeholder="Counter ₹" 
+                                value={counterInputMap[b.id] || ''} 
+                                onChange={e => setCounterInputMap({ ...counterInputMap, [b.id]: e.target.value })} 
+                              />
+                              <button className="btn btn-sm btn-warning fw-bold py-0 px-2" style={{ fontSize: '0.75rem' }} onClick={() => handleCounterBid(b.id)}>Counter</button>
+                            </div>
                           </div>
                         ) : (
-                          <span className={`badge ${b.status === 'accepted' ? 'bg-success' : 'bg-secondary'}`}>{(b.status || 'pending').toUpperCase()}</span>
+                          <span className={`badge ${b.status === 'accepted' ? 'bg-success' : b.status === 'counter_offered' ? 'bg-warning text-dark' : 'bg-secondary'}`}>{(b.status || 'pending').toUpperCase()}</span>
                         )}
                       </div>
                     </div>

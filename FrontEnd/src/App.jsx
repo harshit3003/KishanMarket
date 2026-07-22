@@ -15,6 +15,7 @@ import BackgroundLayer from './components/BackgroundLayer';
 const ProtectedRoute = ({ children }) => {
   const userStr = localStorage.getItem('currentUser');
   if (!userStr) {
+    toast.error("Please log in to access this page.", { id: 'auth_err' });
     return <Navigate to="/login" replace />;
   }
   return children;
@@ -23,7 +24,10 @@ const ProtectedRoute = ({ children }) => {
 // Strict Role Guard for Buyers
 const BuyerRoute = ({ children }) => {
   const userStr = localStorage.getItem('currentUser');
-  if (!userStr) return <Navigate to="/login" replace />;
+  if (!userStr) {
+    toast.error("Please log in to access Buyer dashboard.", { id: 'auth_buyer_err' });
+    return <Navigate to="/login" replace />;
+  }
   const user = JSON.parse(userStr);
   if (user.role !== 'buyer') return <Navigate to="/seller" replace />;
   return children;
@@ -32,7 +36,10 @@ const BuyerRoute = ({ children }) => {
 // Strict Role Guard for Sellers
 const SellerRoute = ({ children }) => {
   const userStr = localStorage.getItem('currentUser');
-  if (!userStr) return <Navigate to="/login" replace />;
+  if (!userStr) {
+    toast.error("Please log in to access Seller dashboard.", { id: 'auth_seller_err' });
+    return <Navigate to="/login" replace />;
+  }
   const user = JSON.parse(userStr);
   if (user.role !== 'seller') return <Navigate to="/buyer" replace />;
   return children;

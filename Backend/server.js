@@ -23,21 +23,39 @@ app.use(express.json());
 // Socket.io WebSockets for Real-time Chat
 const roomHistory = {};
 
+async function syncMessages() {
+  if (!db) return;
+  try {
+    const msgs = await db.all('SELECT * FROM Messages');
+    saveTableToFile('messages.json', msgs);
+  } catch (e) {}
+}
+
 io.on('connection', (socket) => {
-  socket.on('join_room', (room) => {
+  socket.on('join_room', async (room) => {
     if (!room) return;
     socket.join(room);
-    // Send existing room message history to the joining user
-    if (roomHistory[room]) {
-      socket.emit('load_history', roomHistory[room]);
+    if (db) {
+      try {
+        const history = await db.all('SELECT id, sender, text, time FROM Messages WHERE room_id = ? ORDER BY id ASC', [room]);
+        socket.emit('load_history', history);
+      } catch (e) {}
     }
   });
 
-  socket.on('send_message', (data) => {
-    if (!data || !data.room) return;
-    if (!roomHistory[data.room]) roomHistory[data.room] = [];
-    roomHistory[data.room].push(data.message);
-    io.to(data.room).emit('receive_message', data);
+  socket.on('send_message', async (data) => {
+    if (!data || !data.room || !data.message) return;
+    const { room, message } = data;
+    if (db) {
+      try {
+        await db.run(
+          'INSERT INTO Messages (room_id, sender, text, time) VALUES (?, ?, ?, ?)',
+          [room, message.sender || 'user', message.text || '', message.time || '']
+        );
+        await syncMessages();
+      } catch (e) {}
+    }
+    io.to(room).emit('receive_message', data);
   });
 
   socket.on('disconnect', () => {});
@@ -358,16 +376,86 @@ app.put('/api/bids/:id/status', async (req, res) => {
     await db.run('UPDATE Bids SET status = ? WHERE id = ?', [status, req.params.id]);
     
     const bid = await db.get('SELECT * FROM Bids WHERE id = ?', [req.params.id]);
-    if (bid && status === 'accepted' && bid.crop_id) {
-      await db.run('UPDATE Crops SET rate = ? WHERE id = ?', [bid.bid_rate, bid.crop_id]);
-      io.emit('crop_price_updated', { crop_id: bid.crop_id, crop_name: bid.crop_name, new_rate: bid.bid_rate });
+    if (bid && status === 'accepted' && bid.crop_id && bid.crop_id !== 0) {
+      await db.run('UPDATE Crops SET rate = ?, status = ? WHERE id = ?', [bid.bid_rate, 'sold', bid.crop_id]);
+      await db.run('UPDATE Bids SET status = ? WHERE crop_id = ? AND id != ? AND status = ?', ['expired', bid.crop_id, req.params.id, 'pending']);
+      await syncBids();
+      await syncCrops();
+      io.emit('crop_price_updated', { crop_id: bid.crop_id, crop_name: bid.crop_name, new_rate: bid.bid_rate, status: 'sold' });
     }
-
-    res.json({ message: `Bid ${status}` });
+    await syncBids();
+    res.json({ message: 'Bid status updated' });
   } catch (err) {
     res.status(500).json({ error: 'Database error' });
   }
 });
+
+app.post('/api/bids/counter', async (req, res) => {
+  try {
+    const { bid_id, counter_rate } = req.body;
+    const bid = await db.get('SELECT * FROM Bids WHERE id = ?', [bid_id]);
+    if (!bid) return res.status(404).json({ error: 'Bid not found' });
+
+    await db.run('UPDATE Bids SET bid_rate = ?, status = ? WHERE id = ?', [counter_rate, 'counter_offered', bid_id]);
+    if (bid.crop_id) {
+      await db.run('UPDATE Crops SET rate = ? WHERE id = ?', [counter_rate, bid.crop_id]);
+    }
+
+    await syncBids();
+    await syncCrops();
+
+    const updatedBid = { ...bid, bid_rate: counter_rate, status: 'counter_offered' };
+    io.emit('counter_bid_placed', updatedBid);
+    io.emit('crop_price_updated', { crop_id: bid.crop_id, crop_name: bid.crop_name, new_rate: counter_rate });
+
+    res.json({ message: 'Counter offer sent successfully', updatedBid });
+  } catch (e) {
+    res.status(500).json({ error: 'Database error' });
+  }
+});
+
+app.get('/api/mandi-ticker', async (req, res) => {
+  try {
+    const crops = await db.all('SELECT name, rate FROM Crops WHERE status = "active"');
+    const defaultTicker = [
+      { name: "Gehu (Wheat)", rate: 2450, trend: "+1.2%" },
+      { name: "Dhan (Rice)", rate: 2100, trend: "+0.8%" },
+      { name: "Makka (Maize)", rate: 1850, trend: "-0.5%" },
+      { name: "Chana (Gram)", rate: 5200, trend: "+2.1%" },
+      { name: "Sarson (Mustard)", rate: 5450, trend: "+1.5%" }
+    ];
+
+    if (!crops || crops.length === 0) {
+      return res.json(defaultTicker);
+    }
+
+    const cropGroupMap = {};
+    crops.forEach(c => {
+      const cName = c.name || 'Crop';
+      const cRate = parseFloat(c.rate) || 0;
+      if (!cropGroupMap[cName]) cropGroupMap[cName] = [];
+      if (cRate > 0) cropGroupMap[cName].push(cRate);
+    });
+
+    const dynamicTicker = Object.keys(cropGroupMap).map(cName => {
+      const rates = cropGroupMap[cName];
+      const avg = Math.round(rates.reduce((a, b) => a + b, 0) / rates.length);
+      return {
+        name: cName,
+        rate: avg || 2200,
+        trend: rates.length > 1 ? "+1.5%" : "Stable"
+      };
+    });
+
+    res.json(dynamicTicker.length > 0 ? dynamicTicker : defaultTicker);
+  } catch (err) {
+    res.json([
+      { name: "Gehu (Wheat)", rate: 2450, trend: "+1.2%" },
+      { name: "Dhan (Rice)", rate: 2100, trend: "+0.8%" }
+    ]);
+  }
+});
+
 app.get('/api/buyer-purchases', (req, res) => serveData('buyer-purchases.json', req, res));
 app.get('/api/buyers_data', (req, res) => serveData('buyers_data.json', req, res));
 app.get('/api/market-intel', (req, res) => serveData('market-intel.json', req, res));
