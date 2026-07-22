@@ -136,11 +136,18 @@ const BuyerPage = () => {
   }, [currentUser]);
 
   const openChatForCrop = (crop) => {
-    const sellerKey = (crop.seller_mobile || crop.seller || 'seller').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-    const buyerKey = (currentUser.mobile || currentUser.name || 'buyer').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-    const cropKey = (crop.name || crop.crop || 'crop').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-
-    const roomId = `room_${sellerKey}_${buyerKey}_${cropKey}`;
+    let roomId;
+    if (crop.reqId || crop.isRequest) {
+      roomId = `room_req_${crop.reqId || crop.id}`;
+    } else if (crop.id) {
+      const buyerKey = (currentUser.name || currentUser.mobile || 'buyer').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+      roomId = `room_crop_${crop.id}_${buyerKey}`;
+    } else {
+      const sellerKey = (crop.seller_mobile || crop.seller || 'seller').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+      const buyerKey = (currentUser.mobile || currentUser.name || 'buyer').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+      const cropKey = (crop.name || crop.crop || 'crop').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+      roomId = `room_${sellerKey}_${buyerKey}_${cropKey}`;
+    }
 
     setUnreadCounts(prev => ({ ...prev, [roomId]: 0 }));
     setActiveChat({
@@ -654,7 +661,7 @@ const BuyerPage = () => {
                         </div>
                         <div className="d-flex align-items-center gap-2">
                           <button 
-                            onClick={() => openChatForCrop({ name: req.crop, weight: 'Bulk', rate: req.budget, seller: currentUser.name || 'buyer' })} 
+                            onClick={() => openChatForCrop({ id: req.id, reqId: req.id, isRequest: true, name: req.crop, weight: 'Bulk', rate: req.budget, seller: 'Verified Seller', buyerName: currentUser.name })} 
                             className="btn btn-sm btn-outline-success py-0 px-2 position-relative" 
                             style={{ fontSize: '0.75rem', borderRadius: '10px' }}>
                             <i className="fas fa-comments me-1"></i> Chat

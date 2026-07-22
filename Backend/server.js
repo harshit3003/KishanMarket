@@ -218,18 +218,37 @@ app.delete('/api/crops/:id', async (req, res) => {
 
 app.get('/api/chat/rooms', async (req, res) => {
   try {
-    const { seller_key, crop_key } = req.query;
-    if (!seller_key || !crop_key) return res.json([]);
-    
-    const sSan = seller_key.toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-    const cSan = crop_key.toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-    const pattern = `room_${sSan}_%_${cSan}`;
+    const { seller_key, crop_key, crop_id, req_id } = req.query;
 
-    const rows = await db.all(
-      'SELECT DISTINCT room_id FROM Messages WHERE room_id LIKE ? ORDER BY id DESC',
-      [pattern]
-    );
-    res.json(rows.map(r => r.room_id));
+    if (req_id) {
+      const rows = await db.all(
+        'SELECT DISTINCT room_id FROM Messages WHERE room_id = ? OR room_id = ? ORDER BY id DESC',
+        [`room_req_${req_id}`, `room_request_${req_id}`]
+      );
+      if (rows.length > 0) return res.json(rows.map(r => r.room_id));
+    }
+
+    if (crop_id) {
+      const rows = await db.all(
+        'SELECT DISTINCT room_id FROM Messages WHERE room_id LIKE ? ORDER BY id DESC',
+        [`room_crop_${crop_id}_%`]
+      );
+      if (rows.length > 0) return res.json(rows.map(r => r.room_id));
+    }
+
+    if (seller_key && crop_key) {
+      const sSan = seller_key.toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+      const cSan = crop_key.toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+      const pattern = `room_%${sSan}%_%${cSan}%`;
+
+      const rows = await db.all(
+        'SELECT DISTINCT room_id FROM Messages WHERE room_id LIKE ? ORDER BY id DESC',
+        [pattern]
+      );
+      return res.json(rows.map(r => r.room_id));
+    }
+
+    res.json([]);
   } catch (err) {
     res.status(500).json({ error: 'Database error fetching rooms' });
   }

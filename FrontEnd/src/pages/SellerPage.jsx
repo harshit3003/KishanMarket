@@ -297,20 +297,29 @@ const SellerPage = () => {
     let buyerName = 'Direct Buyer';
     let buyerMobile = '';
 
-    try {
-      const res = await fetch(`/api/chat/rooms?seller_key=${sellerKey}&crop_key=${cropKey}`);
-      if (res.ok) {
-        const rooms = await res.json();
-        if (rooms && rooms.length > 0) {
-          activeRoomId = rooms[0];
+    if (crop.reqId) {
+      activeRoomId = `room_req_${crop.reqId}`;
+    }
+
+    if (!activeRoomId) {
+      try {
+        const queryUrl = crop.id 
+          ? `/api/chat/rooms?crop_id=${crop.id}&seller_key=${sellerKey}&crop_key=${cropKey}`
+          : `/api/chat/rooms?seller_key=${sellerKey}&crop_key=${cropKey}`;
+        const res = await fetch(queryUrl);
+        if (res.ok) {
+          const rooms = await res.json();
+          if (rooms && rooms.length > 0) {
+            activeRoomId = rooms[0];
+          }
         }
-      }
-    } catch (e) {}
+      } catch (e) {}
+    }
 
     if (!activeRoomId) {
       const matchingBid = receivedBids.find(b => b.crop_id === crop.id || (b.crop_name && b.crop_name.toLowerCase() === crop.name.toLowerCase()));
       const buyerKey = (matchingBid ? (matchingBid.buyer_mobile || matchingBid.buyer_name) : 'buyer').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-      activeRoomId = `room_${sellerKey}_${buyerKey}_${cropKey}`;
+      activeRoomId = crop.id ? `room_crop_${crop.id}_${buyerKey}` : `room_${sellerKey}_${buyerKey}_${cropKey}`;
       if (matchingBid) {
         buyerName = matchingBid.buyer_name;
         buyerMobile = matchingBid.buyer_mobile;
@@ -902,10 +911,15 @@ const SellerPage = () => {
                       <button 
                         className="btn fw-bold w-50 btn-premium-hover" 
                         onClick={() => {
-                          const sellerKey = (currentUser.mobile || currentUser.name || 'seller').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-                          const buyerKey = (buyer.mobile || buyer.name || 'buyer').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-                          const cropKey = (buyer.crops || 'crop').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-                          const roomId = `room_${sellerKey}_${buyerKey}_${cropKey}`;
+                          let roomId;
+                          if (buyer.reqId) {
+                            roomId = `room_req_${buyer.reqId}`;
+                          } else {
+                            const sellerKey = (currentUser.mobile || currentUser.name || 'seller').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+                            const buyerKey = (buyer.mobile || buyer.name || 'buyer').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+                            const cropKey = (buyer.crops || 'crop').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+                            roomId = `room_${sellerKey}_${buyerKey}_${cropKey}`;
+                          }
                           setUnreadCounts(prev => ({ ...prev, [roomId]: 0 }));
                           setActiveChat({
                             name: buyer.crops,
