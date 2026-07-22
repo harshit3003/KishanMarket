@@ -11,13 +11,15 @@ const NegotiationChat = ({ chatData, onClose }) => {
 
   const getRoomId = () => {
     if (!chatData) return null;
-    if (chatData.roomId) return chatData.roomId.toLowerCase().replace(/\s+/g, '_');
+    if (chatData.roomId && chatData.roomId.trim()) {
+      return chatData.roomId.toLowerCase().replace(/\s+/g, '_');
+    }
     
-    const sellerKey = (chatData.seller_mobile || chatData.seller || 'seller').toString().toLowerCase();
-    const buyerKey = (chatData.buyerMobile || chatData.buyer_mobile || chatData.buyer || currentUser.mobile || 'buyer').toString().toLowerCase();
-    const cropKey = (chatData.name || chatData.crop || 'crop').toString().toLowerCase();
+    const sellerKey = (chatData.seller_mobile || chatData.seller || 'seller').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+    const buyerKey = (chatData.buyerMobile || chatData.buyer_mobile || chatData.buyer_name || chatData.buyer || currentUser.mobile || 'buyer').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+    const cropKey = (chatData.name || chatData.crop || chatData.crops || 'crop').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
 
-    return `room_${sellerKey}_${buyerKey}_${cropKey}`.replace(/\s+/g, '_');
+    return `room_${sellerKey}_${buyerKey}_${cropKey}`;
   };
 
   const roomId = getRoomId();

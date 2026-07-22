@@ -255,10 +255,12 @@ const SellerPage = () => {
   }, []);
 
   const openChatForCrop = (crop) => {
-    const sellerKey = (currentUser.mobile || currentUser.name || 'seller').toString().toLowerCase();
-    const buyerKey = (crop.buyer_mobile || crop.buyerName || crop.buyer || 'buyer').toString().toLowerCase();
-    const cropKey = (crop.name || 'crop').toString().toLowerCase();
-    const roomId = `room_${sellerKey}_${buyerKey}_${cropKey}`.replace(/\s+/g, '_');
+    const matchingBid = receivedBids.find(b => b.crop_id === crop.id || (b.crop_name && b.crop_name.toLowerCase() === crop.name.toLowerCase()));
+    const sellerKey = (currentUser.mobile || currentUser.name || 'seller').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+    const buyerKey = (matchingBid ? (matchingBid.buyer_mobile || matchingBid.buyer_name) : 'buyer').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+    const cropKey = (crop.name || 'crop').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+
+    const roomId = `room_${sellerKey}_${buyerKey}_${cropKey}`;
 
     setUnreadCounts(prev => ({ ...prev, [roomId]: 0 }));
     setActiveChat({
@@ -267,8 +269,8 @@ const SellerPage = () => {
       rate: crop.rate,
       seller: currentUser.name,
       seller_mobile: currentUser.mobile,
-      buyer: crop.buyerName || crop.buyer || 'Buyer',
-      buyerMobile: crop.buyer_mobile,
+      buyer: matchingBid ? matchingBid.buyer_name : 'Direct Buyer',
+      buyerMobile: matchingBid ? matchingBid.buyer_mobile : '',
       roomId
     });
   };
@@ -845,10 +847,10 @@ const SellerPage = () => {
                       <button 
                         className="btn fw-bold w-50 btn-premium-hover" 
                         onClick={() => {
-                          const sellerKey = (currentUser.mobile || currentUser.name || 'seller').toString().toLowerCase();
-                          const buyerKey = (buyer.mobile || buyer.name || 'buyer').toString().toLowerCase();
-                          const cropKey = (buyer.crops || 'crop').toString().toLowerCase();
-                          const roomId = `room_${sellerKey}_${buyerKey}_${cropKey}`.replace(/\s+/g, '_');
+                          const sellerKey = (currentUser.mobile || currentUser.name || 'seller').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+                          const buyerKey = (buyer.mobile || buyer.name || 'buyer').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+                          const cropKey = (buyer.crops || 'crop').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+                          const roomId = `room_${sellerKey}_${buyerKey}_${cropKey}`;
                           setUnreadCounts(prev => ({ ...prev, [roomId]: 0 }));
                           setActiveChat({
                             name: buyer.crops,
@@ -1019,6 +1021,26 @@ const SellerPage = () => {
                             <div className="d-flex gap-2">
                               <button className="btn btn-sm btn-success fw-bold py-1 px-3" onClick={() => { setIsBidsModalOpen(false); handleAcceptBid(b); }}>Accept</button>
                               <button className="btn btn-sm btn-outline-danger py-1 px-3" onClick={() => handleRejectBid(b.id)}>Reject</button>
+                              <button className="btn btn-sm btn-outline-primary py-1 px-2" onClick={() => {
+                                setIsBidsModalOpen(false);
+                                const sellerKey = (currentUser.mobile || currentUser.name || 'seller').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+                                const buyerKey = (b.buyer_mobile || b.buyer_name || 'buyer').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+                                const cropKey = (b.crop_name || 'crop').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+                                const roomId = `room_${sellerKey}_${buyerKey}_${cropKey}`;
+                                setUnreadCounts(prev => ({ ...prev, [roomId]: 0 }));
+                                setActiveChat({
+                                  name: b.crop_name,
+                                  weight: b.weight,
+                                  rate: b.bid_rate,
+                                  seller: currentUser.name,
+                                  seller_mobile: currentUser.mobile,
+                                  buyer: b.buyer_name,
+                                  buyerMobile: b.buyer_mobile,
+                                  roomId
+                                });
+                              }}>
+                                <i className="fas fa-comments me-1"></i> Chat
+                              </button>
                             </div>
                             <div className="d-flex gap-1 mt-1">
                               <input 

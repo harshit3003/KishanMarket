@@ -136,11 +136,11 @@ const BuyerPage = () => {
   }, [currentUser]);
 
   const openChatForCrop = (crop) => {
-    const sellerKey = (crop.seller_mobile || crop.seller || 'seller').toString().toLowerCase();
-    const buyerKey = (currentUser.mobile || currentUser.name || 'buyer').toString().toLowerCase();
-    const cropKey = (crop.name || crop.crop || 'crop').toString().toLowerCase();
+    const sellerKey = (crop.seller_mobile || crop.seller || 'seller').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+    const buyerKey = (currentUser.mobile || currentUser.name || 'buyer').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+    const cropKey = (crop.name || crop.crop || 'crop').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
 
-    const roomId = `room_${sellerKey}_${buyerKey}_${cropKey}`.replace(/\s+/g, '_');
+    const roomId = `room_${sellerKey}_${buyerKey}_${cropKey}`;
 
     setUnreadCounts(prev => ({ ...prev, [roomId]: 0 }));
     setActiveChat({
