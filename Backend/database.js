@@ -44,6 +44,7 @@ async function initDb() {
   await db.exec(`
     CREATE TABLE IF NOT EXISTS Users (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id TEXT UNIQUE,
       name TEXT NOT NULL,
       mobile TEXT UNIQUE NOT NULL,
       location TEXT NOT NULL,
@@ -112,7 +113,8 @@ async function initDb() {
     );
   `);
 
-  // Safely patch existing Crops table if missing new columns (ignores errors if columns already exist)
+  // Safely patch existing Users table if missing user_id column
+  try { await db.exec(`ALTER TABLE Users ADD COLUMN user_id TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN seller_mobile TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN status TEXT DEFAULT 'active';`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN soldDate TEXT;`); } catch(e) {}
@@ -126,10 +128,12 @@ async function initDb() {
   // Hydrate SQLite database from server_storage files on startup
   try {
     const savedUsers = loadTableFromFile('users.json');
-    for (const u of savedUsers) {
+    for (let idx = 0; idx < savedUsers.length; idx++) {
+      const u = savedUsers[idx];
+      const genId = u.user_id || (u.role === 'seller' ? `KM-S-${1000 + idx + 1}` : `KM-B-${1000 + idx + 1}`);
       await db.run(
-        'INSERT OR IGNORE INTO Users (name, mobile, location, role, password) VALUES (?, ?, ?, ?, ?)',
-        [u.name, u.mobile, u.location || '', u.role, u.password]
+        'INSERT OR IGNORE INTO Users (user_id, name, mobile, location, role, password) VALUES (?, ?, ?, ?, ?, ?)',
+        [genId, u.name, u.mobile, u.location || '', u.role, u.password]
       );
     }
 

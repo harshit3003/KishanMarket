@@ -593,7 +593,7 @@ const SellerPage = () => {
               <div className="profile-dropdown" id="profileDropdown" style={{ display: isProfileOpen ? 'block' : 'none' }}>
                 <div className="dropdown-user-info">
                   <h6 className="m-0 fw-bold" id="sellerProfileName">{currentUser.name}</h6>
-                  <small className="text-muted">Seller ID: KM-2026</small>
+                  <small className="text-muted">Customer ID: {currentUser.user_id || 'KM-S-1001'}</small>
                 </div>
                 <ul className="dropdown-links-list">
                   <li><Link to="/profile/seller"><i className="fas fa-user"></i> My Profile</Link></li>

@@ -212,6 +212,17 @@ const BuyyersProfile = () => {
     }
   };
 
+  const [buyerUserId, setBuyerUserId] = useState(() => {
+    const userStr = localStorage.getItem('currentUser');
+    if (userStr) {
+      try {
+        const u = JSON.parse(userStr);
+        return u.user_id || 'KM-B-1002';
+      } catch (e) {}
+    }
+    return 'KM-B-1002';
+  });
+
   return (
     <>
       
@@ -245,7 +256,7 @@ const BuyyersProfile = () => {
               <button className="btn btn-light d-lg-none" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
                 <i className="fas fa-bars"></i>
               </button>
-              <h1 className="h5 mb-0 fw-bold text-success">Buyer Suite</h1>
+              <h1 className="h5 mb-0 fw-bold text-success">Buyer Suite ({buyerName} &bull; ID: {buyerUserId})</h1>
               <div className="notif-bell position-relative ms-3">
                 <i className="fas fa-bell fs-5 text-muted"></i>
                 {priceDrops > 0 && (

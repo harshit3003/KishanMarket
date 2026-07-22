@@ -111,7 +111,7 @@ initDb().then(connection => {
 async function syncUsers() {
   if (!db) return;
   try {
-    const users = await db.all('SELECT name, mobile, location, role, password FROM Users');
+    const users = await db.all('SELECT user_id, name, mobile, location, role, password FROM Users');
     saveTableToFile('users.json', users);
   } catch (e) {}
 }
@@ -162,10 +162,10 @@ app.get('/api/crops', async (req, res) => {
 app.get('/api/crops/my', async (req, res) => {
   try {
     const mobile = req.query.mobile;
-    const name = req.query.name;
+    if (!mobile || mobile === 'guest') return res.json([]);
     const crops = await db.all(
-      'SELECT * FROM Crops WHERE (seller_mobile = ? OR seller = ?) ORDER BY id DESC',
-      [mobile || '', name || '']
+      'SELECT * FROM Crops WHERE seller_mobile = ? ORDER BY id DESC',
+      [mobile]
     );
     res.json(crops);
   } catch (err) {
@@ -472,17 +472,21 @@ app.post('/api/register', async (req, res) => {
   try {
     const existingUser = await db.get('SELECT * FROM Users WHERE mobile = ?', [mobile]);
     if (existingUser) {
-      return res.status(409).json({ error: 'User with this mobile already exists' });
+      return res.status(409).json({ error: 'User with this mobile already exists. Please login.' });
     }
 
+    const countRow = await db.get('SELECT COUNT(*) as count FROM Users');
+    const nextCount = (countRow ? countRow.count : 0) + 1;
+    const user_id = role === 'seller' ? `KM-S-${1000 + nextCount}` : `KM-B-${1000 + nextCount}`;
+
     await db.run(
-      'INSERT INTO Users (name, mobile, location, role, password) VALUES (?, ?, ?, ?, ?)',
-      [name, mobile, location, role, password]
+      'INSERT INTO Users (user_id, name, mobile, location, role, password) VALUES (?, ?, ?, ?, ?, ?)',
+      [user_id, name, mobile, location, role, password]
     );
 
     await syncUsers();
 
-    res.status(201).json({ message: 'User registered successfully', user: { name, mobile, role, location } });
+    res.status(201).json({ message: 'User registered successfully', user: { user_id, name, mobile, role, location } });
   } catch (e) {
     console.error("DB Error:", e);
     res.status(500).json({ error: 'Failed to save user' });
@@ -496,6 +500,12 @@ app.post('/api/login', async (req, res) => {
   try {
     const foundUser = await db.get('SELECT * FROM Users WHERE mobile = ? AND password = ?', [mobile, password]);
     if (foundUser) {
+      if (!foundUser.user_id) {
+        const genId = foundUser.role === 'seller' ? `KM-S-${1000 + foundUser.id}` : `KM-B-${1000 + foundUser.id}`;
+        await db.run('UPDATE Users SET user_id = ? WHERE id = ?', [genId, foundUser.id]);
+        foundUser.user_id = genId;
+        await syncUsers();
+      }
       const { password, ...userWithoutPassword } = foundUser;
       res.status(200).json({ message: 'Login successful', user: userWithoutPassword });
     } else {

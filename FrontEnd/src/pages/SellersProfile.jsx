@@ -25,6 +25,7 @@ const SellersProfile = () => {
 
   const [sellerName, setSellerName] = useState('Guest');
   const [userMobile, setUserMobile] = useState('guest');
+  const [userId, setUserId] = useState('KM-S-1001');
 
   const profitChartRef = useRef(null);
   const trendsChartRef = useRef(null);
@@ -40,6 +41,7 @@ const SellersProfile = () => {
         const parsed = JSON.parse(userStr);
         currentMobile = parsed.mobile || 'guest';
         currentName = parsed.name || 'Guest';
+        if (parsed.user_id) setUserId(parsed.user_id);
       } catch (e) {}
     }
     setUserMobile(currentMobile);
@@ -315,7 +317,7 @@ const SellersProfile = () => {
               <button className="btn btn-light d-lg-none" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
                 <i className="fas fa-bars"></i>
               </button>
-              <h1 className="h5 mb-0 fw-bold text-success">Seller Suite</h1>
+              <h1 className="h5 mb-0 fw-bold text-success">Seller Suite ({sellerName} &bull; ID: {userId})</h1>
             </div>
             <Link to="/seller" className="btn-back"><i className="fas fa-arrow-left me-2"></i>Exit Analytics</Link>
           </header>
