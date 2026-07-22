@@ -482,14 +482,29 @@ app.get('/api/seller-sales', (req, res) => serveData('seller-sales.json', req, r
 app.get('/api/seller-market-intel', (req, res) => serveData('seller-market-intel.json', req, res));
 app.get('/api/seller-predictions', (req, res) => serveData('seller-predictions.json', req, res));
 
+const normalizePhone = (p) => {
+  if (!p) return '';
+  const digits = p.toString().replace(/\D/g, '');
+  return digits.length >= 10 ? digits.slice(-10) : digits;
+};
+
 app.post('/api/register', async (req, res) => {
   const { name, mobile, location, role, password } = req.body;
   if (!mobile || !password || !role) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
 
+  const cleanMobile = normalizePhone(mobile);
+  const rawMobile = mobile.toString().trim();
+  const cleanPassword = password.toString().trim();
+  const cleanName = (name || '').toString().trim();
+  const cleanLoc = (location || '').toString().trim();
+
   try {
-    const existingUser = await db.get('SELECT * FROM Users WHERE mobile = ?', [mobile]);
+    const existingUser = await db.get(
+      'SELECT * FROM Users WHERE TRIM(mobile) = ? OR TRIM(mobile) = ?',
+      [cleanMobile, rawMobile]
+    );
     if (existingUser) {
       return res.status(409).json({ error: 'User with this mobile already exists. Please login.' });
     }
@@ -500,12 +515,12 @@ app.post('/api/register', async (req, res) => {
 
     await db.run(
       'INSERT INTO Users (user_id, name, mobile, location, role, password) VALUES (?, ?, ?, ?, ?, ?)',
-      [user_id, name, mobile, location, role, password]
+      [user_id, cleanName, cleanMobile, cleanLoc, role, cleanPassword]
     );
 
     await syncUsers();
 
-    res.status(201).json({ message: 'User registered successfully', user: { user_id, name, mobile, role, location } });
+    res.status(201).json({ message: 'User registered successfully', user: { user_id, name: cleanName, mobile: cleanMobile, role, location: cleanLoc } });
   } catch (e) {
     console.error("DB Error:", e);
     res.status(500).json({ error: 'Failed to save user' });
@@ -516,8 +531,15 @@ app.post('/api/login', async (req, res) => {
   const { mobile, password } = req.body;
   if (!mobile || !password) return res.status(400).json({ error: 'Missing credentials' });
 
+  const cleanMobile = normalizePhone(mobile);
+  const rawMobile = mobile.toString().trim();
+  const cleanPassword = password.toString().trim();
+
   try {
-    const foundUser = await db.get('SELECT * FROM Users WHERE mobile = ? AND password = ?', [mobile, password]);
+    const foundUser = await db.get(
+      'SELECT * FROM Users WHERE (TRIM(mobile) = ? OR TRIM(mobile) = ?) AND TRIM(password) = ?',
+      [cleanMobile, rawMobile, cleanPassword]
+    );
     if (foundUser) {
       if (!foundUser.user_id) {
         const genId = foundUser.role === 'seller' ? `KM-S-${1000 + foundUser.id}` : `KM-B-${1000 + foundUser.id}`;
@@ -528,7 +550,7 @@ app.post('/api/login', async (req, res) => {
       const { password, ...userWithoutPassword } = foundUser;
       res.status(200).json({ message: 'Login successful', user: userWithoutPassword });
     } else {
-      res.status(401).json({ error: 'Invalid credentials' });
+      res.status(401).json({ error: 'Invalid credentials. Please check your mobile number and password.' });
     }
   } catch (e) {
     console.error("DB Error:", e);
