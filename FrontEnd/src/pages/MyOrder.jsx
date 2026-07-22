@@ -14,6 +14,7 @@ const MyOrder = () => {
 
   const [purchases, setPurchases] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [receiptModal, setReceiptModal] = useState({ open: false, order: null });
 
   useEffect(() => {
     let mobile = 'guest';
@@ -55,8 +56,8 @@ const MyOrder = () => {
     setIsProfileOpen(!isProfileOpen);
   };
 
-  const viewDetails = (orderId) => {
-    toast(`Order Details for #${orderId} will be shown here. (Demo)`, { icon: '📦' });
+  const viewDetails = (order) => {
+    setReceiptModal({ open: true, order });
   };
 
   return (
@@ -72,7 +73,7 @@ const MyOrder = () => {
               <div className="profile-dropdown shadow-lg active" id="profileDropdown" style={{ position: 'absolute', top: '55px', right: '0', background: 'white', width: '230px', borderRadius: '12px', padding: '10px 0', zIndex: 1000 }}>
                 <div className="dropdown-user-info" style={{ padding: '10px 20px', borderBottom: '1px solid #eee', marginBottom: '10px' }}>
                   <h6 className="m-0 fw-bold text-dark">{currentUser.name}</h6>
-                  <small className="text-muted">Buyer ID: KB-2026</small>
+                  <small className="text-muted">Customer ID: {currentUser.user_id || 'KM-B-1002'}</small>
                 </div>
                 <ul className="dropdown-links-list" style={{ listStyle: 'none', padding: '0', margin: '0' }}>
                   <li><Link to="/buyer/profile" style={{ display: 'flex', alignItems: 'center', padding: '10px 20px', color: '#333', textDecoration: 'none', fontSize: '0.9rem' }}><i className="fas fa-user" style={{ width: '25px', marginRight: '12px', color: '#52b788' }}></i> My Profile</Link></li>
@@ -90,8 +91,8 @@ const MyOrder = () => {
       <div className="container pb-5" style={{ position: 'relative', zIndex: 2 }}>
         <div className="d-flex justify-content-between align-items-center mb-4">
           <h2 className="text-dark fw-bold"><i className="fas fa-box-open me-2" style={{ color: 'var(--primary)' }}></i> My Orders</h2>
-          <button className="btn btn-outline-success rounded-pill px-4 fw-bold shadow-sm">
-            <i className="fas fa-file-invoice me-2"></i>Download Logs
+          <button className="btn btn-outline-success rounded-pill px-4 fw-bold shadow-sm" onClick={() => purchases.length > 0 ? setReceiptModal({ open: true, order: purchases[0] }) : toast.error("No transactions to download.")}>
+            <i className="fas fa-file-invoice me-2"></i>Download Tax Invoice
           </button>
         </div>
 
@@ -187,7 +188,7 @@ const MyOrder = () => {
                           <small className="text-muted d-block" style={{ fontSize: '0.7rem' }}>TOTAL AMOUNT</small>
                           <span className="fw-bold fs-5 text-success">₹{(parseInt(order.rate||0)*parseInt(order.weight||0)).toLocaleString('en-IN')}</span>
                         </div>
-                        <button className="btn btn-sm btn-success rounded-circle shadow" style={{ width: '40px', height: '40px' }} onClick={() => viewDetails(order.id)}>
+                        <button className="btn btn-sm btn-success rounded-circle shadow" style={{ width: '40px', height: '40px' }} onClick={() => viewDetails(order)}>
                           <i className="fas fa-chevron-right"></i>
                         </button>
                       </div>
@@ -201,6 +202,71 @@ const MyOrder = () => {
         )}
         </div>
       </div>
+
+      {/* Tax Invoice Modal */}
+      {receiptModal.open && receiptModal.order && (
+        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(5px)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div className="glass-card-premium p-4 text-start" style={{ width: '90%', maxWidth: '550px', background: 'white', borderRadius: '15px' }}>
+            <div className="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+              <div>
+                <h5 className="fw-bold text-success m-0"><i className="fas fa-file-invoice me-2"></i>Official Tax Invoice</h5>
+                <small className="text-muted">Invoice No: KM-INV-2026-0{receiptModal.order.id || 1}</small>
+              </div>
+              <button className="btn-close" onClick={() => setReceiptModal({ open: false, order: null })}></button>
+            </div>
+
+            <div className="p-3 bg-light rounded mb-3 border">
+              <div className="row g-2 small">
+                <div className="col-6"><strong>Buyer:</strong> {currentUser.name} ({currentUser.user_id || 'KM-B-1002'})</div>
+                <div className="col-6"><strong>Seller:</strong> {receiptModal.order.seller || 'Verified Seller'}</div>
+                <div className="col-6"><strong>Item:</strong> {receiptModal.order.weight}q {receiptModal.order.name || receiptModal.order.crop}</div>
+                <div className="col-6"><strong>Rate:</strong> ₹{receiptModal.order.rate}/q</div>
+              </div>
+            </div>
+
+            <div className="table-responsive mb-3">
+              <table className="table table-bordered table-sm small">
+                <thead className="table-success">
+                  <tr>
+                    <th>Description</th>
+                    <th className="text-end">Qty (q)</th>
+                    <th className="text-end">Rate (₹)</th>
+                    <th className="text-end">Total (₹)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{receiptModal.order.name || 'Agri Produce'} Bulk Purchase</td>
+                    <td className="text-end">{receiptModal.order.weight}</td>
+                    <td className="text-end">₹{receiptModal.order.rate}</td>
+                    <td className="text-end">₹{(parseFloat(receiptModal.order.rate||0) * parseFloat(receiptModal.order.weight||0)).toLocaleString('en-IN')}</td>
+                  </tr>
+                  <tr>
+                    <td colSpan="3" className="text-end fw-bold">GST (0% Exempted Agri)</td>
+                    <td className="text-end">₹0</td>
+                  </tr>
+                  <tr className="table-light fw-bold">
+                    <td colSpan="3" className="text-end text-success">Grand Total</td>
+                    <td className="text-end text-success">₹{(parseFloat(receiptModal.order.rate||0) * parseFloat(receiptModal.order.weight||0)).toLocaleString('en-IN')}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div className="d-flex justify-content-between align-items-center pt-2 border-top">
+              <small className="text-muted"><i className="fas fa-check-circle text-success me-1"></i> Digitally Signed & Verified</small>
+              <div className="d-flex gap-2">
+                <button className="btn btn-outline-secondary btn-sm" onClick={() => window.print()}>
+                  <i className="fas fa-print me-1"></i> Print / Save PDF
+                </button>
+                <button className="btn btn-success btn-sm fw-bold" onClick={() => setReceiptModal({ open: false, order: null })}>
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

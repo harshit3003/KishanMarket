@@ -42,12 +42,22 @@ const InteractiveMarketMap = ({ userLocation = 'Karnal, Haryana', userRole = 'se
   const geocodedMarkers = (items || []).map((item, idx) => {
     const locName = item.loc || item.location || item.buyer_location || 'India';
     const coords = getInstantCoords(locName);
+    const isBuyer = !!(item.budget || item.buyer_mobile || item.crop || item.crops);
+    const displayName = item.name || item.crop || item.crops || 'Crop';
+    const displayPerson = item.seller || item.buyer_name || item.person || item.name || 'Trader';
+    const displayRate = item.rate || item.budget || 'Market Rate';
+    const displayWeight = item.weight ? `${item.weight}q` : '';
+
     return {
       ...item,
-      coords: coords,
-      lat: coords[0] + ((idx % 3) * 0.005), // Subtle jitter to avoid overlapping pins
-      lng: coords[1] + ((idx % 2) * 0.005),
-      markerType: item.budget || item.buyer_mobile ? 'buyer' : 'seller'
+      id: item.id || idx,
+      coords: [coords[0] + ((idx % 5) * 0.003 - 0.006), coords[1] + ((idx % 3) * 0.003 - 0.003)],
+      markerType: isBuyer ? 'buyer' : 'seller',
+      displayName,
+      displayPerson,
+      displayRate,
+      displayWeight,
+      displayLoc: locName
     };
   });
 
@@ -72,8 +82,6 @@ const InteractiveMarketMap = ({ userLocation = 'Karnal, Haryana', userRole = 'se
         </div>
       </div>
 
-
-
       <MapContainer center={mapCenter} zoom={8} style={{ height: '100%', width: '100%' }}>
         <MapRecenter center={mapCenter} />
         <TileLayer
@@ -96,16 +104,16 @@ const InteractiveMarketMap = ({ userLocation = 'Karnal, Haryana', userRole = 'se
 
         {/* Dynamic Buyers & Sellers Markers */}
         {geocodedMarkers.map(m => (
-          <Marker key={m.id} position={m.coords} icon={m.type === 'buyer' ? icons.buyer : icons.seller}>
+          <Marker key={m.id} position={m.coords} icon={m.markerType === 'buyer' ? icons.buyer : icons.seller}>
             <Popup>
-              <div className="text-center p-1">
-                <span className={`badge ${m.type === 'buyer' ? 'bg-warning text-dark' : 'bg-primary'} mb-1`}>
-                  {m.type === 'buyer' ? 'Active Buyer Request' : 'Active Listing'}
+              <div className="text-center p-1" style={{ minWidth: '150px' }}>
+                <span className={`badge ${m.markerType === 'buyer' ? 'bg-warning text-dark' : 'bg-primary'} mb-1`}>
+                  {m.markerType === 'buyer' ? 'Active Buyer Request' : 'Active Listing'}
                 </span>
-                <h6 className="fw-bold text-dark m-0">{m.title} {m.weight}</h6>
-                <p className="small text-muted mb-1">{m.type === 'buyer' ? 'Buyer' : 'Seller'}: <strong>{m.person}</strong></p>
-                <p className="fw-bold text-success m-0">Rate: ₹{m.rate}/q</p>
-                <small className="text-muted"><i className="fas fa-map-marker-alt me-1"></i>{m.location}</small>
+                <h6 className="fw-bold text-dark m-0">{m.displayName} {m.displayWeight}</h6>
+                <p className="small text-muted mb-1">{m.markerType === 'buyer' ? 'Buyer' : 'Seller'}: <strong>{m.displayPerson}</strong></p>
+                <p className="fw-bold text-success m-0">Rate: ₹{m.displayRate}/q</p>
+                <small className="text-muted"><i className="fas fa-map-marker-alt me-1"></i>{m.displayLoc}</small>
               </div>
             </Popup>
           </Marker>
