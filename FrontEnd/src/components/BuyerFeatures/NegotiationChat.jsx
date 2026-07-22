@@ -10,7 +10,9 @@ const NegotiationChat = ({ chatData, onClose }) => {
   const myRole = currentUser.role || 'buyer';
 
   // Room ID based on unique seller & crop combo
-  const roomId = chatData ? `room_${chatData.seller}_${chatData.name}`.toLowerCase().replace(/\s+/g, '_') : null;
+  const roomId = chatData 
+    ? (chatData.roomId || `room_${chatData.seller || 'seller'}_${chatData.name || 'crop'}`).toLowerCase().replace(/\s+/g, '_') 
+    : null;
 
   useEffect(() => {
     if (chatData && roomId) {
@@ -31,7 +33,12 @@ const NegotiationChat = ({ chatData, onClose }) => {
 
     // Listen for incoming websocket messages
     const handleReceive = (data) => {
-      setMessages((prev) => [...prev, data.message]);
+      if (data && data.room === roomId && data.message) {
+        setMessages((prev) => {
+          if (prev.some(m => m.id === data.message.id)) return prev;
+          return [...prev, data.message];
+        });
+      }
     };
 
     socket.on('load_history', handleHistory);

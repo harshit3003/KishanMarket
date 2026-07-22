@@ -25,6 +25,7 @@ const roomHistory = {};
 
 io.on('connection', (socket) => {
   socket.on('join_room', (room) => {
+    if (!room) return;
     socket.join(room);
     // Send existing room message history to the joining user
     if (roomHistory[room]) {
@@ -33,9 +34,10 @@ io.on('connection', (socket) => {
   });
 
   socket.on('send_message', (data) => {
+    if (!data || !data.room) return;
     if (!roomHistory[data.room]) roomHistory[data.room] = [];
     roomHistory[data.room].push(data.message);
-    socket.to(data.room).emit('receive_message', data);
+    io.to(data.room).emit('receive_message', data);
   });
 
   socket.on('disconnect', () => {});
