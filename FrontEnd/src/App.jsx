@@ -13,9 +13,10 @@ import MyOrder from './pages/MyOrder';
 import BackgroundLayer from './components/BackgroundLayer';
 
 const ProtectedRoute = ({ children }) => {
-  const userStr = localStorage.getItem('currentUser');
-  if (!userStr) {
-    toast.error("Please log in to access this page.", { id: 'auth_err' });
+  const isAuth = sessionStorage.getItem('isAuthenticated') === 'true';
+  const userStr = sessionStorage.getItem('currentUser') || localStorage.getItem('currentUser');
+  if (!isAuth || !userStr) {
+    toast.error("Please enter your credentials to log in.", { id: 'auth_err' });
     return <Navigate to="/login" replace />;
   }
   return children;
@@ -23,9 +24,10 @@ const ProtectedRoute = ({ children }) => {
 
 // Strict Role Guard for Buyers
 const BuyerRoute = ({ children }) => {
-  const userStr = localStorage.getItem('currentUser');
-  if (!userStr) {
-    toast.error("Please log in to access Buyer dashboard.", { id: 'auth_buyer_err' });
+  const isAuth = sessionStorage.getItem('isAuthenticated') === 'true';
+  const userStr = sessionStorage.getItem('currentUser') || localStorage.getItem('currentUser');
+  if (!isAuth || !userStr) {
+    toast.error("Please enter your credentials to log in.", { id: 'auth_buyer_err' });
     return <Navigate to="/login" replace />;
   }
   const user = JSON.parse(userStr);
@@ -35,23 +37,14 @@ const BuyerRoute = ({ children }) => {
 
 // Strict Role Guard for Sellers
 const SellerRoute = ({ children }) => {
-  const userStr = localStorage.getItem('currentUser');
-  if (!userStr) {
-    toast.error("Please log in to access Seller dashboard.", { id: 'auth_seller_err' });
+  const isAuth = sessionStorage.getItem('isAuthenticated') === 'true';
+  const userStr = sessionStorage.getItem('currentUser') || localStorage.getItem('currentUser');
+  if (!isAuth || !userStr) {
+    toast.error("Please enter your credentials to log in.", { id: 'auth_seller_err' });
     return <Navigate to="/login" replace />;
   }
   const user = JSON.parse(userStr);
   if (user.role !== 'seller') return <Navigate to="/buyer" replace />;
-  return children;
-};
-
-// Wrapper to prevent logged-in users from seeing login/register
-const AuthRoute = ({ children }) => {
-  const userStr = localStorage.getItem('currentUser');
-  if (userStr) {
-    const user = JSON.parse(userStr);
-    return <Navigate to={user.role === 'seller' ? '/seller' : '/buyer'} replace />;
-  }
   return children;
 };
 
@@ -65,9 +58,9 @@ function App() {
           {/* Public Landing Page */}
           <Route path="/" element={<LandingPage />} />
           
-          {/* Public authentication pages */}
-          <Route path="/register" element={<AuthRoute><RegistrationPage /></AuthRoute>} />
-          <Route path="/login" element={<AuthRoute><LoginPage /></AuthRoute>} />
+          {/* Public authentication pages - Always accessible for credential entry */}
+          <Route path="/register" element={<RegistrationPage />} />
+          <Route path="/login" element={<LoginPage />} />
           
           {/* Protected Dashboard Routes - Strict Role Isolation */}
           <Route path="/buyer" element={<BuyerRoute><BuyerPage /></BuyerRoute>} />

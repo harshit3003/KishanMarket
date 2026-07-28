@@ -99,6 +99,8 @@ const RegistrationPage = () => {
       }
 
       // Active session storage for current logged-in user
+      sessionStorage.setItem('isAuthenticated', 'true');
+      sessionStorage.setItem('currentUser', JSON.stringify({ name, mobile, role, location }));
       localStorage.setItem('displayUserName', name);
       localStorage.setItem('currentUser', JSON.stringify({ name, mobile, role, location }));
 

@@ -497,6 +497,7 @@ const SellerPage = () => {
 
   const handleLogout = (e) => {
     e.preventDefault();
+    sessionStorage.clear();
     localStorage.removeItem('currentUser');
     localStorage.removeItem('displayUserName');
     navigate('/login');

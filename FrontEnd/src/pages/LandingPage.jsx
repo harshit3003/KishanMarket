@@ -28,19 +28,16 @@ const LandingPage = () => {
           </Link>
           <div className="d-flex gap-3 align-items-center">
             {activeUser ? (
-              <Link to={activeUser.role === 'seller' ? '/seller' : '/buyer'} className="btn btn-warning rounded-pill px-4 fw-bold shadow">
+              <Link to={activeUser.role === 'seller' ? '/seller' : '/buyer'} className="btn btn-warning rounded-pill px-4 fw-bold shadow me-2">
                 Dashboard ({activeUser.name}) <i className="fas fa-arrow-right ms-1"></i>
               </Link>
-            ) : (
-              <>
-                <Link to="/login" className="btn btn-outline-light rounded-pill px-4 fw-bold">
-                  Login
-                </Link>
-                <Link to="/register" className="btn btn-success rounded-pill px-4 fw-bold shadow">
-                  Sign Up
-                </Link>
-              </>
-            )}
+            ) : null}
+            <Link to="/login" className="btn btn-outline-light rounded-pill px-4 fw-bold">
+              Login
+            </Link>
+            <Link to="/register" className="btn btn-success rounded-pill px-4 fw-bold shadow">
+              Sign Up
+            </Link>
           </div>
         </div>
       </nav>

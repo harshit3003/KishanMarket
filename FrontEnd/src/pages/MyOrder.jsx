@@ -48,8 +48,10 @@ const MyOrder = () => {
 
   const handleLogout = (e) => {
     e.preventDefault();
+    sessionStorage.clear();
     localStorage.removeItem('currentUser');
-    navigate('/');
+    localStorage.removeItem('displayUserName');
+    navigate('/login');
   };
 
   const toggleProfile = () => {

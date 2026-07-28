@@ -39,6 +39,8 @@ const LoginPage = () => {
             }
 
             const foundUser = data.user;
+            sessionStorage.setItem('isAuthenticated', 'true');
+            sessionStorage.setItem('currentUser', JSON.stringify(foundUser));
             localStorage.setItem('displayUserName', foundUser.name);
             localStorage.setItem('currentUser', JSON.stringify(foundUser));
 
