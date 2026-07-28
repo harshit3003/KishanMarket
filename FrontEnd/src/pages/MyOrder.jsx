@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import ReviewModal from '../components/ReviewModal';
+import OrderStatusTracker from '../components/OrderStatusTracker';
+import socket from '../socket';
 import '../assets/global.css';
 import '../assets/dynamic-features.css';
 import '../assets/myorder-style.css';
@@ -29,9 +31,15 @@ const MyOrder = () => {
       setIsLoading(true);
       if (mobile !== 'guest') {
         try {
-          const res = await fetch(`/api/purchases?mobile=${mobile}`);
+          const res = await fetch(`/api/orders/my?mobile=${mobile}`);
           if (res.ok) {
-            setPurchases(await res.json());
+            const data = await res.json();
+            if (data && data.length > 0) {
+              setPurchases(data);
+            } else {
+              const pRes = await fetch(`/api/purchases?mobile=${mobile}`);
+              if (pRes.ok) setPurchases(await pRes.json());
+            }
           }
         } catch (e) {
           console.error("Failed to fetch orders");
@@ -41,6 +49,29 @@ const MyOrder = () => {
     };
 
     fetchOrders();
+
+    // Real-time Order WebSockets
+    const handleOrderUpdate = (updatedOrder) => {
+      setPurchases(prev => {
+        const idx = prev.findIndex(o => o.id === updatedOrder.id);
+        if (idx !== -1) {
+          const newArr = [...prev];
+          newArr[idx] = updatedOrder;
+          return newArr;
+        } else {
+          return [updatedOrder, ...prev];
+        }
+      });
+      toast.success(`📦 Order #${updatedOrder.id} status updated to ${updatedOrder.status}!`);
+    };
+
+    socket.on('order_created', handleOrderUpdate);
+    socket.on('order_status_updated', handleOrderUpdate);
+
+    return () => {
+      socket.off('order_created', handleOrderUpdate);
+      socket.off('order_status_updated', handleOrderUpdate);
+    };
   }, []);
 
   const activeOrder = purchases.find(p => p.status !== 'sold' && p.status !== 'completed' && p.status !== 'Delivered') || purchases[0];
@@ -139,32 +170,8 @@ const MyOrder = () => {
                       </button>
                     </div>
 
-                    <div className="tracking-container mt-4 pt-4 border-top" style={{ borderColor: 'rgba(255,255,255,0.1) !important' }}>
-                      <div className="d-flex justify-content-between position-relative">
-                        <div className="position-absolute" style={{ top: '24px', left: '10%', right: '10%', height: '2px', background: 'rgba(255,255,255,0.1)', zIndex: 1 }}></div>
-                        <div className="position-absolute" style={{ top: '24px', left: '10%', width: activeOrder.status === 'sold' ? '80%' : '50%', height: '2px', background: '#52b788', zIndex: 2, transition: 'width 1s ease' }}></div>
-
-                        <div className="tracking-step text-center position-relative" style={{ zIndex: 3, flex: 1 }}>
-                          <div className="step-icon-pro completed mx-auto mb-2"><i className="fas fa-check"></i></div>
-                          <span className="d-block small fw-bold text-dark">Order Confirmed</span>
-                        </div>
-
-                        <div className="tracking-step text-center position-relative" style={{ zIndex: 3, flex: 1 }}>
-                          <div className="step-icon-pro completed mx-auto mb-2"><i className="fas fa-box"></i></div>
-                          <span className="d-block small fw-bold text-dark">Packed</span>
-                        </div>
-
-                        <div className="tracking-step text-center position-relative" style={{ zIndex: 3, flex: 1 }}>
-                          <div className={`step-icon-pro ${activeOrder.status === 'sold' ? 'completed' : 'active'} mx-auto mb-2`}><i className="fas fa-truck"></i></div>
-                          <span className={`d-block small fw-bold ${activeOrder.status === 'sold' ? 'text-dark' : 'text-success'}`}>In Transit</span>
-                        </div>
-
-                        <div className="tracking-step text-center position-relative" style={{ zIndex: 3, flex: 1 }}>
-                          <div className={`step-icon-pro ${activeOrder.status === 'sold' ? 'completed' : 'pending'} mx-auto mb-2`}><i className="fas fa-home"></i></div>
-                          <span className={`d-block small fw-bold ${activeOrder.status === 'sold' ? 'text-success' : 'text-muted'}`}>Delivered</span>
-                        </div>
-                      </div>
-                    </div>
+                    {/* Real-time OrderStatusTracker Stepper Component */}
+                    <OrderStatusTracker order={activeOrder} isSeller={false} />
                   </div>
                 </div>
               )}

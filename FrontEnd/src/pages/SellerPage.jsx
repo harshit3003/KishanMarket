@@ -16,6 +16,7 @@ import CustomerSelectModal from '../components/CustomerSelectModal';
 import ProfileModal from '../components/ProfileModal';
 import ProfileCard from '../components/ProfileCard';
 import ReviewModal from '../components/ReviewModal';
+import SellerOrdersModal from '../components/SellerOrdersModal';
 import socket from '../socket';
 import { getInstantCoords } from '../utils/geoUtils';
 
@@ -37,6 +38,7 @@ const SellerPage = () => {
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   const [profileTargetMobile, setProfileTargetMobile] = useState(null);
   const [reviewModalData, setReviewModalData] = useState({ open: false, order: null });
+  const [isSellerOrdersModalOpen, setIsSellerOrdersModalOpen] = useState(false);
 
   // New states for Interactive Modals
   const [editModalData, setEditModalData] = useState({ open: false, index: null, weight: '', rate: '' });
@@ -659,6 +661,7 @@ const SellerPage = () => {
                 </div>
                 <ul className="dropdown-links-list">
                   <li><a href="#profile" onClick={(e) => { e.preventDefault(); setProfileTargetMobile(null); setIsProfileModalOpen(true); setIsProfileOpen(false); }}><i className="fas fa-user"></i> My Profile</a></li>
+                  <li><a href="#orders" onClick={(e) => { e.preventDefault(); setIsSellerOrdersModalOpen(true); setIsProfileOpen(false); }}><i className="fas fa-truck-ramp-box text-success"></i> Manage Orders</a></li>
                   <li><a href="#live-bids" onClick={handleOpenLiveBids}><i className="fas fa-gavel text-warning"></i> Live Bids <span className="badge bg-danger ms-2 rounded-pill">New</span></a></li>
                   <li className="dropdown-divider"></li>
                   <li><a href="#" className="logout-item" onClick={handleLogout} style={{ color: '#000000' }}><i className="fas fa-sign-out-alt"></i> Logout</a></li>
@@ -976,6 +979,11 @@ const SellerPage = () => {
         isOpen={reviewModalData.open} 
         onClose={() => setReviewModalData({ open: false, order: null })} 
         transactionData={reviewModalData.order} 
+        currentUser={currentUser} 
+      />
+      <SellerOrdersModal 
+        isOpen={isSellerOrdersModalOpen} 
+        onClose={() => setIsSellerOrdersModalOpen(false)} 
         currentUser={currentUser} 
       />
 

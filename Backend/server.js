@@ -149,6 +149,7 @@ initDb().then(async connection => {
   await syncBids();
   await syncMessages();
   await syncReviews();
+  await syncOrders();
 }).catch(err => {
   console.error('Database connection failed', err);
 });
@@ -196,6 +197,15 @@ async function syncReviews() {
     if (!database) return;
     const reviews = await database.all('SELECT * FROM Reviews');
     saveTableToFile('reviews.json', reviews);
+  } catch (e) {}
+}
+
+async function syncOrders() {
+  try {
+    const database = await ensureDb();
+    if (!database) return;
+    const orders = await database.all('SELECT * FROM Orders');
+    saveTableToFile('orders.json', orders);
   } catch (e) {}
 }
 
@@ -531,12 +541,49 @@ app.put('/api/bids/:id/status', async (req, res) => {
     await db.run('UPDATE Bids SET status = ? WHERE id = ?', [status, req.params.id]);
     
     const bid = await db.get('SELECT * FROM Bids WHERE id = ?', [req.params.id]);
-    if (bid && status === 'accepted' && bid.crop_id && bid.crop_id !== 0) {
-      await db.run('UPDATE Crops SET rate = ?, status = ? WHERE id = ?', [bid.bid_rate, 'sold', bid.crop_id]);
-      await db.run('UPDATE Bids SET status = ? WHERE crop_id = ? AND id != ? AND status = ?', ['expired', bid.crop_id, req.params.id, 'pending']);
-      await syncBids();
-      await syncCrops();
-      io.emit('crop_price_updated', { crop_id: bid.crop_id, crop_name: bid.crop_name, new_rate: bid.bid_rate, status: 'sold' });
+    if (bid && status === 'accepted') {
+      if (bid.crop_id && bid.crop_id !== 0) {
+        await db.run('UPDATE Crops SET rate = ?, status = ? WHERE id = ?', [bid.bid_rate, 'sold', bid.crop_id]);
+        await db.run('UPDATE Bids SET status = ? WHERE crop_id = ? AND id != ? AND status = ?', ['expired', bid.crop_id, req.params.id, 'pending']);
+        await syncCrops();
+        io.emit('crop_price_updated', { crop_id: bid.crop_id, crop_name: bid.crop_name, new_rate: bid.bid_rate, status: 'sold' });
+      }
+
+      // Auto-create Order record
+      const orderRes = await db.run(
+        `INSERT INTO Orders (listing_id, buyer_mobile, buyer_name, seller_mobile, seller_name, bid_id, crop_name, quantity, final_price, status)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        [
+          bid.crop_id || 0,
+          normalizePhone(bid.buyer_mobile),
+          bid.buyer_name || 'Buyer',
+          normalizePhone(bid.seller_mobile),
+          bid.seller_name || 'Seller',
+          bid.id,
+          bid.crop_name || 'Crop',
+          bid.weight || '50q',
+          bid.bid_rate || '0',
+          'Confirmed'
+        ]
+      );
+      await syncOrders();
+
+      const createdOrder = {
+        id: orderRes.lastID,
+        listing_id: bid.crop_id || 0,
+        buyer_mobile: normalizePhone(bid.buyer_mobile),
+        buyer_name: bid.buyer_name,
+        seller_mobile: normalizePhone(bid.seller_mobile),
+        seller_name: bid.seller_name,
+        bid_id: bid.id,
+        crop_name: bid.crop_name,
+        quantity: bid.weight,
+        final_price: bid.bid_rate,
+        status: 'Confirmed'
+      };
+
+      io.to(`user_${normalizePhone(bid.buyer_mobile)}`).emit('order_created', createdOrder);
+      io.to(`user_${normalizePhone(bid.seller_mobile)}`).emit('order_created', createdOrder);
     }
     await syncBids();
     res.json({ message: 'Bid status updated' });
@@ -978,6 +1025,122 @@ app.get('/api/farmers/nearby', async (req, res) => {
   } catch (err) {
     console.error("Error in /api/farmers/nearby:", err);
     res.status(500).json({ error: 'Failed to fetch nearby farmers' });
+  }
+});
+
+// Order Lifecycle Management API Endpoints
+app.post('/api/orders', async (req, res) => {
+  try {
+    const { listing_id, buyer_mobile, buyer_name, seller_mobile, seller_name, bid_id, crop_name, quantity, final_price } = req.body;
+    if (!buyer_mobile || !seller_mobile || !crop_name) {
+      return res.status(400).json({ error: 'Missing required order details' });
+    }
+
+    const cleanBuyerMob = normalizePhone(buyer_mobile);
+    const cleanSellerMob = normalizePhone(seller_mobile);
+    const database = await ensureDb();
+
+    const result = await database.run(
+      `INSERT INTO Orders (listing_id, buyer_mobile, buyer_name, seller_mobile, seller_name, bid_id, crop_name, quantity, final_price, status)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [
+        listing_id || 0,
+        cleanBuyerMob,
+        (buyer_name || 'Buyer').trim(),
+        cleanSellerMob,
+        (seller_name || 'Farmer').trim(),
+        bid_id || null,
+        (crop_name || 'Crop').trim(),
+        (quantity || '1').toString().trim(),
+        (final_price || '0').toString().trim(),
+        'Confirmed'
+      ]
+    );
+
+    await syncOrders();
+
+    const newOrder = {
+      id: result.lastID,
+      listing_id: listing_id || 0,
+      buyer_mobile: cleanBuyerMob,
+      buyer_name,
+      seller_mobile: cleanSellerMob,
+      seller_name,
+      bid_id: bid_id || null,
+      crop_name,
+      quantity,
+      final_price,
+      status: 'Confirmed',
+      created_at: new Date().toISOString()
+    };
+
+    io.to(`user_${cleanBuyerMob}`).emit('order_created', newOrder);
+    io.to(`user_${cleanSellerMob}`).emit('order_created', newOrder);
+
+    res.status(201).json({ message: 'Order created successfully', order: newOrder });
+  } catch (err) {
+    console.error("Error creating order:", err);
+    res.status(500).json({ error: 'Failed to create order' });
+  }
+});
+
+app.get('/api/orders/my', async (req, res) => {
+  try {
+    const { mobile } = req.query;
+    if (!mobile) return res.json([]);
+
+    const cleanMob = normalizePhone(mobile);
+    const database = await ensureDb();
+
+    const orders = await database.all(
+      `SELECT * FROM Orders 
+       WHERE TRIM(buyer_mobile) = ? OR TRIM(seller_mobile) = ?
+       ORDER BY id DESC`,
+      [cleanMob, cleanMob]
+    );
+
+    res.json(orders);
+  } catch (err) {
+    console.error("Error fetching orders:", err);
+    res.status(500).json({ error: 'Failed to fetch user orders' });
+  }
+});
+
+app.put('/api/orders/:id/status', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { status } = req.body;
+    const validStatuses = ['Confirmed', 'Packed', 'Shipped', 'Delivered'];
+
+    if (!validStatuses.includes(status)) {
+      return res.status(400).json({ error: 'Invalid order status transition' });
+    }
+
+    const database = await ensureDb();
+    const existing = await database.get('SELECT * FROM Orders WHERE id = ?', [id]);
+    if (!existing) {
+      return res.status(404).json({ error: 'Order not found' });
+    }
+
+    await database.run(
+      'UPDATE Orders SET status = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?',
+      [status, id]
+    );
+
+    await syncOrders();
+
+    const updatedOrder = { ...existing, status, updated_at: new Date().toISOString() };
+
+    const cleanBuyer = normalizePhone(existing.buyer_mobile);
+    const cleanSeller = normalizePhone(existing.seller_mobile);
+
+    io.to(`user_${cleanBuyer}`).emit('order_status_updated', updatedOrder);
+    io.to(`user_${cleanSeller}`).emit('order_status_updated', updatedOrder);
+
+    res.json({ message: `Order status updated to ${status}`, order: updatedOrder });
+  } catch (err) {
+    console.error("Error updating order status:", err);
+    res.status(500).json({ error: 'Failed to update order status' });
   }
 });
 

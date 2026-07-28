@@ -42,6 +42,20 @@ const ReviewSchema = new mongoose.Schema({
   comment: String
 }, { timestamps: true });
 
+const OrderSchema = new mongoose.Schema({
+  id: Number,
+  listing_id: Number,
+  buyer_mobile: String,
+  buyer_name: String,
+  seller_mobile: String,
+  seller_name: String,
+  bid_id: Number,
+  crop_name: String,
+  quantity: String,
+  final_price: String,
+  status: { type: String, default: 'Confirmed' }
+}, { timestamps: true });
+
 const CropSchema = new mongoose.Schema({
   id: Number,
   name: String,
@@ -102,6 +116,7 @@ const MongoBuyerRequest = mongoose.models.BuyerRequest || mongoose.model('BuyerR
 const MongoBid = mongoose.models.Bid || mongoose.model('Bid', BidSchema);
 const MongoMessage = mongoose.models.Message || mongoose.model('Message', MessageSchema);
 const MongoReview = mongoose.models.Review || mongoose.model('Review', ReviewSchema);
+const MongoOrder = mongoose.models.Order || mongoose.model('Order', OrderSchema);
 
 async function syncToCloud(filename, data) {
   const mongoUri = process.env.MONGODB_URI || process.env.DATABASE_URL;
@@ -135,6 +150,10 @@ async function syncToCloud(filename, data) {
     } else if (filename === 'reviews.json' && Array.isArray(data)) {
       for (const r of data) {
         if (r.id) await MongoReview.updateOne({ id: r.id }, r, { upsert: true });
+      }
+    } else if (filename === 'orders.json' && Array.isArray(data)) {
+      for (const o of data) {
+        if (o.id) await MongoOrder.updateOne({ id: o.id }, o, { upsert: true });
       }
     }
   } catch (e) {
@@ -256,6 +275,22 @@ async function initDb() {
       rating INTEGER NOT NULL,
       comment TEXT,
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
+
+    CREATE TABLE IF NOT EXISTS Orders (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      listing_id INTEGER,
+      buyer_mobile TEXT NOT NULL,
+      buyer_name TEXT NOT NULL,
+      seller_mobile TEXT NOT NULL,
+      seller_name TEXT NOT NULL,
+      bid_id INTEGER,
+      crop_name TEXT NOT NULL,
+      quantity TEXT NOT NULL,
+      final_price TEXT NOT NULL,
+      status TEXT DEFAULT 'Confirmed',
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );
   `);
 
@@ -387,6 +422,14 @@ async function initDb() {
       await db.run(
         'INSERT OR IGNORE INTO Reviews (id, order_id, from_user_mobile, from_user_name, to_user_mobile, to_user_name, rating, comment) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
         [r.id, r.order_id, r.from_user_mobile, r.from_user_name, r.to_user_mobile, r.to_user_name, r.rating, r.comment]
+      );
+    }
+
+    const savedOrders = loadTableFromFile('orders.json');
+    for (const o of savedOrders) {
+      await db.run(
+        'INSERT OR IGNORE INTO Orders (id, listing_id, buyer_mobile, buyer_name, seller_mobile, seller_name, bid_id, crop_name, quantity, final_price, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        [o.id, o.listing_id, o.buyer_mobile, o.buyer_name, o.seller_mobile, o.seller_name, o.bid_id, o.crop_name, o.quantity, o.final_price, o.status || 'Confirmed']
       );
     }
   } catch (err) {
