@@ -261,6 +261,12 @@ app.get('/api/chat/rooms', async (req, res) => {
       return res.json(rows.map(r => r.room_id));
     }
 
+    res.json([]);
+  } catch (err) {
+    res.status(500).json({ error: 'Database error fetching rooms' });
+  }
+});
+
 app.get('/api/conversations', async (req, res) => {
   try {
     const { mobile } = req.query;
