@@ -80,7 +80,15 @@ const NegotiationChat = ({ chatData, onClose }) => {
     setMessages(prev => [...prev, newMsg]);
 
     // Emit over WebSocket to the other person in the room!
-    socket.emit('send_message', { room: roomId, message: newMsg });
+    socket.emit('send_message', { 
+      room: roomId, 
+      message: newMsg,
+      sender_name: currentUser.name || (myRole === 'seller' ? 'Seller' : 'Buyer'),
+      sender_mobile: currentUser.mobile || '',
+      receiver_mobile: chatData.buyerMobile || chatData.seller_mobile || '',
+      crop_name: chatData.name || chatData.crop || 'Crop',
+      crop_id: chatData.id || chatData.crop_id || null
+    });
   };
 
   const sendOffer = (discount) => {

@@ -11,6 +11,8 @@ import LogisticsCalculator from '../components/SellerFeatures/LogisticsCalculato
 import ColdStorageFinder from '../components/SellerFeatures/ColdStorageFinder';
 import WeatherDashboard from '../components/SellerFeatures/WeatherDashboard';
 import NegotiationChat from '../components/BuyerFeatures/NegotiationChat';
+import ConversationsModal from '../components/ConversationsModal';
+import CustomerSelectModal from '../components/CustomerSelectModal';
 import socket from '../socket';
 import { getInstantCoords } from '../utils/geoUtils';
 
@@ -27,6 +29,8 @@ const SellerPage = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isLiveBidsOpen, setIsLiveBidsOpen] = useState(false);
+  const [isConversationsModalOpen, setIsConversationsModalOpen] = useState(false);
+  const [selectCustomerModal, setSelectCustomerModal] = useState({ open: false, crop: null });
 
   // New states for Interactive Modals
   const [editModalData, setEditModalData] = useState({ open: false, index: null, weight: '', rate: '' });
@@ -289,54 +293,8 @@ const SellerPage = () => {
     return () => socket.off('receive_message', handleReceive);
   }, [currentUser]);
 
-  const openChatForCrop = async (crop) => {
-    const sellerKey = (currentUser.mobile || currentUser.name || crop.seller || 'seller').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-    const cropKey = (crop.name || 'crop').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-
-    let activeRoomId = null;
-    let buyerName = 'Direct Buyer';
-    let buyerMobile = '';
-
-    if (crop.reqId) {
-      activeRoomId = `room_req_${crop.reqId}`;
-    }
-
-    if (!activeRoomId) {
-      try {
-        const queryUrl = crop.id 
-          ? `/api/chat/rooms?crop_id=${crop.id}&seller_key=${sellerKey}&crop_key=${cropKey}`
-          : `/api/chat/rooms?seller_key=${sellerKey}&crop_key=${cropKey}`;
-        const res = await fetch(queryUrl);
-        if (res.ok) {
-          const rooms = await res.json();
-          if (rooms && rooms.length > 0) {
-            activeRoomId = rooms[0];
-          }
-        }
-      } catch (e) {}
-    }
-
-    if (!activeRoomId) {
-      const matchingBid = receivedBids.find(b => b.crop_id === crop.id || (b.crop_name && b.crop_name.toLowerCase() === crop.name.toLowerCase()));
-      const buyerKey = (matchingBid ? (matchingBid.buyer_mobile || matchingBid.buyer_name) : 'buyer').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-      activeRoomId = crop.id ? `room_crop_${crop.id}_${buyerKey}` : `room_${sellerKey}_${buyerKey}_${cropKey}`;
-      if (matchingBid) {
-        buyerName = matchingBid.buyer_name;
-        buyerMobile = matchingBid.buyer_mobile;
-      }
-    }
-
-    setUnreadCounts(prev => ({ ...prev, [activeRoomId]: 0 }));
-    setActiveChat({
-      name: crop.name,
-      weight: crop.weight,
-      rate: crop.rate,
-      seller: currentUser.name,
-      seller_mobile: currentUser.mobile,
-      buyer: buyerName,
-      buyerMobile: buyerMobile,
-      roomId: activeRoomId
-    });
+  const openChatForCrop = (crop) => {
+    setSelectCustomerModal({ open: true, crop });
   };
 
   const totalUnread = Object.values(unreadCounts).reduce((a, b) => a + b, 0);
@@ -657,6 +615,15 @@ const SellerPage = () => {
               )}
             </div>
 
+            <div className="position-relative" style={{ cursor: 'pointer' }} onClick={() => setIsConversationsModalOpen(true)} title="All Customer Chats">
+              <i className="fas fa-comments fa-lg text-white"></i>
+              {totalUnread > 0 && (
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger shadow-sm" style={{ fontSize: '0.65rem' }}>
+                  {totalUnread}
+                </span>
+              )}
+            </div>
+
             <div className="position-relative" style={{ cursor: 'pointer' }} onClick={() => toast(totalUnread > 0 ? `You have ${totalUnread} unread messages!` : "No new chat notifications.", { icon: '🔔' })}>
               <i className="fas fa-bell fa-lg text-white"></i>
               {totalUnread > 0 && (
@@ -965,6 +932,22 @@ const SellerPage = () => {
       
       <LiveBiddingToasts isModalOpen={isLiveBidsOpen} onClose={() => setIsLiveBidsOpen(false)} />
       <NegotiationChat chatData={activeChat} onClose={() => setActiveChat(null)} />
+      <ConversationsModal 
+        isOpen={isConversationsModalOpen} 
+        onClose={() => setIsConversationsModalOpen(false)} 
+        currentUser={currentUser} 
+        onSelectChat={(chat) => setActiveChat(chat)} 
+        unreadCounts={unreadCounts} 
+      />
+      <CustomerSelectModal 
+        isOpen={selectCustomerModal.open} 
+        onClose={() => setSelectCustomerModal({ open: false, crop: null })} 
+        crop={selectCustomerModal.crop} 
+        buyers={buyers} 
+        receivedBids={receivedBids} 
+        onSelectBuyer={(chat) => setActiveChat(chat)} 
+        currentUser={currentUser} 
+      />
 
       {/* Edit Crop Modal */}
       {editModalData.open && (

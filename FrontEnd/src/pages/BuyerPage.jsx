@@ -10,6 +10,7 @@ import '../assets/dynamic-features.css';
 import '../assets/buyer-style.css';
 
 import NegotiationChat from '../components/BuyerFeatures/NegotiationChat';
+import ConversationsModal from '../components/ConversationsModal';
 import socket from '../socket';
 import InteractiveMarketMap from '../components/InteractiveMarketMap';
 
@@ -29,6 +30,7 @@ const mandiLocations = [
 const BuyerPage = () => {
   const navigate = useNavigate();
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [isConversationsModalOpen, setIsConversationsModalOpen] = useState(false);
   const [currentUser, setCurrentUser] = useState({ name: 'Guest', role: 'buyer' });
   const [allCrops, setAllCrops] = useState(defaultCrops);
   const [displayedCrops, setDisplayedCrops] = useState(defaultCrops);
@@ -467,6 +469,15 @@ const BuyerPage = () => {
           <Link className="navbar-brand fw-bold" to="/buyer"><i className="fas fa-seedling me-2"></i>Kishan<span>Market</span></Link>
 
           <div className="d-flex align-items-center gap-3">
+            <div className="position-relative" style={{ cursor: 'pointer' }} onClick={() => setIsConversationsModalOpen(true)} title="All My Chats">
+              <i className="fas fa-comments fa-lg text-white"></i>
+              {totalUnread > 0 && (
+                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger shadow-sm" style={{ fontSize: '0.65rem' }}>
+                  {totalUnread}
+                </span>
+              )}
+            </div>
+
             <div className="position-relative" style={{ cursor: 'pointer' }} onClick={() => toast(totalUnread > 0 ? `You have ${totalUnread} unread messages!` : "No new chat notifications.", { icon: '🔔' })}>
               <i className="fas fa-bell fa-lg text-white"></i>
               {totalUnread > 0 && (
@@ -723,6 +734,13 @@ const BuyerPage = () => {
       </div>
 
       <NegotiationChat chatData={activeChat} onClose={() => setActiveChat(null)} />
+      <ConversationsModal 
+        isOpen={isConversationsModalOpen} 
+        onClose={() => setIsConversationsModalOpen(false)} 
+        currentUser={currentUser} 
+        onSelectChat={(chat) => setActiveChat(chat)} 
+        unreadCounts={unreadCounts} 
+      />
       {/* Real-time Bidding Modal */}
       {bidModal.open && bidModal.crop && (
         <div className="dynamic-modal-overlay active">

@@ -124,6 +124,11 @@ async function initDb() {
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN netProfit REAL;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN buyer_mobile TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE BuyerRequests ADD COLUMN buyer_name TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Messages ADD COLUMN sender_name TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Messages ADD COLUMN sender_mobile TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Messages ADD COLUMN receiver_mobile TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Messages ADD COLUMN crop_name TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Messages ADD COLUMN crop_id INTEGER;`); } catch(e) {}
 
   // Hydrate SQLite database from server_storage files on startup
   try {

@@ -37,7 +37,7 @@ io.on('connection', (socket) => {
     socket.join(room);
     if (db) {
       try {
-        const history = await db.all('SELECT id, sender, text, time FROM Messages WHERE room_id = ? ORDER BY id ASC', [room]);
+        const history = await db.all('SELECT id, sender, text, time, sender_name, sender_mobile, receiver_mobile, crop_name, crop_id FROM Messages WHERE room_id = ? ORDER BY id ASC', [room]);
         socket.emit('load_history', history);
       } catch (e) {}
     }
@@ -49,11 +49,24 @@ io.on('connection', (socket) => {
     if (db) {
       try {
         await db.run(
-          'INSERT INTO Messages (room_id, sender, text, time) VALUES (?, ?, ?, ?)',
-          [room, message.sender || 'user', message.text || '', message.time || '']
+          `INSERT INTO Messages (room_id, sender, text, time, sender_name, sender_mobile, receiver_mobile, crop_name, crop_id) 
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+          [
+            room,
+            message.sender || 'user',
+            message.text || '',
+            message.time || '',
+            data.sender_name || message.sender_name || null,
+            data.sender_mobile || message.sender_mobile || null,
+            data.receiver_mobile || message.receiver_mobile || null,
+            data.crop_name || message.crop_name || null,
+            data.crop_id || message.crop_id || null
+          ]
         );
         await syncMessages();
-      } catch (e) {}
+      } catch (e) {
+        console.error('Failed to save message:', e);
+      }
     }
     io.to(room).emit('receive_message', data);
   });
@@ -248,9 +261,41 @@ app.get('/api/chat/rooms', async (req, res) => {
       return res.json(rows.map(r => r.room_id));
     }
 
-    res.json([]);
+app.get('/api/conversations', async (req, res) => {
+  try {
+    const { mobile } = req.query;
+    if (!mobile) return res.json([]);
+    const cleanMob = mobile.toString().replace(/\D/g, '');
+
+    const rows = await db.all(
+      `SELECT room_id, sender, text, time, sender_name, sender_mobile, receiver_mobile, crop_name, crop_id, created_at
+       FROM Messages
+       WHERE room_id LIKE ? OR sender_mobile LIKE ? OR receiver_mobile LIKE ? OR room_id LIKE ?
+       ORDER BY id DESC`,
+      [`%${cleanMob}%`, `%${cleanMob}%`, `%${cleanMob}%`, `%_${mobile}_%`]
+    );
+
+    const convMap = {};
+    for (const r of rows) {
+      if (!convMap[r.room_id]) {
+        convMap[r.room_id] = {
+          room_id: r.room_id,
+          last_message: r.text,
+          last_time: r.time,
+          sender_name: r.sender_name,
+          sender_mobile: r.sender_mobile,
+          receiver_mobile: r.receiver_mobile,
+          crop_name: r.crop_name,
+          crop_id: r.crop_id,
+          created_at: r.created_at
+        };
+      }
+    }
+
+    res.json(Object.values(convMap));
   } catch (err) {
-    res.status(500).json({ error: 'Database error fetching rooms' });
+    console.error("DB Error fetching conversations:", err);
+    res.status(500).json({ error: 'Database error fetching conversations' });
   }
 });
 
