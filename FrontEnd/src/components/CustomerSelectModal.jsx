@@ -1,19 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-const CustomerSelectModal = ({ isOpen, onClose, crop, buyers = [], receivedBids = [], onSelectBuyer, currentUser }) => {
+const CustomerSelectModal = ({ isOpen, onClose, crop, receivedBids = [], onSelectBuyer, currentUser }) => {
+  const [realRegisteredBuyers, setRealRegisteredBuyers] = useState([]);
+  const [isLoadingBuyers, setIsLoadingBuyers] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsLoadingBuyers(true);
+      fetch('/api/users')
+        .then(res => res.ok ? res.json() : [])
+        .then(users => {
+          const registeredBuyers = Array.isArray(users) ? users.filter(u => u.role === 'buyer') : [];
+          setRealRegisteredBuyers(registeredBuyers);
+        })
+        .catch(err => console.error("Error loading real buyers:", err))
+        .finally(() => setIsLoadingBuyers(false));
+    }
+  }, [isOpen]);
+
   if (!isOpen || !crop) return null;
 
   const safeBids = Array.isArray(receivedBids) ? receivedBids : [];
-  const safeBuyers = Array.isArray(buyers) ? buyers : [];
 
   // Filter bids matching this crop
   const cropBids = safeBids.filter(b => 
     b && (b.crop_id === crop.id || (b.crop_name && b.crop_name.toLowerCase() === (crop.name || '').toLowerCase()))
-  );
-
-  // Filter buyers matching this crop
-  const matchingBuyers = safeBuyers.filter(b => 
-    b && b.crops && b.crops.toLowerCase().includes((crop.name || '').toLowerCase())
   );
 
   return (
@@ -36,39 +47,18 @@ const CustomerSelectModal = ({ isOpen, onClose, crop, buyers = [], receivedBids 
           <button className="btn-close" onClick={onClose}></button>
         </div>
 
-        {cropBids.length === 0 && matchingBuyers.length === 0 ? (
+        {cropBids.length === 0 && realRegisteredBuyers.length === 0 ? (
           <div className="text-center py-4">
             <i className="fas fa-user-clock fa-2x text-muted opacity-50 mb-2"></i>
-            <h6 className="fw-bold text-secondary">No Customer Bids Yet</h6>
-            <p className="small text-muted mb-3">When buyers place bids on this listing, their dedicated 1-on-1 chat boxes will appear here.</p>
-            <button 
-              className="btn btn-sm btn-outline-success rounded-pill px-3"
-              onClick={() => {
-                onClose();
-                const sellerKey = (currentUser.mobile || currentUser.name || 'seller').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-                const cropKey = (crop.name || 'crop').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-                const roomId = `room_c${crop.id || 0}_s_${sellerKey}_b_directbuyer`;
-                onSelectBuyer({
-                  name: crop.name,
-                  weight: crop.weight,
-                  rate: crop.rate,
-                  seller: currentUser.name,
-                  seller_mobile: currentUser.mobile,
-                  buyer: 'Direct Buyer',
-                  buyerMobile: '',
-                  roomId
-                });
-              }}
-            >
-              Open Direct Chat Box
-            </button>
+            <h6 className="fw-bold text-secondary">No Registered Customers Yet</h6>
+            <p className="small text-muted mb-3">When buyers register or place bids on this listing, their dedicated 1-on-1 chat boxes will appear here.</p>
           </div>
         ) : (
           <div className="d-flex flex-column gap-2">
             {cropBids.map((b, idx) => (
               <div key={`bid-${idx}`} className="p-3 bg-white rounded border border-warning shadow-sm d-flex justify-content-between align-items-center">
                 <div>
-                  <span className="badge bg-warning text-dark mb-1">Live Boli Buyer</span>
+                  <span className="badge bg-warning text-dark mb-1"><i className="fas fa-gavel me-1"></i> Live Boli Buyer</span>
                   <h6 className="m-0 fw-bold">{b.buyer_name || 'Buyer'}</h6>
                   <small className="text-muted">Bid Rate: <strong>₹{b.bid_rate}/q</strong> ({b.weight}q)</small>
                 </div>
@@ -97,15 +87,15 @@ const CustomerSelectModal = ({ isOpen, onClose, crop, buyers = [], receivedBids 
               </div>
             ))}
 
-            {matchingBuyers.map((b, idx) => (
+            {realRegisteredBuyers.map((b, idx) => (
               <div key={`buyer-${idx}`} className="p-3 bg-light rounded border d-flex justify-content-between align-items-center">
                 <div>
-                  <span className="badge bg-primary text-white mb-1">Market Buyer</span>
+                  <span className="badge bg-success text-white mb-1"><i className="fas fa-user-check me-1"></i> Registered Buyer</span>
                   <h6 className="m-0 fw-bold">{b.name}</h6>
-                  <small className="text-muted">Location: {b.location} &bull; Rate: ₹{b.rate}/q</small>
+                  <small className="text-muted">Location: {b.location || 'India'} &bull; Mobile: {b.mobile}</small>
                 </div>
                 <button 
-                  className="btn btn-sm btn-outline-primary fw-bold px-3 py-1"
+                  className="btn btn-sm btn-outline-success fw-bold px-3 py-1"
                   style={{ borderRadius: '8px' }}
                   onClick={() => {
                     onClose();
@@ -115,7 +105,7 @@ const CustomerSelectModal = ({ isOpen, onClose, crop, buyers = [], receivedBids 
                     onSelectBuyer({
                       name: crop.name,
                       weight: crop.weight,
-                      rate: b.rate,
+                      rate: crop.rate,
                       seller: currentUser.name,
                       seller_mobile: currentUser.mobile,
                       buyer: b.name,
