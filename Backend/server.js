@@ -194,13 +194,27 @@ async function syncBids() {
 // SQL Endpoints
 app.get('/api/crops', async (req, res) => {
   try {
+    const database = await ensureDb();
     const limit = req.query.limit ? parseInt(req.query.limit, 10) : 100;
     let crops;
     if (limit > 0) {
-      crops = await db.all("SELECT * FROM Crops WHERE status='active' ORDER BY id DESC LIMIT ?", [limit]);
+      crops = await database.all("SELECT * FROM Crops WHERE status='active' ORDER BY id DESC LIMIT ?", [limit]);
     } else {
-      crops = await db.all("SELECT * FROM Crops WHERE status='active' ORDER BY id DESC");
+      crops = await database.all("SELECT * FROM Crops WHERE status='active' ORDER BY id DESC");
     }
+
+    const users = await database.all("SELECT name, mobile FROM Users");
+    const userMap = {};
+    for (const u of users) {
+      if (u.name) userMap[u.name.toLowerCase().trim()] = u.mobile;
+    }
+
+    crops = crops.map(c => {
+      const cleanSeller = (c.seller || '').toLowerCase().trim();
+      const mob = c.seller_mobile || userMap[cleanSeller] || '';
+      return { ...c, seller_mobile: mob };
+    });
+
     res.json(crops);
   } catch (err) {
     console.error("DB Error:", err);

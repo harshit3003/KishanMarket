@@ -79,13 +79,18 @@ const NegotiationChat = ({ chatData, onClose }) => {
     
     setMessages(prev => [...prev, newMsg]);
 
+    const isSeller = myRole === 'seller';
+    const receiverMobile = isSeller ? (chatData.buyerMobile || '') : (chatData.seller_mobile || chatData.sellerMobile || '');
+    const receiverName = isSeller ? (chatData.buyer || 'Buyer') : (chatData.seller || 'Seller');
+
     // Emit over WebSocket to the other person in the room!
     socket.emit('send_message', { 
       room: roomId, 
       message: newMsg,
-      sender_name: currentUser.name || (myRole === 'seller' ? 'Seller' : 'Buyer'),
+      sender_name: currentUser.name || (isSeller ? 'Seller' : 'Buyer'),
       sender_mobile: currentUser.mobile || '',
-      receiver_mobile: chatData.buyerMobile || chatData.seller_mobile || '',
+      receiver_name: receiverName,
+      receiver_mobile: receiverMobile,
       crop_name: chatData.name || chatData.crop || 'Crop',
       crop_id: chatData.id || chatData.crop_id || null
     });

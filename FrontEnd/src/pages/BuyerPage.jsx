@@ -148,24 +148,29 @@ const BuyerPage = () => {
   }, [currentUser]);
 
   const openChatForCrop = (crop) => {
-    let roomId;
-    if (crop.reqId || crop.isRequest) {
-      roomId = `room_req_${crop.reqId || crop.id}`;
-    } else if (crop.id) {
-      const buyerKey = (currentUser.name || currentUser.mobile || 'buyer').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-      roomId = `room_crop_${crop.id}_${buyerKey}`;
-    } else {
-      const sellerKey = (crop.seller_mobile || crop.seller || 'seller').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-      const buyerKey = (currentUser.mobile || currentUser.name || 'buyer').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-      const cropKey = (crop.name || crop.crop || 'crop').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-      roomId = `room_${sellerKey}_${buyerKey}_${cropKey}`;
-    }
+    const sellerMobile = crop.seller_mobile || '';
+    const sellerName = crop.seller || 'Seller';
+    const buyerMobile = currentUser.mobile || '';
+    const buyerName = currentUser.name || 'Buyer';
+    const cropId = crop.id || 0;
+    const cropName = crop.name || crop.crop || 'Crop';
+
+    const sellerKey = (sellerMobile || sellerName).toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+    const buyerKey = (buyerMobile || buyerName).toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+    const roomId = crop.reqId || crop.isRequest
+      ? `room_req_${crop.reqId || crop.id}_s_${sellerKey}_b_${buyerKey}`
+      : `room_c${cropId}_s_${sellerKey}_b_${buyerKey}`;
 
     setUnreadCounts(prev => ({ ...prev, [roomId]: 0 }));
     setActiveChat({
-      ...crop,
-      buyerMobile: currentUser.mobile,
-      buyerName: currentUser.name,
+      name: cropName,
+      crop_id: cropId,
+      weight: crop.weight || 'Bulk',
+      rate: crop.rate || crop.budget || 'Market Rate',
+      seller: sellerName,
+      seller_mobile: sellerMobile,
+      buyer: buyerName,
+      buyerMobile: buyerMobile,
       roomId
     });
   };
