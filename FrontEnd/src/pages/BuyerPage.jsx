@@ -22,6 +22,7 @@ import TransactionHistoryModal from '../components/TransactionHistoryModal';
 import ReportModal from '../components/ReportModal';
 import SupportTicketModal from '../components/SupportTicketModal';
 import AdminDashboardModal from '../components/AdminDashboardModal';
+import AnalyticsDashboardModal from '../components/AnalyticsDashboardModal';
 
 
 const defaultCrops = [
@@ -99,6 +100,7 @@ const BuyerPage = () => {
   const [reportModalData, setReportModalData] = useState({ open: false, targetType: 'user', targetId: '', targetName: '' });
   const [isSupportTicketOpen, setIsSupportTicketOpen] = useState(false);
   const [isAdminDashboardOpen, setIsAdminDashboardOpen] = useState(false);
+  const [isAnalyticsOpen, setIsAnalyticsOpen] = useState(false);
 
   // Search State
   const [searchLoc, setSearchLoc] = useState('');
@@ -537,6 +539,7 @@ const BuyerPage = () => {
                 <ul className="dropdown-links-list">
                   <li><a href="#profile" onClick={(e) => { e.preventDefault(); setProfileTargetMobile(null); setIsProfileModalOpen(true); setIsProfileOpen(false); }}><i className="fas fa-user"></i> My Profile</a></li>
                   <li><Link to="/orders"><i className="fas fa-shopping-basket"></i> My Orders</Link></li>
+                  <li><a href="#analytics" onClick={(e) => { e.preventDefault(); setIsAnalyticsOpen(true); setIsProfileOpen(false); }}><i className="fas fa-chart-line text-success"></i> My Analytics & AI Insights 📊</a></li>
                   <li><a href="#ledger" onClick={(e) => { e.preventDefault(); setIsTransactionHistoryOpen(true); setIsProfileOpen(false); }}><i className="fas fa-wallet text-success"></i> Passbook & Ledger</a></li>
                   <li><a href="#support" onClick={(e) => { e.preventDefault(); setIsSupportTicketOpen(true); setIsProfileOpen(false); }}><i className="fas fa-headset text-info"></i> Help & Support 🎫</a></li>
                   <li><a href="#admin" onClick={(e) => { e.preventDefault(); setIsAdminDashboardOpen(true); setIsProfileOpen(false); }}><i className="fas fa-shield-halved text-danger"></i> Admin Control Center 🛡️</a></li>
@@ -841,6 +844,11 @@ const BuyerPage = () => {
       <AdminDashboardModal
         isOpen={isAdminDashboardOpen}
         onClose={() => setIsAdminDashboardOpen(false)}
+      />
+      <AnalyticsDashboardModal
+        isOpen={isAnalyticsOpen}
+        onClose={() => setIsAnalyticsOpen(false)}
+        currentUser={currentUser}
       />
       {/* Real-time Bidding Modal */}
       {bidModal.open && bidModal.crop && (
