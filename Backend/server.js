@@ -560,6 +560,16 @@ app.get('/api/seller-sales', (req, res) => serveData('seller-sales.json', req, r
 app.get('/api/seller-market-intel', (req, res) => serveData('seller-market-intel.json', req, res));
 app.get('/api/seller-predictions', (req, res) => serveData('seller-predictions.json', req, res));
 
+app.get('/api/users', async (req, res) => {
+  try {
+    const database = await ensureDb();
+    const users = await database.all('SELECT user_id, name, mobile, location, role, created_at FROM Users ORDER BY id DESC');
+    res.json(users);
+  } catch (err) {
+    res.status(500).json({ error: 'Database error fetching users' });
+  }
+});
+
 const normalizePhone = (p) => {
   if (!p) return '';
   const digits = p.toString().replace(/\D/g, '');
