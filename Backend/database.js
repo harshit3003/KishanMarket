@@ -24,7 +24,20 @@ const UserSchema = new mongoose.Schema({
   state: String,
   district: String,
   pincode: String,
-  crops_specialty: String
+  crops_specialty: String,
+  avg_rating: { type: Number, default: 5.0 },
+  review_count: { type: Number, default: 0 }
+}, { timestamps: true });
+
+const ReviewSchema = new mongoose.Schema({
+  id: Number,
+  order_id: String,
+  from_user_mobile: String,
+  from_user_name: String,
+  to_user_mobile: String,
+  to_user_name: String,
+  rating: Number,
+  comment: String
 }, { timestamps: true });
 
 const CropSchema = new mongoose.Schema({
@@ -86,6 +99,7 @@ const MongoCrop = mongoose.models.Crop || mongoose.model('Crop', CropSchema);
 const MongoBuyerRequest = mongoose.models.BuyerRequest || mongoose.model('BuyerRequest', BuyerRequestSchema);
 const MongoBid = mongoose.models.Bid || mongoose.model('Bid', BidSchema);
 const MongoMessage = mongoose.models.Message || mongoose.model('Message', MessageSchema);
+const MongoReview = mongoose.models.Review || mongoose.model('Review', ReviewSchema);
 
 async function syncToCloud(filename, data) {
   const mongoUri = process.env.MONGODB_URI || process.env.DATABASE_URL;
@@ -115,6 +129,10 @@ async function syncToCloud(filename, data) {
     } else if (filename === 'messages.json' && Array.isArray(data)) {
       for (const m of data) {
         if (m.id) await MongoMessage.updateOne({ id: m.id }, m, { upsert: true });
+      }
+    } else if (filename === 'reviews.json' && Array.isArray(data)) {
+      for (const r of data) {
+        if (r.id) await MongoReview.updateOne({ id: r.id }, r, { upsert: true });
       }
     }
   } catch (e) {
@@ -225,6 +243,18 @@ async function initDb() {
       time TEXT NOT NULL,
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );
+
+    CREATE TABLE IF NOT EXISTS Reviews (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      order_id TEXT,
+      from_user_mobile TEXT NOT NULL,
+      from_user_name TEXT NOT NULL,
+      to_user_mobile TEXT NOT NULL,
+      to_user_name TEXT NOT NULL,
+      rating INTEGER NOT NULL,
+      comment TEXT,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
   `);
 
   // Safely patch existing Users table if missing profile columns
@@ -238,6 +268,8 @@ async function initDb() {
   try { await db.exec(`ALTER TABLE Users ADD COLUMN district TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Users ADD COLUMN pincode TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Users ADD COLUMN crops_specialty TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Users ADD COLUMN avg_rating REAL DEFAULT 5.0;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Users ADD COLUMN review_count INTEGER DEFAULT 0;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN seller_mobile TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN status TEXT DEFAULT 'active';`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN soldDate TEXT;`); } catch(e) {}
@@ -343,6 +375,14 @@ async function initDb() {
       await db.run(
         'INSERT OR IGNORE INTO Messages (id, room_id, sender, text, time) VALUES (?, ?, ?, ?, ?)',
         [m.id, m.room_id, m.sender, m.text, m.time]
+      );
+    }
+
+    const savedReviews = loadTableFromFile('reviews.json');
+    for (const r of savedReviews) {
+      await db.run(
+        'INSERT OR IGNORE INTO Reviews (id, order_id, from_user_mobile, from_user_name, to_user_mobile, to_user_name, rating, comment) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+        [r.id, r.order_id, r.from_user_mobile, r.from_user_name, r.to_user_mobile, r.to_user_name, r.rating, r.comment]
       );
     }
   } catch (err) {

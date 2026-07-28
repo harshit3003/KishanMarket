@@ -15,6 +15,7 @@ import ConversationsModal from '../components/ConversationsModal';
 import CustomerSelectModal from '../components/CustomerSelectModal';
 import ProfileModal from '../components/ProfileModal';
 import ProfileCard from '../components/ProfileCard';
+import ReviewModal from '../components/ReviewModal';
 import socket from '../socket';
 import { getInstantCoords } from '../utils/geoUtils';
 
@@ -35,6 +36,7 @@ const SellerPage = () => {
   const [selectCustomerModal, setSelectCustomerModal] = useState({ open: false, crop: null });
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   const [profileTargetMobile, setProfileTargetMobile] = useState(null);
+  const [reviewModalData, setReviewModalData] = useState({ open: false, order: null });
 
   // New states for Interactive Modals
   const [editModalData, setEditModalData] = useState({ open: false, index: null, weight: '', rate: '' });
@@ -969,6 +971,12 @@ const SellerPage = () => {
         targetUserMobile={profileTargetMobile} 
         currentUser={currentUser} 
         onProfileUpdated={(updated) => setCurrentUser(prev => ({ ...prev, ...updated }))} 
+      />
+      <ReviewModal 
+        isOpen={reviewModalData.open} 
+        onClose={() => setReviewModalData({ open: false, order: null })} 
+        transactionData={reviewModalData.order} 
+        currentUser={currentUser} 
       />
 
       {/* Edit Crop Modal */}

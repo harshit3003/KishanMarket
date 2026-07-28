@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import ReviewModal from '../components/ReviewModal';
 import '../assets/global.css';
 import '../assets/dynamic-features.css';
 import '../assets/myorder-style.css';
-
-
 
 const MyOrder = () => {
   const navigate = useNavigate();
@@ -15,6 +14,7 @@ const MyOrder = () => {
   const [purchases, setPurchases] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [receiptModal, setReceiptModal] = useState({ open: false, order: null });
+  const [reviewModalData, setReviewModalData] = useState({ open: false, order: null });
 
   useEffect(() => {
     let mobile = 'guest';
@@ -190,9 +190,25 @@ const MyOrder = () => {
                           <small className="text-muted d-block" style={{ fontSize: '0.7rem' }}>TOTAL AMOUNT</small>
                           <span className="fw-bold fs-5 text-success">₹{(parseInt(order.rate||0)*parseInt(order.weight||0)).toLocaleString('en-IN')}</span>
                         </div>
-                        <button className="btn btn-sm btn-success rounded-circle shadow" style={{ width: '40px', height: '40px' }} onClick={() => viewDetails(order)}>
-                          <i className="fas fa-chevron-right"></i>
-                        </button>
+                        <div className="d-flex gap-2 align-items-center">
+                          <button 
+                            className="btn btn-sm btn-outline-warning text-dark fw-bold px-2 py-1"
+                            onClick={() => setReviewModalData({
+                              open: true,
+                              order: {
+                                orderId: order.id,
+                                cropName: order.name,
+                                toUserMobile: order.seller_mobile || order.seller,
+                                toUserName: order.seller
+                              }
+                            })}
+                          >
+                            <i className="fas fa-star text-warning me-1"></i> Rate Farmer
+                          </button>
+                          <button className="btn btn-sm btn-success rounded-circle shadow" style={{ width: '40px', height: '40px' }} onClick={() => viewDetails(order)}>
+                            <i className="fas fa-chevron-right"></i>
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -204,6 +220,14 @@ const MyOrder = () => {
         )}
         </div>
       </div>
+
+      {/* Review Modal */}
+      <ReviewModal 
+        isOpen={reviewModalData.open} 
+        onClose={() => setReviewModalData({ open: false, order: null })} 
+        transactionData={reviewModalData.order} 
+        currentUser={currentUser} 
+      />
 
       {/* Tax Invoice Modal */}
       {receiptModal.open && receiptModal.order && (

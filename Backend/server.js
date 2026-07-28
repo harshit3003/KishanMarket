@@ -148,6 +148,7 @@ initDb().then(async connection => {
   await syncRequests();
   await syncBids();
   await syncMessages();
+  await syncReviews();
 }).catch(err => {
   console.error('Database connection failed', err);
 });
@@ -186,6 +187,15 @@ async function syncBids() {
     if (!database) return;
     const bids = await database.all('SELECT * FROM Bids');
     saveTableToFile('bids.json', bids);
+  } catch (e) {}
+}
+
+async function syncReviews() {
+  try {
+    const database = await ensureDb();
+    if (!database) return;
+    const reviews = await database.all('SELECT * FROM Reviews');
+    saveTableToFile('reviews.json', reviews);
   } catch (e) {}
 }
 
@@ -722,6 +732,128 @@ app.post('/api/profile/upload-photo', async (req, res) => {
   } catch (err) {
     console.error("Error uploading photo:", err);
     res.status(500).json({ error: 'Failed to upload profile photo' });
+  }
+});
+
+// Ratings & Reviews Endpoints
+app.post('/api/reviews', async (req, res) => {
+  try {
+    const { order_id, from_user_mobile, from_user_name, to_user_mobile, to_user_name, rating, comment } = req.body;
+    if (!from_user_mobile || !to_user_mobile || !rating) {
+      return res.status(400).json({ error: 'Missing required review fields' });
+    }
+
+    const cleanFromMob = normalizePhone(from_user_mobile);
+    const cleanToMob = normalizePhone(to_user_mobile);
+    const numericRating = Math.min(5, Math.max(1, parseInt(rating, 10) || 5));
+
+    const database = await ensureDb();
+
+    // Check if already reviewed for this order/transaction
+    if (order_id) {
+      const existing = await database.get(
+        'SELECT * FROM Reviews WHERE order_id = ? AND TRIM(from_user_mobile) = ?',
+        [order_id, cleanFromMob]
+      );
+      if (existing) {
+        return res.status(409).json({ error: 'You have already reviewed this transaction' });
+      }
+    }
+
+    await database.run(
+      `INSERT INTO Reviews (order_id, from_user_mobile, from_user_name, to_user_mobile, to_user_name, rating, comment)
+       VALUES (?, ?, ?, ?, ?, ?, ?)`,
+      [
+        order_id || null,
+        cleanFromMob,
+        (from_user_name || 'Verified User').trim(),
+        cleanToMob,
+        (to_user_name || 'Member').trim(),
+        numericRating,
+        (comment || '').trim()
+      ]
+    );
+
+    // Recalculate target user's avg_rating and review_count
+    const stats = await database.get(
+      'SELECT COUNT(*) as count, AVG(rating) as avgRating FROM Reviews WHERE TRIM(to_user_mobile) = ?',
+      [cleanToMob]
+    );
+
+    const newCount = stats ? stats.count : 0;
+    const newAvg = stats && stats.avgRating ? parseFloat(stats.avgRating.toFixed(1)) : 5.0;
+
+    await database.run(
+      'UPDATE Users SET avg_rating = ?, review_count = ? WHERE TRIM(mobile) = ?',
+      [newAvg, newCount, cleanToMob]
+    );
+
+    await syncReviews();
+    await syncUsers();
+
+    // Emit real-time WebSocket notification to target user
+    if (cleanToMob) {
+      io.to(`user_${cleanToMob}`).emit('receive_message', {
+        room: `user_${cleanToMob}`,
+        message: {
+          id: Date.now(),
+          sender: 'system',
+          text: `⭐ New ${numericRating}-Star Review received from ${from_user_name || 'Customer'}!`,
+          time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+        }
+      });
+    }
+
+    res.status(201).json({
+      message: 'Review submitted successfully',
+      review: { order_id, from_user_mobile: cleanFromMob, to_user_mobile: cleanToMob, rating: numericRating, comment },
+      user_rating: { avg_rating: newAvg, review_count: newCount }
+    });
+  } catch (err) {
+    console.error("Error submitting review:", err);
+    res.status(500).json({ error: 'Failed to submit review' });
+  }
+});
+
+app.get('/api/reviews/user/:identifier', async (req, res) => {
+  try {
+    const { identifier } = req.params;
+    if (!identifier) return res.json([]);
+
+    const cleanMob = normalizePhone(identifier);
+    const database = await ensureDb();
+
+    const reviews = await database.all(
+      `SELECT * FROM Reviews 
+       WHERE TRIM(to_user_mobile) = ? OR TRIM(to_user_name) = ? OR TRIM(from_user_mobile) = ?
+       ORDER BY id DESC`,
+      [cleanMob, identifier.trim(), cleanMob]
+    );
+
+    res.json(reviews);
+  } catch (err) {
+    console.error("Error fetching user reviews:", err);
+    res.status(500).json({ error: 'Failed to fetch reviews' });
+  }
+});
+
+app.get('/api/reviews/order/:orderId', async (req, res) => {
+  try {
+    const { orderId } = req.params;
+    const { mobile } = req.query;
+    if (!orderId) return res.json({ reviewed: false });
+
+    const cleanMob = mobile ? normalizePhone(mobile) : '';
+    const database = await ensureDb();
+
+    const review = await database.get(
+      'SELECT * FROM Reviews WHERE order_id = ? AND (TRIM(from_user_mobile) = ? OR ? = "")',
+      [orderId, cleanMob, cleanMob]
+    );
+
+    res.json({ reviewed: !!review, review: review || null });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to check order review status' });
   }
 });
 

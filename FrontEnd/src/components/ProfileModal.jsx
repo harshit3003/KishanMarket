@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
+import ReviewsList from './ReviewsList';
 
 const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfileUpdated }) => {
   const [profile, setProfile] = useState(null);
@@ -303,9 +304,12 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
                 {profile?.business_name && (
                   <div className="small fw-bold text-secondary">{profile.business_name}</div>
                 )}
-                <div className="mt-1">
-                  <span className={`badge ${roleBadge} me-2`}>{roleTitle}</span>
-                  <span className="badge bg-outline-dark border text-dark">ID: {profile?.user_id || 'KM-MEMBER'}</span>
+                <div className="mt-1 d-flex align-items-center gap-2">
+                  <span className={`badge ${roleBadge}`}>{roleTitle}</span>
+                  <span className="badge bg-warning text-dark fw-bold">
+                    <i className="fas fa-star me-1"></i>
+                    {profile?.avg_rating ? parseFloat(profile.avg_rating).toFixed(1) : '5.0'} ({profile?.review_count || 0} reviews)
+                  </span>
                 </div>
               </div>
             </div>
@@ -342,6 +346,12 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
                   </div>
                 </div>
               )}
+
+              {/* Member Reviews & Feedback */}
+              <div className="col-12 mt-3">
+                <h6 className="fw-bold text-dark mb-2"><i className="fas fa-comments text-warning me-1"></i> Trade Reputation & Reviews</h6>
+                <ReviewsList targetUserMobile={profile?.mobile || targetUserMobile} />
+              </div>
             </div>
 
             <div className="d-flex justify-content-between align-items-center pt-3 border-top">
