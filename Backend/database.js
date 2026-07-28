@@ -26,7 +26,9 @@ const UserSchema = new mongoose.Schema({
   pincode: String,
   crops_specialty: String,
   avg_rating: { type: Number, default: 5.0 },
-  review_count: { type: Number, default: 0 }
+  review_count: { type: Number, default: 0 },
+  latitude: Number,
+  longitude: Number
 }, { timestamps: true });
 
 const ReviewSchema = new mongoose.Schema({
@@ -270,6 +272,8 @@ async function initDb() {
   try { await db.exec(`ALTER TABLE Users ADD COLUMN crops_specialty TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Users ADD COLUMN avg_rating REAL DEFAULT 5.0;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Users ADD COLUMN review_count INTEGER DEFAULT 0;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Users ADD COLUMN latitude REAL;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Users ADD COLUMN longitude REAL;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN seller_mobile TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN status TEXT DEFAULT 'active';`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN soldDate TEXT;`); } catch(e) {}

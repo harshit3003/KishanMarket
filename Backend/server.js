@@ -857,6 +857,130 @@ app.get('/api/reviews/order/:orderId', async (req, res) => {
   }
 });
 
+// Haversine Distance & Geo Helpers
+const CITY_COORDS_MAP = {
+  'karnal': [29.6857, 76.9905],
+  'ludhiana': [30.9010, 75.8573],
+  'jalandhar': [31.3260, 75.5762],
+  'rohtak': [28.8955, 76.5831],
+  'banda': [25.4764, 80.3346],
+  'jaipur': [26.9124, 75.7873],
+  'kota': [25.2138, 75.8648],
+  'udaipur': [24.5854, 73.7125],
+  'delhi': [28.6139, 77.2090],
+  'punjab': [31.1471, 75.3412],
+  'haryana': [29.0588, 76.0856],
+  'uttar pradesh': [26.8467, 80.9462],
+  'rajasthan': [27.0238, 74.2179],
+  'amritsar': [31.6340, 74.8723],
+  'patiala': [30.3398, 76.3869],
+  'bathinda': [30.2110, 74.9455],
+  'hisar': [29.1492, 75.7217],
+  'panipat': [29.3909, 76.9635],
+  'ambala': [30.3782, 76.7767],
+  'lucknow': [26.8467, 80.9462],
+  'kanpur': [26.4499, 80.3319],
+  'agra': [27.1767, 78.0081],
+  'varanasi': [25.3176, 82.9739]
+};
+
+function getCoordsForLocation(locationName) {
+  if (!locationName) return [28.6139, 77.2090];
+  const clean = locationName.toLowerCase();
+  for (const [city, coords] of Object.entries(CITY_COORDS_MAP)) {
+    if (clean.includes(city)) return coords;
+  }
+  let hash = 0;
+  for (let i = 0; i < clean.length; i++) {
+    hash = clean.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const lat = 25.0 + Math.abs((hash % 1000) / 100);
+  const lng = 75.0 + Math.abs(((hash >> 3) % 1000) / 100);
+  return [lat, lng];
+}
+
+function calculateDistanceKm(lat1, lon1, lat2, lon2) {
+  if (lat1 === undefined || lon1 === undefined || lat2 === undefined || lon2 === undefined) return 25.0;
+  const R = 6371;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a = 
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) * 
+    Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return parseFloat((R * c).toFixed(1));
+}
+
+// Geo-Distance Nearby Farmers API
+app.get('/api/farmers/nearby', async (req, res) => {
+  try {
+    const { lat, lng, location, radiusKm } = req.query;
+    let buyerLat = parseFloat(lat);
+    let buyerLng = parseFloat(lng);
+
+    if (isNaN(buyerLat) || isNaN(buyerLng)) {
+      const coords = getCoordsForLocation(location || 'Banda');
+      buyerLat = coords[0];
+      buyerLng = coords[1];
+    }
+
+    const maxRadius = parseFloat(radiusKm) || 500;
+    const database = await ensureDb();
+
+    // Fetch all registered farmers
+    const farmers = await database.all(
+      `SELECT id, user_id, name, mobile, location, role, profile_photo, business_name, bio, address, state, district, pincode, crops_specialty, avg_rating, review_count, latitude, longitude 
+       FROM Users 
+       WHERE role = 'seller'`
+    );
+
+    // Fetch all active crop listings
+    const activeCrops = await database.all(
+      "SELECT * FROM Crops WHERE status = 'active' OR status IS NULL"
+    );
+
+    const farmersWithDistance = farmers.map(farmer => {
+      let fLat = farmer.latitude;
+      let fLng = farmer.longitude;
+
+      if (!fLat || !fLng) {
+        const coords = getCoordsForLocation(farmer.location || farmer.district || farmer.state || farmer.name);
+        fLat = coords[0];
+        fLng = coords[1];
+      }
+
+      const dist = calculateDistanceKm(buyerLat, buyerLng, fLat, fLng);
+
+      // Find crop listings for this farmer
+      const farmerMobile = farmer.mobile ? farmer.mobile.trim() : '';
+      const farmerName = farmer.name ? farmer.name.trim().toLowerCase() : '';
+
+      const farmerCrops = activeCrops.filter(c => {
+        const cMob = c.seller_mobile ? c.seller_mobile.trim() : '';
+        const cSeller = c.seller ? c.seller.trim().toLowerCase() : '';
+        return (cMob && cMob === farmerMobile) || (cSeller && cSeller === farmerName);
+      });
+
+      return {
+        ...farmer,
+        distance: dist,
+        crops: farmerCrops
+      };
+    });
+
+    // Filter within maxRadius and sort ascending by distance
+    const sortedFarmers = farmersWithDistance
+      .filter(f => f.distance <= maxRadius)
+      .sort((a, b) => a.distance - b.distance);
+
+    res.json(sortedFarmers);
+  } catch (err) {
+    console.error("Error in /api/farmers/nearby:", err);
+    res.status(500).json({ error: 'Failed to fetch nearby farmers' });
+  }
+});
+
 const normalizePhone = (p) => {
   if (!p) return '';
   const digits = p.toString().replace(/\D/g, '');

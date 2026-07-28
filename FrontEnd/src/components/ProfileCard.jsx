@@ -33,9 +33,16 @@ const ProfileCard = ({ name, role, user_id, profile_photo, location, onClick, cl
           {name}
           <i className="fas fa-check-circle text-primary" style={{ fontSize: '0.75rem' }} title="Verified User"></i>
         </div>
-        <span className={`badge ${badgeColor} text-white mt-1`} style={{ fontSize: '0.65rem', padding: '2px 6px' }}>
-          {badgeText}
-        </span>
+        <div className="d-flex align-items-center gap-1 mt-1">
+          <span className={`badge ${badgeColor} text-white`} style={{ fontSize: '0.65rem', padding: '2px 6px' }}>
+            {badgeText}
+          </span>
+          {distance !== undefined && distance !== null && (
+            <span className="badge bg-danger text-white ms-1" style={{ fontSize: '0.65rem', padding: '2px 6px' }}>
+              📍 {distance} km
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );

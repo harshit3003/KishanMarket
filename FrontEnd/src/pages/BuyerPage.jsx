@@ -15,6 +15,7 @@ import socket from '../socket';
 import InteractiveMarketMap from '../components/InteractiveMarketMap';
 import ProfileModal from '../components/ProfileModal';
 import ProfileCard from '../components/ProfileCard';
+import NearbyFarmersSection from '../components/NearbyFarmersSection';
 
 
 const defaultCrops = [
@@ -564,6 +565,13 @@ const BuyerPage = () => {
             <canvas ref={priceChartRef}></canvas>
           </div>
         </div>
+
+        {/* Nearby Farmers Geo Distance Section */}
+        <NearbyFarmersSection 
+          currentUser={currentUser} 
+          onSelectChat={(chat) => setActiveChat(chat)} 
+          onViewProfile={(target) => { setProfileTargetMobile(target); setIsProfileModalOpen(true); }} 
+        />
 
         {/* Dynamic Interactive Market Map */}
         <InteractiveMarketMap 
