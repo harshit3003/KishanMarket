@@ -573,9 +573,10 @@ app.get('/api/seller-predictions', (req, res) => serveData('seller-predictions.j
 app.get('/api/users', async (req, res) => {
   try {
     const database = await ensureDb();
-    const users = await database.all('SELECT user_id, name, mobile, location, role, created_at FROM Users ORDER BY id DESC');
+    const users = await database.all('SELECT user_id, name, mobile, location, role FROM Users ORDER BY id DESC');
     res.json(users);
   } catch (err) {
+    console.error("Error in /api/users:", err);
     res.status(500).json({ error: 'Database error fetching users' });
   }
 });
