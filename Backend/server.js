@@ -1149,17 +1149,24 @@ app.post('/api/orders', async (req, res) => {
 
 app.get('/api/orders/my', async (req, res) => {
   try {
-    const { mobile } = req.query;
-    if (!mobile) return res.json([]);
+    const { mobile, name } = req.query;
+    if (!mobile && !name) return res.json([]);
 
     const cleanMob = normalizePhone(mobile);
+    const rawMob = (mobile || '').trim();
+    const cleanName = (name || '').trim().toLowerCase();
     const database = await ensureDb();
 
     const orders = await database.all(
       `SELECT * FROM Orders 
-       WHERE TRIM(buyer_mobile) = ? OR TRIM(seller_mobile) = ?
+       WHERE (TRIM(buyer_mobile) = ? AND ? != '')
+          OR (TRIM(seller_mobile) = ? AND ? != '')
+          OR (TRIM(buyer_mobile) = ? AND ? != '')
+          OR (TRIM(seller_mobile) = ? AND ? != '')
+          OR (LOWER(TRIM(seller_name)) = ? AND ? != '')
+          OR (LOWER(TRIM(buyer_name)) = ? AND ? != '')
        ORDER BY id DESC`,
-      [cleanMob, cleanMob]
+      [cleanMob, cleanMob, cleanMob, cleanMob, rawMob, rawMob, rawMob, rawMob, cleanName, cleanName, cleanName, cleanName]
     );
 
     res.json(orders);

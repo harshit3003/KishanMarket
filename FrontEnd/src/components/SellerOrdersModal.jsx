@@ -19,7 +19,9 @@ const SellerOrdersModal = ({ isOpen, onClose, currentUser }) => {
   const fetchOrders = async () => {
     setIsLoading(true);
     try {
-      const res = await fetch(`/api/orders/my?mobile=${encodeURIComponent(currentUser.mobile)}`);
+      const mob = currentUser.mobile || '';
+      const nm = currentUser.name || '';
+      const res = await fetch(`/api/orders/my?mobile=${encodeURIComponent(mob)}&name=${encodeURIComponent(nm)}`);
       if (res.ok) {
         setOrders(await res.json());
       }
