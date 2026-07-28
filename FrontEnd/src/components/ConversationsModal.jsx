@@ -13,7 +13,9 @@ const ConversationsModal = ({ isOpen, onClose, currentUser, onSelectChat, unread
   const fetchConversations = async () => {
     setIsLoading(true);
     try {
-      const res = await fetch(`/api/conversations?mobile=${currentUser.mobile}`);
+      const mob = currentUser.mobile || '';
+      const nm = currentUser.name || '';
+      const res = await fetch(`/api/conversations?mobile=${mob}&name=${encodeURIComponent(nm)}`);
       if (res.ok) {
         const data = await res.json();
         setConversations(data);

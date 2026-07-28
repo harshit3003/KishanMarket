@@ -47,6 +47,14 @@ io.on('connection', (socket) => {
   socket.on('send_message', async (data) => {
     if (!data || !data.room || !data.message) return;
     const { room, message } = data;
+
+    const sName = data.sender_name || message.sender_name || '';
+    const sMob = data.sender_mobile || message.sender_mobile || '';
+    const rMob = data.receiver_mobile || message.receiver_mobile || '';
+    const rName = data.receiver_name || message.receiver_name || '';
+    const cName = data.crop_name || message.crop_name || 'Crop';
+    const cId = data.crop_id || message.crop_id || null;
+
     if (db) {
       try {
         await db.run(
@@ -57,11 +65,11 @@ io.on('connection', (socket) => {
             message.sender || 'user',
             message.text || '',
             message.time || '',
-            data.sender_name || message.sender_name || null,
-            data.sender_mobile || message.sender_mobile || null,
-            data.receiver_mobile || message.receiver_mobile || null,
-            data.crop_name || message.crop_name || null,
-            data.crop_id || message.crop_id || null
+            sName,
+            sMob,
+            rMob,
+            cName,
+            cId
           ]
         );
         await syncMessages();
@@ -69,7 +77,17 @@ io.on('connection', (socket) => {
         console.error('Failed to save message:', e);
       }
     }
+
     io.to(room).emit('receive_message', data);
+
+    if (rMob) {
+      const cleanRMob = rMob.toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+      io.to(`user_${cleanRMob}`).emit('receive_message', data);
+    }
+    if (rName) {
+      const cleanRName = rName.toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+      io.to(`user_${cleanRName}`).emit('receive_message', data);
+    }
   });
 
   socket.on('disconnect', () => {});
@@ -287,16 +305,22 @@ app.get('/api/chat/rooms', async (req, res) => {
 
 app.get('/api/conversations', async (req, res) => {
   try {
-    const { mobile } = req.query;
-    if (!mobile) return res.json([]);
-    const cleanMob = mobile.toString().replace(/\D/g, '');
+    const { mobile, name } = req.query;
+    if (!mobile && !name) return res.json([]);
+    const cleanMob = (mobile || '').toString().replace(/\D/g, '');
+    const cleanName = (name || '').toString().toLowerCase().replace(/[^a-z0-9]/g, '');
 
-    const rows = await db.all(
+    const database = await ensureDb();
+    const rows = await database.all(
       `SELECT room_id, sender, text, time, sender_name, sender_mobile, receiver_mobile, crop_name, crop_id, created_at
        FROM Messages
-       WHERE room_id LIKE ? OR sender_mobile LIKE ? OR receiver_mobile LIKE ? OR room_id LIKE ?
+       WHERE (room_id LIKE ? OR sender_mobile LIKE ? OR receiver_mobile LIKE ? OR room_id LIKE ?)
+          OR (room_id LIKE ? OR sender_name LIKE ? OR receiver_mobile LIKE ?)
        ORDER BY id DESC`,
-      [`%${cleanMob}%`, `%${cleanMob}%`, `%${cleanMob}%`, `%_${mobile}_%`]
+      [
+        `%${cleanMob}%`, `%${cleanMob}%`, `%${cleanMob}%`, `%_${mobile}_%`,
+        `%${cleanName}%`, `%${cleanName}%`, `%${cleanName}%`
+      ]
     );
 
     const convMap = {};

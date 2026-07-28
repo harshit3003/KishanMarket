@@ -97,6 +97,16 @@ const BuyerPage = () => {
 
   // Socket room auto-join and unread message counter for Buyer
   useEffect(() => {
+    if (currentUser) {
+      if (currentUser.mobile) {
+        const cleanMob = currentUser.mobile.toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+        socket.emit('join_room', `user_${cleanMob}`);
+      }
+      if (currentUser.name) {
+        const cleanName = currentUser.name.toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+        socket.emit('join_room', `user_${cleanName}`);
+      }
+    }
     if (allCrops.length > 0) {
       allCrops.forEach(crop => {
         const roomId = `room_${crop.seller}_${crop.name}`.toLowerCase().replace(/\s+/g, '_');
