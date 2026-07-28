@@ -1,11 +1,15 @@
 import { io } from 'socket.io-client';
 
-// Automatically detect backend host URL (dynamic in production or localhost in dev)
-const URL = typeof window !== 'undefined' && window.location.hostname !== 'localhost'
-  ? window.location.origin
-  : 'http://localhost:5000';
+const getSocketUrl = () => {
+  if (typeof window === 'undefined') return 'http://localhost:5000';
+  const host = window.location.hostname;
+  if (host === 'localhost' || host === '127.0.0.1') {
+    return 'http://localhost:5000';
+  }
+  return window.location.origin;
+};
 
-const socket = io(URL, {
+const socket = io(getSocketUrl(), {
   transports: ['websocket', 'polling'],
   autoConnect: true
 });
