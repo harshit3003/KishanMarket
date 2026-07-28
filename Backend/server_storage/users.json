@@ -1,0 +1,26 @@
+[
+  {
+    "user_id": null,
+    "name": "harshit",
+    "mobile": "1111111111",
+    "location": "Bānda, Uttar Pradesh",
+    "role": "seller",
+    "password": "1111111111"
+  },
+  {
+    "user_id": null,
+    "name": "Vyapari",
+    "mobile": "2222222222",
+    "location": "Bānda, Uttar Pradesh",
+    "role": "buyer",
+    "password": "2222222222"
+  },
+  {
+    "user_id": "KM-S-1003",
+    "name": "harshit gupta",
+    "mobile": "8736876695",
+    "location": "Bānda, Uttar Pradesh",
+    "role": "seller",
+    "password": "123harshit"
+  }
+]

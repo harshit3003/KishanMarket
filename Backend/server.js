@@ -24,9 +24,10 @@ app.use(express.json());
 const roomHistory = {};
 
 async function syncMessages() {
-  if (!db) return;
   try {
-    const msgs = await db.all('SELECT * FROM Messages');
+    const database = await ensureDb();
+    if (!database) return;
+    const msgs = await database.all('SELECT * FROM Messages');
     saveTableToFile('messages.json', msgs);
   } catch (e) {}
 }
@@ -121,42 +122,51 @@ async function ensureDb() {
   return db;
 }
 
-initDb().then(connection => {
+initDb().then(async connection => {
   db = connection;
   console.log('SQLite Database connected and initialized successfully.');
+  await syncUsers();
+  await syncCrops();
+  await syncRequests();
+  await syncBids();
+  await syncMessages();
 }).catch(err => {
   console.error('Database connection failed', err);
 });
 
 // Server-side file backup sync helpers
 async function syncUsers() {
-  if (!db) return;
   try {
-    const users = await db.all('SELECT user_id, name, mobile, location, role, password FROM Users');
+    const database = await ensureDb();
+    if (!database) return;
+    const users = await database.all('SELECT user_id, name, mobile, location, role, password FROM Users');
     saveTableToFile('users.json', users);
   } catch (e) {}
 }
 
 async function syncCrops() {
-  if (!db) return;
   try {
-    const crops = await db.all('SELECT * FROM Crops');
+    const database = await ensureDb();
+    if (!database) return;
+    const crops = await database.all('SELECT * FROM Crops');
     saveTableToFile('crops.json', crops);
   } catch (e) {}
 }
 
 async function syncRequests() {
-  if (!db) return;
   try {
-    const reqs = await db.all('SELECT * FROM BuyerRequests');
+    const database = await ensureDb();
+    if (!database) return;
+    const reqs = await database.all('SELECT * FROM BuyerRequests');
     saveTableToFile('buyer_requests.json', reqs);
   } catch (e) {}
 }
 
 async function syncBids() {
-  if (!db) return;
   try {
-    const bids = await db.all('SELECT * FROM Bids');
+    const database = await ensureDb();
+    if (!database) return;
+    const bids = await database.all('SELECT * FROM Bids');
     saveTableToFile('bids.json', bids);
   } catch (e) {}
 }
