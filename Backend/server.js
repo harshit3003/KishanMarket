@@ -112,7 +112,15 @@ const serveData = (filename, req, res) => {
   }
 };
 
-let db;
+let db = null;
+
+async function ensureDb() {
+  if (!db) {
+    db = await initDb();
+  }
+  return db;
+}
+
 initDb().then(connection => {
   db = connection;
   console.log('SQLite Database connected and initialized successfully.');
@@ -571,7 +579,8 @@ app.post('/api/register', async (req, res) => {
   const cleanLoc = (location || '').toString().trim();
 
   try {
-    const existingUser = await db.get(
+    const database = await ensureDb();
+    const existingUser = await database.get(
       'SELECT * FROM Users WHERE TRIM(mobile) = ? OR TRIM(mobile) = ?',
       [cleanMobile, rawMobile]
     );
@@ -579,11 +588,11 @@ app.post('/api/register', async (req, res) => {
       return res.status(409).json({ error: 'User with this mobile already exists. Please login.' });
     }
 
-    const countRow = await db.get('SELECT COUNT(*) as count FROM Users');
+    const countRow = await database.get('SELECT COUNT(*) as count FROM Users');
     const nextCount = (countRow ? countRow.count : 0) + 1;
     const user_id = role === 'seller' ? `KM-S-${1000 + nextCount}` : `KM-B-${1000 + nextCount}`;
 
-    await db.run(
+    await database.run(
       'INSERT INTO Users (user_id, name, mobile, location, role, password) VALUES (?, ?, ?, ?, ?, ?)',
       [user_id, cleanName, cleanMobile, cleanLoc, role, cleanPassword]
     );
@@ -606,14 +615,15 @@ app.post('/api/login', async (req, res) => {
   const cleanPassword = password.toString().trim();
 
   try {
-    const foundUser = await db.get(
+    const database = await ensureDb();
+    const foundUser = await database.get(
       'SELECT * FROM Users WHERE (TRIM(mobile) = ? OR TRIM(mobile) = ?) AND TRIM(password) = ?',
       [cleanMobile, rawMobile, cleanPassword]
     );
     if (foundUser) {
       if (!foundUser.user_id) {
         const genId = foundUser.role === 'seller' ? `KM-S-${1000 + foundUser.id}` : `KM-B-${1000 + foundUser.id}`;
-        await db.run('UPDATE Users SET user_id = ? WHERE id = ?', [genId, foundUser.id]);
+        await database.run('UPDATE Users SET user_id = ? WHERE id = ?', [genId, foundUser.id]);
         foundUser.user_id = genId;
         await syncUsers();
       }
