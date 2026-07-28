@@ -53,7 +53,25 @@ const OrderSchema = new mongoose.Schema({
   crop_name: String,
   quantity: String,
   final_price: String,
-  status: { type: String, default: 'Confirmed' }
+  status: { type: String, default: 'Confirmed' },
+  cancel_reason: String,
+  cancelled_by: String,
+  cancelled_at: Date
+}, { timestamps: true });
+
+const DisputeSchema = new mongoose.Schema({
+  id: Number,
+  order_id: Number,
+  raised_by_mobile: String,
+  raised_by_name: String,
+  target_mobile: String,
+  target_name: String,
+  reason: String,
+  evidence_photo: String,
+  status: { type: String, default: 'Pending' },
+  resolution: String,
+  resolution_notes: String,
+  resolved_at: Date
 }, { timestamps: true });
 
 const CropSchema = new mongoose.Schema({
@@ -117,6 +135,7 @@ const MongoBid = mongoose.models.Bid || mongoose.model('Bid', BidSchema);
 const MongoMessage = mongoose.models.Message || mongoose.model('Message', MessageSchema);
 const MongoReview = mongoose.models.Review || mongoose.model('Review', ReviewSchema);
 const MongoOrder = mongoose.models.Order || mongoose.model('Order', OrderSchema);
+const MongoDispute = mongoose.models.Dispute || mongoose.model('Dispute', DisputeSchema);
 
 async function syncToCloud(filename, data) {
   const mongoUri = process.env.MONGODB_URI || process.env.DATABASE_URL;
@@ -154,6 +173,10 @@ async function syncToCloud(filename, data) {
     } else if (filename === 'orders.json' && Array.isArray(data)) {
       for (const o of data) {
         if (o.id) await MongoOrder.updateOne({ id: o.id }, o, { upsert: true });
+      }
+    } else if (filename === 'disputes.json' && Array.isArray(data)) {
+      for (const d of data) {
+        if (d.id) await MongoDispute.updateOne({ id: d.id }, d, { upsert: true });
       }
     }
   } catch (e) {
@@ -289,8 +312,27 @@ async function initDb() {
       quantity TEXT NOT NULL,
       final_price TEXT NOT NULL,
       status TEXT DEFAULT 'Confirmed',
+      cancel_reason TEXT,
+      cancelled_by TEXT,
+      cancelled_at DATETIME,
       created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
       updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
+
+    CREATE TABLE IF NOT EXISTS Disputes (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      order_id INTEGER NOT NULL,
+      raised_by_mobile TEXT NOT NULL,
+      raised_by_name TEXT NOT NULL,
+      target_mobile TEXT NOT NULL,
+      target_name TEXT NOT NULL,
+      reason TEXT NOT NULL,
+      evidence_photo TEXT,
+      status TEXT DEFAULT 'Pending',
+      resolution TEXT,
+      resolution_notes TEXT,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      resolved_at DATETIME
     );
   `);
 
@@ -309,6 +351,9 @@ async function initDb() {
   try { await db.exec(`ALTER TABLE Users ADD COLUMN review_count INTEGER DEFAULT 0;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Users ADD COLUMN latitude REAL;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Users ADD COLUMN longitude REAL;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Orders ADD COLUMN cancel_reason TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Orders ADD COLUMN cancelled_by TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Orders ADD COLUMN cancelled_at DATETIME;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN seller_mobile TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN status TEXT DEFAULT 'active';`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN soldDate TEXT;`); } catch(e) {}
@@ -428,8 +473,16 @@ async function initDb() {
     const savedOrders = loadTableFromFile('orders.json');
     for (const o of savedOrders) {
       await db.run(
-        'INSERT OR IGNORE INTO Orders (id, listing_id, buyer_mobile, buyer_name, seller_mobile, seller_name, bid_id, crop_name, quantity, final_price, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-        [o.id, o.listing_id, o.buyer_mobile, o.buyer_name, o.seller_mobile, o.seller_name, o.bid_id, o.crop_name, o.quantity, o.final_price, o.status || 'Confirmed']
+        'INSERT OR IGNORE INTO Orders (id, listing_id, buyer_mobile, buyer_name, seller_mobile, seller_name, bid_id, crop_name, quantity, final_price, status, cancel_reason, cancelled_by, cancelled_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        [o.id, o.listing_id, o.buyer_mobile, o.buyer_name, o.seller_mobile, o.seller_name, o.bid_id, o.crop_name, o.quantity, o.final_price, o.status || 'Confirmed', o.cancel_reason || null, o.cancelled_by || null, o.cancelled_at || null]
+      );
+    }
+
+    const savedDisputes = loadTableFromFile('disputes.json');
+    for (const d of savedDisputes) {
+      await db.run(
+        'INSERT OR IGNORE INTO Disputes (id, order_id, raised_by_mobile, raised_by_name, target_mobile, target_name, reason, evidence_photo, status, resolution, resolution_notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        [d.id, d.order_id, d.raised_by_mobile, d.raised_by_name, d.target_mobile, d.target_name, d.reason, d.evidence_photo, d.status || 'Pending', d.resolution || null, d.resolution_notes || null]
       );
     }
   } catch (err) {

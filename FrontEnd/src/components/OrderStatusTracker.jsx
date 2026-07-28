@@ -8,10 +8,11 @@ const STAGES = [
   { key: 'Delivered', label: 'Delivered', icon: 'fa-house-circle-check', color: '#059669' }
 ];
 
-const OrderStatusTracker = ({ order, isSeller, onStatusUpdated }) => {
+const OrderStatusTracker = ({ order, isSeller, onStatusUpdated, onOpenCancel, onOpenDispute }) => {
   const [isUpdating, setIsUpdating] = useState(false);
 
   const currentStatus = order?.status || 'Confirmed';
+  const isCancelled = currentStatus === 'Cancelled';
   const currentStageIndex = STAGES.findIndex(s => s.key === currentStatus);
 
   const handleUpdateStatus = async (nextStatus) => {
@@ -38,7 +39,22 @@ const OrderStatusTracker = ({ order, isSeller, onStatusUpdated }) => {
     setIsUpdating(false);
   };
 
-  const nextStage = currentStageIndex < STAGES.length - 1 ? STAGES[currentStageIndex + 1] : null;
+  const nextStage = currentStageIndex >= 0 && currentStageIndex < STAGES.length - 1 ? STAGES[currentStageIndex + 1] : null;
+
+  if (isCancelled) {
+    return (
+      <div className="p-3 bg-danger bg-opacity-10 border border-danger rounded-3 text-start my-3">
+        <div className="d-flex justify-content-between align-items-center mb-1">
+          <span className="badge bg-danger fw-bold"><i className="fas fa-ban me-1"></i> Order Cancelled</span>
+          <small className="text-muted">Order #{order.id}</small>
+        </div>
+        <div className="small text-danger fw-bold mt-1">
+          Reason: {order.cancel_reason || 'Cancelled prior to shipment'}
+        </div>
+        {order.cancelled_by && <small className="text-muted d-block">Cancelled By: {order.cancelled_by}</small>}
+      </div>
+    );
+  }
 
   return (
     <div className="p-3 bg-light rounded-3 border text-start my-3">
@@ -60,7 +76,7 @@ const OrderStatusTracker = ({ order, isSeller, onStatusUpdated }) => {
           className="position-absolute" 
           style={{ 
             top: '20px', left: '12%', 
-            width: `${(currentStageIndex / (STAGES.length - 1)) * 76}%`, 
+            width: `${(Math.max(0, currentStageIndex) / (STAGES.length - 1)) * 76}%`, 
             height: '3px', background: '#16a34a', zIndex: 2, transition: 'width 0.4s ease' 
           }}
         ></div>
@@ -91,20 +107,40 @@ const OrderStatusTracker = ({ order, isSeller, onStatusUpdated }) => {
         })}
       </div>
 
-      {/* Seller Action Controls */}
-      {isSeller && nextStage && (
-        <div className="d-flex justify-content-end align-items-center border-top pt-2 mt-3 gap-2">
-          <small className="text-muted me-auto">Update lifecycle state:</small>
+      {/* Action Controls */}
+      <div className="d-flex justify-content-between align-items-center border-top pt-2 mt-3 flex-wrap gap-2">
+        {/* Pre-shipment Cancel Button */}
+        {(currentStatus === 'Confirmed' || currentStatus === 'Packed') && onOpenCancel && (
           <button 
-            className="btn btn-sm btn-success fw-bold px-3"
+            className="btn btn-sm btn-outline-danger fw-bold"
+            onClick={() => onOpenCancel(order)}
+          >
+            <i className="fas fa-ban me-1"></i> Cancel Order
+          </button>
+        )}
+
+        {/* Delivered Quality Dispute Button */}
+        {currentStatus === 'Delivered' && onOpenDispute && (
+          <button 
+            className="btn btn-sm btn-outline-warning text-dark fw-bold"
+            onClick={() => onOpenDispute(order)}
+          >
+            <i className="fas fa-triangle-exclamation text-warning me-1"></i> Raise Quality Dispute
+          </button>
+        )}
+
+        {/* Seller Status Advance Button */}
+        {isSeller && nextStage && (
+          <button 
+            className="btn btn-sm btn-success fw-bold px-3 ms-auto"
             disabled={isUpdating}
             onClick={() => handleUpdateStatus(nextStage.key)}
           >
             <i className={`fas ${nextStage.icon} me-1`}></i>
             {isUpdating ? 'Updating...' : `Mark as ${nextStage.key}`}
           </button>
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 };

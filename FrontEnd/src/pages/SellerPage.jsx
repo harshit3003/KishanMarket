@@ -17,6 +17,7 @@ import ProfileModal from '../components/ProfileModal';
 import ProfileCard from '../components/ProfileCard';
 import ReviewModal from '../components/ReviewModal';
 import SellerOrdersModal from '../components/SellerOrdersModal';
+import AdminDisputeModal from '../components/AdminDisputeModal';
 import socket from '../socket';
 import { getInstantCoords } from '../utils/geoUtils';
 
@@ -39,6 +40,7 @@ const SellerPage = () => {
   const [profileTargetMobile, setProfileTargetMobile] = useState(null);
   const [reviewModalData, setReviewModalData] = useState({ open: false, order: null });
   const [isSellerOrdersModalOpen, setIsSellerOrdersModalOpen] = useState(false);
+  const [isAdminDisputeOpen, setIsAdminDisputeOpen] = useState(false);
 
   // New states for Interactive Modals
   const [editModalData, setEditModalData] = useState({ open: false, index: null, weight: '', rate: '' });
@@ -662,6 +664,7 @@ const SellerPage = () => {
                 <ul className="dropdown-links-list">
                   <li><a href="#profile" onClick={(e) => { e.preventDefault(); setProfileTargetMobile(null); setIsProfileModalOpen(true); setIsProfileOpen(false); }}><i className="fas fa-user"></i> My Profile</a></li>
                   <li><a href="#orders" onClick={(e) => { e.preventDefault(); setIsSellerOrdersModalOpen(true); setIsProfileOpen(false); }}><i className="fas fa-truck-ramp-box text-success"></i> Manage Orders</a></li>
+                  <li><a href="#disputes" onClick={(e) => { e.preventDefault(); setIsAdminDisputeOpen(true); setIsProfileOpen(false); }}><i className="fas fa-scale-balanced text-primary"></i> Dispute Center</a></li>
                   <li><a href="#live-bids" onClick={handleOpenLiveBids}><i className="fas fa-gavel text-warning"></i> Live Bids <span className="badge bg-danger ms-2 rounded-pill">New</span></a></li>
                   <li className="dropdown-divider"></li>
                   <li><a href="#" className="logout-item" onClick={handleLogout} style={{ color: '#000000' }}><i className="fas fa-sign-out-alt"></i> Logout</a></li>
@@ -985,6 +988,10 @@ const SellerPage = () => {
         isOpen={isSellerOrdersModalOpen} 
         onClose={() => setIsSellerOrdersModalOpen(false)} 
         currentUser={currentUser} 
+      />
+      <AdminDisputeModal
+        isOpen={isAdminDisputeOpen}
+        onClose={() => setIsAdminDisputeOpen(false)}
       />
 
       {/* Edit Crop Modal */}

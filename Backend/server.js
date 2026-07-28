@@ -150,6 +150,7 @@ initDb().then(async connection => {
   await syncMessages();
   await syncReviews();
   await syncOrders();
+  await syncDisputes();
 }).catch(err => {
   console.error('Database connection failed', err);
 });
@@ -206,6 +207,15 @@ async function syncOrders() {
     if (!database) return;
     const orders = await database.all('SELECT * FROM Orders');
     saveTableToFile('orders.json', orders);
+  } catch (e) {}
+}
+
+async function syncDisputes() {
+  try {
+    const database = await ensureDb();
+    if (!database) return;
+    const disputes = await database.all('SELECT * FROM Disputes');
+    saveTableToFile('disputes.json', disputes);
   } catch (e) {}
 }
 
@@ -1141,6 +1151,196 @@ app.put('/api/orders/:id/status', async (req, res) => {
   } catch (err) {
     console.error("Error updating order status:", err);
     res.status(500).json({ error: 'Failed to update order status' });
+  }
+});
+
+// Order Cancellation Endpoint
+app.put('/api/orders/:id/cancel', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { reason, cancelled_by_mobile, cancelled_by_name } = req.body;
+
+    const database = await ensureDb();
+    const existing = await database.get('SELECT * FROM Orders WHERE id = ?', [id]);
+    if (!existing) {
+      return res.status(404).json({ error: 'Order not found' });
+    }
+
+    if (existing.status === 'Shipped' || existing.status === 'Delivered') {
+      return res.status(400).json({ error: 'Order cannot be cancelled after shipment. Please raise a quality dispute instead.' });
+    }
+
+    const cleanByMob = normalizePhone(cancelled_by_mobile);
+
+    await database.run(
+      `UPDATE Orders SET 
+        status = 'Cancelled', 
+        cancel_reason = ?, 
+        cancelled_by = ?, 
+        cancelled_at = CURRENT_TIMESTAMP, 
+        updated_at = CURRENT_TIMESTAMP 
+       WHERE id = ?`,
+      [reason || 'User cancelled order', (cancelled_by_name || 'User').trim(), id]
+    );
+
+    await syncOrders();
+
+    const cancelledOrder = {
+      ...existing,
+      status: 'Cancelled',
+      cancel_reason: reason,
+      cancelled_by: cancelled_by_name,
+      cancelled_at: new Date().toISOString()
+    };
+
+    const cleanBuyer = normalizePhone(existing.buyer_mobile);
+    const cleanSeller = normalizePhone(existing.seller_mobile);
+
+    io.to(`user_${cleanBuyer}`).emit('order_cancelled', cancelledOrder);
+    io.to(`user_${cleanSeller}`).emit('order_cancelled', cancelledOrder);
+
+    res.json({ message: 'Order cancelled successfully', order: cancelledOrder });
+  } catch (err) {
+    console.error("Error cancelling order:", err);
+    res.status(500).json({ error: 'Failed to cancel order' });
+  }
+});
+
+// Return / Dispute Management Endpoints
+app.post('/api/disputes', async (req, res) => {
+  try {
+    const { order_id, raised_by_mobile, raised_by_name, target_mobile, target_name, reason, evidence_photo } = req.body;
+    if (!order_id || !raised_by_mobile || !reason) {
+      return res.status(400).json({ error: 'Missing required dispute information' });
+    }
+
+    const cleanRaisedByMob = normalizePhone(raised_by_mobile);
+    const cleanTargetMob = normalizePhone(target_mobile);
+    const database = await ensureDb();
+
+    // Verify order exists
+    const order = await database.get('SELECT * FROM Orders WHERE id = ?', [order_id]);
+    if (!order) {
+      return res.status(404).json({ error: 'Associated order not found' });
+    }
+
+    const result = await database.run(
+      `INSERT INTO Disputes (order_id, raised_by_mobile, raised_by_name, target_mobile, target_name, reason, evidence_photo, status)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+      [
+        order_id,
+        cleanRaisedByMob,
+        (raised_by_name || 'Customer').trim(),
+        cleanTargetMob,
+        (target_name || 'Farmer').trim(),
+        (reason || '').trim(),
+        evidence_photo || null,
+        'Pending'
+      ]
+    );
+
+    await syncDisputes();
+
+    const newDispute = {
+      id: result.lastID,
+      order_id,
+      raised_by_mobile: cleanRaisedByMob,
+      raised_by_name,
+      target_mobile: cleanTargetMob,
+      target_name,
+      reason,
+      evidence_photo,
+      status: 'Pending',
+      created_at: new Date().toISOString()
+    };
+
+    io.to(`user_${cleanRaisedByMob}`).emit('dispute_created', newDispute);
+    io.to(`user_${cleanTargetMob}`).emit('dispute_created', newDispute);
+
+    res.status(201).json({ message: 'Dispute submitted for admin resolution', dispute: newDispute });
+  } catch (err) {
+    console.error("Error creating dispute:", err);
+    res.status(500).json({ error: 'Failed to create dispute' });
+  }
+});
+
+app.get('/api/disputes/my', async (req, res) => {
+  try {
+    const { mobile } = req.query;
+    if (!mobile) return res.json([]);
+
+    const cleanMob = normalizePhone(mobile);
+    const database = await ensureDb();
+
+    const disputes = await database.all(
+      `SELECT * FROM Disputes 
+       WHERE TRIM(raised_by_mobile) = ? OR TRIM(target_mobile) = ?
+       ORDER BY id DESC`,
+      [cleanMob, cleanMob]
+    );
+
+    res.json(disputes);
+  } catch (err) {
+    console.error("Error fetching disputes:", err);
+    res.status(500).json({ error: 'Failed to fetch disputes' });
+  }
+});
+
+app.get('/api/admin/disputes', async (req, res) => {
+  try {
+    const database = await ensureDb();
+    const disputes = await database.all('SELECT * FROM Disputes ORDER BY id DESC');
+    res.json(disputes);
+  } catch (err) {
+    console.error("Error fetching admin disputes:", err);
+    res.status(500).json({ error: 'Failed to fetch admin disputes' });
+  }
+});
+
+app.put('/api/admin/disputes/:id/resolve', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { resolution, resolution_notes } = req.body;
+    if (!resolution) {
+      return res.status(400).json({ error: 'Resolution action is required' });
+    }
+
+    const database = await ensureDb();
+    const existing = await database.get('SELECT * FROM Disputes WHERE id = ?', [id]);
+    if (!existing) {
+      return res.status(404).json({ error: 'Dispute claim not found' });
+    }
+
+    await database.run(
+      `UPDATE Disputes SET 
+        status = 'Resolved',
+        resolution = ?,
+        resolution_notes = ?,
+        resolved_at = CURRENT_TIMESTAMP
+       WHERE id = ?`,
+      [resolution, resolution_notes || null, id]
+    );
+
+    await syncDisputes();
+
+    const updatedDispute = {
+      ...existing,
+      status: 'Resolved',
+      resolution,
+      resolution_notes,
+      resolved_at: new Date().toISOString()
+    };
+
+    const cleanRaised = normalizePhone(existing.raised_by_mobile);
+    const cleanTarget = normalizePhone(existing.target_mobile);
+
+    io.to(`user_${cleanRaised}`).emit('dispute_status_updated', updatedDispute);
+    io.to(`user_${cleanTarget}`).emit('dispute_status_updated', updatedDispute);
+
+    res.json({ message: 'Dispute resolved successfully', dispute: updatedDispute });
+  } catch (err) {
+    console.error("Error resolving dispute:", err);
+    res.status(500).json({ error: 'Failed to resolve dispute' });
   }
 });
 

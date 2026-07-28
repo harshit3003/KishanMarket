@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import ReviewModal from '../components/ReviewModal';
 import OrderStatusTracker from '../components/OrderStatusTracker';
+import CancelOrderModal from '../components/CancelOrderModal';
+import RaiseDisputeModal from '../components/RaiseDisputeModal';
 import socket from '../socket';
 import '../assets/global.css';
 import '../assets/dynamic-features.css';
@@ -17,6 +19,8 @@ const MyOrder = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [receiptModal, setReceiptModal] = useState({ open: false, order: null });
   const [reviewModalData, setReviewModalData] = useState({ open: false, order: null });
+  const [cancelModalData, setCancelModalData] = useState({ open: false, order: null });
+  const [disputeModalData, setDisputeModalData] = useState({ open: false, order: null });
 
   useEffect(() => {
     let mobile = 'guest';
@@ -171,7 +175,15 @@ const MyOrder = () => {
                     </div>
 
                     {/* Real-time OrderStatusTracker Stepper Component */}
-                    <OrderStatusTracker order={activeOrder} isSeller={false} />
+                    <OrderStatusTracker 
+                      order={activeOrder} 
+                      isSeller={false} 
+                      onOpenCancel={(ord) => setCancelModalData({ open: true, order: ord })}
+                      onOpenDispute={(ord) => setDisputeModalData({ open: true, order: ord })}
+                      onStatusUpdated={(updated) => {
+                        setPurchases(prev => prev.map(p => p.id === updated.id ? updated : p));
+                      }}
+                    />
                   </div>
                 </div>
               )}
@@ -234,6 +246,25 @@ const MyOrder = () => {
         onClose={() => setReviewModalData({ open: false, order: null })} 
         transactionData={reviewModalData.order} 
         currentUser={currentUser} 
+      />
+
+      {/* Cancel Order Modal */}
+      <CancelOrderModal
+        isOpen={cancelModalData.open}
+        onClose={() => setCancelModalData({ open: false, order: null })}
+        order={cancelModalData.order}
+        currentUser={currentUser}
+        onOrderCancelled={(updated) => {
+          setPurchases(prev => prev.map(p => p.id === updated.id ? updated : p));
+        }}
+      />
+
+      {/* Raise Dispute Modal */}
+      <RaiseDisputeModal
+        isOpen={disputeModalData.open}
+        onClose={() => setDisputeModalData({ open: false, order: null })}
+        order={disputeModalData.order}
+        currentUser={currentUser}
       />
 
       {/* Tax Invoice Modal */}

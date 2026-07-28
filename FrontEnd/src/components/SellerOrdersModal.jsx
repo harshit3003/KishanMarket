@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import OrderStatusTracker from './OrderStatusTracker';
+import CancelOrderModal from './CancelOrderModal';
 
 const SellerOrdersModal = ({ isOpen, onClose, currentUser }) => {
   const [orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [cancelModalData, setCancelModalData] = useState({ open: false, order: null });
 
   useEffect(() => {
     if (isOpen && currentUser && currentUser.mobile) {
@@ -84,12 +86,21 @@ const SellerOrdersModal = ({ isOpen, onClose, currentUser }) => {
                 <OrderStatusTracker 
                   order={order} 
                   isSeller={true} 
-                  onStatusUpdated={handleStatusUpdated} 
+                  onStatusUpdated={handleStatusUpdated}
+                  onOpenCancel={(ord) => setCancelModalData({ open: true, order: ord })}
                 />
               </div>
             ))}
           </div>
         )}
+
+        <CancelOrderModal
+          isOpen={cancelModalData.open}
+          onClose={() => setCancelModalData({ open: false, order: null })}
+          order={cancelModalData.order}
+          currentUser={currentUser}
+          onOrderCancelled={handleStatusUpdated}
+        />
 
         <div className="d-flex justify-content-end pt-3 border-top mt-3">
           <button className="btn btn-sm btn-outline-secondary" onClick={onClose}>Close</button>
