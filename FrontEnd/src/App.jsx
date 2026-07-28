@@ -12,11 +12,19 @@ import SellersProfile from './pages/SellersProfile';
 import MyOrder from './pages/MyOrder';
 import BackgroundLayer from './components/BackgroundLayer';
 
+const getUser = () => {
+  const userStr = localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser');
+  if (!userStr) return null;
+  try {
+    return JSON.parse(userStr);
+  } catch (e) {
+    return null;
+  }
+};
+
 const ProtectedRoute = ({ children }) => {
-  const isAuth = sessionStorage.getItem('isAuthenticated') === 'true';
-  const userStr = sessionStorage.getItem('currentUser') || localStorage.getItem('currentUser');
-  if (!isAuth || !userStr) {
-    toast.error("Please enter your credentials to log in.", { id: 'auth_err' });
+  const user = getUser();
+  if (!user) {
     return <Navigate to="/login" replace />;
   }
   return children;
@@ -24,26 +32,20 @@ const ProtectedRoute = ({ children }) => {
 
 // Strict Role Guard for Buyers
 const BuyerRoute = ({ children }) => {
-  const isAuth = sessionStorage.getItem('isAuthenticated') === 'true';
-  const userStr = sessionStorage.getItem('currentUser') || localStorage.getItem('currentUser');
-  if (!isAuth || !userStr) {
-    toast.error("Please enter your credentials to log in.", { id: 'auth_buyer_err' });
+  const user = getUser();
+  if (!user) {
     return <Navigate to="/login" replace />;
   }
-  const user = JSON.parse(userStr);
   if (user.role !== 'buyer') return <Navigate to="/seller" replace />;
   return children;
 };
 
 // Strict Role Guard for Sellers
 const SellerRoute = ({ children }) => {
-  const isAuth = sessionStorage.getItem('isAuthenticated') === 'true';
-  const userStr = sessionStorage.getItem('currentUser') || localStorage.getItem('currentUser');
-  if (!isAuth || !userStr) {
-    toast.error("Please enter your credentials to log in.", { id: 'auth_seller_err' });
+  const user = getUser();
+  if (!user) {
     return <Navigate to="/login" replace />;
   }
-  const user = JSON.parse(userStr);
   if (user.role !== 'seller') return <Navigate to="/buyer" replace />;
   return children;
 };

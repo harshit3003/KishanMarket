@@ -1,17 +1,19 @@
 import React from 'react';
 
-const CustomerSelectModal = ({ isOpen, onClose, crop, buyers, receivedBids, onSelectBuyer, currentUser }) => {
+const CustomerSelectModal = ({ isOpen, onClose, crop, buyers = [], receivedBids = [], onSelectBuyer, currentUser }) => {
   if (!isOpen || !crop) return null;
 
+  const safeBids = Array.isArray(receivedBids) ? receivedBids : [];
+  const safeBuyers = Array.isArray(buyers) ? buyers : [];
+
   // Filter bids matching this crop
-  const cropBids = receivedBids.filter(b => 
-    b.crop_id === crop.id || 
-    (b.crop_name && b.crop_name.toLowerCase() === (crop.name || '').toLowerCase())
+  const cropBids = safeBids.filter(b => 
+    b && (b.crop_id === crop.id || (b.crop_name && b.crop_name.toLowerCase() === (crop.name || '').toLowerCase()))
   );
 
   // Filter buyers matching this crop
-  const matchingBuyers = buyers.filter(b => 
-    b.crops && b.crops.toLowerCase().includes((crop.name || '').toLowerCase())
+  const matchingBuyers = safeBuyers.filter(b => 
+    b && b.crops && b.crops.toLowerCase().includes((crop.name || '').toLowerCase())
   );
 
   return (

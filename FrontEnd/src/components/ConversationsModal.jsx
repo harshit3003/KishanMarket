@@ -48,7 +48,7 @@ const ConversationsModal = ({ isOpen, onClose, currentUser, onSelectChat, unread
             <i className="fas fa-spinner fa-spin fa-2x text-success"></i>
             <p className="small text-muted mt-2">Loading active chat conversations...</p>
           </div>
-        ) : conversations.length === 0 ? (
+        ) : (!Array.isArray(conversations) || conversations.length === 0) ? (
           <div className="text-center py-5">
             <i className="fas fa-comments fa-3x text-muted opacity-50 mb-3"></i>
             <h6 className="fw-bold text-secondary">No Messages Yet</h6>
