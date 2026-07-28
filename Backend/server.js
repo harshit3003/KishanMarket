@@ -151,6 +151,9 @@ initDb().then(async connection => {
   await syncReviews();
   await syncOrders();
   await syncDisputes();
+  await syncReports();
+  await syncTickets();
+  await syncReplies();
 }).catch(err => {
   console.error('Database connection failed', err);
 });
@@ -216,6 +219,33 @@ async function syncDisputes() {
     if (!database) return;
     const disputes = await database.all('SELECT * FROM Disputes');
     saveTableToFile('disputes.json', disputes);
+  } catch (e) {}
+}
+
+async function syncReports() {
+  try {
+    const database = await ensureDb();
+    if (!database) return;
+    const reports = await database.all('SELECT * FROM Reports');
+    saveTableToFile('reports.json', reports);
+  } catch (e) {}
+}
+
+async function syncTickets() {
+  try {
+    const database = await ensureDb();
+    if (!database) return;
+    const tickets = await database.all('SELECT * FROM SupportTickets');
+    saveTableToFile('support_tickets.json', tickets);
+  } catch (e) {}
+}
+
+async function syncReplies() {
+  try {
+    const database = await ensureDb();
+    if (!database) return;
+    const replies = await database.all('SELECT * FROM TicketReplies');
+    saveTableToFile('ticket_replies.json', replies);
   } catch (e) {}
 }
 
@@ -1816,6 +1846,7 @@ app.post('/api/reports', async (req, res) => {
     );
 
     const newReport = { id: result.lastID, reported_by_mobile: cleanMob, target_type, target_id, reason, status: 'Pending' };
+    await syncReports();
     res.status(201).json({ message: 'Report submitted successfully for admin review', report: newReport });
   } catch (err) {
     console.error("Error creating report:", err);
@@ -1840,6 +1871,7 @@ app.put('/api/admin/reports/:id/action', async (req, res) => {
 
     const database = await ensureDb();
     await database.run('UPDATE Reports SET status = ? WHERE id = ?', [action || 'Resolved', id]);
+    await syncReports();
 
     res.json({ message: `Report #${id} updated to ${action}` });
   } catch (err) {
@@ -1898,6 +1930,7 @@ app.post('/api/tickets', async (req, res) => {
     );
 
     const newTicket = { id: result.lastID, user_mobile: cleanMob, subject, category, status: 'Open', created_at: new Date().toISOString() };
+    await syncTickets();
     res.status(201).json({ message: 'Support ticket submitted', ticket: newTicket });
   } catch (err) {
     console.error("Error creating ticket:", err);
@@ -1947,6 +1980,8 @@ app.post('/api/tickets/:id/reply', async (req, res) => {
     await database.run('UPDATE SupportTickets SET status = "In Progress" WHERE id = ? AND status = "Open"', [id]);
 
     const newReply = { id: result.lastID, ticket_id: parseInt(id, 10), sender_name, is_admin: is_admin ? 1 : 0, message, created_at: new Date().toISOString() };
+    await syncReplies();
+    await syncTickets();
     res.json({ message: 'Reply added', reply: newReply });
   } catch (err) {
     res.status(500).json({ error: 'Failed to post reply' });

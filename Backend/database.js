@@ -178,6 +178,9 @@ const MongoMessage = mongoose.models.Message || mongoose.model('Message', Messag
 const MongoReview = mongoose.models.Review || mongoose.model('Review', ReviewSchema);
 const MongoOrder = mongoose.models.Order || mongoose.model('Order', OrderSchema);
 const MongoDispute = mongoose.models.Dispute || mongoose.model('Dispute', DisputeSchema);
+const MongoReport = mongoose.models.Report || mongoose.model('Report', ReportSchema);
+const MongoSupportTicket = mongoose.models.SupportTicket || mongoose.model('SupportTicket', SupportTicketSchema);
+const MongoTicketReply = mongoose.models.TicketReply || mongoose.model('TicketReply', TicketReplySchema);
 
 async function syncToCloud(filename, data) {
   const mongoUri = process.env.MONGODB_URI || process.env.DATABASE_URL;
@@ -219,6 +222,18 @@ async function syncToCloud(filename, data) {
     } else if (filename === 'disputes.json' && Array.isArray(data)) {
       for (const d of data) {
         if (d.id) await MongoDispute.updateOne({ id: d.id }, d, { upsert: true });
+      }
+    } else if (filename === 'reports.json' && Array.isArray(data)) {
+      for (const rep of data) {
+        if (rep.id) await MongoReport.updateOne({ id: rep.id }, rep, { upsert: true });
+      }
+    } else if (filename === 'support_tickets.json' && Array.isArray(data)) {
+      for (const t of data) {
+        if (t.id) await MongoSupportTicket.updateOne({ id: t.id }, t, { upsert: true });
+      }
+    } else if (filename === 'ticket_replies.json' && Array.isArray(data)) {
+      for (const rep of data) {
+        if (rep.id) await MongoTicketReply.updateOne({ id: rep.id }, rep, { upsert: true });
       }
     }
   } catch (e) {
@@ -469,17 +484,22 @@ async function initDb() {
 
   // Cloud DB Restoration on Boot (if MONGODB_URI is provided)
   const mongoUri = process.env.MONGODB_URI || process.env.DATABASE_URL;
+  let hasRestoredFromCloud = false;
+
   if (mongoUri) {
     try {
       if (mongoose.connection.readyState !== 1) {
         await mongoose.connect(mongoUri);
       }
+
+      // 1. Users
       const cloudUsers = await MongoUser.find({}).lean();
       for (let idx = 0; idx < cloudUsers.length; idx++) {
         const u = cloudUsers[idx];
+        const genId = u.user_id || (u.role === 'seller' ? `KM-S-${1000 + idx + 1}` : `KM-B-${1000 + idx + 1}`);
         await db.run(
-          `INSERT INTO Users (user_id, name, mobile, location, role, password, profile_photo, bio, business_name, address, state, district, pincode, crops_specialty)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+          `INSERT INTO Users (user_id, name, mobile, location, role, password, profile_photo, bio, business_name, address, state, district, pincode, crops_specialty, avg_rating, review_count, latitude, longitude, account_status)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
            ON CONFLICT(mobile) DO UPDATE SET
              profile_photo=COALESCE(excluded.profile_photo, Users.profile_photo),
              bio=COALESCE(excluded.bio, Users.bio),
@@ -488,15 +508,109 @@ async function initDb() {
              state=COALESCE(excluded.state, Users.state),
              district=COALESCE(excluded.district, Users.district),
              pincode=COALESCE(excluded.pincode, Users.pincode),
-             crops_specialty=COALESCE(excluded.crops_specialty, Users.crops_specialty)`,
+             crops_specialty=COALESCE(excluded.crops_specialty, Users.crops_specialty),
+             account_status=COALESCE(excluded.account_status, Users.account_status)`,
           [
             genId, u.name, u.mobile, u.location || '', u.role, u.password,
             u.profile_photo || null, u.bio || null, u.business_name || null,
-            u.address || null, u.state || null, u.district || null, u.pincode || null, u.crops_specialty || null
+            u.address || null, u.state || null, u.district || null, u.pincode || null, u.crops_specialty || null,
+            u.avg_rating || 5.0, u.review_count || 0, u.latitude || null, u.longitude || null, u.account_status || 'active'
           ]
         );
       }
-      console.log(`Cloud DB Restored ${cloudUsers.length} users successfully.`);
+
+      // 2. Crops
+      const cloudCrops = await MongoCrop.find({}).lean();
+      for (const c of cloudCrops) {
+        await db.run(
+          'INSERT OR REPLACE INTO Crops (id, name, weight, rate, seller, loc, seller_mobile, status, soldDate, buyerName, distance, transportCost, netProfit, buyer_mobile, is_removed) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+          [c.id, c.name, c.weight, c.rate, c.seller, c.loc, c.seller_mobile, c.status || 'active', c.soldDate || null, c.buyerName || null, c.distance || null, c.transportCost || null, c.netProfit || null, c.buyer_mobile || null, c.is_removed || 0]
+        );
+      }
+
+      // 3. Buyer Requests
+      const cloudReqs = await MongoBuyerRequest.find({}).lean();
+      for (const r of cloudReqs) {
+        await db.run(
+          'INSERT OR REPLACE INTO BuyerRequests (id, crop, budget, status, buyer_mobile, buyer_location, buyer_name) VALUES (?, ?, ?, ?, ?, ?, ?)',
+          [r.id, r.crop, r.budget, r.status || 'Pending', r.buyer_mobile, r.buyer_location, r.buyer_name]
+        );
+      }
+
+      // 4. Bids
+      const cloudBids = await MongoBid.find({}).lean();
+      for (const b of cloudBids) {
+        await db.run(
+          'INSERT OR REPLACE INTO Bids (id, crop_id, crop_name, buyer_name, buyer_mobile, seller_name, seller_mobile, asking_rate, bid_rate, weight, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+          [b.id, b.crop_id, b.crop_name, b.buyer_name, b.buyer_mobile, b.seller_name, b.seller_mobile, b.asking_rate, b.bid_rate, b.weight, b.status || 'pending']
+        );
+      }
+
+      // 5. Messages
+      const cloudMsgs = await MongoMessage.find({}).lean();
+      for (const m of cloudMsgs) {
+        await db.run(
+          'INSERT OR REPLACE INTO Messages (id, room_id, sender, text, time, sender_name, sender_mobile, receiver_mobile, crop_name, crop_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+          [m.id, m.room_id, m.sender, m.text, m.time, m.sender_name || null, m.sender_mobile || null, m.receiver_mobile || null, m.crop_name || null, m.crop_id || null]
+        );
+      }
+
+      // 6. Reviews
+      const cloudReviews = await MongoReview.find({}).lean();
+      for (const r of cloudReviews) {
+        await db.run(
+          'INSERT OR REPLACE INTO Reviews (id, order_id, from_user_mobile, from_user_name, to_user_mobile, to_user_name, rating, comment) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+          [r.id, r.order_id, r.from_user_mobile, r.from_user_name, r.to_user_mobile, r.to_user_name, r.rating, r.comment]
+        );
+      }
+
+      // 7. Orders
+      const cloudOrders = await MongoOrder.find({}).lean();
+      for (const o of cloudOrders) {
+        await db.run(
+          'INSERT OR REPLACE INTO Orders (id, listing_id, buyer_mobile, buyer_name, seller_mobile, seller_name, bid_id, crop_name, quantity, final_price, status, cancel_reason, cancelled_by, cancelled_at, invoice_number, transporter_name, vehicle_no, tracking_id, driver_phone, est_delivery_date, dispatched_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+          [o.id, o.listing_id, o.buyer_mobile, o.buyer_name, o.seller_mobile, o.seller_name, o.bid_id, o.crop_name, o.quantity, o.final_price, o.status || 'Confirmed', o.cancel_reason || null, o.cancelled_by || null, o.cancelled_at || null, o.invoice_number || null, o.transporter_name || null, o.vehicle_no || null, o.tracking_id || null, o.driver_phone || null, o.est_delivery_date || null, o.dispatched_at || null]
+        );
+      }
+
+      // 8. Disputes
+      const cloudDisputes = await MongoDispute.find({}).lean();
+      for (const d of cloudDisputes) {
+        await db.run(
+          'INSERT OR REPLACE INTO Disputes (id, order_id, raised_by_mobile, raised_by_name, target_mobile, target_name, reason, evidence_photo, status, resolution, resolution_notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+          [d.id, d.order_id, d.raised_by_mobile, d.raised_by_name, d.target_mobile, d.target_name, d.reason, d.evidence_photo, d.status || 'Pending', d.resolution || null, d.resolution_notes || null]
+        );
+      }
+
+      // 9. Reports
+      const cloudReports = await MongoReport.find({}).lean();
+      for (const rep of cloudReports) {
+        await db.run(
+          'INSERT OR REPLACE INTO Reports (id, reported_by_mobile, reported_by_name, target_type, target_id, target_name, reason, notes, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+          [rep.id, rep.reported_by_mobile, rep.reported_by_name, rep.target_type, rep.target_id, rep.target_name || null, rep.reason, rep.notes || null, rep.status || 'Pending']
+        );
+      }
+
+      // 10. Support Tickets
+      const cloudTickets = await MongoSupportTicket.find({}).lean();
+      for (const t of cloudTickets) {
+        await db.run(
+          'INSERT OR REPLACE INTO SupportTickets (id, user_mobile, user_name, subject, category, description, status) VALUES (?, ?, ?, ?, ?, ?, ?)',
+          [t.id, t.user_mobile, t.user_name, t.subject, t.category, t.description, t.status || 'Open']
+        );
+      }
+
+      // 11. Ticket Replies
+      const cloudReplies = await MongoTicketReply.find({}).lean();
+      for (const r of cloudReplies) {
+        await db.run(
+          'INSERT OR REPLACE INTO TicketReplies (id, ticket_id, sender_mobile, sender_name, is_admin, message) VALUES (?, ?, ?, ?, ?, ?)',
+          [r.id, r.ticket_id, r.sender_mobile, r.sender_name, r.is_admin || 0, r.message]
+        );
+      }
+
+      hasRestoredFromCloud = true;
+      console.log(`Cloud DB Restored all collections successfully from MongoDB Atlas.`);
     } catch (e) {
       console.error("Cloud restoration note:", e.message);
     }
