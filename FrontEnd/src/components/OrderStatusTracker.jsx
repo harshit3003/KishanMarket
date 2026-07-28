@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
+import TrackingTimeline from './TrackingTimeline';
+import ShipmentUpdateModal from './ShipmentUpdateModal';
 
 const STAGES = [
   { key: 'Confirmed', label: 'Order Confirmed', icon: 'fa-check-circle', color: '#16a34a' },
@@ -10,6 +12,7 @@ const STAGES = [
 
 const OrderStatusTracker = ({ order, isSeller, onStatusUpdated, onOpenCancel, onOpenDispute }) => {
   const [isUpdating, setIsUpdating] = useState(false);
+  const [isShipmentModalOpen, setIsShipmentModalOpen] = useState(false);
 
   const currentStatus = order?.status || 'Confirmed';
   const isCancelled = currentStatus === 'Cancelled';
@@ -17,8 +20,13 @@ const OrderStatusTracker = ({ order, isSeller, onStatusUpdated, onOpenCancel, on
 
   const handleUpdateStatus = async (nextStatus) => {
     if (!order || !order.id) return;
-    setIsUpdating(true);
 
+    if (nextStatus === 'Shipped') {
+      setIsShipmentModalOpen(true);
+      return;
+    }
+
+    setIsUpdating(true);
     try {
       const res = await fetch(`/api/orders/${order.id}/status`, {
         method: 'PUT',
@@ -70,7 +78,6 @@ const OrderStatusTracker = ({ order, isSeller, onStatusUpdated, onOpenCancel, on
 
       {/* Stepper Visual */}
       <div className="d-flex justify-content-between position-relative my-4">
-        {/* Track Line */}
         <div className="position-absolute" style={{ top: '20px', left: '12%', right: '12%', height: '3px', background: '#e2e8f0', zIndex: 1 }}></div>
         <div 
           className="position-absolute" 
@@ -81,7 +88,6 @@ const OrderStatusTracker = ({ order, isSeller, onStatusUpdated, onOpenCancel, on
           }}
         ></div>
 
-        {/* Steps */}
         {STAGES.map((stage, idx) => {
           const isCompleted = idx <= currentStageIndex;
           const isActive = idx === currentStageIndex;
@@ -107,9 +113,11 @@ const OrderStatusTracker = ({ order, isSeller, onStatusUpdated, onOpenCancel, on
         })}
       </div>
 
+      {/* Live Tracking Timeline Widget */}
+      <TrackingTimeline order={order} />
+
       {/* Action Controls */}
       <div className="d-flex justify-content-between align-items-center border-top pt-2 mt-3 flex-wrap gap-2">
-        {/* Pre-shipment Cancel Button */}
         {(currentStatus === 'Confirmed' || currentStatus === 'Packed') && onOpenCancel && (
           <button 
             className="btn btn-sm btn-outline-danger fw-bold"
@@ -119,7 +127,6 @@ const OrderStatusTracker = ({ order, isSeller, onStatusUpdated, onOpenCancel, on
           </button>
         )}
 
-        {/* Delivered Quality Dispute Button */}
         {currentStatus === 'Delivered' && onOpenDispute && (
           <button 
             className="btn btn-sm btn-outline-warning text-dark fw-bold"
@@ -129,7 +136,6 @@ const OrderStatusTracker = ({ order, isSeller, onStatusUpdated, onOpenCancel, on
           </button>
         )}
 
-        {/* Seller Status Advance Button */}
         {isSeller && nextStage && (
           <button 
             className="btn btn-sm btn-success fw-bold px-3 ms-auto"
@@ -137,10 +143,20 @@ const OrderStatusTracker = ({ order, isSeller, onStatusUpdated, onOpenCancel, on
             onClick={() => handleUpdateStatus(nextStage.key)}
           >
             <i className={`fas ${nextStage.icon} me-1`}></i>
-            {isUpdating ? 'Updating...' : `Mark as ${nextStage.key}`}
+            {isUpdating ? 'Updating...' : (nextStage.key === 'Shipped' ? 'Dispatch & Ship 🚚' : `Mark as ${nextStage.key}`)}
           </button>
         )}
       </div>
+
+      {/* Shipment Details Form Modal */}
+      <ShipmentUpdateModal
+        isOpen={isShipmentModalOpen}
+        onClose={() => setIsShipmentModalOpen(false)}
+        order={order}
+        onShipmentDispatched={(updated) => {
+          if (onStatusUpdated) onStatusUpdated(updated);
+        }}
+      />
     </div>
   );
 };

@@ -1679,6 +1679,93 @@ app.get('/api/orders/:id/invoice', async (req, res) => {
   }
 });
 
+// Delivery & Logistics Tracking Endpoints
+app.put('/api/orders/:id/shipment', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { transporter_name, vehicle_no, tracking_id, driver_phone, est_delivery_date } = req.body;
+
+    const database = await ensureDb();
+    const existing = await database.get('SELECT * FROM Orders WHERE id = ?', [id]);
+    if (!existing) return res.status(404).json({ error: 'Order record not found' });
+
+    const trackId = tracking_id || `LR-2026-${Math.floor(10000 + Math.random() * 90000)}`;
+
+    await database.run(
+      `UPDATE Orders SET 
+        status = 'Shipped',
+        transporter_name = ?,
+        vehicle_no = ?,
+        tracking_id = ?,
+        driver_phone = ?,
+        est_delivery_date = ?,
+        dispatched_at = CURRENT_TIMESTAMP,
+        updated_at = CURRENT_TIMESTAMP
+       WHERE id = ?`,
+      [
+        transporter_name || 'VRL Logistics / Local Truck',
+        vehicle_no || 'UP 78 BT 4521',
+        trackId,
+        driver_phone || '9876543210',
+        est_delivery_date || '2-3 Business Days',
+        id
+      ]
+    );
+
+    await syncOrders();
+
+    const updatedOrder = {
+      ...existing,
+      status: 'Shipped',
+      transporter_name: transporter_name || 'VRL Logistics / Local Truck',
+      vehicle_no: vehicle_no || 'UP 78 BT 4521',
+      tracking_id: trackId,
+      driver_phone: driver_phone || '9876543210',
+      est_delivery_date: est_delivery_date || '2-3 Business Days',
+      dispatched_at: new Date().toISOString()
+    };
+
+    const cleanBuyer = normalizePhone(existing.buyer_mobile);
+    const cleanSeller = normalizePhone(existing.seller_mobile);
+
+    io.to(`user_${cleanBuyer}`).emit('order_shipment_updated', updatedOrder);
+    io.to(`user_${cleanSeller}`).emit('order_shipment_updated', updatedOrder);
+    io.to(`user_${cleanBuyer}`).emit('order_status_updated', updatedOrder);
+    io.to(`user_${cleanSeller}`).emit('order_status_updated', updatedOrder);
+
+    res.json({ message: 'Shipment dispatched successfully', order: updatedOrder });
+  } catch (err) {
+    console.error("Error updating shipment info:", err);
+    res.status(500).json({ error: 'Failed to update shipment details' });
+  }
+});
+
+app.get('/api/orders/:id/tracking', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const database = await ensureDb();
+
+    const order = await database.get('SELECT * FROM Orders WHERE id = ?', [id]);
+    if (!order) return res.status(404).json({ error: 'Order record not found' });
+
+    res.json({
+      orderId: order.id,
+      status: order.status,
+      cropName: order.crop_name,
+      quantity: order.quantity,
+      transporterName: order.transporter_name || 'Agri Logistics Partner',
+      vehicleNo: order.vehicle_no || 'N/A',
+      trackingId: order.tracking_id || 'N/A',
+      driverPhone: order.driver_phone || '',
+      estDeliveryDate: order.est_delivery_date || '2-3 Days',
+      dispatchedAt: order.dispatched_at || order.updated_at || order.created_at
+    });
+  } catch (err) {
+    console.error("Error fetching tracking info:", err);
+    res.status(500).json({ error: 'Failed to fetch tracking details' });
+  }
+});
+
 const normalizePhone = (p) => {
   if (!p) return '';
   const digits = p.toString().replace(/\D/g, '');

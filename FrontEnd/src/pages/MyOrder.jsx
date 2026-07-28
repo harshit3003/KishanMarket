@@ -73,10 +73,12 @@ const MyOrder = () => {
 
     socket.on('order_created', handleOrderUpdate);
     socket.on('order_status_updated', handleOrderUpdate);
+    socket.on('order_shipment_updated', handleOrderUpdate);
 
     return () => {
       socket.off('order_created', handleOrderUpdate);
       socket.off('order_status_updated', handleOrderUpdate);
+      socket.off('order_shipment_updated', handleOrderUpdate);
     };
   }, []);
 

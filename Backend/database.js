@@ -57,7 +57,13 @@ const OrderSchema = new mongoose.Schema({
   cancel_reason: String,
   cancelled_by: String,
   cancelled_at: Date,
-  invoice_number: String
+  invoice_number: String,
+  transporter_name: String,
+  vehicle_no: String,
+  tracking_id: String,
+  driver_phone: String,
+  est_delivery_date: String,
+  dispatched_at: Date
 }, { timestamps: true });
 
 const DisputeSchema = new mongoose.Schema({
@@ -368,6 +374,12 @@ async function initDb() {
   try { await db.exec(`ALTER TABLE Orders ADD COLUMN cancelled_by TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Orders ADD COLUMN cancelled_at DATETIME;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Orders ADD COLUMN invoice_number TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Orders ADD COLUMN transporter_name TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Orders ADD COLUMN vehicle_no TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Orders ADD COLUMN tracking_id TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Orders ADD COLUMN driver_phone TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Orders ADD COLUMN est_delivery_date TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Orders ADD COLUMN dispatched_at DATETIME;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN seller_mobile TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN status TEXT DEFAULT 'active';`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN soldDate TEXT;`); } catch(e) {}
