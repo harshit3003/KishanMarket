@@ -1,17 +1,123 @@
 const sqlite3 = require('sqlite3');
 const { open } = require('sqlite');
 const path = require('path');
-
 const fs = require('fs');
+const mongoose = require('mongoose');
 
 const dataStoreDir = path.join(__dirname, 'server_storage');
 if (!fs.existsSync(dataStoreDir)) {
   fs.mkdirSync(dataStoreDir, { recursive: true });
 }
 
+// Mongoose Models for Permanent Cloud DB Sync
+const UserSchema = new mongoose.Schema({
+  user_id: String,
+  name: String,
+  mobile: { type: String, unique: true },
+  location: String,
+  role: String,
+  password: String
+}, { timestamps: true });
+
+const CropSchema = new mongoose.Schema({
+  id: Number,
+  name: String,
+  weight: String,
+  rate: String,
+  seller: String,
+  loc: String,
+  seller_mobile: String,
+  status: { type: String, default: 'active' },
+  soldDate: String,
+  buyerName: String,
+  distance: Number,
+  transportCost: Number,
+  netProfit: Number,
+  buyer_mobile: String
+}, { timestamps: true });
+
+const BuyerRequestSchema = new mongoose.Schema({
+  id: Number,
+  crop: String,
+  budget: String,
+  status: { type: String, default: 'Pending' },
+  buyer_mobile: String,
+  buyer_location: String,
+  buyer_name: String
+}, { timestamps: true });
+
+const BidSchema = new mongoose.Schema({
+  id: Number,
+  crop_id: Number,
+  crop_name: String,
+  buyer_name: String,
+  buyer_mobile: String,
+  seller_name: String,
+  seller_mobile: String,
+  asking_rate: String,
+  bid_rate: String,
+  weight: String,
+  status: { type: String, default: 'pending' }
+}, { timestamps: true });
+
+const MessageSchema = new mongoose.Schema({
+  id: Number,
+  room_id: String,
+  sender: String,
+  text: String,
+  time: String,
+  sender_name: String,
+  sender_mobile: String,
+  receiver_mobile: String,
+  crop_name: String,
+  crop_id: Number
+}, { timestamps: true });
+
+const MongoUser = mongoose.models.User || mongoose.model('User', UserSchema);
+const MongoCrop = mongoose.models.Crop || mongoose.model('Crop', CropSchema);
+const MongoBuyerRequest = mongoose.models.BuyerRequest || mongoose.model('BuyerRequest', BuyerRequestSchema);
+const MongoBid = mongoose.models.Bid || mongoose.model('Bid', BidSchema);
+const MongoMessage = mongoose.models.Message || mongoose.model('Message', MessageSchema);
+
+async function syncToCloud(filename, data) {
+  const mongoUri = process.env.MONGODB_URI || process.env.DATABASE_URL;
+  if (!mongoUri) return;
+
+  try {
+    if (mongoose.connection.readyState !== 1) {
+      await mongoose.connect(mongoUri);
+    }
+
+    if (filename === 'users.json' && Array.isArray(data)) {
+      for (const u of data) {
+        if (u.mobile) await MongoUser.updateOne({ mobile: u.mobile }, u, { upsert: true });
+      }
+    } else if (filename === 'crops.json' && Array.isArray(data)) {
+      for (const c of data) {
+        if (c.id) await MongoCrop.updateOne({ id: c.id }, c, { upsert: true });
+      }
+    } else if (filename === 'buyer_requests.json' && Array.isArray(data)) {
+      for (const r of data) {
+        if (r.id) await MongoBuyerRequest.updateOne({ id: r.id }, r, { upsert: true });
+      }
+    } else if (filename === 'bids.json' && Array.isArray(data)) {
+      for (const b of data) {
+        if (b.id) await MongoBid.updateOne({ id: b.id }, b, { upsert: true });
+      }
+    } else if (filename === 'messages.json' && Array.isArray(data)) {
+      for (const m of data) {
+        if (m.id) await MongoMessage.updateOne({ id: m.id }, m, { upsert: true });
+      }
+    }
+  } catch (e) {
+    console.error("Cloud DB Sync Notice:", e.message);
+  }
+}
+
 function saveTableToFile(filename, data) {
   try {
     fs.writeFileSync(path.join(dataStoreDir, filename), JSON.stringify(data, null, 2));
+    syncToCloud(filename, data);
   } catch (e) {
     console.error(`Failed to save ${filename}:`, e);
   }
@@ -129,6 +235,28 @@ async function initDb() {
   try { await db.exec(`ALTER TABLE Messages ADD COLUMN receiver_mobile TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Messages ADD COLUMN crop_name TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Messages ADD COLUMN crop_id INTEGER;`); } catch(e) {}
+
+  // Cloud DB Restoration on Boot (if MONGODB_URI is provided)
+  const mongoUri = process.env.MONGODB_URI || process.env.DATABASE_URL;
+  if (mongoUri) {
+    try {
+      if (mongoose.connection.readyState !== 1) {
+        await mongoose.connect(mongoUri);
+      }
+      const cloudUsers = await MongoUser.find({}).lean();
+      for (let idx = 0; idx < cloudUsers.length; idx++) {
+        const u = cloudUsers[idx];
+        const genId = u.user_id || (u.role === 'seller' ? `KM-S-${1000 + idx + 1}` : `KM-B-${1000 + idx + 1}`);
+        await db.run(
+          'INSERT OR IGNORE INTO Users (user_id, name, mobile, location, role, password) VALUES (?, ?, ?, ?, ?, ?)',
+          [genId, u.name, u.mobile, u.location || '', u.role, u.password]
+        );
+      }
+      console.log(`Cloud DB Restored ${cloudUsers.length} users successfully.`);
+    } catch (e) {
+      console.error("Cloud restoration note:", e.message);
+    }
+  }
 
   // Hydrate SQLite database from server_storage files on startup
   try {
