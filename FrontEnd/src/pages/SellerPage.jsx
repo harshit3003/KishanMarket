@@ -18,6 +18,8 @@ import ProfileCard from '../components/ProfileCard';
 import ReviewModal from '../components/ReviewModal';
 import SellerOrdersModal from '../components/SellerOrdersModal';
 import AdminDisputeModal from '../components/AdminDisputeModal';
+import StockProgressBar from '../components/StockProgressBar';
+import BulkUploadModal from '../components/BulkUploadModal';
 import socket from '../socket';
 import { getInstantCoords } from '../utils/geoUtils';
 
@@ -41,6 +43,7 @@ const SellerPage = () => {
   const [reviewModalData, setReviewModalData] = useState({ open: false, order: null });
   const [isSellerOrdersModalOpen, setIsSellerOrdersModalOpen] = useState(false);
   const [isAdminDisputeOpen, setIsAdminDisputeOpen] = useState(false);
+  const [isBulkUploadOpen, setIsBulkUploadOpen] = useState(false);
 
   // New states for Interactive Modals
   const [editModalData, setEditModalData] = useState({ open: false, index: null, weight: '', rate: '' });
@@ -701,7 +704,18 @@ const SellerPage = () => {
         <div className="row g-4 mb-5 mt-3">
           <div className="col-md-6">
             <div className="glass-card-premium p-4 h-100" style={{ transformStyle: 'preserve-3d' }}>
-              <h5 className="section-title" style={{ transform: 'translateZ(30px)' }}><i className="fas fa-upload me-2"></i> Upload Crop Listing</h5>
+              <div className="d-flex justify-content-between align-items-center mb-3">
+                <div className="section-title m-0 border-0">
+                  <h5 className="m-0 p-0 border-0"><i className="fas fa-plus-circle me-2"></i> Add New Crop Listing</h5>
+                </div>
+                <button 
+                  type="button" 
+                  className="btn btn-sm btn-outline-success fw-bold"
+                  onClick={() => setIsBulkUploadOpen(true)}
+                >
+                  <i className="fas fa-file-csv me-1"></i> Bulk Upload 📄
+                </button>
+              </div>
               <form id="uploadForm" onSubmit={handleUploadCrop} style={{ transform: 'translateZ(20px)' }}>
                 <div className="mb-3">
                   <label className="form-label">Crop Name</label>
@@ -744,23 +758,32 @@ const SellerPage = () => {
                     const cropRoomId = `room_${currentUser.name || crop.seller}_${crop.name}`.toLowerCase().replace(/\s+/g, '_');
                     const unreadCount = unreadCounts[cropRoomId] || 0;
                     return (
-                      <div className="inventory-item shadow-sm d-flex justify-content-between align-items-center p-2 mb-2" key={idx}>
-                        <div className="d-flex align-items-center flex-grow-1">
-                          <div className="wheat-bar me-2"></div>
-                          <div><p className="m-0 small"><strong>{crop.weight}q {crop.name}</strong> @ ₹{crop.rate}/q</p></div>
+                      <div className="inventory-item shadow-sm p-2 mb-2" key={idx}>
+                        <div className="d-flex justify-content-between align-items-center">
+                          <div className="d-flex align-items-center flex-grow-1">
+                            <div className="wheat-bar me-2"></div>
+                            <div><p className="m-0 small"><strong>{crop.name}</strong> @ ₹{crop.rate}/q</p></div>
+                          </div>
+                          <div className="d-flex gap-2 align-items-center">
+                            <button onClick={() => openChatForCrop(crop)} className="btn btn-sm btn-outline-success py-0 px-2 position-relative" style={{fontSize:'0.75rem', borderRadius:'10px'}}>
+                              <i className="fas fa-comments me-1"></i> Chat
+                              {unreadCount > 0 && (
+                                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger shadow-sm" style={{ fontSize: '0.65rem' }}>
+                                  {unreadCount}
+                                </span>
+                              )}
+                            </button>
+                            <button onClick={() => handleEditCrop(idx)} className="btn btn-sm btn-outline-primary py-0 px-2" style={{fontSize:'0.75rem', borderRadius:'10px'}}>Edit</button>
+                            <button onClick={() => handleMarkSold(idx)} className="btn btn-sm btn-success py-0 px-2" style={{fontSize:'0.75rem', borderRadius:'10px'}}>Sell</button>
+                          </div>
                         </div>
-                        <div className="d-flex gap-2 align-items-center">
-                          <button onClick={() => openChatForCrop(crop)} className="btn btn-sm btn-outline-success py-0 px-2 position-relative" style={{fontSize:'0.75rem', borderRadius:'10px'}}>
-                            <i className="fas fa-comments me-1"></i> Chat
-                            {unreadCount > 0 && (
-                              <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger shadow-sm" style={{ fontSize: '0.65rem' }}>
-                                {unreadCount}
-                              </span>
-                            )}
-                          </button>
-                          <button onClick={() => handleEditCrop(idx)} className="btn btn-sm btn-outline-primary py-0 px-2" style={{fontSize:'0.75rem', borderRadius:'10px'}}>Edit</button>
-                          <button onClick={() => handleMarkSold(idx)} className="btn btn-sm btn-success py-0 px-2" style={{fontSize:'0.75rem', borderRadius:'10px'}}>Sell</button>
-                        </div>
+
+                        {/* Inventory Stock Progress Bar */}
+                        <StockProgressBar 
+                          totalQuantity={crop.total_quantity || crop.weight}
+                          availableQuantity={crop.available_quantity !== undefined && crop.available_quantity !== null ? crop.available_quantity : crop.weight}
+                          status={crop.status}
+                        />
                       </div>
                     )
                   })
@@ -992,6 +1015,15 @@ const SellerPage = () => {
       <AdminDisputeModal
         isOpen={isAdminDisputeOpen}
         onClose={() => setIsAdminDisputeOpen(false)}
+      />
+      <BulkUploadModal
+        isOpen={isBulkUploadOpen}
+        onClose={() => setIsBulkUploadOpen(false)}
+        currentUser={currentUser}
+        onUploadSuccess={async () => {
+          const getRes = await fetch(`/api/crops/my?mobile=${currentUser.mobile || 'guest'}&name=${encodeURIComponent(currentUser.name || 'Guest')}`);
+          if (getRes.ok) setCrops(await getRes.json());
+        }}
       />
 
       {/* Edit Crop Modal */}

@@ -88,7 +88,9 @@ const CropSchema = new mongoose.Schema({
   distance: Number,
   transportCost: Number,
   netProfit: Number,
-  buyer_mobile: String
+  buyer_mobile: String,
+  total_quantity: Number,
+  available_quantity: Number
 }, { timestamps: true });
 
 const BuyerRequestSchema = new mongoose.Schema({
@@ -362,6 +364,8 @@ async function initDb() {
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN transportCost REAL;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN netProfit REAL;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN buyer_mobile TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Crops ADD COLUMN total_quantity REAL;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Crops ADD COLUMN available_quantity REAL;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE BuyerRequests ADD COLUMN buyer_name TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Messages ADD COLUMN sender_name TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Messages ADD COLUMN sender_mobile TEXT;`); } catch(e) {}

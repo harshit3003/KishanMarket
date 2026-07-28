@@ -17,6 +17,7 @@ import ProfileModal from '../components/ProfileModal';
 import ProfileCard from '../components/ProfileCard';
 import NearbyFarmersSection from '../components/NearbyFarmersSection';
 import AdminDisputeModal from '../components/AdminDisputeModal';
+import StockProgressBar from '../components/StockProgressBar';
 
 
 const defaultCrops = [
@@ -202,7 +203,13 @@ const BuyerPage = () => {
     };
 
     socket.on('crop_price_updated', handlePriceUpdate);
-    return () => socket.off('crop_price_updated', handlePriceUpdate);
+    socket.on('listing_stock_updated', (data) => {
+      setCrops(prev => prev.map(c => c.id === data.crop_id ? { ...c, available_quantity: data.available_quantity, total_quantity: data.total_quantity, status: data.status } : c));
+    });
+    return () => {
+      socket.off('crop_price_updated', handlePriceUpdate);
+      socket.off('listing_stock_updated');
+    };
   }, []);
 
   const handleDeleteRequest = async (reqId) => {
@@ -651,8 +658,14 @@ const BuyerPage = () => {
                         <i className="fas fa-user-circle me-1"></i> Profile
                       </button>
                     </p>
-                    <p className="m-0">Vazan: {crop.weight}q</p>
-                    <p className="fs-5 fw-bold text-success mt-2">Rate: ₹{crop.rate}/q</p>
+                    <p className="fs-5 fw-bold text-success mt-2 m-0">Rate: ₹{crop.rate}/q</p>
+
+                    {/* Stock Progress Bar */}
+                    <StockProgressBar 
+                      totalQuantity={crop.total_quantity || crop.weight}
+                      availableQuantity={crop.available_quantity !== undefined && crop.available_quantity !== null ? crop.available_quantity : crop.weight}
+                      status={crop.status}
+                    />
                     <div className="d-flex justify-content-between align-items-center mt-3 gap-1">
                       <button className={`btn btn-sm ${isWatchlisted ? 'btn-danger' : 'btn-outline-danger'}`} onClick={() => toggleWatchlist(crop)}>
                         <i className="fas fa-heart"></i>

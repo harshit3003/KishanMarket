@@ -269,11 +269,16 @@ app.get('/api/crops/my', async (req, res) => {
 app.post('/api/crops', async (req, res) => {
   try {
     const { name, weight, rate, seller, loc, seller_mobile } = req.body;
+    const numericWeight = parseFloat(weight) || 50;
+
     const result = await db.run(
-      'INSERT INTO Crops (name, weight, rate, seller, loc, seller_mobile) VALUES (?, ?, ?, ?, ?, ?)',
-      [name, weight, rate, seller, loc, seller_mobile]
+      'INSERT INTO Crops (name, weight, rate, seller, loc, seller_mobile, total_quantity, available_quantity) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+      [name, weight, rate, seller, loc, seller_mobile, numericWeight, numericWeight]
     );
     await syncCrops();
+
+    io.emit('crop_price_updated', { crop_id: result.lastID, crop_name: name, new_rate: rate, status: 'active' });
+
     res.status(201).json({ message: 'Crop added', id: result.lastID });
   } catch (err) {
     res.status(500).json({ error: 'Database error' });
@@ -553,10 +558,28 @@ app.put('/api/bids/:id/status', async (req, res) => {
     const bid = await db.get('SELECT * FROM Bids WHERE id = ?', [req.params.id]);
     if (bid && status === 'accepted') {
       if (bid.crop_id && bid.crop_id !== 0) {
-        await db.run('UPDATE Crops SET rate = ?, status = ? WHERE id = ?', [bid.bid_rate, 'sold', bid.crop_id]);
-        await db.run('UPDATE Bids SET status = ? WHERE crop_id = ? AND id != ? AND status = ?', ['expired', bid.crop_id, req.params.id, 'pending']);
-        await syncCrops();
-        io.emit('crop_price_updated', { crop_id: bid.crop_id, crop_name: bid.crop_name, new_rate: bid.bid_rate, status: 'sold' });
+        // Auto-deduct available inventory stock for crop listing
+        const crop = await db.get('SELECT * FROM Crops WHERE id = ?', [bid.crop_id]);
+        if (crop) {
+          const orderedWeight = parseFloat(bid.weight) || 0;
+          const currentAvail = crop.available_quantity !== null && crop.available_quantity !== undefined ? crop.available_quantity : (parseFloat(crop.weight) || 0);
+          const newAvail = Math.max(0, currentAvail - orderedWeight);
+          const isSoldOut = newAvail <= 0;
+          const newStatus = isSoldOut ? 'sold' : 'active';
+
+          await db.run(
+            'UPDATE Crops SET available_quantity = ?, status = ? WHERE id = ?',
+            [newAvail, newStatus, bid.crop_id]
+          );
+
+          if (isSoldOut) {
+            await db.run('UPDATE Bids SET status = ? WHERE crop_id = ? AND id != ? AND status = ?', ['expired', bid.crop_id, req.params.id, 'pending']);
+          }
+
+          await syncCrops();
+          io.emit('listing_stock_updated', { crop_id: bid.crop_id, available_quantity: newAvail, total_quantity: crop.total_quantity || crop.weight, status: newStatus });
+          io.emit('crop_price_updated', { crop_id: bid.crop_id, crop_name: bid.crop_name, new_rate: bid.bid_rate, status: newStatus });
+        }
       }
 
       // Auto-create Order record
@@ -1341,6 +1364,102 @@ app.put('/api/admin/disputes/:id/resolve', async (req, res) => {
   } catch (err) {
     console.error("Error resolving dispute:", err);
     res.status(500).json({ error: 'Failed to resolve dispute' });
+  }
+});
+
+// Bulk Upload & Inventory Stock Endpoints
+app.get('/api/listings/bulk-template', (req, res) => {
+  const csvTemplate = `Crop Name,Weight (Quintals),Rate (Rs per Quintal),Location
+Gehu (Sarbati Wheat),100,2450,Banda, Uttar Pradesh
+Basmati Dhan (Rice),80,3100,Karnal, Haryana
+Sarson (Mustard),60,5450,Jaipur, Rajasthan
+Makka (Maize),50,1850,Ludhiana, Punjab`;
+
+  res.setHeader('Content-Type', 'text/csv');
+  res.setHeader('Content-Disposition', 'attachment; filename="kishanmarket_bulk_template.csv"');
+  res.status(200).send(csvTemplate);
+});
+
+app.post('/api/listings/bulk-upload', async (req, res) => {
+  try {
+    const { seller_mobile, seller_name, default_location, items } = req.body;
+    if (!items || !Array.isArray(items) || items.length === 0) {
+      return res.status(400).json({ error: 'No crop listings provided for bulk upload' });
+    }
+
+    const database = await ensureDb();
+    const cleanMob = normalizePhone(seller_mobile);
+    const sName = (seller_name || 'Farmer').trim();
+    const defLoc = (default_location || 'Local Mandi').trim();
+
+    let insertedCount = 0;
+    const errors = [];
+
+    for (let i = 0; i < items.length; i++) {
+      const row = items[i];
+      const cropName = (row.name || row.crop || row['Crop Name'] || '').toString().trim();
+      const weightVal = parseFloat(row.weight || row.Weight || row['Weight (Quintals)'] || 0);
+      const rateVal = parseFloat(row.rate || row.Rate || row['Rate (Rs per Quintal)'] || 0);
+      const locVal = (row.loc || row.location || row.Location || defLoc).toString().trim();
+
+      if (!cropName || weightVal <= 0 || rateVal <= 0) {
+        errors.push(`Row ${i + 1}: Invalid crop name (${cropName}), weight (${weightVal}), or rate (${rateVal})`);
+        continue;
+      }
+
+      await database.run(
+        'INSERT INTO Crops (name, weight, rate, seller, loc, seller_mobile, total_quantity, available_quantity, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        [cropName, weightVal.toString(), rateVal.toString(), sName, locVal, cleanMob, weightVal, weightVal, 'active']
+      );
+
+      insertedCount++;
+    }
+
+    await syncCrops();
+    io.emit('crop_price_updated', { bulk: true, count: insertedCount });
+
+    res.json({
+      message: `Successfully uploaded ${insertedCount} crop listings`,
+      insertedCount,
+      errorsCount: errors.length,
+      errors
+    });
+  } catch (err) {
+    console.error("Bulk upload error:", err);
+    res.status(500).json({ error: 'Failed to process bulk upload' });
+  }
+});
+
+app.put('/api/listings/:id/adjust-stock', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { available_quantity, total_quantity } = req.body;
+
+    const database = await ensureDb();
+    const crop = await database.get('SELECT * FROM Crops WHERE id = ?', [id]);
+    if (!crop) return res.status(404).json({ error: 'Crop listing not found' });
+
+    const newAvail = parseFloat(available_quantity);
+    if (isNaN(newAvail)) return res.status(400).json({ error: 'Invalid available quantity' });
+
+    const newTotal = total_quantity !== undefined ? parseFloat(total_quantity) : (crop.total_quantity || parseFloat(crop.weight) || 50);
+    const isSoldOut = newAvail <= 0;
+    const newStatus = isSoldOut ? 'sold' : (crop.status === 'sold' ? 'active' : crop.status);
+
+    await database.run(
+      'UPDATE Crops SET available_quantity = ?, total_quantity = ?, status = ? WHERE id = ?',
+      [newAvail, newTotal, newStatus, id]
+    );
+
+    await syncCrops();
+
+    const stockPayload = { crop_id: parseInt(id, 10), available_quantity: newAvail, total_quantity: newTotal, status: newStatus };
+    io.emit('listing_stock_updated', stockPayload);
+
+    res.json({ message: 'Stock adjusted successfully', stock: stockPayload });
+  } catch (err) {
+    console.error("Adjust stock error:", err);
+    res.status(500).json({ error: 'Failed to adjust stock' });
   }
 });
 
