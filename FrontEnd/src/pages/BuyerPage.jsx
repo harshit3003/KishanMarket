@@ -19,6 +19,9 @@ import NearbyFarmersSection from '../components/NearbyFarmersSection';
 import AdminDisputeModal from '../components/AdminDisputeModal';
 import StockProgressBar from '../components/StockProgressBar';
 import TransactionHistoryModal from '../components/TransactionHistoryModal';
+import ReportModal from '../components/ReportModal';
+import SupportTicketModal from '../components/SupportTicketModal';
+import AdminDashboardModal from '../components/AdminDashboardModal';
 
 
 const defaultCrops = [
@@ -93,6 +96,9 @@ const BuyerPage = () => {
   const [profileTargetMobile, setProfileTargetMobile] = useState(null);
   const [isAdminDisputeOpen, setIsAdminDisputeOpen] = useState(false);
   const [isTransactionHistoryOpen, setIsTransactionHistoryOpen] = useState(false);
+  const [reportModalData, setReportModalData] = useState({ open: false, targetType: 'user', targetId: '', targetName: '' });
+  const [isSupportTicketOpen, setIsSupportTicketOpen] = useState(false);
+  const [isAdminDashboardOpen, setIsAdminDashboardOpen] = useState(false);
 
   // Search State
   const [searchLoc, setSearchLoc] = useState('');
@@ -532,6 +538,8 @@ const BuyerPage = () => {
                   <li><a href="#profile" onClick={(e) => { e.preventDefault(); setProfileTargetMobile(null); setIsProfileModalOpen(true); setIsProfileOpen(false); }}><i className="fas fa-user"></i> My Profile</a></li>
                   <li><Link to="/orders"><i className="fas fa-shopping-basket"></i> My Orders</Link></li>
                   <li><a href="#ledger" onClick={(e) => { e.preventDefault(); setIsTransactionHistoryOpen(true); setIsProfileOpen(false); }}><i className="fas fa-wallet text-success"></i> Passbook & Ledger</a></li>
+                  <li><a href="#support" onClick={(e) => { e.preventDefault(); setIsSupportTicketOpen(true); setIsProfileOpen(false); }}><i className="fas fa-headset text-info"></i> Help & Support 🎫</a></li>
+                  <li><a href="#admin" onClick={(e) => { e.preventDefault(); setIsAdminDashboardOpen(true); setIsProfileOpen(false); }}><i className="fas fa-shield-halved text-danger"></i> Admin Control Center 🛡️</a></li>
                   <li><a href="#disputes" onClick={(e) => { e.preventDefault(); setIsAdminDisputeOpen(true); setIsProfileOpen(false); }}><i className="fas fa-scale-balanced text-warning"></i> Dispute Center</a></li>
                   <li className="dropdown-divider"></li>
                   <li><a href="#" className="logout-item" onClick={handleLogout}><i className="fas fa-sign-out-alt"></i> Logout</a></li>
@@ -816,6 +824,23 @@ const BuyerPage = () => {
         isOpen={isTransactionHistoryOpen}
         onClose={() => setIsTransactionHistoryOpen(false)}
         currentUser={currentUser}
+      />
+      <ReportModal
+        isOpen={reportModalData.open}
+        onClose={() => setReportModalData({ open: false, targetType: 'user', targetId: '', targetName: '' })}
+        targetType={reportModalData.targetType}
+        targetId={reportModalData.targetId}
+        targetName={reportModalData.targetName}
+        currentUser={currentUser}
+      />
+      <SupportTicketModal
+        isOpen={isSupportTicketOpen}
+        onClose={() => setIsSupportTicketOpen(false)}
+        currentUser={currentUser}
+      />
+      <AdminDashboardModal
+        isOpen={isAdminDashboardOpen}
+        onClose={() => setIsAdminDashboardOpen(false)}
       />
       {/* Real-time Bidding Modal */}
       {bidModal.open && bidModal.crop && (

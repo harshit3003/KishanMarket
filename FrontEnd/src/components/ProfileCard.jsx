@@ -42,6 +42,16 @@ const ProfileCard = ({ name, role, user_id, profile_photo, location, onClick, cl
               📍 {distance} km
             </span>
           )}
+          {onReport && (
+            <button 
+              className="btn btn-sm btn-link text-danger p-0 ms-2"
+              onClick={(e) => { e.stopPropagation(); onReport(); }}
+              title="Report User Profile"
+              style={{ fontSize: '0.7rem' }}
+            >
+              🚩 Report
+            </button>
+          )}
         </div>
       </div>
     </div>

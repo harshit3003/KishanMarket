@@ -97,7 +97,40 @@ const CropSchema = new mongoose.Schema({
   netProfit: Number,
   buyer_mobile: String,
   total_quantity: Number,
-  available_quantity: Number
+  available_quantity: Number,
+  is_removed: { type: Number, default: 0 }
+}, { timestamps: true });
+
+const ReportSchema = new mongoose.Schema({
+  id: Number,
+  reported_by_mobile: String,
+  reported_by_name: String,
+  target_type: String,
+  target_id: String,
+  target_name: String,
+  reason: String,
+  notes: String,
+  status: { type: String, default: 'Pending' }
+}, { timestamps: true });
+
+const SupportTicketSchema = new mongoose.Schema({
+  id: Number,
+  user_mobile: String,
+  user_name: String,
+  subject: String,
+  category: String,
+  description: String,
+  status: { type: String, default: 'Open' },
+  resolved_at: Date
+}, { timestamps: true });
+
+const TicketReplySchema = new mongoose.Schema({
+  id: Number,
+  ticket_id: Number,
+  sender_mobile: String,
+  sender_name: String,
+  is_admin: Number,
+  message: String
 }, { timestamps: true });
 
 const BuyerRequestSchema = new mongoose.Schema({
@@ -353,6 +386,41 @@ async function initDb() {
       hindi_name TEXT,
       tips TEXT
     );
+
+    CREATE TABLE IF NOT EXISTS Reports (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      reported_by_mobile TEXT NOT NULL,
+      reported_by_name TEXT NOT NULL,
+      target_type TEXT NOT NULL,
+      target_id TEXT NOT NULL,
+      target_name TEXT,
+      reason TEXT NOT NULL,
+      notes TEXT,
+      status TEXT DEFAULT 'Pending',
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
+
+    CREATE TABLE IF NOT EXISTS SupportTickets (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_mobile TEXT NOT NULL,
+      user_name TEXT NOT NULL,
+      subject TEXT NOT NULL,
+      category TEXT NOT NULL,
+      description TEXT NOT NULL,
+      status TEXT DEFAULT 'Open',
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+      resolved_at DATETIME
+    );
+
+    CREATE TABLE IF NOT EXISTS TicketReplies (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      ticket_id INTEGER NOT NULL,
+      sender_mobile TEXT NOT NULL,
+      sender_name TEXT NOT NULL,
+      is_admin INTEGER DEFAULT 0,
+      message TEXT NOT NULL,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    );
   `);
 
   // Safely patch existing Users table if missing profile columns
@@ -370,6 +438,8 @@ async function initDb() {
   try { await db.exec(`ALTER TABLE Users ADD COLUMN review_count INTEGER DEFAULT 0;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Users ADD COLUMN latitude REAL;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Users ADD COLUMN longitude REAL;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Users ADD COLUMN account_status TEXT DEFAULT 'active';`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Crops ADD COLUMN is_removed INTEGER DEFAULT 0;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Orders ADD COLUMN cancel_reason TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Orders ADD COLUMN cancelled_by TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Orders ADD COLUMN cancelled_at DATETIME;`); } catch(e) {}

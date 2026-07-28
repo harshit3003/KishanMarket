@@ -1,0 +1,375 @@
+import React, { useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
+
+const AdminDashboardModal = ({ isOpen, onClose }) => {
+  const [activeTab, setActiveTab] = useState('overview'); // 'overview', 'reports', 'disputes', 'moderation', 'tickets'
+  const [overview, setOverview] = useState({ activeUsers: 0, activeCrops: 0, totalOrders: 0, totalGmv: 0, pendingReports: 0, openDisputes: 0, openTickets: 0 });
+  const [reports, setReports] = useState([]);
+  const [disputes, setDisputes] = useState([]);
+  const [tickets, setTickets] = useState([]);
+  const [suspendMobileInput, setSuspendMobileInput] = useState('');
+  const [removeListingIdInput, setRemoveListingIdInput] = useState('');
+  const [selectedTicket, setSelectedTicket] = useState(null);
+  const [adminReplyMsg, setAdminReplyMsg] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      fetchAdminData();
+    }
+  }, [isOpen, activeTab]);
+
+  const fetchAdminData = async () => {
+    setIsLoading(true);
+    try {
+      // Fetch overview
+      const ovRes = await fetch('/api/admin/overview');
+      if (ovRes.ok) setOverview(await ovRes.json());
+
+      if (activeTab === 'reports') {
+        const rRes = await fetch('/api/admin/reports');
+        if (rRes.ok) setReports(await rRes.json());
+      } else if (activeTab === 'disputes') {
+        const dRes = await fetch('/api/admin/disputes');
+        if (dRes.ok) setDisputes(await dRes.json());
+      } else if (activeTab === 'tickets') {
+        const tRes = await fetch('/api/admin/tickets');
+        if (tRes.ok) setTickets(await tRes.json());
+      }
+    } catch (err) {
+      console.error("Failed to load admin dashboard data:", err);
+    }
+    setIsLoading(false);
+  };
+
+  const handleReportAction = async (reportId, action) => {
+    try {
+      const res = await fetch(`/api/admin/reports/${reportId}/action`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action })
+      });
+      if (res.ok) {
+        toast.success(`Report #${reportId} updated to ${action}`);
+        setReports(prev => prev.map(r => r.id === reportId ? { ...r, status: action } : r));
+      }
+    } catch (e) {
+      toast.error("Failed to update report action.");
+    }
+  };
+
+  const handleSuspendUser = async (mobile) => {
+    if (!mobile) return;
+    try {
+      const res = await fetch(`/api/admin/users/${encodeURIComponent(mobile)}/suspend`, { method: 'PUT' });
+      if (res.ok) {
+        toast.success(`User +91 ${mobile} suspended successfully.`);
+        setSuspendMobileInput('');
+      } else {
+        toast.error("Failed to suspend user.");
+      }
+    } catch (e) {
+      toast.error("Network error suspending user.");
+    }
+  };
+
+  const handleRemoveListing = async (listingId) => {
+    if (!listingId) return;
+    try {
+      const res = await fetch(`/api/admin/listings/${listingId}/remove`, { method: 'PUT' });
+      if (res.ok) {
+        toast.success(`Crop listing #${listingId} removed from market.`);
+        setRemoveListingIdInput('');
+      } else {
+        toast.error("Failed to remove listing.");
+      }
+    } catch (e) {
+      toast.error("Network error removing listing.");
+    }
+  };
+
+  const handleAdminTicketReply = async (e) => {
+    e.preventDefault();
+    if (!selectedTicket || !adminReplyMsg.trim()) return;
+
+    try {
+      const res = await fetch(`/api/tickets/${selectedTicket.id}/reply`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          sender_mobile: 'ADMIN',
+          sender_name: 'KishanMarket Admin',
+          is_admin: 1,
+          message: adminReplyMsg
+        })
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        toast.success("Admin reply posted!");
+        setAdminReplyMsg('');
+        setSelectedTicket(prev => ({
+          ...prev,
+          replies: [...(prev.replies || []), data.reply]
+        }));
+      }
+    } catch (err) {
+      toast.error("Failed to post admin reply.");
+    }
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div style={{
+      position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
+      background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(5px)', zIndex: 1200,
+      display: 'flex', alignItems: 'center', justifyContent: 'center'
+    }}>
+      <div className="glass-card-premium p-4 text-start" style={{
+        width: '94%', maxWidth: '860px', maxHeight: '90vh', overflowY: 'auto',
+        background: 'white', borderRadius: '18px', boxShadow: '0 20px 50px rgba(0,0,0,0.25)'
+      }}>
+        {/* Header */}
+        <div className="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+          <div className="d-flex align-items-center gap-2">
+            <i className="fas fa-shield-halved text-success fs-3"></i>
+            <div>
+              <h5 className="fw-bold text-dark m-0">Admin Control Center</h5>
+              <small className="text-muted">Central marketplace control, moderation, & GMV dashboard</small>
+            </div>
+          </div>
+          <button className="btn-close" onClick={onClose}></button>
+        </div>
+
+        {/* Tab Navigation */}
+        <div className="nav nav-pills nav-fill bg-light p-1 rounded-3 mb-4 border" style={{ fontSize: '0.82rem' }}>
+          <button className={`nav-link fw-bold ${activeTab === 'overview' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('overview')}>
+            📊 Overview & GMV
+          </button>
+          <button className={`nav-link fw-bold ${activeTab === 'reports' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('reports')}>
+            🚩 Reports ({overview.pendingReports})
+          </button>
+          <button className={`nav-link fw-bold ${activeTab === 'moderation' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('moderation')}>
+            🛡️ Moderation Tools
+          </button>
+          <button className={`nav-link fw-bold ${activeTab === 'tickets' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('tickets')}>
+            🎫 Support Queue ({overview.openTickets})
+          </button>
+        </div>
+
+        {isLoading ? (
+          <div className="text-center py-5">
+            <div className="spinner-border text-success" role="status"></div>
+            <p className="small text-muted mt-2">Loading platform data...</p>
+          </div>
+        ) : (
+          <div>
+            {/* TAB 1: OVERVIEW */}
+            {activeTab === 'overview' && (
+              <div>
+                <div className="row g-3 mb-4">
+                  <div className="col-md-3 col-6">
+                    <div className="p-3 bg-success bg-opacity-10 border border-success rounded text-center">
+                      <small className="text-muted fw-bold d-block">PLATFORM GMV</small>
+                      <span className="fs-4 fw-bold text-success">₹{overview.totalGmv.toLocaleString('en-IN')}</span>
+                    </div>
+                  </div>
+                  <div className="col-md-3 col-6">
+                    <div className="p-3 bg-primary bg-opacity-10 border border-primary rounded text-center">
+                      <small className="text-muted fw-bold d-block">REGISTERED USERS</small>
+                      <span className="fs-4 fw-bold text-primary">{overview.activeUsers}</span>
+                    </div>
+                  </div>
+                  <div className="col-md-3 col-6">
+                    <div className="p-3 bg-info bg-opacity-10 border border-info rounded text-center">
+                      <small className="text-muted fw-bold d-block">ACTIVE LISTINGS</small>
+                      <span className="fs-4 fw-bold text-dark">{overview.activeCrops}</span>
+                    </div>
+                  </div>
+                  <div className="col-md-3 col-6">
+                    <div className="p-3 bg-warning bg-opacity-10 border border-warning rounded text-center">
+                      <small className="text-muted fw-bold d-block">TOTAL ORDERS</small>
+                      <span className="fs-4 fw-bold text-dark">{overview.totalOrders}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="row g-3">
+                  <div className="col-md-4">
+                    <div className="p-3 bg-light border rounded text-center" style={{ cursor: 'pointer' }} onClick={() => setActiveTab('reports')}>
+                      <i className="fas fa-flag text-danger fa-2x mb-2"></i>
+                      <h6 className="fw-bold m-0 text-dark">Pending Reports</h6>
+                      <span className="fs-5 fw-bold text-danger">{overview.pendingReports}</span>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <div className="p-3 bg-light border rounded text-center" style={{ cursor: 'pointer' }} onClick={() => setActiveTab('moderation')}>
+                      <i className="fas fa-user-slash text-warning fa-2x mb-2"></i>
+                      <h6 className="fw-bold m-0 text-dark">Account Suspensions</h6>
+                      <span className="small text-muted d-block mt-1">Admin Enforcement</span>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <div className="p-3 bg-light border rounded text-center" style={{ cursor: 'pointer' }} onClick={() => setActiveTab('tickets')}>
+                      <i className="fas fa-headset text-success fa-2x mb-2"></i>
+                      <h6 className="fw-bold m-0 text-dark">Open Tickets</h6>
+                      <span className="fs-5 fw-bold text-success">{overview.openTickets}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* TAB 2: REPORTS QUEUE */}
+            {activeTab === 'reports' && (
+              <div>
+                <h6 className="fw-bold text-dark mb-3"><i className="fas fa-flag text-danger me-1"></i> User & Listing Reports Queue</h6>
+                {reports.length === 0 ? (
+                  <div className="text-center py-4 bg-light rounded border">
+                    <small className="text-muted">No reports submitted yet.</small>
+                  </div>
+                ) : (
+                  <div className="d-flex flex-column gap-2">
+                    {reports.map((r) => (
+                      <div key={r.id} className="p-3 bg-white border rounded shadow-sm">
+                        <div className="d-flex justify-content-between align-items-center mb-1">
+                          <span className={`badge ${r.status === 'Pending' ? 'bg-danger' : 'bg-secondary'}`}>
+                            Report #{r.id} ({r.target_type})
+                          </span>
+                          <small className="text-muted">{r.created_at ? new Date(r.created_at).toLocaleDateString('en-IN') : 'Recent'}</small>
+                        </div>
+                        <div className="fw-bold text-dark">Target: {r.target_name || r.target_id}</div>
+                        <small className="text-muted d-block">Reported By: {r.reported_by_name} (+91 {r.reported_by_mobile})</small>
+                        <div className="p-2 bg-light rounded border mt-2 small text-dark">
+                          <strong>Reason:</strong> {r.reason} {r.notes ? `(${r.notes})` : ''}
+                        </div>
+
+                        {r.status === 'Pending' && (
+                          <div className="d-flex gap-2 mt-2 justify-content-end">
+                            <button className="btn btn-sm btn-outline-secondary" onClick={() => handleReportAction(r.id, 'Dismiss')}>Dismiss</button>
+                            {r.target_type === 'user' ? (
+                              <button className="btn btn-sm btn-danger fw-bold" onClick={() => { handleSuspendUser(r.target_id); handleReportAction(r.id, 'User Suspended'); }}>Suspend User</button>
+                            ) : (
+                              <button className="btn btn-sm btn-danger fw-bold" onClick={() => { handleRemoveListing(r.target_id); handleReportAction(r.id, 'Listing Removed'); }}>Remove Listing</button>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* TAB 3: MODERATION TOOLS */}
+            {activeTab === 'moderation' && (
+              <div className="row g-3">
+                <div className="col-md-6">
+                  <div className="p-3 bg-white border rounded shadow-sm">
+                    <h6 className="fw-bold text-danger mb-2"><i className="fas fa-user-slash me-1"></i> Suspend User Account</h6>
+                    <small className="text-muted d-block mb-3">Forces user logout and blocks marketplace access.</small>
+                    <div className="d-flex gap-2">
+                      <input 
+                        type="text" 
+                        className="form-control form-control-sm"
+                        placeholder="Enter 10-digit Mobile Number..."
+                        value={suspendMobileInput}
+                        onChange={e => setSuspendMobileInput(e.target.value)}
+                      />
+                      <button className="btn btn-sm btn-danger fw-bold text-nowrap" onClick={() => handleSuspendUser(suspendMobileInput)}>
+                        Suspend Account
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="col-md-6">
+                  <div className="p-3 bg-white border rounded shadow-sm">
+                    <h6 className="fw-bold text-danger mb-2"><i className="fas fa-trash me-1"></i> Remove Crop Listing</h6>
+                    <small className="text-muted d-block mb-3">Hides fraudulent crop listing from live feed.</small>
+                    <div className="d-flex gap-2">
+                      <input 
+                        type="text" 
+                        className="form-control form-control-sm"
+                        placeholder="Enter Crop Listing ID..."
+                        value={removeListingIdInput}
+                        onChange={e => setRemoveListingIdInput(e.target.value)}
+                      />
+                      <button className="btn btn-sm btn-danger fw-bold text-nowrap" onClick={() => handleRemoveListing(removeListingIdInput)}>
+                        Remove Listing
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* TAB 4: SUPPORT QUEUE */}
+            {activeTab === 'tickets' && (
+              <div>
+                <h6 className="fw-bold text-dark mb-3"><i className="fas fa-headset text-success me-1"></i> Platform Support Tickets Queue</h6>
+                {tickets.length === 0 ? (
+                  <div className="text-center py-4 bg-light rounded border">
+                    <small className="text-muted">No support tickets submitted.</small>
+                  </div>
+                ) : selectedTicket ? (
+                  <div>
+                    <button className="btn btn-sm btn-link p-0 text-success fw-bold mb-2" onClick={() => setSelectedTicket(null)}>
+                      ← Back to All Tickets
+                    </button>
+                    <div className="p-3 bg-light rounded border mb-3">
+                      <div className="fw-bold text-dark">{selectedTicket.subject}</div>
+                      <small className="text-muted">From: {selectedTicket.user_name} (+91 {selectedTicket.user_mobile})</small>
+                      <p className="small text-dark mt-2 mb-0">{selectedTicket.description}</p>
+                    </div>
+
+                    <div className="d-flex flex-column gap-2 mb-3">
+                      {(selectedTicket.replies || []).map((r, idx) => (
+                        <div key={idx} className={`p-2 rounded border small ${r.is_admin ? 'bg-success bg-opacity-10 border-success' : 'bg-light'}`}>
+                          <strong>{r.sender_name}:</strong> {r.message}
+                        </div>
+                      ))}
+                    </div>
+
+                    <form onSubmit={handleAdminTicketReply} className="d-flex gap-2">
+                      <input 
+                        type="text"
+                        className="form-control form-control-sm"
+                        placeholder="Write admin reply..."
+                        value={adminReplyMsg}
+                        onChange={e => setAdminReplyMsg(e.target.value)}
+                        required
+                      />
+                      <button type="submit" className="btn btn-sm btn-success fw-bold px-3">Post Reply</button>
+                    </form>
+                  </div>
+                ) : (
+                  <div className="d-flex flex-column gap-2">
+                    {tickets.map((t) => (
+                      <div key={t.id} className="p-3 bg-white border rounded shadow-sm d-flex justify-content-between align-items-center" style={{ cursor: 'pointer' }} onClick={() => setSelectedTicket(t)}>
+                        <div>
+                          <div className="fw-bold text-dark">{t.subject}</div>
+                          <small className="text-muted">User: {t.user_name} (+91 {t.user_mobile}) • #{t.id}</small>
+                        </div>
+                        <span className={`badge ${t.status === 'Resolved' ? 'bg-success' : 'bg-warning text-dark'}`}>
+                          {t.status}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+
+        <div className="d-flex justify-content-end pt-3 border-top mt-4">
+          <button className="btn btn-sm btn-outline-secondary" onClick={onClose}>Close Dashboard</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AdminDashboardModal;

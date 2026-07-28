@@ -228,9 +228,9 @@ app.get('/api/crops', async (req, res) => {
     const limit = req.query.limit ? parseInt(req.query.limit, 10) : 100;
     let crops;
     if (limit > 0) {
-      crops = await database.all("SELECT * FROM Crops WHERE status='active' ORDER BY id DESC LIMIT ?", [limit]);
+      crops = await database.all("SELECT * FROM Crops WHERE status='active' AND (is_removed IS NULL OR is_removed = 0) ORDER BY id DESC LIMIT ?", [limit]);
     } else {
-      crops = await database.all("SELECT * FROM Crops WHERE status='active' ORDER BY id DESC");
+      crops = await database.all("SELECT * FROM Crops WHERE status='active' AND (is_removed IS NULL OR is_removed = 0) ORDER BY id DESC");
     }
 
     const users = await database.all("SELECT name, mobile FROM Users");
@@ -1763,6 +1763,227 @@ app.get('/api/orders/:id/tracking', async (req, res) => {
   } catch (err) {
     console.error("Error fetching tracking info:", err);
     res.status(500).json({ error: 'Failed to fetch tracking details' });
+  }
+});
+
+// Admin Overview Metrics Endpoint
+app.get('/api/admin/overview', async (req, res) => {
+  try {
+    const database = await ensureDb();
+
+    const usersCount = (await database.get('SELECT COUNT(*) as cnt FROM Users')).cnt || 0;
+    const cropsCount = (await database.get('SELECT COUNT(*) as cnt FROM Crops WHERE (is_removed IS NULL OR is_removed = 0)')).cnt || 0;
+    const ordersCount = (await database.get('SELECT COUNT(*) as cnt FROM Orders')).cnt || 0;
+    
+    // Sum GMV
+    const orders = await database.all('SELECT final_price, quantity, status FROM Orders WHERE status != "Cancelled"');
+    const totalGmv = orders.reduce((sum, o) => sum + ((parseFloat(o.final_price) || 0) * (parseFloat(o.quantity) || 1)), 0);
+
+    const pendingReports = (await database.get('SELECT COUNT(*) as cnt FROM Reports WHERE status = "Pending"'))?.cnt || 0;
+    const openDisputes = (await database.get('SELECT COUNT(*) as cnt FROM Disputes WHERE status = "Pending"'))?.cnt || 0;
+    const openTickets = (await database.get('SELECT COUNT(*) as cnt FROM SupportTickets WHERE status = "Open"'))?.cnt || 0;
+
+    res.json({
+      activeUsers: usersCount,
+      activeCrops: cropsCount,
+      totalOrders: ordersCount,
+      totalGmv,
+      pendingReports,
+      openDisputes,
+      openTickets
+    });
+  } catch (err) {
+    console.error("Error fetching admin overview:", err);
+    res.status(500).json({ error: 'Failed to fetch admin metrics' });
+  }
+});
+
+// Reporting System Endpoints
+app.post('/api/reports', async (req, res) => {
+  try {
+    const { reported_by_mobile, reported_by_name, target_type, target_id, target_name, reason, notes } = req.body;
+    if (!reported_by_mobile || !target_type || !target_id || !reason) {
+      return res.status(400).json({ error: 'Missing required report details' });
+    }
+
+    const database = await ensureDb();
+    const cleanMob = normalizePhone(reported_by_mobile);
+
+    const result = await database.run(
+      `INSERT INTO Reports (reported_by_mobile, reported_by_name, target_type, target_id, target_name, reason, notes)
+       VALUES (?, ?, ?, ?, ?, ?, ?)`,
+      [cleanMob, (reported_by_name || 'User').trim(), target_type, target_id.toString(), (target_name || '').trim(), reason, notes || '']
+    );
+
+    const newReport = { id: result.lastID, reported_by_mobile: cleanMob, target_type, target_id, reason, status: 'Pending' };
+    res.status(201).json({ message: 'Report submitted successfully for admin review', report: newReport });
+  } catch (err) {
+    console.error("Error creating report:", err);
+    res.status(500).json({ error: 'Failed to submit report' });
+  }
+});
+
+app.get('/api/admin/reports', async (req, res) => {
+  try {
+    const database = await ensureDb();
+    const reports = await database.all('SELECT * FROM Reports ORDER BY id DESC');
+    res.json(reports);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch reports' });
+  }
+});
+
+app.put('/api/admin/reports/:id/action', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { action } = req.body; // 'Dismiss', 'Warned', 'Listing Removed', 'User Suspended'
+
+    const database = await ensureDb();
+    await database.run('UPDATE Reports SET status = ? WHERE id = ?', [action || 'Resolved', id]);
+
+    res.json({ message: `Report #${id} updated to ${action}` });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to update report' });
+  }
+});
+
+// Admin Moderation Tools Endpoints
+app.put('/api/admin/users/:mobile/suspend', async (req, res) => {
+  try {
+    const { mobile } = req.params;
+    const cleanMob = normalizePhone(mobile);
+
+    const database = await ensureDb();
+    await database.run('UPDATE Users SET account_status = "suspended" WHERE TRIM(mobile) = ?', [cleanMob]);
+
+    io.to(`user_${cleanMob}`).emit('account_suspended', { message: 'Your account has been suspended by platform administration due to policy violations.' });
+
+    res.json({ message: `User +91 ${cleanMob} suspended successfully` });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to suspend user' });
+  }
+});
+
+app.put('/api/admin/listings/:id/remove', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const database = await ensureDb();
+
+    await database.run('UPDATE Crops SET is_removed = 1, status = "removed" WHERE id = ?', [id]);
+    await syncCrops();
+
+    io.emit('crop_price_updated', { crop_id: parseInt(id, 10), is_removed: 1 });
+
+    res.json({ message: `Crop listing #${id} removed from marketplace` });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to remove listing' });
+  }
+});
+
+// Support Ticket System Endpoints
+app.post('/api/tickets', async (req, res) => {
+  try {
+    const { user_mobile, user_name, subject, category, description } = req.body;
+    if (!user_mobile || !subject || !description) {
+      return res.status(400).json({ error: 'Missing required ticket details' });
+    }
+
+    const cleanMob = normalizePhone(user_mobile);
+    const database = await ensureDb();
+
+    const result = await database.run(
+      `INSERT INTO SupportTickets (user_mobile, user_name, subject, category, description)
+       VALUES (?, ?, ?, ?, ?)`,
+      [cleanMob, (user_name || 'Customer').trim(), subject, category || 'General', description]
+    );
+
+    const newTicket = { id: result.lastID, user_mobile: cleanMob, subject, category, status: 'Open', created_at: new Date().toISOString() };
+    res.status(201).json({ message: 'Support ticket submitted', ticket: newTicket });
+  } catch (err) {
+    console.error("Error creating ticket:", err);
+    res.status(500).json({ error: 'Failed to submit support ticket' });
+  }
+});
+
+app.get('/api/tickets/my', async (req, res) => {
+  try {
+    const { mobile } = req.query;
+    if (!mobile) return res.json([]);
+
+    const cleanMob = normalizePhone(mobile);
+    const database = await ensureDb();
+
+    const tickets = await database.all('SELECT * FROM SupportTickets WHERE TRIM(user_mobile) = ? ORDER BY id DESC', [cleanMob]);
+    const replies = await database.all('SELECT * FROM TicketReplies ORDER BY id ASC');
+
+    const result = tickets.map(t => ({
+      ...t,
+      replies: replies.filter(r => r.ticket_id === t.id)
+    }));
+
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch tickets' });
+  }
+});
+
+app.post('/api/tickets/:id/reply', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { sender_mobile, sender_name, is_admin, message } = req.body;
+
+    if (!message) return res.status(400).json({ error: 'Reply message cannot be empty' });
+
+    const database = await ensureDb();
+    const cleanMob = normalizePhone(sender_mobile);
+
+    const result = await database.run(
+      `INSERT INTO TicketReplies (ticket_id, sender_mobile, sender_name, is_admin, message)
+       VALUES (?, ?, ?, ?, ?)`,
+      [id, cleanMob, (sender_name || 'User').trim(), is_admin ? 1 : 0, message]
+    );
+
+    // Update ticket status to In Progress if open
+    await database.run('UPDATE SupportTickets SET status = "In Progress" WHERE id = ? AND status = "Open"', [id]);
+
+    const newReply = { id: result.lastID, ticket_id: parseInt(id, 10), sender_name, is_admin: is_admin ? 1 : 0, message, created_at: new Date().toISOString() };
+    res.json({ message: 'Reply added', reply: newReply });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to post reply' });
+  }
+});
+
+app.get('/api/admin/tickets', async (req, res) => {
+  try {
+    const database = await ensureDb();
+    const tickets = await database.all('SELECT * FROM SupportTickets ORDER BY id DESC');
+    const replies = await database.all('SELECT * FROM TicketReplies ORDER BY id ASC');
+
+    const result = tickets.map(t => ({
+      ...t,
+      replies: replies.filter(r => r.ticket_id === t.id)
+    }));
+
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch admin tickets' });
+  }
+});
+
+app.put('/api/admin/tickets/:id/status', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { status } = req.body; // 'Open', 'In Progress', 'Resolved'
+
+    const database = await ensureDb();
+    await database.run(
+      'UPDATE SupportTickets SET status = ?, resolved_at = ? WHERE id = ?',
+      [status, status === 'Resolved' ? new Date().toISOString() : null, id]
+    );
+
+    res.json({ message: `Ticket #${id} updated to ${status}` });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to update ticket status' });
   }
 });
 
