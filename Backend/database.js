@@ -16,7 +16,15 @@ const UserSchema = new mongoose.Schema({
   mobile: { type: String, unique: true },
   location: String,
   role: String,
-  password: String
+  password: String,
+  profile_photo: String,
+  bio: String,
+  business_name: String,
+  address: String,
+  state: String,
+  district: String,
+  pincode: String,
+  crops_specialty: String
 }, { timestamps: true });
 
 const CropSchema = new mongoose.Schema({
@@ -219,9 +227,17 @@ async function initDb() {
     );
   `);
 
-  // Safely patch existing Users table if missing user_id column
+  // Safely patch existing Users table if missing profile columns
   try { await db.exec(`ALTER TABLE Users ADD COLUMN user_id TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Users ADD COLUMN created_at DATETIME DEFAULT CURRENT_TIMESTAMP;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Users ADD COLUMN profile_photo TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Users ADD COLUMN bio TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Users ADD COLUMN business_name TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Users ADD COLUMN address TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Users ADD COLUMN state TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Users ADD COLUMN district TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Users ADD COLUMN pincode TEXT;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Users ADD COLUMN crops_specialty TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN seller_mobile TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN status TEXT DEFAULT 'active';`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN soldDate TEXT;`); } catch(e) {}
@@ -247,10 +263,23 @@ async function initDb() {
       const cloudUsers = await MongoUser.find({}).lean();
       for (let idx = 0; idx < cloudUsers.length; idx++) {
         const u = cloudUsers[idx];
-        const genId = u.user_id || (u.role === 'seller' ? `KM-S-${1000 + idx + 1}` : `KM-B-${1000 + idx + 1}`);
         await db.run(
-          'INSERT OR IGNORE INTO Users (user_id, name, mobile, location, role, password) VALUES (?, ?, ?, ?, ?, ?)',
-          [genId, u.name, u.mobile, u.location || '', u.role, u.password]
+          `INSERT INTO Users (user_id, name, mobile, location, role, password, profile_photo, bio, business_name, address, state, district, pincode, crops_specialty)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+           ON CONFLICT(mobile) DO UPDATE SET
+             profile_photo=COALESCE(excluded.profile_photo, Users.profile_photo),
+             bio=COALESCE(excluded.bio, Users.bio),
+             business_name=COALESCE(excluded.business_name, Users.business_name),
+             address=COALESCE(excluded.address, Users.address),
+             state=COALESCE(excluded.state, Users.state),
+             district=COALESCE(excluded.district, Users.district),
+             pincode=COALESCE(excluded.pincode, Users.pincode),
+             crops_specialty=COALESCE(excluded.crops_specialty, Users.crops_specialty)`,
+          [
+            genId, u.name, u.mobile, u.location || '', u.role, u.password,
+            u.profile_photo || null, u.bio || null, u.business_name || null,
+            u.address || null, u.state || null, u.district || null, u.pincode || null, u.crops_specialty || null
+          ]
         );
       }
       console.log(`Cloud DB Restored ${cloudUsers.length} users successfully.`);
@@ -266,8 +295,22 @@ async function initDb() {
       const u = savedUsers[idx];
       const genId = u.user_id || (u.role === 'seller' ? `KM-S-${1000 + idx + 1}` : `KM-B-${1000 + idx + 1}`);
       await db.run(
-        'INSERT OR IGNORE INTO Users (user_id, name, mobile, location, role, password) VALUES (?, ?, ?, ?, ?, ?)',
-        [genId, u.name, u.mobile, u.location || '', u.role, u.password]
+        `INSERT INTO Users (user_id, name, mobile, location, role, password, profile_photo, bio, business_name, address, state, district, pincode, crops_specialty)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+         ON CONFLICT(mobile) DO UPDATE SET
+           profile_photo=COALESCE(excluded.profile_photo, Users.profile_photo),
+           bio=COALESCE(excluded.bio, Users.bio),
+           business_name=COALESCE(excluded.business_name, Users.business_name),
+           address=COALESCE(excluded.address, Users.address),
+           state=COALESCE(excluded.state, Users.state),
+           district=COALESCE(excluded.district, Users.district),
+           pincode=COALESCE(excluded.pincode, Users.pincode),
+           crops_specialty=COALESCE(excluded.crops_specialty, Users.crops_specialty)`,
+        [
+          genId, u.name, u.mobile, u.location || '', u.role, u.password,
+          u.profile_photo || null, u.bio || null, u.business_name || null,
+          u.address || null, u.state || null, u.district || null, u.pincode || null, u.crops_specialty || null
+        ]
       );
     }
 

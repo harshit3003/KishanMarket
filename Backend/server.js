@@ -157,7 +157,7 @@ async function syncUsers() {
   try {
     const database = await ensureDb();
     if (!database) return;
-    const users = await database.all('SELECT user_id, name, mobile, location, role, password FROM Users');
+    const users = await database.all('SELECT user_id, name, mobile, location, role, password, profile_photo, bio, business_name, address, state, district, pincode, crops_specialty FROM Users');
     saveTableToFile('users.json', users);
   } catch (e) {}
 }
@@ -611,11 +611,117 @@ app.get('/api/seller-predictions', (req, res) => serveData('seller-predictions.j
 app.get('/api/users', async (req, res) => {
   try {
     const database = await ensureDb();
-    const users = await database.all('SELECT user_id, name, mobile, location, role FROM Users ORDER BY id DESC');
+    const users = await database.all('SELECT user_id, name, mobile, location, role, profile_photo, business_name, state, district, crops_specialty FROM Users ORDER BY id DESC');
     res.json(users);
   } catch (err) {
     console.error("Error in /api/users:", err);
     res.status(500).json({ error: 'Database error fetching users' });
+  }
+});
+
+// User Profile Endpoints
+app.get('/api/profile/:identifier', async (req, res) => {
+  try {
+    const { identifier } = req.params;
+    if (!identifier) return res.status(400).json({ error: 'Missing user identifier' });
+
+    const cleanMob = normalizePhone(identifier);
+    const database = await ensureDb();
+
+    let user = await database.get(
+      `SELECT id, user_id, name, mobile, location, role, profile_photo, bio, business_name, address, state, district, pincode, crops_specialty, created_at 
+       FROM Users 
+       WHERE TRIM(mobile) = ? OR TRIM(user_id) = ? OR TRIM(LOWER(name)) = ?`,
+      [cleanMob, identifier.trim(), identifier.trim().toLowerCase()]
+    );
+
+    if (!user) {
+      return res.status(404).json({ error: 'User profile not found' });
+    }
+
+    res.json(user);
+  } catch (err) {
+    console.error("Error fetching profile:", err);
+    res.status(500).json({ error: 'Failed to fetch user profile' });
+  }
+});
+
+app.put('/api/profile/update', async (req, res) => {
+  try {
+    const { mobile, name, business_name, bio, address, state, district, pincode, crops_specialty, profile_photo } = req.body;
+    if (!mobile) return res.status(400).json({ error: 'Mobile number is required' });
+
+    const cleanMob = normalizePhone(mobile);
+    const database = await ensureDb();
+
+    const existing = await database.get('SELECT * FROM Users WHERE TRIM(mobile) = ?', [cleanMob]);
+    if (!existing) {
+      return res.status(404).json({ error: 'User account not found' });
+    }
+
+    const updatedName = (name || existing.name).toString().trim();
+    const updatedLoc = [district, state].filter(Boolean).join(', ') || existing.location;
+
+    await database.run(
+      `UPDATE Users SET 
+        name = ?,
+        location = ?,
+        business_name = ?,
+        bio = ?,
+        address = ?,
+        state = ?,
+        district = ?,
+        pincode = ?,
+        crops_specialty = ?,
+        profile_photo = COALESCE(?, profile_photo)
+       WHERE TRIM(mobile) = ?`,
+      [
+        updatedName,
+        updatedLoc,
+        business_name || existing.business_name || null,
+        bio || existing.bio || null,
+        address || existing.address || null,
+        state || existing.state || null,
+        district || existing.district || null,
+        pincode || existing.pincode || null,
+        crops_specialty || existing.crops_specialty || null,
+        profile_photo || null,
+        cleanMob
+      ]
+    );
+
+    await syncUsers();
+
+    const updatedUser = await database.get(
+      `SELECT id, user_id, name, mobile, location, role, profile_photo, bio, business_name, address, state, district, pincode, crops_specialty, created_at 
+       FROM Users WHERE TRIM(mobile) = ?`,
+      [cleanMob]
+    );
+
+    res.json({ message: 'Profile updated successfully', user: updatedUser });
+  } catch (err) {
+    console.error("Error updating profile:", err);
+    res.status(500).json({ error: 'Failed to update profile' });
+  }
+});
+
+app.post('/api/profile/upload-photo', async (req, res) => {
+  try {
+    const { mobile, profile_photo } = req.body;
+    if (!mobile || !profile_photo) {
+      return res.status(400).json({ error: 'Mobile and profile photo data URL are required' });
+    }
+
+    const cleanMob = normalizePhone(mobile);
+    const database = await ensureDb();
+
+    await database.run('UPDATE Users SET profile_photo = ? WHERE TRIM(mobile) = ?', [profile_photo, cleanMob]);
+    await syncUsers();
+
+    res.json({ message: 'Profile photo updated successfully', profile_photo });
+  } catch (err) {
+    console.error("Error uploading photo:", err);
+    res.status(500).json({ error: 'Failed to upload profile photo' });
   }
 });
 

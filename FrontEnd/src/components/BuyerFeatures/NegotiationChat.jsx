@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import socket from '../../socket';
+import ProfileModal from '../ProfileModal';
 
 const NegotiationChat = ({ chatData, onClose }) => {
   const [messages, setMessages] = useState([]);
   const [inputText, setInputText] = useState('');
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
   const chatEndRef = useRef(null);
   
   const currentUser = JSON.parse(localStorage.getItem('currentUser')) || {};
@@ -112,19 +114,32 @@ const NegotiationChat = ({ chatData, onClose }) => {
     }}>
       {/* Header */}
       <div className="bg-success text-white p-3 d-flex justify-content-between align-items-center">
-        <div className="d-flex align-items-center gap-2">
+        <div 
+          className="d-flex align-items-center gap-2" 
+          style={{ cursor: 'pointer' }}
+          onClick={() => setIsProfileOpen(true)}
+          title="Click to view verified profile"
+        >
           <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#fff', color: '#15803d', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <i className="fas fa-user"></i>
           </div>
           <div>
-            <h6 className="m-0 fw-bold">
+            <h6 className="m-0 fw-bold d-flex align-items-center gap-1">
               {myRole === 'seller' ? (chatData.buyer || chatData.buyerName || 'Buyer') : (chatData.seller || 'Seller')}
+              <i className="fas fa-check-circle text-white" style={{ fontSize: '0.75rem' }}></i>
             </h6>
             <small style={{ fontSize: '11px', opacity: 0.8 }}>Selling: {chatData.name}</small>
           </div>
         </div>
         <button className="btn text-white p-0" onClick={onClose}><i className="fas fa-times fa-lg"></i></button>
       </div>
+
+      <ProfileModal 
+        isOpen={isProfileOpen} 
+        onClose={() => setIsProfileOpen(false)} 
+        targetUserMobile={myRole === 'seller' ? (chatData.buyerMobile || chatData.buyer) : (chatData.seller_mobile || chatData.seller)} 
+        currentUser={currentUser} 
+      />
 
       {/* Messages */}
       <div className="flex-grow-1 p-3" style={{ overflowY: 'auto', backgroundColor: '#e2e8f0', backgroundImage: 'url("https://www.transparenttextures.com/patterns/cubes.png")' }}>

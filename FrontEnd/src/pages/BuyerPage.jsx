@@ -13,6 +13,8 @@ import NegotiationChat from '../components/BuyerFeatures/NegotiationChat';
 import ConversationsModal from '../components/ConversationsModal';
 import socket from '../socket';
 import InteractiveMarketMap from '../components/InteractiveMarketMap';
+import ProfileModal from '../components/ProfileModal';
+import ProfileCard from '../components/ProfileCard';
 
 
 const defaultCrops = [
@@ -81,6 +83,10 @@ const BuyerPage = () => {
       toast.error('Boli lagane me samasya aayi.');
     }
   };
+
+  // Profile Modal State
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+  const [profileTargetMobile, setProfileTargetMobile] = useState(null);
 
   // Search State
   const [searchLoc, setSearchLoc] = useState('');
@@ -511,7 +517,7 @@ const BuyerPage = () => {
                   <small className="text-muted">Buyer ID: KB-2026</small>
                 </div>
                 <ul className="dropdown-links-list">
-                  <li><Link to="/profile/buyer"><i className="fas fa-user"></i> My Profile</Link></li>
+                  <li><a href="#profile" onClick={(e) => { e.preventDefault(); setProfileTargetMobile(null); setIsProfileModalOpen(true); setIsProfileOpen(false); }}><i className="fas fa-user"></i> My Profile</a></li>
                   <li><Link to="/orders"><i className="fas fa-shopping-basket"></i> My Orders</Link></li>
                   <li><a href="#"><i className="fas fa-heart"></i> Watchlist</a></li>
                   <li className="dropdown-divider"></li>
@@ -622,7 +628,19 @@ const BuyerPage = () => {
                   <div className="crop-card shadow-sm h-100 p-3 bg-white rounded border">
                     <span className="badge bg-success mb-2"><i className="fas fa-map-marker-alt"></i> {crop.loc}</span>
                     <h5 className="text-success fw-bold">{crop.name}</h5>
-                    <p className="text-muted small mb-1">Seller: <strong>{crop.seller}</strong></p>
+                    <p className="text-muted small mb-1 d-flex align-items-center justify-content-between">
+                      <span>Seller: <strong>{crop.seller}</strong></span>
+                      <button 
+                        className="btn btn-link btn-sm p-0 text-success fw-bold"
+                        onClick={() => {
+                          setProfileTargetMobile(crop.seller_mobile || crop.seller);
+                          setIsProfileModalOpen(true);
+                        }}
+                        title="View Farmer Profile"
+                      >
+                        <i className="fas fa-user-circle me-1"></i> Profile
+                      </button>
+                    </p>
                     <p className="m-0">Vazan: {crop.weight}q</p>
                     <p className="fs-5 fw-bold text-success mt-2">Rate: ₹{crop.rate}/q</p>
                     <div className="d-flex justify-content-between align-items-center mt-3 gap-1">
@@ -756,6 +774,13 @@ const BuyerPage = () => {
         currentUser={currentUser} 
         onSelectChat={(chat) => setActiveChat(chat)} 
         unreadCounts={unreadCounts} 
+      />
+      <ProfileModal 
+        isOpen={isProfileModalOpen} 
+        onClose={() => { setIsProfileModalOpen(false); setProfileTargetMobile(null); }} 
+        targetUserMobile={profileTargetMobile} 
+        currentUser={currentUser} 
+        onProfileUpdated={(updated) => setCurrentUser(prev => ({ ...prev, ...updated }))} 
       />
       {/* Real-time Bidding Modal */}
       {bidModal.open && bidModal.crop && (

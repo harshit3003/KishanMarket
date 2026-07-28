@@ -13,6 +13,8 @@ import WeatherDashboard from '../components/SellerFeatures/WeatherDashboard';
 import NegotiationChat from '../components/BuyerFeatures/NegotiationChat';
 import ConversationsModal from '../components/ConversationsModal';
 import CustomerSelectModal from '../components/CustomerSelectModal';
+import ProfileModal from '../components/ProfileModal';
+import ProfileCard from '../components/ProfileCard';
 import socket from '../socket';
 import { getInstantCoords } from '../utils/geoUtils';
 
@@ -31,6 +33,8 @@ const SellerPage = () => {
   const [isLiveBidsOpen, setIsLiveBidsOpen] = useState(false);
   const [isConversationsModalOpen, setIsConversationsModalOpen] = useState(false);
   const [selectCustomerModal, setSelectCustomerModal] = useState({ open: false, crop: null });
+  const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
+  const [profileTargetMobile, setProfileTargetMobile] = useState(null);
 
   // New states for Interactive Modals
   const [editModalData, setEditModalData] = useState({ open: false, index: null, weight: '', rate: '' });
@@ -652,7 +656,7 @@ const SellerPage = () => {
                   <small className="text-muted">Customer ID: {currentUser.user_id || 'KM-S-1001'}</small>
                 </div>
                 <ul className="dropdown-links-list">
-                  <li><Link to="/profile/seller"><i className="fas fa-user"></i> My Profile</Link></li>
+                  <li><a href="#profile" onClick={(e) => { e.preventDefault(); setProfileTargetMobile(null); setIsProfileModalOpen(true); setIsProfileOpen(false); }}><i className="fas fa-user"></i> My Profile</a></li>
                   <li><a href="#live-bids" onClick={handleOpenLiveBids}><i className="fas fa-gavel text-warning"></i> Live Bids <span className="badge bg-danger ms-2 rounded-pill">New</span></a></li>
                   <li className="dropdown-divider"></li>
                   <li><a href="#" className="logout-item" onClick={handleLogout} style={{ color: '#000000' }}><i className="fas fa-sign-out-alt"></i> Logout</a></li>
@@ -958,6 +962,13 @@ const SellerPage = () => {
         receivedBids={receivedBids} 
         onSelectBuyer={(chat) => setActiveChat(chat)} 
         currentUser={currentUser} 
+      />
+      <ProfileModal 
+        isOpen={isProfileModalOpen} 
+        onClose={() => { setIsProfileModalOpen(false); setProfileTargetMobile(null); }} 
+        targetUserMobile={profileTargetMobile} 
+        currentUser={currentUser} 
+        onProfileUpdated={(updated) => setCurrentUser(prev => ({ ...prev, ...updated }))} 
       />
 
       {/* Edit Crop Modal */}
