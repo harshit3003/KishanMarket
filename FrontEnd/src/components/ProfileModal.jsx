@@ -7,6 +7,12 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
   const [isEditing, setIsEditing] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
+  const [activeTab, setActiveTab] = useState('overview'); // 'overview', 'inventory', 'sales', 'intel'
+
+  // Additional data state for Stats & Business History
+  const [userCrops, setUserCrops] = useState([]);
+  const [userSales, setUserSales] = useState([]);
+  const [marketIntel, setMarketIntel] = useState([]);
 
   const isOwnProfile = !targetUserMobile || (currentUser && (currentUser.mobile === targetUserMobile || currentUser.name === targetUserMobile));
 
@@ -27,9 +33,11 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
       const identifier = targetUserMobile || (currentUser ? currentUser.mobile : '');
       if (identifier) {
         loadProfile(identifier);
+        loadBusinessStats(identifier);
       }
     } else {
       setIsEditing(false);
+      setActiveTab('overview');
     }
   }, [isOpen, targetUserMobile, currentUser]);
 
@@ -52,7 +60,6 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
           profile_photo: data.profile_photo || ''
         });
       } else {
-        // Fallback to local user
         const local = currentUser || {};
         setProfile(local);
         setFormData({
@@ -71,6 +78,30 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
       console.error("Failed to load profile:", e);
     }
     setIsLoading(false);
+  };
+
+  const loadBusinessStats = async (identifier) => {
+    try {
+      // 1. Load user crops (Inventory & History)
+      const cropsRes = await fetch(`/api/crops/my?mobile=${encodeURIComponent(identifier)}&name=${encodeURIComponent(identifier)}`);
+      if (cropsRes.ok) {
+        setUserCrops(await cropsRes.json());
+      }
+
+      // 2. Load seller sales / orders
+      const salesRes = await fetch('/api/seller-sales');
+      if (salesRes.ok) {
+        setUserSales(await salesRes.json());
+      }
+
+      // 3. Load market intel
+      const intelRes = await fetch('/api/seller-market-intel');
+      if (intelRes.ok) {
+        setMarketIntel(await intelRes.json());
+      }
+    } catch (e) {
+      console.error("Error loading business stats:", e);
+    }
   };
 
   const handlePhotoChange = (e) => {
@@ -111,7 +142,6 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
         setIsEditing(false);
         toast.success("Profile updated successfully!");
 
-        // Update local session storage
         const userStr = localStorage.getItem('currentUser');
         if (userStr) {
           try {
@@ -139,6 +169,15 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
   const roleBadge = isFarmer ? 'bg-success' : 'bg-primary';
   const roleTitle = isFarmer ? 'Verified Farmer / Kisan' : 'Verified Trader / Vyapari';
 
+  // Stats Calculations
+  const activeInventory = userCrops.filter(c => c.status !== 'sold');
+  const soldCrops = userCrops.filter(c => c.status === 'sold');
+
+  const totalStockQuintals = activeInventory.reduce((acc, c) => acc + (parseFloat(c.weight) || 0), 0);
+  const totalStockValue = activeInventory.reduce((acc, c) => acc + ((parseFloat(c.weight) || 0) * (parseFloat(c.rate) || 0)), 0);
+  const totalSoldVolume = soldCrops.reduce((acc, c) => acc + (parseFloat(c.weight) || 0), 0);
+  const totalRevenue = soldCrops.reduce((acc, c) => acc + ((parseFloat(c.netProfit || c.rate) || 0) * (parseFloat(c.weight) || 1)), 0);
+
   return (
     <div style={{
       position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
@@ -146,16 +185,16 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
       display: 'flex', alignItems: 'center', justifyContent: 'center'
     }}>
       <div className="glass-card-premium p-4 text-start" style={{
-        width: '90%', maxWidth: '580px', maxHeight: '85vh', overflowY: 'auto',
+        width: '92%', maxWidth: '720px', maxHeight: '88vh', overflowY: 'auto',
         background: 'white', borderRadius: '18px', boxShadow: '0 20px 50px rgba(0,0,0,0.25)'
       }}>
-        {/* Header */}
+        {/* Modal Header */}
         <div className="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
           <div className="d-flex align-items-center gap-2">
             <i className={`fas ${isFarmer ? 'fa-tractor' : 'fa-store'} text-success fs-4`}></i>
             <div>
               <h5 className="fw-bold text-dark m-0">
-                {isOwnProfile ? 'My Trust Profile' : `${profile?.name || 'User'}'s Profile`}
+                {isOwnProfile ? 'My Profile & Business Stats' : `${profile?.name || 'User'}'s Profile`}
               </h5>
               <small className="text-muted">KishanMarket Verified Member</small>
             </div>
@@ -163,10 +202,40 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
           <button className="btn-close" onClick={onClose}></button>
         </div>
 
+        {/* Tab Navigation */}
+        {!isEditing && (
+          <div className="nav nav-pills nav-fill bg-light p-1 rounded-3 mb-4 border" style={{ fontSize: '0.85rem' }}>
+            <button 
+              className={`nav-link fw-bold py-2 ${activeTab === 'overview' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`}
+              onClick={() => setActiveTab('overview')}
+            >
+              <i className="fas fa-user-circle me-1"></i> Overview & Trust
+            </button>
+            <button 
+              className={`nav-link fw-bold py-2 ${activeTab === 'inventory' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`}
+              onClick={() => setActiveTab('inventory')}
+            >
+              <i className="fas fa-boxes-stacked me-1"></i> Stock Inventory ({activeInventory.length})
+            </button>
+            <button 
+              className={`nav-link fw-bold py-2 ${activeTab === 'sales' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`}
+              onClick={() => setActiveTab('sales')}
+            >
+              <i className="fas fa-chart-line me-1"></i> Sales History ({soldCrops.length})
+            </button>
+            <button 
+              className={`nav-link fw-bold py-2 ${activeTab === 'intel' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`}
+              onClick={() => setActiveTab('intel')}
+            >
+              <i className="fas fa-lightbulb me-1"></i> Market Intel
+            </button>
+          </div>
+        )}
+
         {isLoading ? (
           <div className="text-center py-5">
             <div className="spinner-border text-success" role="status"></div>
-            <p className="small text-muted mt-2">Loading profile details...</p>
+            <p className="small text-muted mt-2">Loading profile & business data...</p>
           </div>
         ) : isEditing ? (
           /* Profile Edit Form */
@@ -279,82 +348,224 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
             </div>
           </form>
         ) : (
-          /* Public Profile View */
+          /* Tab Contents */
           <div>
-            <div className="d-flex align-items-center gap-3 p-3 bg-light rounded-3 border mb-4">
-              <div style={{
-                width: '75px', height: '75px', borderRadius: '50%', overflow: 'hidden',
-                backgroundColor: isFarmer ? '#dcfce7' : '#dbeafe',
-                color: isFarmer ? '#15803d' : '#1d4ed8',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontWeight: 'bold', border: '3px solid white', boxShadow: '0 4px 10px rgba(0,0,0,0.1)'
-              }}>
-                {profile?.profile_photo ? (
-                  <img src={profile.profile_photo} alt={profile.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                ) : (
-                  <i className={`fas ${isFarmer ? 'fa-tractor' : 'fa-store'} fa-2x`}></i>
-                )}
-              </div>
-
+            {/* TAB 1: OVERVIEW & TRUST */}
+            {activeTab === 'overview' && (
               <div>
-                <div className="d-flex align-items-center gap-2">
-                  <h5 className="fw-bold text-dark m-0">{profile?.name || 'KishanMarket Member'}</h5>
-                  <i className="fas fa-check-circle text-primary fs-5" title="Verified Account"></i>
-                </div>
-                {profile?.business_name && (
-                  <div className="small fw-bold text-secondary">{profile.business_name}</div>
-                )}
-                <div className="mt-1 d-flex align-items-center gap-2">
-                  <span className={`badge ${roleBadge}`}>{roleTitle}</span>
-                  <span className="badge bg-warning text-dark fw-bold">
-                    <i className="fas fa-star me-1"></i>
-                    {profile?.avg_rating ? parseFloat(profile.avg_rating).toFixed(1) : '5.0'} ({profile?.review_count || 0} reviews)
-                  </span>
-                </div>
-              </div>
-            </div>
+                <div className="d-flex align-items-center gap-3 p-3 bg-light rounded-3 border mb-4">
+                  <div style={{
+                    width: '75px', height: '75px', borderRadius: '50%', overflow: 'hidden',
+                    backgroundColor: isFarmer ? '#dcfce7' : '#dbeafe',
+                    color: isFarmer ? '#15803d' : '#1d4ed8',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    fontWeight: 'bold', border: '3px solid white', boxShadow: '0 4px 10px rgba(0,0,0,0.1)'
+                  }}>
+                    {profile?.profile_photo ? (
+                      <img src={profile.profile_photo} alt={profile.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    ) : (
+                      <i className={`fas ${isFarmer ? 'fa-tractor' : 'fa-store'} fa-2x`}></i>
+                    )}
+                  </div>
 
-            <div className="row g-3 text-start mb-4">
-              <div className="col-md-6">
-                <div className="p-3 bg-white border rounded shadow-sm">
-                  <div className="small text-muted fw-bold mb-1"><i className="fas fa-map-marker-alt text-danger me-1"></i> Location & Address</div>
-                  <div className="fw-bold text-dark">{profile?.location || profile?.address || 'Location Not Specified'}</div>
-                  {profile?.pincode && <small className="text-muted">Pincode: {profile.pincode}</small>}
-                </div>
-              </div>
-
-              <div className="col-md-6">
-                <div className="p-3 bg-white border rounded shadow-sm">
-                  <div className="small text-muted fw-bold mb-1"><i className="fas fa-phone-alt text-success me-1"></i> Mobile Contact</div>
-                  <div className="fw-bold text-dark">+91 {profile?.mobile || 'Verified'}</div>
-                  <small className="text-success"><i className="fas fa-shield-alt me-1"></i> Identity Verified</small>
-                </div>
-              </div>
-
-              <div className="col-12">
-                <div className="p-3 bg-white border rounded shadow-sm">
-                  <div className="small text-muted fw-bold mb-1"><i className="fas fa-wheat-awn text-warning me-1"></i> {isFarmer ? 'Crops Grown / Specialty' : 'Crops Procurement Focus'}</div>
-                  <div className="fw-bold text-dark">{profile?.crops_specialty || 'Wheat, Rice, Maize, Mustard'}</div>
-                </div>
-              </div>
-
-              {profile?.bio && (
-                <div className="col-12">
-                  <div className="p-3 bg-white border rounded shadow-sm">
-                    <div className="small text-muted fw-bold mb-1"><i className="fas fa-info-circle text-primary me-1"></i> Member Bio</div>
-                    <p className="small text-dark mb-0">{profile.bio}</p>
+                  <div>
+                    <div className="d-flex align-items-center gap-2">
+                      <h5 className="fw-bold text-dark m-0">{profile?.name || 'KishanMarket Member'}</h5>
+                      <i className="fas fa-check-circle text-primary fs-5" title="Verified Account"></i>
+                    </div>
+                    {profile?.business_name && (
+                      <div className="small fw-bold text-secondary">{profile.business_name}</div>
+                    )}
+                    <div className="mt-1 d-flex align-items-center gap-2">
+                      <span className={`badge ${roleBadge}`}>{roleTitle}</span>
+                      <span className="badge bg-warning text-dark fw-bold">
+                        <i className="fas fa-star me-1"></i>
+                        {profile?.avg_rating ? parseFloat(profile.avg_rating).toFixed(1) : '5.0'} ({profile?.review_count || 0} reviews)
+                      </span>
+                    </div>
                   </div>
                 </div>
-              )}
 
-              {/* Member Reviews & Feedback */}
-              <div className="col-12 mt-3">
-                <h6 className="fw-bold text-dark mb-2"><i className="fas fa-comments text-warning me-1"></i> Trade Reputation & Reviews</h6>
-                <ReviewsList targetUserMobile={profile?.mobile || targetUserMobile} />
+                <div className="row g-3 text-start mb-4">
+                  <div className="col-md-6">
+                    <div className="p-3 bg-white border rounded shadow-sm">
+                      <div className="small text-muted fw-bold mb-1"><i className="fas fa-map-marker-alt text-danger me-1"></i> Location & Address</div>
+                      <div className="fw-bold text-dark">{profile?.location || profile?.address || 'Location Not Specified'}</div>
+                      {profile?.pincode && <small className="text-muted">Pincode: {profile.pincode}</small>}
+                    </div>
+                  </div>
+
+                  <div className="col-md-6">
+                    <div className="p-3 bg-white border rounded shadow-sm">
+                      <div className="small text-muted fw-bold mb-1"><i className="fas fa-phone-alt text-success me-1"></i> Mobile Contact</div>
+                      <div className="fw-bold text-dark">+91 {profile?.mobile || 'Verified'}</div>
+                      <small className="text-success"><i className="fas fa-shield-alt me-1"></i> Identity Verified</small>
+                    </div>
+                  </div>
+
+                  <div className="col-12">
+                    <div className="p-3 bg-white border rounded shadow-sm">
+                      <div className="small text-muted fw-bold mb-1"><i className="fas fa-wheat-awn text-warning me-1"></i> {isFarmer ? 'Crops Grown / Specialty' : 'Crops Procurement Focus'}</div>
+                      <div className="fw-bold text-dark">{profile?.crops_specialty || 'Wheat, Rice, Maize, Mustard'}</div>
+                    </div>
+                  </div>
+
+                  {profile?.bio && (
+                    <div className="col-12">
+                      <div className="p-3 bg-white border rounded shadow-sm">
+                        <div className="small text-muted fw-bold mb-1"><i className="fas fa-info-circle text-primary me-1"></i> Member Bio</div>
+                        <p className="small text-dark mb-0">{profile.bio}</p>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Reviews Section */}
+                  <div className="col-12 mt-3">
+                    <h6 className="fw-bold text-dark mb-2"><i className="fas fa-comments text-warning me-1"></i> Trade Reputation & Reviews</h6>
+                    <ReviewsList targetUserMobile={profile?.mobile || targetUserMobile} />
+                  </div>
+                </div>
               </div>
-            </div>
+            )}
 
-            <div className="d-flex justify-content-between align-items-center pt-3 border-top">
+            {/* TAB 2: CROP STOCK / INVENTORY */}
+            {activeTab === 'inventory' && (
+              <div>
+                <div className="row g-3 mb-4">
+                  <div className="col-md-4">
+                    <div className="p-3 bg-success bg-opacity-10 border border-success rounded text-center">
+                      <small className="text-muted fw-bold d-block">ACTIVE LISTINGS</small>
+                      <span className="fs-3 fw-bold text-success">{activeInventory.length}</span>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <div className="p-3 bg-primary bg-opacity-10 border border-primary rounded text-center">
+                      <small className="text-muted fw-bold d-block">TOTAL QUANTITY STOCK</small>
+                      <span className="fs-3 fw-bold text-primary">{totalStockQuintals} quintals</span>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <div className="p-3 bg-warning bg-opacity-10 border border-warning rounded text-center">
+                      <small className="text-muted fw-bold d-block">ESTIMATED VALUATION</small>
+                      <span className="fs-3 fw-bold text-dark">₹{totalStockValue.toLocaleString('en-IN')}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <h6 className="fw-bold text-dark mb-3"><i className="fas fa-boxes-stacked text-success me-1"></i> Active Crops Inventory</h6>
+                {activeInventory.length === 0 ? (
+                  <div className="text-center py-4 bg-light rounded border">
+                    <i className="fas fa-seedling text-muted fa-2x mb-2 opacity-50"></i>
+                    <div className="small text-muted">No active crops listed in stock.</div>
+                  </div>
+                ) : (
+                  <div className="row g-3">
+                    {activeInventory.map((c, i) => (
+                      <div key={i} className="col-md-6">
+                        <div className="p-3 bg-white border rounded shadow-sm">
+                          <div className="d-flex justify-content-between align-items-start mb-2">
+                            <h6 className="fw-bold text-success m-0">{c.name}</h6>
+                            <span className="badge bg-success">Active</span>
+                          </div>
+                          <div className="small text-dark fw-bold">Volume: {c.weight} quintals</div>
+                          <div className="small text-success fw-bold">Rate: ₹{c.rate}/q</div>
+                          <small className="text-muted"><i className="fas fa-map-marker-alt text-danger me-1"></i>{c.loc}</small>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* TAB 3: SALES HISTORY */}
+            {activeTab === 'sales' && (
+              <div>
+                <div className="row g-3 mb-4">
+                  <div className="col-md-4">
+                    <div className="p-3 bg-success bg-opacity-10 border border-success rounded text-center">
+                      <small className="text-muted fw-bold d-block">COMPLETED SALES</small>
+                      <span className="fs-3 fw-bold text-success">{soldCrops.length}</span>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <div className="p-3 bg-info bg-opacity-10 border border-info rounded text-center">
+                      <small className="text-muted fw-bold d-block">SOLD VOLUME</small>
+                      <span className="fs-3 fw-bold text-dark">{totalSoldVolume} quintals</span>
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <div className="p-3 bg-warning bg-opacity-10 border border-warning rounded text-center">
+                      <small className="text-muted fw-bold d-block">TOTAL REVENUE</small>
+                      <span className="fs-3 fw-bold text-success">₹{totalRevenue.toLocaleString('en-IN')}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <h6 className="fw-bold text-dark mb-3"><i className="fas fa-receipt text-primary me-1"></i> Completed Transactions</h6>
+                {soldCrops.length === 0 && userSales.length === 0 ? (
+                  <div className="text-center py-4 bg-light rounded border">
+                    <i className="fas fa-file-invoice-dollar text-muted fa-2x mb-2 opacity-50"></i>
+                    <div className="small text-muted">No completed sales recorded yet.</div>
+                  </div>
+                ) : (
+                  <div className="d-flex flex-column gap-2">
+                    {(soldCrops.length > 0 ? soldCrops : userSales).map((sale, i) => (
+                      <div key={i} className="p-3 bg-white border rounded shadow-sm d-flex justify-content-between align-items-center">
+                        <div>
+                          <div className="fw-bold text-dark">{sale.name || sale.crop || 'Crop Sale'} ({sale.weight}q)</div>
+                          <small className="text-muted">Buyer: {sale.buyerName || sale.buyer || 'Verified Trader'}</small>
+                        </div>
+                        <div className="text-end">
+                          <div className="fw-bold text-success">₹{sale.rate}/q</div>
+                          <small className="text-muted">{sale.soldDate || 'Completed'}</small>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* TAB 4: MARKET INTEL */}
+            {activeTab === 'intel' && (
+              <div>
+                <h6 className="fw-bold text-dark mb-3"><i className="fas fa-brain text-warning me-1"></i> Mandi Analytics & Price Trends</h6>
+                <div className="row g-3">
+                  {marketIntel.length === 0 ? (
+                    [
+                      { crop: "Gehu (Wheat)", avgPrice: "₹2,450/q", forecast: "High demand expected next month due to festival season (+3.2%)." },
+                      { crop: "Dhan (Paddy)", avgPrice: "₹2,100/q", forecast: "Stable market supply with strong export demand (+1.5%)." }
+                    ].map((item, i) => (
+                      <div key={i} className="col-md-6">
+                        <div className="p-3 bg-white border rounded shadow-sm">
+                          <div className="d-flex justify-content-between align-items-center mb-2">
+                            <h6 className="fw-bold text-dark m-0">{item.crop}</h6>
+                            <span className="badge bg-success">{item.avgPrice}</span>
+                          </div>
+                          <p className="small text-secondary m-0">{item.forecast}</p>
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    marketIntel.map((item, i) => (
+                      <div key={i} className="col-md-6">
+                        <div className="p-3 bg-white border rounded shadow-sm">
+                          <div className="d-flex justify-content-between align-items-center mb-2">
+                            <h6 className="fw-bold text-dark m-0">{item.crop || item.name}</h6>
+                            <span className="badge bg-success">₹{item.avgPrice || item.rate}/q</span>
+                          </div>
+                          <p className="small text-secondary m-0">{item.forecast || item.trend || 'Market rates stable'}</p>
+                        </div>
+                      </div>
+                    ))
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* Bottom Actions */}
+            <div className="d-flex justify-content-between align-items-center pt-3 border-top mt-4">
               <button className="btn btn-sm btn-outline-secondary" onClick={onClose}>Close</button>
               {isOwnProfile && (
                 <button className="btn btn-sm btn-success fw-bold px-4" onClick={() => setIsEditing(true)}>
