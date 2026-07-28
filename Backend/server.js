@@ -1463,6 +1463,37 @@ app.put('/api/listings/:id/adjust-stock', async (req, res) => {
   }
 });
 
+// Seasonal Crop Suggestions Endpoint
+app.get('/api/seasonal-crops', async (req, res) => {
+  try {
+    const currentMonthNum = req.query.month ? parseInt(req.query.month, 10) : (new Date().getMonth() + 1);
+    const database = await ensureDb();
+
+    const allSeasonal = await database.all('SELECT * FROM SeasonalCrops');
+    const matchedCrops = allSeasonal.filter(sc => {
+      const monthsArr = sc.months.split(',').map(m => parseInt(m.trim(), 10));
+      return monthsArr.includes(currentMonthNum);
+    });
+
+    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const monthName = monthNames[currentMonthNum - 1] || "Current Month";
+
+    let seasonName = "Rabi";
+    if (currentMonthNum >= 6 && currentMonthNum <= 10) seasonName = "Kharif";
+    else if (currentMonthNum >= 3 && currentMonthNum <= 5) seasonName = "Zaid";
+
+    res.json({
+      month: currentMonthNum,
+      monthName,
+      seasonName,
+      crops: matchedCrops
+    });
+  } catch (err) {
+    console.error("Error fetching seasonal crops:", err);
+    res.status(500).json({ error: 'Failed to fetch seasonal crop suggestions' });
+  }
+});
+
 const normalizePhone = (p) => {
   if (!p) return '';
   const digits = p.toString().replace(/\D/g, '');

@@ -20,6 +20,7 @@ import SellerOrdersModal from '../components/SellerOrdersModal';
 import AdminDisputeModal from '../components/AdminDisputeModal';
 import StockProgressBar from '../components/StockProgressBar';
 import BulkUploadModal from '../components/BulkUploadModal';
+import SeasonalSuggestionBanner from '../components/SeasonalSuggestionBanner';
 import socket from '../socket';
 import { getInstantCoords } from '../utils/geoUtils';
 
@@ -716,17 +717,20 @@ const SellerPage = () => {
                   <i className="fas fa-file-csv me-1"></i> Bulk Upload 📄
                 </button>
               </div>
+              {/* Seasonal Crop Suggestions Banner */}
+              <SeasonalSuggestionBanner onSelectCrop={(nameStr) => setCropName(nameStr)} />
+
               <form id="uploadForm" onSubmit={handleUploadCrop} style={{ transform: 'translateZ(20px)' }}>
                 <div className="mb-3">
                   <label className="form-label">Crop Name</label>
-                  <select className="form-select custom-input input-premium" value={cropName} onChange={(e) => setCropName(e.target.value)} required>
-                    <option value="" disabled>Fasal Chunein (Select Crop)</option>
-                    <option value="Gehu">Gehu (Wheat)</option>
-                    <option value="Dhan">Dhan (Rice)</option>
-                    <option value="Makka">Makka (Maize)</option>
-                    <option value="Mustard">Mustard (Sarson)</option>
-                    <option value="Cotton">Cotton (Kapas)</option>
-                  </select>
+                  <input 
+                    type="text" 
+                    className="form-control custom-input input-premium" 
+                    placeholder="Enter or select crop (e.g. Gehu, Dhan, Sarson)" 
+                    value={cropName} 
+                    onChange={(e) => setCropName(e.target.value)} 
+                    required 
+                  />
                 </div>
                 <div className="row">
                   <div className="col-6 mb-4">
