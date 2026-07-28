@@ -56,7 +56,8 @@ const OrderSchema = new mongoose.Schema({
   status: { type: String, default: 'Confirmed' },
   cancel_reason: String,
   cancelled_by: String,
-  cancelled_at: Date
+  cancelled_at: Date,
+  invoice_number: String
 }, { timestamps: true });
 
 const DisputeSchema = new mongoose.Schema({
@@ -366,6 +367,7 @@ async function initDb() {
   try { await db.exec(`ALTER TABLE Orders ADD COLUMN cancel_reason TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Orders ADD COLUMN cancelled_by TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Orders ADD COLUMN cancelled_at DATETIME;`); } catch(e) {}
+  try { await db.exec(`ALTER TABLE Orders ADD COLUMN invoice_number TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN seller_mobile TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN status TEXT DEFAULT 'active';`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Crops ADD COLUMN soldDate TEXT;`); } catch(e) {}

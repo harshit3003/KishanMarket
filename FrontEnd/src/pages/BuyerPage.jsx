@@ -18,6 +18,7 @@ import ProfileCard from '../components/ProfileCard';
 import NearbyFarmersSection from '../components/NearbyFarmersSection';
 import AdminDisputeModal from '../components/AdminDisputeModal';
 import StockProgressBar from '../components/StockProgressBar';
+import TransactionHistoryModal from '../components/TransactionHistoryModal';
 
 
 const defaultCrops = [
@@ -91,6 +92,7 @@ const BuyerPage = () => {
   const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
   const [profileTargetMobile, setProfileTargetMobile] = useState(null);
   const [isAdminDisputeOpen, setIsAdminDisputeOpen] = useState(false);
+  const [isTransactionHistoryOpen, setIsTransactionHistoryOpen] = useState(false);
 
   // Search State
   const [searchLoc, setSearchLoc] = useState('');
@@ -529,6 +531,7 @@ const BuyerPage = () => {
                 <ul className="dropdown-links-list">
                   <li><a href="#profile" onClick={(e) => { e.preventDefault(); setProfileTargetMobile(null); setIsProfileModalOpen(true); setIsProfileOpen(false); }}><i className="fas fa-user"></i> My Profile</a></li>
                   <li><Link to="/orders"><i className="fas fa-shopping-basket"></i> My Orders</Link></li>
+                  <li><a href="#ledger" onClick={(e) => { e.preventDefault(); setIsTransactionHistoryOpen(true); setIsProfileOpen(false); }}><i className="fas fa-wallet text-success"></i> Passbook & Ledger</a></li>
                   <li><a href="#disputes" onClick={(e) => { e.preventDefault(); setIsAdminDisputeOpen(true); setIsProfileOpen(false); }}><i className="fas fa-scale-balanced text-warning"></i> Dispute Center</a></li>
                   <li className="dropdown-divider"></li>
                   <li><a href="#" className="logout-item" onClick={handleLogout}><i className="fas fa-sign-out-alt"></i> Logout</a></li>
@@ -808,6 +811,11 @@ const BuyerPage = () => {
       <AdminDisputeModal
         isOpen={isAdminDisputeOpen}
         onClose={() => setIsAdminDisputeOpen(false)}
+      />
+      <TransactionHistoryModal
+        isOpen={isTransactionHistoryOpen}
+        onClose={() => setIsTransactionHistoryOpen(false)}
+        currentUser={currentUser}
       />
       {/* Real-time Bidding Modal */}
       {bidModal.open && bidModal.crop && (

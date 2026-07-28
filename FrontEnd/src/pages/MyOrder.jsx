@@ -5,6 +5,7 @@ import ReviewModal from '../components/ReviewModal';
 import OrderStatusTracker from '../components/OrderStatusTracker';
 import CancelOrderModal from '../components/CancelOrderModal';
 import RaiseDisputeModal from '../components/RaiseDisputeModal';
+import TaxInvoiceModal from '../components/TaxInvoiceModal';
 import socket from '../socket';
 import '../assets/global.css';
 import '../assets/dynamic-features.css';
@@ -21,6 +22,7 @@ const MyOrder = () => {
   const [reviewModalData, setReviewModalData] = useState({ open: false, order: null });
   const [cancelModalData, setCancelModalData] = useState({ open: false, order: null });
   const [disputeModalData, setDisputeModalData] = useState({ open: false, order: null });
+  const [taxInvoiceId, setTaxInvoiceId] = useState(null);
 
   useEffect(() => {
     let mobile = 'guest';
@@ -209,7 +211,14 @@ const MyOrder = () => {
                           <small className="text-muted d-block" style={{ fontSize: '0.7rem' }}>TOTAL AMOUNT</small>
                           <span className="fw-bold fs-5 text-success">₹{(parseInt(order.rate||0)*parseInt(order.weight||0)).toLocaleString('en-IN')}</span>
                         </div>
-                        <div className="d-flex gap-2 align-items-center">
+                        <div className="d-flex gap-2 align-items-center flex-wrap">
+                          <button 
+                            className="btn btn-sm btn-outline-success fw-bold px-2 py-1"
+                            onClick={() => setTaxInvoiceId(order.id || 1)}
+                            title="Download Official Tax Invoice"
+                          >
+                            <i className="fas fa-file-invoice text-success me-1"></i> Invoice 🧾
+                          </button>
                           <button 
                             className="btn btn-sm btn-outline-warning text-dark fw-bold px-2 py-1"
                             onClick={() => setReviewModalData({
@@ -222,7 +231,7 @@ const MyOrder = () => {
                               }
                             })}
                           >
-                            <i className="fas fa-star text-warning me-1"></i> Rate Farmer
+                            <i className="fas fa-star text-warning me-1"></i> Rate
                           </button>
                           <button className="btn btn-sm btn-success rounded-circle shadow" style={{ width: '40px', height: '40px' }} onClick={() => viewDetails(order)}>
                             <i className="fas fa-chevron-right"></i>
@@ -265,6 +274,13 @@ const MyOrder = () => {
         onClose={() => setDisputeModalData({ open: false, order: null })}
         order={disputeModalData.order}
         currentUser={currentUser}
+      />
+
+      {/* Tax Invoice Modal */}
+      <TaxInvoiceModal
+        isOpen={!!taxInvoiceId}
+        onClose={() => setTaxInvoiceId(null)}
+        orderId={taxInvoiceId}
       />
 
       {/* Tax Invoice Modal */}

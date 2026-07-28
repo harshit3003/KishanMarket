@@ -1494,6 +1494,191 @@ app.get('/api/seasonal-crops', async (req, res) => {
   }
 });
 
+// Unified Financial Transaction History & Passbook Endpoint
+app.get('/api/transactions', async (req, res) => {
+  try {
+    const { mobile, type, from, to } = req.query;
+    if (!mobile) return res.status(400).json({ error: 'Mobile number required' });
+
+    const cleanMob = normalizePhone(mobile);
+    const database = await ensureDb();
+
+    // 1. Fetch user orders (Purchases & Sales)
+    const orders = await database.all(
+      `SELECT * FROM Orders 
+       WHERE TRIM(buyer_mobile) = ? OR TRIM(seller_mobile) = ?
+       ORDER BY id DESC`,
+      [cleanMob, cleanMob]
+    );
+
+    // 2. Fetch user disputes / refunds
+    const disputes = await database.all(
+      `SELECT * FROM Disputes 
+       WHERE TRIM(raised_by_mobile) = ? OR TRIM(target_mobile) = ?
+       ORDER BY id DESC`,
+      [cleanMob, cleanMob]
+    );
+
+    let ledger = [];
+
+    // Map Orders to Ledger entries
+    for (const o of orders) {
+      const isBuyer = normalizePhone(o.buyer_mobile) === cleanMob;
+      const amountVal = (parseFloat(o.final_price) || 0) * (parseFloat(o.quantity) || 1);
+      const isCancelled = o.status === 'Cancelled';
+
+      ledger.push({
+        id: `ORD-${o.id}`,
+        order_id: o.id,
+        date: o.created_at || new Date().toISOString(),
+        category: isCancelled ? 'Cancellation' : (isBuyer ? 'Purchase' : 'Sale'),
+        description: `${o.crop_name} (${o.quantity} quintals)`,
+        party_name: isBuyer ? o.seller_name : o.buyer_name,
+        party_mobile: isBuyer ? o.seller_mobile : o.buyer_mobile,
+        direction: isCancelled ? 'neutral' : (isBuyer ? 'debit' : 'credit'),
+        amount: amountVal,
+        status: o.status,
+        invoice_number: o.invoice_number || `KM-INV-2026-${String(o.id).padStart(4, '0')}`
+      });
+    }
+
+    // Map Disputes to Ledger entries
+    for (const d of disputes) {
+      if (d.status === 'Resolved' && d.resolution === 'Refund Approved') {
+        const isClaimant = normalizePhone(d.raised_by_mobile) === cleanMob;
+        ledger.push({
+          id: `DSP-${d.id}`,
+          order_id: d.order_id,
+          date: d.resolved_at || d.created_at,
+          category: 'Refund',
+          description: `Dispute Refund for Order #${d.order_id}`,
+          party_name: isClaimant ? d.target_name : d.raised_by_name,
+          party_mobile: isClaimant ? d.target_mobile : d.raised_by_mobile,
+          direction: isClaimant ? 'credit' : 'debit',
+          amount: 0, // Recorded as refund adjustment
+          status: 'Refunded',
+          invoice_number: null
+        });
+      }
+    }
+
+    // Sort chronologically (newest first)
+    ledger.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+    // Filter by type if requested
+    if (type && type !== 'all') {
+      ledger = ledger.filter(item => item.category.toLowerCase() === type.toLowerCase());
+    }
+
+    // Date range filter
+    if (from) {
+      const fromDate = new Date(from);
+      ledger = ledger.filter(item => new Date(item.date) >= fromDate);
+    }
+    if (to) {
+      const toDate = new Date(to);
+      ledger = ledger.filter(item => new Date(item.date) <= toDate);
+    }
+
+    // Calculate Summary Metrics
+    let totalEarnings = 0;
+    let totalSpent = 0;
+
+    ledger.forEach(item => {
+      if (item.status !== 'Cancelled') {
+        if (item.direction === 'credit') totalEarnings += item.amount;
+        if (item.direction === 'debit') totalSpent += item.amount;
+      }
+    });
+
+    res.json({
+      summary: {
+        totalEarnings,
+        totalSpent,
+        netBalance: totalEarnings - totalSpent,
+        transactionCount: ledger.length
+      },
+      transactions: ledger
+    });
+  } catch (err) {
+    console.error("Error generating transactions ledger:", err);
+    res.status(500).json({ error: 'Failed to generate transaction history' });
+  }
+});
+
+// Official B2B Tax Invoice Generator Endpoint
+app.get('/api/orders/:id/invoice', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const database = await ensureDb();
+
+    const order = await database.get('SELECT * FROM Orders WHERE id = ?', [id]);
+    if (!order) return res.status(404).json({ error: 'Order record not found' });
+
+    // Generate or fetch invoice number
+    let invNum = order.invoice_number;
+    if (!invNum) {
+      invNum = `KM-INV-2026-${String(order.id).padStart(4, '0')}`;
+      await database.run('UPDATE Orders SET invoice_number = ? WHERE id = ?', [invNum, id]);
+      await syncOrders();
+    }
+
+    // Fetch Seller & Buyer Profile metadata for GST / Business Address
+    const sellerProf = await database.get('SELECT * FROM Users WHERE TRIM(mobile) = ?', [normalizePhone(order.seller_mobile)]) || {};
+    const buyerProf = await database.get('SELECT * FROM Users WHERE TRIM(mobile) = ?', [normalizePhone(order.buyer_mobile)]) || {};
+
+    const qtyVal = parseFloat(order.quantity) || 1;
+    const rateVal = parseFloat(order.final_price) || 0;
+    const subtotal = qtyVal * rateVal;
+
+    // 5% Agri Tax breakdown (2.5% CGST + 2.5% SGST)
+    const taxableValue = Math.round((subtotal / 1.05) * 100) / 100;
+    const cgst = Math.round(((subtotal - taxableValue) / 2) * 100) / 100;
+    const sgst = cgst;
+
+    const invoiceData = {
+      invoiceNumber: invNum,
+      invoiceDate: order.created_at ? new Date(order.created_at).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' }) : new Date().toLocaleDateString('en-IN'),
+      orderId: order.id,
+      status: order.status,
+      seller: {
+        name: sellerProf.name || order.seller_name,
+        businessName: sellerProf.business_name || 'Kishan Krishi Kendra',
+        mobile: order.seller_mobile,
+        address: sellerProf.address || sellerProf.location || 'Rural Mandi Complex',
+        district: sellerProf.district || sellerProf.state || 'Uttar Pradesh',
+        pincode: sellerProf.pincode || '210001',
+        gstin: '09AAACK1234F1Z9' // Demo Agri GSTIN
+      },
+      buyer: {
+        name: buyerProf.name || order.buyer_name,
+        businessName: buyerProf.business_name || 'Agri Procurement Ltd',
+        mobile: order.buyer_mobile,
+        address: buyerProf.address || buyerProf.location || 'Wholesale Grain Market',
+        district: buyerProf.district || buyerProf.state || 'India',
+        pincode: buyerProf.pincode || '110001'
+      },
+      cropName: order.crop_name,
+      quantityQuintals: qtyVal,
+      ratePerQuintal: rateVal,
+      financials: {
+        subtotal,
+        taxableValue,
+        cgst,
+        sgst,
+        totalTax: cgst + sgst,
+        grandTotal: subtotal
+      },
+      verificationSeal: `DIGI-VERIFIED-KM-${order.id}-${Math.floor(1000 + Math.random() * 9000)}`
+    };
+
+    res.json(invoiceData);
+  } catch (err) {
+    console.error("Error generating tax invoice:", err);
+    res.status(500).json({ error: 'Failed to generate tax invoice' });
+  }
+});
+
 const normalizePhone = (p) => {
   if (!p) return '';
   const digits = p.toString().replace(/\D/g, '');

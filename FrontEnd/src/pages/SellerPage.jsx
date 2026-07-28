@@ -21,6 +21,7 @@ import AdminDisputeModal from '../components/AdminDisputeModal';
 import StockProgressBar from '../components/StockProgressBar';
 import BulkUploadModal from '../components/BulkUploadModal';
 import SeasonalSuggestionBanner from '../components/SeasonalSuggestionBanner';
+import TransactionHistoryModal from '../components/TransactionHistoryModal';
 import socket from '../socket';
 import { getInstantCoords } from '../utils/geoUtils';
 
@@ -45,6 +46,7 @@ const SellerPage = () => {
   const [isSellerOrdersModalOpen, setIsSellerOrdersModalOpen] = useState(false);
   const [isAdminDisputeOpen, setIsAdminDisputeOpen] = useState(false);
   const [isBulkUploadOpen, setIsBulkUploadOpen] = useState(false);
+  const [isTransactionHistoryOpen, setIsTransactionHistoryOpen] = useState(false);
 
   // New states for Interactive Modals
   const [editModalData, setEditModalData] = useState({ open: false, index: null, weight: '', rate: '' });
@@ -668,6 +670,7 @@ const SellerPage = () => {
                 <ul className="dropdown-links-list">
                   <li><a href="#profile" onClick={(e) => { e.preventDefault(); setProfileTargetMobile(null); setIsProfileModalOpen(true); setIsProfileOpen(false); }}><i className="fas fa-user"></i> My Profile</a></li>
                   <li><a href="#orders" onClick={(e) => { e.preventDefault(); setIsSellerOrdersModalOpen(true); setIsProfileOpen(false); }}><i className="fas fa-truck-ramp-box text-success"></i> Manage Orders</a></li>
+                  <li><a href="#ledger" onClick={(e) => { e.preventDefault(); setIsTransactionHistoryOpen(true); setIsProfileOpen(false); }}><i className="fas fa-wallet text-success"></i> Passbook & Ledger</a></li>
                   <li><a href="#disputes" onClick={(e) => { e.preventDefault(); setIsAdminDisputeOpen(true); setIsProfileOpen(false); }}><i className="fas fa-scale-balanced text-primary"></i> Dispute Center</a></li>
                   <li><a href="#live-bids" onClick={handleOpenLiveBids}><i className="fas fa-gavel text-warning"></i> Live Bids <span className="badge bg-danger ms-2 rounded-pill">New</span></a></li>
                   <li className="dropdown-divider"></li>
@@ -1028,6 +1031,11 @@ const SellerPage = () => {
           const getRes = await fetch(`/api/crops/my?mobile=${currentUser.mobile || 'guest'}&name=${encodeURIComponent(currentUser.name || 'Guest')}`);
           if (getRes.ok) setCrops(await getRes.json());
         }}
+      />
+      <TransactionHistoryModal
+        isOpen={isTransactionHistoryOpen}
+        onClose={() => setIsTransactionHistoryOpen(false)}
+        currentUser={currentUser}
       />
 
       {/* Edit Crop Modal */}

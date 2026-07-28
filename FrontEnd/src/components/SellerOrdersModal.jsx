@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import OrderStatusTracker from './OrderStatusTracker';
 import CancelOrderModal from './CancelOrderModal';
+import TaxInvoiceModal from './TaxInvoiceModal';
 
 const SellerOrdersModal = ({ isOpen, onClose, currentUser }) => {
   const [orders, setOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [cancelModalData, setCancelModalData] = useState({ open: false, order: null });
+  const [taxInvoiceId, setTaxInvoiceId] = useState(null);
 
   useEffect(() => {
     if (isOpen && currentUser && currentUser.mobile) {
@@ -75,7 +77,17 @@ const SellerOrdersModal = ({ isOpen, onClose, currentUser }) => {
                     <span className="badge bg-success me-2">Order #{order.id}</span>
                     <strong className="text-dark fs-6">{order.crop_name}</strong> ({order.quantity})
                   </div>
-                  <span className="fw-bold text-success fs-6">₹{order.final_price}/q</span>
+                  <div className="d-flex align-items-center gap-2">
+                    <span className="fw-bold text-success fs-6">₹{order.final_price}/q</span>
+                    <button 
+                      className="btn btn-sm btn-outline-success fw-bold py-0 px-2"
+                      onClick={() => setTaxInvoiceId(order.id)}
+                      title="Download GST Invoice"
+                      style={{ fontSize: '0.75rem' }}
+                    >
+                      <i className="fas fa-file-invoice me-1"></i> Invoice 🧾
+                    </button>
+                  </div>
                 </div>
 
                 <div className="small text-muted mb-2">
@@ -100,6 +112,12 @@ const SellerOrdersModal = ({ isOpen, onClose, currentUser }) => {
           order={cancelModalData.order}
           currentUser={currentUser}
           onOrderCancelled={handleStatusUpdated}
+        />
+
+        <TaxInvoiceModal
+          isOpen={!!taxInvoiceId}
+          onClose={() => setTaxInvoiceId(null)}
+          orderId={taxInvoiceId}
         />
 
         <div className="d-flex justify-content-end pt-3 border-top mt-3">
