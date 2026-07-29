@@ -53,18 +53,7 @@ const SellerPage = () => {
   const [isTransactionHistoryOpen, setIsTransactionHistoryOpen] = useState(false);
   const [reportModalData, setReportModalData] = useState({ open: false, targetType: 'user', targetId: '', targetName: '' });
   const [isSupportTicketOpen, setIsSupportTicketOpen] = useState(false);
-  const [isAdminDashboardOpen, setIsAdminDashboardOpen] = useState(() => {
-    const savedToken = sessionStorage.getItem('adminToken');
-    const userStr = localStorage.getItem('currentUser');
-    if (savedToken === 'KM_ADMIN_AUTHORIZED_TOKEN_2026') return true;
-    if (userStr) {
-      try {
-        const u = JSON.parse(userStr);
-        if (u.role === 'admin') return true;
-      } catch (e) {}
-    }
-    return false;
-  });
+  const [isAdminDashboardOpen, setIsAdminDashboardOpen] = useState(false);
   const [isAnalyticsOpen, setIsAnalyticsOpen] = useState(false);
 
   // New states for Interactive Modals
@@ -693,7 +682,7 @@ const SellerPage = () => {
                   <li><a href="#ledger" onClick={(e) => { e.preventDefault(); setIsTransactionHistoryOpen(true); setIsProfileOpen(false); }}><i className="fas fa-wallet text-success"></i> Passbook & Ledger</a></li>
                   <li><a href="#support" onClick={(e) => { e.preventDefault(); setIsSupportTicketOpen(true); setIsProfileOpen(false); }}><i className="fas fa-headset text-info"></i> Help & Support 🎫</a></li>
                   {currentUser?.role === 'admin' && (
-                    <li><a href="#admin" onClick={(e) => { e.preventDefault(); setIsAdminDashboardOpen(true); setIsProfileOpen(false); }}><i className="fas fa-shield-halved text-danger"></i> Admin Control Center 🛡️</a></li>
+                    <li><a href="#admin" onClick={(e) => { e.preventDefault(); navigate('/admin'); setIsProfileOpen(false); }}><i className="fas fa-shield-halved text-danger"></i> Admin Control Center 🛡️</a></li>
                   )}
                   <li><a href="#disputes" onClick={(e) => { e.preventDefault(); setIsAdminDisputeOpen(true); setIsProfileOpen(false); }}><i className="fas fa-scale-balanced text-primary"></i> Dispute Center</a></li>
                   <li><a href="#live-bids" onClick={handleOpenLiveBids}><i className="fas fa-gavel text-warning"></i> Live Bids <span className="badge bg-danger ms-2 rounded-pill">New</span></a></li>
