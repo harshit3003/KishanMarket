@@ -220,12 +220,6 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
               <i className="fas fa-boxes-stacked me-1"></i> Stock Inventory ({activeInventory.length})
             </button>
             <button 
-              className={`nav-link fw-bold py-2 ${activeTab === 'sales' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`}
-              onClick={() => setActiveTab('sales')}
-            >
-              <i className="fas fa-chart-line me-1"></i> Sales History ({completedSalesList.length})
-            </button>
-            <button 
               className={`nav-link fw-bold py-2 ${activeTab === 'intel' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`}
               onClick={() => setActiveTab('intel')}
             >
@@ -472,55 +466,6 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
                           <div className="small text-dark fw-bold">Volume: {c.weight} quintals</div>
                           <div className="small text-success fw-bold">Rate: ₹{c.rate}/q</div>
                           <small className="text-muted"><i className="fas fa-map-marker-alt text-danger me-1"></i>{c.loc}</small>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* TAB 3: SALES HISTORY */}
-            {activeTab === 'sales' && (
-              <div>
-                <div className="row g-3 mb-4">
-                  <div className="col-md-4">
-                    <div className="p-3 bg-success bg-opacity-10 border border-success rounded text-center">
-                      <small className="text-muted fw-bold d-block">COMPLETED SALES</small>
-                      <span className="fs-3 fw-bold text-success">{completedSalesList.length}</span>
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div className="p-3 bg-info bg-opacity-10 border border-info rounded text-center">
-                      <small className="text-muted fw-bold d-block">SOLD VOLUME</small>
-                      <span className="fs-3 fw-bold text-dark">{totalSoldVolume} quintals</span>
-                    </div>
-                  </div>
-                  <div className="col-md-4">
-                    <div className="p-3 bg-warning bg-opacity-10 border border-warning rounded text-center">
-                      <small className="text-muted fw-bold d-block">TOTAL REVENUE</small>
-                      <span className="fs-3 fw-bold text-success">₹{totalRevenue.toLocaleString('en-IN')}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <h6 className="fw-bold text-dark mb-3"><i className="fas fa-receipt text-primary me-1"></i> Completed Transactions</h6>
-                {completedSalesList.length === 0 ? (
-                  <div className="text-center py-4 bg-light rounded border">
-                    <i className="fas fa-file-invoice-dollar text-muted fa-2x mb-2 opacity-50"></i>
-                    <div className="small text-muted">No completed sales recorded yet.</div>
-                  </div>
-                ) : (
-                  <div className="d-flex flex-column gap-2">
-                    {completedSalesList.map((sale, i) => (
-                      <div key={i} className="p-3 bg-white border rounded shadow-sm d-flex justify-content-between align-items-center">
-                        <div>
-                          <div className="fw-bold text-dark">{sale.name || sale.crop || 'Crop Sale'} ({sale.weight}q)</div>
-                          <small className="text-muted">Buyer: {sale.buyerName || sale.buyer || 'Verified Trader'}</small>
-                        </div>
-                        <div className="text-end">
-                          <div className="fw-bold text-success">₹{sale.rate}/q</div>
-                          <small className="text-muted">{sale.soldDate || 'Completed'}</small>
                         </div>
                       </div>
                     ))}
