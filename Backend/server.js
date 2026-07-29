@@ -339,19 +339,64 @@ app.post('/api/crops', async (req, res) => {
 app.put('/api/crops/:id', async (req, res) => {
   try {
     const { status, weight, rate, soldDate, buyerName, buyerMobile, distance, transportCost, netProfit } = req.body;
-    
+    const database = await ensureDb();
+
     if (status) {
-      await db.run(
+      await database.run(
         'UPDATE Crops SET status = ?, weight = COALESCE(?, weight), rate = COALESCE(?, rate), soldDate = ?, buyerName = ?, buyer_mobile = ?, distance = ?, transportCost = ?, netProfit = ? WHERE id = ?',
         [status, weight || null, rate || null, soldDate || null, buyerName || null, buyerMobile || null, distance || null, transportCost || null, netProfit || null, req.params.id]
       );
     } else if (weight && rate) {
-      await db.run('UPDATE Crops SET weight = ?, rate = ? WHERE id = ?', [weight, rate, req.params.id]);
+      await database.run('UPDATE Crops SET weight = ?, rate = ? WHERE id = ?', [weight, rate, req.params.id]);
     }
     await syncCrops();
-    res.json({ message: 'Crop updated' });
+
+    // Fetch updated crop details
+    const crop = await database.get('SELECT * FROM Crops WHERE id = ?', [req.params.id]);
+    
+    // If crop was sold directly to a buyer with a buyer mobile/name, auto-create Order record for the buyer
+    if (crop && (buyerMobile || crop.buyer_mobile || status === 'sold' || status === 'pending')) {
+      const cleanBuyerMob = normalizePhone(buyerMobile || crop.buyer_mobile || 'buyer');
+      const cleanSellerMob = normalizePhone(crop.seller_mobile || 'seller');
+      const sName = (crop.seller || 'Farmer').trim();
+      const bName = (buyerName || crop.buyerName || 'Buyer').trim();
+      const cName = (crop.name || 'Crop').trim();
+      const cQty = (weight || crop.weight || '50').toString().trim();
+      const cRate = (rate || crop.rate || '2450').toString().trim();
+      const ordStatus = status === 'sold' ? 'Delivered' : 'Confirmed';
+
+      const orderRes = await database.run(
+        `INSERT INTO Orders (listing_id, buyer_mobile, buyer_name, seller_mobile, seller_name, crop_name, quantity, final_price, status)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        [crop.id, cleanBuyerMob, bName, cleanSellerMob, sName, cName, cQty, cRate, ordStatus]
+      );
+      await syncOrders();
+
+      const createdOrder = {
+        id: orderRes.lastID,
+        listing_id: crop.id,
+        buyer_mobile: cleanBuyerMob,
+        buyer_name: bName,
+        seller_mobile: cleanSellerMob,
+        seller_name: sName,
+        crop_name: cName,
+        quantity: cQty,
+        final_price: cRate,
+        status: ordStatus,
+        created_at: new Date().toISOString()
+      };
+
+      // Broadcast real-time order creation to buyer & seller sockets
+      io.to(`user_${cleanBuyerMob}`).emit('order_created', createdOrder);
+      io.to(`user_${cleanSellerMob}`).emit('order_created', createdOrder);
+      io.emit('order_created', createdOrder);
+      io.emit('listing_stock_updated', { crop_id: crop.id, available_quantity: 0, status: ordStatus });
+    }
+
+    res.json({ message: 'Crop updated and order created' });
   } catch (err) {
-    res.status(500).json({ error: 'Database error' });
+    console.error("Error updating crop & creating order:", err);
+    res.status(500).json({ error: 'Database error updating crop' });
   }
 });
 
