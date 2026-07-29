@@ -1996,8 +1996,57 @@ app.get('/api/orders/:id/tracking', async (req, res) => {
   }
 });
 
+// Admin Authentication & Security Helper
+const ADMIN_SECRET_KEY = 'KishanAdmin@2026';
+const ADMIN_SESSION_TOKEN = 'KM_ADMIN_AUTHORIZED_TOKEN_2026';
+
+function isAuthorizedAdmin(req) {
+  const authHeader = req.headers['x-admin-key'] || req.headers['authorization'] || req.headers['x-admin-token'] || req.query.admin_key || req.query.admin_token;
+  if (!authHeader) return false;
+  const token = authHeader.toString().replace('Bearer ', '').trim();
+  return token === ADMIN_SECRET_KEY || token === ADMIN_SESSION_TOKEN;
+}
+
+app.post('/api/admin/login', async (req, res) => {
+  try {
+    const { mobile, password, secretKey } = req.body;
+    const cleanMob = normalizePhone(mobile || '');
+    const enteredPass = (password || secretKey || '').trim();
+
+    if ((cleanMob === '0000000000' || cleanMob === '9999999999' || !mobile) && enteredPass === ADMIN_SECRET_KEY) {
+      const database = await ensureDb();
+      let adminUser = await database.get('SELECT * FROM Users WHERE role = "admin" OR TRIM(mobile) = "0000000000"');
+      if (!adminUser) {
+        adminUser = {
+          user_id: 'KM-ADM-0001',
+          name: 'KishanMarket SuperAdmin',
+          mobile: '0000000000',
+          role: 'admin',
+          location: 'HQ Command Center'
+        };
+      }
+
+      return res.json({
+        success: true,
+        message: 'Admin authorization granted',
+        adminToken: ADMIN_SESSION_TOKEN,
+        user: adminUser
+      });
+    }
+
+    res.status(401).json({ error: 'Invalid Admin Credentials or Secret Key' });
+  } catch (err) {
+    console.error("Admin login error:", err);
+    res.status(500).json({ error: 'Admin login authentication failed' });
+  }
+});
+
 // Admin Overview Metrics Endpoint
 app.get('/api/admin/overview', async (req, res) => {
+  if (!isAuthorizedAdmin(req)) {
+    return res.status(403).json({ error: 'Access Denied: SuperAdmin authorization required' });
+  }
+
   try {
     const database = await ensureDb();
 

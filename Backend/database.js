@@ -642,6 +642,13 @@ async function initDb() {
       );
     }
 
+    // Seed Dedicated Platform Admin Account
+    await db.run(
+      `INSERT INTO Users (user_id, name, mobile, location, role, password, business_name, crops_specialty)
+       VALUES ('KM-ADM-0001', 'KishanMarket SuperAdmin', '0000000000', 'HQ Command Center', 'admin', 'KishanAdmin@2026', 'Platform Governance HQ', 'System Administration')
+       ON CONFLICT(mobile) DO UPDATE SET role='admin', password='KishanAdmin@2026'`
+    );
+
     const savedCrops = loadTableFromFile('crops.json');
     for (const c of savedCrops) {
       await db.run(

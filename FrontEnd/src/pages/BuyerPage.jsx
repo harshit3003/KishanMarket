@@ -542,7 +542,9 @@ const BuyerPage = () => {
                   <li><a href="#analytics" onClick={(e) => { e.preventDefault(); setIsAnalyticsOpen(true); setIsProfileOpen(false); }}><i className="fas fa-chart-line text-success"></i> My Analytics & AI Insights 📊</a></li>
                   <li><a href="#ledger" onClick={(e) => { e.preventDefault(); setIsTransactionHistoryOpen(true); setIsProfileOpen(false); }}><i className="fas fa-wallet text-success"></i> Passbook & Ledger</a></li>
                   <li><a href="#support" onClick={(e) => { e.preventDefault(); setIsSupportTicketOpen(true); setIsProfileOpen(false); }}><i className="fas fa-headset text-info"></i> Help & Support 🎫</a></li>
-                  <li><a href="#admin" onClick={(e) => { e.preventDefault(); setIsAdminDashboardOpen(true); setIsProfileOpen(false); }}><i className="fas fa-shield-halved text-danger"></i> Admin Control Center 🛡️</a></li>
+                  {currentUser?.role === 'admin' && (
+                    <li><a href="#admin" onClick={(e) => { e.preventDefault(); setIsAdminDashboardOpen(true); setIsProfileOpen(false); }}><i className="fas fa-shield-halved text-danger"></i> Admin Control Center 🛡️</a></li>
+                  )}
                   <li><a href="#disputes" onClick={(e) => { e.preventDefault(); setIsAdminDisputeOpen(true); setIsProfileOpen(false); }}><i className="fas fa-scale-balanced text-warning"></i> Dispute Center</a></li>
                   <li className="dropdown-divider"></li>
                   <li><a href="#" className="logout-item" onClick={handleLogout}><i className="fas fa-sign-out-alt"></i> Logout</a></li>

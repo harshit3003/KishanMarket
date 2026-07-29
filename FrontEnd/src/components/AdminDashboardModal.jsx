@@ -13,27 +13,77 @@ const AdminDashboardModal = ({ isOpen, onClose }) => {
   const [adminReplyMsg, setAdminReplyMsg] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+  const [adminMobile, setAdminMobile] = useState('');
+  const [adminPassword, setAdminPassword] = useState('');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   useEffect(() => {
-    if (isOpen) {
+    const savedToken = sessionStorage.getItem('adminToken');
+    if (savedToken === 'KM_ADMIN_AUTHORIZED_TOKEN_2026') {
+      setIsAuthenticated(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isOpen && isAuthenticated) {
       fetchAdminData();
     }
-  }, [isOpen, activeTab]);
+  }, [isOpen, activeTab, isAuthenticated]);
+
+  const handleAdminLogin = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    try {
+      const res = await fetch('/api/admin/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ mobile: adminMobile, password: adminPassword })
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        sessionStorage.setItem('adminToken', 'KM_ADMIN_AUTHORIZED_TOKEN_2026');
+        setIsAuthenticated(true);
+        toast.success("🔐 Welcome SuperAdmin! Access Authorized.");
+
+        const localUserStr = localStorage.getItem('currentUser');
+        if (localUserStr) {
+          try {
+            const parsed = JSON.parse(localUserStr);
+            parsed.role = 'admin';
+            localStorage.setItem('currentUser', JSON.stringify(parsed));
+          } catch (e) {}
+        }
+      } else {
+        toast.error("Access Denied: Invalid Admin Mobile or Secret Password.");
+      }
+    } catch (err) {
+      toast.error("Network error during admin login.");
+    }
+    setIsLoading(false);
+  };
+
+  const getAdminHeaders = () => ({
+    'Content-Type': 'application/json',
+    'x-admin-key': 'KishanAdmin@2026',
+    'x-admin-token': 'KM_ADMIN_AUTHORIZED_TOKEN_2026'
+  });
 
   const fetchAdminData = async () => {
     setIsLoading(true);
     try {
       // Fetch overview
-      const ovRes = await fetch('/api/admin/overview');
+      const ovRes = await fetch('/api/admin/overview', { headers: getAdminHeaders() });
       if (ovRes.ok) setOverview(await ovRes.json());
 
       if (activeTab === 'reports') {
-        const rRes = await fetch('/api/admin/reports');
+        const rRes = await fetch('/api/admin/reports', { headers: getAdminHeaders() });
         if (rRes.ok) setReports(await rRes.json());
       } else if (activeTab === 'disputes') {
-        const dRes = await fetch('/api/admin/disputes');
+        const dRes = await fetch('/api/admin/disputes', { headers: getAdminHeaders() });
         if (dRes.ok) setDisputes(await dRes.json());
       } else if (activeTab === 'tickets') {
-        const tRes = await fetch('/api/admin/tickets');
+        const tRes = await fetch('/api/admin/tickets', { headers: getAdminHeaders() });
         if (tRes.ok) setTickets(await tRes.json());
       }
     } catch (err) {
@@ -142,28 +192,71 @@ const AdminDashboardModal = ({ isOpen, onClose }) => {
           <button className="btn-close" onClick={onClose}></button>
         </div>
 
-        {/* Tab Navigation */}
-        <div className="nav nav-pills nav-fill bg-light p-1 rounded-3 mb-4 border" style={{ fontSize: '0.82rem' }}>
-          <button className={`nav-link fw-bold ${activeTab === 'overview' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('overview')}>
-            📊 Overview & GMV
-          </button>
-          <button className={`nav-link fw-bold ${activeTab === 'reports' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('reports')}>
-            🚩 Reports ({overview.pendingReports})
-          </button>
-          <button className={`nav-link fw-bold ${activeTab === 'moderation' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('moderation')}>
-            🛡️ Moderation Tools
-          </button>
-          <button className={`nav-link fw-bold ${activeTab === 'tickets' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('tickets')}>
-            🎫 Support Queue ({overview.openTickets})
-          </button>
-        </div>
+        {!isAuthenticated ? (
+          <div className="py-4 text-center">
+            <div className="mb-4">
+              <div style={{ width: '70px', height: '70px', background: '#ecfdf5', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 15px auto', border: '2px solid #10b981' }}>
+                <i className="fas fa-user-shield text-success fs-2"></i>
+              </div>
+              <h5 className="fw-bold text-dark">SuperAdmin Authentication</h5>
+              <p className="small text-muted mb-0">Enter your official admin credentials to access central governance tools</p>
+            </div>
 
-        {isLoading ? (
-          <div className="text-center py-5">
-            <div className="spinner-border text-success" role="status"></div>
-            <p className="small text-muted mt-2">Loading platform data...</p>
+            <form onSubmit={handleAdminLogin} style={{ maxWidth: '380px', margin: '0 auto' }}>
+              <div className="mb-3 text-start">
+                <label className="form-label small fw-bold text-dark">Admin Mobile Number / ID</label>
+                <input
+                  type="text"
+                  className="form-control form-control-lg fs-6"
+                  placeholder="0000000000"
+                  value={adminMobile}
+                  onChange={(e) => setAdminMobile(e.target.value)}
+                  required
+                />
+              </div>
+
+              <div className="mb-4 text-start">
+                <label className="form-label small fw-bold text-dark">Admin Secret Key / Password</label>
+                <input
+                  type="password"
+                  className="form-control form-control-lg fs-6"
+                  placeholder="••••••••••••"
+                  value={adminPassword}
+                  onChange={(e) => setAdminPassword(e.target.value)}
+                  required
+                />
+              </div>
+
+              <button type="submit" className="btn btn-success btn-lg w-100 fw-bold fs-6 shadow-sm" disabled={isLoading}>
+                {isLoading ? <i className="fas fa-spinner fa-spin me-2"></i> : <i className="fas fa-key me-2"></i>}
+                Authorize Admin Access
+              </button>
+            </form>
           </div>
         ) : (
+          <>
+            {/* Tab Navigation */}
+            <div className="nav nav-pills nav-fill bg-light p-1 rounded-3 mb-4 border" style={{ fontSize: '0.82rem' }}>
+              <button className={`nav-link fw-bold ${activeTab === 'overview' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('overview')}>
+                📊 Overview & GMV
+              </button>
+              <button className={`nav-link fw-bold ${activeTab === 'reports' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('reports')}>
+                🚩 Reports ({overview.pendingReports})
+              </button>
+              <button className={`nav-link fw-bold ${activeTab === 'moderation' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('moderation')}>
+                🛡️ Moderation Tools
+              </button>
+              <button className={`nav-link fw-bold ${activeTab === 'tickets' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('tickets')}>
+                🎫 Support Queue ({overview.openTickets})
+              </button>
+            </div>
+
+            {isLoading ? (
+              <div className="text-center py-5">
+                <div className="spinner-border text-success" role="status"></div>
+                <p className="small text-muted mt-2">Loading platform data...</p>
+              </div>
+            ) : (
           <div>
             {/* TAB 1: OVERVIEW */}
             {activeTab === 'overview' && (
@@ -363,6 +456,8 @@ const AdminDashboardModal = ({ isOpen, onClose }) => {
             )}
           </div>
         )}
+      </>
+    )}
 
         <div className="d-flex justify-content-end pt-3 border-top mt-4">
           <button className="btn btn-sm btn-outline-secondary" onClick={onClose}>Close Dashboard</button>
