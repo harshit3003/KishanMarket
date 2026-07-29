@@ -1073,21 +1073,24 @@ const SellerPage = () => {
 
       {/* Edit Crop Modal */}
       {editModalData.open && (
-        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(5px)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <div className="glass-card-premium p-4" style={{ width: '90%', maxWidth: '400px', background: 'white' }}>
-            <h4 className="fw-bold mb-3">Edit {editModalData.name}</h4>
+        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(6px)', zIndex: 9999, overflowY: 'auto', padding: '20px 10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div className="glass-card-premium p-4 text-start" style={{ width: '90%', maxWidth: '420px', maxHeight: '88vh', overflowY: 'auto', background: 'white', borderRadius: '18px', boxShadow: '0 20px 50px rgba(0,0,0,0.3)', margin: 'auto' }}>
+            <div className="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+              <h4 className="fw-bold m-0 text-success">Edit {editModalData.name}</h4>
+              <button className="btn-close" onClick={() => setEditModalData({open: false})}></button>
+            </div>
             <form onSubmit={confirmEditCrop}>
               <div className="mb-3">
-                <label className="form-label">Weight (Quintals)</label>
+                <label className="form-label fw-bold">Weight (Quintals)</label>
                 <input type="number" className="form-control" value={editModalData.weight} onChange={e => setEditModalData({...editModalData, weight: e.target.value})} required />
               </div>
               <div className="mb-3">
-                <label className="form-label">Rate (₹/q)</label>
+                <label className="form-label fw-bold">Rate (₹/q)</label>
                 <input type="number" className="form-control" value={editModalData.rate} onChange={e => setEditModalData({...editModalData, rate: e.target.value})} required />
               </div>
-              <div className="d-flex justify-content-end gap-2">
+              <div className="d-flex justify-content-end gap-2 pt-2 border-top">
                 <button type="button" className="btn btn-light" onClick={() => setEditModalData({open: false})}>Cancel</button>
-                <button type="submit" className="btn btn-success">Save Changes</button>
+                <button type="submit" className="btn btn-success fw-bold px-4">Save Changes</button>
               </div>
             </form>
           </div>
@@ -1096,22 +1099,25 @@ const SellerPage = () => {
 
       {/* Sell Crop Modal */}
       {sellModalData.open && (
-        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(5px)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <div className="glass-card-premium p-4" style={{ width: '90%', maxWidth: '500px', background: 'white' }}>
-            <h4 className="fw-bold mb-3 text-success"><i className="fas fa-handshake me-2"></i>Dispatch & Sell {sellModalData.cropName}</h4>
+        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(6px)', zIndex: 9999, overflowY: 'auto', padding: '20px 10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div className="glass-card-premium p-4 text-start" style={{ width: '92%', maxWidth: '540px', maxHeight: '88vh', overflowY: 'auto', background: 'white', borderRadius: '18px', boxShadow: '0 20px 50px rgba(0,0,0,0.3)', margin: 'auto' }}>
+            <div className="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+              <h4 className="fw-bold m-0 text-success"><i className="fas fa-handshake me-2"></i>Dispatch & Sell {sellModalData.cropName}</h4>
+              <button className="btn-close" onClick={() => setSellModalData({open: false})}></button>
+            </div>
             <form onSubmit={confirmMarkSold}>
               <div className="mb-3">
-                <label className="form-label">Buyer's Name / Company</label>
+                <label className="form-label fw-bold">Buyer's Name / Company</label>
                 <input type="text" className="form-control custom-input" placeholder="e.g. Ramesh Trading Co." value={sellModalData.buyerName} onChange={e => setSellModalData({...sellModalData, buyerName: e.target.value})} required />
               </div>
 
               <div className="mb-3">
-                <label className="form-label">Buyer's Mobile Number (To link purchase)</label>
+                <label className="form-label fw-bold">Buyer's Mobile Number (To link purchase)</label>
                 <input type="text" className="form-control custom-input" placeholder="e.g. 9876543210" value={sellModalData.buyerMobile} onChange={e => setSellModalData({...sellModalData, buyerMobile: e.target.value})} required />
               </div>
               
               <div className="mb-3">
-                <label className="form-label d-flex justify-content-between">
+                <label className="form-label d-flex justify-content-between fw-bold">
                   <span>Amount to Sell (Quintals)</span>
                   <span className="text-muted">Available Stock: {sellModalData.maxWeight}q</span>
                 </label>
@@ -1119,12 +1125,12 @@ const SellerPage = () => {
               </div>
 
               <div className="mb-3">
-                <label className="form-label">Selling Rate (₹/q)</label>
+                <label className="form-label fw-bold">Selling Rate (₹/q)</label>
                 <input type="number" className="form-control custom-input" placeholder="e.g. 2450" min="1" value={sellModalData.rate} onChange={e => setSellModalData({...sellModalData, rate: e.target.value})} required />
               </div>
 
               <div className="mb-3">
-                <label className="form-label d-flex justify-content-between">
+                <label className="form-label d-flex justify-content-between fw-bold">
                   <span>Distance to Buyer</span>
                   <span className="fw-bold text-success">{sellModalData.distance} km</span>
                 </label>
@@ -1135,11 +1141,11 @@ const SellerPage = () => {
               <div className="p-3 bg-light rounded border mb-4">
                 <div className="d-flex justify-content-between mb-2">
                   <span className="text-muted">Gross Revenue:</span>
-                  <span>₹{(sellModalData.rate * sellModalData.weight).toLocaleString('en-IN')}</span>
+                  <span className="fw-bold text-dark">₹{(sellModalData.rate * sellModalData.weight).toLocaleString('en-IN')}</span>
                 </div>
                 <div className="d-flex justify-content-between mb-2">
                   <span className="text-muted">Transport Cost:</span>
-                  <span className="text-danger">- ₹{((sellModalData.distance / 10) * 25 * sellModalData.weight).toLocaleString('en-IN')}</span>
+                  <span className="text-danger fw-bold">- ₹{((sellModalData.distance / 10) * 25 * sellModalData.weight).toLocaleString('en-IN')}</span>
                 </div>
                 <hr className="my-2"/>
                 <div className="d-flex justify-content-between fw-bold">
@@ -1148,15 +1154,15 @@ const SellerPage = () => {
                 </div>
               </div>
 
-              <div className="mb-3">
-                <label className="form-label">Payment & Delivery Status</label>
+              <div className="mb-4">
+                <label className="form-label fw-bold">Payment & Delivery Status</label>
                 <select className="form-select custom-input" value={sellModalData.paymentStatus} onChange={e => setSellModalData({...sellModalData, paymentStatus: e.target.value})}>
                   <option value="pending">Awaiting Payment/Transport (Pending)</option>
                   <option value="sold">Delivered & Paid (Completed)</option>
                 </select>
               </div>
 
-              <div className="d-flex justify-content-end gap-2">
+              <div className="d-flex justify-content-end gap-2 pt-3 border-top">
                 <button type="button" className="btn btn-light" onClick={() => setSellModalData({open: false})}>Cancel</button>
                 <button type="submit" className="btn btn-success fw-bold px-4">Confirm Sale</button>
               </div>
