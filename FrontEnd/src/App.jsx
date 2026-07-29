@@ -10,6 +10,7 @@ import SellerPage from './pages/SellerPage';
 import BuyyersProfile from './pages/BuyyersProfile';
 import SellersProfile from './pages/SellersProfile';
 import MyOrder from './pages/MyOrder';
+import AdminPage from './pages/AdminPage';
 import BackgroundLayer from './components/BackgroundLayer';
 
 const getUser = () => {
@@ -30,12 +31,26 @@ const ProtectedRoute = ({ children }) => {
   return children;
 };
 
+// Dedicated Guard for Admin
+const AdminRoute = ({ children }) => {
+  const user = getUser();
+  const token = sessionStorage.getItem('adminToken');
+  if (!user && token !== 'KM_ADMIN_AUTHORIZED_TOKEN_2026') {
+    return <Navigate to="/login" replace />;
+  }
+  if (user && user.role !== 'admin' && token !== 'KM_ADMIN_AUTHORIZED_TOKEN_2026') {
+    return <Navigate to="/login" replace />;
+  }
+  return children;
+};
+
 // Strict Role Guard for Buyers
 const BuyerRoute = ({ children }) => {
   const user = getUser();
   if (!user) {
     return <Navigate to="/login" replace />;
   }
+  if (user.role === 'admin') return <Navigate to="/admin" replace />;
   if (user.role !== 'buyer') return <Navigate to="/seller" replace />;
   return children;
 };
@@ -46,6 +61,7 @@ const SellerRoute = ({ children }) => {
   if (!user) {
     return <Navigate to="/login" replace />;
   }
+  if (user.role === 'admin') return <Navigate to="/admin" replace />;
   if (user.role !== 'seller') return <Navigate to="/buyer" replace />;
   return children;
 };
@@ -64,6 +80,9 @@ function App() {
           <Route path="/register" element={<RegistrationPage />} />
           <Route path="/login" element={<LoginPage />} />
           
+          {/* Dedicated Admin Portal Route */}
+          <Route path="/admin" element={<AdminRoute><AdminPage /></AdminRoute>} />
+
           {/* Protected Dashboard Routes - Strict Role Isolation */}
           <Route path="/buyer" element={<BuyerRoute><BuyerPage /></BuyerRoute>} />
           <Route path="/profile/buyer" element={<BuyerRoute><BuyyersProfile /></BuyerRoute>} />

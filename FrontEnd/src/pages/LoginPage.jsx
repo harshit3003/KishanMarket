@@ -44,8 +44,14 @@ const LoginPage = () => {
             localStorage.setItem('displayUserName', foundUser.name);
             localStorage.setItem('currentUser', JSON.stringify(foundUser));
 
+            if (data.adminToken || foundUser.role === 'admin') {
+              sessionStorage.setItem('adminToken', data.adminToken || 'KM_ADMIN_AUTHORIZED_TOKEN_2026');
+            }
+
             toast.success(`Welcome back, ${foundUser.name}!`);
-            if (foundUser.role === "seller") {
+            if (foundUser.role === 'admin') {
+                navigate('/admin');
+            } else if (foundUser.role === 'seller') {
                 navigate('/seller');
             } else {
                 navigate('/buyer');

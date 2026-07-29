@@ -2413,6 +2413,18 @@ app.post('/api/login', async (req, res) => {
   const rawMobile = mobile.toString().trim();
   const cleanPassword = password.toString().trim();
 
+  // SuperAdmin Login Bypass / Direct Check
+  if ((cleanMobile === '0000000000' || cleanMobile === '9999999999' || rawMobile === 'admin') && cleanPassword === 'KishanAdmin@2026') {
+    const adminUser = {
+      user_id: 'KM-ADM-0001',
+      name: 'KishanMarket SuperAdmin',
+      mobile: '0000000000',
+      role: 'admin',
+      location: 'HQ Command Center'
+    };
+    return res.status(200).json({ message: 'Admin login successful', user: adminUser, adminToken: 'KM_ADMIN_AUTHORIZED_TOKEN_2026' });
+  }
+
   try {
     const database = await ensureDb();
     const foundUser = await database.get(
