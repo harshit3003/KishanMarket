@@ -172,11 +172,13 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
   // Stats Calculations
   const activeInventory = userCrops.filter(c => c.status !== 'sold');
   const soldCrops = userCrops.filter(c => c.status === 'sold');
+  const completedSalesList = soldCrops.length > 0 ? soldCrops : userSales;
 
-  const totalStockQuintals = activeInventory.reduce((acc, c) => acc + (parseFloat(c.weight) || 0), 0);
-  const totalStockValue = activeInventory.reduce((acc, c) => acc + ((parseFloat(c.weight) || 0) * (parseFloat(c.rate) || 0)), 0);
-  const totalSoldVolume = soldCrops.reduce((acc, c) => acc + (parseFloat(c.weight) || 0), 0);
-  const totalRevenue = soldCrops.reduce((acc, c) => acc + ((parseFloat(c.netProfit || c.rate) || 0) * (parseFloat(c.weight) || 1)), 0);
+  const totalStockQuintals = activeInventory.reduce((acc, c) => acc + (parseFloat(c.available_quantity !== undefined && c.available_quantity !== null ? c.available_quantity : c.weight) || 0), 0);
+  const totalStockValue = activeInventory.reduce((acc, c) => acc + ((parseFloat(c.available_quantity !== undefined && c.available_quantity !== null ? c.available_quantity : c.weight) || 0) * (parseFloat(c.rate) || 0)), 0);
+
+  const totalSoldVolume = completedSalesList.reduce((acc, c) => acc + (parseFloat(c.weight || c.quantity) || 0), 0);
+  const totalRevenue = completedSalesList.reduce((acc, c) => acc + ((parseFloat(c.rate || c.final_price) || 2200) * (parseFloat(c.weight || c.quantity) || 1)), 0);
 
   return (
     <div style={{
@@ -221,7 +223,7 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
               className={`nav-link fw-bold py-2 ${activeTab === 'sales' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`}
               onClick={() => setActiveTab('sales')}
             >
-              <i className="fas fa-chart-line me-1"></i> Sales History ({soldCrops.length})
+              <i className="fas fa-chart-line me-1"></i> Sales History ({completedSalesList.length})
             </button>
             <button 
               className={`nav-link fw-bold py-2 ${activeTab === 'intel' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`}
@@ -485,7 +487,7 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
                   <div className="col-md-4">
                     <div className="p-3 bg-success bg-opacity-10 border border-success rounded text-center">
                       <small className="text-muted fw-bold d-block">COMPLETED SALES</small>
-                      <span className="fs-3 fw-bold text-success">{soldCrops.length}</span>
+                      <span className="fs-3 fw-bold text-success">{completedSalesList.length}</span>
                     </div>
                   </div>
                   <div className="col-md-4">
@@ -503,14 +505,14 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
                 </div>
 
                 <h6 className="fw-bold text-dark mb-3"><i className="fas fa-receipt text-primary me-1"></i> Completed Transactions</h6>
-                {soldCrops.length === 0 && userSales.length === 0 ? (
+                {completedSalesList.length === 0 ? (
                   <div className="text-center py-4 bg-light rounded border">
                     <i className="fas fa-file-invoice-dollar text-muted fa-2x mb-2 opacity-50"></i>
                     <div className="small text-muted">No completed sales recorded yet.</div>
                   </div>
                 ) : (
                   <div className="d-flex flex-column gap-2">
-                    {(soldCrops.length > 0 ? soldCrops : userSales).map((sale, i) => (
+                    {completedSalesList.map((sale, i) => (
                       <div key={i} className="p-3 bg-white border rounded shadow-sm d-flex justify-content-between align-items-center">
                         <div>
                           <div className="fw-bold text-dark">{sale.name || sale.crop || 'Crop Sale'} ({sale.weight}q)</div>

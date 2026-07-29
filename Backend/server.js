@@ -284,15 +284,36 @@ app.get('/api/crops', async (req, res) => {
 
 app.get('/api/crops/my', async (req, res) => {
   try {
-    const mobile = req.query.mobile;
-    if (!mobile || mobile === 'guest') return res.json([]);
-    const crops = await db.all(
-      'SELECT * FROM Crops WHERE seller_mobile = ? ORDER BY id DESC',
-      [mobile]
+    const { mobile, name } = req.query;
+    if (!mobile && !name) return res.json([]);
+
+    const cleanMob = normalizePhone(mobile);
+    const rawMob = (mobile || '').trim();
+    const cleanName = (name || '').trim().toLowerCase();
+    const database = await ensureDb();
+
+    let crops = await database.all(
+      `SELECT * FROM Crops 
+       WHERE (TRIM(seller_mobile) = ? AND ? != '')
+          OR (TRIM(seller_mobile) = ? AND ? != '')
+          OR (LOWER(TRIM(seller)) = ? AND ? != '')
+          OR (TRIM(buyer_mobile) = ? AND ? != '')
+          OR (LOWER(TRIM(buyerName)) = ? AND ? != '')
+       ORDER BY id DESC`,
+      [cleanMob, cleanMob, rawMob, rawMob, cleanName, cleanName, cleanMob, cleanMob, cleanName, cleanName]
     );
+
+    if (crops.length === 0 && cleanName) {
+      crops = await database.all(
+        `SELECT * FROM Crops WHERE LOWER(seller) LIKE ? OR LOWER(buyerName) LIKE ? ORDER BY id DESC`,
+        [`%${cleanName}%`, `%${cleanName}%`]
+      );
+    }
+
     res.json(crops);
   } catch (err) {
-    res.status(500).json({ error: 'Database error' });
+    console.error("Error fetching user crops:", err);
+    res.status(500).json({ error: 'Database error fetching user crops' });
   }
 });
 
