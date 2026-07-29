@@ -69,6 +69,11 @@ const AdminDashboardModal = ({ isOpen, onClose }) => {
     'x-admin-token': 'KM_ADMIN_AUTHORIZED_TOKEN_2026'
   });
 
+  const [users, setUsers] = useState([]);
+  const [listings, setListings] = useState([]);
+  const [orders, setOrders] = useState([]);
+  const [searchFilter, setSearchFilter] = useState('');
+
   const fetchAdminData = async () => {
     setIsLoading(true);
     try {
@@ -76,7 +81,16 @@ const AdminDashboardModal = ({ isOpen, onClose }) => {
       const ovRes = await fetch('/api/admin/overview', { headers: getAdminHeaders() });
       if (ovRes.ok) setOverview(await ovRes.json());
 
-      if (activeTab === 'reports') {
+      if (activeTab === 'users') {
+        const uRes = await fetch('/api/admin/users', { headers: getAdminHeaders() });
+        if (uRes.ok) setUsers(await uRes.json());
+      } else if (activeTab === 'listings') {
+        const lRes = await fetch('/api/admin/listings', { headers: getAdminHeaders() });
+        if (lRes.ok) setListings(await lRes.json());
+      } else if (activeTab === 'orders') {
+        const oRes = await fetch('/api/admin/orders', { headers: getAdminHeaders() });
+        if (oRes.ok) setOrders(await oRes.json());
+      } else if (activeTab === 'reports') {
         const rRes = await fetch('/api/admin/reports', { headers: getAdminHeaders() });
         if (rRes.ok) setReports(await rRes.json());
       } else if (activeTab === 'disputes') {
@@ -92,19 +106,61 @@ const AdminDashboardModal = ({ isOpen, onClose }) => {
     setIsLoading(false);
   };
 
+  const handleUserToggleStatus = async (mobile, isSuspended) => {
+    try {
+      const endpoint = isSuspended ? `/api/admin/users/${mobile}/unsuspend` : `/api/admin/users/${mobile}/suspend`;
+      const res = await fetch(endpoint, { method: 'PUT', headers: getAdminHeaders() });
+      if (res.ok) {
+        toast.success(`User +91 ${mobile} ${isSuspended ? 'unsuspended' : 'suspended'}!`);
+        fetchAdminData();
+      }
+    } catch (e) {
+      toast.error("Action failed.");
+    }
+  };
+
+  const handleListingToggleRemove = async (id, isRemoved) => {
+    try {
+      const endpoint = isRemoved ? `/api/admin/listings/${id}/restore` : `/api/admin/listings/${id}/remove`;
+      const res = await fetch(endpoint, { method: 'PUT', headers: getAdminHeaders() });
+      if (res.ok) {
+        toast.success(`Listing #${id} ${isRemoved ? 'restored' : 'removed'}!`);
+        fetchAdminData();
+      }
+    } catch (e) {
+      toast.error("Action failed.");
+    }
+  };
+
+  const handleOrderStatusUpdate = async (id, status) => {
+    try {
+      const res = await fetch(`/api/admin/orders/${id}/status`, {
+        method: 'PUT',
+        headers: getAdminHeaders(),
+        body: JSON.stringify({ status })
+      });
+      if (res.ok) {
+        toast.success(`Order #${id} status set to ${status}`);
+        fetchAdminData();
+      }
+    } catch (e) {
+      toast.error("Failed to update order status.");
+    }
+  };
+
   const handleReportAction = async (reportId, action) => {
     try {
       const res = await fetch(`/api/admin/reports/${reportId}/action`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: getAdminHeaders(),
         body: JSON.stringify({ action })
       });
       if (res.ok) {
-        toast.success(`Report #${reportId} updated to ${action}`);
-        setReports(prev => prev.map(r => r.id === reportId ? { ...r, status: action } : r));
+        toast.success(`Report #${reportId} set to ${action}`);
+        fetchAdminData();
       }
-    } catch (e) {
-      toast.error("Failed to update report action.");
+    } catch (err) {
+      toast.error("Failed to process report action.");
     }
   };
 
@@ -236,18 +292,24 @@ const AdminDashboardModal = ({ isOpen, onClose }) => {
         ) : (
           <>
             {/* Tab Navigation */}
-            <div className="nav nav-pills nav-fill bg-light p-1 rounded-3 mb-4 border" style={{ fontSize: '0.82rem' }}>
+            <div className="nav nav-pills nav-fill bg-light p-1 rounded-3 mb-4 border" style={{ fontSize: '0.8rem', gap: '3px' }}>
               <button className={`nav-link fw-bold ${activeTab === 'overview' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('overview')}>
-                📊 Overview & GMV
+                📊 Overview
+              </button>
+              <button className={`nav-link fw-bold ${activeTab === 'users' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('users')}>
+                👥 Users ({overview.activeUsers})
+              </button>
+              <button className={`nav-link fw-bold ${activeTab === 'listings' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('listings')}>
+                🌾 Crop Listings
+              </button>
+              <button className={`nav-link fw-bold ${activeTab === 'orders' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('orders')}>
+                🚚 Orders ({overview.totalOrders})
               </button>
               <button className={`nav-link fw-bold ${activeTab === 'reports' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('reports')}>
                 🚩 Reports ({overview.pendingReports})
               </button>
-              <button className={`nav-link fw-bold ${activeTab === 'moderation' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('moderation')}>
-                🛡️ Moderation Tools
-              </button>
               <button className={`nav-link fw-bold ${activeTab === 'tickets' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('tickets')}>
-                🎫 Support Queue ({overview.openTickets})
+                🎫 Tickets ({overview.openTickets})
               </button>
             </div>
 
@@ -314,42 +376,183 @@ const AdminDashboardModal = ({ isOpen, onClose }) => {
               </div>
             )}
 
-            {/* TAB 2: REPORTS QUEUE */}
-            {activeTab === 'reports' && (
+            {/* TAB 2: USER MANAGEMENT */}
+            {activeTab === 'users' && (
               <div>
-                <h6 className="fw-bold text-dark mb-3"><i className="fas fa-flag text-danger me-1"></i> User & Listing Reports Queue</h6>
-                {reports.length === 0 ? (
-                  <div className="text-center py-4 bg-light rounded border">
-                    <small className="text-muted">No reports submitted yet.</small>
-                  </div>
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                  <h6 className="fw-bold text-dark m-0"><i className="fas fa-users text-success me-1"></i> Registered Platform Users</h6>
+                  <input
+                    type="text"
+                    className="form-control form-control-sm w-auto"
+                    placeholder="Filter by name/mobile/role..."
+                    value={searchFilter}
+                    onChange={e => setSearchFilter(e.target.value)}
+                  />
+                </div>
+                {users.length === 0 ? (
+                  <div className="text-center py-4 bg-light rounded border"><small className="text-muted">No users registered yet.</small></div>
                 ) : (
-                  <div className="d-flex flex-column gap-2">
-                    {reports.map((r) => (
-                      <div key={r.id} className="p-3 bg-white border rounded shadow-sm">
-                        <div className="d-flex justify-content-between align-items-center mb-1">
-                          <span className={`badge ${r.status === 'Pending' ? 'bg-danger' : 'bg-secondary'}`}>
-                            Report #{r.id} ({r.target_type})
-                          </span>
-                          <small className="text-muted">{r.created_at ? new Date(r.created_at).toLocaleDateString('en-IN') : 'Recent'}</small>
-                        </div>
-                        <div className="fw-bold text-dark">Target: {r.target_name || r.target_id}</div>
-                        <small className="text-muted d-block">Reported By: {r.reported_by_name} (+91 {r.reported_by_mobile})</small>
-                        <div className="p-2 bg-light rounded border mt-2 small text-dark">
-                          <strong>Reason:</strong> {r.reason} {r.notes ? `(${r.notes})` : ''}
-                        </div>
+                  <div className="table-responsive" style={{ maxHeight: '420px', overflowY: 'auto' }}>
+                    <table className="table table-hover table-bordered align-middle small mb-0">
+                      <thead className="table-light sticky-top">
+                        <tr>
+                          <th>User ID</th>
+                          <th>Name</th>
+                          <th>Mobile</th>
+                          <th>Role</th>
+                          <th>Location</th>
+                          <th>Status</th>
+                          <th className="text-center">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {users
+                          .filter(u => !searchFilter || (u.name + u.mobile + u.role + u.location).toLowerCase().includes(searchFilter.toLowerCase()))
+                          .map((u, i) => (
+                            <tr key={i}>
+                              <td className="fw-bold">{u.user_id || `KM-U-${i+1}`}</td>
+                              <td className="fw-bold">{u.name}</td>
+                              <td>+91 {u.mobile}</td>
+                              <td><span className={`badge ${u.role === 'admin' ? 'bg-danger' : (u.role === 'seller' ? 'bg-success' : 'bg-primary')}`}>{u.role}</span></td>
+                              <td>{u.location || 'Local Mandi'}</td>
+                              <td><span className={`badge ${u.account_status === 'suspended' ? 'bg-danger' : 'bg-success'}`}>{u.account_status || 'active'}</span></td>
+                              <td className="text-center">
+                                {u.role !== 'admin' && (
+                                  <button
+                                    className={`btn btn-xs ${u.account_status === 'suspended' ? 'btn-success' : 'btn-outline-danger'} fw-bold px-2 py-0`}
+                                    onClick={() => handleUserToggleStatus(u.mobile, u.account_status === 'suspended')}
+                                  >
+                                    {u.account_status === 'suspended' ? 'Unsuspend' : 'Suspend'}
+                                  </button>
+                                )}
+                              </td>
+                            </tr>
+                          ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </div>
+            )}
 
-                        {r.status === 'Pending' && (
-                          <div className="d-flex gap-2 mt-2 justify-content-end">
-                            <button className="btn btn-sm btn-outline-secondary" onClick={() => handleReportAction(r.id, 'Dismiss')}>Dismiss</button>
-                            {r.target_type === 'user' ? (
-                              <button className="btn btn-sm btn-danger fw-bold" onClick={() => { handleSuspendUser(r.target_id); handleReportAction(r.id, 'User Suspended'); }}>Suspend User</button>
-                            ) : (
-                              <button className="btn btn-sm btn-danger fw-bold" onClick={() => { handleRemoveListing(r.target_id); handleReportAction(r.id, 'Listing Removed'); }}>Remove Listing</button>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    ))}
+            {/* TAB 3: CROP LISTINGS MODERATION */}
+            {activeTab === 'listings' && (
+              <div>
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                  <h6 className="fw-bold text-dark m-0"><i className="fas fa-boxes-stacked text-success me-1"></i> Marketplace Crop Listings</h6>
+                  <input
+                    type="text"
+                    className="form-control form-control-sm w-auto"
+                    placeholder="Search crop / seller..."
+                    value={searchFilter}
+                    onChange={e => setSearchFilter(e.target.value)}
+                  />
+                </div>
+                {listings.length === 0 ? (
+                  <div className="text-center py-4 bg-light rounded border"><small className="text-muted">No crop listings found.</small></div>
+                ) : (
+                  <div className="table-responsive" style={{ maxHeight: '420px', overflowY: 'auto' }}>
+                    <table className="table table-hover table-bordered align-middle small mb-0">
+                      <thead className="table-light sticky-top">
+                        <tr>
+                          <th>ID</th>
+                          <th>Crop Name</th>
+                          <th>Weight</th>
+                          <th>Rate</th>
+                          <th>Seller</th>
+                          <th>Location</th>
+                          <th>Status</th>
+                          <th className="text-center">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {listings
+                          .filter(c => !searchFilter || (c.name + c.seller + c.loc).toLowerCase().includes(searchFilter.toLowerCase()))
+                          .map((c, i) => (
+                            <tr key={i} className={c.is_removed ? 'table-secondary opacity-75' : ''}>
+                              <td className="fw-bold">#{c.id}</td>
+                              <td className="fw-bold text-success">{c.name}</td>
+                              <td>{c.weight} quintals</td>
+                              <td className="fw-bold">₹{c.rate}/q</td>
+                              <td>{c.seller} (+91 {c.seller_mobile})</td>
+                              <td>{c.loc || 'Local Mandi'}</td>
+                              <td><span className={`badge ${c.is_removed ? 'bg-danger' : (c.status === 'sold' ? 'bg-info' : 'bg-success')}`}>{c.is_removed ? 'Removed' : (c.status || 'Active')}</span></td>
+                              <td className="text-center">
+                                <button
+                                  className={`btn btn-xs ${c.is_removed ? 'btn-success' : 'btn-outline-danger'} fw-bold px-2 py-0`}
+                                  onClick={() => handleListingToggleRemove(c.id, c.is_removed)}
+                                >
+                                  {c.is_removed ? 'Restore' : 'Delete'}
+                                </button>
+                              </td>
+                            </tr>
+                          ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* TAB 4: ORDERS OVERRIDE */}
+            {activeTab === 'orders' && (
+              <div>
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                  <h6 className="fw-bold text-dark m-0"><i className="fas fa-truck text-success me-1"></i> System Orders & Logistics</h6>
+                  <input
+                    type="text"
+                    className="form-control form-control-sm w-auto"
+                    placeholder="Search crop / buyer / seller..."
+                    value={searchFilter}
+                    onChange={e => setSearchFilter(e.target.value)}
+                  />
+                </div>
+                {orders.length === 0 ? (
+                  <div className="text-center py-4 bg-light rounded border"><small className="text-muted">No orders found.</small></div>
+                ) : (
+                  <div className="table-responsive" style={{ maxHeight: '420px', overflowY: 'auto' }}>
+                    <table className="table table-hover table-bordered align-middle small mb-0">
+                      <thead className="table-light sticky-top">
+                        <tr>
+                          <th>Order ID</th>
+                          <th>Crop</th>
+                          <th>Buyer</th>
+                          <th>Seller</th>
+                          <th>Quantity</th>
+                          <th>Total Value</th>
+                          <th>Status</th>
+                          <th className="text-center">Status Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {orders
+                          .filter(o => !searchFilter || (o.crop_name + o.buyer_name + o.seller_name).toLowerCase().includes(searchFilter.toLowerCase()))
+                          .map((o, i) => (
+                            <tr key={i}>
+                              <td className="fw-bold">ORD-#{o.id}</td>
+                              <td className="fw-bold text-dark">{o.crop_name}</td>
+                              <td>{o.buyer_name} (+91 {o.buyer_mobile})</td>
+                              <td>{o.seller_name} (+91 {o.seller_mobile})</td>
+                              <td>{o.quantity}q</td>
+                              <td className="fw-bold text-success">₹{(parseFloat(o.final_price || 0) * parseFloat(o.quantity || 1)).toLocaleString('en-IN')}</td>
+                              <td><span className="badge bg-success">{o.status}</span></td>
+                              <td className="text-center">
+                                <select
+                                  className="form-select form-select-sm d-inline-block w-auto py-0 text-xs"
+                                  value={o.status}
+                                  onChange={e => handleOrderStatusUpdate(o.id, e.target.value)}
+                                >
+                                  <option value="Confirmed">Confirmed</option>
+                                  <option value="Packed & Ready">Packed & Ready</option>
+                                  <option value="In Transit">In Transit</option>
+                                  <option value="Delivered">Delivered</option>
+                                  <option value="Cancelled">Cancelled</option>
+                                </select>
+                              </td>
+                            </tr>
+                          ))}
+                      </tbody>
+                    </table>
                   </div>
                 )}
               </div>

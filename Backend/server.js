@@ -2271,6 +2271,94 @@ app.put('/api/admin/tickets/:id/status', async (req, res) => {
   }
 });
 
+// Admin User Management Endpoint
+app.get('/api/admin/users', async (req, res) => {
+  if (!isAuthorizedAdmin(req)) {
+    return res.status(403).json({ error: 'Access Denied: SuperAdmin authorization required' });
+  }
+  try {
+    const database = await ensureDb();
+    const users = await database.all('SELECT user_id, name, mobile, location, role, created_at, account_status, business_name, district, state FROM Users ORDER BY created_at DESC');
+    res.json(users);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch users' });
+  }
+});
+
+app.put('/api/admin/users/:mobile/unsuspend', async (req, res) => {
+  if (!isAuthorizedAdmin(req)) {
+    return res.status(403).json({ error: 'Access Denied: SuperAdmin authorization required' });
+  }
+  try {
+    const { mobile } = req.params;
+    const cleanMob = normalizePhone(mobile);
+    const database = await ensureDb();
+    await database.run('UPDATE Users SET account_status = "active" WHERE TRIM(mobile) = ?', [cleanMob]);
+    res.json({ message: `User +91 ${cleanMob} account unsuspended` });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to unsuspend user' });
+  }
+});
+
+// Admin Crop Listings Endpoint
+app.get('/api/admin/listings', async (req, res) => {
+  if (!isAuthorizedAdmin(req)) {
+    return res.status(403).json({ error: 'Access Denied: SuperAdmin authorization required' });
+  }
+  try {
+    const database = await ensureDb();
+    const listings = await database.all('SELECT * FROM Crops ORDER BY id DESC');
+    res.json(listings);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch listings' });
+  }
+});
+
+app.put('/api/admin/listings/:id/restore', async (req, res) => {
+  if (!isAuthorizedAdmin(req)) {
+    return res.status(403).json({ error: 'Access Denied: SuperAdmin authorization required' });
+  }
+  try {
+    const { id } = req.params;
+    const database = await ensureDb();
+    await database.run('UPDATE Crops SET is_removed = 0, status = "active" WHERE id = ?', [id]);
+    await syncCrops();
+    res.json({ message: `Listing #${id} restored to marketplace` });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to restore listing' });
+  }
+});
+
+// Admin Orders Endpoint
+app.get('/api/admin/orders', async (req, res) => {
+  if (!isAuthorizedAdmin(req)) {
+    return res.status(403).json({ error: 'Access Denied: SuperAdmin authorization required' });
+  }
+  try {
+    const database = await ensureDb();
+    const orders = await database.all('SELECT * FROM Orders ORDER BY id DESC');
+    res.json(orders);
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch platform orders' });
+  }
+});
+
+app.put('/api/admin/orders/:id/status', async (req, res) => {
+  if (!isAuthorizedAdmin(req)) {
+    return res.status(403).json({ error: 'Access Denied: SuperAdmin authorization required' });
+  }
+  try {
+    const { id } = req.params;
+    const { status } = req.body;
+    const database = await ensureDb();
+    await database.run('UPDATE Orders SET status = ? WHERE id = ?', [status, id]);
+    await syncOrders();
+    res.json({ message: `Order #${id} status updated to ${status}` });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to update order status' });
+  }
+});
+
 const normalizePhone = (p) => {
   if (!p) return '';
   const digits = p.toString().replace(/\D/g, '');
