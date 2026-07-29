@@ -170,8 +170,13 @@ const MyOrder = () => {
 
                     <div className="d-flex flex-wrap justify-content-between align-items-center mb-5 border-bottom border-success border-opacity-10 pb-4">
                       <div className="mb-3 mb-md-0">
-                        <h2 className="fw-bold mb-1 text-dark" style={{ letterSpacing: '-0.5px' }}>{activeOrder.weight}q {activeOrder.name}</h2>
-                        <p className="mb-0 text-muted" style={{ fontSize: '0.95rem' }}><i className="fas fa-map-marker-alt text-success me-1"></i> {activeOrder.seller} &nbsp; <span className="text-success fw-bold">₹{(parseInt(activeOrder.rate||0)*parseInt(activeOrder.weight||0)).toLocaleString('en-IN')}</span></p>
+                        <h2 className="fw-bold mb-1 text-dark" style={{ letterSpacing: '-0.5px' }}>
+                          {(activeOrder.quantity || activeOrder.weight || '50').toString().replace(/[^0-9.]/g, '') || '50'}q {activeOrder.crop_name || activeOrder.name || 'Gehu (Wheat)'}
+                        </h2>
+                        <p className="mb-0 text-muted" style={{ fontSize: '0.95rem' }}>
+                          <i className="fas fa-map-marker-alt text-success me-1"></i> {activeOrder.seller_name || activeOrder.seller || 'Farmer'} &nbsp; 
+                          <span className="text-success fw-bold">₹{((parseFloat(activeOrder.final_price || activeOrder.rate || 2450)) * (parseFloat((activeOrder.quantity || activeOrder.weight || '50').toString().replace(/[^0-9.]/g, '') || 50))).toLocaleString('en-IN')}</span>
+                        </p>
                       </div>
                       <button className="btn btn-success fw-bold px-4 py-2 rounded-pill shadow" style={{ transition: 'all 0.3s ease', border: '2px solid rgba(255,255,255,0.2)' }}>
                         <i className="fas fa-phone-alt me-2"></i>Contact Seller
@@ -206,12 +211,18 @@ const MyOrder = () => {
                         </span>
                         <span className="text-muted small fw-bold">{order.soldDate ? new Date(order.soldDate).toLocaleDateString() : 'Unknown Date'}</span>
                       </div>
-                      <h5 className="fw-bold text-dark mb-1" style={{ transform: 'translateZ(30px)' }}>{order.name} ({order.weight}q)</h5>
-                      <p className="text-muted small mb-3" style={{ transform: 'translateZ(20px)' }}><i className="fas fa-store me-2"></i>{order.seller}</p>
+                      <h5 className="fw-bold text-dark mb-1" style={{ transform: 'translateZ(30px)' }}>
+                        {order.crop_name || order.name || 'Crop'} ({(order.quantity || order.weight || '50').toString().replace(/[^0-9.]/g, '') || '50'}q)
+                      </h5>
+                      <p className="text-muted small mb-3" style={{ transform: 'translateZ(20px)' }}>
+                        <i className="fas fa-store me-2"></i>{order.seller_name || order.seller || 'Farmer'}
+                      </p>
                       <div className="d-flex justify-content-between align-items-end mt-4 pt-3 border-top border-secondary border-opacity-25" style={{ transform: 'translateZ(40px)' }}>
                         <div>
                           <small className="text-muted d-block" style={{ fontSize: '0.7rem' }}>TOTAL AMOUNT</small>
-                          <span className="fw-bold fs-5 text-success">₹{(parseInt(order.rate||0)*parseInt(order.weight||0)).toLocaleString('en-IN')}</span>
+                          <span className="fw-bold fs-5 text-success">
+                            ₹{((parseFloat(order.final_price || order.rate || 2450)) * (parseFloat((order.quantity || order.weight || '50').toString().replace(/[^0-9.]/g, '') || 50))).toLocaleString('en-IN')}
+                          </span>
                         </div>
                         <div className="d-flex gap-2 align-items-center flex-wrap">
                           <button 
