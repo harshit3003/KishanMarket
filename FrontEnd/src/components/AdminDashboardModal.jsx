@@ -292,23 +292,23 @@ const AdminDashboardModal = ({ isOpen, onClose }) => {
         ) : (
           <>
             {/* Tab Navigation */}
-            <div className="nav nav-pills nav-fill bg-light p-1 rounded-3 mb-4 border" style={{ fontSize: '0.8rem', gap: '3px' }}>
-              <button className={`nav-link fw-bold ${activeTab === 'overview' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('overview')}>
+            <div className="nav nav-pills nav-fill p-1.5 rounded-3 mb-4 border" style={{ background: '#f8fafc', borderColor: '#e2e8f0', fontSize: '0.85rem', gap: '4px' }}>
+              <button className={`nav-link fw-bold ${activeTab === 'overview' ? 'active bg-success text-white shadow-sm' : 'bg-white text-dark border'}`} onClick={() => setActiveTab('overview')}>
                 📊 Overview
               </button>
-              <button className={`nav-link fw-bold ${activeTab === 'users' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('users')}>
+              <button className={`nav-link fw-bold ${activeTab === 'users' ? 'active bg-success text-white shadow-sm' : 'bg-white text-dark border'}`} onClick={() => setActiveTab('users')}>
                 👥 Users ({overview.activeUsers})
               </button>
-              <button className={`nav-link fw-bold ${activeTab === 'listings' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('listings')}>
+              <button className={`nav-link fw-bold ${activeTab === 'listings' ? 'active bg-success text-white shadow-sm' : 'bg-white text-dark border'}`} onClick={() => setActiveTab('listings')}>
                 🌾 Crop Listings
               </button>
-              <button className={`nav-link fw-bold ${activeTab === 'orders' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('orders')}>
+              <button className={`nav-link fw-bold ${activeTab === 'orders' ? 'active bg-success text-white shadow-sm' : 'bg-white text-dark border'}`} onClick={() => setActiveTab('orders')}>
                 🚚 Orders ({overview.totalOrders})
               </button>
-              <button className={`nav-link fw-bold ${activeTab === 'reports' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('reports')}>
+              <button className={`nav-link fw-bold ${activeTab === 'reports' ? 'active bg-success text-white shadow-sm' : 'bg-white text-dark border'}`} onClick={() => setActiveTab('reports')}>
                 🚩 Reports ({overview.pendingReports})
               </button>
-              <button className={`nav-link fw-bold ${activeTab === 'tickets' ? 'active bg-success text-white shadow-sm' : 'text-secondary'}`} onClick={() => setActiveTab('tickets')}>
+              <button className={`nav-link fw-bold ${activeTab === 'tickets' ? 'active bg-success text-white shadow-sm' : 'bg-white text-dark border'}`} onClick={() => setActiveTab('tickets')}>
                 🎫 Tickets ({overview.openTickets})
               </button>
             </div>
@@ -316,7 +316,7 @@ const AdminDashboardModal = ({ isOpen, onClose }) => {
             {isLoading ? (
               <div className="text-center py-5">
                 <div className="spinner-border text-success" role="status"></div>
-                <p className="small text-muted mt-2">Loading platform data...</p>
+                <p className="small fw-bold text-dark mt-2">Loading platform data...</p>
               </div>
             ) : (
           <div>
@@ -325,51 +325,51 @@ const AdminDashboardModal = ({ isOpen, onClose }) => {
               <div>
                 <div className="row g-3 mb-4">
                   <div className="col-md-3 col-6">
-                    <div className="p-3 bg-success bg-opacity-10 border border-success rounded text-center">
-                      <small className="text-muted fw-bold d-block">PLATFORM GMV</small>
+                    <div className="p-3 rounded text-center border" style={{ background: '#ecfdf5', borderColor: '#10b981' }}>
+                      <small className="d-block fw-bold text-uppercase mb-1" style={{ color: '#047857', fontSize: '0.72rem', letterSpacing: '0.5px' }}>PLATFORM GMV</small>
                       <span className="fs-4 fw-bold text-success">₹{overview.totalGmv.toLocaleString('en-IN')}</span>
                     </div>
                   </div>
                   <div className="col-md-3 col-6">
-                    <div className="p-3 bg-primary bg-opacity-10 border border-primary rounded text-center">
-                      <small className="text-muted fw-bold d-block">REGISTERED USERS</small>
-                      <span className="fs-4 fw-bold text-primary">{overview.activeUsers}</span>
+                    <div className="p-3 rounded text-center border" style={{ background: '#f0f9ff', borderColor: '#0284c7' }}>
+                      <small className="d-block fw-bold text-uppercase mb-1" style={{ color: '#0369a1', fontSize: '0.72rem', letterSpacing: '0.5px' }}>REGISTERED USERS</small>
+                      <span className="fs-4 fw-bold" style={{ color: '#0284c7' }}>{overview.activeUsers}</span>
                     </div>
                   </div>
                   <div className="col-md-3 col-6">
-                    <div className="p-3 bg-info bg-opacity-10 border border-info rounded text-center">
-                      <small className="text-muted fw-bold d-block">ACTIVE LISTINGS</small>
-                      <span className="fs-4 fw-bold text-dark">{overview.activeCrops}</span>
+                    <div className="p-3 rounded text-center border" style={{ background: '#f5f3ff', borderColor: '#7c3aed' }}>
+                      <small className="d-block fw-bold text-uppercase mb-1" style={{ color: '#6d28d9', fontSize: '0.72rem', letterSpacing: '0.5px' }}>ACTIVE LISTINGS</small>
+                      <span className="fs-4 fw-bold" style={{ color: '#7c3aed' }}>{overview.activeCrops}</span>
                     </div>
                   </div>
                   <div className="col-md-3 col-6">
-                    <div className="p-3 bg-warning bg-opacity-10 border border-warning rounded text-center">
-                      <small className="text-muted fw-bold d-block">TOTAL ORDERS</small>
-                      <span className="fs-4 fw-bold text-dark">{overview.totalOrders}</span>
+                    <div className="p-3 rounded text-center border" style={{ background: '#fffbeb', borderColor: '#d97706' }}>
+                      <small className="d-block fw-bold text-uppercase mb-1" style={{ color: '#b45309', fontSize: '0.72rem', letterSpacing: '0.5px' }}>TOTAL ORDERS</small>
+                      <span className="fs-4 fw-bold" style={{ color: '#d97706' }}>{overview.totalOrders}</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="row g-3">
                   <div className="col-md-4">
-                    <div className="p-3 bg-light border rounded text-center" style={{ cursor: 'pointer' }} onClick={() => setActiveTab('reports')}>
+                    <div className="p-3 bg-white border border-2 rounded text-center shadow-sm" style={{ cursor: 'pointer' }} onClick={() => setActiveTab('reports')}>
                       <i className="fas fa-flag text-danger fa-2x mb-2"></i>
                       <h6 className="fw-bold m-0 text-dark">Pending Reports</h6>
-                      <span className="fs-5 fw-bold text-danger">{overview.pendingReports}</span>
+                      <span className="fs-4 fw-bold text-danger d-block mt-1">{overview.pendingReports}</span>
                     </div>
                   </div>
                   <div className="col-md-4">
-                    <div className="p-3 bg-light border rounded text-center" style={{ cursor: 'pointer' }} onClick={() => setActiveTab('moderation')}>
+                    <div className="p-3 bg-white border border-2 rounded text-center shadow-sm" style={{ cursor: 'pointer' }} onClick={() => setActiveTab('users')}>
                       <i className="fas fa-user-slash text-warning fa-2x mb-2"></i>
                       <h6 className="fw-bold m-0 text-dark">Account Suspensions</h6>
-                      <span className="small text-muted d-block mt-1">Admin Enforcement</span>
+                      <span className="small fw-semibold text-secondary d-block mt-1">Admin Enforcement</span>
                     </div>
                   </div>
                   <div className="col-md-4">
-                    <div className="p-3 bg-light border rounded text-center" style={{ cursor: 'pointer' }} onClick={() => setActiveTab('tickets')}>
+                    <div className="p-3 bg-white border border-2 rounded text-center shadow-sm" style={{ cursor: 'pointer' }} onClick={() => setActiveTab('tickets')}>
                       <i className="fas fa-headset text-success fa-2x mb-2"></i>
                       <h6 className="fw-bold m-0 text-dark">Open Tickets</h6>
-                      <span className="fs-5 fw-bold text-success">{overview.openTickets}</span>
+                      <span className="fs-4 fw-bold text-success d-block mt-1">{overview.openTickets}</span>
                     </div>
                   </div>
                 </div>
