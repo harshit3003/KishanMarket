@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import socket from '../socket';
 import '../assets/global.css';
 import '../assets/dynamic-features.css';
 
@@ -26,11 +27,36 @@ const AdminPage = () => {
   const getAdminHeaders = () => ({
     'Content-Type': 'application/json',
     'x-admin-key': ADMIN_SECRET_KEY,
-    'x-admin-token': ADMIN_SESSION_TOKEN
+    'x-admin-token': ADMIN_SESSION_TOKEN,
+    'Authorization': `Bearer ${localStorage.getItem('token') || ''}`
   });
 
   useEffect(() => {
     fetchAdminData();
+
+    if (!socket.connected) {
+      socket.connect();
+    }
+
+    const handleRealtimeUpdate = () => {
+      fetchAdminData();
+    };
+
+    socket.on('order_created', handleRealtimeUpdate);
+    socket.on('crop_added', handleRealtimeUpdate);
+    socket.on('user_registered', handleRealtimeUpdate);
+    socket.on('report_submitted', handleRealtimeUpdate);
+    socket.on('ticket_submitted', handleRealtimeUpdate);
+    socket.on('crop_price_updated', handleRealtimeUpdate);
+
+    return () => {
+      socket.off('order_created', handleRealtimeUpdate);
+      socket.off('crop_added', handleRealtimeUpdate);
+      socket.off('user_registered', handleRealtimeUpdate);
+      socket.off('report_submitted', handleRealtimeUpdate);
+      socket.off('ticket_submitted', handleRealtimeUpdate);
+      socket.off('crop_price_updated', handleRealtimeUpdate);
+    };
   }, [activeTab]);
 
   const fetchAdminData = async () => {
