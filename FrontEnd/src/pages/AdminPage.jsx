@@ -184,54 +184,54 @@ const AdminPage = () => {
 
       {/* Main Admin Dashboard Container */}
       <div className="container mt-4">
-        {/* Metrics Summary Ribbon with High-Contrast Crisp Colors */}
+        {/* Metrics Summary Ribbon with High-Contrast Solid White Cards */}
         <div className="row g-3 mb-4">
           <div className="col-lg-2 col-md-4 col-6">
-            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: '#1e293b', borderColor: '#334155' }}>
-              <small className="text-uppercase fw-bold d-block mb-1" style={{ color: '#cbd5e1', fontSize: '0.72rem', letterSpacing: '0.5px' }}>REGISTERED USERS</small>
-              <h3 className="fw-bold m-0" style={{ color: '#38bdf8' }}>{overview.activeUsers}</h3>
+            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: '#ffffff', borderColor: '#cbd5e1' }}>
+              <span className="text-uppercase fw-bold d-block mb-1" style={{ color: '#475569 !important', fontSize: '0.72rem', letterSpacing: '0.5px' }}>REGISTERED USERS</span>
+              <h3 className="fw-bold m-0" style={{ color: '#0284c7 !important' }}>{overview.activeUsers}</h3>
             </div>
           </div>
           <div className="col-lg-2 col-md-4 col-6">
-            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: '#1e293b', borderColor: '#334155' }}>
-              <small className="text-uppercase fw-bold d-block mb-1" style={{ color: '#cbd5e1', fontSize: '0.72rem', letterSpacing: '0.5px' }}>CROP LISTINGS</small>
-              <h3 className="fw-bold m-0" style={{ color: '#4ade80' }}>{overview.activeCrops}</h3>
+            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: '#ffffff', borderColor: '#cbd5e1' }}>
+              <span className="text-uppercase fw-bold d-block mb-1" style={{ color: '#475569 !important', fontSize: '0.72rem', letterSpacing: '0.5px' }}>CROP LISTINGS</span>
+              <h3 className="fw-bold m-0" style={{ color: '#16a34a !important' }}>{overview.activeCrops}</h3>
             </div>
           </div>
           <div className="col-lg-2 col-md-4 col-6">
-            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: '#1e293b', borderColor: '#334155' }}>
-              <small className="text-uppercase fw-bold d-block mb-1" style={{ color: '#cbd5e1', fontSize: '0.72rem', letterSpacing: '0.5px' }}>TOTAL ORDERS</small>
-              <h3 className="fw-bold m-0" style={{ color: '#fbbf24' }}>{overview.totalOrders}</h3>
+            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: '#ffffff', borderColor: '#cbd5e1' }}>
+              <span className="text-uppercase fw-bold d-block mb-1" style={{ color: '#475569 !important', fontSize: '0.72rem', letterSpacing: '0.5px' }}>TOTAL ORDERS</span>
+              <h3 className="fw-bold m-0" style={{ color: '#d97706 !important' }}>{overview.totalOrders}</h3>
             </div>
           </div>
           <div className="col-lg-2 col-md-4 col-6">
-            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: '#1e293b', borderColor: '#334155' }}>
-              <small className="text-uppercase fw-bold d-block mb-1" style={{ color: '#cbd5e1', fontSize: '0.72rem', letterSpacing: '0.5px' }}>GMV VALUATION</small>
-              <h3 className="fw-bold m-0" style={{ color: '#34d399' }}>₹{overview.totalGmv ? overview.totalGmv.toLocaleString('en-IN') : 0}</h3>
+            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: '#ffffff', borderColor: '#cbd5e1' }}>
+              <span className="text-uppercase fw-bold d-block mb-1" style={{ color: '#475569 !important', fontSize: '0.72rem', letterSpacing: '0.5px' }}>GMV VALUATION</span>
+              <h3 className="fw-bold m-0" style={{ color: '#059669 !important' }}>₹{overview.totalGmv ? overview.totalGmv.toLocaleString('en-IN') : 0}</h3>
             </div>
           </div>
           <div className="col-lg-2 col-md-4 col-6">
-            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: '#1e293b', borderColor: '#334155' }}>
-              <small className="text-uppercase fw-bold d-block mb-1" style={{ color: '#cbd5e1', fontSize: '0.72rem', letterSpacing: '0.5px' }}>PENDING REPORTS</small>
-              <h3 className="fw-bold m-0" style={{ color: '#f87171' }}>{overview.pendingReports}</h3>
+            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: '#ffffff', borderColor: '#cbd5e1' }}>
+              <span className="text-uppercase fw-bold d-block mb-1" style={{ color: '#475569 !important', fontSize: '0.72rem', letterSpacing: '0.5px' }}>PENDING REPORTS</span>
+              <h3 className="fw-bold m-0" style={{ color: '#dc2626 !important' }}>{overview.pendingReports}</h3>
             </div>
           </div>
           <div className="col-lg-2 col-md-4 col-6">
-            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: '#1e293b', borderColor: '#334155' }}>
-              <small className="text-uppercase fw-bold d-block mb-1" style={{ color: '#cbd5e1', fontSize: '0.72rem', letterSpacing: '0.5px' }}>OPEN TICKETS</small>
-              <h3 className="fw-bold m-0" style={{ color: '#60a5fa' }}>{overview.openTickets}</h3>
+            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: '#ffffff', borderColor: '#cbd5e1' }}>
+              <span className="text-uppercase fw-bold d-block mb-1" style={{ color: '#475569 !important', fontSize: '0.72rem', letterSpacing: '0.5px' }}>OPEN TICKETS</span>
+              <h3 className="fw-bold m-0" style={{ color: '#2563eb !important' }}>{overview.openTickets}</h3>
             </div>
           </div>
         </div>
 
         {/* Tab Navigation Bar with High Contrast Buttons */}
-        <div className="p-2 rounded-4 mb-4 border d-flex gap-2 flex-wrap" style={{ background: '#1e293b', borderColor: '#334155' }}>
+        <div className="p-2 rounded-4 mb-4 border d-flex gap-2 flex-wrap" style={{ background: '#ffffff', borderColor: '#cbd5e1' }}>
           <button
             className="btn rounded-3 fw-bold px-4 transition-all"
             style={{
-              background: activeTab === 'overview' ? '#059669' : 'rgba(255,255,255,0.06)',
-              color: '#ffffff',
-              border: activeTab === 'overview' ? '1px solid #10b981' : '1px solid rgba(255,255,255,0.15)',
+              background: activeTab === 'overview' ? '#059669' : '#f8fafc',
+              color: activeTab === 'overview' ? '#ffffff !important' : '#0f172a !important',
+              border: activeTab === 'overview' ? '1px solid #10b981' : '1px solid #cbd5e1',
               boxShadow: activeTab === 'overview' ? '0 4px 12px rgba(16,185,129,0.3)' : 'none'
             }}
             onClick={() => setActiveTab('overview')}
@@ -242,9 +242,9 @@ const AdminPage = () => {
           <button
             className="btn rounded-3 fw-bold px-4 transition-all"
             style={{
-              background: activeTab === 'users' ? '#059669' : 'rgba(255,255,255,0.06)',
-              color: '#ffffff',
-              border: activeTab === 'users' ? '1px solid #10b981' : '1px solid rgba(255,255,255,0.15)',
+              background: activeTab === 'users' ? '#059669' : '#f8fafc',
+              color: activeTab === 'users' ? '#ffffff !important' : '#0f172a !important',
+              border: activeTab === 'users' ? '1px solid #10b981' : '1px solid #cbd5e1',
               boxShadow: activeTab === 'users' ? '0 4px 12px rgba(16,185,129,0.3)' : 'none'
             }}
             onClick={() => setActiveTab('users')}
@@ -255,9 +255,9 @@ const AdminPage = () => {
           <button
             className="btn rounded-3 fw-bold px-4 transition-all"
             style={{
-              background: activeTab === 'listings' ? '#059669' : 'rgba(255,255,255,0.06)',
-              color: '#ffffff',
-              border: activeTab === 'listings' ? '1px solid #10b981' : '1px solid rgba(255,255,255,0.15)',
+              background: activeTab === 'listings' ? '#059669' : '#f8fafc',
+              color: activeTab === 'listings' ? '#ffffff !important' : '#0f172a !important',
+              border: activeTab === 'listings' ? '1px solid #10b981' : '1px solid #cbd5e1',
               boxShadow: activeTab === 'listings' ? '0 4px 12px rgba(16,185,129,0.3)' : 'none'
             }}
             onClick={() => setActiveTab('listings')}
@@ -268,9 +268,9 @@ const AdminPage = () => {
           <button
             className="btn rounded-3 fw-bold px-4 transition-all"
             style={{
-              background: activeTab === 'orders' ? '#059669' : 'rgba(255,255,255,0.06)',
-              color: '#ffffff',
-              border: activeTab === 'orders' ? '1px solid #10b981' : '1px solid rgba(255,255,255,0.15)',
+              background: activeTab === 'orders' ? '#059669' : '#f8fafc',
+              color: activeTab === 'orders' ? '#ffffff !important' : '#0f172a !important',
+              border: activeTab === 'orders' ? '1px solid #10b981' : '1px solid #cbd5e1',
               boxShadow: activeTab === 'orders' ? '0 4px 12px rgba(16,185,129,0.3)' : 'none'
             }}
             onClick={() => setActiveTab('orders')}
@@ -281,9 +281,9 @@ const AdminPage = () => {
           <button
             className="btn rounded-3 fw-bold px-4 transition-all"
             style={{
-              background: activeTab === 'reports' ? '#059669' : 'rgba(255,255,255,0.06)',
-              color: '#ffffff',
-              border: activeTab === 'reports' ? '1px solid #10b981' : '1px solid rgba(255,255,255,0.15)',
+              background: activeTab === 'reports' ? '#059669' : '#f8fafc',
+              color: activeTab === 'reports' ? '#ffffff !important' : '#0f172a !important',
+              border: activeTab === 'reports' ? '1px solid #10b981' : '1px solid #cbd5e1',
               boxShadow: activeTab === 'reports' ? '0 4px 12px rgba(16,185,129,0.3)' : 'none'
             }}
             onClick={() => setActiveTab('reports')}
@@ -294,9 +294,9 @@ const AdminPage = () => {
           <button
             className="btn rounded-3 fw-bold px-4 transition-all"
             style={{
-              background: activeTab === 'tickets' ? '#059669' : 'rgba(255,255,255,0.06)',
-              color: '#ffffff',
-              border: activeTab === 'tickets' ? '1px solid #10b981' : '1px solid rgba(255,255,255,0.15)',
+              background: activeTab === 'tickets' ? '#059669' : '#f8fafc',
+              color: activeTab === 'tickets' ? '#ffffff !important' : '#0f172a !important',
+              border: activeTab === 'tickets' ? '1px solid #10b981' : '1px solid #cbd5e1',
               boxShadow: activeTab === 'tickets' ? '0 4px 12px rgba(16,185,129,0.3)' : 'none'
             }}
             onClick={() => setActiveTab('tickets')}
@@ -306,34 +306,34 @@ const AdminPage = () => {
         </div>
 
         {/* Tab Content Panel */}
-        <div className="p-4 rounded-4 shadow-lg border" style={{ background: '#1e293b', borderColor: '#334155' }}>
+        <div className="p-4 rounded-4 shadow-lg border" style={{ background: '#0f172a', borderColor: '#334155' }}>
           {isLoading ? (
             <div className="text-center py-5">
               <div className="spinner-border text-success" role="status"></div>
-              <p className="small text-muted mt-2">Loading platform data...</p>
+              <p className="small text-white mt-2">Loading platform data...</p>
             </div>
           ) : (
             <div>
               {/* TAB 1: OVERVIEW */}
               {activeTab === 'overview' && (
                 <div>
-                  <h5 className="fw-bold mb-3 text-emerald-400" style={{ color: '#34d399' }}><i className="fas fa-chart-line me-2"></i> Marketplace Analytics & System Status</h5>
+                  <h5 className="fw-bold mb-3" style={{ color: '#34d399 !important' }}><i className="fas fa-chart-line me-2"></i> Marketplace Analytics & System Status</h5>
                   <div className="row g-4 mb-4">
                     <div className="col-md-6">
-                      <div className="p-4 rounded-3 border bg-dark bg-opacity-50">
-                        <h6 className="fw-bold text-white mb-3">Gross Merchandise Value (GMV) Summary</h6>
-                        <div className="fs-2 fw-bold text-emerald-400 mb-2" style={{ color: '#34d399' }}>₹{overview.totalGmv ? overview.totalGmv.toLocaleString('en-IN') : 0}</div>
-                        <p className="small text-muted mb-0">Total volume of completed & confirmed agricultural crop trades processed on KishanMarket platform.</p>
+                      <div className="p-4 rounded-3 border shadow-sm" style={{ background: '#ffffff', borderColor: '#cbd5e1' }}>
+                        <h6 className="fw-bold mb-3" style={{ color: '#0f172a !important' }}>Gross Merchandise Value (GMV) Summary</h6>
+                        <div className="fs-2 fw-bold mb-2" style={{ color: '#059669 !important' }}>₹{overview.totalGmv ? overview.totalGmv.toLocaleString('en-IN') : 0}</div>
+                        <p className="small mb-0" style={{ color: '#334155 !important', fontWeight: '500' }}>Total volume of completed & confirmed agricultural crop trades processed on KishanMarket platform.</p>
                       </div>
                     </div>
                     <div className="col-md-6">
-                      <div className="p-4 rounded-3 border bg-dark bg-opacity-50">
-                        <h6 className="fw-bold text-white mb-3">System Health & Cloud Synchronization</h6>
-                        <ul className="list-unstyled mb-0 small text-slate-300">
-                          <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i> <strong>MongoDB Cloud Atlas:</strong> Synchronized & Active</li>
-                          <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i> <strong>WebSockets Realtime Engine:</strong> Operational</li>
-                          <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i> <strong>Mandi Market Price Intelligence:</strong> Live Feed Updating</li>
-                          <li><i className="fas fa-check-circle text-success me-2"></i> <strong>SuperAdmin Authentication Guard:</strong> Enforced</li>
+                      <div className="p-4 rounded-3 border shadow-sm" style={{ background: '#ffffff', borderColor: '#cbd5e1' }}>
+                        <h6 className="fw-bold mb-3" style={{ color: '#0f172a !important' }}>System Health & Cloud Synchronization</h6>
+                        <ul className="list-unstyled mb-0 small" style={{ color: '#334155 !important', fontWeight: '600' }}>
+                          <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i> <strong style={{ color: '#0f172a !important' }}>MongoDB Cloud Atlas:</strong> Synchronized & Active</li>
+                          <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i> <strong style={{ color: '#0f172a !important' }}>WebSockets Realtime Engine:</strong> Operational</li>
+                          <li className="mb-2"><i className="fas fa-check-circle text-success me-2"></i> <strong style={{ color: '#0f172a !important' }}>Mandi Market Price Intelligence:</strong> Live Feed Updating</li>
+                          <li><i className="fas fa-check-circle text-success me-2"></i> <strong style={{ color: '#0f172a !important' }}>SuperAdmin Authentication Guard:</strong> Enforced</li>
                         </ul>
                       </div>
                     </div>
