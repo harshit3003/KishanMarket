@@ -512,3 +512,24 @@ main,
     -webkit-text-fill-color: transparent;
     animation: textShimmer 6s linear infinite;
 }
+
+/* Custom Production Scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(76, 175, 80, 0.4);
+    border-radius: 10px;
+    transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(76, 175, 80, 0.8);
+}

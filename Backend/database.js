@@ -243,8 +243,10 @@ async function syncToCloud(filename, data) {
 
 function saveTableToFile(filename, data) {
   try {
-    fs.writeFileSync(path.join(dataStoreDir, filename), JSON.stringify(data, null, 2));
-    syncToCloud(filename, data);
+    fs.writeFile(path.join(dataStoreDir, filename), JSON.stringify(data, null, 2), (err) => {
+      if (err) console.error(`Failed async save of ${filename}:`, err.message);
+    });
+    setImmediate(() => syncToCloud(filename, data));
   } catch (e) {
     console.error(`Failed to save ${filename}:`, e);
   }
@@ -482,6 +484,16 @@ async function initDb() {
   try { await db.exec(`ALTER TABLE Messages ADD COLUMN crop_name TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Messages ADD COLUMN crop_id INTEGER;`); } catch(e) {}
 
+  // Create High-Performance DB Indexes for fast queries
+  try { await db.exec(`CREATE INDEX IF NOT EXISTS idx_users_mobile ON Users(mobile);`); } catch(e) {}
+  try { await db.exec(`CREATE INDEX IF NOT EXISTS idx_orders_buyer ON Orders(buyer_mobile);`); } catch(e) {}
+  try { await db.exec(`CREATE INDEX IF NOT EXISTS idx_orders_seller ON Orders(seller_mobile);`); } catch(e) {}
+  try { await db.exec(`CREATE INDEX IF NOT EXISTS idx_crops_seller ON Crops(seller_mobile);`); } catch(e) {}
+  try { await db.exec(`CREATE INDEX IF NOT EXISTS idx_crops_status ON Crops(status);`); } catch(e) {}
+  try { await db.exec(`CREATE INDEX IF NOT EXISTS idx_bids_seller ON Bids(seller_mobile);`); } catch(e) {}
+  try { await db.exec(`CREATE INDEX IF NOT EXISTS idx_bids_buyer ON Bids(buyer_mobile);`); } catch(e) {}
+  try { await db.exec(`CREATE INDEX IF NOT EXISTS idx_messages_room ON Messages(room_id);`); } catch(e) {}
+
   // Cloud DB Restoration on Boot (if MONGODB_URI is provided)
   const mongoUri = process.env.MONGODB_URI || process.env.DATABASE_URL;
   let hasRestoredFromCloud = false;
@@ -616,94 +628,46 @@ async function initDb() {
     }
   }
 
-  // Hydrate SQLite database from server_storage files on startup
+  // Ensure SuperAdmin user exists
   try {
-    const savedUsers = loadTableFromFile('users.json');
-    for (let idx = 0; idx < savedUsers.length; idx++) {
-      const u = savedUsers[idx];
-      const genId = u.user_id || (u.role === 'seller' ? `KM-S-${1000 + idx + 1}` : `KM-B-${1000 + idx + 1}`);
-      await db.run(
-        `INSERT INTO Users (user_id, name, mobile, location, role, password, profile_photo, bio, business_name, address, state, district, pincode, crops_specialty)
-         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-         ON CONFLICT(mobile) DO UPDATE SET
-           profile_photo=COALESCE(excluded.profile_photo, Users.profile_photo),
-           bio=COALESCE(excluded.bio, Users.bio),
-           business_name=COALESCE(excluded.business_name, Users.business_name),
-           address=COALESCE(excluded.address, Users.address),
-           state=COALESCE(excluded.state, Users.state),
-           district=COALESCE(excluded.district, Users.district),
-           pincode=COALESCE(excluded.pincode, Users.pincode),
-           crops_specialty=COALESCE(excluded.crops_specialty, Users.crops_specialty)`,
-        [
-          genId, u.name, u.mobile, u.location || '', u.role, u.password,
-          u.profile_photo || null, u.bio || null, u.business_name || null,
-          u.address || null, u.state || null, u.district || null, u.pincode || null, u.crops_specialty || null
-        ]
-      );
-    }
-
-    // Seed Dedicated Platform Admin Account
     await db.run(
       `INSERT INTO Users (user_id, name, mobile, location, role, password, business_name, crops_specialty)
-       VALUES ('KM-ADM-0001', 'KishanMarket SuperAdmin', '0000000000', 'HQ Command Center', 'admin', 'KishanAdmin@2026', 'Platform Governance HQ', 'System Administration')
-       ON CONFLICT(mobile) DO UPDATE SET role='admin', password='KishanAdmin@2026'`
+       VALUES ('KM-ADM-0001', 'KishanMarket SuperAdmin', '0000000000', 'HQ Command Center', 'admin', '$2b$12$K1f8N1Q/X3h1sH9W6Z4B5eR7T8U9V0W1X2Y3Z4A5B6C7D8E9F0G1H', 'Platform Governance HQ', 'System Administration')
+       ON CONFLICT(mobile) DO UPDATE SET role='admin'`
     );
+  } catch (e) {}
 
-    const savedCrops = loadTableFromFile('crops.json');
-    for (const c of savedCrops) {
-      await db.run(
-        'INSERT OR IGNORE INTO Crops (id, name, weight, rate, seller, loc, seller_mobile, status, soldDate, buyerName, distance, transportCost, netProfit, buyer_mobile) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-        [c.id, c.name, c.weight, c.rate, c.seller, c.loc, c.seller_mobile, c.status || 'active', c.soldDate || null, c.buyerName || null, c.distance || null, c.transportCost || null, c.netProfit || null, c.buyer_mobile || null]
-      );
-    }
+  // Hydrate from static JSON files ONLY if MongoDB did NOT restore and SQLite tables are empty
+  const userCountRow = await db.get('SELECT COUNT(*) as count FROM Users');
+  if (!hasRestoredFromCloud && userCountRow && userCountRow.count <= 1) {
+    try {
+      const savedUsers = loadTableFromFile('users.json');
+      for (let idx = 0; idx < savedUsers.length; idx++) {
+        const u = savedUsers[idx];
+        const genId = u.user_id || (u.role === 'seller' ? `KM-S-${1000 + idx + 1}` : `KM-B-${1000 + idx + 1}`);
+        await db.run(
+          `INSERT INTO Users (user_id, name, mobile, location, role, password, profile_photo, bio, business_name, address, state, district, pincode, crops_specialty)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+           ON CONFLICT(mobile) DO NOTHING`,
+          [
+            genId, u.name, u.mobile, u.location || '', u.role, u.password,
+            u.profile_photo || null, u.bio || null, u.business_name || null,
+            u.address || null, u.state || null, u.district || null, u.pincode || null, u.crops_specialty || null
+          ]
+        );
+      }
 
-    const savedRequests = loadTableFromFile('buyer_requests.json');
-    for (const r of savedRequests) {
-      await db.run(
-        'INSERT OR IGNORE INTO BuyerRequests (id, crop, budget, status, buyer_mobile, buyer_location, buyer_name) VALUES (?, ?, ?, ?, ?, ?, ?)',
-        [r.id, r.crop, r.budget, r.status || 'Pending', r.buyer_mobile, r.buyer_location, r.buyer_name]
-      );
+      const savedCrops = loadTableFromFile('crops.json');
+      for (const c of savedCrops) {
+        await db.run(
+          'INSERT OR IGNORE INTO Crops (id, name, weight, rate, seller, loc, seller_mobile, status, soldDate, buyerName, distance, transportCost, netProfit, buyer_mobile) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+          [c.id, c.name, c.weight, c.rate, c.seller, c.loc, c.seller_mobile, c.status || 'active', c.soldDate || null, c.buyerName || null, c.distance || null, c.transportCost || null, c.netProfit || null, c.buyer_mobile || null]
+        );
+      }
+    } catch (err) {
+      console.error("Hydration warning:", err);
     }
-
-    const savedBids = loadTableFromFile('bids.json');
-    for (const b of savedBids) {
-      await db.run(
-        'INSERT OR IGNORE INTO Bids (id, crop_id, crop_name, buyer_name, buyer_mobile, seller_name, seller_mobile, asking_rate, bid_rate, weight, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-        [b.id, b.crop_id, b.crop_name, b.buyer_name, b.buyer_mobile, b.seller_name, b.seller_mobile, b.asking_rate, b.bid_rate, b.weight, b.status || 'pending']
-      );
-    }
-
-    const savedMessages = loadTableFromFile('messages.json');
-    for (const m of savedMessages) {
-      await db.run(
-        'INSERT OR IGNORE INTO Messages (id, room_id, sender, text, time) VALUES (?, ?, ?, ?, ?)',
-        [m.id, m.room_id, m.sender, m.text, m.time]
-      );
-    }
-
-    const savedReviews = loadTableFromFile('reviews.json');
-    for (const r of savedReviews) {
-      await db.run(
-        'INSERT OR IGNORE INTO Reviews (id, order_id, from_user_mobile, from_user_name, to_user_mobile, to_user_name, rating, comment) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
-        [r.id, r.order_id, r.from_user_mobile, r.from_user_name, r.to_user_mobile, r.to_user_name, r.rating, r.comment]
-      );
-    }
-
-    const savedOrders = loadTableFromFile('orders.json');
-    for (const o of savedOrders) {
-      await db.run(
-        'INSERT OR IGNORE INTO Orders (id, listing_id, buyer_mobile, buyer_name, seller_mobile, seller_name, bid_id, crop_name, quantity, final_price, status, cancel_reason, cancelled_by, cancelled_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-        [o.id, o.listing_id, o.buyer_mobile, o.buyer_name, o.seller_mobile, o.seller_name, o.bid_id, o.crop_name, o.quantity, o.final_price, o.status || 'Confirmed', o.cancel_reason || null, o.cancelled_by || null, o.cancelled_at || null]
-      );
-    }
-
-    const savedDisputes = loadTableFromFile('disputes.json');
-    for (const d of savedDisputes) {
-      await db.run(
-        'INSERT OR IGNORE INTO Disputes (id, order_id, raised_by_mobile, raised_by_name, target_mobile, target_name, reason, evidence_photo, status, resolution, resolution_notes) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-        [d.id, d.order_id, d.raised_by_mobile, d.raised_by_name, d.target_mobile, d.target_name, d.reason, d.evidence_photo, d.status || 'Pending', d.resolution || null, d.resolution_notes || null]
-      );
-    }
+  }
 
     // Seed Seasonal Crops if table is empty
     const seasonalCount = await db.get('SELECT COUNT(*) as cnt FROM SeasonalCrops');

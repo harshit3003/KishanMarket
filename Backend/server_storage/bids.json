@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "crop_id": 1003,
+    "crop_name": "Makka",
+    "buyer_name": "Vyapari",
+    "buyer_mobile": "2222222222",
+    "seller_name": "harshit",
+    "seller_mobile": "1111111111",
+    "asking_rate": "900",
+    "bid_rate": "900",
+    "weight": "1",
+    "status": "rejected",
+    "created_at": "2026-07-21 21:06:13"
+  },
+  {
+    "id": 2,
+    "crop_id": 1003,
+    "crop_name": "Makka",
+    "buyer_name": "Vyapari",
+    "buyer_mobile": "2222222222",
+    "seller_name": "harshit",
+    "seller_mobile": "1111111111",
+    "asking_rate": "900",
+    "bid_rate": "1000",
+    "weight": "1",
+    "status": "rejected",
+    "created_at": "2026-07-21 21:06:21"
+  },
+  {
+    "id": 3,
+    "crop_id": 1016,
+    "crop_name": "Dhan",
+    "buyer_name": "Vyapari",
+    "buyer_mobile": "2222222222",
+    "seller_name": "harshit",
+    "seller_mobile": "1111111111",
+    "asking_rate": "900",
+    "bid_rate": "100",
+    "weight": "9",
+    "status": "rejected",
+    "created_at": "2026-07-21 21:09:20"
+  },
+  {
+    "id": 4,
+    "crop_id": 1015,
+    "crop_name": "Gehu",
+    "buyer_name": "Vyapari",
+    "buyer_mobile": "2222222222",
+    "seller_name": "harshit",
+    "seller_mobile": "1111111111",
+    "asking_rate": "1000",
+    "bid_rate": "1100",
+    "weight": "900",
+    "status": "accepted",
+    "created_at": "2026-07-21 21:09:35"
+  },
+  {
+    "id": 5,
+    "crop_id": 1016,
+    "crop_name": "Dhan",
+    "buyer_name": "Vyapari",
+    "buyer_mobile": "2222222222",
+    "seller_name": "harshit",
+    "seller_mobile": "1111111111",
+    "asking_rate": "900",
+    "bid_rate": "90",
+    "weight": "9",
+    "status": "accepted",
+    "created_at": "2026-07-21 21:10:11"
+  }
+]

@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
-import LandingPage from './pages/LandingPage';
-import NotFound from './pages/NotFound';
-import RegistrationPage from './pages/RegistrationPage';
-import LoginPage from './pages/LoginPage';
-import BuyerPage from './pages/BuyerPage';
-import SellerPage from './pages/SellerPage';
-import BuyyersProfile from './pages/BuyyersProfile';
-import SellersProfile from './pages/SellersProfile';
-import MyOrder from './pages/MyOrder';
-import AdminPage from './pages/AdminPage';
 import BackgroundLayer from './components/BackgroundLayer';
+
+// Lazy-loaded page components for optimal bundle splitting & fast load times
+const LandingPage = lazy(() => import('./pages/LandingPage'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+const RegistrationPage = lazy(() => import('./pages/RegistrationPage'));
+const LoginPage = lazy(() => import('./pages/LoginPage'));
+const BuyerPage = lazy(() => import('./pages/BuyerPage'));
+const SellerPage = lazy(() => import('./pages/SellerPage'));
+const BuyyersProfile = lazy(() => import('./pages/BuyyersProfile'));
+const SellersProfile = lazy(() => import('./pages/SellersProfile'));
+const MyOrder = lazy(() => import('./pages/MyOrder'));
+const AdminPage = lazy(() => import('./pages/AdminPage'));
+
+const PageLoader = () => (
+  <div className="d-flex justify-content-center align-items-center" style={{ minHeight: '80vh' }}>
+    <div className="spinner-border text-success" role="status" style={{ width: '3rem', height: '3rem' }}></div>
+  </div>
+);
 
 const getUser = () => {
   const userStr = localStorage.getItem('currentUser') || sessionStorage.getItem('currentUser');
@@ -72,29 +80,31 @@ function App() {
       <BackgroundLayer />
       <Toaster position="top-right" toastOptions={{ className: 'glass-card-premium fw-bold text-dark' }} />
       <BrowserRouter>
-        <Routes>
-          {/* Public Landing Page */}
-          <Route path="/" element={<LandingPage />} />
-          
-          {/* Public authentication pages - Always accessible for credential entry */}
-          <Route path="/register" element={<RegistrationPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          
-          {/* Dedicated Admin Portal Route */}
-          <Route path="/admin" element={<AdminRoute><AdminPage /></AdminRoute>} />
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            {/* Public Landing Page */}
+            <Route path="/" element={<LandingPage />} />
+            
+            {/* Public authentication pages - Always accessible for credential entry */}
+            <Route path="/register" element={<RegistrationPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            
+            {/* Dedicated Admin Portal Route */}
+            <Route path="/admin" element={<AdminRoute><AdminPage /></AdminRoute>} />
 
-          {/* Protected Dashboard Routes - Strict Role Isolation */}
-          <Route path="/buyer" element={<BuyerRoute><BuyerPage /></BuyerRoute>} />
-          <Route path="/profile/buyer" element={<BuyerRoute><BuyyersProfile /></BuyerRoute>} />
-          
-          <Route path="/seller" element={<SellerRoute><SellerPage /></SellerRoute>} />
-          <Route path="/profile/seller" element={<SellerRoute><SellersProfile /></SellerRoute>} />
-          
-          <Route path="/orders" element={<ProtectedRoute><MyOrder /></ProtectedRoute>} />
+            {/* Protected Dashboard Routes - Strict Role Isolation */}
+            <Route path="/buyer" element={<BuyerRoute><BuyerPage /></BuyerRoute>} />
+            <Route path="/profile/buyer" element={<BuyerRoute><BuyyersProfile /></BuyerRoute>} />
+            
+            <Route path="/seller" element={<SellerRoute><SellerPage /></SellerRoute>} />
+            <Route path="/profile/seller" element={<SellerRoute><SellersProfile /></SellerRoute>} />
+            
+            <Route path="/orders" element={<ProtectedRoute><MyOrder /></ProtectedRoute>} />
 
-          {/* 404 Not Found */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+            {/* 404 Not Found */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </>
   );

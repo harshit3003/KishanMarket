@@ -634,7 +634,7 @@ const SellerPage = () => {
     <>
       
       {/* Fixed Premium Navbar */}
-      <nav className="navbar">
+      <nav className="navbar" style={{ position: 'relative', zIndex: 999999 }}>
         <div className="container d-flex justify-content-between align-items-center">
           <Link className="navbar-brand fw-bold text-decoration-none" to="/seller">
             <i className="fas fa-seedling me-2"></i>Kishan<span>Market</span>
@@ -668,7 +668,7 @@ const SellerPage = () => {
               )}
             </div>
 
-            <div className="profile-container position-relative">
+            <div className="profile-container position-relative" style={{ zIndex: 999999 }}>
               <i className="fas fa-user-circle fa-2x profile-icon" id="profileIcon" style={{ cursor: 'pointer' }} onClick={toggleProfile}></i>
               <div className="profile-dropdown" id="profileDropdown" style={{ display: isProfileOpen ? 'block' : 'none' }}>
                 <div className="dropdown-user-info">

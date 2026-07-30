@@ -11,7 +11,10 @@ const getSocketUrl = () => {
 
 const socket = io(getSocketUrl(), {
   transports: ['websocket', 'polling'],
-  autoConnect: true
+  autoConnect: true,
+  auth: {
+    token: localStorage.getItem('token') || sessionStorage.getItem('token') || ''
+  }
 });
 
 export default socket;

@@ -506,7 +506,7 @@ const BuyerPage = () => {
   return (
     <>
 
-      <nav className="navbar navbar-dark shadow-sm mb-4">
+      <nav className="navbar navbar-dark shadow-sm mb-4" style={{ position: 'relative', zIndex: 999999 }}>
         <div className="container d-flex justify-content-between align-items-center">
           <Link className="navbar-brand fw-bold" to="/buyer"><i className="fas fa-seedling me-2"></i>Kishan<span>Market</span></Link>
 
@@ -529,7 +529,7 @@ const BuyerPage = () => {
               )}
             </div>
 
-            <div className="profile-container position-relative">
+            <div className="profile-container position-relative" style={{ zIndex: 999999 }}>
               <i className="fas fa-user-circle fa-2x text-white" id="profileIcon" style={{ cursor: 'pointer' }} onClick={toggleProfile}></i>
               <div className="profile-dropdown shadow-lg" id="profileDropdown" style={{ display: isProfileOpen ? 'block' : 'none' }}>
                 <div className="dropdown-user-info">

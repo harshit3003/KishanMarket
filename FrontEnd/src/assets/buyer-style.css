@@ -14,14 +14,19 @@ body {
 
 /* Dropdown */
 .profile-dropdown {
-    position: absolute; top: 55px; right: 0; background: white; width: 230px;
-    border-radius: 12px; padding: 10px 0; z-index: 1000; display: none; box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    position: absolute; top: 55px; right: 0; background: #ffffff !important; width: 250px;
+    border-radius: 16px; padding: 12px 0; z-index: 999999 !important; display: none;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(0, 0, 0, 0.08) !important;
+    border: 1px solid #e2e8f0 !important;
 }
 .profile-dropdown.active { display: block; }
-.dropdown-links-list { list-style: none; padding: 0; margin: 0; }
-.dropdown-links-list li a { display: flex; align-items: center; padding: 10px 20px; color: #333; text-decoration: none; font-size: 0.9rem; }
-.dropdown-links-list li a i { width: 25px; margin-right: 12px; color: var(--success); }
-.dropdown-links-list li a:hover { background: #f8f9fa; color: var(--success); }
+.dropdown-user-info { padding: 10px 20px; border-bottom: 1px solid #f1f5f9; background: #f8fafc; border-top-left-radius: 16px; border-top-right-radius: 16px; }
+.dropdown-user-info h6 { color: #0f172a !important; font-weight: 700 !important; margin: 0; font-size: 0.95rem; }
+.dropdown-user-info small { color: #64748b !important; font-size: 0.78rem; }
+.dropdown-links-list { list-style: none; padding: 4px 0 0 0; margin: 0; }
+.dropdown-links-list li a { display: flex !important; align-items: center !important; padding: 10px 20px !important; color: #1e293b !important; text-decoration: none !important; font-size: 0.9rem !important; font-weight: 600 !important; transition: all 0.2s ease !important; }
+.dropdown-links-list li a i { width: 25px; margin-right: 12px; color: var(--success); font-size: 1rem; }
+.dropdown-links-list li a:hover { background: #f1f5f9 !important; color: #059669 !important; transform: translateX(4px); }
 
 /* Trending Ticker */
 .trending-ticker-container { background: rgba(27, 67, 50, 0.95); display: flex; align-items: center; border-radius: 12px; overflow: hidden; }

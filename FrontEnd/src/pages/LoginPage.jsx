@@ -43,6 +43,10 @@ const LoginPage = () => {
             sessionStorage.setItem('currentUser', JSON.stringify(foundUser));
             localStorage.setItem('displayUserName', foundUser.name);
             localStorage.setItem('currentUser', JSON.stringify(foundUser));
+            if (data.token) {
+              localStorage.setItem('token', data.token);
+              sessionStorage.setItem('token', data.token);
+            }
 
             if (data.adminToken || foundUser.role === 'admin') {
               sessionStorage.setItem('adminToken', data.adminToken || 'KM_ADMIN_AUTHORIZED_TOKEN_2026');

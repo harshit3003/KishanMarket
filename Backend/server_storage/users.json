@@ -1,19 +1,35 @@
 [
   {
-    "user_id": null,
+    "user_id": "KM-S-1004",
     "name": "harshit",
     "mobile": "1111111111",
     "location": "Bānda, Uttar Pradesh",
     "role": "seller",
-    "password": "1111111111"
+    "password": "$2b$12$NIMusLBGaAdD9XAyYFYpN.FMv/bMqB9OA2030zXqdUEekOrQHYwc6",
+    "profile_photo": null,
+    "bio": null,
+    "business_name": null,
+    "address": null,
+    "state": null,
+    "district": null,
+    "pincode": null,
+    "crops_specialty": null
   },
   {
-    "user_id": null,
+    "user_id": "KM-B-1005",
     "name": "Vyapari",
     "mobile": "2222222222",
     "location": "Bānda, Uttar Pradesh",
     "role": "buyer",
-    "password": "2222222222"
+    "password": "$2b$12$rsgWbSLvVaAt78YfsJVru.QLBGFqjJqixgP9.Ft/fA7oVk.xfAfbq",
+    "profile_photo": null,
+    "bio": null,
+    "business_name": null,
+    "address": null,
+    "state": null,
+    "district": null,
+    "pincode": null,
+    "crops_specialty": null
   },
   {
     "user_id": "KM-S-1003",
@@ -21,6 +37,30 @@
     "mobile": "8736876695",
     "location": "Bānda, Uttar Pradesh",
     "role": "seller",
-    "password": "123harshit"
+    "password": "123harshit",
+    "profile_photo": null,
+    "bio": null,
+    "business_name": null,
+    "address": null,
+    "state": null,
+    "district": null,
+    "pincode": null,
+    "crops_specialty": null
+  },
+  {
+    "user_id": "KM-ADM-0001",
+    "name": "KishanMarket SuperAdmin",
+    "mobile": "0000000000",
+    "location": "HQ Command Center",
+    "role": "admin",
+    "password": "KishanAdmin@2026",
+    "profile_photo": null,
+    "bio": null,
+    "business_name": "Platform Governance HQ",
+    "address": null,
+    "state": null,
+    "district": null,
+    "pincode": null,
+    "crops_specialty": "System Administration"
   }
 ]

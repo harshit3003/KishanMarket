@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1,
+    "room_id": "room_c974_s_rajeshgupta_b_2222222222",
+    "sender": "buyer",
+    "text": "I would like to make a counter-offer: ₹1900/q for the entire lot.",
+    "time": "03:38 pm",
+    "created_at": "2026-07-30 10:08:05",
+    "sender_name": "Vyapari",
+    "sender_mobile": "2222222222",
+    "receiver_mobile": "",
+    "crop_name": "Bajra",
+    "crop_id": 974
+  }
+]

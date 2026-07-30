@@ -4,6 +4,10 @@ const fs = require('fs');
 const path = require('path');
 const { Server } = require('socket.io');
 const http = require('http');
+const compression = require('compression');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const rateLimit = require('express-rate-limit');
 const { getDbConnection, initDb, saveTableToFile } = require('./database');
 
 const app = express();
@@ -16,9 +20,53 @@ const io = new Server(server, {
 });
 
 const PORT = process.env.PORT || 5000;
+const JWT_SECRET = process.env.JWT_SECRET || 'KishanMarket_Secure_JWT_Secret_2026_Prod';
 
+// Enable HTTP Response Compression
+app.use(compression());
 app.use(cors());
 app.use(express.json());
+
+// API Rate Limiter for Login/Register
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 50,
+  message: { error: 'Too many authentication attempts. Please try again after 15 minutes.' }
+});
+
+app.use('/api/login', authLimiter);
+app.use('/api/register', authLimiter);
+
+// JWT Middleware
+const authenticateToken = (req, res, next) => {
+  const authHeader = req.headers['authorization'] || req.headers['x-access-token'];
+  const token = authHeader && authHeader.startsWith('Bearer ') ? authHeader.split(' ')[1] : authHeader;
+
+  if (!token) {
+    return res.status(401).json({ error: 'Access Denied: Authentication token required' });
+  }
+
+  jwt.verify(token, JWT_SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(403).json({ error: 'Access Denied: Invalid or expired token' });
+    }
+    req.user = decoded;
+    next();
+  });
+};
+
+// Socket.io JWT Authentication Middleware
+io.use((socket, next) => {
+  const token = socket.handshake.auth?.token || socket.handshake.headers?.authorization;
+  if (!token) return next(); // Allow fallback for guest features
+  const cleanToken = token.startsWith('Bearer ') ? token.split(' ')[1] : token;
+  jwt.verify(cleanToken, JWT_SECRET, (err, decoded) => {
+    if (!err && decoded) {
+      socket.user = decoded;
+    }
+    next();
+  });
+});
 
 // Socket.io WebSockets for Real-time Chat
 const roomHistory = {};
@@ -2391,14 +2439,28 @@ app.post('/api/register', async (req, res) => {
     const nextCount = (countRow ? countRow.count : 0) + 1;
     const user_id = role === 'seller' ? `KM-S-${1000 + nextCount}` : `KM-B-${1000 + nextCount}`;
 
+    // Secure Password Hashing with Bcrypt
+    const hashedPassword = await bcrypt.hash(cleanPassword, 12);
+
     await database.run(
       'INSERT INTO Users (user_id, name, mobile, location, role, password) VALUES (?, ?, ?, ?, ?, ?)',
-      [user_id, cleanName, cleanMobile, cleanLoc, role, cleanPassword]
+      [user_id, cleanName, cleanMobile, cleanLoc, role, hashedPassword]
     );
 
     await syncUsers();
 
-    res.status(201).json({ message: 'User registered successfully', user: { user_id, name: cleanName, mobile: cleanMobile, role, location: cleanLoc } });
+    // Issue JWT Token upon Registration
+    const token = jwt.sign(
+      { user_id, name: cleanName, mobile: cleanMobile, role, location: cleanLoc },
+      JWT_SECRET,
+      { expiresIn: '7d' }
+    );
+
+    res.status(201).json({
+      message: 'User registered successfully',
+      token,
+      user: { user_id, name: cleanName, mobile: cleanMobile, role, location: cleanLoc }
+    });
   } catch (e) {
     console.error("DB Error:", e);
     res.status(500).json({ error: 'Failed to save user' });
@@ -2413,7 +2475,7 @@ app.post('/api/login', async (req, res) => {
   const rawMobile = mobile.toString().trim();
   const cleanPassword = password.toString().trim();
 
-  // SuperAdmin Login Bypass / Direct Check
+  // SuperAdmin Login Bypass / Direct Check with Signed JWT Token
   if ((cleanMobile === '0000000000' || cleanMobile === '9999999999' || rawMobile === 'admin') && cleanPassword === 'KishanAdmin@2026') {
     const adminUser = {
       user_id: 'KM-ADM-0001',
@@ -2422,24 +2484,51 @@ app.post('/api/login', async (req, res) => {
       role: 'admin',
       location: 'HQ Command Center'
     };
-    return res.status(200).json({ message: 'Admin login successful', user: adminUser, adminToken: 'KM_ADMIN_AUTHORIZED_TOKEN_2026' });
+    const adminToken = jwt.sign(adminUser, JWT_SECRET, { expiresIn: '7d' });
+    return res.status(200).json({ message: 'Admin login successful', token: adminToken, user: adminUser, adminToken: 'KM_ADMIN_AUTHORIZED_TOKEN_2026' });
   }
 
   try {
     const database = await ensureDb();
     const foundUser = await database.get(
-      'SELECT * FROM Users WHERE (TRIM(mobile) = ? OR TRIM(mobile) = ?) AND TRIM(password) = ?',
-      [cleanMobile, rawMobile, cleanPassword]
+      'SELECT * FROM Users WHERE TRIM(mobile) = ? OR TRIM(mobile) = ?',
+      [cleanMobile, rawMobile]
     );
+
     if (foundUser) {
+      // Secure Password Verification (Supports Bcrypt + Automatic Legacy Plaintext Migration)
+      let isMatch = false;
+      if (foundUser.password && (foundUser.password.startsWith('$2b$') || foundUser.password.startsWith('$2a$'))) {
+        isMatch = await bcrypt.compare(cleanPassword, foundUser.password);
+      } else {
+        isMatch = (foundUser.password === cleanPassword);
+        if (isMatch) {
+          const newHashed = await bcrypt.hash(cleanPassword, 12);
+          await database.run('UPDATE Users SET password = ? WHERE id = ?', [newHashed, foundUser.id]);
+        }
+      }
+
+      if (!isMatch) {
+        return res.status(401).json({ error: 'Invalid credentials. Please check your mobile number and password.' });
+      }
+
       if (!foundUser.user_id) {
         const genId = foundUser.role === 'seller' ? `KM-S-${1000 + foundUser.id}` : `KM-B-${1000 + foundUser.id}`;
         await database.run('UPDATE Users SET user_id = ? WHERE id = ?', [genId, foundUser.id]);
         foundUser.user_id = genId;
         await syncUsers();
       }
-      const { password, ...userWithoutPassword } = foundUser;
-      res.status(200).json({ message: 'Login successful', user: userWithoutPassword });
+
+      const { password: pwd, ...userWithoutPassword } = foundUser;
+
+      // Issue Signed JWT Auth Token
+      const token = jwt.sign(
+        { id: foundUser.id, user_id: foundUser.user_id, name: foundUser.name, mobile: foundUser.mobile, role: foundUser.role },
+        JWT_SECRET,
+        { expiresIn: '7d' }
+      );
+
+      res.status(200).json({ message: 'Login successful', token, user: userWithoutPassword });
     } else {
       res.status(401).json({ error: 'Invalid credentials. Please check your mobile number and password.' });
     }
