@@ -184,70 +184,129 @@ const AdminPage = () => {
 
       {/* Main Admin Dashboard Container */}
       <div className="container mt-4">
-        {/* Metrics Summary Ribbon */}
+        {/* Metrics Summary Ribbon with High-Contrast Crisp Colors */}
         <div className="row g-3 mb-4">
           <div className="col-lg-2 col-md-4 col-6">
-            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)' }}>
-              <small className="text-uppercase fw-bold text-muted d-block mb-1" style={{ fontSize: '0.7rem' }}>REGISTERED USERS</small>
-              <h3 className="fw-bold m-0 text-info">{overview.activeUsers}</h3>
+            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: '#1e293b', borderColor: '#334155' }}>
+              <small className="text-uppercase fw-bold d-block mb-1" style={{ color: '#cbd5e1', fontSize: '0.72rem', letterSpacing: '0.5px' }}>REGISTERED USERS</small>
+              <h3 className="fw-bold m-0" style={{ color: '#38bdf8' }}>{overview.activeUsers}</h3>
             </div>
           </div>
           <div className="col-lg-2 col-md-4 col-6">
-            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)' }}>
-              <small className="text-uppercase fw-bold text-muted d-block mb-1" style={{ fontSize: '0.7rem' }}>CROP LISTINGS</small>
-              <h3 className="fw-bold m-0 text-success">{overview.activeCrops}</h3>
+            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: '#1e293b', borderColor: '#334155' }}>
+              <small className="text-uppercase fw-bold d-block mb-1" style={{ color: '#cbd5e1', fontSize: '0.72rem', letterSpacing: '0.5px' }}>CROP LISTINGS</small>
+              <h3 className="fw-bold m-0" style={{ color: '#4ade80' }}>{overview.activeCrops}</h3>
             </div>
           </div>
           <div className="col-lg-2 col-md-4 col-6">
-            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)' }}>
-              <small className="text-uppercase fw-bold text-muted d-block mb-1" style={{ fontSize: '0.7rem' }}>TOTAL ORDERS</small>
-              <h3 className="fw-bold m-0 text-warning">{overview.totalOrders}</h3>
+            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: '#1e293b', borderColor: '#334155' }}>
+              <small className="text-uppercase fw-bold d-block mb-1" style={{ color: '#cbd5e1', fontSize: '0.72rem', letterSpacing: '0.5px' }}>TOTAL ORDERS</small>
+              <h3 className="fw-bold m-0" style={{ color: '#fbbf24' }}>{overview.totalOrders}</h3>
             </div>
           </div>
           <div className="col-lg-2 col-md-4 col-6">
-            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)' }}>
-              <small className="text-uppercase fw-bold text-muted d-block mb-1" style={{ fontSize: '0.7rem' }}>GMV VALUATION</small>
-              <h3 className="fw-bold m-0 text-emerald-400" style={{ color: '#34d399' }}>₹{overview.totalGmv ? overview.totalGmv.toLocaleString('en-IN') : 0}</h3>
+            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: '#1e293b', borderColor: '#334155' }}>
+              <small className="text-uppercase fw-bold d-block mb-1" style={{ color: '#cbd5e1', fontSize: '0.72rem', letterSpacing: '0.5px' }}>GMV VALUATION</small>
+              <h3 className="fw-bold m-0" style={{ color: '#34d399' }}>₹{overview.totalGmv ? overview.totalGmv.toLocaleString('en-IN') : 0}</h3>
             </div>
           </div>
           <div className="col-lg-2 col-md-4 col-6">
-            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)' }}>
-              <small className="text-uppercase fw-bold text-muted d-block mb-1" style={{ fontSize: '0.7rem' }}>PENDING REPORTS</small>
-              <h3 className="fw-bold m-0 text-danger">{overview.pendingReports}</h3>
+            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: '#1e293b', borderColor: '#334155' }}>
+              <small className="text-uppercase fw-bold d-block mb-1" style={{ color: '#cbd5e1', fontSize: '0.72rem', letterSpacing: '0.5px' }}>PENDING REPORTS</small>
+              <h3 className="fw-bold m-0" style={{ color: '#f87171' }}>{overview.pendingReports}</h3>
             </div>
           </div>
           <div className="col-lg-2 col-md-4 col-6">
-            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.1)' }}>
-              <small className="text-uppercase fw-bold text-muted d-block mb-1" style={{ fontSize: '0.7rem' }}>OPEN TICKETS</small>
-              <h3 className="fw-bold m-0 text-primary">{overview.openTickets}</h3>
+            <div className="p-3 rounded-4 shadow-sm text-center border" style={{ background: '#1e293b', borderColor: '#334155' }}>
+              <small className="text-uppercase fw-bold d-block mb-1" style={{ color: '#cbd5e1', fontSize: '0.72rem', letterSpacing: '0.5px' }}>OPEN TICKETS</small>
+              <h3 className="fw-bold m-0" style={{ color: '#60a5fa' }}>{overview.openTickets}</h3>
             </div>
           </div>
         </div>
 
-        {/* Tab Navigation Pill Bar */}
-        <div className="p-2 rounded-4 mb-4 border d-flex gap-2 flex-wrap" style={{ background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(255,255,255,0.1)' }}>
-          <button className={`btn rounded-3 fw-bold px-4 ${activeTab === 'overview' ? 'btn-success text-white shadow' : 'btn-outline-light text-slate-300'}`} onClick={() => setActiveTab('overview')}>
+        {/* Tab Navigation Bar with High Contrast Buttons */}
+        <div className="p-2 rounded-4 mb-4 border d-flex gap-2 flex-wrap" style={{ background: '#1e293b', borderColor: '#334155' }}>
+          <button
+            className="btn rounded-3 fw-bold px-4 transition-all"
+            style={{
+              background: activeTab === 'overview' ? '#059669' : 'rgba(255,255,255,0.06)',
+              color: '#ffffff',
+              border: activeTab === 'overview' ? '1px solid #10b981' : '1px solid rgba(255,255,255,0.15)',
+              boxShadow: activeTab === 'overview' ? '0 4px 12px rgba(16,185,129,0.3)' : 'none'
+            }}
+            onClick={() => setActiveTab('overview')}
+          >
             📊 Overview & Metrics
           </button>
-          <button className={`btn rounded-3 fw-bold px-4 ${activeTab === 'users' ? 'btn-success text-white shadow' : 'btn-outline-light text-slate-300'}`} onClick={() => setActiveTab('users')}>
+
+          <button
+            className="btn rounded-3 fw-bold px-4 transition-all"
+            style={{
+              background: activeTab === 'users' ? '#059669' : 'rgba(255,255,255,0.06)',
+              color: '#ffffff',
+              border: activeTab === 'users' ? '1px solid #10b981' : '1px solid rgba(255,255,255,0.15)',
+              boxShadow: activeTab === 'users' ? '0 4px 12px rgba(16,185,129,0.3)' : 'none'
+            }}
+            onClick={() => setActiveTab('users')}
+          >
             👥 Registered Users ({overview.activeUsers})
           </button>
-          <button className={`btn rounded-3 fw-bold px-4 ${activeTab === 'listings' ? 'btn-success text-white shadow' : 'btn-outline-light text-slate-300'}`} onClick={() => setActiveTab('listings')}>
+
+          <button
+            className="btn rounded-3 fw-bold px-4 transition-all"
+            style={{
+              background: activeTab === 'listings' ? '#059669' : 'rgba(255,255,255,0.06)',
+              color: '#ffffff',
+              border: activeTab === 'listings' ? '1px solid #10b981' : '1px solid rgba(255,255,255,0.15)',
+              boxShadow: activeTab === 'listings' ? '0 4px 12px rgba(16,185,129,0.3)' : 'none'
+            }}
+            onClick={() => setActiveTab('listings')}
+          >
             🌾 Crop Listings ({overview.activeCrops})
           </button>
-          <button className={`btn rounded-3 fw-bold px-4 ${activeTab === 'orders' ? 'btn-success text-white shadow' : 'btn-outline-light text-slate-300'}`} onClick={() => setActiveTab('orders')}>
+
+          <button
+            className="btn rounded-3 fw-bold px-4 transition-all"
+            style={{
+              background: activeTab === 'orders' ? '#059669' : 'rgba(255,255,255,0.06)',
+              color: '#ffffff',
+              border: activeTab === 'orders' ? '1px solid #10b981' : '1px solid rgba(255,255,255,0.15)',
+              boxShadow: activeTab === 'orders' ? '0 4px 12px rgba(16,185,129,0.3)' : 'none'
+            }}
+            onClick={() => setActiveTab('orders')}
+          >
             🚚 System Orders ({overview.totalOrders})
           </button>
-          <button className={`btn rounded-3 fw-bold px-4 ${activeTab === 'reports' ? 'btn-success text-white shadow' : 'btn-outline-light text-slate-300'}`} onClick={() => setActiveTab('reports')}>
+
+          <button
+            className="btn rounded-3 fw-bold px-4 transition-all"
+            style={{
+              background: activeTab === 'reports' ? '#059669' : 'rgba(255,255,255,0.06)',
+              color: '#ffffff',
+              border: activeTab === 'reports' ? '1px solid #10b981' : '1px solid rgba(255,255,255,0.15)',
+              boxShadow: activeTab === 'reports' ? '0 4px 12px rgba(16,185,129,0.3)' : 'none'
+            }}
+            onClick={() => setActiveTab('reports')}
+          >
             🚩 Flagged Reports ({overview.pendingReports})
           </button>
-          <button className={`btn rounded-3 fw-bold px-4 ${activeTab === 'tickets' ? 'btn-success text-white shadow' : 'btn-outline-light text-slate-300'}`} onClick={() => setActiveTab('tickets')}>
+
+          <button
+            className="btn rounded-3 fw-bold px-4 transition-all"
+            style={{
+              background: activeTab === 'tickets' ? '#059669' : 'rgba(255,255,255,0.06)',
+              color: '#ffffff',
+              border: activeTab === 'tickets' ? '1px solid #10b981' : '1px solid rgba(255,255,255,0.15)',
+              boxShadow: activeTab === 'tickets' ? '0 4px 12px rgba(16,185,129,0.3)' : 'none'
+            }}
+            onClick={() => setActiveTab('tickets')}
+          >
             🎫 Support Queue ({overview.openTickets})
           </button>
         </div>
 
         {/* Tab Content Panel */}
-        <div className="p-4 rounded-4 shadow-lg border" style={{ background: 'rgba(15, 23, 42, 0.8)', backdropFilter: 'blur(16px)', borderColor: 'rgba(255,255,255,0.1)' }}>
+        <div className="p-4 rounded-4 shadow-lg border" style={{ background: '#1e293b', borderColor: '#334155' }}>
           {isLoading ? (
             <div className="text-center py-5">
               <div className="spinner-border text-success" role="status"></div>
@@ -457,8 +516,10 @@ const AdminPage = () => {
                 <div>
                   <h5 className="fw-bold text-white mb-3"><i className="fas fa-flag text-danger me-2"></i> User & Listing Reports Queue</h5>
                   {reports.length === 0 ? (
-                    <div className="text-center py-4 bg-dark bg-opacity-50 rounded border border-secondary">
-                      <small className="text-muted">No reports submitted yet.</small>
+                    <div className="text-center py-5 rounded-4 border" style={{ background: '#0f172a', borderColor: '#334155' }}>
+                      <i className="fas fa-check-circle fs-2 mb-2 d-block" style={{ color: '#34d399' }}></i>
+                      <h6 className="fw-bold text-white m-0">No Reports Submitted</h6>
+                      <small style={{ color: '#94a3b8' }}>All marketplace crop listings and registered user accounts are currently clean.</small>
                     </div>
                   ) : (
                     <div className="d-flex flex-column gap-3">
