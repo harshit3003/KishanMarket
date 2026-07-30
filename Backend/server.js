@@ -2676,11 +2676,13 @@ app.get('/api/analytics/buyer', async (req, res) => {
   }
 });
 
-// SPA Fallback for React Router (Express 5 Compatible)
-if (fs.existsSync(distDir)) {
+// Serve Production Built Frontend Assets from FrontEnd/dist
+const distPath = path.join(__dirname, '../FrontEnd/dist');
+if (fs.existsSync(distPath)) {
+  app.use(express.static(distPath, { maxAge: '1d' }));
   app.use((req, res, next) => {
     if (req.method === 'GET' && !req.path.startsWith('/api') && !req.path.startsWith('/socket.io')) {
-      return res.sendFile(path.join(distDir, 'index.html'));
+      return res.sendFile(path.join(distPath, 'index.html'));
     }
     next();
   });
