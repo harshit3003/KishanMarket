@@ -1,0 +1,110 @@
+/* SuperAdmin High-Contrast Scoped Theme */
+.admin-page-root {
+  min-height: 100vh;
+  background: #0b0f19 !important;
+  color: #f8fafc !important;
+  font-family: 'Poppins', 'Inter', sans-serif !important;
+  padding-bottom: 60px;
+}
+
+.admin-metric-card {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  border-radius: 16px !important;
+  padding: 16px !important;
+  text-align: center !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25) !important;
+}
+
+.admin-metric-label {
+  color: #f1f5f9 !important; /* Pure Crisp White/Silver - 100% VISIBLE! */
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.6px !important;
+  text-transform: uppercase !important;
+  display: block !important;
+  margin-bottom: 6px !important;
+}
+
+.admin-metric-value-users { color: #38bdf8 !important; font-weight: 800 !important; margin: 0; }
+.admin-metric-value-crops { color: #4ade80 !important; font-weight: 800 !important; margin: 0; }
+.admin-metric-value-orders { color: #fbbf24 !important; font-weight: 800 !important; margin: 0; }
+.admin-metric-value-gmv { color: #34d399 !important; font-weight: 800 !important; margin: 0; }
+.admin-metric-value-reports { color: #f87171 !important; font-weight: 800 !important; margin: 0; }
+.admin-metric-value-tickets { color: #818cf8 !important; font-weight: 800 !important; margin: 0; }
+
+.admin-tab-bar {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  border-radius: 16px !important;
+  padding: 10px !important;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.admin-nav-tab {
+  background: #334155 !important;
+  color: #ffffff !important;
+  border: 1px solid #475569 !important;
+  font-weight: 700 !important;
+  padding: 10px 20px !important;
+  border-radius: 10px !important;
+  transition: all 0.2s ease !important;
+  font-size: 0.9rem !important;
+}
+
+.admin-nav-tab:hover {
+  background: #475569 !important;
+  color: #ffffff !important;
+}
+
+.admin-nav-tab.active {
+  background: #059669 !important;
+  color: #ffffff !important;
+  border-color: #10b981 !important;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4) !important;
+}
+
+.admin-content-panel {
+  background: #0f172a !important;
+  border: 1px solid #334155 !important;
+  border-radius: 20px !important;
+  padding: 28px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+}
+
+.admin-panel-card {
+  background: #1e293b !important;
+  border: 1px solid #334155 !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+}
+
+.admin-panel-heading {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  margin-bottom: 12px !important;
+}
+
+.admin-panel-subtext {
+  color: #e2e8f0 !important; /* Crisp high-contrast light slate text */
+  font-size: 0.92rem !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
+}
+
+.admin-list-item {
+  color: #f1f5f9 !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  margin-bottom: 10px !important;
+}
+
+.admin-table-header {
+  background: #334155 !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
