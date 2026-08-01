@@ -4,3 +4,7 @@ FrontEnd/dist/
 Backend/database.sqlite
 .DS_Store
 *.log
+.env
+*.env
+Backend/.env
+!.env.example
