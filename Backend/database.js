@@ -670,36 +670,37 @@ async function initDb() {
   }
 
     // Seed Seasonal Crops if table is empty
-    const seasonalCount = await db.get('SELECT COUNT(*) as cnt FROM SeasonalCrops');
-    if (seasonalCount && seasonalCount.cnt === 0) {
-      const defaultSeasonal = [
-        // Rabi (Oct - Mar: Months 10,11,12,1,2,3)
-        { season: 'Rabi', months: '10,11,12,1,2,3', region: 'North', crop_name: 'Gehu (Wheat)', hindi_name: 'गेहूं', tips: 'High demand season. Top buyers procurement period.' },
-        { season: 'Rabi', months: '10,11,12,1,2,3', region: 'North', crop_name: 'Sarson (Mustard)', hindi_name: 'सरसों', tips: 'Excellent oilseed prices during winter harvesting.' },
-        { season: 'Rabi', months: '10,11,12,1,2,3', region: 'North', crop_name: 'Chana (Gram)', hindi_name: 'चना', tips: 'Pulses demand spikes during winter months.' },
-        { season: 'Rabi', months: '10,11,12,1,2,3', region: 'North', crop_name: 'Matar (Peas)', hindi_name: 'मटर', tips: 'Fresh green peas peak market rate.' },
+    try {
+      const seasonalCount = await db.get('SELECT COUNT(*) as cnt FROM SeasonalCrops');
+      if (seasonalCount && seasonalCount.cnt === 0) {
+        const defaultSeasonal = [
+          // Rabi (Oct - Mar: Months 10,11,12,1,2,3)
+          { season: 'Rabi', months: '10,11,12,1,2,3', region: 'North', crop_name: 'Gehu (Wheat)', hindi_name: 'गेहूं', tips: 'High demand season. Top buyers procurement period.' },
+          { season: 'Rabi', months: '10,11,12,1,2,3', region: 'North', crop_name: 'Sarson (Mustard)', hindi_name: 'सरसों', tips: 'Excellent oilseed prices during winter harvesting.' },
+          { season: 'Rabi', months: '10,11,12,1,2,3', region: 'North', crop_name: 'Chana (Gram)', hindi_name: 'चना', tips: 'Pulses demand spikes during winter months.' },
+          { season: 'Rabi', months: '10,11,12,1,2,3', region: 'North', crop_name: 'Matar (Peas)', hindi_name: 'मटर', tips: 'Fresh green peas peak market rate.' },
 
-        // Kharif (Jun - Oct: Months 6,7,8,9,10)
-        { season: 'Kharif', months: '6,7,8,9,10', region: 'North', crop_name: 'Dhan (Paddy/Rice)', hindi_name: 'धान', tips: 'Monsoon harvesting. High wholesale buyer demand.' },
-        { season: 'Kharif', months: '6,7,8,9,10', region: 'North', crop_name: 'Makka (Maize)', hindi_name: 'मक्का', tips: 'Feed and industrial starch demand.' },
-        { season: 'Kharif', months: '6,7,8,9,10', region: 'North', crop_name: 'Kapaas (Cotton)', hindi_name: 'कपास', tips: 'Textile procurement active.' },
-        { season: 'Kharif', months: '6,7,8,9,10', region: 'North', crop_name: 'Moong Dal', hindi_name: 'मूंग', tips: 'Short duration cash crop.' },
+          // Kharif (Jun - Oct: Months 6,7,8,9,10)
+          { season: 'Kharif', months: '6,7,8,9,10', region: 'North', crop_name: 'Dhan (Paddy/Rice)', hindi_name: 'धान', tips: 'Monsoon harvesting. High wholesale buyer demand.' },
+          { season: 'Kharif', months: '6,7,8,9,10', region: 'North', crop_name: 'Makka (Maize)', hindi_name: 'मक्का', tips: 'Feed and industrial starch demand.' },
+          { season: 'Kharif', months: '6,7,8,9,10', region: 'North', crop_name: 'Kapaas (Cotton)', hindi_name: 'कपास', tips: 'Textile procurement active.' },
+          { season: 'Kharif', months: '6,7,8,9,10', region: 'North', crop_name: 'Moong Dal', hindi_name: 'मूंग', tips: 'Short duration cash crop.' },
 
-        // Zaid (Mar - Jun: Months 3,4,5,6)
-        { season: 'Zaid', months: '3,4,5,6', region: 'North', crop_name: 'Tarbooz (Watermelon)', hindi_name: 'तरबूज', tips: 'Peak summer fruit demand.' },
-        { season: 'Zaid', months: '3,4,5,6', region: 'North', crop_name: 'Kheera (Cucumber)', hindi_name: 'खीरा', tips: 'Quick yield summer vegetable.' }
-      ];
+          // Zaid (Mar - Jun: Months 3,4,5,6)
+          { season: 'Zaid', months: '3,4,5,6', region: 'North', crop_name: 'Tarbooz (Watermelon)', hindi_name: 'तरबूज', tips: 'Peak summer fruit demand.' },
+          { season: 'Zaid', months: '3,4,5,6', region: 'North', crop_name: 'Kheera (Cucumber)', hindi_name: 'खीरा', tips: 'Quick yield summer vegetable.' }
+        ];
 
-      for (const sc of defaultSeasonal) {
-        await db.run(
-          'INSERT INTO SeasonalCrops (season, months, region, crop_name, hindi_name, tips) VALUES (?, ?, ?, ?, ?, ?)',
-          [sc.season, sc.months, sc.region, sc.crop_name, sc.hindi_name, sc.tips]
-        );
+        for (const sc of defaultSeasonal) {
+          await db.run(
+            'INSERT INTO SeasonalCrops (season, months, region, crop_name, hindi_name, tips) VALUES (?, ?, ?, ?, ?, ?)',
+            [sc.season, sc.months, sc.region, sc.crop_name, sc.hindi_name, sc.tips]
+          );
+        }
       }
+    } catch (err) {
+      console.error("Seasonal crops seeding warning:", err);
     }
-  } catch (err) {
-    console.error("Hydration warning:", err);
-  }
 
   console.log('Database tables verified/created successfully.');
   return db;
