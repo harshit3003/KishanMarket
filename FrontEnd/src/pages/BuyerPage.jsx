@@ -459,35 +459,18 @@ const BuyerPage = () => {
       return;
     }
     const exists = watchlist.find(c => c.id === crop.id);
-    const previousWatchlist = [...watchlist];
-
     if (exists) {
-      // Optimistic UI Update: Remove immediately
       setWatchlist(watchlist.filter(c => c.id !== crop.id));
-      toast.success(`${crop.name} removed from watchlist.`);
-      try {
-        const res = await fetch(`/api/watchlist/${crop.id}?mobile=${currentUser.mobile}`, { method: 'DELETE' });
-        if (!res.ok) throw new Error();
-      } catch (e) {
-        // Rollback on server error
-        setWatchlist(previousWatchlist);
-        toast.error('Failed to sync watchlist update.');
-      }
+      await fetch(`/api/watchlist/${crop.id}?mobile=${currentUser.mobile}`, { method: 'DELETE' });
     } else {
-      // Optimistic UI Update: Add immediately
-      setWatchlist([...watchlist, crop]);
-      toast.success(`${crop.name} saved to your watchlist!`);
-      try {
-        const res = await fetch('/api/watchlist', {
+      if (window.confirm("Is crop ko apni watchlist mein daalna chahte hain?")) {
+        toast.success(`${crop.name} added to watchlist!`);
+        setWatchlist([...watchlist, crop]);
+        await fetch('/api/watchlist', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ buyer_mobile: currentUser.mobile, crop_id: crop.id })
         });
-        if (!res.ok) throw new Error();
-      } catch (e) {
-        // Rollback on server error
-        setWatchlist(previousWatchlist);
-        toast.error('Failed to sync watchlist update.');
       }
     }
   };
@@ -496,47 +479,26 @@ const BuyerPage = () => {
     e.preventDefault();
     if (!reqCrop || !reqBudget) return;
 
-    const tempReq = {
-      id: `temp_${Date.now()}`,
-      crop: reqCrop,
-      budget: reqBudget,
-      buyer_mobile: currentUser.mobile || 'guest',
-      buyer_location: currentUser.location || 'Unknown',
-      buyer_name: currentUser.name || 'Buyer',
-      status: 'Pending',
-      created_at: new Date().toISOString(),
-      optimistic: true
-    };
-
-    const previousRequests = [...myRequests];
-    // Optimistic UI Update: Prepend immediately
-    setMyRequests([tempReq, ...myRequests]);
-    const submittedCrop = reqCrop;
-    setReqCrop('');
-    setReqBudget('');
-    toast.success(`Request for ${submittedCrop} posted!`);
-
     try {
       const res = await fetch('/api/buyer-requests', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          crop: tempReq.crop,
-          budget: tempReq.budget,
-          buyer_mobile: tempReq.buyer_mobile,
-          buyer_location: tempReq.buyer_location,
-          buyer_name: tempReq.buyer_name
+          crop: reqCrop,
+          budget: reqBudget,
+          buyer_mobile: currentUser.mobile || 'guest',
+          buyer_location: currentUser.location || 'Unknown',
+          buyer_name: currentUser.name || 'Buyer'
         })
       });
       if (res.ok) {
         const getRes = await fetch(`/api/buyer-requests?mobile=${currentUser.mobile || 'guest'}`);
         setMyRequests(await getRes.json());
-      } else {
-        throw new Error();
+        setReqCrop('');
+        setReqBudget('');
+        toast.success("Request Posted! Sellers will contact you shortly.");
       }
     } catch (e) {
-      // Rollback on server failure
-      setMyRequests(previousRequests);
       toast.error("Failed to post request to server.");
     }
   };

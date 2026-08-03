@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Chart from 'chart.js/auto';
 import toast from 'react-hot-toast';
 import WeatherDashboard from '../components/SellerFeatures/WeatherDashboard';
-import ConfirmModal from '../components/ConfirmModal';
 import '../assets/global.css';
 import '../assets/seller-profile-style.css';
 
@@ -11,7 +10,6 @@ const SellersProfile = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [deleteCropIndex, setDeleteCropIndex] = useState(null);
   
   const [salesData, setSalesData] = useState([]);
   const [marketData, setMarketData] = useState([]);
@@ -209,27 +207,20 @@ const SellersProfile = () => {
     }
   }, [activeTab, isLoading]);
 
-  const confirmDeleteCrop = async () => {
-    if (deleteCropIndex === null) return;
-    const crop = inventory[deleteCropIndex];
-    if (!crop || !crop.id) {
-      setDeleteCropIndex(null);
-      return;
+  const handleDeleteCrop = async (index) => {
+    if (window.confirm("Are you sure you want to delete this crop?")) {
+      const crop = inventory[index];
+      if (!crop.id) return;
+      try {
+        await fetch(`/api/crops/${crop.id}`, { method: 'DELETE' });
+        const updated = [...inventory];
+        updated.splice(index, 1);
+        setInventory(updated);
+        toast.success("Crop deleted from server.");
+      } catch (e) {
+        toast.error("Failed to delete from server.");
+      }
     }
-    try {
-      await fetch(`/api/crops/${crop.id}`, { method: 'DELETE' });
-      const updated = [...inventory];
-      updated.splice(deleteCropIndex, 1);
-      setInventory(updated);
-      toast.success("Crop listing removed successfully.");
-    } catch (e) {
-      toast.error("Failed to delete crop listing.");
-    }
-    setDeleteCropIndex(null);
-  };
-
-  const handleDeleteCrop = (index) => {
-    setDeleteCropIndex(index);
   };
 
   const handleSaveProfile = () => {
@@ -557,16 +548,6 @@ const SellersProfile = () => {
           </div>
         </main>
       </div>
-
-      <ConfirmModal
-        isOpen={deleteCropIndex !== null}
-        title="Delete Crop Listing"
-        message="Are you sure you want to remove this crop listing from the direct marketplace? This action cannot be undone."
-        confirmText="Delete Listing"
-        type="danger"
-        onConfirm={confirmDeleteCrop}
-        onCancel={() => setDeleteCropIndex(null)}
-      />
     </>
   );
 };

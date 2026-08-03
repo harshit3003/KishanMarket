@@ -2,7 +2,6 @@ import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import BackgroundLayer from './components/BackgroundLayer';
-import ErrorBoundary from './components/ErrorBoundary';
 
 // Lazy-loaded page components for optimal bundle splitting & fast load times
 const LandingPage = lazy(() => import('./pages/LandingPage'));
@@ -77,7 +76,7 @@ const SellerRoute = ({ children }) => {
 
 function App() {
   return (
-    <ErrorBoundary>
+    <>
       <BackgroundLayer />
       <Toaster position="top-right" toastOptions={{ className: 'glass-card-premium fw-bold text-dark' }} />
       <BrowserRouter>
@@ -107,7 +106,7 @@ function App() {
           </Routes>
         </Suspense>
       </BrowserRouter>
-    </ErrorBoundary>
+    </>
   );
 }
 

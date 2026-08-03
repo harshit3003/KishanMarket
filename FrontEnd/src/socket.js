@@ -11,10 +11,6 @@ const getSocketUrl = () => {
 
 const socket = io(getSocketUrl(), {
   transports: ['websocket', 'polling'],
-  upgrade: true,
-  reconnectionDelay: 500,
-  reconnectionDelayMax: 2000,
-  timeout: 5000,
   autoConnect: true,
   auth: {
     token: localStorage.getItem('token') || sessionStorage.getItem('token') || ''

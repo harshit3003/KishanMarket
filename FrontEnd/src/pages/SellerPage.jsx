@@ -26,7 +26,6 @@ import ReportModal from '../components/ReportModal';
 import SupportTicketModal from '../components/SupportTicketModal';
 import AdminDashboardModal from '../components/AdminDashboardModal';
 import AnalyticsDashboardModal from '../components/AnalyticsDashboardModal';
-import ConfirmModal from '../components/ConfirmModal';
 import socket from '../socket';
 import { getInstantCoords } from '../utils/geoUtils';
 
@@ -39,9 +38,6 @@ const defaultBuyers = [
 ];
 
 const SellerPage = () => {
-  const [showClearConfirm, setShowClearConfirm] = useState(false);
-  const [showLocationPrompt, setShowLocationPrompt] = useState(false);
-  const [promptLocationInput, setPromptLocationInput] = useState('');
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -368,22 +364,15 @@ const SellerPage = () => {
     }
   };
 
-  const confirmChangeLocation = (val) => {
-    const locToUse = val || promptLocationInput;
-    if (locToUse && locToUse.trim()) {
-      const cleanLoc = locToUse.trim();
+  const handleChangeLocation = () => {
+    const newLoc = window.prompt("Enter your city/state location (e.g. Ludhiana, Jaipur, Delhi, Banda):");
+    if (newLoc && newLoc.trim()) {
+      const cleanLoc = newLoc.trim();
       setWeatherLocation(cleanLoc);
       const [lat, lng] = getInstantCoords(cleanLoc);
       fetchWeatherData(lat, lng, cleanLoc);
       toast.success(`Weather location updated to ${cleanLoc}`);
     }
-    setShowLocationPrompt(false);
-    setPromptLocationInput('');
-  };
-
-  const handleChangeLocation = () => {
-    setPromptLocationInput(weatherLocation || '');
-    setShowLocationPrompt(true);
   };
 
   const handleEditCrop = (idx) => {
@@ -562,64 +551,43 @@ const SellerPage = () => {
     e.preventDefault();
     if (!cropName || !cropWeight || !cropRate) return;
 
-    const tempId = `temp_${Date.now()}`;
-    const optimisticCrop = {
-      id: tempId,
-      name: cropName,
-      weight: cropWeight,
-      rate: cropRate,
-      seller: currentUser.name || 'Farmer',
-      loc: currentUser.location || 'Unknown',
-      seller_mobile: currentUser.mobile || 'guest',
-      status: 'active',
-      optimistic: true
-    };
-
-    const previousCrops = [...crops];
-    // Optimistic UI Update: Prepend immediately
-    setCrops([optimisticCrop, ...crops]);
-    const submittedName = cropName;
-    setCropName('');
-    setCropWeight('');
-    setCropRate('');
-    toast.success(`${submittedName} listed successfully!`);
-
+    const dateStr = new Date().toLocaleDateString('en-GB');
+    
     try {
       const res = await fetch('/api/crops', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: optimisticCrop.name,
-          weight: optimisticCrop.weight,
-          rate: optimisticCrop.rate,
-          seller: optimisticCrop.seller,
-          loc: optimisticCrop.loc,
-          seller_mobile: optimisticCrop.seller_mobile
+          name: cropName,
+          weight: cropWeight,
+          rate: cropRate,
+          seller: currentUser.name || 'Guest',
+          loc: currentUser.location || 'Unknown',
+          seller_mobile: currentUser.mobile || 'guest'
         })
       });
 
       if (res.ok) {
+        // Refresh local state from DB
         const getRes = await fetch(`/api/crops/my?mobile=${currentUser.mobile || 'guest'}&name=${encodeURIComponent(currentUser.name || 'Guest')}`);
         setCrops(await getRes.json());
-      } else {
-        throw new Error();
+        
+        setCropName('');
+        setCropWeight('');
+        setCropRate('');
+        toast.success(`${cropName} uploaded successfully!`);
       }
     } catch (e) {
-      // Rollback on server error
-      setCrops(previousCrops);
-      toast.error('Failed to sync crop listing with server.');
+      toast.error('Failed to upload crop to server.');
     }
   };
 
-  const confirmClearAll = () => {
-    localStorage.removeItem(`myCrops_${currentUser.mobile || 'guest'}`);
-    setCrops([]);
-    setShowClearConfirm(false);
-    toast.success("Stock inventory history cleared.");
-  };
-
   const handleClearAll = () => {
-    setShowClearConfirm(true);
+    if (window.confirm("Clear stock history?")) {
+      localStorage.removeItem(`myCrops_${currentUser.mobile || 'guest'}`);
+      setCrops([]);
+      toast.success("Stock history cleared.");
+    }
   };
 
   const handleSearchBuyer = async (e) => {
@@ -1280,33 +1248,6 @@ const SellerPage = () => {
           </div>
         </div>
       )}
-
-      <ConfirmModal
-        isOpen={showClearConfirm}
-        title="Clear Stock History"
-        message="Are you sure you want to clear your local stock inventory history? Active listings on the server will remain unaffected."
-        confirmText="Clear Inventory"
-        type="warning"
-        onConfirm={confirmClearAll}
-        onCancel={() => setShowClearConfirm(false)}
-      />
-
-      <ConfirmModal
-        isOpen={showLocationPrompt}
-        title="Update Weather Location"
-        message="Enter your target city or state location for agricultural weather intelligence:"
-        confirmText="Update Location"
-        type="info"
-        hasInput={true}
-        inputValue={promptLocationInput}
-        onInputChange={setPromptLocationInput}
-        inputPlaceholder="e.g. Ludhiana, Jaipur, Delhi, Banda..."
-        onConfirm={confirmChangeLocation}
-        onCancel={() => {
-          setShowLocationPrompt(false);
-          setPromptLocationInput('');
-        }}
-      />
     </>
   );
 };
