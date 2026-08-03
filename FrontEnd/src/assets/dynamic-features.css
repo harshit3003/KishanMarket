@@ -232,7 +232,7 @@
     max-width: 40px;
     background: linear-gradient(180deg, #52b788, #1b4332);
     border-radius: 6px 6px 0 0;
-    height: 0%; /* Animated via JS */
+    height: 0%;
     transition: height 1s cubic-bezier(0.34, 1.56, 0.64, 1);
     box-shadow: 0 4px 10px rgba(45, 106, 79, 0.3);
     cursor: pointer;
@@ -330,249 +330,32 @@
     to { transform: scale(1.05); filter: drop-shadow(0 0 25px rgba(252, 211, 77, 0.6)); }
 }
 
-/* 8. INTERACTIVE MANDI MAP */
-.mandi-map-container {
-    height: 400px;
-    width: 100%;
-    border-radius: 15px;
-    border: 2px solid rgba(27, 67, 50, 0.2);
-    box-shadow: inset 0 4px 10px rgba(0,0,0,0.1);
-    z-index: 1; /* Keep below modal */
+/* 8. STARTUP-QUALITY EMPTY STATES */
+.km-empty-state {
+    padding: 48px 24px;
+    text-align: center;
+    background: #1e293b;
+    border: 2px dashed #334155;
+    border-radius: 16px;
+    color: #94a3b8;
 }
 
-/* Make Leaflet dark mode */
-.leaflet-layer,
-.leaflet-control-zoom-in,
-.leaflet-control-zoom-out,
-.leaflet-control-attribution {
-    filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+.km-empty-state i {
+    font-size: 3.5rem;
+    color: #34d399;
+    margin-bottom: 16px;
+    opacity: 0.8;
 }
 
-.leaflet-container {
-    background: #0d1b14; /* Darker bg to match the filter */
-    font-family: 'Poppins', sans-serif;
-}
-
-/* Custom glowing marker */
-.custom-mandi-marker {
-    background-color: #f59e0b;
-    border: 3px solid #ffffff;
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(245, 158, 11, 0.8);
-    animation: pulse-marker 2s infinite;
-}
-
-@keyframes pulse-marker {
-    0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
-    70% { box-shadow: 0 0 0 15px rgba(245, 158, 11, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
-}
-
-/* Custom Popup */
-.leaflet-popup-content-wrapper {
-    background: rgba(255, 255, 255, 0.95) !important;
-    backdrop-filter: blur(5px);
-    border-radius: 12px !important;
-    border-bottom: 4px solid #52b788;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important;
-}
-
-.leaflet-popup-tip {
-    background: rgba(255, 255, 255, 0.95) !important;
-}
-
-.mandi-popup-title {
-    color: #1b4332;
+.km-empty-state h4 {
+    color: #ffffff;
     font-weight: 700;
-    margin: 0 0 5px 0;
-    font-size: 1.1rem;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+    margin-bottom: 8px;
 }
 
-.mandi-popup-desc {
-    margin: 0;
-    color: #475569;
-    font-size: 0.9rem;
+.km-empty-state p {
+    color: #94a3b8;
+    max-width: 420px;
+    margin: 0 auto 20px auto;
+    line-height: 1.6;
 }
-
-
-/* Mesh Gradient Blobs */
-.blob {
-  position: fixed;
-  filter: blur(80px);
-  z-index: -2;
-  opacity: 0.6;
-  animation: floatBlob 15s infinite alternate ease-in-out;
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.blob-1 {
-  top: -10%; left: -10%;
-  width: 40vw; height: 40vw;
-  background: radial-gradient(circle, rgba(40,167,69,0.3) 0%, rgba(0,0,0,0) 70%);
-  animation-duration: 20s;
-}
-
-.blob-2 {
-  bottom: -20%; right: -10%;
-  width: 50vw; height: 50vw;
-  background: radial-gradient(circle, rgba(245,158,11,0.2) 0%, rgba(0,0,0,0) 70%);
-  animation-duration: 25s;
-  animation-delay: -5s;
-}
-
-.blob-3 {
-  top: 40%; left: 40%;
-  width: 30vw; height: 30vw;
-  background: radial-gradient(circle, rgba(32,201,151,0.2) 0%, rgba(0,0,0,0) 70%);
-  animation-duration: 18s;
-  animation-delay: -10s;
-}
-
-@keyframes floatBlob {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(5vw, -5vh) scale(1.1); }
-  66% { transform: translate(-3vw, 8vh) scale(0.9); }
-  100% { transform: translate(0, 0) scale(1); }
-}
-
-/* Fireflies */
-.fireflies {
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
-}
-
-.firefly {
-  position: absolute;
-  width: 4px; height: 4px;
-  background: rgba(245, 158, 11, 0.8);
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(245, 158, 11, 1), 0 0 20px rgba(245, 158, 11, 0.5);
-  animation: flyAround 10s infinite linear;
-  opacity: 0;
-}
-
-.firefly:nth-child(even) { background: rgba(40, 167, 69, 0.8); box-shadow: 0 0 10px rgba(40, 167, 69, 1), 0 0 20px rgba(40, 167, 69, 0.5); }
-
-.firefly:nth-child(1) { top: 10%; left: 20%; animation-duration: 12s; animation-delay: 0s; }
-.firefly:nth-child(2) { top: 80%; left: 80%; animation-duration: 15s; animation-delay: 2s; }
-.firefly:nth-child(3) { top: 40%; left: 50%; animation-duration: 11s; animation-delay: 1s; }
-.firefly:nth-child(4) { top: 70%; left: 10%; animation-duration: 18s; animation-delay: 4s; }
-.firefly:nth-child(5) { top: 20%; left: 70%; animation-duration: 14s; animation-delay: 3s; }
-.firefly:nth-child(6) { top: 50%; left: 90%; animation-duration: 16s; animation-delay: 5s; }
-.firefly:nth-child(7) { top: 90%; left: 40%; animation-duration: 13s; animation-delay: 2s; }
-.firefly:nth-child(8) { top: 30%; left: 30%; animation-duration: 17s; animation-delay: 6s; }
-.firefly:nth-child(9) { top: 60%; left: 60%; animation-duration: 12s; animation-delay: 1s; }
-.firefly:nth-child(10) { top: 15%; left: 85%; animation-duration: 19s; animation-delay: 7s; }
-.firefly:nth-child(11) { top: 85%; left: 25%; animation-duration: 14s; animation-delay: 3s; }
-.firefly:nth-child(12) { top: 45%; left: 15%; animation-duration: 16s; animation-delay: 4s; }
-.firefly:nth-child(13) { top: 75%; left: 75%; animation-duration: 11s; animation-delay: 5s; }
-.firefly:nth-child(14) { top: 25%; left: 45%; animation-duration: 18s; animation-delay: 2s; }
-.firefly:nth-child(15) { top: 55%; left: 35%; animation-duration: 13s; animation-delay: 6s; }
-
-@keyframes flyAround {
-  0% { transform: translate(0, 0) scale(0); opacity: 0; }
-  10% { opacity: 1; transform: translate(10vw, -10vh) scale(1); }
-  50% { opacity: 0.8; transform: translate(-5vw, 15vh) scale(1.2); }
-  90% { opacity: 1; transform: translate(-15vw, -5vh) scale(1); }
-  100% { transform: translate(0, 0) scale(0); opacity: 0; }
-}
-
-.premium-bg, .parallax-item, .blob, .firefly {
-  will-change: transform;
-}
-
-/* =========================================
-   FLOATING CROP PARTICLES & ADVANCED ANIMATIONS
-========================================= */
-
-.floating-crops {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.floating-crop-item {
-  position: absolute;
-  font-size: 1.5rem;
-  opacity: 0.25;
-  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
-  animation: floatCropUp 14s infinite linear;
-}
-
-.floating-crop-item:nth-child(1) { left: 5%; animation-duration: 16s; animation-delay: 0s; }
-.floating-crop-item:nth-child(2) { left: 25%; animation-duration: 12s; animation-delay: 3s; }
-.floating-crop-item:nth-child(3) { left: 45%; animation-duration: 18s; animation-delay: 1s; }
-.floating-crop-item:nth-child(4) { left: 65%; animation-duration: 15s; animation-delay: 5s; }
-.floating-crop-item:nth-child(5) { left: 85%; animation-duration: 13s; animation-delay: 2s; }
-.floating-crop-item:nth-child(6) { left: 92%; animation-duration: 17s; animation-delay: 4s; }
-
-@keyframes floatCropUp {
-  0% {
-    transform: translateY(105vh) rotate(0deg) scale(0.8);
-    opacity: 0;
-  }
-  15% {
-    opacity: 0.35;
-  }
-  85% {
-    opacity: 0.35;
-  }
-  100% {
-    transform: translateY(-15vh) rotate(360deg) scale(1.2);
-    opacity: 0;
-  }
-}
-
-/* Glowing Notification Badge Pulse */
-@keyframes badgeBounce {
-  0%, 100% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.25); box-shadow: 0 0 15px rgba(220, 38, 38, 0.9); }
-}
-
-.badge-pulse {
-  animation: badgeBounce 1.8s infinite ease-in-out;
-}
-
-/* Live Floating Marquee Ticker Bar */
-.market-ticker-bar {
-  background: rgba(15, 23, 42, 0.9);
-  color: #ffffff;
-  padding: 8px 0;
-  overflow: hidden;
-  white-space: nowrap;
-  font-size: 0.85rem;
-  border-bottom: 2px solid #52b788;
-  backdrop-filter: blur(10px);
-}
-
-.ticker-track {
-  display: inline-flex;
-  gap: 30px;
-  animation: marquee 25s linear infinite;
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* Glass Card Glowing Border Pulse */
-@keyframes borderGlowPulse {
-  0%, 100% { border-color: rgba(82, 183, 136, 0.3); }
-  50% { border-color: rgba(245, 158, 11, 0.8); }
-}
-
-.glow-border {
-  animation: borderGlowPulse 3s infinite ease-in-out;
-}
-
-
