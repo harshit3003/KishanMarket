@@ -20,7 +20,12 @@ const io = new Server(server, {
 });
 
 const PORT = process.env.PORT || 5000;
-const JWT_SECRET = process.env.JWT_SECRET || 'KishanMarket_Secure_JWT_Secret_2026_Prod';
+const JWT_SECRET = process.env.JWT_SECRET || (process.env.NODE_ENV === 'production' ? null : 'KishanMarket_Secure_JWT_Secret_2026_Prod');
+
+if (!JWT_SECRET && process.env.NODE_ENV === 'production') {
+  console.error("FATAL SECURITY ERROR: JWT_SECRET environment variable is missing in production mode!");
+  process.exit(1);
+}
 
 // Disable X-Powered-By Header to prevent server fingerprinting
 app.disable('x-powered-by');
