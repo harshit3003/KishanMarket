@@ -461,17 +461,16 @@ const BuyerPage = () => {
     const exists = watchlist.find(c => c.id === crop.id);
     if (exists) {
       setWatchlist(watchlist.filter(c => c.id !== crop.id));
+      toast.success(`${crop.name} removed from watchlist.`);
       await fetch(`/api/watchlist/${crop.id}?mobile=${currentUser.mobile}`, { method: 'DELETE' });
     } else {
-      if (window.confirm("Is crop ko apni watchlist mein daalna chahte hain?")) {
-        toast.success(`${crop.name} added to watchlist!`);
-        setWatchlist([...watchlist, crop]);
-        await fetch('/api/watchlist', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ buyer_mobile: currentUser.mobile, crop_id: crop.id })
-        });
-      }
+      setWatchlist([...watchlist, crop]);
+      toast.success(`${crop.name} saved to your watchlist!`);
+      await fetch('/api/watchlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ buyer_mobile: currentUser.mobile, crop_id: crop.id })
+      });
     }
   };
 

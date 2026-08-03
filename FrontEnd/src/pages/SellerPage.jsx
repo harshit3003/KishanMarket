@@ -26,6 +26,7 @@ import ReportModal from '../components/ReportModal';
 import SupportTicketModal from '../components/SupportTicketModal';
 import AdminDashboardModal from '../components/AdminDashboardModal';
 import AnalyticsDashboardModal from '../components/AnalyticsDashboardModal';
+import ConfirmModal from '../components/ConfirmModal';
 import socket from '../socket';
 import { getInstantCoords } from '../utils/geoUtils';
 
@@ -38,6 +39,7 @@ const defaultBuyers = [
 ];
 
 const SellerPage = () => {
+  const [showClearConfirm, setShowClearConfirm] = useState(false);
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -582,12 +584,15 @@ const SellerPage = () => {
     }
   };
 
+  const confirmClearAll = () => {
+    localStorage.removeItem(`myCrops_${currentUser.mobile || 'guest'}`);
+    setCrops([]);
+    setShowClearConfirm(false);
+    toast.success("Stock inventory history cleared.");
+  };
+
   const handleClearAll = () => {
-    if (window.confirm("Clear stock history?")) {
-      localStorage.removeItem(`myCrops_${currentUser.mobile || 'guest'}`);
-      setCrops([]);
-      toast.success("Stock history cleared.");
-    }
+    setShowClearConfirm(true);
   };
 
   const handleSearchBuyer = async (e) => {
@@ -1248,6 +1253,16 @@ const SellerPage = () => {
           </div>
         </div>
       )}
+
+      <ConfirmModal
+        isOpen={showClearConfirm}
+        title="Clear Stock History"
+        message="Are you sure you want to clear your local stock inventory history? Active listings on the server will remain unaffected."
+        confirmText="Clear Inventory"
+        type="warning"
+        onConfirm={confirmClearAll}
+        onCancel={() => setShowClearConfirm(false)}
+      />
     </>
   );
 };

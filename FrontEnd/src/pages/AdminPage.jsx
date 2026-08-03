@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import socket from '../socket';
+import SkeletonCard from '../components/SkeletonCard';
 import '../assets/global.css';
 import '../assets/dynamic-features.css';
 import '../assets/AdminPage.css';
@@ -299,9 +300,10 @@ const AdminPage = () => {
         {/* Tab Content Panel */}
         <div className="admin-content-panel">
           {isLoading ? (
-            <div className="text-center py-5">
-              <div className="spinner-border text-success" role="status"></div>
-              <p className="admin-panel-subtext text-center mt-2">Loading platform data...</p>
+            <div className="row g-3 py-3">
+              <div className="col-md-4"><SkeletonCard /></div>
+              <div className="col-md-4"><SkeletonCard /></div>
+              <div className="col-md-4"><SkeletonCard /></div>
             </div>
           ) : (
             <div>
