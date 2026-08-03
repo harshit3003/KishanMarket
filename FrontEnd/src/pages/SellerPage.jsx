@@ -40,6 +40,8 @@ const defaultBuyers = [
 
 const SellerPage = () => {
   const [showClearConfirm, setShowClearConfirm] = useState(false);
+  const [showLocationPrompt, setShowLocationPrompt] = useState(false);
+  const [promptLocationInput, setPromptLocationInput] = useState('');
   const navigate = useNavigate();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -366,15 +368,22 @@ const SellerPage = () => {
     }
   };
 
-  const handleChangeLocation = () => {
-    const newLoc = window.prompt("Enter your city/state location (e.g. Ludhiana, Jaipur, Delhi, Banda):");
-    if (newLoc && newLoc.trim()) {
-      const cleanLoc = newLoc.trim();
+  const confirmChangeLocation = (val) => {
+    const locToUse = val || promptLocationInput;
+    if (locToUse && locToUse.trim()) {
+      const cleanLoc = locToUse.trim();
       setWeatherLocation(cleanLoc);
       const [lat, lng] = getInstantCoords(cleanLoc);
       fetchWeatherData(lat, lng, cleanLoc);
       toast.success(`Weather location updated to ${cleanLoc}`);
     }
+    setShowLocationPrompt(false);
+    setPromptLocationInput('');
+  };
+
+  const handleChangeLocation = () => {
+    setPromptLocationInput(weatherLocation || '');
+    setShowLocationPrompt(true);
   };
 
   const handleEditCrop = (idx) => {
@@ -1262,6 +1271,23 @@ const SellerPage = () => {
         type="warning"
         onConfirm={confirmClearAll}
         onCancel={() => setShowClearConfirm(false)}
+      />
+
+      <ConfirmModal
+        isOpen={showLocationPrompt}
+        title="Update Weather Location"
+        message="Enter your target city or state location for agricultural weather intelligence:"
+        confirmText="Update Location"
+        type="info"
+        hasInput={true}
+        inputValue={promptLocationInput}
+        onInputChange={setPromptLocationInput}
+        inputPlaceholder="e.g. Ludhiana, Jaipur, Delhi, Banda..."
+        onConfirm={confirmChangeLocation}
+        onCancel={() => {
+          setShowLocationPrompt(false);
+          setPromptLocationInput('');
+        }}
       />
     </>
   );
