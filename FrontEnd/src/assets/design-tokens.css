@@ -1,81 +1,198 @@
-/* KishanMarket Centralized Design System Tokens */
+/* ==========================================================================
+   KishanMarket Enterprise Design System Tokens & Component Library
+   ========================================================================== */
+
 :root {
-  /* Color Palette Tokens */
-  --km-bg-main: #0f172a;
-  --km-bg-card: #1e293b;
-  --km-bg-navbar: #111827;
+  /* --- Typography Tokens --- */
+  --km-font-sans: 'Poppins', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --km-font-size-xs: 0.75rem;    /* 12px */
+  --km-font-size-sm: 0.875rem;   /* 14px */
+  --km-font-size-base: 1rem;     /* 16px */
+  --km-font-size-lg: 1.125rem;   /* 18px */
+  --km-font-size-xl: 1.25rem;    /* 20px */
+  --km-font-size-2xl: 1.5rem;    /* 24px */
+  --km-font-size-3xl: 1.875rem;  /* 30px */
+
+  --km-font-weight-regular: 400;
+  --km-font-weight-medium: 500;
+  --km-font-weight-semibold: 600;
+  --km-font-weight-bold: 700;
+
+  /* --- Color System Tokens --- */
+  --km-bg-main: #0f172a;           /* Deep Slate 900 */
+  --km-bg-card: #1e293b;           /* Surface Slate 800 */
+  --km-bg-surface-hover: #334155;  /* Hover Slate 700 */
+  --km-bg-navbar: #111827;         /* Dark Gray 900 */
+  --km-bg-glass: rgba(30, 41, 59, 0.85);
+
+  --km-border-subtle: #1f2937;
   --km-border-card: #334155;
-  --km-border-navbar: #1f2937;
-  
+  --km-border-focus: #10b981;
+
   --km-text-white: #ffffff;
   --km-text-primary: #f8fafc;
   --km-text-secondary: #94a3b8;
   --km-text-muted: #cbd5e1;
-  
-  /* Brand Accent Tokens */
-  --km-emerald-primary: #059669;
-  --km-emerald-light: #34d399;
-  --km-emerald-border: #10b981;
-  
-  --km-amber-primary: #f59e0b;
-  --km-amber-light: #fbbf24;
-  
-  --km-sky-primary: #38bdf8;
-  --km-indigo-primary: #818cf8;
-  --km-rose-primary: #f87171;
-  
-  /* Spacing Tokens */
-  --km-space-xs: 4px;
-  --km-space-sm: 8px;
-  --km-space-md: 16px;
-  --km-space-lg: 24px;
-  --km-space-xl: 32px;
 
-  /* Border Radius Tokens */
+  /* --- Brand Color Accents --- */
+  --km-emerald-500: #10b981;
+  --km-emerald-600: #059669;
+  --km-emerald-700: #047857;
+  --km-emerald-light: #34d399;
+
+  --km-amber-400: #fbbf24;
+  --km-amber-500: #f59e0b;
+  --km-amber-600: #d97706;
+
+  --km-sky-400: #38bdf8;
+  --km-sky-500: #0ea5e9;
+
+  --km-indigo-400: #818cf8;
+  --km-rose-500: #ef4444;
+  --km-rose-600: #dc2626;
+
+  /* --- Spacing Scale --- */
+  --km-space-1: 4px;
+  --km-space-2: 8px;
+  --km-space-3: 12px;
+  --km-space-4: 16px;
+  --km-space-5: 20px;
+  --km-space-6: 24px;
+  --km-space-8: 32px;
+  --km-space-10: 40px;
+  --km-space-12: 48px;
+
+  /* --- Border Radius Scale --- */
+  --km-radius-xs: 4px;
   --km-radius-sm: 8px;
   --km-radius-md: 12px;
   --km-radius-lg: 16px;
+  --km-radius-xl: 24px;
   --km-radius-full: 9999px;
-  
-  /* Elevation Shadows */
+
+  /* --- Elevation & Shadows --- */
   --km-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
-  --km-shadow-md: 0 4px 15px rgba(0, 0, 0, 0.25);
-  --km-shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --km-shadow-md: 0 6px 20px rgba(0, 0, 0, 0.25);
+  --km-shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.4);
+  --km-glow-emerald: 0 0 20px rgba(16, 185, 129, 0.3);
 }
 
-/* Centralized Utility Classes to eliminate inline style objects */
-.km-page-bg {
-  min-height: 100vh;
-  background: var(--km-bg-main);
-  color: var(--km-text-primary);
-  font-family: 'Poppins', 'Inter', sans-serif;
-  padding-bottom: var(--km-space-xl);
+/* ==========================================================================
+   Standardized UI Component Library
+   ========================================================================== */
+
+/* --- Page Root & Typography --- */
+body, #root {
+  background: var(--km-bg-main) !important;
+  color: var(--km-text-primary) !important;
+  font-family: var(--km-font-sans) !important;
 }
 
+/* --- Standardized Cards --- */
 .km-card {
   background: var(--km-bg-card) !important;
   border: 1px solid var(--km-border-card) !important;
   border-radius: var(--km-radius-lg) !important;
   box-shadow: var(--km-shadow-md) !important;
+  color: var(--km-text-primary) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.km-btn-emerald {
-  background: var(--km-emerald-primary) !important;
+.km-card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--km-shadow-lg), var(--km-glow-emerald) !important;
+  border-color: var(--km-emerald-500) !important;
+}
+
+/* --- Standardized Buttons --- */
+.km-btn-primary {
+  background: var(--km-emerald-600) !important;
   color: var(--km-text-white) !important;
   border: none !important;
   border-radius: var(--km-radius-md) !important;
-  font-weight: 700 !important;
+  font-weight: var(--km-font-weight-bold) !important;
+  padding: var(--km-space-2) var(--km-space-5) !important;
+  box-shadow: var(--km-shadow-sm) !important;
   transition: all 0.2s ease !important;
 }
 
-.km-btn-emerald:hover {
-  background: #047857 !important;
+.km-btn-primary:hover {
+  background: var(--km-emerald-700) !important;
   box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4) !important;
 }
 
-.km-navbar {
-  background: var(--km-bg-navbar) !important;
-  border-bottom: 1px solid var(--km-border-navbar) !important;
-  position: relative;
-  z-index: 999999;
+.km-btn-secondary {
+  background: var(--km-bg-surface-hover) !important;
+  color: var(--km-text-primary) !important;
+  border: 1px solid var(--km-border-card) !important;
+  border-radius: var(--km-radius-md) !important;
+  font-weight: var(--km-font-weight-semibold) !important;
+  padding: var(--km-space-2) var(--km-space-4) !important;
+  transition: all 0.2s ease !important;
+}
+
+.km-btn-secondary:hover {
+  background: #475569 !important;
+  color: var(--km-text-white) !important;
+}
+
+/* --- Standardized Inputs & Selects --- */
+.km-input {
+  background: var(--km-bg-main) !important;
+  color: var(--km-text-white) !important;
+  border: 1px solid var(--km-border-card) !important;
+  border-radius: var(--km-radius-md) !important;
+  padding: var(--km-space-2) var(--km-space-4) !important;
+  font-family: var(--km-font-sans) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.km-input:focus {
+  outline: none !important;
+  border-color: var(--km-emerald-500) !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25) !important;
+}
+
+/* --- Standardized Tables --- */
+.km-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: var(--km-bg-card);
+  border: 1px solid var(--km-border-card);
+  border-radius: var(--km-radius-md);
+  overflow: hidden;
+}
+
+.km-table th {
+  background: #111827 !important;
+  color: var(--km-amber-400) !important;
+  font-weight: var(--km-font-weight-bold) !important;
+  padding: var(--km-space-3) var(--km-space-4) !important;
+  border-bottom: 1px solid var(--km-border-card) !important;
+}
+
+.km-table td {
+  padding: var(--km-space-3) var(--km-space-4) !important;
+  border-bottom: 1px solid #243144 !important;
+  color: var(--km-text-muted) !important;
+}
+
+.km-table tr:hover td {
+  background: var(--km-bg-surface-hover) !important;
+  color: var(--km-text-white) !important;
+}
+
+/* --- Standardized Glassmorphic Modals --- */
+.km-modal-overlay {
+  background: rgba(15, 23, 42, 0.8) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+.km-modal-content {
+  background: var(--km-bg-card) !important;
+  border: 1px solid var(--km-border-card) !important;
+  border-radius: var(--km-radius-xl) !important;
+  box-shadow: var(--km-shadow-lg) !important;
+  color: var(--km-text-primary) !important;
 }
