@@ -920,7 +920,7 @@ const SellerPage = () => {
                   >
                     <span style={{ 
                       background: isHovered ? '#5a8264' : 'rgba(82, 183, 136, 0.15)', 
-                      color: isHovered ? 'white' : 'var(--primary)',
+                      color: isHovered ? 'white' : '#1b4332',
                       padding: '4px 14px', borderRadius: '8px', fontSize: '0.85rem', fontWeight: 'bold', marginBottom: '12px', 
                       transform: 'translateZ(20px)', transition: 'all 0.4s ease' 
                     }}>{buyer.location}</span>
@@ -966,9 +966,9 @@ const SellerPage = () => {
                           });
                         }}
                         style={{ 
-                          background: isHovered ? 'transparent' : 'transparent', 
-                          border: isHovered ? '2px solid #f8f9fa' : '2px solid var(--primary)',
-                          color: isHovered ? '#f8f9fa' : 'var(--primary)', 
+                          background: isHovered ? 'rgba(255,255,255,0.2)' : 'transparent', 
+                          border: isHovered ? '2px solid #ffffff' : '2px solid #1b4332',
+                          color: isHovered ? '#ffffff' : '#1b4332', 
                           borderRadius: '10px', padding: '10px 0', 
                           transform: 'translateZ(30px)', transition: 'all 0.4s ease' 
                         }}>
@@ -978,10 +978,11 @@ const SellerPage = () => {
                         className="btn fw-bold w-50 btn-premium-hover" 
                         onClick={() => handleDirectSell(buyer, idx)}
                         style={{ 
-                          background: isHovered ? '#f8f9fa' : 'var(--primary)', 
-                          color: isHovered ? '#2e4a35' : 'white', 
+                          background: isHovered ? '#ffffff' : '#1b4332', 
+                          color: isHovered ? '#1b4332' : '#ffffff', 
+                          border: isHovered ? '2px solid #ffffff' : '2px solid #1b4332',
                           borderRadius: '10px', padding: '10px 0', 
-                          boxShadow: isHovered ? '0 4px 6px rgba(0,0,0,0.1)' : 'none', 
+                          boxShadow: '0 4px 12px rgba(27,67,50,0.2)', 
                           transform: 'translateZ(30px)', transition: 'all 0.4s ease' 
                         }}>
                         Sell Now
