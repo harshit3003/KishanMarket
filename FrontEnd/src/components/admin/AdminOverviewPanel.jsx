@@ -1,10 +1,11 @@
 import React from 'react';
+import AdminActivityLog from './AdminActivityLog';
 
 const AdminOverviewPanel = ({ overview }) => {
   return (
     <div>
       <h5 className="fw-bold mb-3 text-emerald-400"><i className="fas fa-chart-line me-2"></i> Marketplace Analytics & System Status</h5>
-      <div className="row g-4 mb-4">
+      <div className="row g-4 mb-2">
         <div className="col-md-6">
           <div className="admin-panel-card">
             <h6 className="admin-panel-heading">Gross Merchandise Value (GMV) Summary</h6>
@@ -24,6 +25,8 @@ const AdminOverviewPanel = ({ overview }) => {
           </div>
         </div>
       </div>
+
+      <AdminActivityLog />
     </div>
   );
 };
