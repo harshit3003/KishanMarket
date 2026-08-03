@@ -562,34 +562,52 @@ const SellerPage = () => {
     e.preventDefault();
     if (!cropName || !cropWeight || !cropRate) return;
 
-    const dateStr = new Date().toLocaleDateString('en-GB');
-    
+    const tempId = `temp_${Date.now()}`;
+    const optimisticCrop = {
+      id: tempId,
+      name: cropName,
+      weight: cropWeight,
+      rate: cropRate,
+      seller: currentUser.name || 'Farmer',
+      loc: currentUser.location || 'Unknown',
+      seller_mobile: currentUser.mobile || 'guest',
+      status: 'active',
+      optimistic: true
+    };
+
+    const previousCrops = [...crops];
+    // Optimistic UI Update: Prepend immediately
+    setCrops([optimisticCrop, ...crops]);
+    const submittedName = cropName;
+    setCropName('');
+    setCropWeight('');
+    setCropRate('');
+    toast.success(`${submittedName} listed successfully!`);
+
     try {
       const res = await fetch('/api/crops', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: cropName,
-          weight: cropWeight,
-          rate: cropRate,
-          seller: currentUser.name || 'Guest',
-          loc: currentUser.location || 'Unknown',
-          seller_mobile: currentUser.mobile || 'guest'
+          name: optimisticCrop.name,
+          weight: optimisticCrop.weight,
+          rate: optimisticCrop.rate,
+          seller: optimisticCrop.seller,
+          loc: optimisticCrop.loc,
+          seller_mobile: optimisticCrop.seller_mobile
         })
       });
 
       if (res.ok) {
-        // Refresh local state from DB
         const getRes = await fetch(`/api/crops/my?mobile=${currentUser.mobile || 'guest'}&name=${encodeURIComponent(currentUser.name || 'Guest')}`);
         setCrops(await getRes.json());
-        
-        setCropName('');
-        setCropWeight('');
-        setCropRate('');
-        toast.success(`${cropName} uploaded successfully!`);
+      } else {
+        throw new Error();
       }
     } catch (e) {
-      toast.error('Failed to upload crop to server.');
+      // Rollback on server error
+      setCrops(previousCrops);
+      toast.error('Failed to sync crop listing with server.');
     }
   };
 
