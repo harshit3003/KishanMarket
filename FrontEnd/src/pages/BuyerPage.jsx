@@ -506,7 +506,7 @@ const BuyerPage = () => {
   return (
     <>
 
-      <nav className="navbar navbar-dark shadow-sm mb-4" style={{ position: 'relative', zIndex: 1000 }}>
+      <nav className="navbar navbar-dark shadow-sm" style={{ position: 'sticky', top: 0, left: 0, width: '100%', zIndex: 1000, margin: 0, borderRadius: 0 }}>
         <div className="container d-flex justify-content-between align-items-center">
           <Link className="navbar-brand fw-bold" to="/buyer"><i className="fas fa-seedling me-2"></i>Kishan<span>Market</span></Link>
 
