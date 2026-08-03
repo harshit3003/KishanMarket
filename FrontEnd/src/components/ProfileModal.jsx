@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import ReviewsList from './ReviewsList';
+import SkeletonCard from './SkeletonCard';
 
 const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfileUpdated }) => {
   const [profile, setProfile] = useState(null);
@@ -229,9 +230,8 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
         )}
 
         {isLoading ? (
-          <div className="text-center py-5">
-            <div className="spinner-border text-success" role="status"></div>
-            <p className="small text-muted mt-2">Loading profile & business data...</p>
+          <div className="py-4">
+            <SkeletonCard variant="profile" />
           </div>
         ) : isEditing ? (
           /* Profile Edit Form */

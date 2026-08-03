@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import SkeletonCard from './SkeletonCard';
 
 const AnalyticsDashboardModal = ({ isOpen, onClose, currentUser }) => {
   const [data, setData] = useState(null);
@@ -58,9 +59,8 @@ const AnalyticsDashboardModal = ({ isOpen, onClose, currentUser }) => {
         </div>
 
         {isLoading ? (
-          <div className="text-center py-5">
-            <div className="spinner-border text-success" role="status"></div>
-            <p className="small text-muted mt-2">Computing business performance metrics...</p>
+          <div className="py-4">
+            <SkeletonCard variant="analytics" />
           </div>
         ) : (
           <div>
