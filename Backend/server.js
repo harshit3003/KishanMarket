@@ -80,7 +80,20 @@ async function syncMessages() {
   } catch (e) {}
 }
 
+// Active Online Users Registry
+const activeOnlineUsers = new Set();
+
 io.on('connection', (socket) => {
+  let socketUserMobile = '';
+
+  socket.on('register_user', (mobile) => {
+    if (mobile) {
+      socketUserMobile = mobile.toString().toLowerCase().replace(/[^a-z0-9]/g, '');
+      activeOnlineUsers.add(socketUserMobile);
+      io.emit('online_users_update', Array.from(activeOnlineUsers));
+    }
+  });
+
   socket.on('join_room', async (room) => {
     if (!room) return;
     socket.join(room);
@@ -90,6 +103,18 @@ io.on('connection', (socket) => {
         socket.emit('load_history', history);
       } catch (e) {}
     }
+  });
+
+  socket.on('leave_room', (room) => {
+    if (room) socket.leave(room);
+  });
+
+  socket.on('typing', ({ room, user }) => {
+    if (room) socket.to(room).emit('user_typing', { room, user });
+  });
+
+  socket.on('stop_typing', ({ room, user }) => {
+    if (room) socket.to(room).emit('user_stop_typing', { room, user });
   });
 
   socket.on('send_message', async (data) => {
@@ -126,19 +151,16 @@ io.on('connection', (socket) => {
       }
     }
 
+    // Broadcast once to room to eliminate 3x duplicate notification spam!
     io.to(room).emit('receive_message', data);
-
-    if (rMob) {
-      const cleanRMob = rMob.toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-      io.to(`user_${cleanRMob}`).emit('receive_message', data);
-    }
-    if (rName) {
-      const cleanRName = rName.toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-      io.to(`user_${cleanRName}`).emit('receive_message', data);
-    }
   });
 
-  socket.on('disconnect', () => {});
+  socket.on('disconnect', () => {
+    if (socketUserMobile) {
+      activeOnlineUsers.delete(socketUserMobile);
+      io.emit('online_users_update', Array.from(activeOnlineUsers));
+    }
+  });
 });
 
 // Serve Production Frontend Static Build
