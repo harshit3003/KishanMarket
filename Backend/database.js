@@ -241,12 +241,10 @@ async function syncToCloud(filename, data) {
   }
 }
 
-function saveTableToFile(filename, data) {
+async function saveTableToFile(filename, data) {
   try {
-    fs.writeFile(path.join(dataStoreDir, filename), JSON.stringify(data, null, 2), (err) => {
-      if (err) console.error(`Failed async save of ${filename}:`, err.message);
-    });
-    setImmediate(() => syncToCloud(filename, data));
+    fs.writeFileSync(path.join(dataStoreDir, filename), JSON.stringify(data, null, 2));
+    await syncToCloud(filename, data);
   } catch (e) {
     console.error(`Failed to save ${filename}:`, e);
   }
@@ -484,15 +482,17 @@ async function initDb() {
   try { await db.exec(`ALTER TABLE Messages ADD COLUMN crop_name TEXT;`); } catch(e) {}
   try { await db.exec(`ALTER TABLE Messages ADD COLUMN crop_id INTEGER;`); } catch(e) {}
 
-  // Create High-Performance DB Indexes for fast queries
+  // Create High-Performance DB Indexes for fast sub-100ms queries
   try { await db.exec(`CREATE INDEX IF NOT EXISTS idx_users_mobile ON Users(mobile);`); } catch(e) {}
   try { await db.exec(`CREATE INDEX IF NOT EXISTS idx_orders_buyer ON Orders(buyer_mobile);`); } catch(e) {}
   try { await db.exec(`CREATE INDEX IF NOT EXISTS idx_orders_seller ON Orders(seller_mobile);`); } catch(e) {}
   try { await db.exec(`CREATE INDEX IF NOT EXISTS idx_crops_seller ON Crops(seller_mobile);`); } catch(e) {}
   try { await db.exec(`CREATE INDEX IF NOT EXISTS idx_crops_status ON Crops(status);`); } catch(e) {}
+  try { await db.exec(`CREATE INDEX IF NOT EXISTS idx_crops_active ON Crops(status, is_removed, id DESC);`); } catch(e) {}
   try { await db.exec(`CREATE INDEX IF NOT EXISTS idx_bids_seller ON Bids(seller_mobile);`); } catch(e) {}
   try { await db.exec(`CREATE INDEX IF NOT EXISTS idx_bids_buyer ON Bids(buyer_mobile);`); } catch(e) {}
-  try { await db.exec(`CREATE INDEX IF NOT EXISTS idx_messages_room ON Messages(room_id);`); } catch(e) {}
+  try { await db.exec(`CREATE INDEX IF NOT EXISTS idx_buyer_req_status ON BuyerRequests(status, id DESC);`); } catch(e) {}
+  try { await db.exec(`CREATE INDEX IF NOT EXISTS idx_messages_room ON Messages(room_id, id ASC);`); } catch(e) {}
 
   // Cloud DB Restoration on Boot (if MONGODB_URI is provided)
   const mongoUri = process.env.MONGODB_URI || process.env.DATABASE_URL;

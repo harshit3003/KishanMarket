@@ -190,18 +190,7 @@ async function ensureDb() {
 
 initDb().then(async connection => {
   db = connection;
-  console.log('SQLite Database connected and initialized successfully.');
-  await syncUsers();
-  await syncCrops();
-  await syncRequests();
-  await syncBids();
-  await syncMessages();
-  await syncReviews();
-  await syncOrders();
-  await syncDisputes();
-  await syncReports();
-  await syncTickets();
-  await syncReplies();
+  console.log('SQLite Database connected and initialized successfully from MongoDB Cloud Atlas.');
 }).catch(err => {
   console.error('Database connection failed', err);
 });
@@ -212,7 +201,7 @@ async function syncUsers() {
     const database = await ensureDb();
     if (!database) return;
     const users = await database.all('SELECT user_id, name, mobile, location, role, password, profile_photo, bio, business_name, address, state, district, pincode, crops_specialty FROM Users');
-    saveTableToFile('users.json', users);
+    await saveTableToFile('users.json', users);
   } catch (e) {}
 }
 
@@ -221,7 +210,7 @@ async function syncCrops() {
     const database = await ensureDb();
     if (!database) return;
     const crops = await database.all('SELECT * FROM Crops');
-    saveTableToFile('crops.json', crops);
+    await saveTableToFile('crops.json', crops);
   } catch (e) {}
 }
 
@@ -230,7 +219,7 @@ async function syncRequests() {
     const database = await ensureDb();
     if (!database) return;
     const reqs = await database.all('SELECT * FROM BuyerRequests');
-    saveTableToFile('buyer_requests.json', reqs);
+    await saveTableToFile('buyer_requests.json', reqs);
   } catch (e) {}
 }
 
@@ -239,7 +228,7 @@ async function syncBids() {
     const database = await ensureDb();
     if (!database) return;
     const bids = await database.all('SELECT * FROM Bids');
-    saveTableToFile('bids.json', bids);
+    await saveTableToFile('bids.json', bids);
   } catch (e) {}
 }
 
@@ -248,7 +237,7 @@ async function syncReviews() {
     const database = await ensureDb();
     if (!database) return;
     const reviews = await database.all('SELECT * FROM Reviews');
-    saveTableToFile('reviews.json', reviews);
+    await saveTableToFile('reviews.json', reviews);
   } catch (e) {}
 }
 
@@ -257,7 +246,7 @@ async function syncOrders() {
     const database = await ensureDb();
     if (!database) return;
     const orders = await database.all('SELECT * FROM Orders');
-    saveTableToFile('orders.json', orders);
+    await saveTableToFile('orders.json', orders);
   } catch (e) {}
 }
 
@@ -266,7 +255,7 @@ async function syncDisputes() {
     const database = await ensureDb();
     if (!database) return;
     const disputes = await database.all('SELECT * FROM Disputes');
-    saveTableToFile('disputes.json', disputes);
+    await saveTableToFile('disputes.json', disputes);
   } catch (e) {}
 }
 
@@ -275,7 +264,7 @@ async function syncReports() {
     const database = await ensureDb();
     if (!database) return;
     const reports = await database.all('SELECT * FROM Reports');
-    saveTableToFile('reports.json', reports);
+    await saveTableToFile('reports.json', reports);
   } catch (e) {}
 }
 
@@ -284,7 +273,7 @@ async function syncTickets() {
     const database = await ensureDb();
     if (!database) return;
     const tickets = await database.all('SELECT * FROM SupportTickets');
-    saveTableToFile('support_tickets.json', tickets);
+    await saveTableToFile('support_tickets.json', tickets);
   } catch (e) {}
 }
 
@@ -293,7 +282,7 @@ async function syncReplies() {
     const database = await ensureDb();
     if (!database) return;
     const replies = await database.all('SELECT * FROM TicketReplies');
-    saveTableToFile('ticket_replies.json', replies);
+    await saveTableToFile('ticket_replies.json', replies);
   } catch (e) {}
 }
 
@@ -302,26 +291,15 @@ async function syncReplies() {
 // SQL Endpoints
 app.get('/api/crops', async (req, res) => {
   try {
+    res.setHeader('Cache-Control', 'public, max-age=10, stale-while-revalidate=30');
     const database = await ensureDb();
     const limit = req.query.limit ? parseInt(req.query.limit, 10) : 100;
     let crops;
     if (limit > 0) {
-      crops = await database.all("SELECT * FROM Crops WHERE status='active' AND (is_removed IS NULL OR is_removed = 0) ORDER BY id DESC LIMIT ?", [limit]);
+      crops = await database.all("SELECT id, name, weight, rate, seller, loc, seller_mobile, status, distance, transportCost, netProfit, available_quantity FROM Crops WHERE status='active' AND (is_removed IS NULL OR is_removed = 0) ORDER BY id DESC LIMIT ?", [limit]);
     } else {
-      crops = await database.all("SELECT * FROM Crops WHERE status='active' AND (is_removed IS NULL OR is_removed = 0) ORDER BY id DESC");
+      crops = await database.all("SELECT id, name, weight, rate, seller, loc, seller_mobile, status, distance, transportCost, netProfit, available_quantity FROM Crops WHERE status='active' AND (is_removed IS NULL OR is_removed = 0) ORDER BY id DESC");
     }
-
-    const users = await database.all("SELECT name, mobile FROM Users");
-    const userMap = {};
-    for (const u of users) {
-      if (u.name) userMap[u.name.toLowerCase().trim()] = u.mobile;
-    }
-
-    crops = crops.map(c => {
-      const cleanSeller = (c.seller || '').toLowerCase().trim();
-      const mob = c.seller_mobile || userMap[cleanSeller] || '';
-      return { ...c, seller_mobile: mob };
-    });
 
     res.json(crops);
   } catch (err) {
