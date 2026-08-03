@@ -634,7 +634,7 @@ const SellerPage = () => {
     <>
       
       {/* Fixed Premium Navbar */}
-      <nav className="navbar" style={{ position: 'relative', zIndex: 999999 }}>
+      <nav className="navbar" style={{ position: 'relative', zIndex: 1000 }}>
         <div className="container d-flex justify-content-between align-items-center">
           <Link className="navbar-brand fw-bold text-decoration-none" to="/seller">
             <i className="fas fa-seedling me-2"></i>Kishan<span>Market</span>
@@ -668,7 +668,7 @@ const SellerPage = () => {
               )}
             </div>
 
-            <div className="profile-container position-relative" style={{ zIndex: 999999 }}>
+            <div className="profile-container position-relative" style={{ zIndex: 1001 }}>
               <i className="fas fa-user-circle fa-2x profile-icon" id="profileIcon" style={{ cursor: 'pointer' }} onClick={toggleProfile}></i>
               <div className="profile-dropdown" id="profileDropdown" style={{ display: isProfileOpen ? 'block' : 'none' }}>
                 <div className="dropdown-user-info">
@@ -1075,8 +1075,8 @@ const SellerPage = () => {
 
       {/* Edit Crop Modal */}
       {editModalData.open && (
-        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(6px)', zIndex: 9999, overflowY: 'auto', padding: '20px 10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <div className="glass-card-premium p-4 text-start" style={{ width: '90%', maxWidth: '420px', maxHeight: '88vh', overflowY: 'auto', background: 'white', borderRadius: '18px', boxShadow: '0 20px 50px rgba(0,0,0,0.3)', margin: 'auto' }}>
+        <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(8px)', zIndex: 10000000, overflowY: 'auto', padding: '20px 10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div className="glass-card-premium p-4 text-start" style={{ width: '90%', maxWidth: '420px', maxHeight: '85vh', overflowY: 'auto', background: 'white', borderRadius: '18px', boxShadow: '0 25px 60px rgba(0,0,0,0.4)', margin: 'auto', position: 'relative', zIndex: 10000001 }}>
             <div className="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
               <h4 className="fw-bold m-0 text-success">Edit {editModalData.name}</h4>
               <button className="btn-close" onClick={() => setEditModalData({open: false})}></button>
@@ -1101,8 +1101,8 @@ const SellerPage = () => {
 
       {/* Sell Crop Modal */}
       {sellModalData.open && (
-        <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(6px)', zIndex: 9999, overflowY: 'auto', padding: '20px 10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <div className="glass-card-premium p-4 text-start" style={{ width: '92%', maxWidth: '540px', maxHeight: '88vh', overflowY: 'auto', background: 'white', borderRadius: '18px', boxShadow: '0 20px 50px rgba(0,0,0,0.3)', margin: 'auto' }}>
+        <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(8px)', zIndex: 10000000, overflowY: 'auto', padding: '20px 10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div className="glass-card-premium p-4 text-start" style={{ width: '92%', maxWidth: '540px', maxHeight: '85vh', overflowY: 'auto', background: 'white', borderRadius: '18px', boxShadow: '0 25px 60px rgba(0,0,0,0.4)', margin: 'auto', position: 'relative', zIndex: 10000001 }}>
             <div className="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
               <h4 className="fw-bold m-0 text-success"><i className="fas fa-handshake me-2"></i>Dispatch & Sell {sellModalData.cropName}</h4>
               <button className="btn-close" onClick={() => setSellModalData({open: false})}></button>

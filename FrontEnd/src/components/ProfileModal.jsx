@@ -182,13 +182,14 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
 
   return (
     <div style={{
-      position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
-      background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(6px)', zIndex: 1150,
-      display: 'flex', alignItems: 'center', justifyContent: 'center'
+      position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
+      background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(8px)', zIndex: 10000000,
+      display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px'
     }}>
       <div className="glass-card-premium p-4 text-start" style={{
-        width: '92%', maxWidth: '720px', maxHeight: '88vh', overflowY: 'auto',
-        background: 'white', borderRadius: '18px', boxShadow: '0 20px 50px rgba(0,0,0,0.25)'
+        width: '92%', maxWidth: '720px', maxHeight: '85vh', overflowY: 'auto',
+        background: 'white', borderRadius: '18px', boxShadow: '0 25px 60px rgba(0,0,0,0.4)',
+        position: 'relative', zIndex: 10000001
       }}>
         {/* Modal Header */}
         <div className="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">

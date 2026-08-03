@@ -186,7 +186,7 @@ const AdminPage = () => {
   return (
     <div className="admin-page-root">
       {/* SuperAdmin Top Header */}
-      <nav className="navbar navbar-dark shadow" style={{ background: '#111827', borderBottom: '1px solid #1f2937', position: 'relative', zIndex: 999999 }}>
+      <nav className="navbar navbar-dark shadow" style={{ background: '#111827', borderBottom: '1px solid #1f2937', position: 'relative', zIndex: 1000 }}>
         <div className="container d-flex justify-content-between align-items-center">
           <div className="d-flex align-items-center gap-3">
             <i className="fas fa-shield-halved text-warning fs-2"></i>
