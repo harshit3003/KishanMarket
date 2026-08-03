@@ -3,12 +3,12 @@ import React from 'react';
 const AdminOverviewPanel = ({ overview }) => {
   return (
     <div>
-      <h5 className="fw-bold mb-3" style={{ color: '#34d399' }}><i className="fas fa-chart-line me-2"></i> Marketplace Analytics & System Status</h5>
+      <h5 className="fw-bold mb-3 text-emerald-400"><i className="fas fa-chart-line me-2"></i> Marketplace Analytics & System Status</h5>
       <div className="row g-4 mb-4">
         <div className="col-md-6">
           <div className="admin-panel-card">
             <h6 className="admin-panel-heading">Gross Merchandise Value (GMV) Summary</h6>
-            <div className="fs-2 fw-bold mb-2" style={{ color: '#34d399' }}>₹{overview.totalGmv ? overview.totalGmv.toLocaleString('en-IN') : 0}</div>
+            <div className="fs-2 fw-bold mb-2 text-emerald-400">₹{overview.totalGmv ? overview.totalGmv.toLocaleString('en-IN') : 0}</div>
             <p className="admin-panel-subtext">Total volume of completed & confirmed agricultural crop trades processed on KishanMarket platform.</p>
           </div>
         </div>
