@@ -184,57 +184,68 @@ const MongoTicketReply = mongoose.models.TicketReply || mongoose.model('TicketRe
 
 async function syncToCloud(filename, data) {
   const mongoUri = process.env.MONGODB_URI || process.env.DATABASE_URL;
-  if (!mongoUri) return;
+  if (!mongoUri || !Array.isArray(data) || data.length === 0) return;
 
   try {
     if (mongoose.connection.readyState !== 1) {
       await mongoose.connect(mongoUri);
     }
 
-    if (filename === 'users.json' && Array.isArray(data)) {
-      for (const u of data) {
-        if (u.mobile) await MongoUser.updateOne({ mobile: u.mobile }, u, { upsert: true });
-      }
-    } else if (filename === 'crops.json' && Array.isArray(data)) {
-      for (const c of data) {
-        if (c.id) await MongoCrop.updateOne({ id: c.id }, c, { upsert: true });
-      }
-    } else if (filename === 'buyer_requests.json' && Array.isArray(data)) {
-      for (const r of data) {
-        if (r.id) await MongoBuyerRequest.updateOne({ id: r.id }, r, { upsert: true });
-      }
-    } else if (filename === 'bids.json' && Array.isArray(data)) {
-      for (const b of data) {
-        if (b.id) await MongoBid.updateOne({ id: b.id }, b, { upsert: true });
-      }
-    } else if (filename === 'messages.json' && Array.isArray(data)) {
-      for (const m of data) {
-        if (m.id) await MongoMessage.updateOne({ id: m.id }, m, { upsert: true });
-      }
-    } else if (filename === 'reviews.json' && Array.isArray(data)) {
-      for (const r of data) {
-        if (r.id) await MongoReview.updateOne({ id: r.id }, r, { upsert: true });
-      }
-    } else if (filename === 'orders.json' && Array.isArray(data)) {
-      for (const o of data) {
-        if (o.id) await MongoOrder.updateOne({ id: o.id }, o, { upsert: true });
-      }
-    } else if (filename === 'disputes.json' && Array.isArray(data)) {
-      for (const d of data) {
-        if (d.id) await MongoDispute.updateOne({ id: d.id }, d, { upsert: true });
-      }
-    } else if (filename === 'reports.json' && Array.isArray(data)) {
-      for (const rep of data) {
-        if (rep.id) await MongoReport.updateOne({ id: rep.id }, rep, { upsert: true });
-      }
-    } else if (filename === 'support_tickets.json' && Array.isArray(data)) {
-      for (const t of data) {
-        if (t.id) await MongoSupportTicket.updateOne({ id: t.id }, t, { upsert: true });
-      }
-    } else if (filename === 'ticket_replies.json' && Array.isArray(data)) {
-      for (const rep of data) {
-        if (rep.id) await MongoTicketReply.updateOne({ id: rep.id }, rep, { upsert: true });
-      }
+    if (filename === 'users.json') {
+      const ops = data.filter(u => u.mobile).map(u => ({
+        updateOne: { filter: { mobile: u.mobile }, update: { $set: u }, upsert: true }
+      }));
+      if (ops.length > 0) await MongoUser.bulkWrite(ops);
+    } else if (filename === 'crops.json') {
+      const ops = data.filter(c => c.id).map(c => ({
+        updateOne: { filter: { id: c.id }, update: { $set: c }, upsert: true }
+      }));
+      if (ops.length > 0) await MongoCrop.bulkWrite(ops);
+    } else if (filename === 'buyer_requests.json') {
+      const ops = data.filter(r => r.id).map(r => ({
+        updateOne: { filter: { id: r.id }, update: { $set: r }, upsert: true }
+      }));
+      if (ops.length > 0) await MongoBuyerRequest.bulkWrite(ops);
+    } else if (filename === 'bids.json') {
+      const ops = data.filter(b => b.id).map(b => ({
+        updateOne: { filter: { id: b.id }, update: { $set: b }, upsert: true }
+      }));
+      if (ops.length > 0) await MongoBid.bulkWrite(ops);
+    } else if (filename === 'messages.json') {
+      const ops = data.filter(m => m.id).map(m => ({
+        updateOne: { filter: { id: m.id }, update: { $set: m }, upsert: true }
+      }));
+      if (ops.length > 0) await MongoMessage.bulkWrite(ops);
+    } else if (filename === 'reviews.json') {
+      const ops = data.filter(r => r.id).map(r => ({
+        updateOne: { filter: { id: r.id }, update: { $set: r }, upsert: true }
+      }));
+      if (ops.length > 0) await MongoReview.bulkWrite(ops);
+    } else if (filename === 'orders.json') {
+      const ops = data.filter(o => o.id).map(o => ({
+        updateOne: { filter: { id: o.id }, update: { $set: o }, upsert: true }
+      }));
+      if (ops.length > 0) await MongoOrder.bulkWrite(ops);
+    } else if (filename === 'disputes.json') {
+      const ops = data.filter(d => d.id).map(d => ({
+        updateOne: { filter: { id: d.id }, update: { $set: d }, upsert: true }
+      }));
+      if (ops.length > 0) await MongoDispute.bulkWrite(ops);
+    } else if (filename === 'reports.json') {
+      const ops = data.filter(rep => rep.id).map(rep => ({
+        updateOne: { filter: { id: rep.id }, update: { $set: rep }, upsert: true }
+      }));
+      if (ops.length > 0) await MongoReport.bulkWrite(ops);
+    } else if (filename === 'support_tickets.json') {
+      const ops = data.filter(t => t.id).map(t => ({
+        updateOne: { filter: { id: t.id }, update: { $set: t }, upsert: true }
+      }));
+      if (ops.length > 0) await MongoSupportTicket.bulkWrite(ops);
+    } else if (filename === 'ticket_replies.json') {
+      const ops = data.filter(rep => rep.id).map(rep => ({
+        updateOne: { filter: { id: rep.id }, update: { $set: rep }, upsert: true }
+      }));
+      if (ops.length > 0) await MongoTicketReply.bulkWrite(ops);
     }
   } catch (e) {
     console.error("Cloud DB Sync Notice:", e.message);
@@ -273,6 +284,10 @@ async function getDbConnection() {
 // Create tables if they don't exist
 async function initDb() {
   const db = await getDbConnection();
+
+  try { await db.exec(`PRAGMA journal_mode = WAL;`); } catch(e) {}
+  try { await db.exec(`PRAGMA synchronous = NORMAL;`); } catch(e) {}
+  try { await db.exec(`PRAGMA cache_size = -64000;`); } catch(e) {}
 
   await db.exec(`
     CREATE TABLE IF NOT EXISTS Users (
