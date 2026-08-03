@@ -534,16 +534,19 @@ app.post('/api/buyer-requests', async (req, res) => {
 
 app.get('/api/buyer-requests', async (req, res) => {
   try {
+    res.setHeader('Cache-Control', 'public, max-age=10, stale-while-revalidate=30');
     const mobile = req.query.mobile;
     const name = req.query.name;
+    const limit = req.query.limit ? parseInt(req.query.limit, 10) : 50;
+
     let requests;
     if (mobile || name) {
       requests = await db.all(
-        'SELECT * FROM BuyerRequests WHERE (buyer_mobile = ? OR buyer_name = ?) ORDER BY id DESC',
-        [mobile || '', name || '']
+        'SELECT * FROM BuyerRequests WHERE (buyer_mobile = ? OR buyer_name = ?) ORDER BY id DESC LIMIT ?',
+        [mobile || '', name || '', limit]
       );
     } else {
-      requests = await db.all('SELECT * FROM BuyerRequests ORDER BY id DESC');
+      requests = await db.all('SELECT * FROM BuyerRequests ORDER BY id DESC LIMIT ?', [limit]);
     }
     res.json(requests);
   } catch (err) {
