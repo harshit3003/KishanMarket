@@ -2,15 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const pageVariants = {
-  initial: { opacity: 0, y: 15 },
-  in: { opacity: 1, y: 0 },
-  out: { opacity: 0, y: -15 }
+  initial: { opacity: 0 },
+  in: { opacity: 1 },
+  out: { opacity: 0 }
 };
 
 const pageTransition = {
-  type: 'tween',
-  ease: 'easeOut',
-  duration: 0.3
+  duration: 0.25,
+  ease: 'easeInOut'
 };
 
 const PageTransition = ({ children }) => {

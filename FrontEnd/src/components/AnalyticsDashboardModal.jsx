@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 const AnalyticsDashboardModal = ({ isOpen, onClose, currentUser }) => {
   const [data, setData] = useState(null);
@@ -35,10 +36,10 @@ const AnalyticsDashboardModal = ({ isOpen, onClose, currentUser }) => {
 
   const maxRevenue = Math.max(...monthlyTrend.map(m => m.revenue), 1000);
 
-  return (
+  return createPortal(
     <div style={{
-      position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
-      background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(5px)', zIndex: 1200,
+      position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
+      background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(8px)', zIndex: 10000000,
       display: 'flex', alignItems: 'center', justifyContent: 'center'
     }}>
       <div className="glass-card-premium p-4 text-start" style={{
@@ -185,7 +186,8 @@ const AnalyticsDashboardModal = ({ isOpen, onClose, currentUser }) => {
           <button className="btn btn-sm btn-outline-secondary" onClick={onClose}>Close Analytics</button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

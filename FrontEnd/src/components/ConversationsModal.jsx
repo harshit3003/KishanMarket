@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 
 const ConversationsModal = ({ isOpen, onClose, currentUser, onSelectChat, unreadCounts = {} }) => {
   const [conversations, setConversations] = useState([]);
@@ -28,10 +29,10 @@ const ConversationsModal = ({ isOpen, onClose, currentUser, onSelectChat, unread
 
   if (!isOpen) return null;
 
-  return (
+  return createPortal(
     <div style={{
-      position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
-      background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(5px)', zIndex: 1100,
+      position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
+      background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(8px)', zIndex: 10000000,
       display: 'flex', alignItems: 'center', justifyContent: 'center'
     }}>
       <div className="glass-card-premium p-4 text-start" style={{
@@ -114,7 +115,8 @@ const ConversationsModal = ({ isOpen, onClose, currentUser, onSelectChat, unread
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

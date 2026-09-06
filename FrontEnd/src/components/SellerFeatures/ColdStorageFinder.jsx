@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import toast from 'react-hot-toast';
 
 const mockStorages = [
@@ -54,8 +55,8 @@ const ColdStorageFinder = () => {
     </div>
 
     {/* Booking Modal */}
-    {modalData.open && (
-      <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', background: 'rgba(0,0,0,0.5)', backdropFilter: 'blur(5px)', zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    {modalData.open && createPortal(
+      <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(8px)', zIndex: 10000000, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div className="glass-card-premium p-4" style={{ width: '90%', maxWidth: '400px', background: 'white' }}>
           <h4 className="fw-bold mb-3 text-info"><i className="fas fa-snowflake me-2"></i>Book Storage</h4>
           <p className="mb-3"><strong>{modalData.storage.name}</strong><br/><small className="text-muted">Rate: {modalData.storage.rate}</small></p>
@@ -73,8 +74,8 @@ const ColdStorageFinder = () => {
             {modalData.amount && modalData.days && (
               <div className="p-3 bg-light rounded border mb-4">
                 <div className="d-flex justify-content-between fw-bold">
-                  <span>Estimated Total Cost:</span>
-                  <span className="text-info fs-5">₹{(parseInt(modalData.storage.rate.match(/\d+/)[0]) * modalData.amount * modalData.days).toLocaleString('en-IN')}</span>
+                  <span>Estimated Total:</span>
+                  <span className="text-info">₹{(parseInt(modalData.amount) * parseInt(modalData.days) * parseInt(modalData.storage.rate.replace(/\D/g, ''))).toLocaleString('en-IN')}</span>
                 </div>
               </div>
             )}
@@ -85,7 +86,8 @@ const ColdStorageFinder = () => {
             </div>
           </form>
         </div>
-      </div>
+      </div>,
+      document.body
     )}
     </>
   );

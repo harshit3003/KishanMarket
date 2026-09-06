@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import toast from 'react-hot-toast';
 import OrderStatusTracker from './OrderStatusTracker';
 import CancelOrderModal from './CancelOrderModal';
@@ -37,10 +38,10 @@ const SellerOrdersModal = ({ isOpen, onClose, currentUser }) => {
 
   if (!isOpen) return null;
 
-  return (
+  return createPortal(
     <div style={{
       position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
-      background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(5px)', zIndex: 1100,
+      background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(5px)', zIndex: 10000000,
       display: 'flex', alignItems: 'center', justifyContent: 'center'
     }}>
       <div className="glass-card-premium p-4 text-start" style={{
@@ -126,7 +127,8 @@ const SellerOrdersModal = ({ isOpen, onClose, currentUser }) => {
           <button className="btn btn-sm btn-outline-secondary" onClick={onClose}>Close</button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

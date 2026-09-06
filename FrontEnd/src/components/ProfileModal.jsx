@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import toast from 'react-hot-toast';
 import ReviewsList from './ReviewsList';
 
@@ -180,7 +181,7 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
   const totalSoldVolume = completedSalesList.reduce((acc, c) => acc + (parseFloat(c.weight || c.quantity) || 0), 0);
   const totalRevenue = completedSalesList.reduce((acc, c) => acc + ((parseFloat(c.rate || c.final_price) || 2200) * (parseFloat(c.weight || c.quantity) || 1)), 0);
 
-  return (
+  return createPortal(
     <div style={{
       position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
       background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(8px)', zIndex: 10000000,
@@ -524,7 +525,8 @@ const ProfileModal = ({ isOpen, onClose, targetUserMobile, currentUser, onProfil
           </div>
         )}
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

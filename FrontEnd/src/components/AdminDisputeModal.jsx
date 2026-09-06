@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import toast from 'react-hot-toast';
 
 const AdminDisputeModal = ({ isOpen, onClose }) => {
@@ -18,12 +19,12 @@ const AdminDisputeModal = ({ isOpen, onClose }) => {
   const fetchDisputes = async () => {
     setIsLoading(true);
     try {
-      const res = await fetch('/api/admin/disputes');
+      const res = await fetch('/api/disputes');
       if (res.ok) {
         setDisputes(await res.json());
       }
     } catch (err) {
-      console.error("Failed to load admin disputes:", err);
+      console.error("Failed to load disputes:", err);
     }
     setIsLoading(false);
   };
@@ -34,19 +35,18 @@ const AdminDisputeModal = ({ isOpen, onClose }) => {
 
     setIsResolving(true);
     try {
-      const res = await fetch(`/api/admin/disputes/${selectedDispute.id}/resolve`, {
+      const res = await fetch(`/api/disputes/${selectedDispute.id}/resolve`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          resolution: resolutionAction,
-          resolution_notes: resolutionNotes
+          resolution: `${resolutionAction}: ${resolutionNotes}`
         })
       });
 
       const data = await res.json();
       if (res.ok) {
-        toast.success(`Dispute #${selectedDispute.id} resolved with status: ${resolutionAction}`);
-        setDisputes(prev => prev.map(d => d.id === selectedDispute.id ? data.dispute : d));
+        toast.success("Dispute resolved successfully!");
+        setDisputes(prev => prev.map(d => d.id === selectedDispute.id ? { ...d, status: 'resolved', resolution: `${resolutionAction}: ${resolutionNotes}` } : d));
         setSelectedDispute(null);
       } else {
         toast.error(data.error || "Failed to resolve dispute.");
@@ -59,10 +59,10 @@ const AdminDisputeModal = ({ isOpen, onClose }) => {
 
   if (!isOpen) return null;
 
-  return (
+  return createPortal(
     <div style={{
-      position: 'fixed', top: 0, left: 0, width: '100%', height: '100%',
-      background: 'rgba(0,0,0,0.6)', backdropFilter: 'blur(5px)', zIndex: 1150,
+      position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh',
+      background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(8px)', zIndex: 10000000,
       display: 'flex', alignItems: 'center', justifyContent: 'center'
     }}>
       <div className="glass-card-premium p-4 text-start" style={{
@@ -200,7 +200,8 @@ const AdminDisputeModal = ({ isOpen, onClose }) => {
           <button className="btn btn-sm btn-outline-secondary" onClick={onClose}>Close</button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import '../assets/global.css';
@@ -1075,7 +1076,7 @@ const SellerPage = () => {
       />
 
       {/* Edit Crop Modal */}
-      {editModalData.open && (
+      {editModalData.open && createPortal(
         <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(8px)', zIndex: 10000000, overflowY: 'auto', padding: '20px 10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <div className="glass-card-premium p-4 text-start" style={{ width: '90%', maxWidth: '420px', maxHeight: '85vh', overflowY: 'auto', background: 'white', borderRadius: '18px', boxShadow: '0 25px 60px rgba(0,0,0,0.4)', margin: 'auto', position: 'relative', zIndex: 10000001 }}>
             <div className="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
@@ -1097,11 +1098,12 @@ const SellerPage = () => {
               </div>
             </form>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
       {/* Sell Crop Modal */}
-      {sellModalData.open && (
+      {sellModalData.open && createPortal(
         <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(8px)', zIndex: 10000000, overflowY: 'auto', padding: '20px 10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <div className="glass-card-premium p-4 text-start" style={{ width: '92%', maxWidth: '540px', maxHeight: '85vh', overflowY: 'auto', background: 'white', borderRadius: '18px', boxShadow: '0 25px 60px rgba(0,0,0,0.4)', margin: 'auto', position: 'relative', zIndex: 10000001 }}>
             <div className="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
@@ -1171,12 +1173,13 @@ const SellerPage = () => {
               </div>
             </form>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
 
       {/* Live Received Bids Modal */}
-      {isBidsModalOpen && (
-        <div className="dynamic-modal-overlay active">
+      {isBidsModalOpen && createPortal(
+        <div className="dynamic-modal-overlay active" style={{ zIndex: 10000000 }}>
           <div className="dynamic-modal text-start p-4" style={{ maxWidth: '600px', maxHeight: '85vh', overflowY: 'auto' }}>
             <div className="d-flex justify-content-between align-items-center mb-3 border-bottom pb-2">
               <h5 className="fw-bold text-dark m-0"><i className="fas fa-gavel text-warning me-2"></i> Live Received Boli (Bids)</h5>
@@ -1247,7 +1250,8 @@ const SellerPage = () => {
               </div>
             )}
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
