@@ -14,6 +14,7 @@
     "@vitejs/plugin-react": "^6.0.1",
     "axios": "^1.17.0",
     "chart.js": "^4.5.1",
+    "framer-motion": "^12.43.0",
     "leaflet": "^1.9.4",
     "lucide-react": "^1.17.0",
     "mapbox-gl": "^3.24.0",

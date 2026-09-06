@@ -14,8 +14,9 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: '*',
-    methods: ['GET', 'POST']
+    origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+    methods: ['GET', 'POST'],
+    credentials: true
   }
 });
 
@@ -106,8 +107,20 @@ async function syncMessages() {
   } catch (e) {}
 }
 
-// Active Online Users Registry
-const activeOnlineUsers = new Set();
+// Active Online Users Registry (Tracking by Socket ID to prevent ghosts/leaks)
+const activeOnlineUsers = new Map();
+
+// Periodic cleanup of ghost sessions
+setInterval(() => {
+  let cleaned = false;
+  activeOnlineUsers.forEach((sockets, mobile) => {
+    if (sockets.size === 0) {
+      activeOnlineUsers.delete(mobile);
+      cleaned = true;
+    }
+  });
+  if (cleaned) io.emit('online_users_update', Array.from(activeOnlineUsers.keys()));
+}, 300000); // 5 min sweep
 
 io.on('connection', (socket) => {
   let socketUserMobile = '';
@@ -115,8 +128,11 @@ io.on('connection', (socket) => {
   socket.on('register_user', (mobile) => {
     if (mobile) {
       socketUserMobile = mobile.toString().toLowerCase().replace(/[^a-z0-9]/g, '');
-      activeOnlineUsers.add(socketUserMobile);
-      io.emit('online_users_update', Array.from(activeOnlineUsers));
+      if (!activeOnlineUsers.has(socketUserMobile)) {
+        activeOnlineUsers.set(socketUserMobile, new Set());
+      }
+      activeOnlineUsers.get(socketUserMobile).add(socket.id);
+      io.emit('online_users_update', Array.from(activeOnlineUsers.keys()));
     }
   });
 
@@ -182,9 +198,13 @@ io.on('connection', (socket) => {
   });
 
   socket.on('disconnect', () => {
-    if (socketUserMobile) {
-      activeOnlineUsers.delete(socketUserMobile);
-      io.emit('online_users_update', Array.from(activeOnlineUsers));
+    if (socketUserMobile && activeOnlineUsers.has(socketUserMobile)) {
+      const userSockets = activeOnlineUsers.get(socketUserMobile);
+      userSockets.delete(socket.id);
+      if (userSockets.size === 0) {
+        activeOnlineUsers.delete(socketUserMobile);
+        io.emit('online_users_update', Array.from(activeOnlineUsers.keys()));
+      }
     }
   });
 });

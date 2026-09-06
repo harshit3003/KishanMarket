@@ -1,7 +1,9 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
+import { AnimatePresence } from 'framer-motion';
 import BackgroundLayer from './components/BackgroundLayer';
+import PageTransition from './components/PageTransition';
 
 // Lazy-loaded page components for optimal bundle splitting & fast load times
 const LandingPage = lazy(() => import('./pages/LandingPage'));
@@ -83,26 +85,26 @@ function App() {
         <Suspense fallback={<PageLoader />}>
           <Routes>
             {/* Public Landing Page */}
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<PageTransition><LandingPage /></PageTransition>} />
             
             {/* Public authentication pages - Always accessible for credential entry */}
-            <Route path="/register" element={<RegistrationPage />} />
-            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<PageTransition><RegistrationPage /></PageTransition>} />
+            <Route path="/login" element={<PageTransition><LoginPage /></PageTransition>} />
             
             {/* Dedicated Admin Portal Route */}
-            <Route path="/admin" element={<AdminRoute><AdminPage /></AdminRoute>} />
+            <Route path="/admin" element={<AdminRoute><PageTransition><AdminPage /></PageTransition></AdminRoute>} />
 
             {/* Protected Dashboard Routes - Strict Role Isolation */}
-            <Route path="/buyer" element={<BuyerRoute><BuyerPage /></BuyerRoute>} />
-            <Route path="/profile/buyer" element={<BuyerRoute><BuyyersProfile /></BuyerRoute>} />
+            <Route path="/buyer" element={<BuyerRoute><PageTransition><BuyerPage /></PageTransition></BuyerRoute>} />
+            <Route path="/profile/buyer" element={<BuyerRoute><PageTransition><BuyyersProfile /></PageTransition></BuyerRoute>} />
             
-            <Route path="/seller" element={<SellerRoute><SellerPage /></SellerRoute>} />
-            <Route path="/profile/seller" element={<SellerRoute><SellersProfile /></SellerRoute>} />
+            <Route path="/seller" element={<SellerRoute><PageTransition><SellerPage /></PageTransition></SellerRoute>} />
+            <Route path="/profile/seller" element={<SellerRoute><PageTransition><SellersProfile /></PageTransition></SellerRoute>} />
             
-            <Route path="/orders" element={<ProtectedRoute><MyOrder /></ProtectedRoute>} />
-
-            {/* 404 Not Found */}
-            <Route path="*" element={<NotFound />} />
+            <Route path="/myorder" element={<ProtectedRoute><PageTransition><MyOrder /></PageTransition></ProtectedRoute>} />
+            
+            {/* Catch-all 404 */}
+            <Route path="*" element={<PageTransition><NotFound /></PageTransition>} />
           </Routes>
         </Suspense>
       </BrowserRouter>
